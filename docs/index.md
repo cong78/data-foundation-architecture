@@ -2,7 +2,6 @@
 
 <div class="brand-lockup">
   <div>
-    <strong>Data Foundation Architecture</strong>
     <span>Trusted data products for analytics, applications, platforms, sharing, agents, and models.</span>
   </div>
 </div>

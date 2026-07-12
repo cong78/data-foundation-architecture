@@ -71,12 +71,6 @@
   margin: 0.6rem 0 1rem;
 }
 
-.brand-lockup strong {
-  display: block;
-  color: #0f238c;
-  font-size: 1.15rem;
-}
-
 .brand-lockup span {
   color: var(--md-default-fg-color--light);
 }
