@@ -152,6 +152,42 @@
 .layer-products { background: rgba(37, 122, 75, 0.07); border-left-color: #257a4b; }
 .layer-platform { background: var(--md-code-bg-color); border-left-color: #59636e; }
 
+.architecture-rules {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1.2rem 0 1.8rem;
+}
+
+.architecture-rules section {
+  border-top: 0.22rem solid #0f238c;
+  padding: 0.8rem 0.2rem 0;
+}
+
+.architecture-rules section:nth-child(2) { border-top-color: #1261a0; }
+.architecture-rules section:nth-child(3) { border-top-color: #257a4b; }
+
+.architecture-rules small {
+  color: var(--md-default-fg-color--light);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.architecture-rules h3 {
+  margin: 0.3rem 0 0.55rem;
+  font-size: 1rem;
+}
+
+.architecture-rules ul {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.architecture-rules li {
+  margin: 0.45rem 0;
+}
+
 .access-layer-map {
   margin: 1.2rem 0;
 }
@@ -317,6 +353,11 @@
 }
 
 @media screen and (max-width: 44.984375em) {
+  .architecture-rules {
+    grid-template-columns: 1fr;
+    gap: 1.4rem;
+  }
+
   .access-map-steps,
   .access-map-rails,
   .access-map-runtimes > div {

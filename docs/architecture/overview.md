@@ -105,14 +105,34 @@ flowchart LR
 
 ## Core Architecture Rules
 
-1. The **Data Service Portal** is the front door, not the system of record for all metadata.
-2. A **data product** is the unit of reuse and trust; a table alone is not a product.
-3. A **data contract** is versioned, testable, and enforced at ingestion, publication, and consumption boundaries.
-4. **Foundation services** provide reusable capabilities through stable APIs, events, and workflow interfaces.
-5. **Security and governance** are policy-driven and follow the data across every access channel.
-6. **OpenTelemetry and lineage events** connect technical health with product quality, usage, cost, and incidents.
-7. **AI agents and models** use governed identities, approved purposes, typed interfaces, and traceable product versions.
-8. Canonical product, contract, policy, lineage, and telemetry artifacts remain portable across technologies.
+<div class="architecture-rules">
+  <section>
+    <small>01 · Product integrity</small>
+    <h3>Make trust part of the product</h3>
+    <ul>
+      <li>A <strong>data product</strong> is the unit of reuse and trust; a table alone is not a product.</li>
+      <li>A <strong>data contract</strong> is versioned, testable, and enforced at ingestion, publication, and consumption boundaries.</li>
+    </ul>
+  </section>
+  <section>
+    <small>02 · Service boundaries</small>
+    <h3>Keep capabilities reusable</h3>
+    <ul>
+      <li>The <strong>Data Service Portal</strong> is the front door, not the system of record for all metadata.</li>
+      <li><strong>Foundation services</strong> provide reusable capabilities through stable APIs, events, and workflow interfaces.</li>
+    </ul>
+  </section>
+  <section>
+    <small>03 · Governed operation</small>
+    <h3>Carry trust through every use</h3>
+    <ul>
+      <li><strong>Security and governance</strong> are policy-driven and follow the data across every access channel.</li>
+      <li><strong>OpenTelemetry and lineage events</strong> connect technical health with product quality, usage, cost, and incidents.</li>
+      <li><strong>AI agents and models</strong> use governed identities, approved purposes, typed interfaces, and traceable product versions.</li>
+      <li>Canonical product, contract, policy, lineage, and telemetry artifacts remain portable across technologies.</li>
+    </ul>
+  </section>
+</div>
 
 ## Use the Architecture Views
 
