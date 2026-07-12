@@ -93,7 +93,8 @@ nav:
           - Semantic and Context Design: architecture/semantic-context-design.md
           - Access Control Design: architecture/access-control-design.md
           - Unified Data Access Layer: architecture/unified-data-access-layer.md
-          - Data Product Lifecycle: architecture/data-product-lifecycle.md
+      - Data Product Lifecycle: architecture/data-product-lifecycle.md
+      - Observability Platform Update: architecture/observability-platform-update.md
       - Experience and AI:
           - Data Service Portal: architecture/data-service-portal-model.md
           - Data Product Developer Experience: architecture/data-product-developer-experience.md
