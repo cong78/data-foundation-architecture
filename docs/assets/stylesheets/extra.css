@@ -59,7 +59,7 @@
 
 .home-intro {
   max-width: 46rem;
-  padding: 1rem 0 1.6rem;
+  padding: 1.2rem 0 2rem;
 }
 
 .home-intro img {
@@ -96,6 +96,68 @@
   max-width: 42rem;
   margin-top: 0.4rem;
   color: var(--md-default-fg-color--light);
+}
+
+.home-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1.2rem;
+}
+
+.home-actions a {
+  border: 1px solid #0f238c;
+  border-radius: 0.25rem;
+  padding: 0.55rem 0.85rem;
+  color: #0f238c;
+  font-weight: 700;
+}
+
+.home-actions a:hover,
+.home-actions a:focus-visible {
+  box-shadow: 0 0.2rem 0.55rem rgba(15, 35, 140, 0.16);
+}
+
+.home-actions .home-action-primary {
+  background: #0f238c;
+  color: #ffffff;
+}
+
+.home-pillars {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.4rem;
+  margin: 0 0 2.3rem;
+}
+
+.home-pillars a {
+  border-top: 0.2rem solid #0f238c;
+  padding-top: 0.8rem;
+  color: var(--md-default-fg-color);
+}
+
+.home-pillars a:nth-child(2) { border-top-color: #1261a0; }
+.home-pillars a:nth-child(3) { border-top-color: #257a4b; }
+
+.home-pillars small,
+.home-pillars strong,
+.home-pillars span {
+  display: block;
+}
+
+.home-pillars small {
+  color: var(--md-default-fg-color--light);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.home-pillars strong {
+  margin: 0.2rem 0;
+}
+
+.home-pillars span {
+  color: var(--md-default-fg-color--light);
+  line-height: 1.5;
 }
 
 .home-routes {
@@ -144,6 +206,41 @@
   transform: rotate(45deg);
 }
 
+.home-decisions {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.7rem;
+}
+
+.home-decisions a {
+  min-height: 6rem;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 0.3rem;
+  padding: 0.85rem;
+  color: var(--md-default-fg-color);
+}
+
+.home-decisions a:hover,
+.home-decisions a:focus-visible {
+  border-color: rgba(15, 35, 140, 0.45);
+  box-shadow: 0 0.2rem 0.5rem rgba(15, 35, 140, 0.1);
+}
+
+.home-decisions strong,
+.home-decisions span {
+  display: block;
+}
+
+.home-decisions strong {
+  color: #0f238c;
+}
+
+.home-decisions span {
+  margin-top: 0.25rem;
+  color: var(--md-default-fg-color--light);
+  line-height: 1.45;
+}
+
 @media screen and (max-width: 44.984375em) {
   .home-intro {
     padding-top: 0.5rem;
@@ -153,6 +250,14 @@
     font-size: 1.8rem;
   }
 
+  .home-pillars,
+  .home-decisions {
+    grid-template-columns: 1fr;
+  }
+
+  .home-pillars {
+    gap: 0.9rem;
+  }
 }
 
 .architecture-stack {
