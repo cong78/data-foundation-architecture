@@ -4,28 +4,6 @@
   <h1>Data Foundation Architecture</h1>
   <strong>Design trusted data products once. Use them safely everywhere.</strong>
   <span>Open contracts, reusable products, unified access, observable trust, and governed AI in one enterprise architecture.</span>
-  <div class="home-actions">
-    <a class="home-action-primary" href="architecture/overview/">Explore the architecture</a>
-    <a href="delivery/">Start delivery</a>
-  </div>
-</div>
-
-<div class="home-pillars">
-  <a href="standards/data-product-management-standard/">
-    <small>Product-led</small>
-    <strong>Trusted by design</strong>
-    <span>Ownership, contracts, semantics, quality, go-live, health, and lifecycle.</span>
-  </a>
-  <a href="architecture/unified-data-access-layer/">
-    <small>Unified access</small>
-    <strong>Open, not centralized</strong>
-    <span>One governed access contract above distributed product storage and runtimes.</span>
-  </a>
-  <a href="architecture/agentic-data-foundation/">
-    <small>AI-ready</small>
-    <strong>Bounded and observable</strong>
-    <span>Purpose-aware data, typed skills, delegated identity, evaluation, and telemetry.</span>
-  </a>
 </div>
 
 ## Explore the Foundation
@@ -51,12 +29,4 @@
     <div><strong>Delivery</strong><small>Runway, assessments, reusable templates, examples, and implementation evidence.</small></div>
     <i aria-hidden="true"></i>
   </a>
-</div>
-
-## Start with a Decision
-
-<div class="home-decisions">
-  <a href="architecture/target-architecture/"><strong>Review the target</strong><span>Test the six planes and critical flows.</span></a>
-  <a href="delivery-templates/data-product-template/"><strong>Design a product</strong><span>Frame value, quality, interfaces, and go-live.</span></a>
-  <a href="standards/technology-selection-standard/"><strong>Evaluate technology</strong><span>Compare real vendors with evidence and exit criteria.</span></a>
 </div>
