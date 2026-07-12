@@ -1,6 +1,7 @@
 .md-header,
 .md-tabs {
-  background-color: #0f238c;
+  background-color: #eff2f4;
+  color: #0f238c;
 }
 
 .md-typeset {
@@ -15,14 +16,14 @@
 }
 
 .md-tabs__link {
-  color: #cbd6ff;
+  color: #555464;
   opacity: 1;
 }
 
 .md-tabs__link:hover,
 .md-tabs__link:focus-visible,
 .md-tabs__item--active .md-tabs__link {
-  color: #ffffff;
+  color: #0f238c;
 }
 
 .md-tabs__item--active .md-tabs__link {
