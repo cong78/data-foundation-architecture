@@ -1,4 +1,4 @@
-# System and Data Product Observability Update
+# Observability Design
 
 This proposal extends the Data Foundation Architecture observability service with a pragmatic two-platform design:
 
