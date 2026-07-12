@@ -1,0 +1,134 @@
+# Standards Overview
+
+The standards turn the target architecture into enforceable design and delivery rules. They apply across planes and services; they are not isolated documents or technology-specific checklists.
+
+## How the Standards Fit
+
+<div class="standards-map" role="img" aria-label="Standards mapped from target architecture planes to foundation services in three lanes">
+  <div class="standards-map-head" aria-hidden="true">
+    <span>Target planes</span><i></i><span>Standards</span><i></i><span>Service outcomes</span>
+  </div>
+
+  <section class="standards-map-lane lane-govern">
+    <div class="standards-map-cell">
+      <small>Govern and describe</small>
+      <strong>Experience · Control · Security</strong>
+      <p>Define ownership, meaning, policy, lifecycle, and evidence.</p>
+    </div>
+    <span class="standards-map-arrow" aria-hidden="true"></span>
+    <div class="standards-map-cell standards-map-focus">
+      <a href="data-contract-standard/"><strong>Data Contract</strong></a>
+      <a href="access-control-standard/"><strong>Access Control</strong></a>
+      <a href="data-product-management-standard/"><strong>Data Product Management</strong></a>
+    </div>
+    <span class="standards-map-arrow" aria-hidden="true"></span>
+    <div class="standards-map-cell">
+      <strong>Portal · Product Creation</strong>
+      <p>Contract workflows, product state, go-live gates, and consumer trust.</p>
+    </div>
+  </section>
+
+  <section class="standards-map-lane lane-build">
+    <div class="standards-map-cell">
+      <small>Build and exchange</small>
+      <strong>Control · Data · Security</strong>
+      <p>Turn declared intent into portable, governed runtime behavior.</p>
+    </div>
+    <span class="standards-map-arrow" aria-hidden="true"></span>
+    <div class="standards-map-cell standards-map-focus">
+      <a href="data-product-workload-standard/"><strong>Data Product Workload</strong></a>
+      <a href="open-interoperability-standard/"><strong>Open Interoperability</strong></a>
+    </div>
+    <span class="standards-map-arrow" aria-hidden="true"></span>
+    <div class="standards-map-cell">
+      <strong>Ingestion · Creation · Consumption · Sharing</strong>
+      <p>Repeatable deployment and open product interfaces across platforms.</p>
+    </div>
+  </section>
+
+  <section class="standards-map-lane lane-intelligence">
+    <div class="standards-map-cell">
+      <small>Observe and automate</small>
+      <strong>AI · Observability · Security</strong>
+      <p>Make data and automated actions measurable, bounded, and traceable.</p>
+    </div>
+    <span class="standards-map-arrow" aria-hidden="true"></span>
+    <div class="standards-map-cell standards-map-focus">
+      <a href="otel-telemetry-standard/"><strong>OpenTelemetry</strong></a>
+      <a href="ai-ready-data-standard/"><strong>AI-Ready Data</strong></a>
+      <a href="agent-skill-llm-standard/"><strong>Agent, Skill and LLM</strong></a>
+    </div>
+    <span class="standards-map-arrow" aria-hidden="true"></span>
+    <div class="standards-map-cell">
+      <strong>Observability · AI Assistant · All Services</strong>
+      <p>Correlated health, AI context, evaluation, policy, and action evidence.</p>
+    </div>
+  </section>
+</div>
+
+The lanes show the primary design outcomes. The matrices below capture supporting relationships and exact service coverage.
+
+## Standards to Target Architecture
+
+**P** = primary control definition. **S** = supporting requirement or evidence.
+
+| Standard | Experience | Control | Data | AI | Observability | Security |
+| --- | :---: | :---: | :---: | :---: | :---: | :---: |
+| [Data Contract](data-contract-standard.md) | S | P | P | S | S | P |
+| [Access Control](access-control-standard.md) | S | P | P | P | P | P |
+| [Data Product Management](data-product-management-standard.md) | P | P | P | S | P | S |
+| [Data Product Workload](data-product-workload-standard.md) | P | P | P | S | P | P |
+| [Open Interoperability](open-interoperability-standard.md) | S | P | P | P | S | S |
+| [OpenTelemetry](otel-telemetry-standard.md) | S | S | S | S | P | S |
+| [AI-Ready Data](ai-ready-data-standard.md) | S | S | P | P | P | P |
+| [Agent, Skill and LLM](agent-skill-llm-standard.md) | P | P | S | P | P | P |
+
+### Plane Interpretation
+
+| Plane | Standards Outcome |
+| --- | --- |
+| Experience | The portal exposes product, contract, health, access, and agent evidence without becoming the system of record. |
+| Control | Canonical contracts, product descriptors, policies, lifecycle state, and conformance evidence drive workflow and automation. |
+| Data | Ingestion, processing, serving, and sharing implement versioned interfaces and portable product artifacts. |
+| AI | AI uses approved products, typed skills, governed context, bounded autonomy, evaluation, and traceable model access. |
+| Observability | OpenTelemetry correlates platform, pipeline, product, contract, consumer, agent, quality, usage, and cost signals. |
+| Security | Identity, purpose, classification, masking, approval, retention, and audit are enforced at every access boundary. |
+
+## Standards to Foundation Services
+
+| Service | Primary Standards | What the Service Enforces |
+| --- | --- | --- |
+| [Data Service Portal](../services/data-service-portal.md) | Data Contract; Access Control; Data Product Management; Agent, Skill and LLM | Contract and product workflows, lifecycle state, go-live gates, identity-aware access requests, evidence, assistant approvals. |
+| [Data Service AI Assistant](../services/data-service-ai-assistant.md) | Agent, Skill and LLM; AI-Ready Data; OpenTelemetry | Grounded context, typed skills, delegated identity, approval classes, evaluations, traces, and action receipts. |
+| [Data Ingestion](../services/data-ingestion-service.md) | Data Contract; Open Interoperability; OpenTelemetry | Source schema, compatibility, provenance, validation, open ingestion interfaces, and runtime telemetry. |
+| [Data Product Creation](../services/data-product-creation-service.md) | Data Product Management; Data Product Workload; Data Contract; AI-Ready Data | Developer workspace, declarative runtime intent, portable descriptor, tests, lineage, semantics, deployment, rollback, go-live gates, and AI usage policy. |
+| [Data Consumption](../services/data-consumption-service.md) | Data Contract; Access Control; Open Interoperability; AI-Ready Data | Governed SQL, API, event, feature, and retrieval interfaces with separate service and data authorization. |
+| [Data Sharing](../services/data-sharing-service.md) | Data Contract; Access Control; Open Interoperability; Data Product Management | Recipient identity, purpose, minimized packages, open exchange, expiry, revocation, and sharing evidence. |
+| [Data Observability](../services/data-observability-service.md) | OpenTelemetry; Data Product Management; AI-Ready Data | End-to-end traces, product SLOs, quality, freshness, lineage correlation, incidents, usage, cost, and AI access evidence. |
+
+## Enforcement and Evidence
+
+| Standard | Key Enforcement Points | Minimum Evidence |
+| --- | --- | --- |
+| Data Contract | Source onboarding, CI, product go-live, consumption, sharing, change release. | Versioned contract, validation results, compatibility decision, approvals, subscriber impact. |
+| Access Control | Every portal, API, CLI, workflow, service, query, event, file, feature, retrieval, agent, and sharing boundary. | Identity, actor and subject, service decision, data decision, purpose, entitlement, obligations, policy version, outcome, revocation test. |
+| Data Product Management | Proposal, review, go-live, operation, change, deprecation, retirement. | Product descriptor, owners, gate results, SLO status, usage, incidents, lifecycle decisions. |
+| Data Product Workload | Authoring, pull request, plan, environment creation, deployment, promotion, rollback, drift response. | Versioned specification, resolved plan, policy results, artifact identity, release and rollback receipts, telemetry. |
+| Open Interoperability | Artifact validation, API and event publication, catalog exchange, platform migration, external sharing. | Conformance report, round-trip test, interface specification, adapter and exception records. |
+| OpenTelemetry | Every service boundary, pipeline run, product update, access, agent action, and incident. | Correlated traces, metrics, logs, stable identifiers, retention and cardinality controls. |
+| AI-Ready Data | AI-use approval, retrieval or feature publication, training and evaluation access, runtime grounding. | AI usage contract, lineage, snapshot or index version, quality and freshness, purpose decision, evaluation result. |
+| Agent, Skill and LLM | Agent and skill release, model routing, context retrieval, tool call, side effect, approval, suspension. | Manifests, schemas, policy decision, evaluation suite, action preview, receipt, trace, audit event. |
+
+## Apply the Standards in Order
+
+1. Define the product and source interfaces with the **Data Contract Standard**.
+2. Define named-user and workload identity, service and data decisions, entitlements, and enforcement with the **Access Control Standard**.
+3. Define ownership, lifecycle, go-live, health, and retirement with the **Data Product Management Standard**.
+4. Define runtime intent, environments, deployment, and rollback with the **Data Product Workload Standard**.
+5. Select portable artifacts and open interfaces with the **Open Interoperability Standard**.
+6. Instrument services and products with the **OpenTelemetry Standard**.
+7. Add AI permissions, semantics, lineage, and evaluation data with the **AI-Ready Data Standard**.
+8. Add agents, skills, models, context, approvals, and evaluations with the **Agent, Skill and LLM Standard**.
+
+!!! tip "Design review rule"
+    Review standards by architecture boundary, not by document. For each service interface, identify the applicable contract, policy, product state, telemetry, interoperability profile, and AI or agent controls before implementation.

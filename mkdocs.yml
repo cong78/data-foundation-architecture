@@ -1,0 +1,136 @@
+site_name: Data Foundation Architecture
+site_description: Enterprise architecture guidance for an AI-ready data foundation.
+site_author: Data and AI Foundation
+repo_name: data-foundation-architecture
+
+theme:
+  name: material
+  language: en
+  logo: assets/images/data-foundation-logo.svg
+  favicon: assets/images/favicon.svg
+  features:
+    - announce.dismiss
+    - content.action.edit
+    - navigation.sections
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.top
+    - navigation.tracking
+    - navigation.indexes
+    - toc.follow
+    - toc.integrate
+    - search.highlight
+    - search.suggest
+    - search.share
+    - content.tabs.link
+    - content.code.copy
+    - content.tooltips
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: blue
+
+extra_css:
+  - assets/stylesheets/extra.css
+
+extra_javascript:
+  - https://cdn.jsdelivr.net/npm/vega@5
+  - https://cdn.jsdelivr.net/npm/vega-lite@5
+  - https://cdn.jsdelivr.net/npm/vega-embed@6
+  - assets/javascripts/interactive.js
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+        - name: vegalite
+          class: vegalite
+          format: !!python/name:mkdocs_charts_plugin.fences.fence_vegalite
+  - pymdownx.tabbed:
+      alternate_style: true
+
+plugins:
+  - search
+  - awesome-pages
+  - glightbox
+  - charts:
+      vega_theme_light: default
+      vega_theme_dark: dark
+      vega_renderer: svg
+  - minify:
+      minify_html: true
+
+nav:
+  - Start Here:
+      - Overview: index.md
+      - How to Use This Guide: foundation/guidance-model.md
+      - Definition and Scope: foundation/definition-and-scope.md
+      - Principles: foundation/principles.md
+      - Glossary: foundation/glossary.md
+  - Architecture:
+      - Overview: architecture/overview.md
+      - Target Design:
+          - Target Architecture: architecture/target-architecture.md
+          - Reference Architecture: architecture/reference-architecture.md
+          - Data Foundation Model: architecture/data-foundation-model.md
+          - Semantic and Context Design: architecture/semantic-context-design.md
+          - Access Control Design: architecture/access-control-design.md
+          - Unified Data Access Layer: architecture/unified-data-access-layer.md
+          - Data Product Lifecycle: architecture/data-product-lifecycle.md
+      - Experience and AI:
+          - Data Service Portal: architecture/data-service-portal-model.md
+          - Data Product Developer Experience: architecture/data-product-developer-experience.md
+          - Agentic Data Foundation: architecture/agentic-data-foundation.md
+      - Implementation:
+          - Architecture Blueprint: implementation/implementation-blueprint.md
+          - Architecture Patterns: implementation/service-implementation-patterns.md
+          - Architecture Decisions: implementation/architecture-decisions.md
+  - Services:
+      - Services Overview: services/index.md
+      - Data Service Portal: services/data-service-portal.md
+      - Data Service AI Assistant: services/data-service-ai-assistant.md
+      - Data Ingestion Service: services/data-ingestion-service.md
+      - Data Product Creation Service: services/data-product-creation-service.md
+      - Data Consumption Service: services/data-consumption-service.md
+      - Data Sharing Service: services/data-sharing-service.md
+      - Data Observability Service: services/data-observability-service.md
+  - Standards:
+      - Standards Overview: standards/index.md
+      - Data Contract Standard: standards/data-contract-standard.md
+      - Access Control Standard: standards/access-control-standard.md
+      - Data Product Management Standard: standards/data-product-management-standard.md
+      - Data Product Workload Standard: standards/data-product-workload-standard.md
+      - Open Interoperability Standard: standards/open-interoperability-standard.md
+      - OpenTelemetry Standard: standards/otel-telemetry-standard.md
+      - AI-Ready Data Standard: standards/ai-ready-data-standard.md
+      - Agent, Skill and LLM Standard: standards/agent-skill-llm-standard.md
+  - Governance:
+      - Governance Overview: governance/index.md
+      - Governance Model: governance/governance-model.md
+      - Security and Compliance: governance/security-compliance.md
+      - Operating Model: governance/operating-model.md
+  - Delivery:
+      - Delivery Overview: delivery/index.md
+      - Runway: runway.md
+      - Assess:
+          - Architecture Dashboard: assessments/architecture-dashboard.md
+          - Industry Alignment: assessments/industry-alignment.md
+          - AI Readiness Assessment: assessments/ai-readiness-assessment.md
+      - Apply Templates:
+          - Data Product Template: delivery-templates/data-product-template.md
+          - Data Product Workload Template: delivery-templates/data-product-workload-template.md
+          - Source Onboarding Template: delivery-templates/source-onboarding-template.md
+          - Interoperability Conformance: delivery-templates/interoperability-conformance-template.md
+          - Agent and Skill Template: delivery-templates/agent-skill-template.md
+      - Learn from Examples:
+          - Customer Profile Data Product: examples/customer-profile-example.md
+          - Data Service AI Assistant: examples/data-service-ai-assistant-example.md
