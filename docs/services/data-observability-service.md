@@ -2,7 +2,7 @@
 
 ## Definition
 
-The data observability service observes data products end to end from both **system telemetry** and **data insight telemetry**. It uses OpenTelemetry as the standard model for collecting, correlating, and exporting telemetry across ingestion, transformation, product publication, consumption, and sharing.
+The data observability service observes data products end to end through both **system telemetry** and **data product telemetry**. It uses OpenTelemetry as the standard model for collecting, correlating, and exporting telemetry across ingestion, transformation, product publication, consumption, and sharing.
 
 The goal is to make data trust measurable. A consumer should be able to understand whether a data product is fresh, complete, reliable, used, compliant, and fit for purpose.
 

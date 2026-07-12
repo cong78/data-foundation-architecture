@@ -25,7 +25,7 @@ The architecture guidance covers six foundation services:
 | Data product creation service | Create trusted, reusable datasets using data product principles. |
 | Data consumption service | Make trusted data available through fit-for-purpose access patterns. |
 | Data sharing service | Share governed data with internal platforms, customers, suppliers, and partners. |
-| Data observability service | Observe data products end to end using system telemetry and data insight telemetry, with OpenTelemetry as the standard. |
+| Data observability service | Observe data products end to end using system telemetry and data product telemetry, with OpenTelemetry as the standard. |
 
 ## In Scope
 
