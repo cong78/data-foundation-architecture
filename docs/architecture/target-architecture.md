@@ -7,7 +7,7 @@ The target architecture is organized into six planes. Each plane has a clear res
 ```mermaid
 flowchart TB
     XP["Experience Plane<br/>Data Service Portal, journeys, contracts, product lifecycle"]
-    CP["Control Plane<br/>Catalog, policy, contracts, lineage, quality, workflow"]
+    CP["Control Plane<br/>Catalog, semantics, context, policy, contracts, lineage, quality, workflow"]
     DP["Data Plane<br/>Ingestion, storage, processing, serving, sharing"]
     AIP["AI Plane<br/>Agent gateway, skills, LLMs, context, memory, evaluation"]
     OP["Observability Plane<br/>OpenTelemetry, product health, SLOs, incidents, usage"]
@@ -31,7 +31,7 @@ flowchart TB
 | Plane | Owns | State-of-the-Art Expectation |
 | --- | --- | --- |
 | Experience | Intent-led portal journeys, product discovery, product detail, developer workspaces, API and CLI, agreements, portfolio, contract workflows, product health views. | One coherent experience with channel parity for users, developers, decisions, and evidence. |
-| Control | Catalog, semantics, context packages, contracts, policy, lineage, quality rules, workflow, go-live gates. | Metadata-driven governance and automation. |
+| Control | Catalog, semantic registry, context packages, knowledge graph projections, contracts, policy, lineage, quality rules, workflow, go-live gates. | Metadata-driven governance and automation with clear authority boundaries. |
 | Data | Source onboarding, source-aligned raw and validated states, products, unified logical access, serving, and sharing. | Standard product ports over custom pipelines and provider-native paths. |
 | AI | Agent gateway, skill registry, LLM gateway, governed context, scoped memory, evaluation, retrieval and AI lineage. | Agents are bounded, governed, traceable and purpose-bound. |
 | Observability | OpenTelemetry, SLOs, product health, incidents, usage, cost. | Trust is measured end to end. |

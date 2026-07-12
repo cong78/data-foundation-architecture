@@ -36,7 +36,7 @@ flowchart LR
     POLICY -. enforces .-> ACCESS
     POLICY -. governs .-> SHARE
     POLICY -. governs .-> AI
-    META[Catalog, Metadata, Lineage] -. describes .-> PROD
+    META[Catalog, Metadata, Lineage, Graph Projection] -. describes .-> PROD
     SEM[Semantic Context] -. explains .-> PROD
     SEM -. grounds .-> AI
     OBS[Observability] -. measures .-> ING

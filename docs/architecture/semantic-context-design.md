@@ -39,6 +39,66 @@ flowchart LR
 | Data Service AI Assistant | Retrieve only the context allowed by identity, purpose, product contract, and current policy. |
 | Observability | Provide current health references and record product, context, and contract versions used by consumers. |
 
+## Catalog and Knowledge Graph Fit
+
+The **data catalog** belongs in the control plane and remains the authoritative registry for discoverable assets and their governance context. It should register products, ports, contracts, owners, classifications, interfaces, lifecycle state, lineage references, quality references, and semantic references.
+
+The **semantic and context layer** is the product-facing explanation of a product. It packages meaning, grain, metrics, relationships, valid and prohibited uses, limitations, and trust references for a specific product and contract version. It references catalog and governance authorities; it does not duplicate them.
+
+A **knowledge graph** is an optional derived projection that connects catalog assets, concepts, products, contracts, lineage, policies, consumers, incidents, and use cases. It is valuable for impact analysis, discovery, recommendation, semantic search, and AI grounding, but it must not become the canonical owner of product metadata, access decisions, contracts, or quality results.
+
+```mermaid
+flowchart LR
+    PRODUCT["Data product\nowner · ports · versions"] --> CATALOG["Data catalog\nasset registry and discovery"]
+    CONTRACT["Data contract\nschema · quality · change"] --> CATALOG
+    GLOSSARY["Glossary and metric registry\nconcepts · definitions · measures"] --> SEM["Semantic context package"]
+    CATALOG --> SEM
+    PRODUCT --> SEM
+    POLICY["Policy and entitlement"] --> SEM
+    LINEAGE["Lineage and observability"] --> SEM
+
+    CATALOG --> KG["Knowledge graph projection\nrelationships and navigation"]
+    SEM --> KG
+    LINEAGE --> KG
+    POLICY -. permission-filtered edges .-> KG
+
+    KG --> PORTAL["Data Service Portal"]
+    KG --> ASSISTANT["Data Service AI Assistant"]
+    SEM --> CONSUMPTION["Consumption and context APIs"]
+    CATALOG --> PORTAL
+    POLICY -. governs .-> PORTAL
+    POLICY -. governs .-> ASSISTANT
+```
+
+### Authority Rules
+
+| Concern | Authoritative source | Catalog or graph role |
+| --- | --- | --- |
+| Product identity and lifecycle | Product registry and catalog | Register, index, and expose relationships. |
+| Schema and compatibility | Data contract registry | Link contract versions and impact paths. |
+| Business concepts and metrics | Glossary and metric registry | Connect terms, products, metrics, and use cases. |
+| Access decisions and obligations | Policy decision and entitlement services | Show permitted relationships only after policy filtering. |
+| Runtime lineage | OpenLineage and lineage service | Project upstream/downstream paths and impact edges. |
+| Quality and current health | Data quality and observability services | Link current evidence and observation time; do not copy detailed profiles. |
+| Product meaning for consumers and AI | Versioned semantic context package | Serve permission-filtered context and citations. |
+
+### Recommended Graph Scope
+
+Start with a small, useful graph vocabulary:
+
+`Product -> Port -> Contract -> Concept -> Metric -> Source -> Pipeline -> Product -> Consumer -> Use Case`
+
+Add policy, incident, quality, semantic-context, agent, and model edges when they support a specific workflow. Keep graph projections rebuildable from authoritative records, version the graph schema, and apply identity and purpose filtering before returning graph results.
+
+The graph should answer questions such as:
+
+- Which products contain this business concept or metric?
+- Which consumers and AI products depend on this product version?
+- Which contract, pipeline, source, or incident explains this quality breach?
+- Which products are permitted for this user, purpose, and use case?
+
+It should not answer an access request by itself. The graph can recommend or explain; the policy decision point must authorize.
+
 ## Semantic Context Package
 
 The minimum portable representation is YAML or JSON. Platform-specific graphs, semantic models, embeddings, and indexes are projections of this artifact.
