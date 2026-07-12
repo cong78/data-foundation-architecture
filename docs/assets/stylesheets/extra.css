@@ -4,6 +4,11 @@
   color: #ffffff;
 }
 
+.md-header__button.md-logo,
+.md-nav__button.md-logo {
+  display: none;
+}
+
 .md-typeset {
   font-size: 0.84rem;
   line-height: 1.65;
