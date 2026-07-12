@@ -5,6 +5,7 @@ repo_name: data-foundation-architecture
 
 theme:
   name: material
+  custom_dir: overrides
   language: en
   logo: assets/images/data-foundation-logo.svg
   favicon: assets/images/favicon.svg
