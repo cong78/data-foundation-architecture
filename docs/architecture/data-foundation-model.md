@@ -23,7 +23,7 @@ flowchart LR
     PROD --> AGG[Aggregate Products]
     PROD --> CA[Consumer-Aligned Products or Views]
     AGG --> CA
-    PROD --> ACCESS[Unified Data Access Layer]
+    PROD --> ACCESS[Unified Access Design]
     AGG --> ACCESS
     CA --> ACCESS
     ACCESS --> CONS[Consumption]

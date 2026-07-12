@@ -10,8 +10,8 @@ This repository is both an architecture guide and a delivery reference. Follow t
 | Make an architecture decision | [Principles](principles.md) | A consistent decision basis |
 | Design the target architecture | [Target Architecture](../architecture/target-architecture.md) and [Reference Architecture](../architecture/reference-architecture.md) | Six-plane model and capability map |
 | Design product meaning and context | [Semantic and Context Design](../architecture/semantic-context-design.md) | Versioned semantics, relationships, usage context, and authoritative references |
-| Design identity and access | [Access Control Design](../architecture/access-control-design.md) | Named-user and workload identity, service and data decisions, entitlements, and evidence |
-| Design logical data access | [Unified Data Access Layer](../architecture/unified-data-access-layer.md) | Provider-independent product ports, policy enforcement, runtime routing, and access evidence |
+| Design identity and access | [Unified Access Design](../architecture/unified-access-design.md) | Named-user and workload identity, service and data decisions, entitlements, and evidence |
+| Design logical data access | [Unified Access Design](../architecture/unified-access-design.md) | Provider-independent product ports, policy enforcement, runtime routing, and access evidence |
 | Evaluate vendors and technology | [Technology Selection Standard](../standards/technology-selection-standard.md) | Capability mapping, mandatory gates, weighted evidence, TCO, proof and exit plan |
 | Design the portal experience | [Data Service Portal Model](../architecture/data-service-portal-model.md) | Journeys, product experience, agreements, and state boundaries |
 | Design the developer experience | [Data Product Developer Experience](../architecture/data-product-developer-experience.md) | Declarative workloads, environments, deployment, rollback, and channel parity |

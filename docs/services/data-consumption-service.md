@@ -4,7 +4,7 @@
 
 The data consumption service makes trusted data available to consumers through fit-for-purpose access patterns. It supports BI, applications, platforms, AI agents, and AI models without requiring every consumer to build custom extraction logic.
 
-It implements the [Unified Data Access Layer](../architecture/unified-data-access-layer.md): one governed logical access contract above distributed physical data-product storage and runtimes.
+It implements the [Unified Access Design](../architecture/unified-access-design.md): one governed logical access contract above distributed physical data-product storage and runtimes.
 
 ## Scope
 
@@ -73,7 +73,7 @@ Use the [AI-Ready Data Standard](../standards/ai-ready-data-standard.md) when de
 
 Use the [Semantic and Context Design](../architecture/semantic-context-design.md) to keep BI, application, platform, and AI interpretations consistent without introducing a duplicate metadata authority.
 
-Use the [Access Control Design](../architecture/access-control-design.md) for named-user, workload, delegated, agent, and external access. A service permit never overrides a data deny.
+Use the [Unified Access Design](../architecture/unified-access-design.md) for named-user, workload, delegated, agent, and external access. A service permit never overrides a data deny.
 
 ## Controls
 

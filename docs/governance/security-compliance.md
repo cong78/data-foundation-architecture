@@ -1,6 +1,6 @@
 # Security and Compliance
 
-Use the [Access Control Design](../architecture/access-control-design.md) and [Access Control Standard](../standards/access-control-standard.md) for named-user, workload, delegated, agent, service, and data authorization requirements.
+Use the [Unified Access Design](../architecture/unified-access-design.md) and [Access Control Standard](../standards/access-control-standard.md) for named-user, workload, delegated, agent, service, and data authorization requirements.
 
 Security and compliance controls must be embedded across ingestion, product creation, consumption, and sharing.
 

@@ -91,8 +91,7 @@ nav:
           - Reference Architecture: architecture/reference-architecture.md
           - Data Foundation Model: architecture/data-foundation-model.md
           - Semantic and Context Design: architecture/semantic-context-design.md
-          - Access Control Design: architecture/access-control-design.md
-          - Unified Data Access Layer: architecture/unified-data-access-layer.md
+          - Unified Access Design: architecture/unified-access-design.md
       - Data Product Lifecycle Design: architecture/data-product-lifecycle-design.md
       - Observability Design: architecture/observability-design.md
       - Experience and AI:

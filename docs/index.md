@@ -16,7 +16,7 @@ Architecture guidance for an **AI-ready data foundation**: open contracts, reusa
 | Design or implement a foundation service | [Services Overview](services/index.md) | The relevant service page, [architecture patterns](implementation/service-implementation-patterns.md), and standards |
 | Build and deploy a data product | [Data Product Developer Experience](architecture/data-product-developer-experience.md) | [Data Product Workload Standard](standards/data-product-workload-standard.md) and [workload template](delivery-templates/data-product-workload-template.md) |
 | Create and govern a data product | [Data Product Lifecycle Design](architecture/data-product-lifecycle-design.md) | [Data Contract Standard](standards/data-contract-standard.md) and [Data Product Template](delivery-templates/data-product-template.md) |
-| Design access for users and systems | [Access Control Design](architecture/access-control-design.md) | [Unified Data Access Layer](architecture/unified-data-access-layer.md) and [Access Control Standard](standards/access-control-standard.md) |
+| Design access for users and systems | [Unified Access Design](architecture/unified-access-design.md) | [Access Control Standard](standards/access-control-standard.md) and [Data Consumption Service](services/data-consumption-service.md) |
 | Enable agents, models, or the Data Service AI Assistant | [Agentic Data Foundation](architecture/agentic-data-foundation.md) | [Agent, Skill and LLM Standard](standards/agent-skill-llm-standard.md) and [AI Readiness Assessment](assessments/ai-readiness-assessment.md) |
 
 ## Architecture at a Glance

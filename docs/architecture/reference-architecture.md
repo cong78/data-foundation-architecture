@@ -38,7 +38,7 @@ Read each lane from left to right. **Build** and **Access** carry the runtime da
   <section class="standards-map-lane lane-access">
     <div class="standards-map-cell"><small>Access</small><strong>Product · Port · Consumer Purpose</strong><p>Stable product interfaces above distributed physical storage.</p></div>
     <span class="standards-map-arrow" aria-hidden="true"></span>
-    <div class="standards-map-cell standards-map-focus"><a href="/architecture/unified-data-access-layer/"><strong>Unified Data Access Layer</strong></a><a href="/services/data-sharing-service/"><strong>Data Sharing</strong></a><a href="/architecture/access-control-design/"><strong>Access Control</strong></a></div>
+    <div class="standards-map-cell standards-map-focus"><a href="/architecture/unified-access-design/"><strong>Unified Access Design</strong></a><a href="/services/data-sharing-service/"><strong>Data Sharing</strong></a></div>
     <span class="standards-map-arrow" aria-hidden="true"></span>
     <div class="standards-map-cell"><strong>Governed outcomes</strong><p>BI, applications, platforms, APIs, events, partners, agents, models, features, and retrieval.</p></div>
   </section>

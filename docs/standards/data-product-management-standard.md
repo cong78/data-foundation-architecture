@@ -41,7 +41,7 @@ The product must demonstrate eight qualities adapted from the [Data Developer Pl
 | Independent | The product has one clear purpose, accountable ownership, explicit dependencies, independently manageable lifecycle and value beyond one pipeline output. | Product brief, owner, ports, dependency inventory, workload, SLOs, support, usage and value measures. |
 | Secure | Human and machine access is authenticated, purpose-bound, least-privilege, enforceable, observable, expiring and revocable. | Classification, service and data policy, entitlement, obligations, allow and deny tests, audit and revocation evidence. |
 
-“Natively accessible” does not permit direct access to physical storage. It means that the [Unified Data Access Layer](../architecture/unified-data-access-layer.md) exposes a governed interface that fits the consumer's channel.
+“Natively accessible” does not permit direct access to physical storage. It means that the [Unified Access Design](../architecture/unified-access-design.md) exposes a governed interface that fits the consumer's channel.
 
 ## Product Lifecycle States
 
