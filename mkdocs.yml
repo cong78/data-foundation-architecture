@@ -113,6 +113,7 @@ nav:
       - OpenTelemetry Standard: standards/otel-telemetry-standard.md
       - AI-Ready Data Standard: standards/ai-ready-data-standard.md
       - Agent, Skill and LLM Standard: standards/agent-skill-llm-standard.md
+      - Technology Selection Standard: standards/technology-selection-standard.md
   - Governance:
       - Governance Overview: governance/index.md
       - Governance Model: governance/governance-model.md
@@ -128,6 +129,7 @@ nav:
       - Apply Templates:
           - Data Product Template: delivery-templates/data-product-template.md
           - Data Product Workload Template: delivery-templates/data-product-workload-template.md
+          - Technology Selection Record: delivery-templates/technology-selection-template.md
           - Source Onboarding Template: delivery-templates/source-onboarding-template.md
           - Interoperability Conformance: delivery-templates/interoperability-conformance-template.md
           - Agent and Skill Template: delivery-templates/agent-skill-template.md

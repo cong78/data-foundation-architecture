@@ -26,6 +26,7 @@ This page defines the key architecture decisions that should be made explicitly.
 | Agent autonomy | Default to read, recommend and draft; require explicit approval for consequential actions. | Limits excessive agency and preserves accountability. |
 | Observability | Use OpenTelemetry-compatible telemetry for foundation services and data products. | Creates consistent operational and trust signals. |
 | Sharing | Share from live products using recipient-specific packaging and revocable entitlements. | Reduces risk and improves auditability. |
+| Technology selection | Select named products only after capability mapping, mandatory gates, weighted assessment, representative proof, TCO and exit review. | Prevents feature-led selection and makes vendor trade-offs evidence-based. |
 
 ## ADR Template
 
@@ -69,6 +70,7 @@ These decisions require architecture and governance review:
 - Emitting sensitive data into traces, logs, metrics, or events.
 - Creating a new ingestion or consumption pattern outside standard patterns.
 - Selecting a platform feature without a canonical export or tested exit path.
+- Selecting a vendor or technology without approved requirements, knockout gates, proof-of-capability, TCO, and an exit plan.
 - Storing canonical product, contract, policy, entitlement, lineage, or observability state only in the portal.
 - Presenting inferred or simulated health, usage, quality, or lineage as measured evidence.
 - Giving an agent direct database, platform administrator, or unrestricted network access.

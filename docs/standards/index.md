@@ -38,6 +38,7 @@ The standards turn the target architecture into enforceable design and delivery 
     <div class="standards-map-cell standards-map-focus">
       <a href="data-product-workload-standard/"><strong>Data Product Workload</strong></a>
       <a href="open-interoperability-standard/"><strong>Open Interoperability</strong></a>
+      <a href="technology-selection-standard/"><strong>Technology Selection</strong></a>
     </div>
     <span class="standards-map-arrow" aria-hidden="true"></span>
     <div class="standards-map-cell">
@@ -82,6 +83,7 @@ The lanes show the primary design outcomes. The matrices below capture supportin
 | [OpenTelemetry](otel-telemetry-standard.md) | S | S | S | S | P | S |
 | [AI-Ready Data](ai-ready-data-standard.md) | S | S | P | P | P | P |
 | [Agent, Skill and LLM](agent-skill-llm-standard.md) | P | P | S | P | P | P |
+| [Technology Selection](technology-selection-standard.md) | S | P | P | P | P | P |
 
 ### Plane Interpretation
 
@@ -118,6 +120,7 @@ The lanes show the primary design outcomes. The matrices below capture supportin
 | OpenTelemetry | Every service boundary, pipeline run, product update, access, agent action, and incident. | Correlated traces, metrics, logs, stable identifiers, retention and cardinality controls. |
 | AI-Ready Data | AI-use approval, retrieval or feature publication, training and evaluation access, runtime grounding. | AI usage contract, lineage, snapshot or index version, quality and freshness, purpose decision, evaluation result. |
 | Agent, Skill and LLM | Agent and skill release, model routing, context retrieval, tool call, side effect, approval, suspension. | Manifests, schemas, policy decision, evaluation suite, action preview, receipt, trace, audit event. |
+| Technology Selection | Requirements, shortlist, knockout review, scoring, proof-of-capability, commercial review, decision and periodic reassessment. | Approved criteria and weights, gate evidence, scores, confidence, test results, TCO, risks, exit plan and ADR. |
 
 ## Apply the Standards in Order
 
@@ -129,6 +132,7 @@ The lanes show the primary design outcomes. The matrices below capture supportin
 6. Instrument services and products with the **OpenTelemetry Standard**.
 7. Add AI permissions, semantics, lineage, and evaluation data with the **AI-Ready Data Standard**.
 8. Add agents, skills, models, context, approvals, and evaluations with the **Agent, Skill and LLM Standard**.
+9. Evaluate actual products and vendors against all applicable requirements with the **Technology Selection Standard**.
 
 !!! tip "Design review rule"
     Review standards by architecture boundary, not by document. For each service interface, identify the applicable contract, policy, product state, telemetry, interoperability profile, and AI or agent controls before implementation.
