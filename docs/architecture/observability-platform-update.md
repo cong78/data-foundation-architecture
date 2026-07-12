@@ -48,6 +48,135 @@ flowchart TB
     USERS --> PORTAL
 ```
 
+## OTLP Solution Design
+
+OTLP is the transport contract between telemetry producers, collectors, and observability backends. The current OTLP specification defines stable trace, metric, and log signals over Protobuf using gRPC or HTTP; the default OTLP/gRPC port is `4317`. Use OTLP for operational signals and compact product-context signals, while keeping detailed profiles, failed-record samples, lineage views, and quality evidence in their authoritative data systems. [OTLP specification](https://opentelemetry.io/docs/specs/otlp/)
+
+```mermaid
+flowchart LR
+    subgraph PRODUCERS["Telemetry producers"]
+        SDK["OTel SDKs\nservices · APIs · workloads"]
+        DBX["Databricks adapters\njobs · pipelines · SQL · system tables"]
+        DQ2["Quality publisher\nquality · freshness · drift results"]
+    end
+
+    SDK -->|OTLP/gRPC 4317\nor OTLP/HTTP 4318| EDGE["OTel Collector / Grafana Alloy\nreceive · enrich · redact · batch · route"]
+    DBX --> EDGE
+    DQ2 -->|OTLP metrics/events\nwith evidence links| EDGE
+
+    EDGE -->|traces · metrics · logs| GC["Grafana Cloud"]
+    EDGE -->|optional OTLP fan-out| OTELBE["Independent OTLP receiver\nconformance and resilience test"]
+    DBX --> UC2["Unity Catalog / Databricks\nprofiles · lineage · quality evidence"]
+    DQ2 --> UC2
+    UC2 -. "evidence_uri · product version\nquality result · lineage reference" .-> GC
+```
+
+### Signal Responsibilities
+
+| Signal or artifact | Transport and location | Required design |
+| --- | --- | --- |
+| Traces | OTLP to the collector, then Grafana Cloud | Trace ingestion, transformation, publication, access, sharing, and incident steps. |
+| Metrics | OTLP to Grafana Cloud; product health metrics also exposed to the portal | Keep labels bounded. Use product, version, domain, environment, quality dimension, and outcome; never use raw business values. |
+| Logs | OTLP to Grafana Cloud | Structured logs with `trace_id`, `span_id`, actor type, run id, product id, and redacted error context. |
+| Quality and profiling | Databricks/Unity Catalog | Store detailed distributions, profiling results, failed checks, evidence, and retention-controlled samples in the data platform. |
+| Lineage | OpenLineage and Unity Catalog | Preserve runtime lineage and catalog lineage; correlate with `data.pipeline.run_id`, product version, and trace id. |
+| Product lifecycle events | Contracted event or OTLP log/event projection | Publish product created, tested, go-live, degraded, recovered, and retired events with evidence references. |
+
+### Collector Placement
+
+Use a two-tier collector pattern:
+
+1. **Local or workload collectors** receive SDK, node, container, and job telemetry close to the source. They add environment and runtime resource attributes, apply basic batching, and protect workloads from backend outages.
+2. **Central gateway collectors** receive OTLP from local collectors and Databricks adapters. They apply authentication, redaction, sampling, routing, retry, queueing, and export to Grafana Cloud or an independent receiver.
+
+The OpenTelemetry Collector is designed for receive, process, and export pipelines, so this separation keeps instrumentation vendor-neutral and allows backend changes without changing every product workload. [Collector architecture](https://opentelemetry.io/docs/collector/architecture/)
+
+### Required OTLP Resource Context
+
+Set stable resource attributes at the producer or collector gateway. Use OpenTelemetry semantic conventions first, then the existing `data.*` enterprise attributes for product context. Semantic conventions provide the common meaning and naming model across traces, metrics, logs, and resources. [OpenTelemetry semantic conventions](https://opentelemetry.io/docs/specs/semconv/)
+
+| Attribute | Level | Example |
+| --- | --- | --- |
+| `service.name` | Resource | `data-product-creation-service` |
+| `deployment.environment.name` | Resource | `prod` |
+| `cloud.region` | Resource | `eu-west-1` |
+| `data.product.id` | Signal context | `customer-profile` |
+| `data.product.version` | Signal context | `3.2.0` |
+| `data.contract.id` and `data.contract.version` | Signal context | `customer-profile-contract`, `2.1.0` |
+| `data.pipeline.id` and `data.pipeline.run_id` | Span/event context | `customer-profile-build`, `run-2026-07-13-001` |
+| `data.quality.dimension` | Metric/event context | `freshness` |
+| `data.observation.source` | Metric/event context | `databricks.unity_catalog` or `grafana.cloud` |
+| `data.evidence.uri` | Event/link context | Portal or catalog evidence reference, never raw data |
+
+### Collector Pipeline Policy
+
+```yaml
+receivers:
+  otlp:
+    protocols:
+      grpc: { endpoint: 0.0.0.0:4317 }
+      http: { endpoint: 0.0.0.0:4318 }
+
+processors:
+  memory_limiter: {}
+  batch: {}
+  attributes/product_context: {}
+  filter/sensitive_payloads: {}
+exporters:
+  otlp/grafana_cloud: {}
+  otlp/independent_receiver: {}
+
+service:
+  pipelines:
+    traces:
+      receivers: [otlp]
+      processors: [memory_limiter, attributes/product_context, filter/sensitive_payloads, batch]
+      exporters: [otlp/grafana_cloud]
+    metrics:
+      receivers: [otlp]
+      processors: [memory_limiter, attributes/product_context, filter/sensitive_payloads, batch]
+      exporters: [otlp/grafana_cloud]
+    logs:
+      receivers: [otlp]
+      processors: [memory_limiter, attributes/product_context, filter/sensitive_payloads, batch]
+      exporters: [otlp/grafana_cloud]
+```
+
+The YAML is a logical design, not a production collector configuration. Production configuration must add TLS, authentication, queue storage, retry limits, exporter endpoints, resource detection, sampling policy, and component-specific stability checks.
+
+### Product Health Event Pattern
+
+Publish a compact event when a product health state changes. Keep the detailed result in Databricks and link to it:
+
+```json
+{
+  "event_name": "data.product.health.changed",
+  "product_id": "customer-profile",
+  "product_version": "3.2.0",
+  "contract_version": "2.1.0",
+  "pipeline_run_id": "run-2026-07-13-001",
+  "quality_dimension": "freshness",
+  "status": "breached",
+  "observed_at": "2026-07-13T08:15:00Z",
+  "evidence_uri": "catalog://quality/customer-profile/3.2.0/observations/12345",
+  "trace_id": "correlated-runtime-trace-id"
+}
+```
+
+This gives Grafana enough context to alert and investigate while preserving Unity Catalog/Databricks as the authoritative place for the profile, lineage, data contract, and detailed evidence.
+
+### Protocol and Reliability Decisions
+
+| Decision | Recommendation |
+| --- | --- |
+| Primary export | OTLP/gRPC for managed service-to-collector traffic; support OTLP/HTTP for constrained or cross-network clients. |
+| Security | TLS in transit, workload identity or short-lived credentials, private connectivity where available, and no shared static secrets in workloads. |
+| Backpressure | Memory limiter, bounded queues, retries with backoff, and explicit drop policy by signal priority. |
+| Sampling | Tail-sample high-volume traces, retain all product health breaches, access denials, go-live events, and incident-linked traces. |
+| Cardinality | Do not put product version, consumer id, run id, or trace id into high-volume metric labels unless the backend and cost model support it; use events and exemplars for detailed correlation. |
+| Data hygiene | Reject or redact personal data, business payloads, query text, and raw records before export. |
+| Conformance | Validate OTLP export with an independent receiver and test schema, retry, outage, duplicate, and recovery behavior. |
+
 ## What Each Platform Owns
 
 | Concern | Databricks and Unity Catalog | Grafana Cloud | Shared outcome |
@@ -218,4 +347,3 @@ Show products by owner, domain, criticality, quality posture, freshness posture,
 - [Databricks lineage system tables](https://docs.databricks.com/aws/en/admin/system-tables/lineage)
 - [Grafana Cloud Databricks integration](https://grafana.com/docs/grafana-cloud/monitor-infrastructure/integrations/integration-reference/integration-databricks/)
 - [Grafana Cloud OpenTelemetry integration](https://grafana.com/docs/grafana-cloud/monitor-infrastructure/integrations/integration-reference/integration-opentelemetry/)
-
