@@ -60,6 +60,10 @@ markdown_extensions:
 
 plugins:
   - search
+  - git-revision-date-localized:
+      type: date
+      enable_creation_date: true
+      fallback_to_build_date: true
   - awesome-pages
   - glightbox
   - charts:
