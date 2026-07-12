@@ -4,54 +4,45 @@ The reference architecture shows the minimum building blocks needed to implement
 
 ## Architecture View
 
-```mermaid
-flowchart TB
-    subgraph Source["Source Layer"]
-        S1[Enterprise Applications]
-        S2[Files and Documents]
-        S3[APIs and Databases]
-        S4[Events and Streams]
-    end
+Read each lane from left to right. **Build** and **Access** carry the runtime data flow; **Engage** and **Govern** control every journey without becoming duplicate systems of record.
 
-    subgraph Foundation["Data Foundation Services"]
-        PORTAL[Data Service Portal]
-        I[Data Ingestion]
-        P[Data Product Creation]
-        C[Data Consumption]
-        X[Data Sharing]
-        O[Data Observability]
-    end
+<div class="standards-map reference-map" role="img" aria-label="Reference architecture organized into engage, govern, build, and access lanes">
+  <div class="standards-map-head" aria-hidden="true">
+    <span>Inputs</span><i></i><span>Foundation capabilities</span><i></i><span>Outcomes</span>
+  </div>
 
-    subgraph Control["Governance and Control Plane"]
-        G1[Catalog and Metadata]
-        G2[Policy and Access]
-        G3[Lineage and Quality]
-        G4[Security and Audit]
-    end
+  <section class="standards-map-lane lane-govern">
+    <div class="standards-map-cell"><small>Engage</small><strong>People · Teams · Systems</strong><p>Named users, workloads, product teams, consumers, and platform operators.</p></div>
+    <span class="standards-map-arrow" aria-hidden="true"></span>
+    <div class="standards-map-cell standards-map-focus"><a href="/services/data-service-portal/"><strong>Data Service Portal</strong></a><a href="/architecture/data-product-developer-experience/"><strong>Developer Workspace</strong></a><a href="/services/data-service-ai-assistant/"><strong>Data Service AI Assistant</strong></a></div>
+    <span class="standards-map-arrow" aria-hidden="true"></span>
+    <div class="standards-map-cell"><strong>Intent and task context</strong><p>Discovery, requests, workspaces, approvals, status, evidence, and action receipts.</p></div>
+  </section>
 
-    subgraph Consumer["Consumer Layer"]
-        B[BI and Analytics]
-        A[Applications and Platforms]
-        M[AI Agents and Models]
-        E[Customers, Suppliers, Partners]
-    end
+  <section class="standards-map-lane lane-build">
+    <div class="standards-map-cell"><small>Govern</small><strong>Identity · Purpose · Product</strong><p>Authenticated actor and subject, product identity, use case, classification, and environment.</p></div>
+    <span class="standards-map-arrow" aria-hidden="true"></span>
+    <div class="standards-map-cell standards-map-focus"><strong>Catalog · Contract · Semantics</strong><strong>Policy · Workflow · Entitlement</strong><strong>Lineage · Quality · Go-Live</strong></div>
+    <span class="standards-map-arrow" aria-hidden="true"></span>
+    <div class="standards-map-cell"><strong>Decisions and controls</strong><p>Versioned metadata, policy decisions, obligations, lifecycle state, and audit evidence.</p></div>
+  </section>
 
-    Source --> I --> P
-    PORTAL --> I
-    PORTAL --> P
-    PORTAL --> C
-    PORTAL --> X
-    PORTAL --> O
-    P --> C --> B
-    C --> A
-    C --> M
-    P --> X --> E
-    I -. telemetry .-> O
-    P -. telemetry .-> O
-    C -. telemetry .-> O
-    X -. telemetry .-> O
-    Control -. policies and metadata .-> Foundation
-```
+  <section class="standards-map-lane lane-intelligence">
+    <div class="standards-map-cell"><small>Build</small><strong>Files · Databases · APIs · Events</strong><p>Enterprise sources and approved external inputs.</p></div>
+    <span class="standards-map-arrow" aria-hidden="true"></span>
+    <div class="standards-map-cell standards-map-focus"><a href="/services/data-ingestion-service/"><strong>Data Ingestion</strong></a><a href="/services/data-product-creation-service/"><strong>Product Creation</strong></a><strong>Physical Product Storage</strong><a href="/services/data-observability-service/"><strong>Data Observability</strong></a></div>
+    <span class="standards-map-arrow" aria-hidden="true"></span>
+    <div class="standards-map-cell"><strong>Live data products</strong><p>Source-aligned, aggregate, and consumer-aligned outputs with contracts, context, SLOs, and lineage.</p></div>
+  </section>
+
+  <section class="standards-map-lane lane-access">
+    <div class="standards-map-cell"><small>Access</small><strong>Product · Port · Consumer Purpose</strong><p>Stable product interfaces above distributed physical storage.</p></div>
+    <span class="standards-map-arrow" aria-hidden="true"></span>
+    <div class="standards-map-cell standards-map-focus"><a href="/architecture/unified-data-access-layer/"><strong>Unified Data Access Layer</strong></a><a href="/services/data-sharing-service/"><strong>Data Sharing</strong></a><a href="/architecture/access-control-design/"><strong>Access Control</strong></a></div>
+    <span class="standards-map-arrow" aria-hidden="true"></span>
+    <div class="standards-map-cell"><strong>Governed outcomes</strong><p>BI, applications, platforms, APIs, events, partners, agents, models, features, and retrieval.</p></div>
+  </section>
+</div>
 
 ## Capability Map
 

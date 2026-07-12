@@ -192,6 +192,15 @@
   --lane-bg: rgba(37, 122, 75, 0.06);
 }
 
+.lane-access {
+  --lane-color: #59636e;
+  --lane-bg: rgba(89, 99, 110, 0.07);
+}
+
+.reference-map .standards-map-focus > strong + strong {
+  margin-top: 0.28rem;
+}
+
 .standards-map-cell {
   min-width: 0;
   padding: 0.65rem;
