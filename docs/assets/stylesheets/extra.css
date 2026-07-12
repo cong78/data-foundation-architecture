@@ -3,6 +3,17 @@
   background-color: #0f238c;
 }
 
+.md-typeset {
+  font-size: 0.84rem;
+  line-height: 1.65;
+}
+
+.md-nav__link,
+.md-tabs__link {
+  font-size: 0.72rem;
+  line-height: 1.45;
+}
+
 .md-tabs__link {
   color: #cbd6ff;
   opacity: 1;
