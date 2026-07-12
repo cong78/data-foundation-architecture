@@ -1,7 +1,6 @@
 # Data Foundation Architecture
 
 <div class="brand-lockup">
-  <img src="assets/images/data-foundation-logo.svg" alt="Data Foundation Architecture logo">
   <div>
     <strong>Data Foundation Architecture</strong>
     <span>Trusted data products for analytics, applications, platforms, sharing, agents, and models.</span>
