@@ -1,4 +1,4 @@
-# Data Product Lifecycle
+# Data Product Lifecycle Design
 
 Data products are trusted datasets or data interfaces created for reuse. They are managed through a lifecycle from idea to retirement so ownership, trust, access, quality, and observability remain clear.
 

@@ -11,7 +11,7 @@ Governance defines who decides, which controls apply, and how foundation service
   <section class="standards-map-lane lane-govern">
     <div class="standards-map-cell"><small>Decide</small><strong>Ownership · Authority · Exceptions</strong><p>Place decisions with accountable roles and transparent forums.</p></div>
     <span class="standards-map-arrow" aria-hidden="true"></span>
-    <div class="standards-map-cell standards-map-focus"><a href="governance-model/"><strong>Governance Model</strong></a><a href="../architecture/data-product-lifecycle/"><strong>Product Lifecycle</strong></a></div>
+    <div class="standards-map-cell standards-map-focus"><a href="governance-model/"><strong>Governance Model</strong></a><a href="../architecture/data-product-lifecycle-design/"><strong>Product Lifecycle Design</strong></a></div>
     <span class="standards-map-arrow" aria-hidden="true"></span>
     <div class="standards-map-cell"><strong>Clear accountability</strong><p>Owners, stewards, forums, decision rights, evidence, and expiring exceptions.</p></div>
   </section>
