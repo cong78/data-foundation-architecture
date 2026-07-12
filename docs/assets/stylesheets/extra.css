@@ -1,7 +1,7 @@
 .md-header,
 .md-tabs {
-  background-color: #eff2f4;
-  color: #0f238c;
+  background: linear-gradient(105deg, #082a43 0%, #152f6a 36%, #273da5 64%, #4987c7 84%, #5eafd2 100%);
+  color: #ffffff;
 }
 
 .md-typeset {
@@ -16,14 +16,14 @@
 }
 
 .md-tabs__link {
-  color: #555464;
+  color: #d8e9f2;
   opacity: 1;
 }
 
 .md-tabs__link:hover,
 .md-tabs__link:focus-visible,
 .md-tabs__item--active .md-tabs__link {
-  color: #0f238c;
+  color: #ffffff;
 }
 
 .md-tabs__item--active .md-tabs__link {
