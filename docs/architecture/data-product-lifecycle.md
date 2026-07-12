@@ -4,6 +4,8 @@ Data products are trusted datasets or data interfaces created for reuse. They ar
 
 Use the [Data Product Management Standard](../standards/data-product-management-standard.md) as the mandatory management model for product ownership, lifecycle states, go-live gates, portfolio reviews, and enforcement rules.
 
+The product is ready only when it is discoverable, addressable, understandable, natively accessible through governed interfaces, trustworthy, interoperable, independent, and secure. These qualities are demonstrated during delivery and continuously measured after go-live.
+
 ## Lifecycle Stages
 
 | Stage | Description | Key Controls |
@@ -28,6 +30,7 @@ Use the [Data Product Management Standard](../standards/data-product-management-
 - Freshness and availability expectations.
 - Access request process and approved consumption patterns.
 - Version and lifecycle state.
+- Product-quality evidence for discoverability, addressability, understandability, accessibility, trust, interoperability, independence, and security.
 
 ## Product Management Workflow
 

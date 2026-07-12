@@ -23,6 +23,30 @@ Use this template when proposing, designing, approving go-live, or publishing a 
 
 Describe the business concept represented by the product. Include what the product is and what it is not.
 
+## Product Outcome
+
+| Field | Value |
+| --- | --- |
+| Consumer problem |  |
+| Expected business or operational outcome |  |
+| Value measure and baseline |  |
+| Existing products considered |  |
+| Why a new or changed product is required |  |
+| Explicit non-goals |  |
+
+## Product Quality Assessment
+
+| Quality | Acceptance Statement | Status | Evidence |
+| --- | --- | --- | --- |
+| Discoverable | Intended consumers can find the product using their business language and use case. |  |  |
+| Addressable | Product and ports have stable, provider-independent identifiers. |  |  |
+| Understandable | Meaning, grain, metrics, limitations, quality and usage are clear. |  |  |
+| Natively accessible | A representative consumer uses an approved interface through familiar tools. |  |  |
+| Trustworthy | Contract, lineage, quality, freshness, availability and support are proven. |  |  |
+| Interoperable | Artifacts and interfaces pass applicable independent conformance tests. |  |  |
+| Independent | Purpose, ownership, ports, dependencies, lifecycle and value are explicit. |  |  |
+| Secure | Named-user and workload access, obligations, expiry, audit and revocation are proven. |  |  |
+
 ## Semantic Context
 
 | Field | Value |
@@ -69,6 +93,7 @@ Describe the business concept represented by the product. Include what the produ
 | Documentation gate |  |  |
 | Semantic context gate |  |  |
 | Portability gate |  |  |
+| Product qualities gate |  |  |
 
 ## Open Interfaces
 
