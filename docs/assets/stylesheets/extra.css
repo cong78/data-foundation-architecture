@@ -163,6 +163,195 @@
 .layer-products { background: rgba(37, 122, 75, 0.07); border-left-color: #257a4b; }
 .layer-platform { background: var(--md-code-bg-color); border-left-color: #59636e; }
 
+.access-layer-map {
+  margin: 1.2rem 0;
+}
+
+.access-map-band,
+.access-map-core,
+.access-map-rails section {
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 0.35rem;
+}
+
+.access-map-band {
+  padding: 0.85rem 1rem;
+  text-align: center;
+}
+
+.access-map-band small,
+.access-map-band strong,
+.access-map-core header small,
+.access-map-core header strong,
+.access-map-rails small,
+.access-map-rails strong {
+  display: block;
+}
+
+.access-map-band small,
+.access-map-core header small,
+.access-map-rails small {
+  margin-bottom: 0.2rem;
+  color: var(--md-default-fg-color--light);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.access-map-consumers {
+  border-top: 0.22rem solid #0f238c;
+  background: rgba(15, 35, 140, 0.06);
+}
+
+.access-map-down {
+  position: relative;
+  width: 2px;
+  height: 1.6rem;
+  margin: 0 auto;
+  background: rgba(15, 35, 140, 0.55);
+}
+
+.access-map-down::after {
+  position: absolute;
+  right: -3px;
+  bottom: 0;
+  width: 7px;
+  height: 7px;
+  border-right: 2px solid #0f238c;
+  border-bottom: 2px solid #0f238c;
+  content: "";
+  transform: rotate(45deg);
+}
+
+.access-map-core {
+  overflow: hidden;
+  border-color: rgba(15, 35, 140, 0.35);
+}
+
+.access-map-core header {
+  padding: 0.75rem 1rem;
+  background: #0f238c;
+  color: #ffffff;
+  text-align: center;
+}
+
+.access-map-core header small {
+  color: #cbd6ff;
+}
+
+.access-map-steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.access-map-steps article {
+  position: relative;
+  min-width: 0;
+  min-height: 8rem;
+  border-right: 1px solid var(--md-default-fg-color--lightest);
+  padding: 0.9rem;
+  background: var(--md-default-bg-color);
+}
+
+.access-map-steps article:last-child {
+  border-right: 0;
+}
+
+.access-map-steps span {
+  display: grid;
+  place-items: center;
+  width: 1.65rem;
+  height: 1.65rem;
+  margin-bottom: 0.5rem;
+  border-radius: 50%;
+  background: rgba(15, 35, 140, 0.1);
+  color: #0f238c;
+  font-weight: 700;
+}
+
+.access-map-steps article:not(:last-child)::after {
+  position: absolute;
+  top: 1.25rem;
+  right: -0.25rem;
+  z-index: 1;
+  width: 0.45rem;
+  height: 0.45rem;
+  border-top: 2px solid #0f238c;
+  border-right: 2px solid #0f238c;
+  background: var(--md-default-bg-color);
+  content: "";
+  transform: rotate(45deg);
+}
+
+.access-map-steps p {
+  margin: 0.3rem 0 0;
+  color: var(--md-default-fg-color--light);
+  font-size: 0.74rem;
+  line-height: 1.45;
+}
+
+.access-map-rails {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.65rem;
+  margin-top: 0.65rem;
+}
+
+.access-map-rails section {
+  border-left: 0.25rem solid #1261a0;
+  padding: 0.7rem 0.85rem;
+  background: rgba(18, 97, 160, 0.05);
+}
+
+.access-map-rails section:last-child {
+  border-left-color: #257a4b;
+  background: rgba(37, 122, 75, 0.05);
+}
+
+.access-map-runtimes {
+  border-top: 0.22rem solid #59636e;
+  background: rgba(89, 99, 110, 0.06);
+}
+
+.access-map-runtimes > div {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.4rem;
+  margin-top: 0.65rem;
+}
+
+.access-map-runtimes span {
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 0.25rem;
+  padding: 0.4rem;
+  background: var(--md-default-bg-color);
+  font-size: 0.72rem;
+}
+
+@media screen and (max-width: 44.984375em) {
+  .access-map-steps,
+  .access-map-rails,
+  .access-map-runtimes > div {
+    grid-template-columns: 1fr;
+  }
+
+  .access-map-steps article {
+    min-height: 0;
+    border-right: 0;
+    border-bottom: 1px solid var(--md-default-fg-color--lightest);
+  }
+
+  .access-map-steps article:last-child {
+    border-bottom: 0;
+  }
+
+  .access-map-steps article:not(:last-child)::after {
+    top: auto;
+    right: 1.2rem;
+    bottom: -0.25rem;
+    transform: rotate(135deg);
+  }
+}
+
 .standards-map {
   margin: 1.2rem 0;
 }

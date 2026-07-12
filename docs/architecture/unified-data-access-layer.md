@@ -6,43 +6,45 @@ It is implemented by the **Data Consumption Service**. It is not a new system of
 
 ## Architecture
 
-```mermaid
-flowchart TB
-    CONSUMERS["Named Users · Systems · Apps · BI · Platforms · Agents · Models"]
+Read the main path from top to bottom. Control services provide authoritative decision context; observability records the decision and execution outcome.
 
-    subgraph ACCESS["Unified Data Access Layer"]
-        ENTRY["SQL · API · Event · File · Semantic · Feature · Retrieval"]
-        ID["Identity and Delegation"]
-        RESOLVE["Product, Port and Contract Resolution"]
-        AUTHZ["Service + Data Authorization"]
-        SEM["Semantic Context and Policy Obligations"]
-        ROUTE["Routing, Federation and Adapter Selection"]
-        EVIDENCE["Usage, Decision and OpenTelemetry Evidence"]
-    end
+<div class="access-layer-map" role="img" aria-label="Unified data access from consumers through four governed access stages to physical data product runtimes">
+  <section class="access-map-band access-map-consumers">
+    <small>Consumers and identities</small>
+    <strong>Named users · Workloads · Applications · BI · Platforms · Agents · Models</strong>
+  </section>
 
-    subgraph PHYSICAL["Physical Data Product Storage and Runtimes"]
-        LAKE["Open Tables and Files"]
-        WH["Warehouse or Query Engine"]
-        API["Product APIs"]
-        STREAM["Events and Streams"]
-        FEATURE["Feature Views"]
-        INDEX["Retrieval and Context Indexes"]
-    end
+  <div class="access-map-down" aria-hidden="true"></div>
 
-    CONSUMERS --> ENTRY
-    ENTRY --> ID --> RESOLVE --> AUTHZ --> SEM --> ROUTE
-    ROUTE --> LAKE
-    ROUTE --> WH
-    ROUTE --> API
-    ROUTE --> STREAM
-    ROUTE --> FEATURE
-    ROUTE --> INDEX
-    ROUTE --> EVIDENCE
+  <section class="access-map-core">
+    <header><small>Logical access surface</small><strong>Unified Data Access Layer</strong></header>
+    <div class="access-map-steps">
+      <article><span>1</span><strong>Enter</strong><p>SQL · API · Event · File · Semantic · Feature · Retrieval</p></article>
+      <article><span>2</span><strong>Resolve</strong><p>Identity · Product · Port · Contract · Context · Health</p></article>
+      <article><span>3</span><strong>Decide</strong><p>Service authorization · Data authorization · Purpose · Obligations</p></article>
+      <article><span>4</span><strong>Execute</strong><p>Route · Push down · Federate · Validate · Minimize</p></article>
+    </div>
+  </section>
 
-    CONTROL["Catalog · Contracts · Policy · Entitlements · Lineage · Health"] -. "authoritative context" .-> RESOLVE
-    CONTROL -.-> AUTHZ
-    CONTROL -.-> SEM
-```
+  <div class="access-map-rails">
+    <section><small>Authoritative control context</small><strong>Catalog · Contracts · Policy · Entitlements · Semantics · Lineage · Health</strong></section>
+    <section><small>Decision and usage evidence</small><strong>OpenTelemetry · Audit · Usage · Cost · Outcome · Consumer impact</strong></section>
+  </div>
+
+  <div class="access-map-down" aria-hidden="true"></div>
+
+  <section class="access-map-band access-map-runtimes">
+    <small>Physical data product storage and runtimes</small>
+    <div>
+      <span>Open tables and files</span>
+      <span>Warehouse and query engines</span>
+      <span>Product APIs</span>
+      <span>Events and streams</span>
+      <span>Feature views</span>
+      <span>Retrieval and context indexes</span>
+    </div>
+  </section>
+</div>
 
 ## Core Design Principle
 
