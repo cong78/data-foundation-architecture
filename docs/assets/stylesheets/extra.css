@@ -82,7 +82,7 @@
   border-left: 0.22rem solid #0f238c;
   border-radius: 0.35rem;
   padding: 0.85rem;
-  background: linear-gradient(180deg, rgba(15, 35, 140, 0.08), var(--md-default-bg-color));
+  background: #ffffff;
   color: var(--md-default-fg-color);
   transition: border-color 120ms ease, box-shadow 120ms ease;
 }
