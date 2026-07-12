@@ -34,6 +34,9 @@ theme:
 extra_css:
   - assets/stylesheets/extra.css
 
+extra:
+  docs_version: "0.1.0"
+
 extra_javascript:
   - https://cdn.jsdelivr.net/npm/vega@5
   - https://cdn.jsdelivr.net/npm/vega-lite@5
