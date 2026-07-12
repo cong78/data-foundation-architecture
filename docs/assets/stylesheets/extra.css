@@ -57,207 +57,57 @@
   font-weight: 700;
 }
 
-.home-intro {
-  max-width: 46rem;
-  padding: 1.2rem 0 2rem;
+.foundation-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  gap: 0.8rem;
+  margin: 1rem 0;
 }
 
-.home-intro img {
-  width: 3.2rem;
-  height: 3.2rem;
-  margin-bottom: 0.9rem;
-}
-
-.home-intro > p {
-  margin: 0;
-  color: #0f238c;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
-.home-intro h1 {
-  margin: 0.35rem 0 0.7rem;
-  color: var(--md-default-fg-color);
-  font-size: 2.2rem;
-  line-height: 1.15;
-}
-
-.home-intro > strong,
-.home-intro > span {
-  display: block;
-}
-
-.home-intro > strong {
-  font-size: 1.15rem;
-  line-height: 1.45;
-}
-
-.home-intro > span {
-  max-width: 42rem;
-  margin-top: 0.4rem;
-  color: var(--md-default-fg-color--light);
-}
-
-.home-actions {
+.brand-lockup {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-  margin-top: 1.2rem;
-}
-
-.home-actions a {
-  border: 1px solid #0f238c;
-  border-radius: 0.25rem;
-  padding: 0.55rem 0.85rem;
-  color: #0f238c;
-  font-weight: 700;
-}
-
-.home-actions a:hover,
-.home-actions a:focus-visible {
-  box-shadow: 0 0.2rem 0.55rem rgba(15, 35, 140, 0.16);
-}
-
-.home-actions .home-action-primary {
-  background: #0f238c;
-  color: #ffffff;
-}
-
-.home-pillars {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1.4rem;
-  margin: 0 0 2.3rem;
-}
-
-.home-pillars a {
-  border-top: 0.2rem solid #0f238c;
-  padding-top: 0.8rem;
-  color: var(--md-default-fg-color);
-}
-
-.home-pillars a:nth-child(2) { border-top-color: #1261a0; }
-.home-pillars a:nth-child(3) { border-top-color: #257a4b; }
-
-.home-pillars small,
-.home-pillars strong,
-.home-pillars span {
-  display: block;
-}
-
-.home-pillars small {
-  color: var(--md-default-fg-color--light);
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
-.home-pillars strong {
-  margin: 0.2rem 0;
-}
-
-.home-pillars span {
-  color: var(--md-default-fg-color--light);
-  line-height: 1.5;
-}
-
-.home-routes {
-  margin: 0.8rem 0 2.2rem;
-  border-top: 1px solid var(--md-default-fg-color--lightest);
-}
-
-.home-routes > a {
-  display: grid;
-  grid-template-columns: 2.5rem minmax(0, 1fr) 1.2rem;
   align-items: center;
   gap: 0.75rem;
-  min-height: 4.5rem;
-  border-bottom: 1px solid var(--md-default-fg-color--lightest);
-  padding: 0.65rem 0.4rem;
-  color: var(--md-default-fg-color);
+  margin: 0.6rem 0 1rem;
 }
 
-.home-routes > a:hover,
-.home-routes > a:focus-visible {
-  padding-right: 0.1rem;
-  padding-left: 0.7rem;
-  background: rgba(15, 35, 140, 0.04);
+.brand-lockup img {
+  width: 2.8rem;
+  height: 2.8rem;
 }
 
-.home-routes > a > span {
-  color: #0f238c;
-  font-weight: 700;
-}
-
-.home-routes strong,
-.home-routes small {
+.brand-lockup strong {
   display: block;
+  color: #0f238c;
+  font-size: 1.15rem;
 }
 
-.home-routes small {
-  margin-top: 0.12rem;
+.brand-lockup span {
   color: var(--md-default-fg-color--light);
 }
 
-.home-routes i {
-  width: 0.55rem;
-  height: 0.55rem;
-  border-top: 2px solid #0f238c;
-  border-right: 2px solid #0f238c;
-  transform: rotate(45deg);
-}
 
-.home-decisions {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.7rem;
-}
-
-.home-decisions a {
-  min-height: 6rem;
+.foundation-card {
+  display: block;
   border: 1px solid var(--md-default-fg-color--lightest);
-  border-radius: 0.3rem;
+  border-left: 0.22rem solid #0f238c;
+  border-radius: 0.35rem;
   padding: 0.85rem;
+  background: linear-gradient(180deg, rgba(15, 35, 140, 0.08), var(--md-default-bg-color));
   color: var(--md-default-fg-color);
+  transition: border-color 120ms ease, box-shadow 120ms ease;
 }
 
-.home-decisions a:hover,
-.home-decisions a:focus-visible {
-  border-color: rgba(15, 35, 140, 0.45);
-  box-shadow: 0 0.2rem 0.5rem rgba(15, 35, 140, 0.1);
+.foundation-card:hover,
+.foundation-card:focus-visible {
+  border-color: rgba(15, 35, 140, 0.55);
+  box-shadow: 0 0.2rem 0.6rem rgba(15, 35, 140, 0.12);
 }
 
-.home-decisions strong,
-.home-decisions span {
+.foundation-card strong {
   display: block;
-}
-
-.home-decisions strong {
+  margin-bottom: 0.25rem;
   color: #0f238c;
-}
-
-.home-decisions span {
-  margin-top: 0.25rem;
-  color: var(--md-default-fg-color--light);
-  line-height: 1.45;
-}
-
-@media screen and (max-width: 44.984375em) {
-  .home-intro {
-    padding-top: 0.5rem;
-  }
-
-  .home-intro h1 {
-    font-size: 1.8rem;
-  }
-
-  .home-pillars,
-  .home-decisions {
-    grid-template-columns: 1fr;
-  }
-
-  .home-pillars {
-    gap: 0.9rem;
-  }
 }
 
 .architecture-stack {
