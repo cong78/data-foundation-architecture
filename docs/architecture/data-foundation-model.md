@@ -49,6 +49,7 @@ The source-aligned contract is the ownership handoff: the platform team remains 
 | Semantic context | Explain domain and product meaning without changing the source-preserving promise of source-aligned data. |
 | Identity, policy and unified access | Enforce named-user and workload access, purpose, obligations, expiry, and revocation. |
 | Observability | Correlate ingestion service telemetry with source-aligned and downstream product health end to end. |
+| Operations and reliability | Turn support demand, health signals, incidents, problems, changes, releases, and service risk into coordinated response, recovery, communication, and improvement. |
 
 ## Data Alignment Patterns
 

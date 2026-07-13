@@ -10,6 +10,7 @@ This runway describes a practical, sequenced path for maturing an enterprise dat
 - Establish source onboarding and ingestion patterns.
 - Implement catalog, classification, lineage, and access workflows.
 - Define OpenTelemetry conventions for foundation services and data products.
+- Define the Data Foundation Operations Service, production service records, support model, incident roles, escalation, change classes, continuity targets, and operational readiness criteria.
 - Create initial data product templates.
 - Create initial data contract templates and approval workflow.
 - Establish mandatory product go-live gates.
@@ -27,6 +28,8 @@ This runway describes a practical, sequenced path for maturing an enterprise dat
 - Standardize semantic and API consumption patterns.
 - Introduce cost and usage observability.
 - Add product health dashboards for freshness, quality, reliability, and consumer usage.
+- Launch portal support, service-status, incident communication, planned-change, and knowledge journeys.
+- Add problem management, release coordination, error budgets, recovery exercises, post-incident learning, and evidence-driven service improvement.
 - Build the Data Service Portal experience for product discovery and access.
 - Add domain team, use-case, workspace, saved-product, agreement, and portfolio views.
 - Standardize product detail around identity, ownership, contract, quality, interfaces, semantics, lineage, access, health, and change.
@@ -70,3 +73,4 @@ This runway describes a practical, sequenced path for maturing an enterprise dat
 - Percentage of live products passing their required interoperability conformance level.
 - Percentage of agent runs grounded in authoritative sources with complete trace and policy evidence.
 - Agent task success, unsupported-claim rate, approval accuracy, safety evaluation pass rate and cost per completed task.
+- Service SLO attainment, incident recovery and recurrence, change success, emergency-change rate, support experience, continuity exercise success, and operational toil removed.

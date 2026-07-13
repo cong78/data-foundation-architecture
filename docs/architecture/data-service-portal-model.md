@@ -43,6 +43,7 @@ Start with the user's intended outcome, not a platform component.
 | Understand | Define business semantics | Stewarded concept and product semantic mapping. |
 | Govern | Apply product policy | Policy decision and required evidence linked to the product lifecycle. |
 | Observe | Observe product health | Current SLO, quality, lineage, usage, incident, and cost evidence. |
+| Operate | Get support or manage an operational event | Routed support, incident status, planned change, maintenance, communication, recovery, or improvement task. |
 | Industrialize | Industrialize a product | Operated product with support, release, reliability, and lifecycle controls. |
 
 Every journey has an owner, purpose, current state, required evidence, decisions, next action, and link to authoritative records.
@@ -166,6 +167,6 @@ The portal must not be the sole owner of:
 - Users can discover products by domain, type, concept, use case, interface, health, and permitted purpose.
 - Domain teams can create and evolve products without bypassing common go-live gates.
 - Consumers can compare trust evidence and complete purpose-bound access through one journey.
-- Source onboarding, product creation, consumption, sharing, observability, semantics, policy, and AI journeys call real foundation services.
+- Source onboarding, product creation, consumption, sharing, observability, operations, semantics, policy, and AI journeys call real foundation services.
 - Product health, usage, quality, incidents, and lineage are measured rather than simulated.
 - Portal records can be rebuilt from canonical product, contract, catalog, policy, lineage, and observability sources.

@@ -1,6 +1,6 @@
 # Services Overview
 
-Foundation services are reusable architecture capabilities. They reduce custom delivery work by giving teams standard ways to ingest, create, consume, share, and observe trusted data products.
+Foundation services are reusable architecture capabilities. They reduce custom delivery work by giving teams standard ways to ingest, create, consume, share, observe, and reliably operate trusted data products.
 
 ## How the Services Fit
 
@@ -23,11 +23,11 @@ Foundation services are reusable architecture capabilities. They reduce custom d
     <div class="standards-map-cell"><strong>Live data products</strong><p>Contracted, policy-controlled interfaces for internal and external use.</p></div>
   </section>
   <section class="standards-map-lane lane-intelligence">
-    <div class="standards-map-cell"><small>Prove trust</small><strong>Observe · Explain · Improve</strong><p>Measure technical operation and product behavior end to end.</p></div>
+    <div class="standards-map-cell"><small>Operate and improve</small><strong>Observe · Respond · Learn</strong><p>Measure health, coordinate response, and improve services end to end.</p></div>
     <span class="standards-map-arrow" aria-hidden="true"></span>
-    <div class="standards-map-cell standards-map-focus"><a href="data-observability-service/"><strong>Data Observability</strong></a></div>
+    <div class="standards-map-cell standards-map-focus"><a href="data-observability-service/"><strong>Data Observability</strong></a><a href="data-foundation-operations-service/"><strong>Foundation Operations</strong></a></div>
     <span class="standards-map-arrow" aria-hidden="true"></span>
-    <div class="standards-map-cell"><strong>Operational evidence</strong><p>Health, quality, freshness, lineage, usage, incidents, and cost.</p></div>
+    <div class="standards-map-cell"><strong>Reliable operation</strong><p>Health, response, recovery, communication, safer change, and improvement evidence.</p></div>
   </section>
 </div>
 
@@ -41,6 +41,7 @@ Foundation services are reusable architecture capabilities. They reduce custom d
 | Data consumption service | Governed access for BI, applications, platforms, AI agents, and models. | Business misuse of data outside approved purpose. |
 | Data sharing service | Governed internal and external exchange, recipient entitlement, sharing evidence. | Legal contract negotiation outside data usage controls. |
 | Data observability service | Product telemetry, quality and freshness SLOs, usage insights, incident correlation, OpenTelemetry standards. | Domain ownership of product quality decisions. |
+| Data foundation operations service | Service management, support, incident, problem, change, release, reliability, continuity, communication, and improvement coordination. | Telemetry authority, engineering remediation, product decisions, deployment execution, or governance policy. |
 
 ## Agentic Access
 
@@ -85,6 +86,7 @@ flowchart LR
 - Every data product has an owner, steward, contract, classification, quality rules, and lifecycle state.
 - Every user-facing workflow is exposed through the Data Service Portal.
 - Every foundation service publishes operational and product-level telemetry.
+- Every production service has an operational owner, support model, SLO, escalation route, runbook, continuity target, and change controls.
 - Every consumption and sharing path enforces access policy.
 - Every live product is discoverable through the catalog.
 - Every exception has an owner, expiry date, and migration path.

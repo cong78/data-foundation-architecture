@@ -4,11 +4,11 @@ The reference architecture shows the minimum building blocks needed to implement
 
 ## Architecture View
 
-Read each lane from left to right. **Build** and **Access** carry the runtime data flow; **Engage** and **Govern** control every journey without becoming duplicate systems of record.
+Read each lane from left to right. **Build** and **Access** carry the runtime data flow; **Engage**, **Govern**, and **Operate** control every journey without becoming duplicate systems of record.
 
 These lanes organize the delivery journey; they are not additional target architecture planes. Use the [Target Architecture](target-architecture.md) for cross-cutting plane responsibilities and this view for capability interaction.
 
-<div class="standards-map reference-map" role="img" aria-label="Reference architecture organized into engage, govern, build, and access lanes">
+<div class="standards-map reference-map" role="img" aria-label="Reference architecture organized into engage, govern, build, access, and operate lanes">
   <div class="standards-map-head" aria-hidden="true">
     <span>Inputs</span><i></i><span>Foundation capabilities</span><i></i><span>Outcomes</span>
   </div>
@@ -32,7 +32,7 @@ These lanes organize the delivery journey; they are not additional target archit
   <section class="standards-map-lane lane-intelligence">
     <div class="standards-map-cell"><small>Build</small><strong>Files · Databases · APIs · Events</strong><p>Enterprise sources and approved external inputs.</p></div>
     <span class="standards-map-arrow" aria-hidden="true"></span>
-    <div class="standards-map-cell standards-map-focus"><a href="/services/data-ingestion-service/"><strong>Data Ingestion</strong></a><a href="/services/data-product-creation-service/"><strong>Product Creation</strong></a><strong>Physical Product Storage</strong><a href="/services/data-observability-service/"><strong>Data Observability</strong></a></div>
+    <div class="standards-map-cell standards-map-focus"><a href="/services/data-ingestion-service/"><strong>Data Ingestion</strong></a><a href="/services/data-product-creation-service/"><strong>Product Creation</strong></a><strong>Physical Product Storage</strong></div>
     <span class="standards-map-arrow" aria-hidden="true"></span>
     <div class="standards-map-cell"><strong>Live data products</strong><p>Source-aligned, aggregate, and consumer-aligned outputs with contracts, context, SLOs, and lineage.</p></div>
   </section>
@@ -43,6 +43,14 @@ These lanes organize the delivery journey; they are not additional target archit
     <div class="standards-map-cell standards-map-focus"><a href="/architecture/unified-access-design/"><strong>Unified Access Design</strong></a><a href="/services/data-sharing-service/"><strong>Data Sharing</strong></a></div>
     <span class="standards-map-arrow" aria-hidden="true"></span>
     <div class="standards-map-cell"><strong>Governed outcomes</strong><p>BI, applications, platforms, APIs, events, partners, agents, models, features, and retrieval.</p></div>
+  </section>
+
+  <section class="standards-map-lane lane-intelligence">
+    <div class="standards-map-cell"><small>Operate</small><strong>Signals · Support · Change</strong><p>Health conditions, user needs, planned releases, dependencies, and service risk.</p></div>
+    <span class="standards-map-arrow" aria-hidden="true"></span>
+    <div class="standards-map-cell standards-map-focus"><a href="/services/data-observability-service/"><strong>Data Observability</strong></a><a href="/services/data-foundation-operations-service/"><strong>Foundation Operations</strong></a></div>
+    <span class="standards-map-arrow" aria-hidden="true"></span>
+    <div class="standards-map-cell"><strong>Reliable services</strong><p>Detection, response, recovery, communication, safer change, learning, and improvement.</p></div>
   </section>
 </div>
 
@@ -59,6 +67,7 @@ The Build lane contains an explicit ownership handoff. The foundation platform t
 | Consumption | Unified product and port resolution, SQL, semantic layer, APIs, events, files, features, retrieval, context, federation, and runtime adapters. |
 | Sharing | Internal exchange, external packages, APIs, clean rooms, revocation. |
 | Observability | OpenTelemetry, SLOs, health, incidents, usage, lineage correlation. |
+| Operations and reliability | Service portfolio, support, incident, problem, change, release, continuity, communication, error budgets, and improvement. |
 | Agentic AI | Data Service AI Assistant, agent gateway, agent and skill registry, LLM gateway, context, memory, approval, evaluation. |
 | Governance and security | Named-user and workload identity, policy administration and decision, service and data enforcement, entitlement, classification, masking, audit. |
 
@@ -91,12 +100,14 @@ sequenceDiagram
     participant Policy as Policy and Entitlement
     participant Consume as Consumption Service
     participant Observe as Observability Service
+    participant Operate as Operations Service
     participant User as Consumer
 
     User->>Portal: Discover product, request access, or manage contract
     Portal->>Catalog: Read product metadata and lifecycle state
     Portal->>Contract: Read product contract and compatibility status
     Observe-->>Portal: Return current health and observation time
+    Portal->>Operate: Submit support request or operational engagement
     Source->>Ingest: Push file, expose connector, or publish event
     Ingest->>Catalog: Register source, schema, classification
     Ingest->>Store: Land source-aligned raw state with provenance
@@ -109,6 +120,8 @@ sequenceDiagram
     Ingest->>Observe: Emit OpenTelemetry traces, metrics, logs, and events
     Product->>Observe: Emit quality, freshness, lineage, and product health signals
     Consume->>Observe: Emit usage, latency, access, and consumer experience signals
+    Observe->>Operate: Correlate actionable alert and product impact
+    Operate-->>Portal: Return owner, status, communication, and recovery evidence
 ```
 
 ## Cross-Cutting Services
@@ -123,6 +136,7 @@ sequenceDiagram
 - Schema registry and contract testing
 - Lineage and impact analysis
 - Platform monitoring and cost controls
+- Service management, support, incident, problem, change, release, continuity, and operational improvement
 - Agent and skill registry, model gateway, evaluation service, scoped memory, and human approval
 
 ## Readability Notes

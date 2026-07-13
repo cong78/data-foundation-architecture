@@ -12,6 +12,7 @@ The foundation operating model defines how platform teams, domain teams, and con
 | Consumer teams | Responsible consumption, access requests, feedback, use-case controls |
 | Governance and risk teams | Policies, exceptions, assurance, audit and compliance evidence |
 | Data reliability team | Observability standards, data incident process, SLO reporting, telemetry quality |
+| Foundation operations team | Service portfolio, support, incident command, problem, change, release coordination, continuity, communication, reliability practice, and improvement evidence |
 | Portal owner | User experience, workflow entry points, portal integrations, and service request usability |
 
 ## Central and Federated Accountability

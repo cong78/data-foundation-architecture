@@ -13,7 +13,7 @@ Create one assessment record per domain and assessment date. Use the stable doma
 | Dimension | Domain-level question |
 | --- | --- |
 | Direction and ownership | Is the boundary clear, accountability accepted, and portfolio improvement funded? |
-| Foundation services | Does the domain consume centrally managed source-aligned inputs and use approved creation, access, consumption, sharing and observability profiles without duplicating ingestion? |
+| Foundation services | Does the domain consume centrally managed source-aligned inputs and use approved creation, access, consumption, sharing, observability, and operations profiles without duplicating ingestion or support paths? |
 | Data products and contracts | Is the domain portfolio owned, contracted, reusable, governed through go-live and actively managed? |
 | Access, security and governance | Are domain identities, policies, obligations, entitlements, exceptions and revocations enforceable and evidenced? |
 | Observability and operations | Can the domain operate services and products end to end against SLOs, incidents, cost and lifecycle expectations? |
@@ -43,6 +43,7 @@ Check a foundation-owned capability only when the domain has adopted it and can 
     <label><input type="checkbox"> The foundation platform team centrally operates source onboarding, ingestion, and raw and validated source-aligned products across approved file, connector, API, CDC, and streaming patterns.</label>
     <label><input type="checkbox"> Shared product-creation capabilities provide reusable workload patterns and controls while domain teams own aggregate and consumer-aligned products.</label>
     <label><input type="checkbox"> Consumption and sharing provide governed, observable delivery for people, systems, platforms, partners, agents, and models.</label>
+    <label><input type="checkbox"> The Data Foundation Operations Service provides one governed support, incident, problem, change, release, reliability, continuity, communication, and improvement model across services.</label>
 
     <h2>Data Products and Contracts</h2>
     <label><input type="checkbox"> Products have owners, purpose, consumers, lifecycle state, support expectations, costs, and measurable value.</label>
@@ -61,6 +62,7 @@ Check a foundation-owned capability only when the domain has adopted it and can 
     <label><input type="checkbox"> Product telemetry covers freshness, quality, lineage, volume, usage, reliability, incidents, and cost against contract targets.</label>
     <label><input type="checkbox"> Service and product health are connected from source through ingestion, product creation, access, consumption, and sharing.</label>
     <label><input type="checkbox"> Teams rehearse incident response, continuity, recovery, expiry, revocation, and product retirement with retained evidence.</label>
+    <label><input type="checkbox"> Service records, support tiers, SLOs, escalation, runbooks, dependencies, changes, releases, problems, improvement actions, and recovery evidence are current and linked.</label>
 
     <h2>Interoperability and AI Enablement</h2>
     <label><input type="checkbox"> Contracts, metadata, lineage, telemetry, identity, policy, and product interfaces use open or portable profiles with conformance tests.</label>

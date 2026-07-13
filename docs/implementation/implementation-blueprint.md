@@ -62,6 +62,7 @@ flowchart TB
 | Consumption Layer | Serve trusted data. | SQL, semantic, API, event, feature, retrieval, and bulk access patterns. |
 | Sharing Layer | Exchange data beyond the product boundary. | Entitlements, packaging, secure delivery, expiry, revocation, audit. |
 | Observability Platform | Monitor trust and operations. | OpenTelemetry ingestion, product health, alerts, incidents, freshness, quality, usage. |
+| Operations Workflow Platform | Coordinate service operation and improvement. | Service registry, support, incident, problem, change, release, communication, continuity, reliability, knowledge, and improvement records. |
 | Interoperability Gateway | Keep platform boundaries portable. | Artifact import/export, open API and event adapters, identifier mapping, conformance tests. |
 | Agent Gateway | Govern agent execution. | Identity, delegated authority, skill discovery, policy, approval, budgets, audit and suspension. |
 | Agent and Skill Registry | Manage reusable agentic capabilities. | Versioned manifests, ownership, schemas, risk, permissions, evaluations and lifecycle. |
@@ -82,11 +83,12 @@ The foundation should be implemented in thin vertical slices instead of as one l
 | 5. Create product factory | Product templates, transformation patterns, quality gates, go-live approval. | Makes trusted product creation repeatable. |
 | 6. Automate deployment | Add environment promotion, policy checks, progressive delivery, drift detection, rollback, and release evidence. | Makes product releases repeatable and fail-safe. |
 | 7. Enable consumption | SQL, API, semantic, retrieval, and feature access patterns. | Supports BI, apps, platforms, agents, and models. |
-| 8. Add observability | OpenTelemetry conventions, product health dashboards, alerts, incident workflow. | Makes trust and reliability visible. |
-| 9. Mature sharing | Internal sharing, external packages, clean room or secure exchange patterns. | Supports ecosystem use while preserving governance. |
-| 10. Prove portability | Run clean-room import/export and independent-client tests across selected interfaces. | Turns vendor neutrality from intent into evidence. |
-| 11. Launch assistant read mode | Add grounded Ask and Plan experiences over catalog, contracts, policy, lineage and health. | Creates value before agents receive write authority. |
-| 12. Enable bounded actions | Add typed skills, approval, task state, receipts and agent evaluations one journey at a time. | Introduces agency with controlled risk. |
+| 8. Add observability | OpenTelemetry conventions, service and product health, alerts, impact correlation, and recovery evidence. | Makes trust and reliability visible. |
+| 9. Establish foundation operations | Add service records, portal support, incident, problem, change, release, continuity, reliability, communication, and improvement workflows. | Turns visible conditions into accountable response and safer operation. |
+| 10. Mature sharing | Internal sharing, external packages, clean room or secure exchange patterns. | Supports ecosystem use while preserving governance. |
+| 11. Prove portability | Run clean-room import/export and independent-client tests across selected interfaces. | Turns vendor neutrality from intent into evidence. |
+| 12. Launch assistant read mode | Add grounded Ask and Plan experiences over catalog, contracts, policy, lineage and health. | Creates value before agents receive write authority. |
+| 13. Enable bounded actions | Add typed skills, approval, task state, receipts and agent evaluations one journey at a time. | Introduces agency with controlled risk. |
 
 ## Architecture Backlog
 
@@ -103,7 +105,8 @@ Use this backlog as a starting point for implementation epics.
 | Developer workspace | As a data developer, I can declare a product workload, create an isolated environment, preview changes, and promote or roll back a release through portal, API, or CLI. |
 | Resource orchestration | As a platform engineer, I can expose governed resource abstractions; as a developer, I can request outcomes without managing provider-specific infrastructure. |
 | AI-ready consumption | As an AI team, I can request retrieval access; as governance, I can approve AI usage purpose; as observability, I can trace usage. |
-| Observability | As a platform engineer, I can see ingestion failures; as a product owner, I can see freshness and quality SLOs; as support, I can manage incidents. |
+| Observability | As a platform engineer, I can see service failures; as a product owner, I can see freshness, quality, and consumer impact; as operations, I receive correlated evidence. |
+| Foundation operations | As a user, I can get support and see status; as an incident commander, I can coordinate recovery; as a change owner, I can prove risk, validation, and rollback; as a service owner, I can prioritize improvement. |
 | Data Service AI Assistant | As a user, I can ask, plan and execute approved actions with sources, previews, progress and receipts. |
 | Agent platform | As a skill owner, I can publish a typed capability; as governance, I can certify or suspend an agent version. |
 
@@ -116,6 +119,7 @@ A foundation capability is implementation-ready when:
 - Required metadata is captured in authoritative systems.
 - Policy and access controls are enforceable.
 - Operational and product telemetry are emitted.
+- Support, incident, change, recovery, continuity, and improvement responsibilities are defined and exercised according to service criticality.
 - Evidence is available for architecture, security, governance, and audit review.
 - The capability has at least one real product use case proving the pattern end to end.
 - Canonical artifacts and open interfaces pass the required interoperability conformance level.

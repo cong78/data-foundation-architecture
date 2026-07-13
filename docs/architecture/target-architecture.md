@@ -30,12 +30,14 @@ flowchart TB
 
 | Plane | Owns | State-of-the-Art Expectation |
 | --- | --- | --- |
-| Experience | Intent-led portal journeys, product discovery, product detail, developer workspaces, API and CLI, agreements, portfolio, contract workflows, product health views. | One coherent experience with channel parity for users, developers, decisions, and evidence. |
+| Experience | Intent-led portal journeys, product discovery, product detail, developer workspaces, API and CLI, agreements, portfolio, contract workflows, product health, support and service-status views. | One coherent experience with channel parity for users, developers, decisions, operational engagement, and evidence. |
 | Control | Catalog, semantic registry, context packages, knowledge graph projections, contracts, policy, lineage, quality rules, workflow, go-live gates. | Metadata-driven governance and automation with clear authority boundaries. |
 | Data | Source onboarding, source-aligned raw and validated states, products, unified logical access, serving, and sharing. | Standard product ports over custom pipelines and provider-native paths. |
 | AI | Agent gateway, skill registry, LLM gateway, governed context, scoped memory, evaluation, retrieval and AI lineage. | Agents are bounded, governed, traceable and purpose-bound. |
 | Observability | OpenTelemetry, SLOs, product health, incidents, usage, cost. | Trust is measured end to end. |
 | Security | Named-user and workload identity, delegated authority, service authorization, data authorization, ABAC, purpose, masking, entitlement, audit, retention, sharing controls. | Every request passes separate service and data decisions; security follows data and identities. |
+
+The [Data Foundation Operations Service](../services/data-foundation-operations-service.md) spans the Experience, Control, Observability, and Security planes. It uses portal engagement, authoritative workflow records, health evidence, and governed responder authority to coordinate support, incidents, problems, changes, releases, reliability, and improvement without creating a seventh target plane.
 
 ## Core Design Moves
 
@@ -52,6 +54,7 @@ flowchart TB
 11. Bind each product to a versioned semantic context package that references authoritative terms, metrics, policies, lineage, and health.
 12. Separate service authorization from data authorization and apply both to named users, workloads, delegated applications, agents, and external recipients.
 13. Place a unified logical access layer above physical product storage while keeping execution distributed and close to approved runtimes.
+14. Coordinate support, incident, problem, change, release, and reliability through a cross-cutting **Data Foundation Operations Service** while keeping telemetry and engineering ownership separate.
 
 ## Critical Flows
 
@@ -66,6 +69,8 @@ flowchart TB
 | AI access | AI purpose approval, governed identity, retrieval or feature control, model-to-data trace. |
 | Agent action | Authenticated intent, bounded plan, approved skill, policy decision, typed tool call, receipt and trace. |
 | Product deployment | Versioned workload specification, environment plan, policy checks, preview, progressive release, evidence, and deterministic rollback. |
+| Operational response | Signal or support request, impact and severity, accountable command, containment, system-plus-product recovery validation, communication, learning, and improvement. |
+| Platform change | Risk classification, dependencies, contract and go-live status, approval, release identity, window, validation, rollback, outcome, and retained evidence. |
 | External sharing | Recipient scope, minimization, entitlement, expiry, revocation, audit. |
 
 ## Minimum State-of-the-Art Bar
@@ -78,6 +83,7 @@ The architecture should not be called mature unless these are true:
 - Contract changes are tested before release and communicated to subscribers.
 - AI agents and models use governed identities and approved purposes.
 - Observability connects source, pipeline, product, consumer, contract, and incident.
+- Operational response connects support, service ownership, observable impact, change, recovery, communication, and improvement across all foundation services.
 - Security policies are enforced by services, not only written in documentation.
 - Canonical artifacts can be exported, validated, and imported without a platform-specific control plane.
 - Agent actions cannot exceed the user's delegated authority, registered skill contract, approved autonomy or task budget.

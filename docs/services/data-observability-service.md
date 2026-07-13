@@ -13,6 +13,7 @@ The goal is to make data trust measurable. A consumer should be able to understa
 | OpenTelemetry conventions, collectors, exporters, dashboards, alerts, and product telemetry standards. | Replacing the enterprise observability platform. |
 | Product health across freshness, quality, reliability, usage, cost, incidents, and lineage correlation. | Owning business decisions about acceptable product quality. |
 | Data product signals such as volume, distribution, anomaly, usage, cost, and business-rule changes. | Storing sensitive business data inside traces, logs, labels, or metrics. |
+| Health signals, alert context, incident correlation, and recovery evidence. | Coordinating support, incident command, problem, change, release, communication, or improvement workflows; these belong to the [Data Foundation Operations Service](data-foundation-operations-service.md). |
 
 ## Observability Dimensions
 
@@ -54,6 +55,8 @@ System signals become product telemetry only when they are evaluated in product 
 OpenTelemetry should not only observe infrastructure. It should carry data product context through traces, metrics, logs, and events. For example, a failed transformation trace should be linkable to the product version, source batch, quality rule, affected consumers, and incident record.
 
 The observability service should avoid creating a separate truth from the catalog. Product metadata, ownership, classification, lineage, and lifecycle status should be synchronized with the catalog and governance services.
+
+Observability owns detection and health evidence. The [Data Foundation Operations Service](data-foundation-operations-service.md) owns coordinated response, operational records, communication, recovery validation, and improvement. Both share stable service, product, release, incident, and correlation identifiers.
 
 OpenTelemetry describes operational telemetry; OpenLineage describes runtime data lineage. Correlate both using canonical product, dataset, job, run, and trace identifiers instead of forcing either standard to replace the other.
 

@@ -93,7 +93,7 @@ The lanes show the primary design outcomes. The matrices below capture supportin
 | Control | Canonical contracts, product descriptors, policies, lifecycle state, and conformance evidence drive workflow and automation. |
 | Data | Ingestion, processing, serving, and sharing implement versioned interfaces and portable product artifacts. |
 | AI | AI uses approved products, typed skills, governed context, bounded autonomy, evaluation, and traceable model access. |
-| Observability | OpenTelemetry correlates platform, pipeline, product, contract, consumer, agent, quality, usage, and cost signals. |
+| Observability | OpenTelemetry correlates platform, pipeline, product, contract, consumer, agent, quality, usage, and cost signals; operations uses that evidence for response and improvement. |
 | Security | Identity, purpose, classification, masking, approval, retention, and audit are enforced at every access boundary. |
 
 ## Standards to Foundation Services
@@ -107,6 +107,7 @@ The lanes show the primary design outcomes. The matrices below capture supportin
 | [Data Consumption](../services/data-consumption-service.md) | Data Contract; Access Control; Open Interoperability; AI-Ready Data | Governed SQL, API, event, feature, and retrieval interfaces with separate service and data authorization. |
 | [Data Sharing](../services/data-sharing-service.md) | Data Contract; Access Control; Open Interoperability; Data Product Management | Recipient identity, purpose, minimized packages, open exchange, expiry, revocation, and sharing evidence. |
 | [Data Observability](../services/data-observability-service.md) | OpenTelemetry; Data Product Management; AI-Ready Data | End-to-end traces, product SLOs, quality, freshness, lineage correlation, incidents, usage, cost, and AI access evidence. |
+| [Data Foundation Operations](../services/data-foundation-operations-service.md) | OpenTelemetry; Data Product Management; Data Product Workload; Access Control | Service ownership, support, incident, problem, change, release, reliability, responder authority, recovery evidence, and improvement. |
 
 ## Enforcement and Evidence
 

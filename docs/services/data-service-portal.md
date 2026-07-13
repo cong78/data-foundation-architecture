@@ -14,7 +14,7 @@ The [Data Service Portal Design](../architecture/data-service-portal-model.md) d
 | --- | --- |
 | Data product discovery, access requests, onboarding workflows, data product lifecycle workflows, and data contract management. | Replacing backend systems for catalog, identity, policy, lineage, observability, or workflow execution. |
 | User-facing views for product health, ownership, classification, lineage, quality, freshness, usage, and lifecycle status. | Owning the actual data pipelines, transformations, or consumption endpoints. |
-| Request intake, approvals, notifications, status tracking, and evidence capture. | Bypassing governance, security, or stewardship approval processes. |
+| Request intake, support engagement, operational status, approvals, notifications, task tracking, and evidence presentation. | Bypassing governance, security, stewardship, or operational authority. |
 
 ## Core Capabilities
 
@@ -25,6 +25,7 @@ The [Data Service Portal Design](../architecture/data-service-portal-model.md) d
 - Source onboarding request workflow.
 - Data product creation and go-live workflow.
 - Data contract creation, review, approval, versioning, and change management.
+- Support requests, incident status, maintenance and change visibility, service health, knowledge, feedback, and operational task tracking.
 - Contract compatibility checks and schema change notifications.
 - Consumer subscription and impact notification.
 - Product health, SLO, incident, and usage dashboards.
@@ -61,6 +62,20 @@ The portal should provide the governed interface for managing data contracts acr
 | Portability | Validate the canonical contract, preserve extensions, and show the last round-trip conformance result. |
 
 Use the [Data Contract Standard](../standards/data-contract-standard.md) as the minimum contract model.
+
+## Support and Operations
+
+The portal is the front door for operational engagement, while the [Data Foundation Operations Service](data-foundation-operations-service.md) owns routing, incident, problem, change, release, reliability, communication, and improvement workflows.
+
+| Portal Experience | Required behavior |
+| --- | --- |
+| Get support | Select or infer service and product, capture impact and urgency, preserve context, and show owner and target. |
+| Service status | Show current service and product health, incidents, affected capabilities, observation time, and next update. |
+| Planned change | Show approved maintenance, expected impact, dependencies, consumer action, validation, and rollback status. |
+| Incident engagement | Provide audience-appropriate updates, subscriptions, workarounds, recovery state, and closure evidence. |
+| Knowledge and feedback | Surface runbooks or consumer guidance appropriate to the user and capture whether support resolved the need. |
+
+The portal must not expose restricted responder notes, sensitive logs, security details, personal data, or emergency credentials. Views are filtered by identity, role, service, product, domain, and incident sensitivity.
 
 ## Data Domain Management
 

@@ -25,7 +25,7 @@ Governance defines who decides, which controls apply, and how foundation service
   <section class="standards-map-lane lane-intelligence">
     <div class="standards-map-cell"><small>Operate</small><strong>Services · SLOs · Support · Improvement</strong><p>Keep ownership and reliability active after product go-live.</p></div>
     <span class="standards-map-arrow" aria-hidden="true"></span>
-    <div class="standards-map-cell standards-map-focus"><a href="operating-model/"><strong>Operating Model</strong></a><a href="../services/data-observability-service/"><strong>Data Observability</strong></a></div>
+    <div class="standards-map-cell standards-map-focus"><a href="operating-model/"><strong>Operating Model</strong></a><a href="../services/data-observability-service/"><strong>Data Observability</strong></a><a href="../services/data-foundation-operations-service/"><strong>Foundation Operations</strong></a></div>
     <span class="standards-map-arrow" aria-hidden="true"></span>
     <div class="standards-map-cell"><strong>Measured control</strong><p>Service health, product SLOs, incidents, portfolio reviews, and remediation.</p></div>
   </section>
@@ -46,3 +46,4 @@ Governance defines who decides, which controls apply, and how foundation service
 | [Governance Model](governance-model.md) | Who owns decisions and which forum resolves them? |
 | [Security and Compliance](security-compliance.md) | Which preventive and detective controls are mandatory? |
 | [Operating Model](operating-model.md) | How are services and products delivered, supported, and improved? |
+| [Data Foundation Operations Service](../services/data-foundation-operations-service.md) | How are support, incidents, problems, changes, releases, reliability, and improvement coordinated? |

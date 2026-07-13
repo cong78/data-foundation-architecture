@@ -34,6 +34,7 @@ The assistant should be available as a persistent panel and as contextual action
 | Product journey | Draft descriptor and contract, map semantics, check go-live readiness. |
 | Contract editor | Explain clauses, compare versions, detect breaking changes, prepare notifications. |
 | Product health | Correlate quality, freshness, lineage and incidents; propose remediation. |
+| Operations journey | Explain service health and impact, summarize incident status, find support guidance, draft a support request, and identify change or recovery evidence. |
 | Sharing journey | Check permitted use, minimize scope, prepare agreement and revocation test. |
 | AI journey | Check data permissions, select context products, prepare evaluations and evidence. |
 
@@ -87,11 +88,14 @@ flowchart LR
 | `contract.compare` | Read | None. |
 | `lineage.impact` | Read | None. |
 | `health.explain` | Read | None. |
+| `operations.status` | Read | None; results remain identity and incident-sensitivity filtered. |
 | `contract.draft` | Draft | User reviews output. |
 | `source.onboarding_plan` | Draft | User reviews output. |
 | `access.request_draft` | Draft | User confirms purpose and scope. |
+| `support.request_draft` | Draft | User reviews service, product, impact, urgency, and included evidence. |
 | `product.submit_review` | Write | Explicit confirmation. |
 | `access.request_submit` | Write | Explicit confirmation and policy check. |
+| `support.request_submit` | Write | Explicit confirmation; operations service owns triage and priority. |
 | `sharing.submit` | High impact | Step-up authorization and approver. |
 | `entitlement.revoke` | High impact | Step-up authorization and impact preview. |
 

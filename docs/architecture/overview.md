@@ -50,7 +50,7 @@ The five layers and six target planes are complementary. **Layers** show where r
   <div class="layer-connector">Policy and orchestration</div>
   <section class="architecture-layer layer-services">
     <span class="layer-number">3</span>
-    <div><strong>Data Foundation Services</strong><p>Ingestion · Product Creation · Unified Data Access · Sharing · Observability</p></div>
+    <div><strong>Data Foundation Services</strong><p>Ingestion · Product Creation · Unified Data Access · Sharing · Observability · Operations</p></div>
   </section>
   <div class="layer-connector">Create and serve</div>
   <section class="architecture-layer layer-products">
@@ -73,7 +73,7 @@ The five layers and six target planes are complementary. **Layers** show where r
 | --- | --- | --- |
 | Experience and access | Portal journeys, developer workspace, discovery, requests, assistant interaction, service APIs, and CLI. | A duplicate catalog, policy engine, or product system of record. |
 | Governance and control | Product metadata, contracts, policy decisions, workflow, lineage, go-live evidence. | A documentation-only approval process. |
-| Foundation services | Standard ingestion, creation, consumption, sharing, and observability capabilities. | A collection of product-specific pipelines. |
+| Foundation services | Standard ingestion, creation, consumption, sharing, observability, and operations capabilities. | A collection of product-specific pipelines or disconnected support processes. |
 | Governed data products | Reusable data with an owner, contract, semantics, quality, SLO, policy, and lifecycle. | Unowned tables published directly to consumers. |
 | Platform runtime | Portable storage, processing, event, API, telemetry, and lineage infrastructure. | A vendor-specific architecture contract. |
 

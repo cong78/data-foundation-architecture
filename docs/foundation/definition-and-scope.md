@@ -16,7 +16,7 @@ The data foundation is part of the broader **Data and AI Foundation**. It provid
 
 ## Scope
 
-The architecture guidance covers six foundation services:
+The architecture guidance covers seven foundation services:
 
 | Service | Primary Responsibility |
 | --- | --- |
@@ -26,6 +26,7 @@ The architecture guidance covers six foundation services:
 | Data consumption service | Make trusted data available through fit-for-purpose access patterns. |
 | Data sharing service | Share governed data with internal platforms, customers, suppliers, and partners. |
 | Data observability service | Observe data products end to end using system telemetry and data product telemetry, with OpenTelemetry as the standard. |
+| Data foundation operations service | Coordinate support, service management, incidents, problems, changes, releases, reliability, communication, continuity, and operational improvement across foundation services. |
 
 ## In Scope
 
@@ -37,6 +38,7 @@ The architecture guidance covers six foundation services:
 - Consumption patterns for BI, applications, platforms, AI agents, and AI models.
 - Secure data sharing across internal and external boundaries.
 - End-to-end data product observability using OpenTelemetry-compatible telemetry.
+- Cross-service support, incident, problem, change, release, reliability, continuity, and operational-improvement workflows.
 - Operating model, roles, decision forums, and service management.
 
 ## Out of Scope
