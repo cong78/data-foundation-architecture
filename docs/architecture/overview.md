@@ -153,6 +153,7 @@ flowchart LR
 | [Data Foundation Model](data-foundation-model.md) | What are the core architecture objects and relationships? |
 | [Data Contract Design](data-contract-design.md) | Which contract governs each product layer, lifecycle gate, and enforcement point? |
 | [Reference Architecture](reference-architecture.md) | Which technology-neutral capabilities are required? |
+| [Architecture to Operations Map](../foundation/architecture-service-operations-map.md) | How do architecture decisions map to service ownership, playbooks, runbooks, evidence, and runway phases? |
 | [Data Product Lifecycle Design](data-product-lifecycle-design.md) | How does a product move from idea through go-live, operation, change, and retirement? |
 | [Semantic and Context Design](semantic-context-design.md) | How do catalog, semantics, context packages, and graph projections fit together? |
 | [Unified Access Design](unified-access-design.md) | How are identity, policy, logical product ports, and physical runtimes connected? |

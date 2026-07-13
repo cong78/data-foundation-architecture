@@ -146,5 +146,5 @@ Measure outcomes by service criticality and support tier; avoid one target for e
 - Operations evidence is retained, searchable, permission-filtered, and available for service reviews, audit, maturity assessment, and improvement planning.
 
 <div class="read-next">
-  <strong>Next:</strong> use the Data Observability Service for signals and product-health evidence, then expose support and operations journeys through the Data Service Portal.
+  <strong>Next:</strong> trace the service through the <a href="/foundation/architecture-service-operations-map/">Architecture to Operations Map</a>, then create and exercise the applicable <a href="/delivery-templates/service-runbook-template/">Service Runbook</a>.
 </div>

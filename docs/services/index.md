@@ -80,9 +80,11 @@ Each foundation service must define:
 
 For architecture delivery guidance, use:
 
+- [Architecture to Operations Map](../foundation/architecture-service-operations-map.md)
 - [Architecture Blueprint](../implementation/implementation-blueprint.md)
 - [Architecture Patterns](../implementation/service-implementation-patterns.md)
 - [Architecture Decisions](../implementation/architecture-decisions.md)
+- [Service Runbook Template](../delivery-templates/service-runbook-template.md)
 
 ## End-to-End Product Flow
 

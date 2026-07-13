@@ -81,6 +81,7 @@ nav:
   - Start Here:
       - Overview: index.md
       - Foundation in One View: foundation/foundation-in-one-view.md
+      - Architecture to Operations: foundation/architecture-service-operations-map.md
       - Choose an Action: playbooks/index.md
       - How to Use This Guide: foundation/guidance-model.md
       - Definition and Scope: foundation/definition-and-scope.md
@@ -158,6 +159,7 @@ nav:
           - Data Product Template: delivery-templates/data-product-template.md
           - Data Domain Onboarding Record: delivery-templates/data-domain-onboarding-template.md
           - Data Product Workload Template: delivery-templates/data-product-workload-template.md
+          - Service Runbook Template: delivery-templates/service-runbook-template.md
           - Technology Selection Record: delivery-templates/technology-selection-template.md
           - Source Onboarding Template: delivery-templates/source-onboarding-template.md
           - Interoperability Conformance: delivery-templates/interoperability-conformance-template.md

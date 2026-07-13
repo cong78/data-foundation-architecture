@@ -16,11 +16,12 @@ The data foundation is part of the broader **Data and AI Foundation**. It provid
 
 ## Scope
 
-The architecture guidance covers seven foundation services:
+The architecture guidance covers eight foundation services:
 
 | Service | Primary Responsibility |
 | --- | --- |
 | Data service portal | Provide the user entry point for data discovery, access requests, data product onboarding, workflow tracking, and data contract management. |
+| Data Service AI Assistant | Provide permission-filtered explanation, planning, and approved actions through governed agents, models, and typed skills. |
 | Data ingestion service | Bring data from source systems into the foundation using governed push, pull, and streaming patterns. |
 | Data product creation service | Create trusted, reusable datasets using data product principles. |
 | Data consumption service | Make trusted data available through fit-for-purpose access patterns. |
