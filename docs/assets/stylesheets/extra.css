@@ -9,6 +9,12 @@
   display: none;
 }
 
+@media screen and (min-width: 76.25em) {
+  body[dir="ltr"] .md-header__title {
+    margin-left: 0.6rem;
+  }
+}
+
 .md-typeset {
   font-size: 0.84rem;
   line-height: 1.65;
