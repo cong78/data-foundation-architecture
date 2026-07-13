@@ -2,7 +2,7 @@
 
 <div class="brand-lockup">
   <div>
-    <span>Turn enterprise data into trusted, reusable products that safely power analytics, applications, platforms, sharing, agents, and models.</span>
+    <span>Turn data into trusted, reusable products that safely power analytics, applications, platforms, sharing, agents, and models.</span>
   </div>
 </div>
 
