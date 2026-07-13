@@ -68,7 +68,7 @@ flowchart TB
 | Product deployment | Versioned workload specification, environment plan, policy checks, preview, progressive release, evidence, and deterministic rollback. |
 | External sharing | Recipient scope, minimization, entitlement, expiry, revocation, audit. |
 
-## Minimum State-of-Art Bar
+## Minimum State-of-the-Art Bar
 
 The architecture should not be called mature unless these are true:
 
@@ -82,7 +82,7 @@ The architecture should not be called mature unless these are true:
 - Canonical artifacts can be exported, validated, and imported without a platform-specific control plane.
 - Agent actions cannot exceed the user's delegated authority, registered skill contract, approved autonomy or task budget.
 
-## State-of-Art Checklist
+## State-of-the-Art Checklist
 
 | Question | Required Answer |
 | --- | --- |

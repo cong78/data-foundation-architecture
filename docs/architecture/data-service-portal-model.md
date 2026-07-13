@@ -1,4 +1,4 @@
-# Data Service Portal
+# Data Service Portal Design
 
 The Data Service Portal helps domain teams discover, produce, consume, share, govern, and operate data and AI products through one consistent entry point.
 
@@ -104,20 +104,20 @@ Product health and lineage must come from authoritative telemetry and lineage ev
 ```mermaid
 sequenceDiagram
     participant User
-    participant Market as Data Service Portal
+    participant Portal as Data Service Portal
     participant Flow as Workflow
     participant Control as Catalog, Contract, Policy
     participant Runtime as Foundation Service
     participant Observe as Observability
 
-    User->>Market: Select intent and provide context
-    Market->>Flow: Create journey with identity and purpose
+    User->>Portal: Select intent and provide context
+    Portal->>Flow: Create journey with identity and purpose
     Flow->>Control: Resolve product, contract, policy, and evidence
     Control-->>Flow: Required gates and decisions
     Flow->>Runtime: Execute onboarding, provisioning, or sharing
     Runtime->>Observe: Emit telemetry and lineage
-    Observe-->>Market: Return current trust and status
-    Market-->>User: Show outcome, evidence, and next action
+    Observe-->>Portal: Return current trust and status
+    Portal-->>User: Show outcome, evidence, and next action
 ```
 
 ## State Ownership

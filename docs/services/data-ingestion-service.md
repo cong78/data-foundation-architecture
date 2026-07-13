@@ -32,7 +32,7 @@ Use OpenAPI for source APIs and AsyncAPI plus CloudEvents for event sources. Con
 - Change data capture and incremental load support.
 - Event stream subscription and replay.
 - Operational monitoring, alerting, and incident hooks.
-- Lineage capture from source to landing zone.
+- Lineage capture from source to the source-aligned landing state.
 - OpenTelemetry-compatible traces, metrics, logs, and events.
 
 ## Architecture Guidance

@@ -15,7 +15,7 @@ This runway describes a practical, sequenced path for maturing an enterprise dat
 - Establish mandatory product go-live gates.
 - Define the Data Product Workload Standard and a portable resource profile.
 - Adopt ODCS and ODPS canonical artifacts with stable enterprise identifiers.
-- Launch the first governed data products.
+- Bring the first governed data products live.
 
 ## Phase 2: Trusted Reuse
 

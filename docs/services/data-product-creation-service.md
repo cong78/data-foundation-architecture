@@ -2,7 +2,7 @@
 
 ## Definition
 
-The data product creation service turns landed and conformed data into trusted, reusable datasets or data interfaces. It applies data product principles so consumers can understand, access, and rely on the data.
+The data product creation service turns source-aligned data and existing products into trusted, reusable datasets or data interfaces. It applies data product principles so consumers can understand, access, and rely on the data.
 
 Use the [Data Product Management Standard](../standards/data-product-management-standard.md), [Data Product Workload Standard](../standards/data-product-workload-standard.md), and [Data Contract Standard](../standards/data-contract-standard.md) as mandatory controls for product go-live.
 

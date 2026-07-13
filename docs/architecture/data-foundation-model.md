@@ -7,7 +7,7 @@ This model describes the architecture at a conceptual level. It shows what the f
 <div class="model-strip">
   <div class="model-step"><strong>Source</strong>Systems, files, APIs, events, streams.</div>
   <div class="model-step"><strong>Ingest</strong>Validate, land, classify, trace.</div>
-  <div class="model-step"><strong>Product</strong>Contract, transform, approve, launch.</div>
+  <div class="model-step"><strong>Product</strong>Contract, transform, test, approve go-live.</div>
   <div class="model-step"><strong>Serve</strong>BI, apps, platforms, AI, sharing.</div>
   <div class="model-step"><strong>Observe</strong>Quality, freshness, usage, incidents.</div>
   <div class="model-step"><strong>Govern</strong>Policy, lineage, access, audit.</div>
@@ -125,7 +125,7 @@ Consumer-aligned data presents live products in the shape required by a defined 
 | Data product | Governed, reusable data asset with ownership, contract, quality, lifecycle, and trust signals. |
 | Aggregate product | Governed reusable measures or combined data at an explicitly changed grain. |
 | Consumer-aligned product or view | Purpose-specific projection of live products for a defined consumer and contract. |
-| Unified data access layer | Governed logical product interfaces above distributed physical storage, with identity, policy, semantic context, routing, and evidence. |
+| Unified access design | Governed logical product interfaces above distributed physical storage, with identity, policy, semantic context, routing, and evidence. |
 | Policy | Rule that controls access, masking, purpose, sharing, retention, or AI use. |
 | Metadata | Business, technical, operational, and governance context. |
 | Semantic context | Versioned product meaning, grain, metrics, relationships, usage context, limitations, and references to current trust evidence. |

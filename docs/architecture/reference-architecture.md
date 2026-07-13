@@ -6,6 +6,8 @@ The reference architecture shows the minimum building blocks needed to implement
 
 Read each lane from left to right. **Build** and **Access** carry the runtime data flow; **Engage** and **Govern** control every journey without becoming duplicate systems of record.
 
+These lanes organize the delivery journey; they are not additional target architecture planes. Use the [Target Architecture](target-architecture.md) for cross-cutting plane responsibilities and this view for capability interaction.
+
 <div class="standards-map reference-map" role="img" aria-label="Reference architecture organized into engage, govern, build, and access lanes">
   <div class="standards-map-head" aria-hidden="true">
     <span>Inputs</span><i></i><span>Foundation capabilities</span><i></i><span>Outcomes</span>
@@ -71,7 +73,7 @@ Read each lane from left to right. **Build** and **Access** carry the runtime da
 
 See the [Open Interoperability Standard](../standards/open-interoperability-standard.md) for profiles and conformance tests.
 
-The [Data Service Portal model](data-service-portal-model.md) defines how portal journeys compose these boundaries without becoming an additional system of record.
+The [Data Service Portal Design](data-service-portal-model.md) defines how portal journeys compose these boundaries without becoming an additional system of record.
 
 ## Reference Flow
 
@@ -82,20 +84,25 @@ sequenceDiagram
     participant Ingest as Ingestion Service
     participant Store as Foundation Storage
     participant Product as Data Product Service
-    participant Catalog as Catalog and Policy
+    participant Catalog as Catalog and Product Registry
+    participant Contract as Contract Registry
+    participant Policy as Policy and Entitlement
     participant Consume as Consumption Service
     participant Observe as Observability Service
     participant User as Consumer
 
     User->>Portal: Discover product, request access, or manage contract
-    Portal->>Catalog: Read product metadata, policy, contract, and health status
+    Portal->>Catalog: Read product metadata and lifecycle state
+    Portal->>Contract: Read product contract and compatibility status
+    Observe-->>Portal: Return current health and observation time
     Source->>Ingest: Push file, expose connector, or publish event
     Ingest->>Catalog: Register source, schema, classification
     Ingest->>Store: Land source-aligned raw state with provenance
     Product->>Store: Transform and validate trusted dataset
-    Product->>Catalog: Publish product metadata and contract
-    Portal->>Catalog: Submit access, onboarding, or contract workflow
-    Catalog->>Consume: Enforce access and usage policies
+    Product->>Catalog: Publish product descriptor and ports
+    Product->>Contract: Publish approved contract version
+    Portal->>Policy: Submit purpose-bound access request
+    Policy->>Consume: Return entitlement, decision, and obligations
     Consume->>User: Provide dataset, API, semantic, or AI-ready access
     Ingest->>Observe: Emit OpenTelemetry traces, metrics, logs, and events
     Product->>Observe: Emit quality, freshness, lineage, and product health signals

@@ -1,6 +1,16 @@
 # Data Service AI Assistant
 
+## Definition
+
 The Data Service AI Assistant is the conversational entry point to the agentic data foundation. Available through the Data Service Portal, it helps users find evidence, understand decisions, prepare work, and execute approved actions through governed skills.
+
+## Scope
+
+| In Scope | Out of Scope |
+| --- | --- |
+| Permission-filtered search, explanation, planning, drafting, and approved actions across foundation services. | Replacing the catalog, contract registry, policy engine, workflow service, or foundation service APIs. |
+| Ask, Plan, and Act interactions with sources, previews, approvals, progress, and receipts. | Granting itself permissions, approving its own actions, or bypassing deterministic controls. |
+| Registered agents, typed skills, governed model routing, context retrieval, evaluation, and telemetry. | Acting as an unrestricted general-purpose automation runtime. |
 
 ## Assistant Modes
 
@@ -52,7 +62,7 @@ Before a write action, show a trusted preview generated from the typed tool requ
 | Reversible | Review can be withdrawn before approval. |
 | Evidence | Compatibility result and consumer impact report. |
 
-## Assistant Architecture
+## Architecture Guidance
 
 ```mermaid
 flowchart LR
@@ -98,7 +108,7 @@ flowchart LR
 
 Streaming improves responsiveness, but task state and receipts remain durable outside the model conversation.
 
-## Safety Rules
+## Controls
 
 - Derive identity, team and permissions from authenticated claims.
 - Apply row, column, purpose and classification policy before retrieval.

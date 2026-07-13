@@ -12,7 +12,7 @@ The product is ready only when it is discoverable, addressable, understandable, 
 | --- | --- | --- |
 | Discover | Identify a reusable data need or source opportunity. | Business value, owner, target consumers |
 | Design | Define product purpose, domain ownership, contract, quality expectations, and access model. | Data contract, classification, conceptual model |
-| Build | Ingest, transform, validate, document, and publish the product. | Pipeline testing, quality rules, lineage capture |
+| Build | Ingest, transform, validate, document, and prepare the product interfaces. | Pipeline testing, quality rules, lineage capture |
 | Approve go-live | Confirm that the product is fit for intended use. | Steward approval, quality threshold, security review |
 | Operate | Monitor freshness, usage, cost, quality, incidents, and consumer feedback. | SLOs, alerts, issue management |
 | Evolve | Version the product as schemas, rules, or consumers change. | Change management, compatibility checks |

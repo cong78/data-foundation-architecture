@@ -8,6 +8,9 @@ This proposal extends the Data Foundation Architecture observability service wit
 
 The result is one observability experience with two authoritative signal domains.
 
+!!! info "Reference solution status"
+    This page applies the technology-neutral [Data Observability Service](../services/data-observability-service.md) to a selected Databricks, Unity Catalog, and Grafana Cloud profile. It does not make these products mandatory for the foundation. Adoption requires an approved [Technology Selection Record](../delivery-templates/technology-selection-template.md), proof-of-capability evidence, security review, cost analysis, and an exit plan.
+
 ## Executive Recommendation
 
 Use Unity Catalog as the authoritative context for data products and use Grafana Cloud as the operational command center for system health. Publish a shared correlation model so an operator can move from a product freshness breach to the responsible pipeline run, service trace, infrastructure symptom, and affected consumers.
@@ -318,7 +321,7 @@ Show products by owner, domain, criticality, quality posture, freshness posture,
 - Add AI and model consumption signals with product, semantic context, purpose, and evaluation identifiers.
 - Measure mean time to detect, diagnose, recover, and prove recovery.
 
-## Decisions for Tomorrow
+## Open Architecture Decisions
 
 1. Is Unity Catalog the authoritative product context for Databricks-managed products, while the Data Service Portal remains the user entry point?
 2. Is Grafana Cloud the enterprise system-observability command center for metrics, logs, traces, alerts, and incidents?

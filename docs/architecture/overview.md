@@ -18,7 +18,7 @@ The data foundation is a layered set of reusable services. It converts source da
   <section class="standards-map-lane lane-build">
     <div class="standards-map-cell"><small>Design experience</small><strong>People · Developers · AI</strong><p>Turn platform capabilities into coherent human and machine journeys.</p></div>
     <span class="standards-map-arrow" aria-hidden="true"></span>
-    <div class="standards-map-cell standards-map-focus"><a href="/architecture/data-service-portal-model/"><strong>Data Service Portal</strong></a><a href="/architecture/data-product-developer-experience/"><strong>Developer Experience</strong></a><a href="/architecture/agentic-data-foundation/"><strong>Agentic Foundation</strong></a></div>
+    <div class="standards-map-cell standards-map-focus"><a href="/architecture/data-service-portal-model/"><strong>Portal Design</strong></a><a href="/architecture/data-product-developer-experience/"><strong>Developer Experience</strong></a><a href="/architecture/agentic-data-foundation/"><strong>Agentic Foundation</strong></a></div>
     <span class="standards-map-arrow" aria-hidden="true"></span>
     <div class="standards-map-cell"><strong>One governed experience</strong><p>Portal, API, CLI, and agent channels use the same contracts and controls.</p></div>
   </section>
@@ -34,6 +34,8 @@ The data foundation is a layered set of reusable services. It converts source da
 ## Layered Architecture
 
 Read the model from top to bottom. Users enter through the experience layer; control services govern every action; foundation services move and serve data; data products carry trust; platform capabilities provide the runtime.
+
+The five layers and six target planes are complementary. **Layers** show where responsibilities sit in the solution stack. **Planes** show the cross-cutting architecture concerns that govern those layers. The reference architecture lanes then show how capabilities collaborate in an end-to-end journey.
 
 <div class="architecture-stack">
   <section class="architecture-layer layer-experience">
@@ -53,7 +55,7 @@ Read the model from top to bottom. Users enter through the experience layer; con
   <div class="layer-connector">Create and serve</div>
   <section class="architecture-layer layer-products">
     <span class="layer-number">4</span>
-    <div><strong>Governed Data Products</strong><p>Source-aligned · Conformed · Live Products · AI-ready Representations</p></div>
+    <div><strong>Governed Data Products</strong><p>Source-aligned · Domain · Aggregate · Consumer-aligned · AI-ready</p></div>
   </section>
   <div class="layer-connector">Runs on</div>
   <section class="architecture-layer layer-platform">
@@ -97,7 +99,7 @@ flowchart LR
     CTRL -. "governs" .-> C
     CTRL -. "governs" .-> X
 
-    OBS["OpenTelemetry + data insights"] -. "observes end to end" .-> I
+    OBS["OpenTelemetry + product telemetry"] -. "observes end to end" .-> I
     OBS -.-> P
     OBS -.-> C
     OBS -.-> X
@@ -142,6 +144,13 @@ flowchart LR
 | [Target Architecture](target-architecture.md) | Which logical planes govern the target state? |
 | [Data Foundation Model](data-foundation-model.md) | What are the core architecture objects and relationships? |
 | [Reference Architecture](reference-architecture.md) | Which technology-neutral capabilities are required? |
+| [Data Product Lifecycle Design](data-product-lifecycle-design.md) | How does a product move from idea through go-live, operation, change, and retirement? |
+| [Semantic and Context Design](semantic-context-design.md) | How do catalog, semantics, context packages, and graph projections fit together? |
+| [Unified Access Design](unified-access-design.md) | How are identity, policy, logical product ports, and physical runtimes connected? |
+| [Data Service Portal Design](data-service-portal-model.md) | How do users and agents interact with the foundation without duplicating authority? |
+| [Data Product Developer Experience](data-product-developer-experience.md) | How do developers declare, test, deploy, and roll back product workloads? |
+| [Agentic Data Foundation](agentic-data-foundation.md) | How are agents, skills, models, context, approval, and evidence governed? |
+| [Observability Design](observability-design.md) | How can the observability contract be implemented with Databricks, Unity Catalog, and Grafana Cloud? |
 | [Architecture Blueprint](../implementation/implementation-blueprint.md) | How should the architecture be implemented and sequenced? |
 
 <div class="read-next">

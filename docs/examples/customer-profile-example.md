@@ -19,9 +19,9 @@ This example shows how the guidance can be applied to a concrete data product.
 flowchart LR
     CRM[CRM System] --> IN[Connector Pull]
     WEB[Web Events] --> ST[Streaming Ingestion]
-    IN --> RAW[Raw Customer Zone]
+    IN --> RAW[Source-Aligned Customer Data\nraw landing state]
     ST --> RAW
-    RAW --> DQ[Quality and Conformance]
+    RAW --> DQ[Validation and Quality]
     DQ --> PROD[Customer Profile Product]
     PROD --> SQL[BI Semantic Access]
     PROD --> API[Customer Profile API]

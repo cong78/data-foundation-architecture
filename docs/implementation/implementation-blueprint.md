@@ -23,9 +23,9 @@ flowchart TB
     Skill --> Policy
 
     Source[Source Systems] --> Ingest[Ingestion Runtime]
-    Ingest --> Landing[Landing and Raw Zone]
-    Landing --> Transform[Transformation Runtime]
-    Transform --> Product[Product Zone]
+    Ingest --> SourceAligned[Source-Aligned Data\nraw landing to validated]
+    SourceAligned --> Transform[Transformation Runtime]
+    Transform --> Product[Governed Product Storage]
 
     Product --> Serving[Consumption and Serving Layer]
     Product --> Share[Sharing Layer]
@@ -51,11 +51,12 @@ flowchart TB
 | --- | --- | --- |
 | Data Service Portal | User entry point. | Intent-led journeys, discovery, product detail, agreements, portfolio, approvals, contract workflow, product health views. |
 | Catalog and Metadata | Product and asset inventory. | Search, ownership, schema, classification, lineage links, documentation, lifecycle state. |
+| Semantic Context and Graph Projection | Make products understandable and connected without duplicating authority. | Versioned context packages, glossary and metric references, rebuildable relationship graph, permission-filtered discovery and AI grounding. |
 | Data Contract Registry | Contract source of truth. | Contract templates, versioning, compatibility checks, approval evidence, consumer notifications. |
 | Data Product Developer Workspace | Declarative product development experience. | Repo and workspace templates, workload specification, API and CLI, isolated environments, preview, CI/CD, promotion, rollback, and developer telemetry. |
 | Resource Orchestrator | Translate declared product intent into runtime resources. | Versioned plans, policy checks, provisioning, de-provisioning, dependency resolution, drift detection, and execution receipts. |
 | Ingestion Runtime | Bring data into the foundation. | File, connector, API, CDC, streaming, validation, quarantine, telemetry. |
-| Storage Zones | Organize data by trust and purpose. | Landing, raw, conformed, product, serving, archive. |
+| Product Storage and States | Store data according to product purpose, trust, retention, and runtime needs. | Source-aligned raw and validated states, product outputs, consumer-aligned projections, archive, and open formats. |
 | Transformation Runtime | Build trusted data products. | Batch and streaming transforms, quality rules, lineage, release controls. |
 | Policy and Access Service | Enforce usage rules. | Identity, role and attribute policy, purpose-based access, masking, audit. |
 | Consumption Layer | Serve trusted data. | SQL, semantic, API, event, feature, retrieval, and bulk access patterns. |
@@ -98,7 +99,7 @@ Use this backlog as a starting point for implementation epics.
 | Product detail | As a consumer, I can distinguish declared contract terms from current measured quality, lineage, health, incidents, usage, and cost. |
 | Contract management | As a product owner, I can create a contract; as a consumer, I can subscribe to contract changes; as a platform, I can detect breaking changes. |
 | Source onboarding | As a source owner, I can request onboarding; as a data engineer, I can select a pattern; as a steward, I can approve classification. |
-| Product go-live | As a steward, I can review readiness evidence; as a product owner, I can launch an approved product; as a consumer, I can see go-live status. |
+| Product go-live | As a steward, I can review readiness evidence; as a product owner, I can bring an approved product live; as a consumer, I can see go-live status. |
 | Developer workspace | As a data developer, I can declare a product workload, create an isolated environment, preview changes, and promote or roll back a release through portal, API, or CLI. |
 | Resource orchestration | As a platform engineer, I can expose governed resource abstractions; as a developer, I can request outcomes without managing provider-specific infrastructure. |
 | AI-ready consumption | As an AI team, I can request retrieval access; as governance, I can approve AI usage purpose; as observability, I can trace usage. |

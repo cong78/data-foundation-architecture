@@ -6,7 +6,7 @@ The data service portal is the user entry point for the data foundation. It prov
 
 The portal is the experience layer over the foundation services. It should orchestrate workflows and expose consistent information without becoming a separate source of truth from the catalog, policy, lineage, observability, or contract systems.
 
-The [Data Service Portal model](../architecture/data-service-portal-model.md) defines the portal's intent-led journeys, object model, product detail standard, state ownership, and experience principles.
+The [Data Service Portal Design](../architecture/data-service-portal-model.md) defines the portal's intent-led journeys, object model, product detail standard, state ownership, and experience principles.
 
 ## Scope
 
@@ -94,7 +94,7 @@ The user experience should be organized around common journeys:
 1. Start an innovation idea.
 2. Find and understand a data or AI product.
 3. Connect a source system.
-4. Produce, launch, or evolve a data, analytics, or AI product.
+4. Produce, bring live, or evolve a data, analytics, or AI product.
 5. Consume a product through a purpose-bound agreement.
 6. Share a product with a customer, supplier, or partner.
 7. Define semantics, apply policy, and manage contracts.
@@ -119,7 +119,7 @@ The user experience should be organized around common journeys:
 - Users can request access and track approval status.
 - Product teams can create and manage data contracts through a governed workflow.
 - Contract changes trigger compatibility checks and consumer notifications.
-- Product teams can launch, operate, deprecate, and retire products through governed workflows.
+- Product teams can bring products live, operate, deprecate, and retire them through governed workflows.
 - Users can see separate service-operation and data-entitlement decisions, including purpose, scope, obligations, expiry, and revocation status.
 - Product health, quality, freshness, and incidents are visible from the portal.
 - Portal records link back to authoritative catalog, policy, lineage, observability, and workflow systems.

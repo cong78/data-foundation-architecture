@@ -9,11 +9,12 @@ This repository is both an architecture guide and a delivery reference. Follow t
 | Understand the foundation | [Definition and Scope](definition-and-scope.md) | Shared language and boundaries |
 | Make an architecture decision | [Principles](principles.md) | A consistent decision basis |
 | Design the target architecture | [Target Architecture](../architecture/target-architecture.md) and [Reference Architecture](../architecture/reference-architecture.md) | Six-plane model and capability map |
+| Design the data product lifecycle | [Data Product Lifecycle Design](../architecture/data-product-lifecycle-design.md) | Product states, contract lifecycle, gates, and controls |
 | Design product meaning and context | [Semantic and Context Design](../architecture/semantic-context-design.md) | Versioned semantics, relationships, usage context, and authoritative references |
-| Design identity and access | [Unified Access Design](../architecture/unified-access-design.md) | Named-user and workload identity, service and data decisions, entitlements, and evidence |
-| Design logical data access | [Unified Access Design](../architecture/unified-access-design.md) | Provider-independent product ports, policy enforcement, runtime routing, and access evidence |
+| Design identity and logical access | [Unified Access Design](../architecture/unified-access-design.md) | Identities, service and data decisions, product ports, runtime routing, entitlements, and evidence |
+| Design observability | [Data Observability Service](../services/data-observability-service.md) and [Observability Design](../architecture/observability-design.md) | Technology-neutral service contract plus a Databricks and Grafana Cloud reference solution |
 | Evaluate vendors and technology | [Technology Selection Standard](../standards/technology-selection-standard.md) | Capability mapping, mandatory gates, weighted evidence, TCO, proof and exit plan |
-| Design the portal experience | [Data Service Portal Model](../architecture/data-service-portal-model.md) | Journeys, product experience, agreements, and state boundaries |
+| Design the portal experience | [Data Service Portal Design](../architecture/data-service-portal-model.md) | Journeys, product experience, agreements, and state boundaries |
 | Design the developer experience | [Data Product Developer Experience](../architecture/data-product-developer-experience.md) | Declarative workloads, environments, deployment, rollback, and channel parity |
 | Design agentic services | [Agentic Data Foundation](../architecture/agentic-data-foundation.md) and [Data Service AI Assistant](../services/data-service-ai-assistant.md) | Agent, skill, LLM, context, approval, and evaluation boundaries |
 | Plan implementation | [Architecture Blueprint](../implementation/implementation-blueprint.md) | Platform components, delivery sequence, and backlog |
@@ -29,6 +30,7 @@ This repository is both an architecture guide and a delivery reference. Follow t
 | Definition | Establish shared meaning. | What is a data product? What is in scope? |
 | Principle | Set durable decision rules. | Governance is built in. Security follows the data. |
 | Architecture | Describe logical structure and interaction. | Target planes, reference flow, capability map. |
+| Reference solution | Apply the architecture to a selected technology profile. | Databricks and Grafana Cloud observability design. |
 | Architecture delivery | Translate the target state into components, patterns, and backlog. | Blueprint, patterns, decisions. |
 | Service contract | Define reusable platform capabilities. | Portal, ingestion, product creation, consumption, sharing, observability. |
 | Standard | Define mandatory details for implementation consistency. | Contract fields, telemetry attributes, AI-ready requirements. |

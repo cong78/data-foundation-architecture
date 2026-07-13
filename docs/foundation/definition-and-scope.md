@@ -30,7 +30,7 @@ The architecture guidance covers six foundation services:
 ## In Scope
 
 - Source onboarding and ingestion patterns.
-- Landing, raw, conformed, curated, and product-oriented data zones.
+- Source-aligned raw and validated states, reusable domain products, aggregate products, and consumer-aligned products or views.
 - Data product design, ownership, go-live, and lifecycle management.
 - Data service portal experience for discovery, onboarding, access, workflow tracking, and data contract management.
 - Metadata, catalog, lineage, classification, quality, and policy controls.

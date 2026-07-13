@@ -84,18 +84,19 @@ nav:
       - Glossary: foundation/glossary.md
   - Architecture:
       - Overview: architecture/overview.md
-      - Target Design:
+      - Core Design:
           - Target Architecture: architecture/target-architecture.md
           - Reference Architecture: architecture/reference-architecture.md
           - Data Foundation Model: architecture/data-foundation-model.md
+          - Data Product Lifecycle Design: architecture/data-product-lifecycle-design.md
           - Semantic and Context Design: architecture/semantic-context-design.md
           - Unified Access Design: architecture/unified-access-design.md
-      - Data Product Lifecycle Design: architecture/data-product-lifecycle-design.md
-      - Observability Design: architecture/observability-design.md
       - Experience and AI:
-          - Data Service Portal: architecture/data-service-portal-model.md
+          - Data Service Portal Design: architecture/data-service-portal-model.md
           - Data Product Developer Experience: architecture/data-product-developer-experience.md
           - Agentic Data Foundation: architecture/agentic-data-foundation.md
+      - Reference Solutions:
+          - Observability Design: architecture/observability-design.md
       - Implementation:
           - Architecture Blueprint: implementation/implementation-blueprint.md
           - Architecture Patterns: implementation/service-implementation-patterns.md
