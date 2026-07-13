@@ -39,6 +39,7 @@ extra_javascript:
   - https://cdn.jsdelivr.net/npm/vega@5
   - https://cdn.jsdelivr.net/npm/vega-lite@5
   - https://cdn.jsdelivr.net/npm/vega-embed@6
+  - https://cdn.jsdelivr.net/npm/mermaid@11.12.0/dist/mermaid.min.js
   - assets/javascripts/interactive.js
 
 markdown_extensions:
@@ -96,6 +97,7 @@ nav:
           - Data Product Developer Experience: architecture/data-product-developer-experience.md
           - Agentic Data Foundation: architecture/agentic-data-foundation.md
       - Reference Solutions:
+          - Data Product Creation Design: architecture/data-product-creation-design.md
           - Observability Design: architecture/observability-design.md
       - Implementation:
           - Architecture Blueprint: implementation/implementation-blueprint.md

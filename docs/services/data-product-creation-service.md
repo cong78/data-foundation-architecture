@@ -6,6 +6,8 @@ The data product creation service turns source-aligned data and existing product
 
 Use the [Data Product Management Standard](../standards/data-product-management-standard.md), [Data Product Workload Standard](../standards/data-product-workload-standard.md), and [Data Contract Standard](../standards/data-contract-standard.md) as mandatory controls for product go-live.
 
+For a selected implementation profile, see [Data Product Creation Design](../architecture/data-product-creation-design.md), which maps this service to Databricks workspaces and Unity Catalog while preserving the technology-neutral product contract.
+
 ## Scope
 
 | In Scope | Out of Scope |

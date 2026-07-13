@@ -1,4 +1,32 @@
-document$.subscribe(function () {
+var mermaidInitialized = false;
+
+document$.subscribe(async function () {
+  if (window.mermaid) {
+    if (!mermaidInitialized) {
+      window.mermaid.initialize({
+        startOnLoad: false,
+        securityLevel: "strict",
+        theme: "base",
+        themeVariables: {
+          primaryColor: "#e8f1fb",
+          primaryTextColor: "#102a43",
+          primaryBorderColor: "#2d6ca2",
+          lineColor: "#466b8a",
+          secondaryColor: "#eef4fa",
+          tertiaryColor: "#f7f9fc",
+          fontFamily: "Inter, Arial, sans-serif"
+        },
+        flowchart: {
+          curve: "basis",
+          htmlLabels: true
+        }
+      });
+      mermaidInitialized = true;
+    }
+
+    await window.mermaid.run({ querySelector: ".mermaid" });
+  }
+
   document.querySelectorAll("[data-assessment]").forEach(function (assessment) {
     var checks = Array.from(assessment.querySelectorAll("input[type='checkbox']"));
     var score = assessment.querySelector("[data-score]");
