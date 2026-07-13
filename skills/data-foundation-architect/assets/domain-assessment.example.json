@@ -1,0 +1,55 @@
+{
+  "assessment_version": "1.0",
+  "assessment_date": "2026-07-13",
+  "scope": {
+    "type": "data-domain",
+    "id": "customer",
+    "name": "Customer"
+  },
+  "admission_gates": {
+    "identity": {"status": "pass", "evidence": ["domain/customer"]},
+    "boundary": {"status": "pass", "evidence": ["decision/ADR-042"]},
+    "accountability": {"status": "pass", "evidence": ["portal/domain/customer#owners"]},
+    "governance": {"status": "conditional", "evidence": ["risk/R-118"], "note": "Residency control due in Q4"},
+    "access": {"status": "pass", "evidence": ["policy/customer-access-v2"]},
+    "operations": {"status": "pass", "evidence": ["service/customer-support"]}
+  },
+  "dimensions": {
+    "direction-and-ownership": [
+      {"id": "boundary-and-decisions", "passed": true, "evidence": ["decision/ADR-042"]},
+      {"id": "service-ownership", "passed": true, "evidence": ["portal/domain/customer#services"]},
+      {"id": "portfolio-accountability", "passed": true, "evidence": ["portal/domain/customer#owners"]},
+      {"id": "improvement-review", "passed": false, "evidence": []}
+    ],
+    "foundation-services": [
+      {"id": "portal-adoption", "passed": true, "evidence": ["portal/domain/customer"]},
+      {"id": "ingestion-profile", "passed": true, "evidence": ["service/ingestion/customer"]},
+      {"id": "creation-profile", "passed": false, "evidence": []},
+      {"id": "consumption-and-sharing", "passed": false, "evidence": []}
+    ],
+    "data-products-and-contracts": [
+      {"id": "portfolio-record", "passed": true, "evidence": ["portal/domain/customer#products"]},
+      {"id": "versioned-contracts", "passed": true, "evidence": ["contract/customer-profile/2.0"]},
+      {"id": "go-live-enforcement", "passed": false, "evidence": []},
+      {"id": "portfolio-review", "passed": false, "evidence": []}
+    ],
+    "access-security-and-governance": [
+      {"id": "governed-identities", "passed": true, "evidence": ["policy/customer-access-v2"]},
+      {"id": "unified-access", "passed": true, "evidence": ["conformance/access/customer"]},
+      {"id": "policy-obligations", "passed": false, "evidence": ["risk/R-118"]},
+      {"id": "entitlement-evidence", "passed": true, "evidence": ["audit/customer-access"]}
+    ],
+    "observability-and-operations": [
+      {"id": "otel-service-telemetry", "passed": true, "evidence": ["dashboard/customer-services"]},
+      {"id": "product-telemetry", "passed": false, "evidence": []},
+      {"id": "end-to-end-correlation", "passed": false, "evidence": []},
+      {"id": "lifecycle-rehearsal", "passed": false, "evidence": []}
+    ],
+    "interoperability-and-ai-enablement": [
+      {"id": "portable-artifacts", "passed": true, "evidence": ["conformance/customer-product"]},
+      {"id": "semantic-context", "passed": true, "evidence": ["context/customer/1.1"]},
+      {"id": "approved-ai-purpose", "passed": false, "evidence": []},
+      {"id": "ai-data-traceability", "passed": false, "evidence": []}
+    ]
+  }
+}

@@ -98,6 +98,7 @@ nav:
           - Data Service Portal Design: architecture/data-service-portal-model.md
           - Data Product Developer Experience: architecture/data-product-developer-experience.md
           - Agentic Data Foundation: architecture/agentic-data-foundation.md
+          - Data Foundation Architect Skill: architecture/data-foundation-architect-skill.md
       - Reference Solutions:
           - Data Ingestion Design: architecture/data-ingestion-design.md
           - Data Product Creation Design: architecture/data-product-creation-design.md

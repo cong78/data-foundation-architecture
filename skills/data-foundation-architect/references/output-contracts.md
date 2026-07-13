@@ -1,0 +1,47 @@
+# Output Contracts
+
+## Assessment
+
+Return:
+
+1. Scope, stable id, lifecycle, assessment version, date, and evidence window.
+2. Admission-gate decision when applicable.
+3. Six maturity dimension scores, overall score, lowest dimension, and evidence coverage.
+4. Verified strengths.
+5. Gaps and risks ordered by consequence.
+6. Improvement actions with target evidence, owner, dependency, and due date when known.
+7. Guidance used.
+
+## Architecture Design
+
+Return:
+
+1. Problem, outcomes, scope, actors, assumptions, constraints, and non-goals.
+2. Logical architecture with readable diagram.
+3. Component responsibilities and authoritative systems.
+4. Main value flow and failure behavior.
+5. Identity, policy, contract, semantic, lineage, telemetry, and lifecycle controls.
+6. Product ports and interoperability profile.
+7. Decisions, alternatives, risks, and open questions.
+8. Delivery increments and done criteria.
+
+## Architecture Review
+
+Lead with findings:
+
+| Severity | Meaning |
+| --- | --- |
+| Critical | Unsafe, unlawful, or structurally invalid; blocks adoption or go-live. |
+| High | Likely failure, material trust gap, or mandatory control missing. |
+| Medium | Important inconsistency, operability gap, or avoidable coupling. |
+| Low | Clarity, maintainability, or optimization opportunity. |
+
+For each finding include the affected element, consequence, evidence, guidance reference, and correction. Then provide assumptions, residual risks, and a short summary.
+
+## Generated Artifact
+
+- Preserve the owning template's structure.
+- Mark unknown values `TBD` and list the evidence needed to resolve them.
+- Include stable identifiers and versions where applicable.
+- Keep contract targets separate from current measurements.
+- Include decisions, exceptions, owners, expiry, and evidence links.

@@ -31,3 +31,13 @@ jobs:
 
       - name: Validate internal links and assets
         run: python scripts/check_internal_links.py site
+
+      - name: Validate Data Foundation Architect skill
+        run: |
+          python skills/data-foundation-architect/scripts/verify_guidance_map.py
+          python -m py_compile \
+            skills/data-foundation-architect/scripts/assess_maturity.py \
+            skills/data-foundation-architect/scripts/verify_guidance_map.py
+          python skills/data-foundation-architect/scripts/assess_maturity.py \
+            skills/data-foundation-architect/assets/domain-assessment.example.json \
+            --format json > /tmp/domain-assessment-result.json

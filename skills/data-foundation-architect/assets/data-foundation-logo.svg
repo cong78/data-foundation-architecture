@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Data Foundation Architecture">
+  <rect width="64" height="64" rx="8" fill="#0F238C"/>
+  <g fill="#FFFFFF">
+    <rect x="24" y="17" width="16" height="7" rx="1.5"/>
+    <rect x="17" y="31" width="30" height="7" rx="1.5"/>
+  </g>
+  <rect x="10" y="46" width="44" height="8" rx="2.5" fill="#35B9E6"/>
+</svg>

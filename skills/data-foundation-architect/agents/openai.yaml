@@ -1,0 +1,7 @@
+interface:
+  display_name: "Data Foundation Architect"
+  short_description: "Assess, design, and govern data foundations"
+  icon_small: "./assets/data-foundation-logo.svg"
+  icon_large: "./assets/data-foundation-logo.svg"
+  brand_color: "#0F238C"
+  default_prompt: "Use $data-foundation-architect to assess a data domain and produce an evidence-based improvement plan."
