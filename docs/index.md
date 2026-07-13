@@ -2,11 +2,11 @@
 
 <div class="brand-lockup">
   <div>
-    <span>An enterprise data foundation that turns distributed data into trusted, governed, and reusable data products.</span>
+    <span>Trusted data products for analytics, applications, platforms, sharing, agents, and models.</span>
   </div>
 </div>
 
-This architecture defines the shared backbone for ingestion, product creation, unified access, consumption, sharing, and end-to-end observability. Open contracts, enforceable controls, and portable interfaces make data reliable for analytics and applications, and ready for agents and models.
+Architecture guidance for an **AI-ready data foundation**: open contracts, reusable products, unified access, observable trust, and governed automation.
 
 ## Choose Your Path
 
