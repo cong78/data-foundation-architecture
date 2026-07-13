@@ -2,6 +2,7 @@ site_name: Data Foundation Architecture
 site_description: Enterprise architecture guidance for an AI-ready data foundation.
 site_author: Data and AI Foundation
 repo_name: data-foundation-architecture
+repo_url: https://github.com/cong78/data-foundation-architecture
 
 theme:
   name: material

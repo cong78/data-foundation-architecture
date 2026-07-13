@@ -9,20 +9,22 @@ The guidance defines:
 - Foundation definition and scope.
 - Architecture principles and decision rules.
 - Reference architecture and data product lifecycle.
-- Six core foundation services.
+- Eight foundation services.
 - Architecture blueprint and service implementation patterns.
 - Data contract, data product management, OpenTelemetry, and AI-ready data standards.
 - Templates and examples for real delivery.
 - Governance, security, compliance, operating model, and implementation runway.
 
-The six foundation services are:
+The eight foundation services are:
 
 - Data service portal
+- Data Service AI Assistant
 - Data ingestion service
 - Data product creation service
 - Data consumption service
 - Data sharing service
 - Data observability service
+- Data foundation operations service
 
 ## Data Foundation Architect Skill
 
