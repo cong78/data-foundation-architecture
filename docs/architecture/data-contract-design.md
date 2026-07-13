@@ -24,7 +24,7 @@ Do not create one oversized contract for the whole data flow. Each producer acce
   <section class="standards-map-lane lane-build">
     <div class="standards-map-cell"><small>Compose</small><strong>Accepted input contracts</strong><p>Exact upstream products, versions, ports, quality, and freshness.</p></div>
     <span class="standards-map-arrow" aria-hidden="true"></span>
-    <div class="standards-map-cell standards-map-focus"><strong>Reusable domain product</strong><strong>Aggregate product</strong><strong>Consumer-aligned product</strong></div>
+    <div class="standards-map-cell standards-map-focus"><strong>Aggregate product</strong><strong>Consumer-aligned product</strong><p>Both are reusable by design and owned by an accountable data domain.</p></div>
     <span class="standards-map-arrow" aria-hidden="true"></span>
     <div class="standards-map-cell"><strong>Product contract</strong><p>Output schema, semantics, grain, quality, SLO, policy, ports, and compatibility.</p></div>
   </section>
@@ -38,7 +38,7 @@ Do not create one oversized contract for the whole data flow. Each producer acce
   </section>
 </div>
 
-The chain can branch. A reusable domain product may consume several source-aligned products, and an aggregate may combine products from several domains. Every output contract records the exact upstream product and contract versions used to produce it.
+The chain can branch. An aggregate product may consume several source-aligned or aggregate products, while a consumer-aligned product may project any live upstream product for a declared purpose. Every output contract records the exact upstream product and contract versions used to produce it.
 
 ## Contracts by Product Layer
 
@@ -47,14 +47,13 @@ The chain can branch. A reusable domain product may consume several source-align
 | Source delivery | **Source contract** | Delivery channel, schema, keys, source semantics, cadence, change notice, replay, and source obligations are checked during onboarding and receipt. | Source system owner; foundation platform enforces ingestion. |
 | Raw source-aligned state | **Source contract clauses** | Envelope, identity, checksum, schema version, provenance, classification, and receipt controls are enforced. Failed records are quarantined. Raw is restricted and has no consumer-facing product contract. | Data Foundation Platform Team. |
 | Validated source-aligned product | **Source-aligned product contract** | A product-contract profile promises a stable, source-preserving schema, keys, freshness, basic quality, limitations, lineage, and support boundary. It is the central-to-federated handoff. | Data Foundation Platform Team, with source owner obligations retained. |
-| Reusable domain product | **Product contract** | Domain meaning, entities, grain, rules, quality, SLOs, access, semantic context, compatibility, and product ports are tested before go-live. | Owning domain data team. |
-| Aggregate product | **Product contract with upstream references** | Metric definitions, dimensions, units, time semantics, changed grain, reconciliation, restatement, and lineage to input contract versions are enforced. | Owning domain data team and metric owner. |
-| Consumer-aligned product or view | **Product contract with purpose constraints** | Consumer, purpose, projection, minimization, interface, upstream versions, SLO, compatibility, and expiry are explicit. Repeated logic should be promoted to a reusable product. | Serving or consuming domain data team. |
+| Aggregate product | **Product contract with upstream references** | Domain semantics, entity or composition rules, grain, metrics where applicable, reconciliation, restatement, and lineage to input contract versions are enforced. | Owning domain data team, steward, and metric owner where applicable. |
+| Consumer-aligned product or view | **Product contract with purpose constraints** | Consumer, purpose, projection, minimization, interface, upstream versions, SLO, compatibility, and expiry are explicit. Repeated shared logic should be promoted to an aggregate product. | Serving or consuming domain data team. |
 | Unified access port | **Consumption contract projection** | The stable table, SQL, API, event, file, feature, retrieval, semantic, or context interface is generated from and traceable to the product contract. Request and response behavior, policy, and obligations are enforced at access time. | Product owner and consumption platform owner. |
 | External package | **Sharing contract plus sharing agreement** | Recipient, minimized scope, legal or approved purpose, delivery, retention, expiry, and revocation narrow a specific product-contract version. | Sharing owner and recipient owner. |
 | AI use | **AI usage contract or clause plus consume agreement** | Retrieval, grounding, feature, training, or evaluation purpose; model or agent identity; snapshot; prohibited use; and evidence requirements are checked at access time. | Product owner and AI use-case owner. |
 
-**Product contract** is the common contract type for every publishable data-product layer. “Source-aligned,” “aggregate,” and “consumer-aligned” are profiles of that type, not separate incompatible standards.
+**Product contract** is the common contract type for every publishable data-product layer. “Source-aligned,” “aggregate,” and “consumer-aligned” are profiles of that type, not separate incompatible standards. Reusability is enforced through the common product-quality and go-live requirements rather than represented as another layer.
 
 ## Contract Composition Rule
 

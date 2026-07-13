@@ -41,7 +41,7 @@ Check a foundation-owned capability only when the domain has adopted it and can 
     <h2>Foundation Services</h2>
     <label><input type="checkbox"> The Data Service Portal provides one entry point for discovery, requests, contracts, access, workflows, and evidence.</label>
     <label><input type="checkbox"> The foundation platform team centrally operates source onboarding, ingestion, and raw and validated source-aligned products across approved file, connector, API, CDC, and streaming patterns.</label>
-    <label><input type="checkbox"> Shared product-creation capabilities provide reusable workload patterns and controls while domain teams own domain, aggregate, and consumer-aligned products.</label>
+    <label><input type="checkbox"> Shared product-creation capabilities provide reusable workload patterns and controls while domain teams own aggregate and consumer-aligned products.</label>
     <label><input type="checkbox"> Consumption and sharing provide governed, observable delivery for people, systems, platforms, partners, agents, and models.</label>
 
     <h2>Data Products and Contracts</h2>

@@ -2,7 +2,7 @@
 
 A **data domain** is a stable business-aligned accountability boundary within the enterprise data foundation. It groups related business meaning, product ownership, stewardship, source relationships, consumers, policies, and portfolio decisions. It does not create a separate data foundation or permit a domain-specific bypass around shared controls.
 
-The enterprise foundation provides common services, centrally managed source-aligned products, standards, identity, policy, telemetry, and evidence. A domain adopts those capabilities and owns reusable domain, aggregate, and consumer-aligned products and business decisions inside its declared boundary.
+The enterprise foundation provides common services, centrally managed source-aligned products, standards, identity, policy, telemetry, and evidence. A domain adopts those capabilities and owns aggregate and consumer-aligned products and business decisions inside its declared boundary. The domain is an accountability and portfolio boundary, not a separate product type; every live product is reusable by design.
 
 ## Position in the Foundation
 
@@ -111,7 +111,7 @@ The Data Service Portal should provide:
 
 1. The foundation owns ingestion, source-aligned products, reusable service capabilities, and common control contracts; domains own downstream business meaning and outcomes.
 2. Domain identity is stable and portable across organization and technology changes.
-3. Every domain, aggregate, or consumer-aligned product has one accountable owning domain, even when several domains contribute; source-aligned products have an accountable foundation platform owner.
+3. Every aggregate or consumer-aligned product has one accountable owning domain, even when several domains contribute; source-aligned products have an accountable foundation platform owner.
 4. Cross-domain use occurs through product ports, contracts, agreements and unified access, not informal storage access.
 5. Domain autonomy does not weaken enterprise identity, security, privacy, interoperability, telemetry or evidence requirements.
 6. Compare domains by maturity dimension and evidence quality, not through an unqualified league table.

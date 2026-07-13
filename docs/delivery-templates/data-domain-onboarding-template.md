@@ -54,7 +54,6 @@ Use this record to register a data domain, decide whether it can use foundation 
 | Foundation ingestion and source-aligned owner |  |
 | Source-system owners and obligations |  |
 | Validated-state contracts accepted by the domain |  |
-| Domain-owned reusable products |  |
 | Domain-owned aggregate products |  |
 | Domain-owned consumer-aligned products or views |  |
 | Prohibited or retired parallel extraction paths |  |

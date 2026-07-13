@@ -4,7 +4,7 @@ The data contract standard defines the minimum content and lifecycle rules for c
 
 Contracts are enforceable platform assets. A contract is not complete when it is written; it must be reviewed, versioned, tested, published, monitored, and used by pipelines and consumers.
 
-Use [Data Contract Design](../architecture/data-contract-design.md) to place these contract types across source-aligned, reusable domain, aggregate, consumer-aligned, consumption, sharing, and AI-use boundaries.
+Use [Data Contract Design](../architecture/data-contract-design.md) to place these contract types across source-aligned, aggregate, consumer-aligned, consumption, sharing, and AI-use boundaries.
 
 ## Canonical Representation
 
@@ -24,7 +24,7 @@ The field model below is the enterprise minimum. Its implementation must map to 
 | Type | Purpose | Typical Owner |
 | --- | --- | --- |
 | Source contract | Defines what a source system provides to the foundation. | Source system owner. |
-| Product contract | Defines the live product promise and ports. Source-aligned, reusable domain, aggregate, and consumer-aligned products use profiles of this common type. | Data product owner. |
+| Product contract | Defines the live product promise and ports. Source-aligned, aggregate, and consumer-aligned products use profiles of this common type. | Data product owner. |
 | Consumption contract | Narrows a product contract to API, semantic, event, feature, retrieval, or other access behavior; it does not replace the product contract. | Product owner and platform owner. |
 | Sharing contract | Narrows a product contract to recipient-specific package, scope, usage, expiry, and revocation. | Sharing owner. |
 | AI usage contract | Narrows a product contract to approved AI use such as retrieval, training, evaluation, grounding, or feature use. | Product owner and AI use-case owner. |

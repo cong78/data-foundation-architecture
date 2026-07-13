@@ -12,6 +12,8 @@ The descriptor must reference the product id, owners, lifecycle state, input and
 
 Every live data product must have:
 
+Reusability is part of this mandatory model, not a separate product type. Every product must expose a stable purpose, contract, product ports, ownership, support, and lifecycle that allow approved consumers to use it without depending on its internal pipeline or physical storage.
+
 | Area | Mandatory Requirement |
 | --- | --- |
 | Ownership | Product owner, data steward, technical owner, support contact, and escalation path. |
@@ -31,8 +33,7 @@ Every live data product must have:
 | Product type | Mandatory accountable owner | Required boundary evidence |
 | --- | --- | --- |
 | Source-aligned raw and validated states | Data Foundation Platform Team | Source id, source owner, source-aligned contract, ingestion service profile, platform support route, source obligations, lineage, and activation evidence. |
-| Reusable domain product | Registered owning domain data team | Domain id, product owner, accepted input contracts, domain semantics, support, value, and lifecycle. |
-| Aggregate product | Registered owning domain data team | Domain id, metric owner, declared grain, calculation semantics, lineage, restatement policy, SLO, and lifecycle. |
+| Aggregate product | Registered owning domain data team | Domain id, product owner, steward, declared grain, composition or calculation semantics, metric owner where applicable, lineage, restatement policy, SLO, and lifecycle. |
 | Consumer-aligned product or view | Serving or consuming domain data team | Domain id, product or interface owner, consumer and purpose, upstream versions, policy, expiry, support, and lifecycle. |
 
 The platform team owns the ingestion and product-creation services. It owns source-aligned products but does not become the owner of products created by federated domain teams. Distributed execution does not change these accountabilities.
@@ -131,7 +132,7 @@ Data products should be managed as a portfolio, not as isolated datasets.
 - No breaking change without impact analysis, consumer notification, and migration path.
 - No product remains active without observable freshness and quality status.
 - No product remains live if ownership is missing or expired.
-- No domain team may create a competing ingestion or source-aligned ownership path; no foundation platform team may claim ownership of federated domain, aggregate, or consumer-aligned business products.
+- No domain team may create a competing ingestion or source-aligned ownership path; no foundation platform team may claim ownership of federated aggregate or consumer-aligned business products.
 - No live product may depend on a vendor-native descriptor as its only machine-readable definition.
 
 ## Minimum Portal Views

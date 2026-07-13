@@ -55,7 +55,7 @@ The five layers and six target planes are complementary. **Layers** show where r
   <div class="layer-connector">Create and serve</div>
   <section class="architecture-layer layer-products">
     <span class="layer-number">4</span>
-    <div><strong>Governed Data Products</strong><p>Source-aligned · Domain · Aggregate · Consumer-aligned · AI-ready</p></div>
+    <div><strong>Governed Data Products</strong><p>Source-aligned · Aggregate · Consumer-aligned · AI-ready</p></div>
   </section>
   <div class="layer-connector">Runs on</div>
   <section class="architecture-layer layer-platform">
@@ -78,7 +78,7 @@ The five layers and six target planes are complementary. **Layers** show where r
 | Platform runtime | Portable storage, processing, event, API, telemetry, and lineage infrastructure. | A vendor-specific architecture contract. |
 
 !!! info "Central-to-federated ownership"
-    The Data Foundation Platform Team centrally manages source onboarding, ingestion, and raw and validated source-aligned products. Domain data teams use shared creation services and own reusable domain, aggregate, and consumer-aligned products. The validated source-aligned contract is the accountability handoff. See the [Data Foundation Model](data-foundation-model.md#central-and-federated-ownership).
+    The Data Foundation Platform Team centrally manages source onboarding, ingestion, and raw and validated source-aligned products. Domain data teams use shared creation services and own aggregate and consumer-aligned products. Every live product is reusable by design. The validated source-aligned contract is the accountability handoff. See the [Data Foundation Model](data-foundation-model.md#central-and-federated-ownership).
 
 ## End-to-End Value Flow
 

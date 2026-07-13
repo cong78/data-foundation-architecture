@@ -30,7 +30,7 @@ The architecture guidance covers six foundation services:
 ## In Scope
 
 - Source onboarding and ingestion patterns.
-- Source-aligned raw and validated states, reusable domain products, aggregate products, and consumer-aligned products or views.
+- Source-aligned raw and validated states, aggregate products, and consumer-aligned products or views. Every live product is reusable by design.
 - Data product design, ownership, go-live, and lifecycle management.
 - Data service portal experience for discovery, onboarding, access, workflow tracking, and data contract management.
 - Metadata, catalog, lineage, classification, quality, and policy controls.
@@ -51,7 +51,7 @@ This guidance does not define:
 
 ## Design Boundary
 
-The Data Foundation Platform Team centrally owns source onboarding, ingestion, and the raw and validated source-aligned lifecycle. Source system teams remain accountable for source availability, source semantics, and change obligations. Domain data teams federate the creation and ownership of reusable domain, aggregate, and consumer-aligned products using shared foundation services, standards, controls, and evidence.
+The Data Foundation Platform Team centrally owns source onboarding, ingestion, and the raw and validated source-aligned lifecycle. Source system teams remain accountable for source availability, source semantics, and change obligations. Domain data teams federate the creation and ownership of aggregate and consumer-aligned products using shared foundation services, standards, controls, and evidence.
 
 ### How Data Domains Fit
 

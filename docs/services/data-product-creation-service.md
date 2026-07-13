@@ -21,13 +21,13 @@ For a selected implementation profile, see [Data Product Creation Design](../arc
 
 The Data Foundation Platform Team owns the **product creation service**: developer experience, templates, workload profiles, environments, automation, policy integration, go-live workflow, release evidence, and service reliability.
 
-Domain data teams own the **products created with the service**. They are accountable for reusable domain, aggregate, and consumer-aligned product purpose, semantics, contract, transformations, quality, SLOs, access intent, support, value, cost, lifecycle, and consumer communication.
+Domain data teams own the **products created with the service**. They are accountable for aggregate and consumer-aligned product purpose, semantics, contract, transformations, quality, SLOs, access intent, support, value, cost, lifecycle, reuse, and consumer communication.
 
 This separation provides centralized enablement without centralized business-product delivery. Platform automation enforces common controls; it does not become the product owner or approve domain meaning on behalf of accountable domain roles.
 
 ## Product Requirements
 
-Each federated domain, aggregate, or consumer-aligned data product must be:
+Each federated aggregate or consumer-aligned data product must be:
 
 - Owned by a business or data domain.
 - Documented with clear business meaning.
