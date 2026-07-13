@@ -100,6 +100,7 @@ nav:
           - Data Ingestion Design: architecture/data-ingestion-design.md
           - Data Product Creation Design: architecture/data-product-creation-design.md
           - Data Consumption Design: architecture/data-consumption-design.md
+          - Data Sharing Design: architecture/data-sharing-design.md
           - Observability Design: architecture/observability-design.md
       - Implementation:
           - Architecture Blueprint: implementation/implementation-blueprint.md

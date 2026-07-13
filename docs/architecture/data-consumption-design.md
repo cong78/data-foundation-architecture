@@ -239,5 +239,5 @@ A consumption port may go live only when:
 - One logical product port can be rebound to another conformant runtime without changing the consumer contract.
 
 <div class="read-next">
-  <strong>Next:</strong> use Observability Design to correlate consumption decisions, Databricks runtime health, product quality, usage, cost, and incidents.
+  <strong>Next:</strong> use Data Sharing Design to expose minimized, contract-based product packages to internal and external recipients.
 </div>

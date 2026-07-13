@@ -4,6 +4,8 @@
 
 The data sharing service enables governed exchange of data with internal platforms, customers, suppliers, partners, and company ecosystems. Sharing is explicit, contract-based, monitored, and revocable.
 
+For a selected implementation profile, see [Data Sharing Design](../architecture/data-sharing-design.md), which maps this service to Delta Sharing, Unity Catalog shares and recipients, and an explicit product-contract, sharing-contract, and agreement lifecycle.
+
 ## Scope
 
 | In Scope | Out of Scope |

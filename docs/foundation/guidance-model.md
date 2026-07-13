@@ -15,6 +15,7 @@ This repository is both an architecture guide and a delivery reference. Follow t
 | Implement ingestion on Databricks | [Data Ingestion Service](../services/data-ingestion-service.md) and [Data Ingestion Design](../architecture/data-ingestion-design.md) | Technology-neutral service contract plus a Lakeflow and Unity Catalog reference solution |
 | Implement product creation on Databricks | [Data Product Creation Service](../services/data-product-creation-service.md) and [Data Product Creation Design](../architecture/data-product-creation-design.md) | Technology-neutral service contract plus a Databricks workspace and Unity Catalog reference solution |
 | Implement consumption on Databricks | [Data Consumption Service](../services/data-consumption-service.md) and [Data Consumption Design](../architecture/data-consumption-design.md) | Technology-neutral service contract plus a Unity Catalog, SQL, open-table, and adapter reference solution |
+| Implement sharing on Databricks | [Data Sharing Service](../services/data-sharing-service.md) and [Data Sharing Design](../architecture/data-sharing-design.md) | Technology-neutral service contract plus a Delta Sharing and contract-lifecycle reference solution |
 | Design observability | [Data Observability Service](../services/data-observability-service.md) and [Observability Design](../architecture/observability-design.md) | Technology-neutral service contract plus a Databricks and Grafana Cloud reference solution |
 | Evaluate vendors and technology | [Technology Selection Standard](../standards/technology-selection-standard.md) | Capability mapping, mandatory gates, weighted evidence, TCO, proof and exit plan |
 | Design the portal experience | [Data Service Portal Design](../architecture/data-service-portal-model.md) | Journeys, product experience, agreements, and state boundaries |
@@ -33,7 +34,7 @@ This repository is both an architecture guide and a delivery reference. Follow t
 | Definition | Establish shared meaning. | What is a data product? What is in scope? |
 | Principle | Set durable decision rules. | Governance is built in. Security follows the data. |
 | Architecture | Describe logical structure and interaction. | Target planes, reference flow, capability map. |
-| Reference solution | Apply the architecture to a selected technology profile. | Databricks ingestion, product creation, consumption, and Databricks-Grafana observability designs. |
+| Reference solution | Apply the architecture to a selected technology profile. | Databricks ingestion, product creation, consumption, sharing, and Databricks-Grafana observability designs. |
 | Architecture delivery | Translate the target state into components, patterns, and backlog. | Blueprint, patterns, decisions. |
 | Service contract | Define reusable platform capabilities. | Portal, ingestion, product creation, consumption, sharing, observability. |
 | Standard | Define mandatory details for implementation consistency. | Contract fields, telemetry attributes, AI-ready requirements. |

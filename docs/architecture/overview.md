@@ -153,6 +153,7 @@ flowchart LR
 | [Data Ingestion Design](data-ingestion-design.md) | How can Databricks implement governed file, connector, CDC, API, and event ingestion? |
 | [Data Product Creation Design](data-product-creation-design.md) | How can Databricks workspaces and Unity Catalog implement product creation and unified governed access? |
 | [Data Consumption Design](data-consumption-design.md) | How can Unity Catalog, SQL warehouses, open interfaces, and adapters serve governed product ports? |
+| [Data Sharing Design](data-sharing-design.md) | How can Delta Sharing deliver contract-based, minimized, monitored, and revocable data exchange? |
 | [Observability Design](observability-design.md) | How can the observability contract be implemented with Databricks, Unity Catalog, and Grafana Cloud? |
 | [Architecture Blueprint](../implementation/implementation-blueprint.md) | How should the architecture be implemented and sequenced? |
 
