@@ -4,6 +4,8 @@
 
 The data ingestion service brings data from source systems into the foundation through standardized, governed patterns. It makes onboarding repeatable while preserving provenance, enforcing baseline controls, and preparing data for product creation.
 
+For a selected implementation profile, see [Data Ingestion Design](../architecture/data-ingestion-design.md), which maps this service to Lakeflow Connect, Auto Loader, Databricks streaming runtimes, and Unity Catalog while preserving the source contract and source-aligned boundary.
+
 ## Scope
 
 | In Scope | Out of Scope |

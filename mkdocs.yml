@@ -97,7 +97,9 @@ nav:
           - Data Product Developer Experience: architecture/data-product-developer-experience.md
           - Agentic Data Foundation: architecture/agentic-data-foundation.md
       - Reference Solutions:
+          - Data Ingestion Design: architecture/data-ingestion-design.md
           - Data Product Creation Design: architecture/data-product-creation-design.md
+          - Data Consumption Design: architecture/data-consumption-design.md
           - Observability Design: architecture/observability-design.md
       - Implementation:
           - Architecture Blueprint: implementation/implementation-blueprint.md

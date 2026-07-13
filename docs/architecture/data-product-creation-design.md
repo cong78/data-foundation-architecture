@@ -315,5 +315,5 @@ Databricks is an implementation, not the external product contract. Preserve the
 - One product can be recreated from canonical artifacts outside its original workspace and physical bindings.
 
 <div class="read-next">
-  <strong>Next:</strong> use the Data Product Creation Service as the technology-neutral contract and record Databricks selection evidence in the Technology Selection Record.
+  <strong>Next:</strong> use Data Consumption Design to expose live product ports through Unity Catalog, SQL, open interfaces, and governed adapters.
 </div>

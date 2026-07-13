@@ -6,6 +6,8 @@ The data consumption service makes trusted data available to consumers through f
 
 It implements the [Unified Access Design](../architecture/unified-access-design.md): one governed logical access contract above distributed physical data-product storage and runtimes.
 
+For a selected implementation profile, see [Data Consumption Design](../architecture/data-consumption-design.md), which maps this service to Unity Catalog, SQL warehouses, open table and sharing interfaces, and conformant non-SQL adapters.
+
 ## Scope
 
 | In Scope | Out of Scope |

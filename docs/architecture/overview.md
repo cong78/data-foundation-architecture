@@ -150,7 +150,9 @@ flowchart LR
 | [Data Service Portal Design](data-service-portal-model.md) | How do users and agents interact with the foundation without duplicating authority? |
 | [Data Product Developer Experience](data-product-developer-experience.md) | How do developers declare, test, deploy, and roll back product workloads? |
 | [Agentic Data Foundation](agentic-data-foundation.md) | How are agents, skills, models, context, approval, and evidence governed? |
+| [Data Ingestion Design](data-ingestion-design.md) | How can Databricks implement governed file, connector, CDC, API, and event ingestion? |
 | [Data Product Creation Design](data-product-creation-design.md) | How can Databricks workspaces and Unity Catalog implement product creation and unified governed access? |
+| [Data Consumption Design](data-consumption-design.md) | How can Unity Catalog, SQL warehouses, open interfaces, and adapters serve governed product ports? |
 | [Observability Design](observability-design.md) | How can the observability contract be implemented with Databricks, Unity Catalog, and Grafana Cloud? |
 | [Architecture Blueprint](../implementation/implementation-blueprint.md) | How should the architecture be implemented and sequenced? |
 
