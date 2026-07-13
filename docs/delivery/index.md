@@ -18,7 +18,7 @@ Delivery turns architecture guidance into small, testable increments with reusab
   <section class="standards-map-lane lane-build">
     <div class="standards-map-cell"><small>Prove</small><strong>Readiness · Conformance · Risk</strong><p>Make architecture claims testable before scaling adoption.</p></div>
     <span class="standards-map-arrow" aria-hidden="true"></span>
-    <div class="standards-map-cell standards-map-focus"><a href="../assessments/architecture-dashboard/"><strong>Architecture Dashboard</strong></a><a href="../assessments/industry-alignment/"><strong>Industry Alignment</strong></a><a href="../assessments/ai-readiness-assessment/"><strong>AI Readiness</strong></a></div>
+    <div class="standards-map-cell standards-map-focus"><a href="../assessments/architecture-dashboard/"><strong>Architecture Dashboard</strong></a><a href="../assessments/industry-alignment/"><strong>Industry Alignment</strong></a><a href="../assessments/data-foundation-maturity-assessment/"><strong>Foundation Maturity</strong></a></div>
     <span class="standards-map-arrow" aria-hidden="true"></span>
     <div class="standards-map-cell"><strong>Decision evidence</strong><p>Visible maturity, gaps, conformance results, risks, and remediation priorities.</p></div>
   </section>

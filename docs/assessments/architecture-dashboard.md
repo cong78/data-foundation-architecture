@@ -5,7 +5,7 @@ Use this page to discuss maturity with evidence. Values are illustrative; replac
 <div class="metric-strip">
   <div class="metric-card"><strong>6</strong>Foundation services</div>
   <div class="metric-card"><strong>9</strong>Go-live gates</div>
-  <div class="metric-card"><strong>12</strong>AI readiness checks</div>
+  <div class="metric-card"><strong>24</strong>Foundation maturity checks</div>
   <div class="metric-card"><strong>OTel</strong>Telemetry standard</div>
 </div>
 

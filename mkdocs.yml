@@ -137,7 +137,7 @@ nav:
       - Assess:
           - Architecture Dashboard: assessments/architecture-dashboard.md
           - Industry Alignment: assessments/industry-alignment.md
-          - AI Readiness Assessment: assessments/ai-readiness-assessment.md
+          - Data Foundation Maturity Assessment: assessments/data-foundation-maturity-assessment.md
       - Apply Templates:
           - Data Product Template: delivery-templates/data-product-template.md
           - Data Product Workload Template: delivery-templates/data-product-workload-template.md

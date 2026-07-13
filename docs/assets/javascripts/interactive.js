@@ -34,10 +34,10 @@ document$.subscribe(async function () {
     var meter = assessment.querySelector("[data-meter]");
 
     function labelFor(percent) {
-      if (percent >= 85) return "AI-ready foundation";
-      if (percent >= 65) return "Strong foundation, targeted gaps";
-      if (percent >= 40) return "Emerging foundation";
-      return "Early maturity";
+      if (percent >= 85) return "Optimized";
+      if (percent >= 65) return "Established";
+      if (percent >= 40) return "Emerging";
+      return "Foundational";
     }
 
     function update() {
