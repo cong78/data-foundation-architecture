@@ -172,6 +172,18 @@ Production ingestion may activate only when:
 - Export lineage, run history, quality results, schema history, and operational evidence on the foundation retention schedule.
 - Prove one file, connector, and event source can be rebuilt in a clean environment from canonical artifacts.
 
+## Operational Ownership
+
+| Role | Primary responsibility in this profile |
+| --- | --- |
+| Data Foundation Platform Team | Central service ownership, source onboarding, ingestion runtime, source-aligned raw and validated products, contracts, controls, SLOs, incidents, evidence, and lifecycle. |
+| Source system team | Source availability, delivery obligations, source semantics, credentials coordination, maintenance windows, and change notice. |
+| Domain data team | Downstream acceptance needs and stewardship input; consumption of validated source-aligned ports without parallel extraction ownership. |
+| Security and privacy | Classification policy, sensitive-source review, retention, residency, access constraints, and exceptions. |
+| Data reliability team | Telemetry standard, cross-service correlation, incident integration, and evidence retention. |
+
+Deployment may be regional or physically distributed, but the foundation platform team remains accountable for service behavior and the source-aligned lifecycle.
+
 ## Implementation Runway
 
 ### Increment 1: Establish Ingestion Controls
@@ -219,6 +231,7 @@ Production ingestion may activate only when:
 - Source, contract, connector, deployment, run, lineage, quality, cost, and incident evidence is correlated.
 - A connector can be replaced without changing the canonical source id or downstream validated-state contract.
 - Product teams can consume validated source-aligned data without implementing custom source extraction.
+- Central platform ownership and source-team obligations are visible for every source-aligned product; no domain-local pipeline creates a competing source of record.
 
 <div class="read-next">
   <strong>Next:</strong> use Data Product Creation Design to turn validated source-aligned data into governed live products.

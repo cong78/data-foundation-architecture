@@ -17,9 +17,17 @@ For a selected implementation profile, see [Data Product Creation Design](../arc
 | Data contracts, semantic definitions, lineage, quality rules, ownership, and lifecycle state. | Consumer dashboard, application, or model implementation. |
 | Product workspaces, reusable templates, and product readiness evidence. | External sharing agreements, except product packaging needed for sharing. |
 
+## Federated Product Ownership
+
+The Data Foundation Platform Team owns the **product creation service**: developer experience, templates, workload profiles, environments, automation, policy integration, go-live workflow, release evidence, and service reliability.
+
+Domain data teams own the **products created with the service**. They are accountable for reusable domain, aggregate, and consumer-aligned product purpose, semantics, contract, transformations, quality, SLOs, access intent, support, value, cost, lifecycle, and consumer communication.
+
+This separation provides centralized enablement without centralized business-product delivery. Platform automation enforces common controls; it does not become the product owner or approve domain meaning on behalf of accountable domain roles.
+
 ## Product Requirements
 
-Each data product must be:
+Each federated domain, aggregate, or consumer-aligned data product must be:
 
 - Owned by a business or data domain.
 - Documented with clear business meaning.
@@ -70,6 +78,7 @@ Each product should publish a [semantic context package](../architecture/semanti
 ## Controls
 
 - Product owner and steward are assigned.
+- The owning domain data team is registered and accepts product operation and lifecycle accountability.
 - Business purpose and intended consumers are defined.
 - Source lineage is captured.
 - Data contract is approved.

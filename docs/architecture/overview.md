@@ -77,6 +77,9 @@ The five layers and six target planes are complementary. **Layers** show where r
 | Governed data products | Reusable data with an owner, contract, semantics, quality, SLO, policy, and lifecycle. | Unowned tables published directly to consumers. |
 | Platform runtime | Portable storage, processing, event, API, telemetry, and lineage infrastructure. | A vendor-specific architecture contract. |
 
+!!! info "Central-to-federated ownership"
+    The Data Foundation Platform Team centrally manages source onboarding, ingestion, and raw and validated source-aligned products. Domain data teams use shared creation services and own reusable domain, aggregate, and consumer-aligned products. The validated source-aligned contract is the accountability handoff. See the [Data Foundation Model](data-foundation-model.md#central-and-federated-ownership).
+
 ## End-to-End Value Flow
 
 The layered model explains **where responsibilities sit**. This flow explains **how value moves**.

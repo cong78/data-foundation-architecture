@@ -46,6 +46,20 @@ Use this record to register a data domain, decide whether it can use foundation 
 | Approved AI usage constraints |  |
 | Required assurance or validation |  |
 
+## Central-to-Federated Handoff
+
+| Field | Value |
+| --- | --- |
+| Centrally managed source-aligned inputs |  |
+| Foundation ingestion and source-aligned owner |  |
+| Source-system owners and obligations |  |
+| Validated-state contracts accepted by the domain |  |
+| Domain-owned reusable products |  |
+| Domain-owned aggregate products |  |
+| Domain-owned consumer-aligned products or views |  |
+| Prohibited or retired parallel extraction paths |  |
+| Ownership-handoff decision and evidence |  |
+
 ## Admission Gates
 
 | Gate | Acceptance evidence | Status | Decision or gap |
@@ -57,6 +71,7 @@ Use this record to register a data domain, decide whether it can use foundation 
 | Governance | Classification, privacy, legal, residency, retention and sharing context reviewed. |  |  |
 | Access | Named-user and workload identity model, policy boundary, expiry and revocation are enforceable. |  |  |
 | Operations | Support tier, service levels, incident ownership, continuity and observability agreed. |  |  |
+| Ownership handoff | Central source-aligned ownership and federated downstream product ownership are accepted without gaps or duplication. |  |  |
 | Funding | Cost owner, allocation model, quotas and initial capacity accepted. |  |  |
 
 An unresolved identity, boundary, accountability, governance, access, or operations gate blocks enablement. Record any conditional acceptance with an owner and expiry.

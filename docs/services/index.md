@@ -36,8 +36,8 @@ Foundation services are reusable architecture capabilities. They reduce custom d
 | Service | Owns | Does Not Own |
 | --- | --- | --- |
 | Data service portal | User entry point, discovery, requests, workflow tracking, product onboarding, and data contract management. | Replacing underlying catalog, policy, lineage, or observability systems. |
-| Data ingestion service | Source onboarding, transport patterns, landing, validation, source metadata. | Business transformation into live products. |
-| Data product creation service | Trusted dataset creation, product contracts, quality validation, go-live approval, publication. | Source system operation or consumer application design. |
+| Data ingestion service | Centrally managed source onboarding, transport, raw and validated source-aligned states, validation, source metadata, and operating evidence. | Domain business transformation into aggregate or consumer-aligned products. |
+| Data product creation service | Shared product engineering capability, templates, controls, quality validation, go-live workflow, and publication automation. | Ownership of the domain, aggregate, or consumer-aligned products created by federated domain teams. |
 | Data consumption service | Governed access for BI, applications, platforms, AI agents, and models. | Business misuse of data outside approved purpose. |
 | Data sharing service | Governed internal and external exchange, recipient entitlement, sharing evidence. | Legal contract negotiation outside data usage controls. |
 | Data observability service | Product telemetry, quality and freshness SLOs, usage insights, incident correlation, OpenTelemetry standards. | Domain ownership of product quality decisions. |
@@ -88,6 +88,7 @@ flowchart LR
 - Every consumption and sharing path enforces access policy.
 - Every live product is discoverable through the catalog.
 - Every exception has an owner, expiry date, and migration path.
+- Ingestion and source-aligned lifecycle remain centrally accountable to the foundation platform team; downstream product creation and ownership remain federated to domain data teams.
 
 ## Related Standards
 

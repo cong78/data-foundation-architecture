@@ -35,7 +35,7 @@ Governance defines who decides, which controls apply, and how foundation service
 
 - Decisions have one accountable owner and a documented evidence basis.
 - Controls are enforced through platform services, not only review meetings.
-- Product teams own meaning and value; platform teams own reusable service reliability.
+- The foundation platform team owns ingestion, source-aligned products, and reusable service reliability; domain product teams own downstream business meaning, value, quality decisions, and lifecycle.
 - Exceptions have risk owners, compensating controls, expiry dates, and remediation plans.
 - Governance uses product health, usage, incidents, and cost to improve decisions.
 

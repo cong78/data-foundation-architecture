@@ -2,7 +2,7 @@
 
 A **data domain** is a stable business-aligned accountability boundary within the enterprise data foundation. It groups related business meaning, product ownership, stewardship, source relationships, consumers, policies, and portfolio decisions. It does not create a separate data foundation or permit a domain-specific bypass around shared controls.
 
-The enterprise foundation provides common services, standards, identity, policy, telemetry, and evidence. A domain adopts those capabilities and owns the data products and business decisions inside its declared boundary.
+The enterprise foundation provides common services, centrally managed source-aligned products, standards, identity, policy, telemetry, and evidence. A domain adopts those capabilities and owns reusable domain, aggregate, and consumer-aligned products and business decisions inside its declared boundary.
 
 ## Position in the Foundation
 
@@ -18,12 +18,18 @@ flowchart TB
 
 | Concept | Primary purpose | Owns | Does not mean |
 | --- | --- | --- | --- |
-| Enterprise data foundation | Shared path for trusted data. | Services, standards, control APIs, common evidence and platform patterns. | One central team owns all business data. |
+| Enterprise data foundation | Shared path for trusted data. | Ingestion, source-aligned products, services, standards, control APIs, common evidence and platform patterns. | One central team owns downstream business products. |
 | Data domain | Business-aligned accountability and portfolio boundary. | Meaning, stewardship, product priorities, quality decisions and consumer outcomes. | A platform tenancy, schema, workspace, legal entity, or organization chart node by itself. |
 | Data product | Unit of trusted delivery and reuse. | Contract, semantics, ports, quality, policy, SLO, support and lifecycle. | Every table or pipeline in a domain. |
 | Workspace or runtime | Technical execution boundary. | Compute, storage, networking, deployment and operational isolation. | The authoritative definition of a domain. |
 
 A domain can span several runtimes or regions, and one runtime can host several domains when isolation permits. Domain identity must therefore remain stable and independent of vendor-native catalog, workspace, account, or storage names.
+
+### Central-to-Federated Handoff
+
+The validated source-aligned product is the standard handoff into a domain. The foundation platform team owns its source-preserving contract and operation. The domain team accepts that input contract and becomes accountable when it adds domain meaning, combines sources, changes grain, defines governed metrics, or creates a purpose-specific consumer shape.
+
+Domain teams do not create parallel source extraction or source-aligned ownership models. When execution must occur in a domain-local or regional runtime, it still runs as part of the centrally governed ingestion service with central operating accountability.
 
 ## Domain Record
 
@@ -103,9 +109,9 @@ The Data Service Portal should provide:
 
 ## Architecture Rules
 
-1. A domain owns meaning and outcomes; the foundation owns reusable service capabilities and common control contracts.
+1. The foundation owns ingestion, source-aligned products, reusable service capabilities, and common control contracts; domains own downstream business meaning and outcomes.
 2. Domain identity is stable and portable across organization and technology changes.
-3. Every product has one accountable owning domain, even when several domains contribute.
+3. Every domain, aggregate, or consumer-aligned product has one accountable owning domain, even when several domains contribute; source-aligned products have an accountable foundation platform owner.
 4. Cross-domain use occurs through product ports, contracts, agreements and unified access, not informal storage access.
 5. Domain autonomy does not weaken enterprise identity, security, privacy, interoperability, telemetry or evidence requirements.
 6. Compare domains by maturity dimension and evidence quality, not through an unqualified league table.

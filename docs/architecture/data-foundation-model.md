@@ -13,38 +13,43 @@ This model describes the architecture at a conceptual level. It shows what the f
   <div class="model-step"><strong>Govern</strong>Policy, lineage, access, audit.</div>
 </div>
 
+## Central and Federated Ownership
+
+The foundation uses one explicit accountability handoff. The **Data Foundation Platform Team centrally manages source onboarding, ingestion, and source-aligned raw and validated states**. **Domain data teams federate the creation and ownership of reusable domain, aggregate, and consumer-aligned data products** using shared product-creation capabilities and standards.
+
+| Boundary | Accountable team | Supporting roles | Management rule |
+| --- | --- | --- | --- |
+| Source contract and delivery | Source system team | Foundation ingestion owner, source steward | Source owner remains accountable for availability, source semantics, breaking changes, and delivery obligations. |
+| Ingestion and raw source-aligned state | Data Foundation Platform Team | Source system team, security and privacy | Centrally operated through approved ingestion patterns, identities, retention, quarantine, replay, lineage, and telemetry. |
+| Validated source-aligned state | Data Foundation Platform Team | Source owner and relevant domain stewards | Centrally published with a stable source contract; preserves source meaning and excludes domain business transformation. |
+| Reusable domain product | Owning domain data team | Contributing domains and platform enablement | Federated product ownership with domain semantics, contract, quality, SLO, support, value, and lifecycle. |
+| Aggregate product | Owning domain data team | Metric owner, contributing product owners | Federated creation at an explicit grain with governed metric semantics and lineage. |
+| Consumer-aligned product or view | Serving or consuming domain data team | Consumer owner and upstream product owners | Federated, purpose-specific delivery with expiry and promotion to reusable products when reuse grows. |
+
+Central accountability does not require one physical runtime. Ingestion execution may be regionally distributed, but service ownership, source-aligned contracts, controls, operating evidence, and lifecycle decisions remain with the foundation platform team.
+
 ## Conceptual Model
 
 ```mermaid
-flowchart LR
-    SRC[Source Data] --> ING[Ingestion]
-    ING --> SA["Source-Aligned Data<br/>raw landing → validated"]
-    SA --> PROD[Reusable Domain Data Products]
-    PROD --> AGG[Aggregate Products]
-    PROD --> CA[Consumer-Aligned Products or Views]
-    AGG --> CA
-    PROD --> ACCESS[Unified Access Design]
-    AGG --> ACCESS
-    CA --> ACCESS
-    ACCESS --> CONS[Consumption]
-    PROD --> SHARE[Sharing]
-    CA --> AI[AI Access]
+flowchart TB
+    CENTRAL["1 · Central foundation accountability<br/>source onboarding · ingestion · raw and validated source-aligned states"]
+    HANDOFF["2 · Contracted handoff<br/>stable source id · source-aligned contract · lineage · quality · support"]
+    FEDERATED["3 · Federated domain accountability<br/>reusable domain products · aggregate products · consumer-aligned products"]
+    ACCESS["4 · Governed delivery<br/>unified access · consumption · sharing"]
+    OUTCOMES["5 · Outcomes<br/>BI · applications · platforms · partners · agents · models"]
 
-    CONTRACT[Data Contracts] -. controls .-> ING
-    CONTRACT -. controls .-> PROD
-    POLICY[Policy and Access] -. governs .-> CONS
-    POLICY -. enforces .-> ACCESS
-    POLICY -. governs .-> SHARE
-    POLICY -. governs .-> AI
-    META[Catalog, Metadata, Lineage, Graph Projection] -. describes .-> PROD
-    SEM[Semantic Context] -. explains .-> PROD
-    SEM -. grounds .-> AI
-    OBS[Observability] -. measures .-> ING
-    OBS -. measures .-> PROD
-    OBS -. measures .-> CONS
+    CENTRAL --> HANDOFF --> FEDERATED --> ACCESS --> OUTCOMES
 ```
 
-The arrows show common trust and transformation paths, not mandatory physical zones. A product may expose source-aligned, aggregate, or consumer-aligned outputs when each output has a clear purpose, owner, contract, and lifecycle.
+The source-aligned contract is the ownership handoff: the platform team remains accountable for the source-preserving product, while domain teams become accountable for business transformation and downstream product outcomes.
+
+| Cross-cutting control | Applies across the model |
+| --- | --- |
+| Contracts | Source delivery and source-aligned contracts govern the central boundary; product and consumption contracts govern federated outputs. |
+| Catalog, metadata and lineage | Preserve stable identities, ownership, source-to-product provenance, dependencies, and impact. |
+| Semantic context | Explain domain and product meaning without changing the source-preserving promise of source-aligned data. |
+| Identity, policy and unified access | Enforce named-user and workload access, purpose, obligations, expiry, and revocation. |
+| Observability | Correlate ingestion service telemetry with source-aligned and downstream product health end to end. |
 
 ## Data Alignment Patterns
 
@@ -61,7 +66,7 @@ Source-aligned data represents one source domain while preserving its concepts a
 | --- | --- |
 | Meaning | Preserve source concepts, keys, events, lifecycle, and limitations without claiming an enterprise-wide definition. |
 | Grain | Normally unchanged from the authoritative source entity or event. |
-| Ownership | Ingestion service operates the raw state; the source-aligned product owner, source owner, and steward govern the validated state. |
+| Ownership | The Data Foundation Platform Team owns and operates both states through the Data Ingestion Service. The source system owner owns source availability, source semantics, and change obligations; relevant stewards approve classification and interpretation. |
 | Contract | Source delivery, schema, semantics, keys, change behavior, quality thresholds, freshness, and known limitations. |
 | Reuse | Stable input for multiple domain products; direct business consumption remains controlled. |
 | Retention | Raw and validated states may have different retention based on replay, audit, privacy, and cost needs. |
@@ -77,7 +82,7 @@ Aggregate data deliberately changes grain by grouping, summarizing, calculating,
 | Meaning | A declared measure at a declared dimensional and time grain. |
 | Transformations | Grouping, windowing, calculation, reconciliation, multi-source joins, dimensional mapping, and privacy-preserving aggregation. |
 | Grain | Explicit and testable, such as customer per month, asset per shift, or supplier per quarter. |
-| Ownership | Domain product owner and metric owner; not the team that happens to run the pipeline. |
+| Ownership | The owning domain data team, domain product owner, and metric owner; not the platform team or the team that happens to run the pipeline. |
 | Contract | Metric definitions, dimensions, units, time semantics, inclusion rules, restatement behavior, quality, and source lineage. |
 | Product decision | Make it a product when multiple consumers depend on it, it has independent value, or it requires its own SLO and lifecycle. |
 
@@ -92,7 +97,7 @@ Consumer-aligned data presents live products in the shape required by a defined 
 | Meaning | Purpose-specific projection of governed product semantics for BI, an application, a platform, sharing, or AI. |
 | Transformations | Renaming, denormalization, semantic modeling, API composition, feature creation, retrieval chunking, masking, filtering, and recipient minimization. |
 | Grain | Defined by the consumer contract and may differ from upstream product grain. |
-| Ownership | The serving product or interface owner, with an identified consumer and use-case owner. |
+| Ownership | The serving or consuming domain data team, with an accountable product or interface owner and an identified consumer and use-case owner. |
 | Contract | Consumer purpose, interface, semantic projection, policy, SLO, compatibility, expiry, and upstream product versions. |
 | Lifecycle | Review when the consumer need ends, upstream products change, usage falls, or a reusable domain product can replace it. |
 
@@ -120,7 +125,7 @@ Consumer-aligned data presents live products in the shape required by a defined 
 | Object | Definition |
 | --- | --- |
 | Source | System or channel that provides data to the foundation. |
-| Source-aligned data | Source-preserving data with a restricted raw landing state and a quality-controlled validated state. |
+| Source-aligned data | Centrally managed, source-preserving data with a restricted raw landing state and a quality-controlled validated state. |
 | Contract | Executable agreement for schema, semantics, quality, access, and change. |
 | Data product | Governed, reusable data asset with ownership, contract, quality, lifecycle, and trust signals. |
 | Aggregate product | Governed reusable measures or combined data at an explicitly changed grain. |
@@ -140,6 +145,8 @@ Consumer-aligned data presents live products in the shape required by a defined 
 5. No trust claim without quality, lineage, and observability evidence.
 6. No semantic or AI context without authoritative references and policy filtering.
 7. No ordinary consumption from the raw source-aligned state, and no changed grain without explicit semantic and lineage evidence.
+8. No domain-specific ownership of ingestion or source-aligned lifecycle; distributed execution still operates under central platform accountability.
+9. No central platform ownership of domain, aggregate, or consumer-aligned business products; domains own their meaning and outcomes.
 
 ## Good Model Test
 
@@ -154,3 +161,4 @@ The model is strong when a reader can answer:
 - How is quality and freshness measured?
 - How does AI usage trace back to source and product?
 - Which semantic context version explains the product and its permitted use?
+- Where does central source-aligned accountability hand over to federated domain product ownership?

@@ -6,13 +6,24 @@ Use the [Data Product Management Standard](../standards/data-product-management-
 
 The product is ready only when it is discoverable, addressable, understandable, natively accessible through governed interfaces, trustworthy, interoperable, independent, and secure. These qualities are demonstrated during delivery and continuously measured after go-live.
 
+## Lifecycle Ownership by Product Type
+
+| Product type | Accountable owner | Lifecycle boundary |
+| --- | --- | --- |
+| Source-aligned raw and validated states | Data Foundation Platform Team | Managed through source onboarding and the Data Ingestion Service; source teams own source delivery and change obligations. |
+| Reusable domain product | Owning domain data team | Begins when a domain accepts input contracts and adds domain meaning or a reusable business interface. |
+| Aggregate product | Owning domain data team | Begins when a domain changes grain, combines products, or governs a reusable metric. |
+| Consumer-aligned product or view | Serving or consuming domain data team | Begins for a declared consumer and purpose; ends or is promoted when the use case changes or reuse grows. |
+
+The foundation platform team supplies the product-creation service and enforces common gates. It does not own the meaning, value, support, or lifecycle of federated domain products.
+
 ## Lifecycle Stages
 
 | Stage | Description | Key Controls |
 | --- | --- | --- |
 | Discover | Identify a reusable data need or source opportunity. | Business value, owner, target consumers |
-| Design | Define product purpose, domain ownership, contract, quality expectations, and access model. | Data contract, classification, conceptual model |
-| Build | Ingest, transform, validate, document, and prepare the product interfaces. | Pipeline testing, quality rules, lineage capture |
+| Design | Define product purpose, accountable platform or domain ownership, contract, quality expectations, and access model. | Data contract, classification, conceptual model |
+| Build | Use central ingestion for source-aligned states; transform, validate, document, and prepare federated domain product interfaces through the shared creation service. | Pipeline testing, quality rules, lineage capture |
 | Approve go-live | Confirm that the product is fit for intended use. | Steward approval, quality threshold, security review |
 | Operate | Monitor freshness, usage, cost, quality, incidents, and consumer feedback. | SLOs, alerts, issue management |
 | Evolve | Version the product as schemas, rules, or consumers change. | Change management, compatibility checks |

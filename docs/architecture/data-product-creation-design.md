@@ -256,9 +256,9 @@ Databricks is an implementation, not the external product contract. Preserve the
 | Role | Primary responsibility in this profile |
 | --- | --- |
 | Product owner | Product value, intended use, SLO, lifecycle, go-live, and consumer communication. |
-| Product engineering team | Repository, transformation, tests, bundle, pipeline, on-call, and remediation. |
+| Domain product engineering team | Federated ownership of repository, business transformation, tests, bundle, pipeline, product on-call, and remediation. |
 | Domain steward | Contract semantics, quality rules, classification, governed tags, and policy interpretation. |
-| Data platform team | Workspaces, compute policies, networking, Unity Catalog metastore, automation templates, and platform SLOs. |
+| Data platform team | Shared creation service, workspaces, compute policies, networking, Unity Catalog metastore, automation templates, and platform SLOs; it does not own domain product meaning or lifecycle. |
 | Access governance team | Enterprise policy intent, group model, ABAC templates, entitlement lifecycle, and control evidence. |
 | Data observability team | Cross-platform telemetry, lineage normalization, product health, incidents, and evidence retention. |
 
@@ -274,7 +274,7 @@ Databricks is an implementation, not the external product contract. Preserve the
 
 - Build one repository template containing portable product, contract, semantic-context, workload, test, and bundle artifacts.
 - Scaffold a development preview from the Data Service Portal.
-- Deploy one source-aligned-to-live product through development, test, and production with an immutable release record.
+- Deploy one domain-owned live product from a centrally managed validated source-aligned input through development, test, and production with an immutable release record.
 
 ### Increment 3: Automate Go-Live
 

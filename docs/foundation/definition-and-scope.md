@@ -51,11 +51,11 @@ This guidance does not define:
 
 ## Design Boundary
 
-The foundation owns the standard path from source data to trusted, governed consumption. Domain teams own the business meaning, quality rules, and product decisions for the datasets they publish.
+The Data Foundation Platform Team centrally owns source onboarding, ingestion, and the raw and validated source-aligned lifecycle. Source system teams remain accountable for source availability, source semantics, and change obligations. Domain data teams federate the creation and ownership of reusable domain, aggregate, and consumer-aligned products using shared foundation services, standards, controls, and evidence.
 
 ### How Data Domains Fit
 
-A data domain is a business-aligned accountability and product-portfolio boundary **inside** the enterprise data foundation. The foundation supplies shared services, standards, controls and evidence; each domain adopts them and owns its meaning, stewardship, product priorities, consumer outcomes and quality decisions.
+A data domain is a business-aligned accountability and product-portfolio boundary **inside** the enterprise data foundation. The foundation supplies shared services, centrally managed source-aligned inputs, standards, controls and evidence; each domain adopts them and owns its downstream product meaning, stewardship, priorities, consumer outcomes and quality decisions.
 
 A domain is not defined by one workspace, catalog, schema, team or vendor platform. Its identity remains stable across implementation and organization changes. Every product has one accountable owning domain, and cross-domain use occurs through governed product ports and contracts. See [Data Domain Design](../architecture/data-domain-design.md).
 

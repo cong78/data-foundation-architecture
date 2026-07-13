@@ -14,6 +14,14 @@ For a selected implementation profile, see [Data Ingestion Design](../architectu
 | Source onboarding, schema registration, landing, validation, quarantine, and ingestion telemetry. | Source system ownership or upstream business process quality. |
 | Source-aligned storage with raw and validated states, metadata, lineage, classification, and retention controls. | Consumer-facing semantic models or product go-live approval. |
 
+## Central Ownership Model
+
+The Data Foundation Platform Team is accountable for this service and for the complete source-aligned lifecycle. It centrally manages source onboarding, connector and pipeline operation, raw and validated states, quarantine, replay, source-aligned contracts, access, retention, lineage, telemetry, incidents, and retirement.
+
+The source system team remains accountable for source availability, source meaning, delivery obligations, and change communication. Domain data teams may define downstream acceptance needs and stewardship input, but they consume the validated source-aligned contract rather than creating separate extraction pipelines or owning source-aligned storage.
+
+Regional runtimes or delegated operators are implementation choices. They must use the central service contract, controls, identities, evidence model, and operating ownership.
+
 ## Supported Patterns
 
 | Pattern | Use When | Required Controls |
@@ -56,6 +64,7 @@ The raw state of source-aligned data should retain enough context for traceabili
 
 - Source is registered in the catalog.
 - Ingestion pattern and owner are documented.
+- The foundation platform owner and source-system owner are explicit; no domain team is the default ingestion or source-aligned owner.
 - Landing, validation, quarantine, and retention behavior are tested.
 - Lineage from source to landing is available.
 - Operational dashboard and alerting are active.

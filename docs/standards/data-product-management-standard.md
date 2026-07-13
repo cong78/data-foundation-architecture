@@ -26,6 +26,17 @@ Every live data product must have:
 | Observability | Product health dashboard, SLO status, incidents, usage, cost, and consumer impact. |
 | Lifecycle | Draft, review, go-live approved, active, deprecated, retired, or exception state. |
 
+## Product Type Ownership
+
+| Product type | Mandatory accountable owner | Required boundary evidence |
+| --- | --- | --- |
+| Source-aligned raw and validated states | Data Foundation Platform Team | Source id, source owner, source-aligned contract, ingestion service profile, platform support route, source obligations, lineage, and activation evidence. |
+| Reusable domain product | Registered owning domain data team | Domain id, product owner, accepted input contracts, domain semantics, support, value, and lifecycle. |
+| Aggregate product | Registered owning domain data team | Domain id, metric owner, declared grain, calculation semantics, lineage, restatement policy, SLO, and lifecycle. |
+| Consumer-aligned product or view | Serving or consuming domain data team | Domain id, product or interface owner, consumer and purpose, upstream versions, policy, expiry, support, and lifecycle. |
+
+The platform team owns the ingestion and product-creation services. It owns source-aligned products but does not become the owner of products created by federated domain teams. Distributed execution does not change these accountabilities.
+
 ## Product Quality Model
 
 The product must demonstrate eight qualities adapted from the [Data Developer Platform data-product attributes](https://datadeveloperplatform.org/why_ddp_for_data/#a-closer-look-at-the-solution-achieving-the-state-of-data-products). These qualities are acceptance outcomes, not marketing labels.
@@ -120,6 +131,7 @@ Data products should be managed as a portfolio, not as isolated datasets.
 - No breaking change without impact analysis, consumer notification, and migration path.
 - No product remains active without observable freshness and quality status.
 - No product remains live if ownership is missing or expired.
+- No domain team may create a competing ingestion or source-aligned ownership path; no foundation platform team may claim ownership of federated domain, aggregate, or consumer-aligned business products.
 - No live product may depend on a vendor-native descriptor as its only machine-readable definition.
 
 ## Minimum Portal Views

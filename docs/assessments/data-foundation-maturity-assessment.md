@@ -13,7 +13,7 @@ Create one assessment record per domain and assessment date. Use the stable doma
 | Dimension | Domain-level question |
 | --- | --- |
 | Direction and ownership | Is the boundary clear, accountability accepted, and portfolio improvement funded? |
-| Foundation services | Does the domain use the approved portal, ingestion, creation, access, consumption, sharing and observability profiles? |
+| Foundation services | Does the domain consume centrally managed source-aligned inputs and use approved creation, access, consumption, sharing and observability profiles without duplicating ingestion? |
 | Data products and contracts | Is the domain portfolio owned, contracted, reusable, governed through go-live and actively managed? |
 | Access, security and governance | Are domain identities, policies, obligations, entitlements, exceptions and revocations enforceable and evidenced? |
 | Observability and operations | Can the domain operate services and products end to end against SLOs, incidents, cost and lifecycle expectations? |
@@ -40,8 +40,8 @@ Check a foundation-owned capability only when the domain has adopted it and can 
 
     <h2>Foundation Services</h2>
     <label><input type="checkbox"> The Data Service Portal provides one entry point for discovery, requests, contracts, access, workflows, and evidence.</label>
-    <label><input type="checkbox"> Ingestion supports governed file, connector, API, CDC, and streaming patterns with repeatable onboarding.</label>
-    <label><input type="checkbox"> Product creation provides reusable workload patterns, automated controls, and promotion across environments.</label>
+    <label><input type="checkbox"> The foundation platform team centrally operates source onboarding, ingestion, and raw and validated source-aligned products across approved file, connector, API, CDC, and streaming patterns.</label>
+    <label><input type="checkbox"> Shared product-creation capabilities provide reusable workload patterns and controls while domain teams own domain, aggregate, and consumer-aligned products.</label>
     <label><input type="checkbox"> Consumption and sharing provide governed, observable delivery for people, systems, platforms, partners, agents, and models.</label>
 
     <h2>Data Products and Contracts</h2>

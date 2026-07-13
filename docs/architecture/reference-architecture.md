@@ -46,6 +46,8 @@ These lanes organize the delivery journey; they are not additional target archit
   </section>
 </div>
 
+The Build lane contains an explicit ownership handoff. The foundation platform team centrally manages Data Ingestion and source-aligned raw and validated states. Domain data teams use Product Creation as a shared service and remain accountable for the domain, aggregate, and consumer-aligned products they publish.
+
 ## Capability Map
 
 | Domain | Capabilities |
