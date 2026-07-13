@@ -27,15 +27,17 @@ For a selected implementation profile, see [Data Sharing Design](../architecture
 
 ## Core Capabilities
 
-- Sharing agreement and approval workflow.
-- Recipient identity and entitlement management.
-- Dataset packaging and contract definition.
-- Secure transfer, API, clean room, event, or portal publication.
-- Data minimization, masking, and purpose limitation.
-- Usage logging and audit reporting.
-- Expiration, revocation, and offboarding.
-- External lineage and evidence capture where feasible.
-- Sharing telemetry for delivery status, recipient usage, errors, expiry, and revocation.
+| Category | Capability | Owned Outcome |
+| --- | --- | --- |
+| Agreement | Sharing request and approval | Recipient, purpose, legal basis, product, scope, duration, permitted use, obligations, and approvers are recorded before delivery. |
+| Contracts | Recipient-specific sharing contract | Product promise is reduced to an explicit package, interface, SLO, change, retention, expiry, and revocation agreement. |
+| Identity | Recipient identity and entitlement | Organization, user or workload identity, authentication profile, entitlement, activation, rotation, and expiry are governed. |
+| Packaging | Data selection and minimization | Only approved products, fields, rows, history, semantics, and documentation enter the recipient package. |
+| Protection | Purpose and disclosure controls | Masking, tokenization, aggregation, watermarking, clean-room restrictions, and output controls enforce the agreement. |
+| Delivery | Controlled exchange channels | Open sharing, API, file, event, secure transfer, portal delivery, or clean room provides a versioned and testable interface. |
+| Evidence | Sharing telemetry and audit | Provisioning, delivery, usage, errors, policy decisions, recipient activity, and external lineage are linked to the agreement. |
+| Lifecycle | Change and consumer communication | Contract or product changes trigger compatibility assessment, approval, notification, migration, and coexistence where required. |
+| Exit | Expiry, revocation, and offboarding | Access, credentials, packages, cached rights, and active delivery stop predictably with retained closure evidence. |
 
 ## Architecture Guidance
 

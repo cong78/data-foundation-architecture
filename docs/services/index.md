@@ -36,11 +36,24 @@ Foundation services are reusable architecture capabilities. They reduce custom d
   </section>
 </div>
 
+## Capability Definition
+
+Every service defines its core capabilities with the same three fields:
+
+| Field | Meaning | Architecture Question |
+| --- | --- | --- |
+| Category | A coherent responsibility area within the service. | Where does this capability belong? |
+| Capability | A stable, technology-neutral function the service provides. | What must the service be able to do? |
+| Owned outcome | The observable result for which the service is accountable. | What proves the capability worked? |
+
+Capabilities define service responsibility, not product features or vendor components. A technology may implement several capabilities, and a capability may span several technologies; the owned outcome remains stable in either case.
+
 ## Service Portfolio
 
 | Service | Owns | Does Not Own |
 | --- | --- | --- |
 | Data service portal | User entry point, Data Product Marketplace, requests, workflow tracking, product onboarding, and data contract management. | Replacing underlying catalog, product registry, policy, lineage, observability, or workflow systems. |
+| Data Service AI Assistant | Permission-filtered explanation, planning, and approved actions through registered agents, models, and typed skills. | Granting permissions, approving its own actions, or replacing deterministic foundation controls. |
 | Data ingestion service | Centrally managed source onboarding, transport, raw and validated source-aligned states, validation, source metadata, and operating evidence. | Domain business transformation into aggregate or consumer-aligned products. |
 | Data product creation service | Shared product engineering capability, templates, controls, quality validation, go-live workflow, and publication automation. | Ownership of the aggregate or consumer-aligned products created by federated domain teams. |
 | Data consumption service | Governed access for BI, applications, platforms, AI agents, and models. | Business misuse of data outside approved purpose. |

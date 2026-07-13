@@ -41,33 +41,22 @@ Each federated aggregate or consumer-aligned data product must be:
 - Observable in production.
 - Described by a portable product descriptor with open input and output port definitions.
 
-## Product Management Capabilities
-
-| Capability | Requirement |
-| --- | --- |
-| Product registry | Maintain product id, owner, steward, status, domain, contract, and support route. |
-| Go-live workflow | Enforce required gates before a product can go live. |
-| Developer workspace | Provide templates, workload specifications, API and CLI, isolated environments, preview, CI/CD, promotion, and rollback. |
-| Resource orchestration | Resolve portable resource profiles into governed runtime plans and execution receipts. |
-| Portfolio review | Identify duplicate, low-usage, unhealthy, ownerless, or high-cost products. |
-| Consumer subscription | Track active consumers and notify them about incidents, contract changes, and deprecation. |
-| Change management | Require impact analysis, compatibility check, migration plan, and release note for product changes. |
-| Exception management | Track accepted deviations with owner, risk, compensating control, expiry, and remediation. |
-
 ## Core Capabilities
 
-- Product workspace and template creation.
-- Transformation and enrichment pipelines.
-- Data quality rules and validation suites.
-- Business glossary and semantic mapping.
-- Semantic context package creation and validation.
-- Product contract creation and testing.
-- Product go-live workflow.
-- Declarative workload validation, environment promotion, drift detection, and rollback.
-- Lineage from source to product outputs.
-- Publication to catalog and Data Service Portal.
-- Versioning, deprecation, and retirement support.
-- Product health telemetry for freshness, quality, usage, and incidents.
+| Category | Capability | Owned Outcome |
+| --- | --- | --- |
+| Product definition | Product proposal and registry | Stable product identity, purpose, domain, owner, steward, pattern, intended consumers, value, support, and lifecycle are recorded. |
+| Developer experience | Governed product workspace | Templates, repository, API, CLI, isolated environments, preview, test data, and policy-aware tooling provide a repeatable build path. |
+| Contracts | Product contract engineering | Input and output promises, schema, semantics, quality, SLOs, compatibility, policy intent, and ports are versioned and tested. |
+| Context | Semantic context package | Grain, concepts, metrics, relationships, usage guidance, limitations, and authoritative references are bound to product and contract versions. |
+| Engineering | Transformation and enrichment | Versioned batch, stream, SQL, API, feature, or retrieval workloads produce deterministic product outputs from approved inputs. |
+| Workloads | Declarative runtime orchestration | Portable workload intent resolves into governed resources, dependencies, deployment plans, execution receipts, drift detection, and rollback. |
+| Assurance | Quality, security, and lineage validation | Product rules, classification, access intent, lineage, reliability, portability, and affected consumers are tested before release. |
+| Release | Product go-live | The exact immutable candidate passes mandatory gates and receives an explicit approval, rejection, or expiring exception. |
+| Publication | Catalog and portal publication | Live descriptor, contract, context, ports, documentation, health, support, and access actions become discoverable together. |
+| Lifecycle | Change, version, and retirement management | Compatibility, impact, migration, coexistence, deprecation, consumer notification, retirement, and evidence retention are controlled. |
+| Portfolio | Product value and reuse review | Duplicate, low-value, low-use, unhealthy, ownerless, high-cost, and consolidation candidates receive accountable decisions. |
+| Evidence | Product telemetry and release traceability | Freshness, quality, availability, usage, cost, incidents, release, workload, contract, and product versions remain correlated. |
 
 ## Architecture Guidance
 

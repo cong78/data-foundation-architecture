@@ -20,22 +20,20 @@ The [Data Service Portal Design](../architecture/data-service-portal-model.md) d
 
 ## Core Capabilities
 
-- Data Product Marketplace with product discovery, search, filtering, comparison, saved products, collections, and role-aware actions.
-- Data product detail pages with owner, steward, description, schema, classification, quality, freshness, lineage, and usage guidance.
-- Access request and approval workflow.
-- Named-user, workload, delegated application, and external-recipient access requests.
-- Source onboarding request workflow.
-- Data product creation and go-live workflow.
-- Data contract creation, review, approval, versioning, and change management.
-- Support requests, incident status, maintenance and change visibility, service health, knowledge, feedback, and operational task tracking.
-- Contract compatibility checks and schema change notifications.
-- Consumer subscription and impact notification.
-- Product health, SLO, incident, and usage dashboards.
-- Integration with identity, catalog, policy, lineage, observability, and workflow systems.
-- Import, export, and conformance status for canonical contract and product artifacts.
-- Intent-led journey catalog for innovation, source connection, product creation, consumption, sharing, AI, observability, semantics, policy, and industrialization.
-- Domain team, use-case, workspace, saved-product, portfolio, and notification views.
-- Context-aware AI assistant with separate Ask, Plan and Act modes.
+| Category | Capability | Owned Outcome |
+| --- | --- | --- |
+| Experience | Portal navigation and journey entry | Users start from Explore, Ingest, Produce, Consume, Share, Operate, or My Work and retain context across the journey. |
+| Marketplace | Product discovery and comparison | Ingestors, producers, and consumers find and compare products using purpose, semantics, trust, access, and interface evidence. |
+| Marketplace | Product detail and engagement | One product view presents identity, contract, context, lineage, health, support, and role-relevant next actions. |
+| Workflow | Request and task orchestration | Source onboarding, product creation, access, sharing, support, and operational requests have visible state, owner, evidence, and next action. |
+| Contracts | Contract management experience | Teams author, review, approve, version, compare, and change contracts through governed workflows. |
+| Product lifecycle | Product and portfolio management | Teams propose, bring live, change, deprecate, retire, consolidate, and review products with current evidence. |
+| Access | Identity-aware agreement journeys | Named users, workloads, delegated applications, agents, models, and recipients request bounded access or sharing. |
+| Trust | Health and impact views | Quality, freshness, SLOs, lineage, usage, incidents, cost, and affected consumers are visible with authority and observation time. |
+| Engagement | Notifications and subscriptions | Consumers and owners receive relevant contract, release, incident, deprecation, approval, and task updates. |
+| Operations | Support and service engagement | Users open support, inspect status and planned change, follow recovery, use knowledge, and provide feedback. |
+| Intelligence | Data Service AI Assistant | Ask, Plan, and Act modes explain evidence, prepare artifacts, and execute approved typed skills in context. |
+| Interoperability | Canonical artifact and channel parity | Product and contract artifacts can be imported or exported, and portal journeys remain available through governed APIs and automation. |
 
 ## Portal Experience Model
 

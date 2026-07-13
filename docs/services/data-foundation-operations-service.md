@@ -67,16 +67,16 @@ The portal presents operational status and journeys but does not become the auth
 
 ## Core Capabilities
 
-| Capability | Required behavior |
-| --- | --- |
-| Service management | Maintain the service portfolio, owners, criticality, support tiers, SLOs, dependencies, consumers, continuity targets, and operational readiness. |
-| Support and engagement | Provide one intake journey, route by service and impact, expose status, maintain knowledge, capture feedback, and manage service reviews. |
-| Incident management | Detect or receive an issue, assess severity and product impact, assign command, coordinate recovery, communicate, validate health, and retain the timeline. |
-| Problem management | Identify recurring incidents and systemic weakness, establish root cause or known error, prioritize remediation, and verify recurrence reduction. |
-| Change management | Classify change by risk, automate standard changes, review normal changes, control emergency changes, detect conflicts, and record outcomes. |
-| Release coordination | Connect product and platform releases to changes, dependencies, readiness, communication, maintenance windows, validation, and rollback. |
-| Reliability engineering | Manage SLOs, error budgets, capacity, resilience tests, continuity, recovery exercises, toil, automation, and operational risk. |
-| Operational improvement | Use evidence to prioritize service improvements, reduce failure demand, improve knowledge, and measure whether actions changed outcomes. |
+| Category | Capability | Owned Outcome |
+| --- | --- | --- |
+| Service management | Service portfolio and readiness | Every production service has an owner, criticality, support tier, SLO, dependencies, consumers, continuity target, runbook, and readiness evidence. |
+| Engagement | Support and service request | One intake path routes user needs by service, product, impact, and urgency and exposes owner, target, status, knowledge, and resolution. |
+| Response | Incident management | Severity, command, product and consumer impact, containment, recovery, communication, validation, and timeline remain coordinated in one record. |
+| Learning | Problem management | Recurring failure and systemic weakness become known errors, root-cause evidence, prioritized remediation, and measured recurrence reduction. |
+| Change | Change management | Standard, normal, and emergency changes receive proportionate risk, dependency, approval, communication, validation, rollback, and outcome controls. |
+| Release | Release coordination | Product and platform releases are linked to readiness, change, dependencies, maintenance windows, consumer impact, validation, and rollback. |
+| Reliability | Reliability and continuity | SLOs, error budgets, capacity, resilience, recovery exercises, continuity, toil, automation, and operational risk guide investment. |
+| Improvement | Operational excellence | Incident, change, support, reliability, cost, risk, and feedback evidence drives owned actions and verifies improved outcomes. |
 
 ## Incident Flow
 

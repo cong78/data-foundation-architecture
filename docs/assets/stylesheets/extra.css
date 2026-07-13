@@ -692,4 +692,85 @@
   .decision-brief > div:last-child {
     border-bottom: 0;
   }
+
+  .md-typeset h2#core-capabilities + .md-typeset__scrollwrap {
+    overflow: visible;
+  }
+
+  .md-typeset h2#core-capabilities + .md-typeset__scrollwrap .md-typeset__table {
+    width: 100%;
+    overflow: visible;
+  }
+
+  .md-typeset h2#core-capabilities + .md-typeset__scrollwrap table {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    border: 0;
+  }
+
+  .md-typeset h2#core-capabilities + .md-typeset__scrollwrap thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+  }
+
+  .md-typeset h2#core-capabilities + .md-typeset__scrollwrap tbody {
+    display: grid;
+    gap: 0.75rem;
+    width: 100%;
+  }
+
+  .md-typeset h2#core-capabilities + .md-typeset__scrollwrap tbody tr {
+    display: block;
+    border: 1px solid rgba(15, 35, 140, 0.2);
+    border-left: 3px solid #0f238c;
+    border-radius: 0.2rem;
+    background: var(--md-default-bg-color);
+  }
+
+  .md-typeset h2#core-capabilities + .md-typeset__scrollwrap tbody td {
+    display: grid;
+    grid-template-columns: 5.7rem minmax(0, 1fr);
+    gap: 0.65rem;
+    width: auto;
+    padding: 0.55rem 0.65rem;
+    border: 0;
+    border-bottom: 1px solid rgba(15, 35, 140, 0.12);
+    line-height: 1.5;
+  }
+
+  .md-typeset h2#core-capabilities + .md-typeset__scrollwrap tbody td:last-child {
+    border-bottom: 0;
+  }
+
+  .md-typeset h2#core-capabilities + .md-typeset__scrollwrap tbody td::before {
+    color: var(--md-default-fg-color--light);
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0;
+    text-transform: uppercase;
+  }
+
+  .md-typeset h2#core-capabilities + .md-typeset__scrollwrap tbody td:nth-child(1) {
+    font-weight: 700;
+  }
+
+  .md-typeset h2#core-capabilities + .md-typeset__scrollwrap tbody td:nth-child(2) {
+    font-weight: 600;
+  }
+
+  .md-typeset h2#core-capabilities + .md-typeset__scrollwrap tbody td:nth-child(1)::before {
+    content: "Category";
+  }
+
+  .md-typeset h2#core-capabilities + .md-typeset__scrollwrap tbody td:nth-child(2)::before {
+    content: "Capability";
+  }
+
+  .md-typeset h2#core-capabilities + .md-typeset__scrollwrap tbody td:nth-child(3)::before {
+    content: "Outcome";
+  }
 }

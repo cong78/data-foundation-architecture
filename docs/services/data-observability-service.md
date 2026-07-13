@@ -41,16 +41,18 @@ System signals become product telemetry only when they are evaluated in product 
 
 ## Core Capabilities
 
-- OpenTelemetry collector and exporter patterns.
-- Standard telemetry schema for data foundation services.
-- Data product health dashboard.
-- Product-level quality, freshness, and availability SLOs.
-- Lineage-aware trace correlation from source to consumer.
-- Alerting for data incidents and reliability breaches.
-- Anomaly detection for data volumes, distributions, and business rules.
-- Usage insights for BI, application, platform, AI agent, and model consumers.
-- Incident workflow integration and post-incident evidence capture.
-- Observability metadata publication to the data catalog.
+| Category | Capability | Owned Outcome |
+| --- | --- | --- |
+| Collection | OpenTelemetry collection and routing | Traces, metrics, logs, and events from foundation services use governed collectors, processors, exporters, and OTLP routes. |
+| Collection | Data-product telemetry ingestion | Quality, freshness, volume, distribution, schema, availability, usage, cost, and incident signals enter a common product-health model. |
+| Semantics | Telemetry conventions and identifiers | Service, product, contract, run, release, domain, environment, consumer, and correlation attributes are consistent and versioned. |
+| Correlation | End-to-end service and product view | Runtime traces, jobs, lineage, product health, access, and affected consumers can be traversed from source to outcome. |
+| Objectives | SLO and error-budget management | Declared freshness, quality, availability, latency, and reliability objectives are evaluated against measured evidence. |
+| Insight | Health, trend, and anomaly analysis | Product and system dashboards expose current state, history, drift, volume, distribution, business-rule, usage, and cost anomalies. |
+| Detection | Actionable alerting | SLO breaches and significant anomalies are deduplicated, enriched with product impact, and routed to accountable owners. |
+| Operations | Incident and recovery evidence | Signals create or enrich operational workflows and prove recovery at both system and data-product levels. |
+| Publication | Catalog and portal health projection | Current trust indicators, authority, observation time, limitations, and links to evidence are available at decision time. |
+| Interoperability | Portable telemetry and lineage export | OTLP and OpenLineage-compatible outputs can be received independently without making one observability vendor authoritative for all signals. |
 
 ## Architecture Guidance
 

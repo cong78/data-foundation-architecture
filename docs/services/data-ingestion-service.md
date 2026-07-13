@@ -36,16 +36,18 @@ Use OpenAPI for source APIs and AsyncAPI plus CloudEvents for event sources. Con
 
 ## Core Capabilities
 
-- Source onboarding workflow.
-- Data contract and schema registration.
-- Secure credential and secret handling.
-- Source-aligned raw landing with source metadata and timestamps.
-- Automated validation and quarantine.
-- Change data capture and incremental load support.
-- Event stream subscription and replay.
-- Operational monitoring, alerting, and incident hooks.
-- Lineage capture from source to the source-aligned landing state.
-- OpenTelemetry-compatible traces, metrics, logs, and events.
+| Category | Capability | Owned Outcome |
+| --- | --- | --- |
+| Onboarding | Source registration and pattern selection | Source owner, identity, classification, contract, delivery pattern, SLO, recovery need, and support route are approved before activation. |
+| Contracts | Source contract and schema management | Canonical schema, semantics, delivery expectations, compatibility rules, and change ownership are versioned and testable. |
+| Connectivity | Managed source adapters | File inbox, connector pull, API, CDC, and event-stream adapters authenticate securely and preserve source identity. |
+| Transport | Reliable incremental movement | Checkpoints, idempotency, ordering, deduplication, backpressure, retries, and replay meet the source contract. |
+| Landing | Source-aligned raw state | Faithful, timestamped, provenance-rich source data is retained under restricted access for replay and audit. |
+| Validation | Validated source-aligned state | Contract-conformant records are separated from invalid or suspect records before downstream handoff. |
+| Exceptions | Quarantine and remediation | Rejected records have reason, owner, evidence, correction path, and controlled replay. |
+| Security | Credentials and source protection | Secrets, network paths, workload identity, encryption, classification, and least privilege are centrally enforced. |
+| Evidence | Lineage and telemetry | Source, adapter, run, schema, record outcome, landing state, and incident context are correlated through lineage and OpenTelemetry. |
+| Lifecycle | Change, recovery, and portability | Schema change, connector replacement, backfill, recovery, retention, and retirement preserve the canonical source identity and contract. |
 
 ## Architecture Guidance
 

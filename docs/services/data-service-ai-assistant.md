@@ -24,6 +24,21 @@ The Data Service AI Assistant is the conversational entry point to the agentic d
 
 The current mode must always be visible. The assistant never moves from Ask or Plan to Act without user confirmation.
 
+## Core Capabilities
+
+| Category | Capability | Owned Outcome |
+| --- | --- | --- |
+| Interaction | Contextual conversation | Users ask, plan, and act from portal, product, contract, health, journey, and portfolio context without losing identity or task state. |
+| Grounding | Permission-filtered retrieval | Answers use authorized product, contract, semantic, policy, lineage, observability, workflow, and knowledge evidence with source and freshness. |
+| Explanation | Evidence-based answer and comparison | The assistant separates answer, evidence, assumptions, limitations, and unresolved questions instead of presenting inference as fact. |
+| Planning | Structured artifact preparation | Plans, drafts, checklists, contracts, impact analyses, and requests are editable, schema-valid, and side-effect free. |
+| Skills | Typed capability invocation | Registered, versioned skills map user intent to approved foundation-service APIs with validated input and output. |
+| Action | Preview, approval, and execution | Exact target, effect, permissions, risk, cost, reversibility, and evidence are shown before any governed write action. |
+| Policy | Independent authorization and guardrails | Identity, purpose, data policy, tool policy, limits, approval, segregation, and step-up authorization remain outside model discretion. |
+| Continuity | Durable task and receipt management | Long-running work exposes progress, retry, cancellation, escalation, identifiers, outcomes, and auditable receipts beyond the conversation. |
+| Evaluation | Quality and safety assurance | Grounding, correctness, refusal, prompt injection, tool misuse, excessive agency, privacy, latency, and cost are tested by version. |
+| Observability | Agent and model telemetry | Conversation, agent, model, prompt, skill, tool, user, product, contract, purpose, approval, token, cost, latency, and outcome are correlated. |
+
 ## Portal Placement
 
 The assistant should be available as a persistent panel and as contextual actions on product, contract, journey, health, and portfolio pages.

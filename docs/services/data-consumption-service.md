@@ -42,19 +42,20 @@ For a selected implementation profile, see [Data Consumption Design](../architec
 
 ## Core Capabilities
 
-- Data discovery and access request workflow.
-- SQL, API, file, event, semantic, feature, and retrieval access patterns.
-- Policy enforcement at query, API, and dataset levels.
-- Separate service-operation and product-data authorization for every access path.
-- Row-level and column-level security.
-- Data masking and purpose-based access.
-- Usage monitoring and cost visibility.
-- Data freshness and quality indicators for consumers.
-- AI-ready interfaces such as feature datasets, retrieval indexes, and governed context APIs.
-- Versioned semantic context APIs linked to product and contract versions.
-- Consumer telemetry for usage, latency, errors, access decisions, and downstream dependency impact.
-- Stable product and port resolution independent of provider-native paths.
-- Runtime adapter selection, policy pushdown, federated execution where required, and fail-closed obligation handling.
+| Category | Capability | Owned Outcome |
+| --- | --- | --- |
+| Engagement | Discovery and consume agreement | Consumer identity, use case, purpose, product, port, duration, and requested scope enter one governed access journey. |
+| Resolution | Logical product and port resolution | Stable product identifiers resolve to the approved contract, semantic context, health, policy, entitlement, and runtime binding. |
+| Interfaces | Fit-for-purpose delivery channels | SQL, API, event, file, semantic, feature, retrieval, and context ports implement declared open interface profiles. |
+| Authorization | Service-operation decision | The actor may invoke the requested consumption operation for the target service and environment. |
+| Authorization | Product-data decision | Product, action, purpose, classification, agreement, and entitlement produce enforceable allow, deny, and obligation results. |
+| Protection | Fine-grained data controls | Row, column, masking, tokenization, aggregation, minimization, and output rules are enforced consistently. |
+| Execution | Runtime routing and policy pushdown | The service selects a conformant adapter, executes near approved data, and fails closed when obligations cannot be enforced. |
+| Validation | Contract-bound response | Requests and results satisfy schema, contract, freshness, quality, minimization, and response rules before release. |
+| Context | Semantic and AI-ready access | Consumers receive versioned meaning, metrics, limitations, citations, features, retrieval context, and approved AI-use evidence. |
+| Evidence | Consumer and decision telemetry | Usage, latency, errors, access decisions, cost, lineage, adapter, and downstream dependency are correlated to product and consumer. |
+| Lifecycle | Subscription and impact management | Consumers receive contract, incident, deprecation, migration, and entitlement-change notifications. |
+| Portability | Runtime-independent product access | A logical port can move to another conformant runtime without changing the consumer contract. |
 
 ## Unified Access Responsibilities
 
