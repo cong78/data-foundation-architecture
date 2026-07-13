@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "data-foundation-architect/domain-assessment-output.schema.json",
+  "title": "Data Domain Maturity Assessment Output",
+  "type": "object",
+  "required": ["scope", "assessment_version", "assessment_date", "admission", "maturity"],
+  "properties": {
+    "scope": {"type": "object"},
+    "assessment_version": {"type": "string"},
+    "assessment_date": {"type": "string"},
+    "admission": {
+      "type": "object",
+      "required": ["decision", "blocking_gates", "conditional_gates", "gates"],
+      "properties": {
+        "decision": {"enum": ["Blocked", "Enable with conditions", "Eligible for enablement"]},
+        "blocking_gates": {"type": "array", "items": {"type": "string"}},
+        "conditional_gates": {"type": "array", "items": {"type": "string"}},
+        "gates": {"type": "object"}
+      }
+    },
+    "maturity": {
+      "type": "object",
+      "required": ["score", "level", "evidence_coverage", "lowest_dimension", "dimensions"],
+      "properties": {
+        "score": {"type": "integer", "minimum": 0, "maximum": 100},
+        "level": {"enum": ["Foundational", "Emerging", "Established", "Optimized"]},
+        "evidence_coverage": {"type": "integer", "minimum": 0, "maximum": 100},
+        "lowest_dimension": {"type": "string"},
+        "dimensions": {"type": "object"}
+      }
+    }
+  }
+}

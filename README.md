@@ -26,7 +26,7 @@ The six foundation services are:
 
 ## Data Foundation Architect Skill
 
-The repository includes a project-native AI skill at `skills/data-foundation-architect/`. It supports evidence-based assessment, architecture design, review, and governed artifact generation while treating the MkDocs pages as the authoritative guidance.
+The repository includes a platform-neutral AI skill at `skills/data-foundation-architect/`. It supports evidence-based assessment, architecture design, review, and governed artifact generation while treating the MkDocs pages as the authoritative guidance.
 
 See [Data Foundation Architect Skill](docs/architecture/data-foundation-architect-skill.md) for activation, examples, scoring, and validation.
 

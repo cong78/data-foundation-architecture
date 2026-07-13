@@ -7,6 +7,8 @@ description: Assess, design, review, and generate enterprise data foundation arc
 
 Use the repository as the authority and this skill as the execution workflow. Load only the guidance required for the task; do not copy the complete documentation into context.
 
+Read `manifest.json` before execution. Treat its capability, side-effect, authorization, data-policy, approval, reliability, and observability declarations as the portable runtime contract. The host agent runtime must enforce them outside prompt text.
+
 ## Locate the Guidance
 
 1. Walk upward from the working directory until both `mkdocs.yml` and `docs/` exist.

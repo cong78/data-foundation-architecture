@@ -1,0 +1,20 @@
+{
+  "task_id": "design-supplier-sharing-001",
+  "capability": "design",
+  "request": "Design governed supplier data sharing using an open sharing protocol and explicit data contract flow.",
+  "scope": {
+    "type": "reference-solution",
+    "id": "supplier-sharing",
+    "name": "Supplier Data Sharing"
+  },
+  "context_references": [
+    "docs/services/data-sharing-service.md",
+    "docs/standards/data-contract-standard.md"
+  ],
+  "constraints": [
+    "Keep the logical contract independent of one vendor",
+    "Support workload identity, expiry, audit, and revocation"
+  ],
+  "desired_artifact": "Architecture design in Markdown with one overview diagram",
+  "output_format": "markdown"
+}

@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "data-foundation-architect/task-request.schema.json",
+  "title": "Data Foundation Architecture Task Request",
+  "type": "object",
+  "required": ["task_id", "capability", "request", "scope"],
+  "properties": {
+    "task_id": {"type": "string", "minLength": 1},
+    "capability": {"enum": ["design", "review", "generate"]},
+    "request": {"type": "string", "minLength": 1},
+    "scope": {
+      "type": "object",
+      "required": ["type", "id", "name"],
+      "properties": {
+        "type": {"type": "string", "minLength": 1},
+        "id": {"type": "string", "minLength": 1},
+        "name": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": true
+    },
+    "context_references": {
+      "type": "array",
+      "items": {"type": "string"},
+      "default": []
+    },
+    "constraints": {
+      "type": "array",
+      "items": {"type": "string"},
+      "default": []
+    },
+    "desired_artifact": {"type": "string"},
+    "evidence_window": {"type": "string"},
+    "output_format": {"enum": ["markdown", "json"], "default": "markdown"}
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,83 @@
+{
+  "id": "data-foundation-architect",
+  "version": "1.0.0",
+  "name": "Data Foundation Architect",
+  "description": "Assess, design, review, and generate evidence-based enterprise data foundation architecture.",
+  "capabilities": [
+    {
+      "id": "assess",
+      "description": "Assess a foundation or data domain using admission gates and six maturity dimensions.",
+      "input_schema": "schemas/domain-assessment-input.schema.json",
+      "output_schema": "schemas/domain-assessment-output.schema.json"
+    },
+    {
+      "id": "design",
+      "description": "Produce a layered architecture with controls, decisions, risks, and done criteria.",
+      "input_schema": "schemas/task-request.schema.json",
+      "output_schema": "schemas/task-result.schema.json",
+      "output_contract": "references/output-contracts.md#architecture-design"
+    },
+    {
+      "id": "review",
+      "description": "Review architecture evidence and return severity-ordered findings with remediation.",
+      "input_schema": "schemas/task-request.schema.json",
+      "output_schema": "schemas/task-result.schema.json",
+      "output_contract": "references/output-contracts.md#architecture-review"
+    },
+    {
+      "id": "generate",
+      "description": "Generate a governed artifact from an authoritative repository template.",
+      "input_schema": "schemas/task-request.schema.json",
+      "output_schema": "schemas/task-result.schema.json",
+      "output_contract": "references/output-contracts.md#generated-artifact"
+    }
+  ],
+  "side_effects": {
+    "default": "draft",
+    "allowed": ["read", "draft", "reversible-write"],
+    "prohibited_without_external_approval": ["publish", "grant-access", "revoke-access", "share-externally", "delete", "retire"]
+  },
+  "authorization": {
+    "default_access": "read-only",
+    "required_context": ["user-identity", "purpose", "assessment-scope"],
+    "enforcement": "host-runtime-and-target-service"
+  },
+  "data_policy": {
+    "default_classification": "internal",
+    "evidence_content": "references-only-unless-explicitly-authorized",
+    "secrets": "prohibited"
+  },
+  "idempotency": {
+    "assessment_key": "scope.id+assessment_version+assessment_date",
+    "duplicate_behavior": "return-or-update-draft-without-publishing"
+  },
+  "reliability": {
+    "timeout": "host-runtime-defined",
+    "retry": "read-and-validation-only",
+    "failure_behavior": "return-partial-result-with-explicit-gaps"
+  },
+  "approval": {
+    "draft_outputs": "user-review",
+    "architecture_decisions": "accountable-owner-approval",
+    "high_impact_actions": "step-up-authorization-and-named-approver"
+  },
+  "observability": {
+    "required_attributes": [
+      "skill.id",
+      "skill.version",
+      "capability.id",
+      "task.id",
+      "user.id",
+      "purpose",
+      "scope.id",
+      "evidence.coverage",
+      "outcome"
+    ],
+    "standard": "OpenTelemetry"
+  },
+  "tests": [
+    "scripts/validate_package.py",
+    "scripts/verify_guidance_map.py",
+    "scripts/assess_maturity.py with assets/domain-assessment.example.json"
+  ]
+}

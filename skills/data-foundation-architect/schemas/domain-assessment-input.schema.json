@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "data-foundation-architect/domain-assessment-input.schema.json",
+  "title": "Data Domain Maturity Assessment Input",
+  "type": "object",
+  "required": ["assessment_version", "assessment_date", "scope", "admission_gates", "dimensions"],
+  "properties": {
+    "assessment_version": {"type": "string", "minLength": 1},
+    "assessment_date": {"type": "string", "format": "date"},
+    "scope": {
+      "type": "object",
+      "required": ["type", "id", "name"],
+      "properties": {
+        "type": {"const": "data-domain"},
+        "id": {"type": "string", "minLength": 1},
+        "name": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": true
+    },
+    "admission_gates": {
+      "type": "object",
+      "required": ["identity", "boundary", "accountability", "governance", "access", "operations"],
+      "additionalProperties": {"$ref": "#/$defs/gate"}
+    },
+    "dimensions": {
+      "type": "object",
+      "required": [
+        "direction-and-ownership",
+        "foundation-services",
+        "data-products-and-contracts",
+        "access-security-and-governance",
+        "observability-and-operations",
+        "interoperability-and-ai-enablement"
+      ],
+      "additionalProperties": {
+        "type": "array",
+        "minItems": 1,
+        "items": {"$ref": "#/$defs/check"}
+      }
+    }
+  },
+  "$defs": {
+    "gate": {
+      "type": "object",
+      "required": ["status", "evidence"],
+      "properties": {
+        "status": {"enum": ["pass", "conditional", "fail", "not_assessed"]},
+        "evidence": {"type": "array", "items": {"type": "string"}},
+        "note": {"type": "string"}
+      }
+    },
+    "check": {
+      "type": "object",
+      "required": ["id", "passed", "evidence"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "passed": {"type": "boolean"},
+        "evidence": {"type": "array", "items": {"type": "string"}}
+      }
+    }
+  }
+}

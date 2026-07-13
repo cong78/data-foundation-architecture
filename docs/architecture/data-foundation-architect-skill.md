@@ -18,36 +18,37 @@ The skill is stored at:
 ```text
 skills/data-foundation-architect/
 ├── SKILL.md
-├── agents/openai.yaml
+├── manifest.json
+├── schemas/
 ├── references/
 ├── scripts/
 └── assets/
 ```
 
-`SKILL.md` contains the operating workflow. The guidance map points to authoritative pages under `docs/`. Evidence and output references keep decisions consistent. Scripts provide deterministic checks where model judgment should not calculate or validate silently.
+`SKILL.md` contains the runtime-neutral operating workflow. `manifest.json` defines capabilities, side effects, authorization, data policy, reliability, approvals, telemetry, and tests. JSON schemas define the assessment contract. The guidance map points to authoritative pages under `docs/`.
 
-## Activate in Codex
+## Integrate with an Agent Runtime
 
-Keep the skill source in this repository and link it into the Codex skill directory so repository updates remain visible:
+An agent platform integrates the skill through a small adapter:
 
-```bash
-mkdir -p "${CODEX_HOME:-$HOME/.codex}/skills"
-ln -s "$PWD/skills/data-foundation-architect" \
-  "${CODEX_HOME:-$HOME/.codex}/skills/data-foundation-architect"
-```
+1. Register the stable skill id and version from `manifest.json`.
+2. Load `SKILL.md` when the request matches Assess, Design, Review, or Generate.
+3. Expose repository guidance as read-only context and load pages through `references/guidance-map.md`.
+4. Execute bundled scripts in an isolated runtime with explicit input and output schemas.
+5. Apply platform identity, policy, approval, budget, and telemetry controls outside prompt text.
 
-Run this from the repository root. If the destination already exists, inspect it before replacing it. Start a new Codex session after activation so the skill metadata is discovered.
+The package does not require a specific model provider, agent framework, tool protocol, or prompt syntax. MCP, A2A, HTTP APIs, function tools, or native runtime adapters may expose it without changing the skill contract.
 
 ## Example Invocations
 
 ```text
-Use $data-foundation-architect to assess the Customer domain for onboarding.
+Use the Data Foundation Architect skill to assess the Customer domain for onboarding.
 
-Use $data-foundation-architect to review this data product against the product go-live gates.
+Use the Data Foundation Architect skill to review this data product against the product go-live gates.
 
-Use $data-foundation-architect to design governed supplier sharing with Delta Sharing.
+Use the Data Foundation Architect skill to design governed supplier sharing with Delta Sharing.
 
-Use $data-foundation-architect to generate a technology selection record for data observability.
+Use the Data Foundation Architect skill to generate a technology selection record for data observability.
 ```
 
 ## Maturity Scoring
@@ -76,7 +77,7 @@ It reports all six maturity dimensions, evidence coverage and the lowest dimensi
 Run:
 
 ```bash
-python /path/to/skill-creator/scripts/quick_validate.py skills/data-foundation-architect
+python skills/data-foundation-architect/scripts/validate_package.py
 python skills/data-foundation-architect/scripts/verify_guidance_map.py
 ```
 
