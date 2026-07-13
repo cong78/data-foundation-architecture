@@ -53,6 +53,12 @@ This guidance does not define:
 
 The foundation owns the standard path from source data to trusted, governed consumption. Domain teams own the business meaning, quality rules, and product decisions for the datasets they publish.
 
+### How Data Domains Fit
+
+A data domain is a business-aligned accountability and product-portfolio boundary **inside** the enterprise data foundation. The foundation supplies shared services, standards, controls and evidence; each domain adopts them and owns its meaning, stewardship, product priorities, consumer outcomes and quality decisions.
+
+A domain is not defined by one workspace, catalog, schema, team or vendor platform. Its identity remains stable across implementation and organization changes. Every product has one accountable owning domain, and cross-domain use occurs through governed product ports and contracts. See [Data Domain Design](../architecture/data-domain-design.md).
+
 When a use case needs data, the preferred path is:
 
 1. Onboard the source using a standard ingestion pattern.

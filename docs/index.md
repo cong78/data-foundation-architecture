@@ -13,6 +13,7 @@ Architecture guidance for an **AI-ready data foundation**: open contracts, reusa
 | I need to... | Start with | Then use |
 | --- | --- | --- |
 | Understand or review the architecture | [Architecture Overview](architecture/overview.md) | [Target Architecture](architecture/target-architecture.md) and [Reference Architecture](architecture/reference-architecture.md) |
+| Onboard or evaluate a data domain | [Data Domain Design](architecture/data-domain-design.md) | [Data Domain Onboarding Record](delivery-templates/data-domain-onboarding-template.md) and [Data Foundation Maturity Assessment](assessments/data-foundation-maturity-assessment.md) |
 | Design or implement a foundation service | [Services Overview](services/index.md) | The relevant service page, [architecture patterns](implementation/service-implementation-patterns.md), and standards |
 | Build and deploy a data product | [Data Product Developer Experience](architecture/data-product-developer-experience.md) | [Data Product Workload Standard](standards/data-product-workload-standard.md) and [workload template](delivery-templates/data-product-workload-template.md) |
 | Create and govern a data product | [Data Product Lifecycle Design](architecture/data-product-lifecycle-design.md) | [Data Contract Standard](standards/data-contract-standard.md) and [Data Product Template](delivery-templates/data-product-template.md) |

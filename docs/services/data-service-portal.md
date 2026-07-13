@@ -62,6 +62,21 @@ The portal should provide the governed interface for managing data contracts acr
 
 Use the [Data Contract Standard](../standards/data-contract-standard.md) as the minimum contract model.
 
+## Data Domain Management
+
+The portal must make domain onboarding and recurring maturity review evidence-driven.
+
+| Domain Capability | Portal Behavior |
+| --- | --- |
+| Domain registry | Show stable id, boundary, owners, lifecycle, governance context and authoritative links. |
+| Onboarding | Capture admission gates, decisions, conditions, service dependencies and provisioning status. |
+| Capability adoption | Show selected foundation service profiles, conformance, support, quotas and cost allocation. |
+| Maturity | Record six dimension scores, evidence, gaps, actions, exceptions and assessment history. |
+| Domain portfolio | Show products, contracts, consumers, health, value, cost, duplication and lifecycle. |
+| Cross-domain view | Show semantic overlap, lineage, contracts, dependencies and shared consumers. |
+
+Use [Data Domain Design](../architecture/data-domain-design.md) and the [Data Domain Onboarding Record](../delivery-templates/data-domain-onboarding-template.md) as the minimum model.
+
 ## Data Product Management
 
 The portal must also provide the user-facing control surface for data product management.

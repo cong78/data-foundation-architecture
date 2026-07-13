@@ -11,7 +11,7 @@ The data foundation is a layered set of reusable services. It converts source da
   <section class="standards-map-lane lane-govern">
     <div class="standards-map-cell"><small>Set direction</small><strong>Scope · Principles · Decisions</strong><p>Agree boundaries, rules, and the reasons behind major choices.</p></div>
     <span class="standards-map-arrow" aria-hidden="true"></span>
-    <div class="standards-map-cell standards-map-focus"><a href="/architecture/target-architecture/"><strong>Target Architecture</strong></a><a href="/architecture/data-foundation-model/"><strong>Data Foundation Model</strong></a></div>
+    <div class="standards-map-cell standards-map-focus"><a href="/architecture/target-architecture/"><strong>Target Architecture</strong></a><a href="/architecture/data-foundation-model/"><strong>Data Foundation Model</strong></a><a href="/architecture/data-domain-design/"><strong>Data Domain Design</strong></a></div>
     <span class="standards-map-arrow" aria-hidden="true"></span>
     <div class="standards-map-cell"><strong>Shared target</strong><p>Clear planes, layers, objects, responsibilities, and trust boundaries.</p></div>
   </section>

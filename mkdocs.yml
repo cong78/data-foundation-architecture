@@ -89,6 +89,7 @@ nav:
           - Target Architecture: architecture/target-architecture.md
           - Reference Architecture: architecture/reference-architecture.md
           - Data Foundation Model: architecture/data-foundation-model.md
+          - Data Domain Design: architecture/data-domain-design.md
           - Data Product Lifecycle Design: architecture/data-product-lifecycle-design.md
           - Semantic and Context Design: architecture/semantic-context-design.md
           - Unified Access Design: architecture/unified-access-design.md
@@ -140,6 +141,7 @@ nav:
           - Data Foundation Maturity Assessment: assessments/data-foundation-maturity-assessment.md
       - Apply Templates:
           - Data Product Template: delivery-templates/data-product-template.md
+          - Data Domain Onboarding Record: delivery-templates/data-domain-onboarding-template.md
           - Data Product Workload Template: delivery-templates/data-product-workload-template.md
           - Technology Selection Record: delivery-templates/technology-selection-template.md
           - Source Onboarding Template: delivery-templates/source-onboarding-template.md

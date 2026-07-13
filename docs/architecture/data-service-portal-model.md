@@ -53,7 +53,9 @@ The [Data Service AI Assistant](../services/data-service-ai-assistant.md) suppor
 
 ```mermaid
 flowchart TB
-    TEAM[Domain Team] --> USE[Use Case]
+    DOMAIN[Data Domain] --> TEAM[Domain Team]
+    DOMAIN --> PRODUCT
+    TEAM --> USE[Use Case]
     USE --> PRODUCT[Data or AI Product]
     TEAM --> SPACE[Workspace]
     SPACE --> PRODUCT
@@ -69,6 +71,7 @@ flowchart TB
 
 | Object | Purpose | Authority |
 | --- | --- | --- |
+| Data domain | Stable business boundary, accountable roles, portfolio, foundation capability profile, maturity and lifecycle. | Domain registry linked to identity, governance and portfolio authorities. |
 | Domain team | Ownership, stewardship, support, and publish or consume capabilities. | Identity, team, and domain services. |
 | Use case | Business objective, consumers, value measures, and approved purpose. | Portfolio or use-case service. |
 | Workspace | Governed environment for exploration, engineering, analytics, or AI delivery. | Platform provisioning service. |
