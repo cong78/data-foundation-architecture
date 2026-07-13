@@ -1,8 +1,10 @@
 # Data Service Portal Design
 
-The Data Service Portal helps domain teams discover, produce, consume, share, govern, and operate data and AI products through one consistent entry point.
+<div class="decision-brief"><div><small>Use when</small><strong>Designing portal navigation, marketplace, or workflow handoffs.</strong></div><div><small>Decision</small><strong>Which portal area and authoritative service own the outcome?</strong></div><div><small>Owner</small><strong>Portal owner with journey and service owners.</strong></div><div><small>Output</small><strong>Simple experience with preserved context and authority.</strong></div></div>
 
-It is not a separate data platform. The portal orchestrates foundation services and presents their evidence without replacing the catalog, contract registry, policy engine, workflow service, lineage system, observability platform, or data runtimes.
+The Data Service Portal helps domain teams discover, produce, consume, share, govern, and operate data and AI products through one consistent entry point. Its **Data Product Marketplace** provides discovery, evaluation, and engagement within that portal.
+
+The portal and marketplace orchestrate foundation services and present their evidence. They do not replace the catalog, product or contract registry, policy engine, workflow service, lineage system, observability platform, or data runtimes.
 
 ## Experience Model
 
@@ -11,9 +13,9 @@ flowchart LR
     U[Domain teams and consumers] --> M[Data Service Portal]
 
     M --> J[Intent-led journeys]
-    M --> D[Product discovery]
+    M --> D[Data Product Marketplace]
     M --> P[Portfolio and trust views]
-    M --> A[AI Assistant]
+    M --> A[Data Service AI Assistant]
 
     J --> C[Control plane]
     D --> C
@@ -26,29 +28,82 @@ flowchart LR
     C --> O[Observability and lineage]
 ```
 
-## Intent-Led Journeys
+## Portal Navigation
 
-Start with the user's intended outcome, not a platform component.
+Keep the first level stable and based on the user's intended outcome. Detailed tasks appear only after the user selects an area.
 
-| Intent | Portal Journey | Foundation Outcome |
+| Area | Includes | Foundation Outcome |
 | --- | --- | --- |
-| Explore | Start an innovation idea | Accountable idea, hypothesis, workspace, evidence need, and next decision. |
-| Produce | Produce a data product | Product proposal, workspace, contract, semantics, go-live plan. |
-| Consume | Consume a data product | Purpose-bound subscription and governed entitlement. |
-| Connect | Connect a source system | Source onboarding request and ingestion contract. |
+| Explore | Data Product Marketplace, search, compare, product detail, collections, and innovation ideas. | Fit-for-purpose product or accountable innovation path. |
+| Ingest | Source onboarding, source contracts, source-aligned products, schema changes, and ingestion health. | Governed source delivery and validated source-aligned product. |
+| Produce | Product creation and change, analytics and AI development, semantics, contracts, workspaces, and product go-live. | Live aggregate, consumer-aligned, analytics, or AI product. |
+| Consume | Purpose declaration, access request, subscription, entitlement, and approved product port. | Purpose-bound governed access. |
 | Share | Share with customer, supplier, or partner | Recipient-specific sharing agreement and revocable delivery. |
-| Build AI | Build an MCP product, AI agent, or AI model | Governed AI product with data, tool, identity, policy, and evaluation dependencies. |
-| Evaluate AI | Evaluate an AI product | Versioned evaluation evidence, risk decision, and release outcome. |
-| Analyze | Create a BI or analytics product | Governed metric, semantic, dashboard, or analytical interface. |
-| Understand | Define business semantics | Stewarded concept and product semantic mapping. |
-| Govern | Apply product policy | Policy decision and required evidence linked to the product lifecycle. |
-| Observe | Observe product health | Current SLO, quality, lineage, usage, incident, and cost evidence. |
-| Operate | Get support or manage an operational event | Routed support, incident status, planned change, maintenance, communication, recovery, or improvement task. |
-| Industrialize | Industrialize a product | Operated product with support, release, reliability, and lifecycle controls. |
+| Operate | Product health, support, incidents, planned changes, reliability, cost, and retirement. | Restored or improved service with retained evidence. |
+| My Work | Owned products and sources, requests, approvals, contracts, subscriptions, notices, tasks, and portfolio decisions. | One prioritized view of work requiring attention. |
 
 Every journey has an owner, purpose, current state, required evidence, decisions, next action, and link to authoritative records.
 
 The [Data Service AI Assistant](../services/data-service-ai-assistant.md) supports Ask, Plan and Act modes across these journeys through governed agents and skills.
+
+## Marketplace within the Portal
+
+The marketplace turns product metadata and trust evidence into decisions. It does not sell data, duplicate the catalog, approve access, or own product lifecycle state.
+
+```mermaid
+flowchart TB
+    USERS[Ingestor · Producer · Consumer]
+    M[Data Product Marketplace]
+    F[Find and compare]
+    D[Understand product and trust]
+    A[Continue with a governed action]
+    S[Ingestion · Product creation · Consumption · Sharing · Operations]
+    AUTH[Catalog · Product and contract registry · Policy · Workflow · Observability]
+
+    USERS --> M
+    M --> F
+    M --> D
+    M --> A
+    F --> A
+    D --> A
+    A --> S --> AUTH
+```
+
+=== "Ingestor"
+
+    **See:** owned sources, source-aligned products, schema changes, failures, and downstream impact.
+
+    **Decide:** is source delivery understood and safe for dependent products?
+
+    **Continue:** source onboarding, contract change, remediation, or incident workflow.
+
+=== "Producer"
+
+    **See:** candidate inputs, owned products, duplicates, dependencies, semantics, and consumer demand.
+
+    **Decide:** reuse, extend, consolidate, create, or change a product?
+
+    **Continue:** product workspace, contract proposal, impact review, or product go-live workflow.
+
+=== "Consumer"
+
+    **See:** purpose, permitted products, comparable trust, interfaces, lead time, and current subscriptions.
+
+    **Decide:** which product and port are fit for the intended outcome?
+
+    **Continue:** consume agreement, access request, sharing request, or approved interface.
+
+### Marketplace Information Architecture
+
+| Surface | Minimum Behavior |
+| --- | --- |
+| Explore | Search, filter, browse domains and concepts, open curated collections, and resume recent work. |
+| Compare | Compare purpose, semantics, contract, quality, freshness, availability, access conditions, interfaces, and support without flattening important differences into one score. |
+| Product detail | Present the complete product detail standard below with current authority and observation time. |
+| My marketplace | Show saved products, owned products, subscriptions, requests, approvals, notices, and recent activity. |
+| Action handoff | Carry identity, role, use case, purpose, product id, contract version, selected port, and correlation id into the authoritative workflow. |
+
+Ranking and recommendations may use declared purpose, semantic match, policy eligibility, reliability, adoption, and team context. The portal must explain why an item is recommended, must not use popularity as a substitute for fitness, and must never rank a prohibited or unavailable product as actionable.
 
 ## Portal Object Model
 
@@ -128,9 +183,9 @@ sequenceDiagram
 
 The portal may own:
 
-- User preferences, saved products, recent activity, and notification settings.
+- User preferences, saved products, marketplace collections, recent activity, and notification settings.
 - Journey presentation, drafts, comments, and task views.
-- Search indexes and read projections that can be rebuilt.
+- Marketplace ranking configuration, search indexes, and read projections that can be rebuilt.
 - Correlation ids linking a journey to authoritative records.
 
 The portal must not be the sole owner of:
@@ -167,6 +222,9 @@ The portal must not be the sole owner of:
 - Users can discover products by domain, type, concept, use case, interface, health, and permitted purpose.
 - Domain teams can create and evolve products without bypassing common go-live gates.
 - Consumers can compare trust evidence and complete purpose-bound access through one journey.
+- Ingestors can move from source-aligned marketplace context to onboarding, impact, remediation, or incident workflows.
+- Producers can discover and compare reusable input products before creating or changing a product.
+- Marketplace actions preserve product, contract, purpose, identity, and correlation context when entering authoritative workflows.
 - Source onboarding, product creation, consumption, sharing, observability, operations, semantics, policy, and AI journeys call real foundation services.
 - Product health, usage, quality, incidents, and lineage are measured rather than simulated.
 - Portal records can be rebuilt from canonical product, contract, catalog, policy, lineage, and observability sources.

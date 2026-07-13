@@ -62,7 +62,7 @@ The Build lane contains an explicit ownership handoff. The foundation platform t
 
 | Domain | Capabilities |
 | --- | --- |
-| Portal | Intent-led journeys, product discovery, product detail, agreements, portfolio, contracts, product health. |
+| Portal | Intent-led journeys, Data Product Marketplace, product comparison and detail, agreements, portfolio, contracts, product health. |
 | Ingestion | Files, APIs, connectors, CDC, streams, validation. |
 | Storage and processing | Source-aligned raw and validated states, product storage, archive, batch, and streaming. |
 | Products | Registry, contracts, semantics, ownership, lifecycle, go-live approval. |

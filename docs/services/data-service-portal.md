@@ -4,7 +4,7 @@
 
 ## Definition
 
-The data service portal is the user entry point for the data foundation. It provides a single place for users to discover data products, request access, onboard sources, create or manage data products, manage data contracts, track workflow status, and view product trust signals.
+The data service portal is the user entry point for the data foundation. It provides a single place for users to discover data products through its **Data Product Marketplace capability**, request access, onboard sources, create or manage data products, manage data contracts, track workflow status, and view product trust signals.
 
 The portal is the experience layer over the foundation services. It should orchestrate workflows and expose consistent information without becoming a separate source of truth from the catalog, policy, lineage, observability, or contract systems.
 
@@ -14,13 +14,13 @@ The [Data Service Portal Design](../architecture/data-service-portal-model.md) d
 
 | In Scope | Out of Scope |
 | --- | --- |
-| Data product discovery, access requests, onboarding workflows, data product lifecycle workflows, and data contract management. | Replacing backend systems for catalog, identity, policy, lineage, observability, or workflow execution. |
+| Data Product Marketplace discovery and comparison, access requests, onboarding workflows, data product lifecycle workflows, and data contract management. | Operating the marketplace as a separate portal, catalog, product registry, or commercial storefront. |
 | User-facing views for product health, ownership, classification, lineage, quality, freshness, usage, and lifecycle status. | Owning the actual data pipelines, transformations, or consumption endpoints. |
 | Request intake, support engagement, operational status, approvals, notifications, task tracking, and evidence presentation. | Bypassing governance, security, stewardship, or operational authority. |
 
 ## Core Capabilities
 
-- Data product discovery and catalog search.
+- Data Product Marketplace with product discovery, search, filtering, comparison, saved products, collections, and role-aware actions.
 - Data product detail pages with owner, steward, description, schema, classification, quality, freshness, lineage, and usage guidance.
 - Access request and approval workflow.
 - Named-user, workload, delegated application, and external-recipient access requests.
@@ -42,12 +42,32 @@ The [Data Service Portal Design](../architecture/data-service-portal-model.md) d
 | View | User Decision |
 | --- | --- |
 | Journey catalog | What outcome am I trying to achieve? |
-| Product discovery | Which existing product best fits my purpose? |
+| Data Product Marketplace | Which existing product best fits my purpose, and what can I do with it? |
 | Product detail | Is this product understandable, trustworthy, permitted, and fit for use? |
 | Agreement workflow | Who will use or receive the product, why, for how long, and under which terms? |
 | Portfolio | Which products need action, investment, consolidation, or retirement? |
 | Product health | What changed, who is affected, and what should happen next? |
 | AI assistant | What can be explained, drafted, or safely executed from this context? |
+
+## Data Product Marketplace
+
+The Data Product Marketplace is a capability within the Data Service Portal. It helps ingestors, producers, and consumers find, evaluate, and act on data products without creating another metadata or workflow authority.
+
+| Role | Marketplace Need | Primary Actions |
+| --- | --- | --- |
+| Ingestor | Understand which products and consumers depend on a source and whether its source-aligned product is healthy. | Find source-aligned products, inspect contracts and downstream impact, open source onboarding, and respond to schema or quality issues. |
+| Producer | Reuse existing products before creating another and manage products already owned by the team. | Search and compare input products, use a product as an input, open a product workspace, propose or change a contract, and submit product go-live. |
+| Consumer | Select a product that is fit, permitted, understandable, and reliable for an intended use. | Compare products, inspect trust and semantics, request access, subscribe to change and incident notices, and open an approved product port. |
+
+The marketplace experience should provide:
+
+- Search and filters for domain, concept, product pattern, interface, classification, permitted purpose, lifecycle, and current health.
+- Comparable product summaries that show owner, contract, context, quality, freshness, availability, policy, usage, and support.
+- Product detail pages with stable actions: **Use as input**, **Request access**, **Request sharing**, **Manage product**, or **Report an issue**, shown only when relevant.
+- Saved products, curated collections, recent activity, subscriptions, and role-aware recommendations with an explainable ranking basis.
+- Direct continuation into ingestion, product creation, consumption, sharing, contract, and operations workflows without re-entering product or purpose context.
+
+Marketplace listings are read projections. Product identity and lifecycle come from the product registry; searchable metadata from the catalog; contracts from the contract registry; semantics from context authorities; access from policy and entitlement services; and health from observability. The marketplace may rank and present this information, but it must show authority and observation time and must not approve access or product go-live itself.
 
 ## Data Contract Management
 
@@ -121,18 +141,15 @@ The portal should act as an orchestration and experience layer. It should integr
 - Observability service for product health and trust signals.
 - Contract registry for schema, semantic, quality, and compatibility rules.
 
-The user experience should be organized around common journeys:
+The user experience should use seven stable areas:
 
-1. Start an innovation idea.
-2. Find and understand a data or AI product.
-3. Connect a source system.
-4. Produce, bring live, or evolve a data, analytics, or AI product.
-5. Consume a product through a purpose-bound agreement.
-6. Share a product with a customer, supplier, or partner.
-7. Define semantics, apply policy, and manage contracts.
-8. Evaluate AI products and industrialize approved products.
-9. Track health, incidents, usage, cost, and consumer impact.
-10. Review the portfolio for reuse, consolidation, investment, and retirement.
+1. **Explore:** Data Product Marketplace, product comparison, collections, and innovation.
+2. **Ingest:** source onboarding, source contracts, source-aligned products, and ingestion health.
+3. **Produce:** product creation and change, workspaces, contracts, semantics, analytics, AI, and product go-live.
+4. **Consume:** purpose-bound requests, subscriptions, entitlements, and product ports.
+5. **Share:** recipient agreements, packages, activation, expiry, and revocation.
+6. **Operate:** health, support, incidents, change, reliability, cost, improvement, and retirement.
+7. **My Work:** owned products, approvals, contracts, subscriptions, notifications, and portfolio actions.
 
 ## Controls
 
@@ -142,12 +159,15 @@ The user experience should be organized around common journeys:
 - Product lifecycle changes require evidence and audit trail.
 - Access requests are routed through policy and stewardship workflows.
 - Product metadata shown in the portal is synchronized from authoritative systems.
+- Marketplace search indexes and recommendations are rebuildable projections, expose freshness, and never override policy or product lifecycle state.
 - Sensitive metadata and telemetry are masked or restricted where required.
 - All portal actions are auditable.
 
 ## Done Criteria
 
 - Users can discover data products and understand ownership, trust, classification, access, and usage guidance.
+- Ingestors, producers, and consumers receive role-relevant marketplace actions without entering separate portals.
+- Producers can compare and reuse existing input products before proposing another product.
 - Users can request access and track approval status.
 - Product teams can create and manage data contracts through a governed workflow.
 - Contract changes trigger compatibility checks and consumer notifications.

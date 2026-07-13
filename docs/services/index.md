@@ -40,7 +40,7 @@ Foundation services are reusable architecture capabilities. They reduce custom d
 
 | Service | Owns | Does Not Own |
 | --- | --- | --- |
-| Data service portal | User entry point, discovery, requests, workflow tracking, product onboarding, and data contract management. | Replacing underlying catalog, policy, lineage, or observability systems. |
+| Data service portal | User entry point, Data Product Marketplace, requests, workflow tracking, product onboarding, and data contract management. | Replacing underlying catalog, product registry, policy, lineage, observability, or workflow systems. |
 | Data ingestion service | Centrally managed source onboarding, transport, raw and validated source-aligned states, validation, source metadata, and operating evidence. | Domain business transformation into aggregate or consumer-aligned products. |
 | Data product creation service | Shared product engineering capability, templates, controls, quality validation, go-live workflow, and publication automation. | Ownership of the aggregate or consumer-aligned products created by federated domain teams. |
 | Data consumption service | Governed access for BI, applications, platforms, AI agents, and models. | Business misuse of data outside approved purpose. |
