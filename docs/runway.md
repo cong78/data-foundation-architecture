@@ -1,76 +1,144 @@
 # Runway
 
-This runway describes a practical, sequenced path for maturing an enterprise data foundation.
+The runway is a sequenced path for maturing the data foundation. Each phase produces a usable enterprise capability, not merely a collection of components.
+
+Use the phases as **outcome gates**. Teams may prepare later capabilities early, but should not claim a phase until its exit evidence is operating with real services, products, and consumers.
+
+## Runway at a Glance
+
+<div class="standards-map reference-map" role="img" aria-label="Four-phase data foundation delivery runway">
+  <div class="standards-map-head" aria-hidden="true">
+    <span>Starting need</span><i></i><span>Phase focus</span><i></i><span>Exit outcome</span>
+  </div>
+  <section class="standards-map-lane lane-govern">
+    <div class="standards-map-cell"><small>Phase 1</small><strong>Establish control</strong><p>Fragmented delivery, unclear ownership, and inconsistent trust.</p></div>
+    <span class="standards-map-arrow" aria-hidden="true"></span>
+    <div class="standards-map-cell standards-map-focus"><strong>Foundation Baseline</strong><p>Architecture, services, portal, controls, contracts, operations, and first product.</p></div>
+    <span class="standards-map-arrow" aria-hidden="true"></span>
+    <div class="standards-map-cell"><strong>Governed path proven</strong><p>One source-to-consumer flow passes product go-live and operates with evidence.</p></div>
+  </section>
+  <section class="standards-map-lane lane-build">
+    <div class="standards-map-cell"><small>Phase 2</small><strong>Scale adoption</strong><p>Working patterns exist but still depend on specialist coordination.</p></div>
+    <span class="standards-map-arrow" aria-hidden="true"></span>
+    <div class="standards-map-cell standards-map-focus"><strong>Trusted Reuse</strong><p>Self-service creation, lifecycle, semantics, unified access, reliability, and portability.</p></div>
+    <span class="standards-map-arrow" aria-hidden="true"></span>
+    <div class="standards-map-cell"><strong>Reusable foundation</strong><p>Multiple domains deliver and consume live products through repeatable services.</p></div>
+  </section>
+  <section class="standards-map-lane lane-intelligence">
+    <div class="standards-map-cell"><small>Phase 3</small><strong>Enable governed AI</strong><p>Trusted products exist, but AI context and actions need explicit controls.</p></div>
+    <span class="standards-map-arrow" aria-hidden="true"></span>
+    <div class="standards-map-cell standards-map-focus"><strong>AI-Ready Foundation</strong><p>Approved AI data, lineage, gateways, evaluations, assistant, agents, and skills.</p></div>
+    <span class="standards-map-arrow" aria-hidden="true"></span>
+    <div class="standards-map-cell"><strong>Traceable AI use</strong><p>AI consumption and actions are purpose-bound, evaluated, and evidenced.</p></div>
+  </section>
+  <section class="standards-map-lane lane-access">
+    <div class="standards-map-cell"><small>Phase 4</small><strong>Extend the boundary</strong><p>Internal reuse is mature and external exchange must remain governable.</p></div>
+    <span class="standards-map-arrow" aria-hidden="true"></span>
+    <div class="standards-map-cell standards-map-focus"><strong>Ecosystem Sharing</strong><p>Recipients, agreements, open exchange, collaboration, expiry, and revocation.</p></div>
+    <span class="standards-map-arrow" aria-hidden="true"></span>
+    <div class="standards-map-cell"><strong>Controlled ecosystem</strong><p>Customer, supplier, and partner sharing is portable, auditable, and revocable.</p></div>
+  </section>
+</div>
+
+## Workstreams Across the Runway
+
+| Workstream | Phase 1: Baseline | Phase 2: Trusted Reuse | Phase 3: AI Ready | Phase 4: Ecosystem |
+| --- | --- | --- | --- | --- |
+| Experience | Core portal journeys | Rich product, domain, support, and workspace journeys | AI and assistant journeys | Recipient and agreement journeys |
+| Products and contracts | Templates and go-live gates | Lifecycle, portfolio, compatibility, and subscriptions | AI-ready products and usage contracts | Sharing contracts and recipient packages |
+| Platform services | First ingestion-to-consumption path | Self-service creation, unified access, semantics, and adapters | Agent, model, context, skill, and evaluation gateways | Sharing and controlled-collaboration patterns |
+| Governance and security | Identity, classification, policy, lineage, ownership | Purpose-bound access and reusable domain controls | AI identity, data use, autonomy, and approval | Legal basis, minimization, expiry, and revocation |
+| Observability and operations | Telemetry conventions, service records, support and incident model | Product health, cost, problem, change, release, continuity, and improvement | Model, agent, evaluation, and AI-use telemetry | Recipient activity, delivery health, audit, and revocation evidence |
+| Interoperability | Stable ids plus ODCS and ODPS artifacts | Open metadata, lineage, API, event, telemetry, and independent-client proof | Portable AI context and action evidence | Open sharing interface and federated identity proof |
 
 ## Phase 1: Foundation Baseline
 
-- Define reference architecture and service ownership.
-- Establish the Data Service Portal as the user entry point.
-- Launch intent-led journeys for source onboarding, product creation, consumption, and product health.
-- Establish source onboarding and ingestion patterns.
-- Implement catalog, classification, lineage, and access workflows.
-- Define OpenTelemetry conventions for foundation services and data products.
-- Define the Data Foundation Operations Service, production service records, support model, incident roles, escalation, change classes, continuity targets, and operational readiness criteria.
-- Create initial data product templates.
-- Create initial data contract templates and approval workflow.
-- Establish mandatory product go-live gates.
-- Define the Data Product Workload Standard and a portable resource profile.
-- Adopt ODCS and ODPS canonical artifacts with stable enterprise identifiers.
-- Bring the first governed data products live.
+**Objective:** establish one governed, supportable path from source onboarding to live product consumption.
+
+| Workstream | Deliverables | Exit evidence |
+| --- | --- | --- |
+| Direction and ownership | Approved reference architecture, service portfolio, accountable owners, support model, and decision rights. | Architecture decision record, service owners, escalation routes, and approved scope. |
+| Portal and journeys | Data Service Portal with source onboarding, product creation, consumption, product health, and task-status journeys. | Real users complete the first journey through authoritative service APIs. |
+| Source and product delivery | Standard ingestion patterns, product template, contract template, workload profile, and mandatory product go-live gates. | At least one source-aligned input and one governed product pass go-live. |
+| Control foundation | Catalog, classification, lineage, identity, access workflow, contract approval, and stable enterprise identifiers. | Product, contract, lineage, policy, owner, and access evidence resolve consistently. |
+| Observability and operations | OpenTelemetry conventions, production service records, SLOs, support, incident roles, escalation, change classes, continuity targets, and readiness criteria. | Service and product health are visible; one support and incident path is exercised. |
+| Portability | Canonical ODCS and ODPS artifacts stored independently of runtime-native metadata. | Artifacts validate against pinned schemas and retain stable identifiers. |
+
+### Phase 1 Gate
+
+Proceed when a real source-to-consumer product demonstrates ownership, contract, quality, lineage, access, telemetry, support, recovery, and go-live evidence end to end.
 
 ## Phase 2: Trusted Reuse
 
-- Expand data product lifecycle management.
-- Add contract registry, compatibility checks, and consumer subscription notifications.
-- Add product portfolio review for duplicates, ownerless products, low usage, health breaches, and retirement.
-- Add data quality dashboards and go-live gates.
-- Launch a developer workspace with portal, API, and CLI parity, isolated environments, deployment preview, and rollback.
-- Standardize semantic and API consumption patterns.
-- Introduce cost and usage observability.
-- Add product health dashboards for freshness, quality, reliability, and consumer usage.
-- Launch portal support, service-status, incident communication, planned-change, and knowledge journeys.
-- Add problem management, release coordination, error budgets, recovery exercises, post-incident learning, and evidence-driven service improvement.
-- Build the Data Service Portal experience for product discovery and access.
-- Add domain team, use-case, workspace, saved-product, agreement, and portfolio views.
-- Standardize product detail around identity, ownership, contract, quality, interfaces, semantics, lineage, access, health, and change.
-- Add DCAT, OpenLineage, OpenAPI, AsyncAPI, CloudEvents, and OTLP conformance adapters.
-- Prove clean-room artifact export/import and independent-client consumption.
+**Objective:** turn the proven path into repeatable self-service capabilities used by multiple domains and consumers.
+
+| Workstream | Deliverables | Exit evidence |
+| --- | --- | --- |
+| Product management | Contract registry, compatibility checks, subscriptions, lifecycle, portfolio review, quality gates, deprecation, and retirement. | Breaking changes identify consumers; duplicate, unhealthy, unused, and ownerless products are governed. |
+| Developer experience | Portal, API, and CLI parity; isolated environments; deployment preview; policy checks; promotion; release evidence; rollback. | A domain team delivers a product without a platform-specific delivery ticket. |
+| Consumption and semantics | Standard semantic, SQL, API, event, retrieval, and feature patterns through unified access. | Representative BI, application, platform, and AI consumers use governed product ports. |
+| Portal experience | Product discovery, access, domain, use-case, workspace, saved-product, agreement, portfolio, support, status, change, and knowledge views. | Users can discover, request, track, support, and understand products in one experience. |
+| Trust and operations | Product health, freshness, quality, usage, cost, incident communication, problem, release, error budget, recovery exercise, and improvement workflows. | System and product recovery is proven; service reviews use measured health and operational evidence. |
+| Interoperability | DCAT, OpenLineage, OpenAPI, AsyncAPI, CloudEvents, and OTLP adapters plus clean-room import/export. | An independent client consumes a product and canonical artifacts survive export and import. |
+
+### Phase 2 Gate
+
+Proceed when multiple domains use the shared services, products are reused by independent consumers, operational SLOs are measured, and delivery no longer depends on one specialist team.
 
 ## Phase 3: AI-Ready Data Foundation
 
-- Define AI data usage policies.
-- Publish AI-ready datasets, feature sets, retrieval indexes, and evaluation datasets.
-- Add model and agent lineage back to data products.
-- Observe AI consumption using product-level telemetry, agent identity, and model usage signals.
-- Strengthen controls for prompts, embeddings, and agent identities.
-- Monitor AI consumption patterns and quality feedback.
-- Prove end-to-end AI correlation across product, contract, snapshot, index, identity, purpose, evaluation, and source lineage.
-- Add dedicated MCP product, AI agent, AI model, and AI evaluation journeys.
-- Establish Agent Gateway, agent and skill registry, LLM gateway, context gateway and evaluation service.
-- Launch the Data Service AI Assistant in grounded Ask and Plan modes.
-- Add read-only discovery, contract, lineage, policy and health skills.
-- Add bounded write skills with typed previews, explicit approval, durable tasks and receipts.
-- Certify agent and skill versions through quality, policy, safety, reliability and cost evaluations.
+**Objective:** make governed data and foundation actions safely usable by AI models, assistants, and agents.
+
+| Workstream | Deliverables | Exit evidence |
+| --- | --- | --- |
+| AI-ready products | Approved datasets, feature sets, retrieval indexes, evaluation datasets, usage policies, and prohibited-use rules. | Each AI use resolves product, contract, snapshot or index, identity, purpose, quality, and lineage. |
+| AI platform | Agent Gateway, agent and skill registry, LLM gateway, context gateway, memory controls, and evaluation service. | Gateways enforce identity, policy, model profile, budget, approval, audit, and suspension. |
+| Portal journeys | MCP product, AI agent, AI model, AI evaluation, and AI-use approval journeys. | AI teams complete governed onboarding and can see dependencies, decisions, and evidence. |
+| Data Service AI Assistant | Grounded Ask and Plan modes, read-only discovery and explanation skills, then bounded write skills with previews and receipts. | Responses cite authoritative evidence; write actions require typed scope and correct approval. |
+| AI observability | Product-level AI usage, model and agent lineage, prompt and embedding controls, evaluation outcomes, quality feedback, safety, reliability, and cost. | One AI interaction traces end to end from source product through model or agent outcome. |
+| Evaluation and release | Versioned quality, policy, safety, reliability, and cost evaluations for models, agents, and skills. | Failed thresholds block release; approved versions have reproducible evaluation evidence. |
+
+### Phase 3 Gate
+
+Proceed when AI use cannot bypass product, identity, purpose, access, evaluation, approval, lineage, observability, or operational controls.
 
 ## Phase 4: Ecosystem Sharing
 
-- Standardize customer, supplier, and partner sharing patterns.
-- Add sharing agreement automation and recipient entitlement management.
-- Implement clean room or controlled collaboration patterns where needed.
-- Improve external audit and revocation evidence.
-- Validate at least one partner exchange with an open sharing interface and federated identity.
-- Add separate customer, supplier, and partner sharing agreements with recipient identity, expiry, delivery status, and revocation.
+**Objective:** extend governed products to customers, suppliers, and partners without losing control after delivery.
+
+| Workstream | Deliverables | Exit evidence |
+| --- | --- | --- |
+| Sharing patterns | Standard internal, customer, supplier, partner, and controlled-collaboration patterns. | Each pattern has owner, contract, identity, delivery, support, monitoring, expiry, and revocation. |
+| Agreements and entitlement | Automated sharing agreements, recipient identity, minimized scope, approval, entitlement, renewal, and offboarding. | Technical package and entitlement reconcile with the approved agreement and product contract. |
+| Open exchange | Open sharing interface, federated identity, independent recipient test, and portable recipient package. | At least one partner completes exchange without relying on provider-only consumer tooling. |
+| Operations and assurance | Delivery health, recipient activity, incident communication, audit export, retention, expiry, suspension, and revocation testing. | Access is revoked within the target; exported evidence shows who received what, why, when, and under which version. |
+
+### Phase 4 Gate
+
+The phase is established when at least one real external exchange is contract-based, minimized, observable, independently consumable, auditable, expiring, and demonstrably revocable.
+
+## Progression Rules
+
+| Rule | Application |
+| --- | --- |
+| Prove before scaling | Use real sources, products, identities, consumers, incidents, and changes; demonstrations without operational evidence do not pass a gate. |
+| Keep earlier controls active | Later phases add capability but do not replace ownership, contracts, access, product go-live, observability, or operations. |
+| Advance by workstream | A workstream may be ahead or behind the overall phase; record its evidence and gaps separately. |
+| Fund the constraint | Prioritize the weakest workstream blocking the next outcome instead of launching every component at once. |
+| Preserve portability | Every phase retains canonical artifacts, stable identifiers, open interfaces, export paths, and tested exit options. |
+| Measure adoption | A deployed capability without active users, products, and operating ownership is not mature. |
 
 ## Success Measures
 
-- Number of live data products reused by multiple consumers.
-- Reduction in duplicated data pipelines.
-- Time required to onboard a new source.
-- Percentage of products with owner, contract, quality rules, and lineage.
-- Consumer satisfaction and adoption.
-- Number of AI systems using governed data products.
-- External sharing agreements with auditable controls.
-- Percentage of live products passing their required interoperability conformance level.
-- Percentage of agent runs grounded in authoritative sources with complete trace and policy evidence.
-- Agent task success, unsupported-claim rate, approval accuracy, safety evaluation pass rate and cost per completed task.
-- Service SLO attainment, incident recovery and recurrence, change success, emergency-change rate, support experience, continuity exercise success, and operational toil removed.
+| Outcome | Measures |
+| --- | --- |
+| Delivery flow | Source onboarding time, product lead time, go-live cycle time, deployment frequency, rollback success, and self-service completion. |
+| Product trust and reuse | Live products with owner, contract, quality, lineage and SLO; reuse by independent consumers; duplicate pipeline reduction; consumer satisfaction. |
+| Operations and reliability | Service SLO attainment, acknowledge and recovery time, recurrence, change success, emergency-change rate, support experience, recovery exercise success, and toil removed. |
+| Interoperability | Products passing required conformance, artifact round-trip success, independent-client consumption, and unresolved vendor-specific exceptions. |
+| AI outcomes | Governed AI systems, trace-complete agent runs, task success, unsupported-claim rate, approval accuracy, safety and reliability pass rate, and cost per task. |
+| Ecosystem control | Active sharing agreements, delivery SLOs, recipient incidents, expired access removed, revocation test success, and complete audit evidence. |
+
+<div class="read-next">
+  <strong>Next:</strong> use the Data Foundation Maturity Assessment to score each workstream, then convert the weakest progression gate into funded delivery increments.
+</div>
