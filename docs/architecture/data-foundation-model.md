@@ -45,7 +45,7 @@ The source-aligned contract is the ownership handoff: the platform team remains 
 
 | Cross-cutting control | Applies across the model |
 | --- | --- |
-| Contracts | Source delivery and source-aligned contracts govern the central boundary; product and consumption contracts govern federated outputs. |
+| Contracts | The [contract architecture](data-contract-architecture.md) chains source delivery to one product contract per published layer, then narrows governed use through consumption, sharing, and AI-use bindings. |
 | Catalog, metadata and lineage | Preserve stable identities, ownership, source-to-product provenance, dependencies, and impact. |
 | Semantic context | Explain domain and product meaning without changing the source-preserving promise of source-aligned data. |
 | Identity, policy and unified access | Enforce named-user and workload access, purpose, obligations, expiry, and revocation. |
@@ -67,7 +67,7 @@ Source-aligned data represents one source domain while preserving its concepts a
 | Meaning | Preserve source concepts, keys, events, lifecycle, and limitations without claiming an enterprise-wide definition. |
 | Grain | Normally unchanged from the authoritative source entity or event. |
 | Ownership | The Data Foundation Platform Team owns and operates both states through the Data Ingestion Service. The source system owner owns source availability, source semantics, and change obligations; relevant stewards approve classification and interpretation. |
-| Contract | Source delivery, schema, semantics, keys, change behavior, quality thresholds, freshness, and known limitations. |
+| Contract | The source contract governs delivery and raw receipt. A source-aligned product contract governs the validated handoff, including schema, source semantics, keys, change behavior, quality thresholds, freshness, and known limitations. |
 | Reuse | Stable input for multiple domain products; direct business consumption remains controlled. |
 | Retention | Raw and validated states may have different retention based on replay, audit, privacy, and cost needs. |
 
@@ -108,8 +108,9 @@ Consumer-aligned data presents live products in the shape required by a defined 
 | Stage | Primary Promise | Typical Contract | Suitable for Direct Consumption? |
 | --- | --- | --- | --- |
 | Source-aligned | Faithful landing followed by a reliable representation of one source. | Source delivery and source-aligned product contract. | Raw state: no. Validated state: limited, mainly as an input to other products. |
-| Aggregate | Governed measure at an explicit grain. | Product contract plus metric and dimensional semantics. | Yes, when live and fit for the consumer purpose. |
-| Consumer-aligned | Fit-for-purpose interface or projection. | Consumption, sharing, or AI usage contract. | Yes, for the approved consumer and purpose. |
+| Reusable domain | Governed business meaning and reusable domain interface. | Product contract with domain semantics, quality, SLOs, policy, and ports. | Yes, when live and fit for the consumer purpose. |
+| Aggregate | Governed measure at an explicit grain. | Product contract with upstream versions, metric definitions, and dimensional semantics. | Yes, when live and fit for the consumer purpose. |
+| Consumer-aligned | Fit-for-purpose interface or projection. | Product contract narrowed by a consumption, sharing, or AI-use contract or agreement. | Yes, for the approved consumer and purpose. |
 
 ## Choosing the Right Pattern
 

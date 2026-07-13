@@ -4,6 +4,8 @@ The data contract standard defines the minimum content and lifecycle rules for c
 
 Contracts are enforceable platform assets. A contract is not complete when it is written; it must be reviewed, versioned, tested, published, monitored, and used by pipelines and consumers.
 
+Use [Data Contract Architecture](../architecture/data-contract-architecture.md) to place these contract types across source-aligned, reusable domain, aggregate, consumer-aligned, consumption, sharing, and AI-use boundaries.
+
 ## Canonical Representation
 
 The portable contract artifact must conform to the [Open Data Contract Standard 3.1](https://bitol-io.github.io/open-data-contract-standard/latest/). Enterprise requirements are added through its extension mechanism, without redefining standard fields.
@@ -22,12 +24,14 @@ The field model below is the enterprise minimum. Its implementation must map to 
 | Type | Purpose | Typical Owner |
 | --- | --- | --- |
 | Source contract | Defines what a source system provides to the foundation. | Source system owner. |
-| Product contract | Defines the live product interface and consumer expectations. | Data product owner. |
-| Consumption contract | Defines API, semantic, event, feature, or retrieval access behavior. | Product owner and platform owner. |
-| Sharing contract | Defines recipient-specific package, scope, usage, expiry, and revocation. | Sharing owner. |
-| AI usage contract | Defines approved AI use such as retrieval, training, evaluation, grounding, or feature use. | Product owner and AI use-case owner. |
+| Product contract | Defines the live product promise and ports. Source-aligned, reusable domain, aggregate, and consumer-aligned products use profiles of this common type. | Data product owner. |
+| Consumption contract | Narrows a product contract to API, semantic, event, feature, retrieval, or other access behavior; it does not replace the product contract. | Product owner and platform owner. |
+| Sharing contract | Narrows a product contract to recipient-specific package, scope, usage, expiry, and revocation. | Sharing owner. |
+| AI usage contract | Narrows a product contract to approved AI use such as retrieval, training, evaluation, grounding, or feature use. | Product owner and AI use-case owner. |
 
 Consume agreements and sharing agreements are lifecycle records that reference a contract version; they are not replacements for the product contract. A consume agreement binds identity, team, use case, purpose, duration, and entitlement. A sharing agreement additionally binds recipient identity, legal basis, minimized scope, delivery channel, expiry, and revocation.
+
+Raw landing is not a separate contract type or product. Source-contract clauses govern its technical receipt, provenance, quarantine, replay, retention, and restricted access. The validated source-aligned output is the first publishable layer and therefore has a product contract.
 
 ## Required Contract Fields
 

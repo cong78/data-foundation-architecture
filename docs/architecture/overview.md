@@ -146,6 +146,7 @@ flowchart LR
 | This overview | What are the major layers and boundaries? |
 | [Target Architecture](target-architecture.md) | Which logical planes govern the target state? |
 | [Data Foundation Model](data-foundation-model.md) | What are the core architecture objects and relationships? |
+| [Data Contract Architecture](data-contract-architecture.md) | Which contract governs each product layer, lifecycle gate, and enforcement point? |
 | [Reference Architecture](reference-architecture.md) | Which technology-neutral capabilities are required? |
 | [Data Product Lifecycle Design](data-product-lifecycle-design.md) | How does a product move from idea through go-live, operation, change, and retirement? |
 | [Semantic and Context Design](semantic-context-design.md) | How do catalog, semantics, context packages, and graph projections fit together? |

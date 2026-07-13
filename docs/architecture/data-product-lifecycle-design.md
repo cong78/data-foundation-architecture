@@ -2,7 +2,7 @@
 
 Data products are trusted datasets or data interfaces created for reuse. They are managed through a lifecycle from idea to retirement so ownership, trust, access, quality, and observability remain clear.
 
-Use the [Data Product Management Standard](../standards/data-product-management-standard.md) as the mandatory management model for product ownership, lifecycle states, go-live gates, portfolio reviews, and enforcement rules.
+Use the [Data Product Management Standard](../standards/data-product-management-standard.md) as the mandatory management model for product ownership, lifecycle states, go-live gates, portfolio reviews, and enforcement rules. Use [Data Contract Architecture](data-contract-architecture.md) to determine which contract governs each product layer and how it is enforced.
 
 The product is ready only when it is discoverable, addressable, understandable, natively accessible through governed interfaces, trustworthy, interoperable, independent, and secure. These qualities are demonstrated during delivery and continuously measured after go-live.
 
@@ -10,7 +10,7 @@ The product is ready only when it is discoverable, addressable, understandable, 
 
 | Product type | Accountable owner | Lifecycle boundary |
 | --- | --- | --- |
-| Source-aligned raw and validated states | Data Foundation Platform Team | Managed through source onboarding and the Data Ingestion Service; source teams own source delivery and change obligations. |
+| Source-aligned raw and validated states | Data Foundation Platform Team | Raw is a restricted state governed by source-contract clauses. Validated source-aligned data is published under a source-aligned product contract; source teams retain source delivery and change obligations. |
 | Reusable domain product | Owning domain data team | Begins when a domain accepts input contracts and adds domain meaning or a reusable business interface. |
 | Aggregate product | Owning domain data team | Begins when a domain changes grain, combines products, or governs a reusable metric. |
 | Consumer-aligned product or view | Serving or consuming domain data team | Begins for a declared consumer and purpose; ends or is promoted when the use case changes or reuse grows. |
@@ -62,7 +62,7 @@ stateDiagram-v2
 
 ## Data Contract Lifecycle
 
-Data contracts are managed through the Data Service Portal and linked to the product lifecycle.
+Data contracts are managed through the Data Service Portal and linked to the product lifecycle. The product lifecycle controls readiness and ownership; the contract lifecycle controls the versioned promise. They synchronize at product go-live, change, and retirement.
 
 | Stage | Description | Evidence |
 | --- | --- | --- |
@@ -73,6 +73,8 @@ Data contracts are managed through the Data Service Portal and linked to the pro
 | Publish | Contract is available to consumers and linked to the product catalog entry. | Published version, consumer guidance, subscription options. |
 | Change | Proposed changes are checked for compatibility and communicated. | Change record, migration path, consumer notification. |
 | Retire | Obsolete contract versions are deprecated and removed safely. | Deprecation notice, consumer migration evidence. |
+
+At every publishable layer, the producer accepts upstream contract versions and publishes one output product contract. Consumption, sharing, and AI-use contracts narrow that output for a specific interface, recipient, or purpose. See [Data Contract Architecture](data-contract-architecture.md) for the layer map, control components, failure outcomes, and detailed enforcement matrix.
 
 ## Lifecycle Gates
 

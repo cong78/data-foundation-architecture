@@ -9,6 +9,7 @@ This repository is both an architecture guide and a delivery reference. Follow t
 | Understand the foundation | [Definition and Scope](definition-and-scope.md) | Shared language and boundaries |
 | Make an architecture decision | [Principles](principles.md) | A consistent decision basis |
 | Design the target architecture | [Target Architecture](../architecture/target-architecture.md) and [Reference Architecture](../architecture/reference-architecture.md) | Six-plane model and capability map |
+| Design contract enforcement | [Data Contract Architecture](../architecture/data-contract-architecture.md) | Contract chain across product layers, lifecycle gates, runtime enforcement, and evidence |
 | Design the data product lifecycle | [Data Product Lifecycle Design](../architecture/data-product-lifecycle-design.md) | Product states, contract lifecycle, gates, and controls |
 | Design product meaning and context | [Semantic and Context Design](../architecture/semantic-context-design.md) | Versioned semantics, relationships, usage context, and authoritative references |
 | Design identity and logical access | [Unified Access Design](../architecture/unified-access-design.md) | Identities, service and data decisions, product ports, runtime routing, entitlements, and evidence |
