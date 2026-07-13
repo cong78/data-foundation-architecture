@@ -8,17 +8,19 @@
 
 Architecture guidance for an **AI-ready data foundation**: open contracts, reusable products, unified access, observable trust, and governed automation.
 
-## Choose Your Path
+## Foundation Journey
 
-| I need to... | Start with | Then use |
-| --- | --- | --- |
-| Understand or review the architecture | [Architecture Overview](architecture/overview.md) | [Target Architecture](architecture/target-architecture.md) and [Reference Architecture](architecture/reference-architecture.md) |
-| Onboard or evaluate a data domain | [Data Domain Design](architecture/data-domain-design.md) | [Data Domain Onboarding Record](delivery-templates/data-domain-onboarding-template.md) and [Data Foundation Maturity Assessment](assessments/data-foundation-maturity-assessment.md) |
-| Design or implement a foundation service | [Services Overview](services/index.md) | The relevant service page, [architecture patterns](implementation/service-implementation-patterns.md), and standards |
-| Build and deploy a data product | [Data Product Developer Experience](architecture/data-product-developer-experience.md) | [Data Product Workload Standard](standards/data-product-workload-standard.md) and [workload template](delivery-templates/data-product-workload-template.md) |
-| Create and govern a data product | [Data Product Lifecycle Design](architecture/data-product-lifecycle-design.md) | [Data Contract Standard](standards/data-contract-standard.md) and [Data Product Template](delivery-templates/data-product-template.md) |
-| Design access for users and systems | [Unified Access Design](architecture/unified-access-design.md) | [Access Control Standard](standards/access-control-standard.md) and [Data Consumption Service](services/data-consumption-service.md) |
-| Enable agents, models, or the Data Service AI Assistant | [Agentic Data Foundation](architecture/agentic-data-foundation.md) | [Agent, Skill and LLM Standard](standards/agent-skill-llm-standard.md) and [Data Foundation Maturity Assessment](assessments/data-foundation-maturity-assessment.md) |
+| Step | Journey stage | Core guidance | Outcome |
+| ---: | --- | --- | --- |
+| 1 | **Frame the foundation** | [Definition and Scope](foundation/definition-and-scope.md) · [Principles](foundation/principles.md) | Agreed boundaries, ownership model, decision rules, and non-goals. |
+| 2 | **Design the target** | [Architecture Overview](architecture/overview.md) · [Target Architecture](architecture/target-architecture.md) · [Reference Architecture](architecture/reference-architecture.md) | Shared layers, planes, building blocks, flows, and control boundaries. |
+| 3 | **Organize data domains** | [Data Domain Design](architecture/data-domain-design.md) · [Domain Onboarding Record](delivery-templates/data-domain-onboarding-template.md) · [Maturity Assessment](assessments/data-foundation-maturity-assessment.md) | Registered domains with admission decisions, central-to-federated handoffs, and improvement plans. |
+| 4 | **Establish foundation services** | [Services Overview](services/index.md) · [Architecture Patterns](implementation/service-implementation-patterns.md) · [Reference Solutions](architecture/data-ingestion-design.md) | Reusable ingestion, creation, consumption, sharing, and observability capabilities. |
+| 5 | **Deliver governed products** | [Product Lifecycle Design](architecture/data-product-lifecycle-design.md) · [Developer Experience](architecture/data-product-developer-experience.md) · [Data Product Management Standard](standards/data-product-management-standard.md) | Contracted, tested, observable products that pass product go-live. |
+| 6 | **Enable governed use** | [Unified Access Design](architecture/unified-access-design.md) · [Consumption](services/data-consumption-service.md) · [Sharing](services/data-sharing-service.md) · [Agentic Foundation](architecture/agentic-data-foundation.md) | Purpose-bound access for people, systems, partners, agents, and models. |
+| 7 | **Operate and improve** | [Observability Design](architecture/observability-design.md) · [Governance](governance/index.md) · [Delivery Runway](runway.md) | Measured health, accountable operations, prioritized gaps, and continuous improvement. |
+
+Use the journey in order for a new foundation. For an existing capability, enter at the relevant stage and retain traceability to the framing and target decisions.
 
 ## Architecture at a Glance
 
@@ -32,25 +34,3 @@ The Data Service Portal is the front door. Six foundation services turn source d
   <a class="foundation-card" href="services/data-sharing-service/"><strong>Sharing</strong>Controlled internal and external exchange with revocation.</a>
   <a class="foundation-card" href="services/data-observability-service/"><strong>Observability</strong>OpenTelemetry-based system and product insights.</a>
 </div>
-
-## How the Guidance Fits Together
-
-| Question | Guidance | Result |
-| --- | --- | --- |
-| Why and where? | [Definition and Scope](foundation/definition-and-scope.md) and [Principles](foundation/principles.md) | Shared boundaries and decision rules. |
-| What is the target? | [Architecture](architecture/overview.md) | Target model, building blocks, flows, and decisions. |
-| How is it provided? | [Services](services/index.md) | Reusable service contracts, controls, and done criteria. |
-| What is mandatory? | [Standards](standards/index.md) and [Governance](governance/index.md) | Implementable rules, ownership, and evidence. |
-| How do we adopt it? | [Delivery](delivery/index.md) | Sequenced delivery, assessments, templates, and examples. |
-
-## Recommended Architecture Path
-
-1. [Definition and Scope](foundation/definition-and-scope.md)
-2. [Principles](foundation/principles.md)
-3. [Architecture Overview](architecture/overview.md)
-4. [Target Architecture](architecture/target-architecture.md)
-5. [Reference Architecture](architecture/reference-architecture.md)
-6. [Services Overview](services/index.md)
-7. [Delivery Runway](runway.md)
-
-Use standards, governance pages, templates, and examples as working references rather than reading them front to back.
