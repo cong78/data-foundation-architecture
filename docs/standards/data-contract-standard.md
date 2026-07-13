@@ -4,7 +4,7 @@ The data contract standard defines the minimum content and lifecycle rules for c
 
 Contracts are enforceable platform assets. A contract is not complete when it is written; it must be reviewed, versioned, tested, published, monitored, and used by pipelines and consumers.
 
-Use [Data Contract Architecture](../architecture/data-contract-architecture.md) to place these contract types across source-aligned, reusable domain, aggregate, consumer-aligned, consumption, sharing, and AI-use boundaries.
+Use [Data Contract Design](../architecture/data-contract-design.md) to place these contract types across source-aligned, reusable domain, aggregate, consumer-aligned, consumption, sharing, and AI-use boundaries.
 
 ## Canonical Representation
 

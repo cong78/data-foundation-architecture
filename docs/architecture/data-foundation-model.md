@@ -45,7 +45,7 @@ The source-aligned contract is the ownership handoff: the platform team remains 
 
 | Cross-cutting control | Applies across the model |
 | --- | --- |
-| Contracts | The [contract architecture](data-contract-architecture.md) chains source delivery to one product contract per published layer, then narrows governed use through consumption, sharing, and AI-use bindings. |
+| Contracts | The [Data Contract Design](data-contract-design.md) chains source delivery to one product contract per published layer, then narrows governed use through consumption, sharing, and AI-use bindings. |
 | Catalog, metadata and lineage | Preserve stable identities, ownership, source-to-product provenance, dependencies, and impact. |
 | Semantic context | Explain domain and product meaning without changing the source-preserving promise of source-aligned data. |
 | Identity, policy and unified access | Enforce named-user and workload access, purpose, obligations, expiry, and revocation. |

@@ -1,4 +1,4 @@
-# Data Contract Architecture
+# Data Contract Design
 
 Data contracts are the executable control chain that carries trust from a source into every published data product and governed use. They define what a producer promises, what the platform enforces, and what evidence is required before and after product go-live.
 

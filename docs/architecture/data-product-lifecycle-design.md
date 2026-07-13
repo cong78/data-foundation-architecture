@@ -2,7 +2,7 @@
 
 Data products are trusted datasets or data interfaces created for reuse. They are managed through a lifecycle from idea to retirement so ownership, trust, access, quality, and observability remain clear.
 
-Use the [Data Product Management Standard](../standards/data-product-management-standard.md) as the mandatory management model for product ownership, lifecycle states, go-live gates, portfolio reviews, and enforcement rules. Use [Data Contract Architecture](data-contract-architecture.md) to determine which contract governs each product layer and how it is enforced.
+Use the [Data Product Management Standard](../standards/data-product-management-standard.md) as the mandatory management model for product ownership, lifecycle states, go-live gates, portfolio reviews, and enforcement rules. Use [Data Contract Design](data-contract-design.md) to determine which contract governs each product layer and how it is enforced.
 
 The product is ready only when it is discoverable, addressable, understandable, natively accessible through governed interfaces, trustworthy, interoperable, independent, and secure. These qualities are demonstrated during delivery and continuously measured after go-live.
 
@@ -74,7 +74,7 @@ Data contracts are managed through the Data Service Portal and linked to the pro
 | Change | Proposed changes are checked for compatibility and communicated. | Change record, migration path, consumer notification. |
 | Retire | Obsolete contract versions are deprecated and removed safely. | Deprecation notice, consumer migration evidence. |
 
-At every publishable layer, the producer accepts upstream contract versions and publishes one output product contract. Consumption, sharing, and AI-use contracts narrow that output for a specific interface, recipient, or purpose. See [Data Contract Architecture](data-contract-architecture.md) for the layer map, control components, failure outcomes, and detailed enforcement matrix.
+At every publishable layer, the producer accepts upstream contract versions and publishes one output product contract. Consumption, sharing, and AI-use contracts narrow that output for a specific interface, recipient, or purpose. See [Data Contract Design](data-contract-design.md) for the layer map, control components, failure outcomes, and detailed enforcement matrix.
 
 ## Lifecycle Gates
 
