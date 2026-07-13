@@ -2,6 +2,8 @@
 
 The repository includes a project-native AI skill that turns this guidance into repeatable architecture work without making the skill a second source of truth.
 
+Current package version: **1.1.0**.
+
 ## What It Does
 
 | Mode | Typical request | Result |
@@ -9,7 +11,7 @@ The repository includes a project-native AI skill that turns this guidance into 
 | Assess | Assess a data domain for onboarding or maturity. | Admission decision, dimension scores, evidence gaps and improvement plan. |
 | Design | Design a foundation capability or reference solution. | Layered architecture, flows, controls, decisions and done criteria. |
 | Review | Validate an architecture, product, contract or technology choice. | Severity-ordered findings and remediation. |
-| Generate | Create a governed delivery artifact. | Completed domain, product, contract, technology or conformance template. |
+| Generate | Create a governed delivery or operations artifact. | Completed domain, product, contract, technology, conformance, agent, or service-runbook template. |
 
 ## Package
 
@@ -25,7 +27,7 @@ skills/data-foundation-architect/
 └── assets/
 ```
 
-`SKILL.md` contains the runtime-neutral operating workflow. `manifest.json` defines capabilities, side effects, authorization, data policy, reliability, approvals, telemetry, and tests. JSON schemas define the assessment contract. The guidance map points to authoritative pages under `docs/`.
+`SKILL.md` contains the runtime-neutral operating workflow. `manifest.json` defines capabilities, side effects, authorization, data policy, reliability, approvals, telemetry, and tests. JSON schemas define assessment and task contracts. The guidance map points to authoritative pages under `docs/`, including the five-stage journey, eight services, portal marketplace, and architecture-to-operations traceability.
 
 ## Integrate with an Agent Runtime
 
@@ -49,6 +51,8 @@ Use the Data Foundation Architect skill to review this data product against the 
 Use the Data Foundation Architect skill to design governed supplier sharing with Delta Sharing.
 
 Use the Data Foundation Architect skill to generate a technology selection record for data observability.
+
+Use the Data Foundation Architect skill to create a service runbook linked to architecture, service ownership, telemetry, recovery evidence, and the runway.
 ```
 
 ## Maturity Scoring
@@ -70,6 +74,7 @@ It reports all six maturity dimensions, evidence coverage and the lowest dimensi
 - The skill does not fabricate evidence, approvals, ownership or measurements.
 - Generated designs remain proposals until accountable owners approve them.
 - Vendor mappings remain implementation profiles rather than enterprise contracts.
+- Production designs trace architecture to service, playbook, runbook, evidence, and runway phase.
 - Changes to source guidance require skill-map validation before release.
 
 ## Validation
@@ -78,7 +83,8 @@ Run:
 
 ```bash
 python skills/data-foundation-architect/scripts/validate_package.py
+python skills/data-foundation-architect/scripts/validate_examples.py
 python skills/data-foundation-architect/scripts/verify_guidance_map.py
 ```
 
-The repository CI should run these checks together with the strict MkDocs build and internal-link validation.
+The example validator checks assessment input, scorer output, task request, and task result against local JSON Schemas without an external schema package. The repository CI should run all manifest tests together with the strict MkDocs build and internal-link validation.

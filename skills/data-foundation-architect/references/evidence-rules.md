@@ -35,6 +35,7 @@ Record the authority, scope, observation time, environment, version, and link or
 - Do not infer domain maturity from one successful product.
 - Do not infer portability from a vendor export feature without round-trip or independent-client evidence.
 - Do not infer AI approval from general data access.
+- Do not infer operational readiness from the existence of a runbook; require a current controlled exercise and recovery evidence.
 - Report uncertainty and evidence gaps explicitly.
 
 ## Gates

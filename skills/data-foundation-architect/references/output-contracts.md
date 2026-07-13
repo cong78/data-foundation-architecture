@@ -23,7 +23,8 @@ Return:
 5. Identity, policy, contract, semantic, lineage, telemetry, and lifecycle controls.
 6. Product ports and interoperability profile.
 7. Decisions, alternatives, risks, and open questions.
-8. Delivery increments and done criteria.
+8. Owning service, action playbook, runbook coverage, telemetry, recovery evidence, and runway phase for production scope.
+9. Delivery increments and done criteria.
 
 ## Architecture Review
 
@@ -36,7 +37,7 @@ Lead with findings:
 | Medium | Important inconsistency, operability gap, or avoidable coupling. |
 | Low | Clarity, maintainability, or optimization opportunity. |
 
-For each finding include the affected element, consequence, evidence, guidance reference, and correction. Then provide assumptions, residual risks, and a short summary.
+For each finding include the affected element, consequence, evidence, guidance reference, and correction. Treat a missing link between architecture, service ownership, playbook, runbook, and recovery evidence as an operability finding. Then provide assumptions, residual risks, and a short summary.
 
 ## Generated Artifact
 
@@ -45,3 +46,4 @@ For each finding include the affected element, consequence, evidence, guidance r
 - Include stable identifiers and versions where applicable.
 - Keep contract targets separate from current measurements.
 - Include decisions, exceptions, owners, expiry, and evidence links.
+- For runbooks, preserve separate system, data-product, consumer, control, and stability recovery checks.

@@ -25,7 +25,8 @@
       {"id": "portal-adoption", "passed": true, "evidence": ["portal/domain/customer"]},
       {"id": "ingestion-profile", "passed": true, "evidence": ["service/ingestion/customer"]},
       {"id": "creation-profile", "passed": false, "evidence": []},
-      {"id": "consumption-and-sharing", "passed": false, "evidence": []}
+      {"id": "consumption-and-sharing", "passed": false, "evidence": []},
+      {"id": "operations-profile", "passed": true, "evidence": ["service/customer-support"]}
     ],
     "data-products-and-contracts": [
       {"id": "portfolio-record", "passed": true, "evidence": ["portal/domain/customer#products"]},

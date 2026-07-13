@@ -1,6 +1,6 @@
 {
   "id": "data-foundation-architect",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "name": "Data Foundation Architect",
   "description": "Assess, design, review, and generate evidence-based enterprise data foundation architecture.",
   "capabilities": [
@@ -77,6 +77,7 @@
   },
   "tests": [
     "scripts/validate_package.py",
+    "scripts/validate_examples.py",
     "scripts/verify_guidance_map.py",
     "scripts/assess_maturity.py with assets/domain-assessment.example.json"
   ]

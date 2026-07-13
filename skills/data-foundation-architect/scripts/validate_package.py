@@ -37,6 +37,7 @@ def main() -> int:
         skill_dir / "references/guidance-map.md",
         skill_dir / "references/evidence-rules.md",
         skill_dir / "references/output-contracts.md",
+        skill_dir / "scripts/validate_examples.py",
         skill_dir / "schemas/domain-assessment-input.schema.json",
         skill_dir / "schemas/domain-assessment-output.schema.json",
         skill_dir / "schemas/task-request.schema.json",
@@ -75,6 +76,9 @@ def main() -> int:
         errors.append(f"manifest.json missing fields: {', '.join(missing_fields)}")
     if manifest.get("id") != "data-foundation-architect":
         errors.append("manifest.json id must be data-foundation-architect")
+    version = manifest.get("version")
+    if not isinstance(version, str) or not re.fullmatch(r"\d+\.\d+\.\d+", version):
+        errors.append("manifest.json version must use semantic versioning")
     capabilities = manifest.get("capabilities", [])
     capability_ids = {item.get("id") for item in capabilities if isinstance(item, dict)}
     if capability_ids != {"assess", "design", "review", "generate"}:
@@ -95,6 +99,14 @@ def main() -> int:
             json.loads(schema.read_text(encoding="utf-8"))
         except json.JSONDecodeError as error:
             errors.append(f"Invalid JSON schema {schema.name}: {error}")
+
+    for test in manifest.get("tests", []):
+        if not isinstance(test, str) or not test.strip():
+            errors.append("Each manifest test must be a non-empty string")
+            continue
+        script = test.split()[0]
+        if not (skill_dir / script).is_file():
+            errors.append(f"Manifest test references a missing script: {script}")
 
     if errors:
         print("Skill package validation failed:")

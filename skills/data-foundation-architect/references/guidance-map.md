@@ -6,6 +6,7 @@ Resolve every path from the repository root. Load the smallest useful set.
 
 | Need | Guidance |
 | --- | --- |
+| Primary journey and model hierarchy | `docs/foundation/foundation-in-one-view.md` |
 | Definition and boundary | `docs/foundation/definition-and-scope.md` |
 | Decision principles | `docs/foundation/principles.md` |
 | Architecture orientation | `docs/architecture/overview.md` |
@@ -25,10 +26,11 @@ Resolve every path from the repository root. Load the smallest useful set.
 | Design concern | Guidance |
 | --- | --- |
 | Target and building blocks | `docs/architecture/target-architecture.md` and `docs/architecture/reference-architecture.md` |
+| Service boundaries and core capabilities | `docs/services/index.md` and the task-relevant service page under `docs/services/` |
 | Data layers and product types | `docs/architecture/data-foundation-model.md` |
 | Domain boundaries | `docs/architecture/data-domain-design.md` |
 | Product lifecycle | `docs/architecture/data-product-lifecycle-design.md` |
-| Portal experience | `docs/architecture/data-service-portal-model.md` |
+| Portal and marketplace experience | `docs/architecture/data-service-portal-model.md` and `docs/services/data-service-portal.md` |
 | Semantic context and catalog | `docs/architecture/semantic-context-design.md` |
 | Unified access | `docs/architecture/unified-access-design.md` |
 | Agentic design | `docs/architecture/agentic-data-foundation.md` |
@@ -37,6 +39,8 @@ Resolve every path from the repository root. Load the smallest useful set.
 | Consumption reference | `docs/architecture/data-consumption-design.md` |
 | Sharing reference | `docs/architecture/data-sharing-design.md` |
 | Observability reference | `docs/architecture/observability-design.md` |
+| Architecture-to-service operational traceability | `docs/foundation/architecture-service-operations-map.md` |
+| Service operations and runbooks | `docs/services/data-foundation-operations-service.md` and `docs/delivery-templates/service-runbook-template.md` |
 
 ## Review Standards
 
@@ -54,4 +58,4 @@ Resolve every path from the repository root. Load the smallest useful set.
 
 ## Generate
 
-Use the exact template paths listed in `SKILL.md`. For an implementation plan, also read `docs/implementation/implementation-blueprint.md` and `docs/runway.md`.
+Use the exact template paths listed in `SKILL.md`. For an implementation plan, also read `docs/implementation/implementation-blueprint.md` and `docs/runway.md`. For a production design or runbook, read `docs/foundation/architecture-service-operations-map.md`.

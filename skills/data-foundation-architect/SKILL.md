@@ -1,6 +1,6 @@
 ---
 name: data-foundation-architect
-description: Assess, design, review, and generate enterprise data foundation architecture using the guidance in this repository. Use for data domain onboarding and maturity, data products and contracts, foundation services, unified access, observability, data sharing, semantic context, AI enablement, technology selection, architecture conformance, or delivery artifacts.
+description: Assess, design, review, and generate enterprise data foundation architecture using the guidance in this repository. Use for data domain onboarding and maturity, data products and contracts, foundation services, portal marketplace journeys, unified access, observability, operational runbooks, semantic context, AI enablement, technology selection, architecture conformance, or delivery artifacts.
 ---
 
 # Data Foundation Architect
@@ -32,6 +32,8 @@ When intent spans workflows, run them in this order: **Assess → Design → Gen
 ## Apply Core Integrity Rules
 
 - Separate enterprise foundation responsibilities, domain accountability, data product ownership, and runtime implementation.
+- Use **Frame → Establish → Deliver → Use → Operate** as the primary journey; treat layers, planes, services, product patterns, and runway phases as supporting views.
+- Use the eight foundation services as reusable capability boundaries. Keep the Data Product Marketplace inside the Data Service Portal rather than creating a separate catalog or platform.
 - Keep source onboarding, ingestion, and raw and validated source-aligned products under central foundation platform accountability; keep domain, aggregate, and consumer-aligned product ownership federated to domain data teams.
 - Treat a data product as the unit of trust and reuse; do not equate a table or pipeline with a product.
 - Require explicit contracts, semantic context, policy, lineage, telemetry, lifecycle, and accountable ownership.
@@ -40,6 +42,7 @@ When intent spans workflows, run them in this order: **Assess → Design → Gen
 - Distinguish declared contract targets from measured health and timestamp evidence.
 - Use vendor products only as selected implementation profiles; preserve open interfaces, conformance, and exit paths.
 - Preserve domain hard gates and product go-live gates. Never average a failed mandatory gate into a maturity score.
+- Trace production designs through architecture decision, service contract, action playbook, operational runbook, evidence, and runway phase.
 - Do not invent evidence, approvals, owners, measurements, or conformance results. Mark unknowns explicitly.
 
 Read `references/evidence-rules.md` before scoring, certifying, or making a go-live or onboarding recommendation.
@@ -73,14 +76,14 @@ Use `assets/domain-assessment.example.json` as the input shape. Do not interpret
 4. Show the main value flow and keep cross-cutting identity, policy, contract, lineage, semantic, and telemetry controls explicit.
 5. Define product ports, contracts, control authorities, enforcement points, evidence, failure behavior, and lifecycle.
 6. Record consequential alternatives and decisions.
-7. Map the design to standards, services, and done criteria.
+7. Map the design to standards, owning services, action playbooks, operational runbooks, evidence, runway phase, and done criteria.
 
 Prefer one readable layered diagram plus focused flows. Avoid one diagram containing every control and interaction.
 
 ## Review
 
 1. Determine the claimed scope and intended outcomes.
-2. Check boundaries, ownership, contracts, product lifecycle, access, observability, interoperability, operability, and AI usage as applicable.
+2. Check boundaries, service ownership, contracts, product lifecycle, access, observability, interoperability, operability, runbook coverage, and AI usage as applicable.
 3. Distinguish missing design from missing evidence and implementation risk.
 4. Lead with findings ordered by severity.
 5. For each finding, provide affected area, consequence, supporting guidance, and a concrete correction.
@@ -101,6 +104,7 @@ Start from the repository template that owns the requested artifact:
 | Technology selection | `docs/delivery-templates/technology-selection-template.md` |
 | Interoperability conformance | `docs/delivery-templates/interoperability-conformance-template.md` |
 | Agent or skill | `docs/delivery-templates/agent-skill-template.md` |
+| Service runbook | `docs/delivery-templates/service-runbook-template.md` |
 
 Preserve template sections unless they are explicitly out of scope. Replace blank fields with supplied facts, `TBD`, `Not applicable` plus rationale, or an evidence request. Never silently remove a mandatory gate.
 
@@ -114,6 +118,7 @@ Follow `references/output-contracts.md`. Keep outputs concise but decision-ready
 - Evidence and gaps.
 - Risks and trade-offs.
 - Prioritized next actions with owners when known.
+- Architecture-to-service-to-runbook traceability for production scope.
 - Exact repository guidance used.
 
-When editing this repository, run the strict MkDocs build and internal link checker before completion.
+When editing this repository, run all manifest tests, the strict MkDocs build, and the internal link checker before completion.

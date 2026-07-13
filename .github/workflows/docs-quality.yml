@@ -35,9 +35,11 @@ jobs:
       - name: Validate Data Foundation Architect skill
         run: |
           python skills/data-foundation-architect/scripts/validate_package.py
+          python skills/data-foundation-architect/scripts/validate_examples.py
           python skills/data-foundation-architect/scripts/verify_guidance_map.py
           python -m py_compile \
             skills/data-foundation-architect/scripts/assess_maturity.py \
+            skills/data-foundation-architect/scripts/validate_examples.py \
             skills/data-foundation-architect/scripts/validate_package.py \
             skills/data-foundation-architect/scripts/verify_guidance_map.py
           python skills/data-foundation-architect/scripts/assess_maturity.py \

@@ -10,6 +10,16 @@ from pathlib import Path
 
 DOC_PATH = re.compile(r"`(docs/[A-Za-z0-9_./-]+\.md)`")
 
+REQUIRED_GUIDANCE = {
+    "docs/foundation/foundation-in-one-view.md",
+    "docs/foundation/architecture-service-operations-map.md",
+    "docs/services/index.md",
+    "docs/services/data-service-portal.md",
+    "docs/services/data-foundation-operations-service.md",
+    "docs/architecture/data-service-portal-model.md",
+    "docs/delivery-templates/service-runbook-template.md",
+}
+
 
 def main() -> int:
     skill_dir = Path(__file__).resolve().parents[1]
@@ -20,10 +30,16 @@ def main() -> int:
         references.update(DOC_PATH.findall(source.read_text(encoding="utf-8")))
 
     missing = [path for path in sorted(references) if not (repo_root / path).is_file()]
+    missing_coverage = sorted(REQUIRED_GUIDANCE - references)
     if missing:
         print("Missing guidance paths:")
         for path in missing:
             print(f"- {path}")
+    if missing_coverage:
+        print("Required guidance is not mapped by the skill:")
+        for path in missing_coverage:
+            print(f"- {path}")
+    if missing or missing_coverage:
         return 1
 
     print(f"Validated {len(references)} guidance paths from {len(sources)} skill files.")
