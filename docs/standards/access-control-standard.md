@@ -1,5 +1,7 @@
 # Access Control Standard
 
+<div class="decision-brief"><div><small>Use when</small><strong>Authorizing a service operation or product-data use.</strong></div><div><small>Decision</small><strong>Who may do what, for which purpose, under which obligations?</strong></div><div><small>Owner</small><strong>Policy owner and enforcement owner.</strong></div><div><small>Output</small><strong>Enforceable decision, entitlement, obligations, and audit.</strong></div></div>
+
 This standard defines mandatory identity, service authorization, data authorization, entitlement, and evidence requirements for the data foundation.
 
 ## Identity Requirements

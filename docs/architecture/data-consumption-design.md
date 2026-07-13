@@ -1,9 +1,14 @@
 # Data Consumption Design
 
+<div class="decision-brief"><div><small>Use when</small><strong>Assessing Databricks channels for governed product access.</strong></div><div><small>Decision</small><strong>Which port and adapter meet consumer needs and controls?</strong></div><div><small>Owner</small><strong>Consumption and access architect.</strong></div><div><small>Output</small><strong>Channel mapping, policy proof, SLO, and exit plan.</strong></div></div>
+
 This reference solution applies the technology-neutral [Data Consumption Service](../services/data-consumption-service.md) and [Unified Access Design](unified-access-design.md) to Databricks. Unity Catalog provides the governed namespace and native data-policy layer; SQL warehouses, open table interfaces, sharing, and conformant adapters provide fit-for-purpose product access.
 
 !!! info "Reference solution status"
     This page is a selected implementation profile, not a mandatory platform choice. Adoption requires an approved [Technology Selection Record](../delivery-templates/technology-selection-template.md), channel-specific access tests, performance and cost evidence, security review, interoperability proof, and an exit plan. Logical product ports, contracts, semantic context, policy intent, and consumer agreements remain provider-independent.
+
+!!! tip "Fast path"
+    **Decide:** [Executive Recommendation](#executive-recommendation) · **Design:** [Solution at a Glance](#solution-at-a-glance) and [Channel Selection](#channel-selection) · **Implement:** [Implementation Runway](#implementation-runway) · **Assure:** [Port Activation Gate](#port-activation-gate) and [Done Criteria](#done-criteria)
 
 ## Executive Recommendation
 

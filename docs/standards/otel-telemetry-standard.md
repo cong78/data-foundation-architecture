@@ -1,5 +1,7 @@
 # OpenTelemetry Telemetry Standard
 
+<div class="decision-brief"><div><small>Use when</small><strong>Instrumenting a service, product, workflow, or agent.</strong></div><div><small>Decision</small><strong>Which signals and identifiers make health actionable?</strong></div><div><small>Owner</small><strong>Telemetry owner and emitting service owner.</strong></div><div><small>Output</small><strong>Conformant, correlated, hygienic telemetry.</strong></div></div>
+
 OpenTelemetry is the standard telemetry model for the data foundation. It must carry both system context and data product context.
 
 Use published OpenTelemetry semantic conventions before defining enterprise attributes. The `data.*` attributes below form a versioned enterprise convention: each attribute must have an owner, stability level, cardinality guidance, data classification, and deprecation path.

@@ -1,5 +1,7 @@
 # Data Contract Standard
 
+<div class="decision-brief"><div><small>Use when</small><strong>Defining or changing a source, product, access, sharing, or AI promise.</strong></div><div><small>Decision</small><strong>Does the contract meet content, lifecycle, and compatibility rules?</strong></div><div><small>Owner</small><strong>Contract owner and approvers.</strong></div><div><small>Output</small><strong>Approved, testable, published contract version.</strong></div></div>
+
 The data contract standard defines the minimum content and lifecycle rules for contracts across source interfaces, data products, consumption APIs, event streams, and sharing packages.
 
 Contracts are enforceable platform assets. A contract is not complete when it is written; it must be reviewed, versioned, tested, published, monitored, and used by pipelines and consumers.

@@ -1,5 +1,7 @@
 # Data Domain Design
 
+<div class="decision-brief"><div><small>Use when</small><strong>Establishing a business accountability boundary.</strong></div><div><small>Decision</small><strong>Register, enable, condition, or reject the domain.</strong></div><div><small>Owner</small><strong>Domain owner with governance.</strong></div><div><small>Output</small><strong>Stable domain record and adoption obligations.</strong></div></div>
+
 A **data domain** is a stable business-aligned accountability boundary within the enterprise data foundation. It groups related business meaning, product ownership, stewardship, source relationships, consumers, policies, and portfolio decisions. It does not create a separate data foundation or permit a domain-specific bypass around shared controls.
 
 The enterprise foundation provides common services, centrally managed source-aligned products, standards, identity, policy, telemetry, and evidence. A domain adopts those capabilities and owns aggregate and consumer-aligned products and business decisions inside its declared boundary. The domain is an accountability and portfolio boundary, not a separate product type; every live product is reusable by design.

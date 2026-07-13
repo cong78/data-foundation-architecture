@@ -1,5 +1,7 @@
 # Data Foundation Maturity Assessment
 
+<div class="decision-brief"><div><small>Use when</small><strong>Baselining or reviewing a foundation or domain.</strong></div><div><small>Decision</small><strong>Which evidence-backed gaps require improvement?</strong></div><div><small>Owner</small><strong>Accountable scope owner and assessor.</strong></div><div><small>Output</small><strong>Scores, evidence gaps, owners, and review date.</strong></div></div>
+
 Use this assessment to evaluate whether the data foundation is defined, implemented, adopted, and operated as an enterprise capability. Check an item only when objective evidence exists in the Data Service Portal, contract registry, catalog, policy engine, observability platform, governance records, or delivery artifacts.
 
 Assess the foundation at a defined scope, such as one domain, business unit, platform, or enterprise. Record the scope, assessment date, accountable reviewer, evidence links, exceptions, and next review date outside this page.

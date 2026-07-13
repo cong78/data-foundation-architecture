@@ -1,5 +1,7 @@
 # Data Foundation Operations Service
 
+<div class="decision-brief"><div><small>Use when</small><strong>Designing support, response, change, or improvement across services.</strong></div><div><small>Decision</small><strong>Which operational workflow and authority applies?</strong></div><div><small>Owner</small><strong>Foundation operations and service owner.</strong></div><div><small>Output</small><strong>Owned response, recovery, communication, and learning.</strong></div></div>
+
 ## Definition
 
 The Data Foundation Operations Service coordinates support, service management, incident response, problem elimination, change, release readiness, reliability, and operational improvement across all data foundation services.

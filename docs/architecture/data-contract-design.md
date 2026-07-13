@@ -1,5 +1,7 @@
 # Data Contract Design
 
+<div class="decision-brief"><div><small>Use when</small><strong>Placing and enforcing a contract in the product chain.</strong></div><div><small>Decision</small><strong>Which contract governs this boundary and lifecycle gate?</strong></div><div><small>Owner</small><strong>Contract and product owner.</strong></div><div><small>Output</small><strong>Versioned promise, enforcement, and evidence.</strong></div></div>
+
 Data contracts are the executable control chain that carries trust from a source into every published data product and governed use. They define what a producer promises, what the platform enforces, and what evidence is required before and after product go-live.
 
 Use the [Data Contract Standard](../standards/data-contract-standard.md) for mandatory fields, states, approvals, versioning, and test rules. This page explains where each contract belongs in the architecture and lifecycle.

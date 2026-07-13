@@ -80,6 +80,8 @@ plugins:
 nav:
   - Start Here:
       - Overview: index.md
+      - Foundation in One View: foundation/foundation-in-one-view.md
+      - Choose an Action: playbooks/index.md
       - How to Use This Guide: foundation/guidance-model.md
       - Definition and Scope: foundation/definition-and-scope.md
       - Principles: foundation/principles.md
@@ -110,6 +112,11 @@ nav:
           - Architecture Blueprint: implementation/implementation-blueprint.md
           - Architecture Patterns: implementation/service-implementation-patterns.md
           - Architecture Decisions: implementation/architecture-decisions.md
+      - Governance and Operations:
+          - Governance Overview: governance/index.md
+          - Governance Model: governance/governance-model.md
+          - Security and Compliance: governance/security-compliance.md
+          - Operating Model: governance/operating-model.md
   - Services:
       - Services Overview: services/index.md
       - Data Service Portal: services/data-service-portal.md
@@ -120,6 +127,15 @@ nav:
       - Data Sharing Service: services/data-sharing-service.md
       - Data Observability Service: services/data-observability-service.md
       - Data Foundation Operations Service: services/data-foundation-operations-service.md
+  - Playbooks:
+      - Choose an Action: playbooks/index.md
+      - Onboard a Data Domain: playbooks/onboard-data-domain.md
+      - Onboard a Source: playbooks/onboard-source.md
+      - Create or Change a Data Product: playbooks/create-change-data-product.md
+      - Approve Product Go-Live: playbooks/approve-product-go-live.md
+      - Consume a Data Product: playbooks/consume-data-product.md
+      - Share a Data Product: playbooks/share-data-product.md
+      - Operate a Service or Product: playbooks/operate-service-product.md
   - Standards:
       - Standards Overview: standards/index.md
       - Data Contract Standard: standards/data-contract-standard.md
@@ -131,11 +147,6 @@ nav:
       - AI-Ready Data Standard: standards/ai-ready-data-standard.md
       - Agent, Skill and LLM Standard: standards/agent-skill-llm-standard.md
       - Technology Selection Standard: standards/technology-selection-standard.md
-  - Governance:
-      - Governance Overview: governance/index.md
-      - Governance Model: governance/governance-model.md
-      - Security and Compliance: governance/security-compliance.md
-      - Operating Model: governance/operating-model.md
   - Delivery:
       - Delivery Overview: delivery/index.md
       - Runway: runway.md

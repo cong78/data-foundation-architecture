@@ -1,5 +1,7 @@
 # Data Ingestion Service
 
+<div class="decision-brief"><div><small>Use when</small><strong>Onboarding or operating a source channel.</strong></div><div><small>Decision</small><strong>Which governed ingestion pattern and contract apply?</strong></div><div><small>Owner</small><strong>Foundation ingestion owner.</strong></div><div><small>Output</small><strong>Validated source-aligned product and handoff.</strong></div></div>
+
 ## Definition
 
 The data ingestion service brings data from source systems into the foundation through standardized, governed patterns. It makes onboarding repeatable while preserving provenance, enforcing baseline controls, and preparing data for product creation.

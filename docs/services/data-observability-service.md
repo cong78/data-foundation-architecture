@@ -1,5 +1,7 @@
 # Data Observability Service
 
+<div class="decision-brief"><div><small>Use when</small><strong>Defining measurable service and product trust.</strong></div><div><small>Decision</small><strong>Which signals, SLOs, context, and correlations are required?</strong></div><div><small>Owner</small><strong>Observability owner with service and product owners.</strong></div><div><small>Output</small><strong>Current health and actionable evidence.</strong></div></div>
+
 ## Definition
 
 The data observability service observes data products end to end through both **system telemetry** and **data product telemetry**. It uses OpenTelemetry as the standard model for collecting, correlating, and exporting telemetry across ingestion, transformation, product publication, consumption, and sharing.

@@ -1,5 +1,7 @@
 # Agent, Skill and LLM Standard
 
+<div class="decision-brief"><div><small>Use when</small><strong>Designing or releasing an agent, skill, model route, or tool action.</strong></div><div><small>Decision</small><strong>Is autonomy bounded, evaluated, approved, and traceable?</strong></div><div><small>Owner</small><strong>Agent or skill owner with risk approvers.</strong></div><div><small>Output</small><strong>Versioned capability, evaluations, policy, and receipts.</strong></div></div>
+
 This standard defines the minimum contract for agentic capabilities in the data foundation.
 
 It applies the lifecycle and provenance expectations of the [NIST Generative AI Profile](https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence), the risk controls in the [OWASP AI Agent Security guidance](https://cheatsheetseries.owasp.org/cheatsheets/AI_Agent_Security_Cheat_Sheet.html), and the excessive-agency principle of minimizing tool functionality, permissions and autonomy.

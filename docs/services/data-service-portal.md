@@ -1,5 +1,7 @@
 # Data Service Portal
 
+<div class="decision-brief"><div><small>Use when</small><strong>Designing a user entry point or foundation journey.</strong></div><div><small>Decision</small><strong>What belongs in the portal versus an authoritative service?</strong></div><div><small>Owner</small><strong>Portal owner with journey and service owners.</strong></div><div><small>Output</small><strong>Coherent journey, state boundary, and evidence view.</strong></div></div>
+
 ## Definition
 
 The data service portal is the user entry point for the data foundation. It provides a single place for users to discover data products, request access, onboard sources, create or manage data products, manage data contracts, track workflow status, and view product trust signals.

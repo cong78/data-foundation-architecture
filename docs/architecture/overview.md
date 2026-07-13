@@ -1,6 +1,11 @@
 # Architecture Overview
 
+<div class="decision-brief"><div><small>Use when</small><strong>Orienting or reviewing an end-to-end design.</strong></div><div><small>Decision</small><strong>Which architecture view answers the current question?</strong></div><div><small>Owner</small><strong>Enterprise or solution architect.</strong></div><div><small>Output</small><strong>Selected view, boundaries, and review path.</strong></div></div>
+
 The data foundation is a layered set of reusable services. It converts source data into governed data products and makes them safe to discover, use, share, and access with AI.
+
+!!! tip "Use one primary journey"
+    Navigate work through **Frame → Establish → Deliver → Use → Operate**. The layers below locate responsibilities; they are not another delivery sequence. Start with [Foundation in One View](../foundation/foundation-in-one-view.md) when orienting a team or review.
 
 ## How the Architecture Fits
 
@@ -35,7 +40,7 @@ The data foundation is a layered set of reusable services. It converts source da
 
 Read the model from top to bottom. Users enter through the experience layer; control services govern every action; foundation services move and serve data; data products carry trust; platform capabilities provide the runtime.
 
-The five layers and six target planes are complementary. **Layers** show where responsibilities sit in the solution stack. **Planes** show the cross-cutting architecture concerns that govern those layers. The reference architecture lanes then show how capabilities collaborate in an end-to-end journey.
+The five layers and six target planes are supporting views. **Layers** show where responsibilities sit in the solution stack. **Planes** test cross-cutting completeness. The reference architecture lanes show capability interaction. None replaces the five-stage foundation journey.
 
 <div class="architecture-stack">
   <section class="architecture-layer layer-experience">

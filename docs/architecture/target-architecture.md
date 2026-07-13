@@ -1,6 +1,11 @@
 # Target Architecture
 
+<div class="decision-brief"><div><small>Use when</small><strong>Checking logical completeness and control boundaries.</strong></div><div><small>Decision</small><strong>Which plane owns each concern and authority?</strong></div><div><small>Owner</small><strong>Enterprise architecture with capability owners.</strong></div><div><small>Output</small><strong>Six-plane target and identified gaps.</strong></div></div>
+
 The target architecture is organized into six planes. Each plane has a clear responsibility, but they operate together through shared metadata, contracts, policies, telemetry, and workflow.
+
+!!! note "Completeness view, not delivery sequence"
+    Use the six planes to test whether a design covers experience, control, data, AI, observability, and security. Navigate delivery through the five stages in [Foundation in One View](../foundation/foundation-in-one-view.md).
 
 ## Architecture Planes
 

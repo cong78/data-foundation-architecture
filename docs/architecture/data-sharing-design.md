@@ -1,5 +1,7 @@
 # Data Sharing Design
 
+<div class="decision-brief"><div><small>Use when</small><strong>Assessing Delta Sharing for a governed exchange.</strong></div><div><small>Decision</small><strong>How will agreement, package, recipient, expiry, and revocation map?</strong></div><div><small>Owner</small><strong>Sharing architect and sharing owner.</strong></div><div><small>Output</small><strong>Exchange design, proof, operations, and exit plan.</strong></div></div>
+
 This reference solution applies the technology-neutral [Data Sharing Service](../services/data-sharing-service.md) to Databricks using Delta Sharing, Unity Catalog shares and recipients, and an explicit data-contract workflow. It supports governed exchange with internal platforms, customers, suppliers, partners, and external ecosystems without copying product ownership into the sharing platform.
 
 !!! info "Delta Sharing and OpenSharing"
@@ -7,6 +9,9 @@ This reference solution applies the technology-neutral [Data Sharing Service](..
 
 !!! info "Reference solution status"
     This page is a selected implementation profile, not a mandatory platform choice. Adoption requires an approved [Technology Selection Record](../delivery-templates/technology-selection-template.md), recipient and client conformance tests, security and privacy review, legal approval where required, cost evidence, revocation proof, and an exit plan.
+
+!!! tip "Fast path"
+    **Decide:** [Executive Recommendation](#executive-recommendation) · **Design:** [Solution at a Glance](#solution-at-a-glance) and [Contract Model](#contract-model) · **Implement:** [Implementation Runway](#implementation-runway) · **Assure:** [Sharing Activation Gate](#sharing-activation-gate) and [Done Criteria](#done-criteria)
 
 ## Executive Recommendation
 

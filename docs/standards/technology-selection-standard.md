@@ -1,5 +1,7 @@
 # Technology Selection Standard
 
+<div class="decision-brief"><div><small>Use when</small><strong>Selecting or reassessing a vendor or technology.</strong></div><div><small>Decision</small><strong>Which option passes mandatory gates and best meets weighted outcomes?</strong></div><div><small>Owner</small><strong>Architecture decision owner.</strong></div><div><small>Output</small><strong>Evidence-based selection, ADR, risks, cost, and exit plan.</strong></div></div>
+
 This standard defines how architects evaluate and select vendors, managed services, open-source products, and internally built technologies for the data foundation.
 
 Technology is selected against an architecture capability and evidence-based use case. Vendor features do not redefine product contracts, canonical metadata, policy intent, semantic context, telemetry, or service boundaries.

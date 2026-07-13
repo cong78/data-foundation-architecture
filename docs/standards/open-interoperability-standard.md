@@ -1,5 +1,7 @@
 # Open Interoperability Standard
 
+<div class="decision-brief"><div><small>Use when</small><strong>Designing an interface, artifact, exchange, or platform exit.</strong></div><div><small>Decision</small><strong>Can an independent implementation understand and use the boundary?</strong></div><div><small>Owner</small><strong>Architecture and interface owner.</strong></div><div><small>Output</small><strong>Profile, conformance result, exceptions, and exit evidence.</strong></div></div>
+
 This standard defines how the data foundation remains open, reusable, and portable across domains, platforms, clouds, and partners.
 
 Open does not mean public. Data, metadata, and interfaces remain protected by classification, identity, policy, and contractual controls. Open means that the architecture uses inspectable specifications, portable artifacts, and replaceable implementations.

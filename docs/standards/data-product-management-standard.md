@@ -1,5 +1,7 @@
 # Data Product Management Standard
 
+<div class="decision-brief"><div><small>Use when</small><strong>Creating, reviewing, operating, changing, or retiring a product.</strong></div><div><small>Decision</small><strong>Does the product meet ownership, quality, lifecycle, and go-live rules?</strong></div><div><small>Owner</small><strong>Product owner and lifecycle approvers.</strong></div><div><small>Output</small><strong>Managed product state and evidence.</strong></div></div>
+
 This standard defines how data products are created, governed, operated, changed, and retired. It makes data product management enforceable instead of informal.
 
 ## Portable Product Descriptor

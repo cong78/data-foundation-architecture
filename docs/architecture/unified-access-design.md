@@ -1,5 +1,7 @@
 # Unified Access Design
 
+<div class="decision-brief"><div><small>Use when</small><strong>Designing access above distributed product storage.</strong></div><div><small>Decision</small><strong>How are identity, policy, port, runtime, and evidence connected?</strong></div><div><small>Owner</small><strong>Access architect and product owner.</strong></div><div><small>Output</small><strong>Governed logical access path.</strong></div></div>
+
 Unified Access Design combines the governed logical access surface with the identity, authorization, entitlement, and evidence model above physical data-product storage. It gives named users, systems, applications, platforms, agents, and models one consistent way to access live products without forcing all data into one engine or location.
 
 It is implemented by the **Data Consumption Service**. It is not a new system of record, storage layer, or mandatory central query engine.

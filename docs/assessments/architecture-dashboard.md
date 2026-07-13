@@ -1,9 +1,11 @@
 # Architecture Dashboard
 
+<div class="decision-brief"><div><small>Use when</small><strong>Reviewing foundation capability and control evidence.</strong></div><div><small>Decision</small><strong>Which measured gap should be addressed next?</strong></div><div><small>Owner</small><strong>Foundation sponsor and capability owners.</strong></div><div><small>Output</small><strong>Prioritized improvement backed by current evidence.</strong></div></div>
+
 Use this page to discuss maturity with evidence. Values are illustrative; replace them with real portal, catalog, and observability data.
 
 <div class="metric-strip">
-  <div class="metric-card"><strong>6</strong>Foundation services</div>
+  <div class="metric-card"><strong>8</strong>Foundation services</div>
   <div class="metric-card"><strong>9</strong>Go-live gates</div>
   <div class="metric-card"><strong>24</strong>Foundation maturity checks</div>
   <div class="metric-card"><strong>OTel</strong>Telemetry standard</div>
@@ -22,11 +24,13 @@ Use this page to discuss maturity with evidence. Values are illustrative; replac
   "data": {
     "values": [
       {"service": "Portal", "maturity": 70},
+      {"service": "AI Assistant", "maturity": 50},
       {"service": "Ingestion", "maturity": 65},
       {"service": "Product Creation", "maturity": 60},
       {"service": "Consumption", "maturity": 58},
       {"service": "Sharing", "maturity": 45},
-      {"service": "Observability", "maturity": 55}
+      {"service": "Observability", "maturity": 55},
+      {"service": "Operations", "maturity": 52}
     ]
   },
   "mark": {"type": "bar", "cornerRadiusEnd": 3},

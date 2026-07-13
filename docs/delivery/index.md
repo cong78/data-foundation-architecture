@@ -1,5 +1,7 @@
 # Delivery Overview
 
+<div class="decision-brief"><div><small>Use when</small><strong>Turning guidance into a funded, testable increment.</strong></div><div><small>Decision</small><strong>What outcome should be delivered or proven next?</strong></div><div><small>Owner</small><strong>Delivery lead with capability and evidence owners.</strong></div><div><small>Output</small><strong>Sequenced work, reusable artifacts, and acceptance evidence.</strong></div></div>
+
 Delivery turns architecture guidance into small, testable increments with reusable artifacts and measurable evidence.
 
 ## How Delivery Fits
@@ -25,7 +27,7 @@ Delivery turns architecture guidance into small, testable increments with reusab
   <section class="standards-map-lane lane-intelligence">
     <div class="standards-map-cell"><small>Apply and reuse</small><strong>Templates · Examples · Receipts</strong><p>Start from approved artifacts and learn from completed slices.</p></div>
     <span class="standards-map-arrow" aria-hidden="true"></span>
-    <div class="standards-map-cell standards-map-focus"><a href="../delivery-templates/data-product-template/"><strong>Data Product Templates</strong></a><a href="../examples/customer-profile-example/"><strong>Worked Examples</strong></a></div>
+    <div class="standards-map-cell standards-map-focus"><a href="../playbooks/"><strong>Action Playbooks</strong></a><a href="../delivery-templates/data-product-template/"><strong>Templates</strong></a><a href="../examples/customer-profile-example/"><strong>Worked Examples</strong></a></div>
     <span class="standards-map-arrow" aria-hidden="true"></span>
     <div class="standards-map-cell"><strong>Repeatable delivery</strong><p>Consistent contracts, workloads, controls, telemetry, and go-live evidence.</p></div>
   </section>

@@ -1,5 +1,7 @@
 # Data Product Lifecycle Design
 
+<div class="decision-brief"><div><small>Use when</small><strong>Moving a product from idea to retirement.</strong></div><div><small>Decision</small><strong>Which state, gate, and control applies now?</strong></div><div><small>Owner</small><strong>Product owner with lifecycle approvers.</strong></div><div><small>Output</small><strong>State decision and required evidence.</strong></div></div>
+
 Data products are trusted datasets or data interfaces created for reuse. They are managed through a lifecycle from idea to retirement so ownership, trust, access, quality, and observability remain clear.
 
 Use the [Data Product Management Standard](../standards/data-product-management-standard.md) as the mandatory management model for product ownership, lifecycle states, go-live gates, portfolio reviews, and enforcement rules. Use [Data Contract Design](data-contract-design.md) to determine which contract governs each product layer and how it is enforced.

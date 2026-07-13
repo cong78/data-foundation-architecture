@@ -1,5 +1,7 @@
 # Data Sharing Service
 
+<div class="decision-brief"><div><small>Use when</small><strong>Exchanging product data across a recipient boundary.</strong></div><div><small>Decision</small><strong>Which package, agreement, entitlement, and exit controls apply?</strong></div><div><small>Owner</small><strong>Sharing service and agreement owner.</strong></div><div><small>Output</small><strong>Controlled, monitored, revocable exchange.</strong></div></div>
+
 ## Definition
 
 The data sharing service enables governed exchange of data with internal platforms, customers, suppliers, partners, and company ecosystems. Sharing is explicit, contract-based, monitored, and revocable.

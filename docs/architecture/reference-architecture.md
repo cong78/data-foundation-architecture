@@ -1,5 +1,7 @@
 # Reference Architecture
 
+<div class="decision-brief"><div><small>Use when</small><strong>Translating the target into technology-neutral capabilities.</strong></div><div><small>Decision</small><strong>Which capabilities and interactions are required?</strong></div><div><small>Owner</small><strong>Platform architect and service owners.</strong></div><div><small>Output</small><strong>Capability map, interfaces, and critical flow.</strong></div></div>
+
 The reference architecture shows the minimum building blocks needed to implement the target architecture. Technology can vary; these capabilities should not.
 
 ## Architecture View

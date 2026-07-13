@@ -1,5 +1,7 @@
 # Data Foundation Model
 
+<div class="decision-brief"><div><small>Use when</small><strong>Defining product patterns and ownership handoffs.</strong></div><div><small>Decision</small><strong>Is the product source-aligned, aggregate, or consumer-aligned?</strong></div><div><small>Owner</small><strong>Foundation or domain product owner.</strong></div><div><small>Output</small><strong>Product promise, owner, contract, and handoff.</strong></div></div>
+
 This model describes the architecture at a conceptual level. It shows what the foundation is made of and how trusted data moves from source to consumption.
 
 ## Model Summary

@@ -1,5 +1,7 @@
 # Semantic and Context Design
 
+<div class="decision-brief"><div><small>Use when</small><strong>Making a product understandable to people, applications, or AI.</strong></div><div><small>Decision</small><strong>Which meaning, context, and graph projection are authoritative?</strong></div><div><small>Owner</small><strong>Product owner and data steward.</strong></div><div><small>Output</small><strong>Versioned semantic context package.</strong></div></div>
+
 Semantic and context capabilities make a data product understandable to people, applications, and AI. They fit into the existing **control plane** and travel with the product; they do not create a new foundation layer or system of record.
 
 ## Simple Design Rule

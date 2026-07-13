@@ -1,9 +1,14 @@
 # Data Product Creation Design
 
+<div class="decision-brief"><div><small>Use when</small><strong>Assessing Databricks workspaces and Unity Catalog for product creation.</strong></div><div><small>Decision</small><strong>How will the product contract and workload map to the platform?</strong></div><div><small>Owner</small><strong>Product platform architect.</strong></div><div><small>Output</small><strong>Workspace, catalog, release, control, and exit design.</strong></div></div>
+
 This reference solution applies the technology-neutral [Data Product Creation Service](../services/data-product-creation-service.md) to Databricks. Databricks workspaces provide governed product engineering environments; Unity Catalog provides the common namespace, catalog, policy, lineage, audit, and native data-access controls above physical product storage.
 
 !!! info "Reference solution status"
     This page is an implementation profile, not a mandatory platform choice. Adoption requires an approved [Technology Selection Record](../delivery-templates/technology-selection-template.md), proof-of-capability evidence, security and cost review, portability tests, and an exit plan. Product, contract, workload, semantic-context, and release artifacts remain canonical and provider-independent.
+
+!!! tip "Fast path"
+    **Decide:** [Executive Recommendation](#executive-recommendation) · **Design:** [Solution at a Glance](#solution-at-a-glance) and [Workspace Topology](#workspace-topology) · **Implement:** [Implementation Runway](#implementation-runway) · **Assure:** [Go-Live Gate](#go-live-gate) and [Done Criteria](#done-criteria)
 
 ## Executive Recommendation
 

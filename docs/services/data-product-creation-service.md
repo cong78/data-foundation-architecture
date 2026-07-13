@@ -1,5 +1,7 @@
 # Data Product Creation Service
 
+<div class="decision-brief"><div><small>Use when</small><strong>Providing a shared path to build and release products.</strong></div><div><small>Decision</small><strong>Which workspace, workload, tests, and gates are required?</strong></div><div><small>Owner</small><strong>Product creation service owner.</strong></div><div><small>Output</small><strong>Release candidate and go-live evidence.</strong></div></div>
+
 ## Definition
 
 The data product creation service turns source-aligned data and existing products into trusted, reusable datasets or data interfaces. It applies data product principles so consumers can understand, access, and rely on the data.

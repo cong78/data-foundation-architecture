@@ -1,6 +1,11 @@
 # Services Overview
 
+<div class="decision-brief"><div><small>Use when</small><strong>Locating a reusable foundation capability.</strong></div><div><small>Decision</small><strong>Which service owns the requested outcome?</strong></div><div><small>Owner</small><strong>Foundation service owner.</strong></div><div><small>Output</small><strong>Service contract, interface, controls, and support.</strong></div></div>
+
 Foundation services are reusable architecture capabilities. They reduce custom delivery work by giving teams standard ways to ingest, create, consume, share, observe, and reliably operate trusted data products.
+
+!!! note "Capabilities across the journey"
+    Services perform reusable work across **Frame → Establish → Deliver → Use → Operate**; they are not additional journey stages. Select a service by the outcome it owns, then use the matching [action playbook](../playbooks/index.md) to execute the work.
 
 ## How the Services Fit
 

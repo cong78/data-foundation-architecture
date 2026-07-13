@@ -1,5 +1,7 @@
 # Industry Alignment
 
+<div class="decision-brief"><div><small>Use when</small><strong>Testing the guidance against open industry practices.</strong></div><div><small>Decision</small><strong>Which alignment gap requires a profile, proof, or exception?</strong></div><div><small>Owner</small><strong>Enterprise architect and standard owner.</strong></div><div><small>Output</small><strong>Prioritized conformance improvement with evidence.</strong></div></div>
+
 Assessment date: **12 July 2026**.
 
 The architecture is strong in scope, product governance, contract lifecycle, AI controls, and end-to-end observability intent. Its main industry gap was that openness and portability were implicit rather than testable.
@@ -8,7 +10,7 @@ The architecture is strong in scope, product governance, contract lifecycle, AI 
 
 | Area | Current Position | Industry-Aligned Improvement |
 | --- | --- | --- |
-| Service model | Strong | Keep the six services and six architecture planes. They form a clear capability model. |
+| Service model | Strong | Keep the eight reusable services and six architecture planes. They form a clear capability and completeness model. |
 | Data contracts | Strong intent | Use ODCS as the canonical artifact; generate platform schemas from it; test round-trip portability. |
 | Data products | Strong lifecycle | Add an ODPS-compatible machine-readable descriptor and explicit input/output ports. |
 | Catalog | Partial | Publish a DCAT 3 exchange profile so products remain discoverable across catalogs. |

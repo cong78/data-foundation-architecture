@@ -1,5 +1,7 @@
 # AI-Ready Data Standard
 
+<div class="decision-brief"><div><small>Use when</small><strong>Publishing or approving data for AI use.</strong></div><div><small>Decision</small><strong>Is the data fit, permitted, traceable, and reproducible for the AI purpose?</strong></div><div><small>Owner</small><strong>Product owner and AI use-case owner.</strong></div><div><small>Output</small><strong>Approved AI-use profile and evidence.</strong></div></div>
+
 AI-ready data is data that can be safely and effectively used by AI agents, models, retrieval systems, feature pipelines, and evaluation workflows.
 
 Agentic use must also follow the [Agent, Skill and LLM Standard](agent-skill-llm-standard.md).

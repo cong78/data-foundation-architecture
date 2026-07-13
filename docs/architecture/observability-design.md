@@ -1,5 +1,7 @@
 # Observability Design
 
+<div class="decision-brief"><div><small>Use when</small><strong>Applying Databricks, Unity Catalog, and Grafana Cloud to observability.</strong></div><div><small>Decision</small><strong>Where do system and product signals live and correlate?</strong></div><div><small>Owner</small><strong>Observability architect and service owners.</strong></div><div><small>Output</small><strong>Telemetry routes, authority, dashboards, and evidence.</strong></div></div>
+
 This proposal extends the Data Foundation Architecture observability service with a pragmatic two-platform design:
 
 - **Databricks and Unity Catalog** provide data product observability, quality, profiling, lineage, and governed data context.
@@ -10,6 +12,9 @@ The result is one observability experience with two authoritative signal domains
 
 !!! info "Reference solution status"
     This page applies the technology-neutral [Data Observability Service](../services/data-observability-service.md) to a selected Databricks, Unity Catalog, and Grafana Cloud profile. It does not make these products mandatory for the foundation. Adoption requires an approved [Technology Selection Record](../delivery-templates/technology-selection-template.md), proof-of-capability evidence, security review, cost analysis, and an exit plan.
+
+!!! tip "Fast path"
+    **Decide:** [Executive Recommendation](#executive-recommendation) · **Design:** [Target Architecture](#target-architecture) and [OTLP Solution Design](#otlp-solution-design) · **Implement:** [Implementation Runway](#implementation-runway) · **Assure:** [Suggested Alert Ownership](#suggested-alert-ownership) and [Key Risks and Guardrails](#key-risks-and-guardrails)
 
 ## Executive Recommendation
 

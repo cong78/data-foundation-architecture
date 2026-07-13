@@ -1,9 +1,14 @@
 # Data Ingestion Design
 
+<div class="decision-brief"><div><small>Use when</small><strong>Assessing Databricks for a governed ingestion profile.</strong></div><div><small>Decision</small><strong>Which Lakeflow pattern satisfies the source contract?</strong></div><div><small>Owner</small><strong>Ingestion architect and platform owner.</strong></div><div><small>Output</small><strong>Selected pattern, controls, proof, and exit plan.</strong></div></div>
+
 This reference solution applies the technology-neutral [Data Ingestion Service](../services/data-ingestion-service.md) to Databricks. Lakeflow Connect, Auto Loader, Lakeflow Spark Declarative Pipelines, Lakeflow Jobs, and Unity Catalog implement repeatable file, connector, CDC, API, and event ingestion while preserving source contracts and source-aligned data.
 
 !!! info "Reference solution status"
     This page is a selected implementation profile, not a mandatory platform choice. Adoption requires an approved [Technology Selection Record](../delivery-templates/technology-selection-template.md), connector proof, security and cost review, replay tests, operational evidence, and an exit plan. Source identity, contract, schema, checkpoint semantics, and lineage remain canonical and portable.
+
+!!! tip "Fast path"
+    **Decide:** [Executive Recommendation](#executive-recommendation) · **Design:** [Solution at a Glance](#solution-at-a-glance) and [Pattern Selection](#pattern-selection) · **Implement:** [Implementation Runway](#implementation-runway) · **Assure:** [Source Activation Gate](#source-activation-gate) and [Done Criteria](#done-criteria)
 
 ## Executive Recommendation
 

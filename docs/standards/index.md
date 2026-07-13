@@ -1,5 +1,7 @@
 # Standards Overview
 
+<div class="decision-brief"><div><small>Use when</small><strong>Determining what is mandatory at a boundary.</strong></div><div><small>Decision</small><strong>Which standards and enforcement points apply?</strong></div><div><small>Owner</small><strong>Control owner and implementation owner.</strong></div><div><small>Output</small><strong>Applicable rules, tests, and evidence.</strong></div></div>
+
 The standards turn the target architecture into enforceable design and delivery rules. They apply across planes and services; they are not isolated documents or technology-specific checklists.
 
 ## How the Standards Fit

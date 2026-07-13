@@ -24,14 +24,12 @@ The Data Service Portal is the front door. Seven foundation services turn source
 
 ## Foundation Journey
 
-| Step | Journey stage | Core guidance | Outcome |
-| ---: | --- | --- | --- |
-| 1 | **Frame the foundation** | [Definition and Scope](foundation/definition-and-scope.md) · [Principles](foundation/principles.md) | Agreed boundaries, ownership model, decision rules, and non-goals. |
-| 2 | **Design the target** | [Architecture Overview](architecture/overview.md) · [Target Architecture](architecture/target-architecture.md) · [Reference Architecture](architecture/reference-architecture.md) | Shared layers, planes, building blocks, flows, and control boundaries. |
-| 3 | **Organize data domains** | [Data Domain Design](architecture/data-domain-design.md) · [Domain Onboarding Record](delivery-templates/data-domain-onboarding-template.md) · [Maturity Assessment](assessments/data-foundation-maturity-assessment.md) | Registered domains with admission decisions, central-to-federated handoffs, and improvement plans. |
-| 4 | **Establish foundation services** | [Services Overview](services/index.md) · [Architecture Patterns](implementation/service-implementation-patterns.md) · [Reference Solutions](architecture/data-ingestion-design.md) | Reusable ingestion, creation, consumption, sharing, observability, and operations capabilities. |
-| 5 | **Deliver governed products** | [Data Contract Design](architecture/data-contract-design.md) · [Product Lifecycle Design](architecture/data-product-lifecycle-design.md) · [Developer Experience](architecture/data-product-developer-experience.md) | Contracted, tested, observable products that pass product go-live. |
-| 6 | **Enable governed use** | [Unified Access Design](architecture/unified-access-design.md) · [Consumption](services/data-consumption-service.md) · [Sharing](services/data-sharing-service.md) · [Agentic Foundation](architecture/agentic-data-foundation.md) | Purpose-bound access for people, systems, partners, agents, and models. |
-| 7 | **Operate and improve** | [Observability Design](architecture/observability-design.md) · [Foundation Operations](services/data-foundation-operations-service.md) · [Governance](governance/index.md) | Measured health, accountable response, safer change, operational learning, and continuous improvement. |
+| Stage | Start here | Outcome |
+| --- | --- | --- |
+| **1 · Frame** | [Scope](foundation/definition-and-scope.md) · [Principles](foundation/principles.md) · [Domain Design](architecture/data-domain-design.md) | Agreed boundary, ownership, decision rules, and non-goals. |
+| **2 · Establish** | [Target Architecture](architecture/target-architecture.md) · [Services](services/index.md) · [Standards](standards/index.md) | Shared capabilities with enforceable controls and accountable owners. |
+| **3 · Deliver** | [Onboard a Source](playbooks/onboard-source.md) · [Create a Product](playbooks/create-change-data-product.md) · [Go-Live](playbooks/approve-product-go-live.md) | Contracted, tested, observable, supported live products. |
+| **4 · Use** | [Consume](playbooks/consume-data-product.md) · [Share](playbooks/share-data-product.md) · [Agentic Foundation](architecture/agentic-data-foundation.md) | Purpose-bound use by people, systems, partners, agents, and models. |
+| **5 · Operate** | [Operate a Service or Product](playbooks/operate-service-product.md) · [Observability](architecture/observability-design.md) · [Runway](runway.md) | Measured health, accountable response, safer change, and continuous improvement. |
 
-Use the journey in order for a new foundation. For an existing capability, enter at the relevant stage and retain traceability to the framing and target decisions.
+[Open Foundation in One View](foundation/foundation-in-one-view.md) for the complete map, or [choose an action playbook](playbooks/index.md) to start work.

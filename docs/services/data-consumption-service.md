@@ -1,5 +1,7 @@
 # Data Consumption Service
 
+<div class="decision-brief"><div><small>Use when</small><strong>Serving a live product to a governed consumer.</strong></div><div><small>Decision</small><strong>Which logical port, policy, and runtime adapter apply?</strong></div><div><small>Owner</small><strong>Consumption service owner with product owner.</strong></div><div><small>Output</small><strong>Purpose-bound, observable, revocable access.</strong></div></div>
+
 ## Definition
 
 The data consumption service makes trusted data available to consumers through fit-for-purpose access patterns. It supports BI, applications, platforms, AI agents, and AI models without requiring every consumer to build custom extraction logic.

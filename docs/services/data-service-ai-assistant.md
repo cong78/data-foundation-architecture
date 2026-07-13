@@ -1,5 +1,7 @@
 # Data Service AI Assistant
 
+<div class="decision-brief"><div><small>Use when</small><strong>Adding conversational help or governed agent actions.</strong></div><div><small>Decision</small><strong>Which answer, plan, or action is safe and useful?</strong></div><div><small>Owner</small><strong>Assistant owner with service and risk owners.</strong></div><div><small>Output</small><strong>Grounded response or approved action receipt.</strong></div></div>
+
 ## Definition
 
 The Data Service AI Assistant is the conversational entry point to the agentic data foundation. Available through the Data Service Portal, it helps users find evidence, understand decisions, prepare work, and execute approved actions through governed skills.
