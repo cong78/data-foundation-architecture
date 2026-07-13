@@ -2,11 +2,9 @@
 
 <div class="brand-lockup">
   <div>
-    <span>Trusted data products for analytics, applications, platforms, sharing, agents, and models.</span>
+    <span>Turn enterprise data into trusted, reusable products that safely power analytics, applications, platforms, sharing, agents, and models.</span>
   </div>
 </div>
-
-Architecture guidance for an **AI-ready data foundation**: open contracts, reusable products, unified access, observable trust, and governed automation.
 
 ## Architecture at a Glance
 
