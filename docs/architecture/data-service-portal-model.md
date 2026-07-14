@@ -2,7 +2,7 @@
 
 <div class="decision-brief"><div><small>Use when</small><strong>Designing portal navigation, marketplace, or workflow handoffs.</strong></div><div><small>Decision</small><strong>Which portal area and authoritative service own the outcome?</strong></div><div><small>Owner</small><strong>Portal owner with journey and service owners.</strong></div><div><small>Output</small><strong>Simple experience with preserved context and authority.</strong></div></div>
 
-The Data Service Portal helps domain teams discover, produce, consume, share, govern, and operate data and AI products through one consistent entry point. Its **Data Product Marketplace** provides discovery, evaluation, and engagement within that portal.
+The Data Service Portal helps domain teams discover, produce, consume, share, govern, and operate data and AI products through one consistent entry point. Its Data Product Marketplace provides discovery, evaluation, and engagement within that portal.
 
 The portal and marketplace orchestrate foundation services and present their evidence. They do not replace the catalog, product or contract registry, policy engine, workflow service, lineage system, observability platform, or data runtimes.
 

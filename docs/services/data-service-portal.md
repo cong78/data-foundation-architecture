@@ -4,7 +4,7 @@
 
 ## Definition
 
-The data service portal is the user entry point for the data foundation. It provides a single place for users to discover data products through its **Data Product Marketplace capability**, request access, onboard sources, create or manage data products, manage data contracts, track workflow status, and view product trust signals.
+The data service portal is the user entry point for the data foundation. It provides a single place for users to discover data products through its Data Product Marketplace capability, request access, onboard sources, create or manage data products, manage data contracts, track workflow status, and view product trust signals.
 
 The portal is the experience layer over the foundation services. It should orchestrate workflows and expose consistent information without becoming a separate source of truth from the catalog, policy, lineage, observability, or contract systems.
 
