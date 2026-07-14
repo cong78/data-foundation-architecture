@@ -128,6 +128,38 @@ Describe the business concept represented by the product. Include what the produ
 | Platform |  |  |  |
 | AI agent or model |  |  |  |
 
+## AI Readiness Profile
+
+Complete this section only when an AI use is proposed. Approval applies to the declared use, not to every possible AI workload.
+
+| Field | Value |
+| --- | --- |
+| AI use-case owner |  |
+| Outcome, user, decision or action |  |
+| Pattern | Retrieval / Grounding / Feature / Training / Fine-tuning / Evaluation / Agent tool context |
+| Product and contract versions |  |
+| Live data or immutable snapshot |  |
+| Selected scope and minimization rationale |  |
+| Model, agent, skill and workload identities |  |
+| Risk tier and harmful outcomes |  |
+| Approved and prohibited uses |  |
+| Projection ids and versions |  |
+| Evaluation set, metrics and release thresholds |  |
+| Approval status, conditions, expiry and review date |  |
+
+| AI Readiness Gate | Status | Evidence | Owner |
+| --- | --- | --- | --- |
+| Purpose and product binding |  |  |  |
+| Rights, classification and minimization |  |  |  |
+| Meaning, lineage and reproducibility |  |  |  |
+| Quality, representativeness and time behavior |  |  |  |
+| Identity, policy and revocation |  |  |  |
+| Projection integrity |  |  |  |
+| Evaluation and runtime safeguards |  |  |  |
+| Observability, change and lifecycle |  |  |  |
+
+Use the [AI-Ready Data Product Checklist](../standards/ai-ready-data-standard.md#ai-ready-data-product-checklist) for pass criteria. A failed blocking gate means the product is not approved for the declared AI purpose, even when it remains approved for BI or analytics.
+
 ## Consumers and Subscriptions
 
 | Consumer | Use Case | Access Pattern | Contact | Notification Required |
