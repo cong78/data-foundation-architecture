@@ -55,6 +55,8 @@ The ingestion service should separate **transport**, **validation**, and **stora
 
 The raw state of source-aligned data should retain enough context for traceability, replay, audit, and forensic analysis. Standard metadata should include source system, ingestion timestamp, batch or event identifier, schema version, data classification, and processing status.
 
+Replication is not the default outcome of source onboarding. Apply the [Direct, Federated, or Replicated Access Decision](data-consumption-service.md#direct-federated-or-replicated-access-decision) first. Use direct source APIs or MCP tools for bounded current-state operations, federated access where data can remain authoritative at source, selective projections for narrow decoupled needs, and ingestion when history, transformation, scale, reuse, isolation, or reproducibility justifies a source-aligned copy.
+
 ## Controls
 
 - Source contract exists and is approved.

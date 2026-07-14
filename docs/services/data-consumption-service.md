@@ -80,6 +80,42 @@ Use the [Semantic and Context Design](../architecture/semantic-context-design.md
 
 Use the [Unified Access Design](../architecture/unified-access-design.md) for named-user, workload, delegated, agent, and external access. A service permit never overrides a data deny.
 
+## Direct, Federated, or Replicated Access Decision
+
+The foundation does not need to copy every source. Select the lightest access mode that satisfies the consumer outcome and required controls. A direct source API or MCP interface can still be a governed product port: it remains registered, contracted, authorized, observable, and discoverable through the foundation while the source system stays the runtime authority.
+
+```mermaid
+flowchart LR
+    NEED[Consumer need] --> DECIDE{Access decision}
+    DECIDE -->|Current operation or narrow lookup| DIRECT[Direct source API or MCP]
+    DECIDE -->|Live query without ownership transfer| FEDERATED[Federated or virtual access]
+    DECIDE -->|Low-latency subset or change feed| PROJECTION[Selective projection or event]
+    DECIDE -->|History, scale, reuse or transformation| REPLICATED[Replicated data product]
+
+    GOVERN[Product id · contract · semantics · policy · telemetry] --- DIRECT
+    GOVERN --- FEDERATED
+    GOVERN --- PROJECTION
+    GOVERN --- REPLICATED
+```
+
+| Access mode | Prefer when | Avoid when |
+| --- | --- | --- |
+| **Direct source API or MCP** | The consumer needs current operational state, a transaction, command, narrow lookup, or approved tool action; the source exposes a stable interface with identity, policy, rate limits, SLOs, and audit evidence. | The workload needs bulk extraction, repeated scans, cross-source joins, historical analysis, model training, source isolation, or behavior the source interface does not contract. |
+| **Federated or virtual access** | Data should remain at the source for residency, duplication, freshness, or ownership reasons, and bounded queries can meet policy, performance, availability, and telemetry requirements. | Source availability or query capacity cannot support consumer demand, policy cannot be pushed down, or results must be reproducible after source change. |
+| **Selective projection or event** | Consumers need a small purpose-specific subset, low-latency read model, cache, search index, event reaction, or resilience from the source without copying the full source. | The projection becomes an undocumented duplicate, loses change ordering or lineage, or cannot be rebuilt and reconciled. |
+| **Replicated data product** | Consumers need history, snapshots, quality remediation, semantic alignment, high-volume reuse, cross-source composition, BI, training or evaluation data, sharing, or workload isolation from the source. | The need is a single current lookup or source-owned operation and replication would add stale copies, cost, retention risk, or conflicting truth. |
+
+### Decision Rules
+
+1. **Keep commands at the source.** Create, update, approve, and other transactional actions should normally use the source API or an approved MCP tool rather than a replicated dataset.
+2. **Move data for analytical reasons.** Replicate when history, transformation, scale, reuse, reproducibility, isolation, or cross-source composition creates a clear product need.
+3. **Govern the interface, not only the copy.** Direct, federated, projected, and replicated ports all require an owner, contract, semantic context, classification, policy, SLO, lineage or dependency evidence, telemetry, and lifecycle state.
+4. **Do not use MCP as bulk transport.** MCP is appropriate for bounded resources and tool actions for agents; bulk analytical or training access should use a contracted table, file, query, event, feature, or retrieval port.
+5. **Fail closed on missing controls.** If the source interface cannot enforce required purpose, minimization, audit, residency, or revocation obligations, add a governed adapter or select another mode.
+6. **Record and revisit the choice.** Capture expected volume, freshness, source load, history, availability, recovery, cost, retention, consumers, and exit path. Reassess when usage or risk crosses an agreed threshold.
+
+Use direct access only when the source owner accepts the workload and dependency. The consumer must not rely on an undocumented endpoint, source credential, database schema, or MCP server. Register the dependency so source changes, incidents, deprecations, and access revocation reach affected consumers.
+
 ## Controls
 
 - Consumer has an approved access purpose.

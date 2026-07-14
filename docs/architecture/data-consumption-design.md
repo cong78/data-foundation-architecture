@@ -16,6 +16,19 @@ Use Unity Catalog as the common governed access surface for Databricks-native da
 
 Use SQL warehouses for BI and analytical application access, Unity Catalog open table interfaces for approved external engines, and OpenSharing or the approved sharing profile for cross-organization delivery. Use explicit adapters for operational APIs, events, files, semantic context, features, and retrieval. Do not force every consumption need through SQL or expose source-aligned raw data as a shortcut.
 
+## Source Access Decision
+
+Apply the technology-neutral [Direct, Federated, or Replicated Access Decision](../services/data-consumption-service.md#direct-federated-or-replicated-access-decision) before creating a Databricks copy.
+
+| Selected mode | Databricks reference profile |
+| --- | --- |
+| Direct source API or MCP | Register the source interface as a logical product port. Route through an approved API or tool gateway with contract, identity, purpose, policy, rate, SLO, dependency, and telemetry controls; do not copy data into Unity Catalog only to support a current-state lookup or source-owned action. |
+| Federated or virtual | Resolve the logical product port to an approved federated query or bounded source adapter. Prove policy pushdown, source capacity, latency, availability, lineage, cost, and fail-closed behavior before activation. |
+| Selective projection or event | Materialize only the contracted fields, events, cache, search, feature, or retrieval projection required by the use case. Retain source linkage, reconciliation, retention, rebuild, and expiry behavior. |
+| Replicated data product | Ingest to a Unity Catalog-governed source-aligned product when history, quality remediation, high-volume reuse, cross-source transformation, BI, AI training or evaluation, sharing, or workload isolation requires durable data. |
+
+The access mode is part of the product-port binding and architecture decision record. Changing from direct to federated or replicated access should not change the logical product id or consumer contract unless externally visible behavior changes.
+
 ## Solution at a Glance
 
 ```mermaid
