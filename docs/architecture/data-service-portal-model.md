@@ -1,10 +1,10 @@
 # Data Service Portal Design
 
-<div class="decision-brief"><div><small>Use when</small><strong>Designing portal navigation, marketplace, or workflow handoffs.</strong></div><div><small>Decision</small><strong>Which portal area and authoritative service own the outcome?</strong></div><div><small>Owner</small><strong>Portal owner with journey and service owners.</strong></div><div><small>Output</small><strong>Simple experience with preserved context and authority.</strong></div></div>
+<div class="decision-brief"><div><small>Use when</small><strong>Designing portal navigation, marketplace, or service handoffs.</strong></div><div><small>Decision</small><strong>Which portal area and authoritative service own the outcome?</strong></div><div><small>Owner</small><strong>Portal owner with journey and service owners.</strong></div><div><small>Output</small><strong>Simple experience with preserved context and authority.</strong></div></div>
 
 The Data Service Portal helps domain teams discover, produce, consume, share, govern, and operate data and AI products through one consistent entry point. Its Data Product Marketplace provides discovery, evaluation, and engagement within that portal.
 
-The portal and marketplace orchestrate foundation services and present their evidence. They do not replace the catalog, product or contract registry, policy engine, workflow service, lineage system, observability platform, or data runtimes.
+The portal and marketplace compose foundation service journeys and present their evidence. They do not replace the catalog, product or contract registry, policy engine, lineage system, observability platform, or data runtimes. Data contract review, approval, consumption, and sharing flows belong to Data Contract Management rather than a separate portal workflow capability.
 
 ## Experience Model
 
@@ -38,7 +38,7 @@ Keep the first level stable and based on the user's intended outcome. Detailed t
 | Ingest | Source onboarding, source contracts, source-aligned products, schema changes, and ingestion health. | Governed source delivery and validated source-aligned product. |
 | Produce | Product creation and change, analytics and AI development, semantics, contracts, workspaces, and product go-live. | Live aggregate, consumer-aligned, analytics, or AI product. |
 | Consume | Purpose declaration, access request, subscription, entitlement, and approved product port. | Purpose-bound governed access. |
-| Share | Share with customer, supplier, or partner | Recipient-specific sharing agreement and revocable delivery. |
+| Share | Share with customer, supplier, or partner | Recipient-specific contract terms and revocable delivery. |
 | Operate | Product health, support, incidents, planned changes, reliability, cost, and retirement. | Restored or improved service with retained evidence. |
 | My Work | Owned products and sources, requests, approvals, contracts, subscriptions, notices, tasks, and portfolio decisions. | One prioritized view of work requiring attention. |
 
@@ -58,7 +58,7 @@ flowchart TB
     D[Understand product and trust]
     A[Continue with a governed action]
     S[Ingestion · Product creation · Consumption · Sharing · Operations]
-    AUTH[Catalog · Product and contract registry · Policy · Workflow · Observability]
+    AUTH[Catalog · Product and contract registry · Policy · Foundation services · Observability]
 
     USERS --> M
     M --> F
@@ -75,7 +75,7 @@ flowchart TB
 
     **Decide:** is source delivery understood and safe for dependent products?
 
-    **Continue:** source onboarding, contract change, remediation, or incident workflow.
+    **Continue:** source onboarding, contract change, remediation, or incident response.
 
 === "Producer"
 
@@ -83,7 +83,7 @@ flowchart TB
 
     **Decide:** reuse, extend, consolidate, create, or change a product?
 
-    **Continue:** product workspace, contract proposal, impact review, or product go-live workflow.
+    **Continue:** product workspace, contract proposal, impact review, or product go-live.
 
 === "Consumer"
 
@@ -91,7 +91,7 @@ flowchart TB
 
     **Decide:** which product and port are fit for the intended outcome?
 
-    **Continue:** consume agreement, access request, sharing request, or approved interface.
+    **Continue:** purpose-bound contract terms, access activation, sharing delivery, or an approved interface.
 
 ### Marketplace Information Architecture
 
@@ -101,7 +101,7 @@ flowchart TB
 | Compare | Compare purpose, semantics, contract, quality, freshness, availability, access conditions, interfaces, and support without flattening important differences into one score. |
 | Product detail | Present the complete product detail standard below with current authority and observation time. |
 | My marketplace | Show saved products, owned products, subscriptions, requests, approvals, notices, and recent activity. |
-| Action handoff | Carry identity, role, use case, purpose, product id, contract version, selected port, and correlation id into the authoritative workflow. |
+| Action handoff | Carry identity, role, use case, purpose, product id, contract version, selected port, and correlation id into the authoritative service or contract lifecycle. |
 
 Ranking and recommendations may use declared purpose, semantic match, policy eligibility, reliability, adoption, and team context. The portal must explain why an item is recommended, must not use popularity as a substitute for fitness, and must never rank a prohibited or unavailable product as actionable.
 
@@ -120,9 +120,8 @@ flowchart TB
     PRODUCT --> SEM[Semantic Context Package]
     PRODUCT --> POLICY[Policy Decisions]
     PRODUCT --> TRUST[Health and Evidence]
-    CONSUMER[Consumer] --> AGREEMENT[Consume or Share Agreement]
-    AGREEMENT --> PRODUCT
-    AGREEMENT --> USE
+    CONSUMER[Consumer] --> USE
+    USE --> CONTRACT
 ```
 
 | Object | Purpose | Authority |
@@ -132,8 +131,7 @@ flowchart TB
 | Use case | Business objective, consumers, value measures, and approved purpose. | Portfolio or use-case service. |
 | Workspace | Governed environment for exploration, engineering, analytics, or AI delivery. | Platform provisioning service. |
 | Product | Stable product identity, owner, lifecycle, descriptor, and ports. | Product registry and catalog. |
-| Contract | Schema, semantics, quality, SLO, policy, compatibility, and change rules. | Contract registry. |
-| Agreement | Purpose-bound consumption or recipient-specific sharing terms. | Workflow, policy, and entitlement services. |
+| Contract | Schema, semantics, quality, SLO, policy, compatibility, change rules, and purpose-bound consumption or recipient-specific sharing terms. | Contract registry linked to policy and entitlement services. |
 | Semantic context | Product-specific meaning, grain, metrics, relationships, usage context, limitations, and authoritative references. | Product-owned package referencing glossary, metric, contract, policy, lineage, and health authorities. |
 | Trust evidence | Quality, freshness, availability, lineage, usage, incidents, and cost. | Observability, quality, and lineage services. |
 
@@ -158,22 +156,23 @@ A product page should help a consumer decide whether a product is understandable
 
 Product health and lineage must come from authoritative telemetry and lineage events. They must never be inferred from names, tags, descriptions, or shared semantic labels.
 
-## Journey Orchestration
+## Contract-Bound Service Handoff
 
 ```mermaid
 sequenceDiagram
     participant User
     participant Portal as Data Service Portal
-    participant Flow as Workflow
-    participant Control as Catalog, Contract, Policy
+    participant Contract as Data Contract Management
+    participant Control as Catalog and Policy
     participant Runtime as Foundation Service
     participant Observe as Observability
 
     User->>Portal: Select intent and provide context
-    Portal->>Flow: Create journey with identity and purpose
-    Flow->>Control: Resolve product, contract, policy, and evidence
-    Control-->>Flow: Required gates and decisions
-    Flow->>Runtime: Execute onboarding, provisioning, or sharing
+    Portal->>Contract: Resolve contract with identity and purpose
+    Contract->>Control: Validate product, policy, and required evidence
+    Control-->>Contract: Return gates and policy decision
+    Contract-->>Portal: Return approved terms and lifecycle status
+    Portal->>Runtime: Invoke service with contract and decision references
     Runtime->>Observe: Emit telemetry and lineage
     Observe-->>Portal: Return current trust and status
     Portal-->>User: Show outcome, evidence, and next action
@@ -198,7 +197,7 @@ The portal must not be the sole owner of:
 ## Experience Principles
 
 1. **Intent before technology:** ask what the user wants to achieve before selecting a platform or runtime.
-2. **One primary action:** discovery, consumption, creation, and sharing each have one clear workflow entry.
+2. **One primary action:** discovery, consumption, creation, and sharing each have one clear service or data contract entry.
 3. **Progressive detail:** show a concise product summary first and evidence-rich detail on demand.
 4. **Trust at decision time:** show current contract, quality, freshness, policy, lineage, and incident status beside the action.
 5. **Purpose-bound access:** connect every consume or share request to identity, team, use case, purpose, duration, and product version.
@@ -210,7 +209,7 @@ The portal must not be the sole owner of:
 
 - Identity and team are derived from authenticated claims, not free-text request fields.
 - Product go-live requires all mandatory gates and an approved canonical contract.
-- Consume and share agreements are separate lifecycle objects with expiry and revocation.
+- Consumption and sharing terms are governed within the data contract lifecycle with purpose, scope, approval, expiry, and revocation.
 - AI journeys capture approved data, tools, model or agent identity, evaluation evidence, and purpose.
 - Product pages distinguish declared SLOs from current measured status.
 - Read projections are reconciled with authoritative services and expose staleness.
@@ -222,9 +221,9 @@ The portal must not be the sole owner of:
 - Users can discover products by domain, type, concept, use case, interface, health, and permitted purpose.
 - Domain teams can create and evolve products without bypassing common go-live gates.
 - Consumers can compare trust evidence and complete purpose-bound access through one journey.
-- Ingestors can move from source-aligned marketplace context to onboarding, impact, remediation, or incident workflows.
+- Ingestors can move from source-aligned marketplace context to onboarding, impact, remediation, or incident response.
 - Producers can discover and compare reusable input products before creating or changing a product.
-- Marketplace actions preserve product, contract, purpose, identity, and correlation context when entering authoritative workflows.
+- Marketplace actions preserve product, contract, purpose, identity, and correlation context when entering authoritative services or contract flows.
 - Source onboarding, product creation, consumption, sharing, observability, operations, semantics, policy, and AI journeys call real foundation services.
 - Product health, usage, quality, incidents, and lineage are measured rather than simulated.
 - Portal records can be rebuilt from canonical product, contract, catalog, policy, lineage, and observability sources.
