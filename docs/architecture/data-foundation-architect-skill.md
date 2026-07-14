@@ -2,7 +2,7 @@
 
 The repository includes a project-native AI skill that turns this guidance into repeatable architecture work without making the skill a second source of truth.
 
-Current package version: **1.1.0**.
+Current package version: **1.2.0**.
 
 ## What It Does
 
@@ -73,7 +73,7 @@ It reports all six maturity dimensions, evidence coverage and the lowest dimensi
 - The skill loads only task-relevant pages through progressive disclosure.
 - The skill does not fabricate evidence, approvals, ownership or measurements.
 - Generated designs remain proposals until accountable owners approve them.
-- Vendor mappings remain implementation profiles rather than enterprise contracts.
+- Unity Catalog and Delta Lake are approved catalog and storage defaults; other vendor mappings remain implementation profiles rather than enterprise contracts.
 - Production designs trace architecture to service, playbook, runbook, evidence, and runway phase.
 - Changes to source guidance require skill-map validation before release.
 

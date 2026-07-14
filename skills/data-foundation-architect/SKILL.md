@@ -39,8 +39,9 @@ When intent spans workflows, run them in this order: **Assess → Design → Gen
 - Require explicit contracts, semantic context, policy, lineage, telemetry, lifecycle, and accountable ownership.
 - Keep service authorization separate from data entitlement and evaluate named-user, workload, delegated, and external-recipient identities.
 - Keep physical storage behind governed product ports and unified access.
+- Apply Unity Catalog as the data catalog standard and Delta Lake as the default durable tabular storage format; require an approved exception and portable exit for alternatives.
 - Distinguish declared contract targets from measured health and timestamp evidence.
-- Use vendor products only as selected implementation profiles; preserve open interfaces, conformance, and exit paths.
+- Treat Unity Catalog and Delta Lake as approved platform defaults; treat other vendor products as selected implementation profiles and preserve open interfaces, conformance, and exit paths for every binding.
 - Preserve domain hard gates and product go-live gates. Never average a failed mandatory gate into a maturity score.
 - Trace production designs through architecture decision, service contract, action playbook, operational runbook, evidence, and runway phase.
 - Do not invent evidence, approvals, owners, measurements, or conformance results. Mark unknowns explicitly.

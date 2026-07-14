@@ -50,6 +50,7 @@ Resolve every path from the repository root. Load the smallest useful set.
 | Product management and go-live | `docs/standards/data-product-management-standard.md` |
 | Product runtime | `docs/standards/data-product-workload-standard.md` |
 | Access and identity | `docs/standards/access-control-standard.md` |
+| Data catalog and physical table storage | `docs/standards/catalog-storage-standard.md` |
 | Telemetry | `docs/standards/otel-telemetry-standard.md` |
 | Interoperability | `docs/standards/open-interoperability-standard.md` |
 | AI-ready data | `docs/standards/ai-ready-data-standard.md` |

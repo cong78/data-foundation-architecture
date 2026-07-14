@@ -10,7 +10,9 @@ This page defines the key architecture decisions that should be made explicitly.
 | Portal interaction model | Organize journeys by user intent and bind them to domain team, use case, workspace, product, purpose, and evidence. | Makes complex foundation services understandable and reusable. |
 | Portal state | Limit portal-owned state to experience, drafts, preferences, tasks, and rebuildable read projections. | Prevents the experience layer from becoming a competing control plane. |
 | Product detail | Present declared contract terms separately from measured quality, health, lineage, incidents, usage, and cost. | Prevents synthetic or stale trust claims. |
-| Metadata authority | Use catalog and metadata services as the source of truth for product metadata. | Avoids duplicate product inventories. |
+| Data catalog | Use Unity Catalog as the standard technical catalog for foundation-managed data and AI assets, including governed external or synchronized projections. | Creates one technical inventory, namespace, native policy surface, lineage context, and audit boundary. |
+| Physical table storage | Use Unity Catalog managed Delta tables by default for new durable tabular data; approve exceptions for justified external, federated, operational, non-tabular, event, or Iceberg needs. | Standardizes reliability and operations while preserving fit-for-purpose interfaces and controlled interoperability. |
+| Metadata authority | Keep product, contract, semantic, policy, and telemetry authorities portable and project their identifiers and selected state into Unity Catalog. | Prevents the technical catalog from becoming an unexportable duplicate control plane. |
 | Contract authority | Use a data contract registry as the source of truth for schemas, semantics, quality rules, compatibility, and lifecycle. | Enables automated validation and change management. |
 | Canonical artifacts | Store contracts and products in open, machine-readable canonical formats; generate vendor objects from them. | Keeps meaning portable across tools and platforms. |
 | Interface definitions | Use OpenAPI for synchronous APIs and AsyncAPI plus CloudEvents for event interfaces. | Makes interfaces discoverable, testable, and independently consumable. |
@@ -71,6 +73,7 @@ These decisions require architecture and governance review:
 - Creating a new ingestion or consumption pattern outside standard patterns.
 - Selecting a platform feature without a canonical export or tested exit path.
 - Selecting a vendor or technology without approved requirements, knockout gates, proof-of-capability, TCO, and an exit plan.
+- Creating a durable production table outside Delta or leaving a live asset unregistered in Unity Catalog without an approved exception.
 - Storing canonical product, contract, policy, entitlement, lineage, or observability state only in the portal.
 - Presenting inferred or simulated health, usage, quality, or lineage as measured evidence.
 - Giving an agent direct database, platform administrator, or unrestricted network access.

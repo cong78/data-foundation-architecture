@@ -39,6 +39,7 @@ The standards turn the target architecture into enforceable design and delivery 
     <span class="standards-map-arrow" aria-hidden="true"></span>
     <div class="standards-map-cell standards-map-focus">
       <a href="data-product-workload-standard/"><strong>Data Product Workload</strong></a>
+      <a href="catalog-storage-standard/"><strong>Data Catalog and Storage</strong></a>
       <a href="open-interoperability-standard/"><strong>Open Interoperability</strong></a>
       <a href="technology-selection-standard/"><strong>Technology Selection</strong></a>
     </div>
@@ -79,6 +80,7 @@ The lanes show the primary design outcomes. The matrices below capture supportin
 | --- | :---: | :---: | :---: | :---: | :---: | :---: |
 | [Data Contract](data-contract-standard.md) | S | P | P | S | S | P |
 | [Access Control](access-control-standard.md) | S | P | P | P | P | P |
+| [Data Catalog and Storage](catalog-storage-standard.md) | S | P | P | S | S | P |
 | [Data Product Management](data-product-management-standard.md) | P | P | P | S | P | S |
 | [Data Product Workload](data-product-workload-standard.md) | P | P | P | S | P | P |
 | [Open Interoperability](open-interoperability-standard.md) | S | P | P | P | S | S |
@@ -102,12 +104,12 @@ The lanes show the primary design outcomes. The matrices below capture supportin
 
 | Service | Primary Standards | What the Service Enforces |
 | --- | --- | --- |
-| [Data Service Portal](../services/data-service-portal.md) | Data Contract; Access Control; Data Product Management; Agent, Skill and LLM | Contract and product workflows, lifecycle state, go-live gates, identity-aware access requests, evidence, assistant approvals. |
+| [Data Service Portal](../services/data-service-portal.md) | Data Contract; Access Control; Data Product Management; Agent, Skill and LLM | Contract lifecycle and decisions, product state, go-live gates, identity-aware service journeys, evidence, and assistant approvals. |
 | [Data Service AI Assistant](../services/data-service-ai-assistant.md) | Agent, Skill and LLM; AI-Ready Data; OpenTelemetry | Grounded context, typed skills, delegated identity, approval classes, evaluations, traces, and action receipts. |
-| [Data Ingestion](../services/data-ingestion-service.md) | Data Contract; Open Interoperability; OpenTelemetry | Source schema, compatibility, provenance, validation, open ingestion interfaces, and runtime telemetry. |
-| [Data Product Creation](../services/data-product-creation-service.md) | Data Product Management; Data Product Workload; Data Contract; AI-Ready Data | Developer workspace, declarative runtime intent, portable descriptor, tests, lineage, semantics, deployment, rollback, go-live gates, and AI usage policy. |
-| [Data Consumption](../services/data-consumption-service.md) | Data Contract; Access Control; Open Interoperability; AI-Ready Data | Governed SQL, API, event, feature, and retrieval interfaces with separate service and data authorization. |
-| [Data Sharing](../services/data-sharing-service.md) | Data Contract; Access Control; Open Interoperability; Data Product Management | Recipient identity, purpose, minimized packages, open exchange, expiry, revocation, and sharing evidence. |
+| [Data Ingestion](../services/data-ingestion-service.md) | Data Contract; Data Catalog and Storage; Open Interoperability; OpenTelemetry | Source schema, compatibility, provenance, validation, Unity Catalog registration, Delta landing, open ingestion interfaces, and runtime telemetry. |
+| [Data Product Creation](../services/data-product-creation-service.md) | Data Product Management; Data Product Workload; Data Contract; Data Catalog and Storage; AI-Ready Data | Developer workspace, declarative runtime intent, portable descriptor, Unity Catalog and Delta bindings, tests, lineage, semantics, deployment, rollback, go-live gates, and AI usage policy. |
+| [Data Consumption](../services/data-consumption-service.md) | Data Contract; Access Control; Data Catalog and Storage; Open Interoperability; AI-Ready Data | Governed product ports over Unity Catalog, Delta, direct, federated, API, event, feature, and retrieval interfaces with separate service and data authorization. |
+| [Data Sharing](../services/data-sharing-service.md) | Data Contract; Access Control; Data Catalog and Storage; Open Interoperability; Data Product Management | Recipient identity, purpose, minimized Unity Catalog packages, open exchange, expiry, revocation, and sharing evidence. |
 | [Data Observability](../services/data-observability-service.md) | OpenTelemetry; Data Product Management; AI-Ready Data | End-to-end traces, product SLOs, quality, freshness, lineage correlation, incidents, usage, cost, and AI access evidence. |
 | [Data Foundation Operations](../services/data-foundation-operations-service.md) | OpenTelemetry; Data Product Management; Data Product Workload; Access Control | Service ownership, support, incident, problem, change, release, reliability, responder authority, recovery evidence, and improvement. |
 
@@ -117,6 +119,7 @@ The lanes show the primary design outcomes. The matrices below capture supportin
 | --- | --- | --- |
 | Data Contract | Source onboarding, CI, product go-live, consumption, sharing, change release. | Versioned contract, validation results, compatibility decision, approvals, subscriber impact. |
 | Access Control | Every portal, API, CLI, workflow, service, query, event, file, feature, retrieval, agent, and sharing boundary. | Identity, actor and subject, service decision, data decision, purpose, entitlement, obligations, policy version, outcome, revocation test. |
+| Data Catalog and Storage | Source onboarding, product design, CI/CD, product go-live, runtime drift detection, and exception review. | Unity Catalog object or projection, Delta binding or exception, policy tests, lineage, retention, recovery, portability, and reconciliation evidence. |
 | Data Product Management | Proposal, review, go-live, operation, change, deprecation, retirement. | Product descriptor, owners, gate results, SLO status, usage, incidents, lifecycle decisions. |
 | Data Product Workload | Authoring, pull request, plan, environment creation, deployment, promotion, rollback, drift response. | Versioned specification, resolved plan, policy results, artifact identity, release and rollback receipts, telemetry. |
 | Open Interoperability | Artifact validation, API and event publication, catalog exchange, platform migration, external sharing. | Conformance report, round-trip test, interface specification, adapter and exception records. |
@@ -129,13 +132,14 @@ The lanes show the primary design outcomes. The matrices below capture supportin
 
 1. Define the product and source interfaces with the **Data Contract Standard**.
 2. Define named-user and workload identity, service and data decisions, entitlements, and enforcement with the **Access Control Standard**.
-3. Define ownership, lifecycle, go-live, health, and retirement with the **Data Product Management Standard**.
-4. Define runtime intent, environments, deployment, and rollback with the **Data Product Workload Standard**.
-5. Select portable artifacts and open interfaces with the **Open Interoperability Standard**.
-6. Instrument services and products with the **OpenTelemetry Standard**.
-7. Add AI permissions, semantics, lineage, and evaluation data with the **AI-Ready Data Standard**.
-8. Add agents, skills, models, context, approvals, and evaluations with the **Agent, Skill and LLM Standard**.
-9. Evaluate actual products and vendors against all applicable requirements with the **Technology Selection Standard**.
+3. Register assets in Unity Catalog and bind durable tabular storage to Delta with the **Data Catalog and Storage Standard**.
+4. Define ownership, lifecycle, go-live, health, and retirement with the **Data Product Management Standard**.
+5. Define runtime intent, environments, deployment, and rollback with the **Data Product Workload Standard**.
+6. Select portable artifacts and open interfaces with the **Open Interoperability Standard**.
+7. Instrument services and products with the **OpenTelemetry Standard**.
+8. Add AI permissions, semantics, lineage, and evaluation data with the **AI-Ready Data Standard**.
+9. Add agents, skills, models, context, approvals, and evaluations with the **Agent, Skill and LLM Standard**.
+10. Evaluate actual products and vendors against all applicable requirements with the **Technology Selection Standard**.
 
 !!! tip "Design review rule"
     Review standards by architecture boundary, not by document. For each service interface, identify the applicable contract, policy, product state, telemetry, interoperability profile, and AI or agent controls before implementation.

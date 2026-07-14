@@ -142,6 +142,7 @@ nav:
       - Standards Overview: standards/index.md
       - Data Contract Standard: standards/data-contract-standard.md
       - Access Control Standard: standards/access-control-standard.md
+      - Data Catalog and Storage Standard: standards/catalog-storage-standard.md
       - Data Product Management Standard: standards/data-product-management-standard.md
       - Data Product Workload Standard: standards/data-product-workload-standard.md
       - Open Interoperability Standard: standards/open-interoperability-standard.md

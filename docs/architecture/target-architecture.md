@@ -60,6 +60,7 @@ The [Data Foundation Operations Service](../services/data-foundation-operations-
 12. Separate service authorization from data authorization and apply both to named users, workloads, delegated applications, agents, and external recipients.
 13. Place a unified logical access layer above physical product storage while keeping execution distributed and close to approved runtimes.
 14. Coordinate support, incident, problem, change, release, and reliability through a cross-cutting **Data Foundation Operations Service** while keeping telemetry and engineering ownership separate.
+15. Use **Unity Catalog as the data catalog standard** and **Delta Lake as the default durable tabular storage format**, while keeping logical ports and canonical control artifacts portable.
 
 ## Critical Flows
 

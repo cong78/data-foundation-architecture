@@ -2,17 +2,17 @@
 
 <div class="decision-brief"><div><small>Use when</small><strong>Assessing Databricks workspaces and Unity Catalog for product creation.</strong></div><div><small>Decision</small><strong>How will the product contract and workload map to the platform?</strong></div><div><small>Owner</small><strong>Product platform architect.</strong></div><div><small>Output</small><strong>Workspace, catalog, release, control, and exit design.</strong></div></div>
 
-This reference solution applies the technology-neutral [Data Product Creation Service](../services/data-product-creation-service.md) to Databricks. Databricks workspaces provide governed product engineering environments; Unity Catalog provides the common namespace, catalog, policy, lineage, audit, and native data-access controls above physical product storage.
+This reference solution applies the technology-neutral [Data Product Creation Service](../services/data-product-creation-service.md) and the mandatory [Data Catalog and Storage Standard](../standards/catalog-storage-standard.md) to Databricks. Databricks workspaces provide governed product engineering environments; Unity Catalog is the standard technical catalog and native governance layer, and Delta Lake is the default physical format for durable product tables.
 
 !!! info "Reference solution status"
-    This page is an implementation profile, not a mandatory platform choice. Adoption requires an approved [Technology Selection Record](../delivery-templates/technology-selection-template.md), proof-of-capability evidence, security and cost review, portability tests, and an exit plan. Product, contract, workload, semantic-context, and release artifacts remain canonical and provider-independent.
+    Unity Catalog and Delta Lake are mandatory defaults under the [Data Catalog and Storage Standard](../standards/catalog-storage-standard.md). The Databricks workspace, compute, orchestration, and delivery profile remains a selected implementation that requires proof-of-capability evidence, security and cost review, portability tests, and an exit plan. Product, contract, workload, semantic-context, and release artifacts remain canonical and provider-independent.
 
 !!! tip "Fast path"
     **Decide:** [Executive Recommendation](#executive-recommendation) · **Design:** [Solution at a Glance](#solution-at-a-glance) and [Workspace Topology](#workspace-topology) · **Implement:** [Implementation Runway](#implementation-runway) · **Assure:** [Go-Live Gate](#go-live-gate) and [Done Criteria](#done-criteria)
 
 ## Executive Recommendation
 
-Use separate development, test, and production workspace boundaries, connected to a regional Unity Catalog metastore. Deliver each data product from a source-controlled repository using Declarative Automation Bundles and automated CI/CD. Use Unity Catalog as the governed access surface for Databricks-managed data products, but keep the enterprise product contract and logical port independent of Unity Catalog object names.
+Use separate development, test, and production workspace boundaries, connected to a regional Unity Catalog metastore. Deliver each data product from a source-controlled repository using Declarative Automation Bundles and automated CI/CD. Register every product asset in Unity Catalog and use Unity Catalog managed Delta tables by default. Keep the product contract and logical port independent of Unity Catalog object names and physical paths.
 
 Unity Catalog implements the core unified access profile for tables, views, volumes, functions, models, and supported external engines. The Data Consumption Service still resolves logical product ports, purpose, agreements, health, and non-Databricks interfaces. API, event, feature, retrieval, and file-delivery ports require conformant adapters rather than being forced through SQL.
 
@@ -38,7 +38,7 @@ flowchart TB
         EVIDENCE["Lineage · audit · quality references · usage"]
     end
 
-    STORAGE["Physical product storage<br/>managed or external Delta and Iceberg · volumes"]
+    STORAGE["Physical product storage<br/>managed Delta by default · approved external or Iceberg exceptions · volumes"]
     ACCESS["Data Consumption Service<br/>product resolution · purpose · agreement · adapter"]
     CONSUMERS["BI · applications · platforms · sharing · agents · models"]
 
@@ -249,7 +249,7 @@ A product version may go live only when all of the following evidence is linked 
 Databricks is an implementation, not the external product contract. Preserve the ability to consume or move a product without rebuilding its meaning and governance from screenshots or workspace state.
 
 - Keep product, contract, semantic context, workload intent, policy intent, and release metadata in portable YAML or JSON schemas.
-- Prefer open table formats and expose stable interfaces rather than storage paths.
+- Use Delta Lake as the default physical format for durable tabular products and expose stable interfaces rather than storage paths.
 - Test supported Iceberg REST access for approved external engines and validate policy behavior, credential vending, read/write limits, and format compatibility. [Unity Catalog Iceberg REST](https://docs.databricks.com/aws/en/external-access/iceberg)
 - Use Delta Sharing for governed sharing profiles, with a separate recipient, agreement, expiry, and revocation lifecycle.
 - Publish OpenLineage-compatible events where cross-platform lineage is required and OpenTelemetry signals for system and product operations.

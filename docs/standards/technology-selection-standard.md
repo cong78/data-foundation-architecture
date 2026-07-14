@@ -6,6 +6,12 @@ This standard defines how architects evaluate and select vendors, managed servic
 
 Technology is selected against an architecture capability and evidence-based use case. Vendor features do not redefine product contracts, canonical metadata, policy intent, semantic context, telemetry, or service boundaries.
 
+## Approved Data Platform Defaults
+
+The [Data Catalog and Storage Standard](catalog-storage-standard.md) establishes Unity Catalog as the data catalog standard and Delta Lake as the default physical table storage format. These are approved defaults rather than options that every delivery team must rescore.
+
+An alternative catalog, table format, operational store, serving store, or federated binding requires the same mandatory gates, proof, portability evidence, owner, review date, and exit plan defined by this standard. The assessment must show a material requirement that the default profile cannot satisfy.
+
 ## Selection Principles
 
 1. Select for a defined capability and workload, not for the longest feature list.

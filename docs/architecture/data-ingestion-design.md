@@ -2,10 +2,10 @@
 
 <div class="decision-brief"><div><small>Use when</small><strong>Assessing Databricks for a governed ingestion profile.</strong></div><div><small>Decision</small><strong>Which Lakeflow pattern satisfies the source contract?</strong></div><div><small>Owner</small><strong>Ingestion architect and platform owner.</strong></div><div><small>Output</small><strong>Selected pattern, controls, proof, and exit plan.</strong></div></div>
 
-This reference solution applies the technology-neutral [Data Ingestion Service](../services/data-ingestion-service.md) to Databricks. Lakeflow Connect, Auto Loader, Lakeflow Spark Declarative Pipelines, Lakeflow Jobs, and Unity Catalog implement repeatable file, connector, CDC, API, and event ingestion while preserving source contracts and source-aligned data.
+This reference solution applies the technology-neutral [Data Ingestion Service](../services/data-ingestion-service.md) and the mandatory [Data Catalog and Storage Standard](../standards/catalog-storage-standard.md) to Databricks. Lakeflow Connect, Auto Loader, Lakeflow Spark Declarative Pipelines, Lakeflow Jobs, Unity Catalog, and Delta Lake implement repeatable file, connector, CDC, API, and event ingestion while preserving source contracts and source-aligned data.
 
 !!! info "Reference solution status"
-    This page is a selected implementation profile, not a mandatory platform choice. Adoption requires an approved [Technology Selection Record](../delivery-templates/technology-selection-template.md), connector proof, security and cost review, replay tests, operational evidence, and an exit plan. Source identity, contract, schema, checkpoint semantics, and lineage remain canonical and portable.
+    Unity Catalog and Delta Lake are mandatory defaults under the [Data Catalog and Storage Standard](../standards/catalog-storage-standard.md). Lakeflow connectors, pipelines, jobs, and ingestion runtime choices remain selected implementation profiles that require connector proof, security and cost review, replay tests, operational evidence, and an exit plan. Source identity, contract, schema, checkpoint semantics, and lineage remain canonical and portable.
 
 !!! tip "Fast path"
     **Decide:** [Executive Recommendation](#executive-recommendation) · **Design:** [Solution at a Glance](#solution-at-a-glance) and [Pattern Selection](#pattern-selection) · **Implement:** [Implementation Runway](#implementation-runway) · **Assure:** [Source Activation Gate](#source-activation-gate) and [Done Criteria](#done-criteria)
@@ -14,7 +14,7 @@ This reference solution applies the technology-neutral [Data Ingestion Service](
 
 Select the most managed connector that meets the source contract, control, latency, and recovery requirements. Use Lakeflow Connect managed connectors for supported SaaS and database sources, Auto Loader for immutable file inboxes, and Lakeflow declarative or Structured Streaming patterns for event sources and custom integrations.
 
-Land data in **source-aligned raw and validated states** governed by Unity Catalog. Keep business transformation and product go-live in the Data Product Creation Service. A connector may automate transport, CDC, retries, and schema handling; it does not own the source contract or decide that a breaking source change is acceptable.
+Land durable tabular data in **source-aligned raw and validated Delta states** registered and governed by Unity Catalog. Keep business transformation and product go-live in the Data Product Creation Service. A connector may automate transport, CDC, retries, and schema handling; it does not own the source contract or decide that a breaking source change is acceptable.
 
 ## Solution at a Glance
 
