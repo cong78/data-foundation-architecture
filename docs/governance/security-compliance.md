@@ -37,7 +37,7 @@ Security and compliance controls must be embedded across ingestion, product crea
 - Data classification metadata.
 - Data lineage and transformation history.
 - Quality validation results.
-- Sharing agreements and recipient entitlements.
+- External-sharing Data Product Consumption Contracts and recipient entitlements.
 - Audit logs for access and administrative changes.
 - Observability evidence for incidents, SLO breaches, and data product health.
 - Retention and deletion evidence.

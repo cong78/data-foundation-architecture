@@ -37,6 +37,7 @@ When intent spans workflows, run them in this order: **Assess → Design → Gen
 - Keep source onboarding, ingestion, and raw and validated source-aligned products under central foundation platform accountability; keep domain, aggregate, and consumer-aligned product ownership federated to domain data teams.
 - Treat a data product as the unit of trust and reuse; do not equate a table or pipeline with a product.
 - Require explicit contracts, semantic context, policy, lineage, telemetry, lifecycle, and accountable ownership.
+- Use only three contract types: Source System Ingestion Contract, Data Product Creation Contract, and Data Product Consumption Contract. Treat sharing and AI use as consumption profiles.
 - Keep service authorization separate from data entitlement and evaluate named-user, workload, delegated, and external-recipient identities.
 - Keep physical storage behind governed product ports and unified access.
 - Apply Unity Catalog as the data catalog standard and Delta Lake as the default durable tabular storage format; require an approved exception and portable exit for alternatives.

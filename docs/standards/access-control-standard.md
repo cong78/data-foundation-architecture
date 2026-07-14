@@ -19,7 +19,7 @@ Every request must pass two independent checks:
 | Check | Mandatory Inputs | Enforcement |
 | --- | --- | --- |
 | Service authorization | Actor, subject, operation, service, environment, delegated scope, risk, approval state. | Gateway, service, workflow, or skill boundary. |
-| Data authorization | Actor, subject, data action, product, interface, purpose, classification, agreement, environment, policy context. | Query, API, event, file, feature, retrieval, semantic, or context boundary. |
+| Data authorization | Actor, subject, data action, product, interface, purpose, classification, Data Product Consumption Contract, environment, policy context. | Query, API, event, file, feature, retrieval, semantic, or context boundary. |
 
 The effective decision is the most restrictive result. A service permit cannot override a data deny.
 
@@ -30,7 +30,7 @@ Policies must support:
 - Role-based capability assignment for basic service operations.
 - Attribute-based restrictions for identity, team, product, classification, environment, region, and trust domain.
 - Purpose-based controls for BI, operational use, sharing, training, retrieval, grounding, and evaluation.
-- Relationship-based checks where ownership, stewardship, agreement, or consumer subscription matters.
+- Relationship-based checks where ownership, stewardship, Data Product Consumption Contract, or consumer subscription matters.
 - Explicit obligations including row filter, field mask, tokenization, aggregation, output limit, watermark, logging, retention, and expiry.
 
 ## Service Enforcement
@@ -59,7 +59,7 @@ Every entitlement records:
 | Entitlement id | Stable identifier. |
 | Subject and actor | Receiving identity and delegated actor where applicable. |
 | Service and data scope | Exact operations, products, ports, fields, rows, or recipient package. |
-| Purpose | Approved use with linked use case or agreement. |
+| Purpose | Approved use with linked use case and Data Product Consumption Contract. |
 | Environment | Development, test, production, or external trust domain. |
 | Owner and approvers | Accountable grant owner and required decision records. |
 | Validity | Start, expiry, review schedule, and maximum duration. |
@@ -74,7 +74,7 @@ Every allow, deny, step-up, or obligation decision records:
 - Timestamp, decision id, policy id and version.
 - Actor, subject, identity type, assurance, and delegated scope.
 - Service, operation, product, interface, data action, and environment.
-- Purpose, agreement, classification, and relevant attributes.
+- Purpose, Data Product Consumption Contract, classification, and relevant attributes.
 - Result and obligations without exposing sensitive policy internals.
 - Enforcement point, request or task correlation id, and outcome.
 

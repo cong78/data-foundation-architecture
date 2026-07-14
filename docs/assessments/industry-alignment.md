@@ -26,7 +26,7 @@ The architecture is strong in scope, product governance, contract lifecycle, AI 
 
 The [Data Developer Platform specification](https://datadeveloperplatform.org/) describes an internal developer platform for data engineers and data scientists. Its architecture separates a central control plane, developer-oriented workload management, and data activation. Its strongest contribution to this guidance is the explicit developer plane: declarative specifications, environment management, automated deployment, API and CLI access, reusable resources, and rollback.
 
-This architecture is broader than the DDP specification because it also defines enterprise consumption, external sharing, product contracts, interoperability conformance, OpenTelemetry product insights, and governed agentic AI. The comparison should therefore be used to strengthen developer experience, not to replace the six-plane model.
+This architecture is broader than the DDP specification because it also defines enterprise consumption, external sharing, Data Product Creation Contracts, interoperability conformance, OpenTelemetry product insights, and governed agentic AI. The comparison should therefore be used to strengthen developer experience, not to replace the six-plane model.
 
 | DDP Concern | Alignment | Current Architecture Position | Required Improvement |
 | --- | --- | --- | --- |

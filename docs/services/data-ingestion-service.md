@@ -6,7 +6,7 @@
 
 The data ingestion service brings data from source systems into the foundation through standardized, governed patterns. It makes onboarding repeatable while preserving provenance, enforcing baseline controls, and preparing data for product creation.
 
-For a selected implementation profile, see [Data Ingestion Design](../architecture/data-ingestion-design.md), which maps this service to Lakeflow Connect, Auto Loader, Databricks streaming runtimes, and Unity Catalog while preserving the source contract and source-aligned boundary.
+For a selected implementation profile, see [Data Ingestion Design](../architecture/data-ingestion-design.md), which maps this service to Lakeflow Connect, Auto Loader, Databricks streaming runtimes, and Unity Catalog while preserving the Source System Ingestion Contract and source-aligned boundary.
 
 ## Scope
 
@@ -39,9 +39,9 @@ Use OpenAPI for source APIs and AsyncAPI plus CloudEvents for event sources. Con
 | Category | Capability | Owned Outcome |
 | --- | --- | --- |
 | Onboarding | Source registration and pattern selection | Source owner, identity, classification, contract, delivery pattern, SLO, recovery need, and support route are approved before activation. |
-| Contracts | Source contract and schema management | Canonical schema, semantics, delivery expectations, compatibility rules, and change ownership are versioned and testable. |
+| Contracts | Source System Ingestion Contract and schema management | Canonical schema, semantics, delivery expectations, compatibility rules, and change ownership are versioned and testable. |
 | Connectivity | Managed source adapters | File inbox, connector pull, API, CDC, and event-stream adapters authenticate securely and preserve source identity. |
-| Transport | Reliable incremental movement | Checkpoints, idempotency, ordering, deduplication, backpressure, retries, and replay meet the source contract. |
+| Transport | Reliable incremental movement | Checkpoints, idempotency, ordering, deduplication, backpressure, retries, and replay meet the Source System Ingestion Contract. |
 | Landing | Source-aligned raw state | Faithful, timestamped, provenance-rich source data is retained under restricted access for replay and audit. |
 | Validation | Validated source-aligned state | Contract-conformant records are separated from invalid or suspect records before downstream handoff. |
 | Exceptions | Quarantine and remediation | Rejected records have reason, owner, evidence, correction path, and controlled replay. |
@@ -59,7 +59,7 @@ Replication is not the default outcome of source onboarding. Apply the [Direct, 
 
 ## Controls
 
-- Source contract exists and is approved.
+- Source System Ingestion Contract exists and is approved.
 - Data classification is known or assigned during onboarding.
 - Schema validation is active.
 - Invalid records are routed to a managed exception path.

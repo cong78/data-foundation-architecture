@@ -92,7 +92,7 @@ authorization:
   roles: [product_owner, contract_editor]
 context:
   - product descriptor
-  - source contracts
+  - Source System Ingestion Contracts
   - classification
   - enterprise contract profile
 approval:

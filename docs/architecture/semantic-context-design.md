@@ -38,7 +38,7 @@ flowchart LR
 | Data product | Declare the product-specific semantic context version and bind it to product and contract versions. |
 | Data Service Portal | Present meaning, scope, metrics, examples, limitations, and current trust evidence on the product page. |
 | Consumption Service | Serve semantic models and permission-filtered context through stable APIs and retrieval interfaces. |
-| Data Service AI Assistant | Retrieve only the context allowed by identity, purpose, product contract, and current policy. |
+| Data Service AI Assistant | Retrieve only the context allowed by identity, purpose, Data Product Creation Contract, and current policy. |
 | Observability | Provide current health references and record product, context, and contract versions used by consumers. |
 
 ## Catalog and Knowledge Graph Fit

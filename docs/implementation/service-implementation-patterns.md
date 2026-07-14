@@ -18,8 +18,8 @@ Build portal capability as thin vertical journeys:
 | Discover | Catalog search, semantic concepts, current trust summary, saved products. |
 | Produce | Team, use case, workspace, product descriptor, contract, go-live workflow. |
 | Consume | Authenticated identity, purpose, policy decision, entitlement, subscription, audit. |
-| Connect source | Source owner, ingestion pattern, source contract, onboarding workflow, status. |
-| Share | Recipient identity, sharing agreement, minimization, delivery, expiry, revocation. |
+| Connect source | Source owner, ingestion pattern, Source System Ingestion Contract, onboarding workflow, status. |
+| Share | Recipient identity, Data Product Consumption Contract, minimization, delivery, expiry, and revocation. |
 | Observe | OTLP metrics and traces, quality results, OpenLineage, incidents, usage, cost. |
 | Build AI | Product and data dependencies, agent or model identity, tool permissions, evaluation evidence. |
 
@@ -48,7 +48,7 @@ Build portal capability as thin vertical journeys:
 | Workload specification | Declare product id, contract, code, inputs, outputs, resources, policies, SLOs, environment, deployment target, and dependencies in one versioned artifact. |
 | Developer interfaces | Keep portal, API, CLI, and approved agent skills behaviorally equivalent and backed by the same service contracts. |
 | Environment | Provide isolated development and test environments, controlled test data, configuration inheritance, expiry, and automatic de-provisioning. |
-| Resource abstraction | Expose portable workload, connector, compute, storage, secret, policy, and service endpoint resources without leaking provider details into the product contract. |
+| Resource abstraction | Expose portable workload, connector, compute, storage, secret, policy, and service endpoint resources without leaking provider details into the Data Product Creation Contract. |
 | Delivery | Generate a plan, run contract and policy checks, preview changes, deploy progressively, capture evidence, and support deterministic rollback. |
 | Operations | Detect configuration drift, correlate release and runtime telemetry, expose debugging context, and retain deployment receipts. |
 
@@ -74,7 +74,7 @@ The developer workspace is a channel over foundation services, not a parallel pl
 | API | Product-backed API with versioning, throttling, contract, audit, and SLOs. |
 | Event | Product event stream with schema registry, consumer subscription, replay, and dead-letter handling. |
 | AI retrieval | Approved retrieval index or context API with lineage, freshness, access control, and evaluation evidence. |
-| Feature access | Feature dataset or feature service linked to product contract, lineage, and model usage. |
+| Feature access | Feature dataset or feature service linked to Data Product Creation Contract, lineage, and model usage. |
 
 ## Sharing Pattern
 

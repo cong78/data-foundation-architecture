@@ -26,8 +26,8 @@ The foundation has one primary story: **Frame → Establish → Deliver → Use 
 | --- | --- | --- |
 | **Frame** | Foundation sponsor approves scope; domain owners accept boundaries and accountability. | Scope, principles, domain records, decision rights, risks, and non-goals. |
 | **Establish** | Service owners establish shared capabilities; governance owners make controls enforceable. | Service contracts, standards, APIs, policies, SLOs, support, portal journeys, and conformance evidence. |
-| **Deliver** | Source owners accept delivery obligations; product owners accept the output promise. | Source contract, product contract, lineage, tests, workload, go-live record, ports, and support route. |
-| **Use** | Consumer or use-case owner declares purpose; policy owner authorizes bounded access. | Consume or sharing agreement, entitlement, obligations, interface, context, and usage trace. |
+| **Deliver** | Source owners accept delivery obligations; product owners accept the output promise. | Source System Ingestion Contract, Data Product Creation Contract, lineage, tests, workload, go-live record, ports, and support route. |
+| **Use** | Consumer or use-case owner declares purpose; policy owner authorizes bounded access. | Data Product Consumption Contract, entitlement, obligations, interface, context, and usage trace. |
 | **Operate** | Service and product owners accept operational health, change, recovery, and improvement decisions. | Health, SLOs, incidents, changes, recovery validation, reviews, migrations, and retirement evidence. |
 
 ## Choose an Action

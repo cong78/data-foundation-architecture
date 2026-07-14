@@ -1,6 +1,6 @@
 # Data Product Creation Design
 
-<div class="decision-brief"><div><small>Use when</small><strong>Assessing Databricks workspaces and Unity Catalog for product creation.</strong></div><div><small>Decision</small><strong>How will the product contract and workload map to the platform?</strong></div><div><small>Owner</small><strong>Product platform architect.</strong></div><div><small>Output</small><strong>Workspace, catalog, release, control, and exit design.</strong></div></div>
+<div class="decision-brief"><div><small>Use when</small><strong>Assessing Databricks workspaces and Unity Catalog for product creation.</strong></div><div><small>Decision</small><strong>How will the Data Product Creation Contract and workload map to the platform?</strong></div><div><small>Owner</small><strong>Product platform architect.</strong></div><div><small>Output</small><strong>Workspace, catalog, release, control, and exit design.</strong></div></div>
 
 This reference solution applies the technology-neutral [Data Product Creation Service](../services/data-product-creation-service.md) and the mandatory [Data Catalog and Storage Standard](../standards/catalog-storage-standard.md) to Databricks. Databricks workspaces provide governed product engineering environments; Unity Catalog is the standard technical catalog and native governance layer, and Delta Lake is the default physical format for durable product tables.
 
@@ -12,9 +12,9 @@ This reference solution applies the technology-neutral [Data Product Creation Se
 
 ## Executive Recommendation
 
-Use separate development, test, and production workspace boundaries, connected to a regional Unity Catalog metastore. Deliver each data product from a source-controlled repository using Declarative Automation Bundles and automated CI/CD. Register every product asset in Unity Catalog and use Unity Catalog managed Delta tables by default. Keep the product contract and logical port independent of Unity Catalog object names and physical paths.
+Use separate development, test, and production workspace boundaries, connected to a regional Unity Catalog metastore. Deliver each data product from a source-controlled repository using Declarative Automation Bundles and automated CI/CD. Register every product asset in Unity Catalog and use Unity Catalog managed Delta tables by default. Keep the Data Product Creation Contract and logical port independent of Unity Catalog object names and physical paths.
 
-Unity Catalog implements the core unified access profile for tables, views, volumes, functions, models, and supported external engines. The Data Consumption Service still resolves logical product ports, purpose, agreements, health, and non-Databricks interfaces. API, event, feature, retrieval, and file-delivery ports require conformant adapters rather than being forced through SQL.
+Unity Catalog implements the core unified access profile for tables, views, volumes, functions, models, and supported external engines. The Data Consumption Service still resolves logical product ports, purpose, Data Product Consumption Contracts, health, and non-Databricks interfaces. API, event, feature, retrieval, and file-delivery ports require conformant adapters rather than being forced through SQL.
 
 ## Solution at a Glance
 
@@ -39,7 +39,7 @@ flowchart TB
     end
 
     STORAGE["Physical product storage<br/>managed Delta by default · approved external or Iceberg exceptions · volumes"]
-    ACCESS["Data Consumption Service<br/>product resolution · purpose · agreement · adapter"]
+    ACCESS["Data Consumption Service<br/>product resolution · purpose · Data Product Consumption Contract · adapter"]
     CONSUMERS["BI · applications · platforms · sharing · agents · models"]
 
     INTENT --> REPO --> CICD
@@ -229,7 +229,7 @@ Use four enforcement points rather than expecting one Databricks feature to repr
 | Test promotion | Integration, security, privacy, performance, resilience, rollback, access-policy, and consumer contract tests. |
 | Production runtime | Schema and quality checks, freshness and volume SLOs, pipeline expectations, anomaly signals, and product-health events. |
 
-Lakeflow pipeline expectations can warn, drop, or fail on invalid records and emit quality metrics to the pipeline event log. They are runtime evidence, not a replacement for the broader product contract or pre-deployment compatibility tests. [Pipeline expectations](https://docs.databricks.com/aws/en/ldp/expectations)
+Lakeflow pipeline expectations can warn, drop, or fail on invalid records and emit quality metrics to the pipeline event log. They are runtime evidence, not a replacement for the broader Data Product Creation Contract or pre-deployment compatibility tests. [Pipeline expectations](https://docs.databricks.com/aws/en/ldp/expectations)
 
 ## Go-Live Gate
 
@@ -246,12 +246,12 @@ A product version may go live only when all of the following evidence is linked 
 
 ## Interoperability and Exit Design
 
-Databricks is an implementation, not the external product contract. Preserve the ability to consume or move a product without rebuilding its meaning and governance from screenshots or workspace state.
+Databricks is an implementation, not the external Data Product Creation Contract. Preserve the ability to consume or move a product without rebuilding its meaning and governance from screenshots or workspace state.
 
 - Keep product, contract, semantic context, workload intent, policy intent, and release metadata in portable YAML or JSON schemas.
 - Use Delta Lake as the default physical format for durable tabular products and expose stable interfaces rather than storage paths.
 - Test supported Iceberg REST access for approved external engines and validate policy behavior, credential vending, read/write limits, and format compatibility. [Unity Catalog Iceberg REST](https://docs.databricks.com/aws/en/external-access/iceberg)
-- Use Delta Sharing for governed sharing profiles, with a separate recipient, agreement, expiry, and revocation lifecycle.
+- Use Delta Sharing for governed sharing profiles, with recipient, expiry, and revocation clauses in the Data Product Consumption Contract.
 - Publish OpenLineage-compatible events where cross-platform lineage is required and OpenTelemetry signals for system and product operations.
 - Export catalog, policy, lineage, quality, audit, and release evidence on a defined schedule and retention model.
 - Prove that one reference product can be recreated in another environment from canonical artifacts and data, without depending on a developer's workspace.

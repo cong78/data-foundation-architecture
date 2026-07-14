@@ -49,7 +49,7 @@ The same identifiers must survive export, import, telemetry, lineage, and platfo
 | Identifier | Purpose |
 | --- | --- |
 | `data_product_id` | Stable identity of the product. |
-| `contract_id` and `contract_version` | Exact behavioral agreement in force. |
+| `contract_id` and `contract_version` | Exact contract in force. |
 | `dataset_id` and `schema_version` | Product output and structure. |
 | `source_id` | Originating source or upstream product. |
 | `consumer_id` and `purpose_id` | Who uses the product and why. |

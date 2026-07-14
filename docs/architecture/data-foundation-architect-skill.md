@@ -2,7 +2,7 @@
 
 The repository includes a project-native AI skill that turns this guidance into repeatable architecture work without making the skill a second source of truth.
 
-Current package version: **1.2.0**.
+Current package version: **1.3.0**.
 
 ## What It Does
 

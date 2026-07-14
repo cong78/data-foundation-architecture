@@ -35,7 +35,7 @@ Keep the first level stable and based on the user's intended outcome. Detailed t
 | Area | Includes | Foundation Outcome |
 | --- | --- | --- |
 | Explore | Data Product Marketplace, search, compare, product detail, collections, and innovation ideas. | Fit-for-purpose product or accountable innovation path. |
-| Ingest | Source onboarding, source contracts, source-aligned products, schema changes, and ingestion health. | Governed source delivery and validated source-aligned product. |
+| Ingest | Source onboarding, Source System Ingestion Contracts, source-aligned products, schema changes, and ingestion health. | Governed source delivery and validated source-aligned product. |
 | Produce | Product creation and change, analytics and AI development, semantics, contracts, workspaces, and product go-live. | Live aggregate, consumer-aligned, analytics, or AI product. |
 | Consume | Purpose declaration, access request, subscription, entitlement, and approved product port. | Purpose-bound governed access. |
 | Share | Share with customer, supplier, or partner | Recipient-specific contract terms and revocable delivery. |

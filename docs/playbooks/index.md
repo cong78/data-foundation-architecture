@@ -16,7 +16,7 @@ Playbooks turn architecture and standards into actions. They link to authoritati
 | [Create or Change a Data Product](create-change-data-product.md) | A reusable outcome or compatible product change is approved for delivery. | Candidate release has complete, passing go-live evidence. |
 | [Approve Product Go-Live](approve-product-go-live.md) | A product candidate requests publication. | Approval, rejection, or expiring exception is recorded. |
 | [Consume a Data Product](consume-data-product.md) | A person, system, application, agent, or model needs governed access. | Purpose-bound access works and is observable. |
-| [Share a Data Product](share-data-product.md) | Data must cross an internal or external recipient boundary. | Package, agreement, entitlement, monitoring, expiry, and revocation are proven. |
+| [Share a Data Product](share-data-product.md) | Data must cross an internal or external recipient boundary. | Data Product Consumption Contract, package, entitlement, monitoring, expiry, and revocation are proven. |
 | [Operate a Service or Product](operate-service-product.md) | A live capability needs support, change, recovery, review, or improvement. | Health is restored or improved and operational evidence is retained. |
 
 ## Common Playbook Pattern

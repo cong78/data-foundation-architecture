@@ -36,7 +36,7 @@ flowchart TB
     CONSUMER["1 · Consumer intent<br/>BI · application · platform · partner · agent · model"]
     PORTAL["2 · Data Service Portal<br/>discover · request · subscribe · inspect health"]
     RESOLVE["3 · Resolve product port<br/>contract · semantic context · binding · SLO"]
-    AUTH["4 · Authorize<br/>service operation · data action · purpose · agreement · obligations"]
+    AUTH["4 · Authorize<br/>service operation · data action · purpose · Data Product Consumption Contract · obligations"]
     UC["5 · Unity Catalog enforcement<br/>privilege · binding · governed tag · ABAC · row and column control"]
     CHANNEL["6 · Select channel<br/>SQL warehouse · open table · sharing · API · event · semantic · feature · retrieval"]
     PRODUCT["7 · Execute on live product<br/>table · view · metric · serving runtime · index"]
@@ -54,7 +54,7 @@ Identity, policy, entitlement, product, contract, health, decision, usage, cost,
 | BI and interactive analytics | Serverless or approved SQL warehouse, stable views, and governed metric views. | Consumers need SQL, dashboards, governed metrics, and interactive analysis. | The workload requires transactional writes or a strict operational API SLO. |
 | Analytical application | Parameterized SQL through a supported driver or Statement Execution API. | Results are analytical, asynchronous or bounded, and query latency is acceptable. | A customer-facing request needs predictable millisecond latency or complex application transactions. |
 | Platform or external engine | Unity REST or Iceberg REST with supported client and credential-vending profile. | An approved engine needs governed open-table access. | Required policy obligations or table features are not supported by that client profile. |
-| Internal or external sharing | OpenSharing/Delta Sharing profile with recipient and agreement lifecycle. | Live governed datasets must cross workspace, platform, company, or cloud boundaries. | The use case requires an operational API, event contract, or write-back workflow. |
+| Internal or external sharing | OpenSharing/Delta Sharing profile with recipient and Data Product Consumption Contract lifecycle. | Live governed datasets must cross workspace, platform, company, or cloud boundaries. | The use case requires an operational API, event contract, or write-back workflow. |
 | Operational application | Product API backed by an approved serving pattern, with Unity Catalog as source or governance context. | Stable API semantics, rate limits, caching, low latency, or transaction isolation are required. | Direct SQL already meets the consumer SLO and contract safely. |
 | Event consumer | Contracted event port through the enterprise event platform. | Consumers need change notifications or event-driven processing. | Consumers need historical bulk scans or ad hoc analytics. |
 | Agent, model, or retrieval | Governed context, feature, retrieval, or bounded query adapter linked to product and contract versions. | AI needs permission-filtered context, features, training data, evaluation data, or grounded retrieval. | Raw unrestricted table access would bypass purpose, minimization, or evaluation controls. |
@@ -65,11 +65,11 @@ Databricks recommends serverless SQL warehouses where available for SQL workload
 
 | Component | Owns | Does not own |
 | --- | --- | --- |
-| Data Service Portal | Discovery, access requests, agreements, subscriptions, status, documentation, and evidence. | Runtime policy evaluation or query execution. |
+| Data Service Portal | Discovery, Data Product Consumption Contracts, subscriptions, status, documentation, and evidence. | Runtime policy evaluation or query execution. |
 | Product registry | Stable product and port ids, lifecycle, contract, semantic context, current binding, SLO, and health reference. | Unity Catalog grants or SQL warehouse state. |
-| Data Consumption Service | Product resolution, channel selection, service authorization, purpose and agreement checks, adapter orchestration, and receipts. | Physical product storage or identity lifecycle. |
+| Data Consumption Service | Product resolution, channel selection, service authorization, purpose and consumption-contract checks, adapter orchestration, and receipts. | Physical product storage or identity lifecycle. |
 | Unity Catalog | Databricks object registration, native privileges, governed tags, ABAC, fine-grained controls, bindings, lineage, and audit context. | Enterprise business-purpose approval or non-Databricks service authorization. |
-| SQL warehouse | Governed SQL execution, workload capacity, query history, and analytical result delivery. | Product contract, semantic authority, or operational API behavior. |
+| SQL warehouse | Governed SQL execution, workload capacity, query history, and analytical result delivery. | Data Product Creation Contract, semantic authority, or operational API behavior. |
 | Open table adapter | Translate a logical table port to a supported Unity or Iceberg REST client profile. | Silent reduction of policy, format, or audit obligations. |
 | Product API, event, feature, or retrieval adapter | Enforce the declared non-SQL interface and SLO. | Reinterpreting product semantics or widening consumer scope. |
 | Observability service | Correlate access decision, runtime, product, consumer, usage, cost, SLO, and outcome. | Authorization or detailed business-result storage. |
@@ -87,7 +87,7 @@ sequenceDiagram
     participant Observe as Observability
 
     Consumer->>Portal: Select product port and purpose
-    Portal->>Access: Request with actor, subject and agreement
+    Portal->>Access: Request with actor, subject and Data Product Consumption Contract
     Access->>Access: Authorize service operation
     Access->>Policy: Evaluate product action and obligations
     Policy-->>Access: Permit, deny or require approval
@@ -100,7 +100,7 @@ sequenceDiagram
     Runtime->>Observe: Query, latency, volume, cost and error evidence
 ```
 
-Service authorization and data authorization remain separate. Permission to use a SQL warehouse, API route, portal workflow, or agent skill does not imply permission to product data. A Unity Catalog grant does not authorize a different purpose, consumer agreement, export, sharing action, or model-training use.
+Service authorization and data authorization remain separate. Permission to use a SQL warehouse, API route, portal flow, or agent skill does not imply permission to product data. A Unity Catalog grant does not authorize a different purpose, Data Product Consumption Contract, export, sharing action, or model-training use.
 
 ## Identity Profiles
 
@@ -124,7 +124,7 @@ Unity Catalog combines object privileges, ownership, workspace bindings, governe
 | Which principal may perform which native action? | Catalog, schema, table, view, function, volume, model, or share privileges. |
 | Which tagged assets and fields require common policy? | Governed tags and ABAC. |
 | Which rows or values may this subject see? | ABAC policy, row filter, column mask, or governed view. |
-| Which purpose or agreement allows the request? | Foundation policy and entitlement decision, projected to native enforcement where possible. |
+| Which purpose and Data Product Consumption Contract allow the request? | Foundation policy and entitlement decision, projected to native enforcement where possible. |
 | Which service operation may be invoked? | Portal, gateway, warehouse, job, API, event, or skill authorization. |
 
 Policy support differs by runtime, client, object type, table format, and interface. Unsupported obligations must be enforced by a conformant adapter or the request must be denied. They must never be silently dropped.
@@ -135,7 +135,7 @@ Policy support differs by runtime, client, object type, table format, and interf
 | --- | --- | --- |
 | SQL | Fully qualified Unity Catalog table, view, materialized view, or metric view plus approved warehouse profile. | SQL schema, semantics, compatibility, SLO, purpose, and result limits. |
 | Open table | Unity REST or Iceberg REST catalog binding and supported table format. | Table contract, snapshot behavior, client versions, actions, policy support, and credential model. |
-| Sharing | Share, recipient, provider, and approved data objects. | Recipient agreement, product version, update mode, expiry, revocation, and audit. |
+| Sharing | Share, recipient, provider, and approved data objects. | Data Product Consumption Contract, product version, update mode, expiry, revocation, and audit. |
 | Application API | Product service or serving adapter reading governed product outputs. | OpenAPI contract, identity, rate, latency, error, caching, and version behavior. |
 | Event | Enterprise event broker binding generated from an approved product event port. | AsyncAPI, CloudEvents envelope, ordering, replay, retention, and compatibility. |
 | Semantic | Unity Catalog metric view or semantic adapter linked to the canonical semantic context package. | Metric, dimension, grain, time, filter, unit, and context versions. |
@@ -183,7 +183,7 @@ Before enabling a client or recipient, test:
 - Revocation, credential expiry, product retirement, and incident containment.
 - Round-trip compatibility with the declared open table or sharing profile.
 
-Use the Data Sharing Service for recipients, agreements, packages, expiry, and revocation. Open table access is not a substitute for an external sharing agreement.
+Use the Data Sharing Service for recipient-specific Data Product Consumption Contracts, packages, expiry, and revocation. Open table access is not a substitute for an external-sharing consumption profile.
 
 ## Port Activation Gate
 
@@ -211,7 +211,7 @@ A consumption port may go live only when:
 
 ### Increment 1: Establish the Access Contract
 
-- Define product and port resolution, identity profiles, purpose and agreement fields, Unity Catalog policy projection, and evidence attributes.
+- Define product and port resolution, identity profiles, purpose and consumption-contract fields, Unity Catalog policy projection, and evidence attributes.
 - Implement portal discovery, request, approval, subscription, expiry, and revocation journeys.
 - Prove independent service and data authorization.
 
@@ -237,7 +237,7 @@ A consumption port may go live only when:
 | Decision | Required outcome |
 | --- | --- |
 | Warehouse topology | Define shared versus dedicated warehouses, serverless eligibility, regions, scaling, query limits, cost allocation, and ownership. |
-| Policy projection | Define how purpose, agreement, entitlement, and classification become Unity Catalog controls and how drift is reconciled. |
+| Policy projection | Define how purpose, Data Product Consumption Contract, entitlement, and classification become Unity Catalog controls and how drift is reconciled. |
 | Open table profile | Select supported formats, client versions, credentials, read/write behavior, policy coverage, and conformance suite. |
 | Application serving | Define when Statement Execution is acceptable and when a dedicated API or serving store is required. |
 | Semantic implementation | Define metric-view scope, canonical semantic package mapping, change control, and BI-tool behavior. |
@@ -248,7 +248,7 @@ A consumption port may go live only when:
 ## Done Criteria
 
 - Consumers request stable product ports without depending on workspace, warehouse, object path, or storage credentials.
-- Unity Catalog enforces native access while the Consumption Service preserves purpose, agreement, service authorization, and channel orchestration.
+- Unity Catalog enforces native access while the Consumption Service preserves purpose, Data Product Consumption Contract, service authorization, and channel orchestration.
 - SQL, application, open-table, sharing, event, semantic, and AI profiles have explicit capability and policy boundaries.
 - Named-user, system, delegated, agent, and external access preserve actor, subject, purpose, product, contract, policy, adapter, and outcome.
 - Unsupported obligations fail closed for every client and channel.

@@ -117,7 +117,7 @@ Describe the business concept represented by the product. Include what the produ
 | Delegated or agent access |  |
 | Data enforcement points |  |
 | Row, column, field, or output obligations |  |
-| Purpose and agreement requirements |  |
+| Purpose and Data Product Consumption Contract requirements |  |
 | Default entitlement duration |  |
 | Revocation target |  |
 

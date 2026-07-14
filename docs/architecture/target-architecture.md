@@ -35,7 +35,7 @@ flowchart TB
 
 | Plane | Owns | State-of-the-Art Expectation |
 | --- | --- | --- |
-| Experience | Intent-led portal journeys, product discovery, product detail, developer workspaces, API and CLI, agreements, portfolio, contract workflows, product health, support and service-status views. | One coherent experience with channel parity for users, developers, decisions, operational engagement, and evidence. |
+| Experience | Intent-led portal journeys, product discovery, product detail, developer workspaces, API and CLI, the three contract types, portfolio, contract lifecycle, product health, support and service-status views. | One coherent experience with channel parity for users, developers, decisions, operational engagement, and evidence. |
 | Control | Catalog, semantic registry, context packages, knowledge graph projections, contracts, policy, lineage, quality rules, workflow, go-live gates. | Metadata-driven governance and automation with clear authority boundaries. |
 | Data | Source onboarding, source-aligned raw and validated states, products, unified logical access, serving, and sharing. | Standard product ports over custom pipelines and provider-native paths. |
 | AI | Agent gateway, skill registry, LLM gateway, governed context, scoped memory, evaluation, retrieval and AI lineage. | Agents are bounded, governed, traceable and purpose-bound. |
@@ -53,7 +53,7 @@ The [Data Foundation Operations Service](../services/data-foundation-operations-
 5. Emit **OpenTelemetry** from every foundation service and product lifecycle event.
 6. Link AI usage back to product version, contract version, identity, purpose, and lineage.
 7. Keep canonical contracts, product descriptors, metadata, lineage, and interfaces portable through the open interoperability profile.
-8. Organize the Data Service Portal around domain teams, use cases, workspaces, products, contracts, agreements, semantics, and measured trust evidence.
+8. Organize the Data Service Portal around domain teams, use cases, workspaces, products, the three contract types, semantics, and measured trust evidence.
 9. Make foundation services agent-callable through typed skills while keeping policy, workflow and approval deterministic.
 10. Give data developers a declarative workspace with versioned workload intent, isolated environments, automated promotion, rollback, and portal/API/CLI parity.
 11. Bind each product to a versioned semantic context package that references authoritative terms, metrics, policies, lineage, and health.
@@ -66,7 +66,7 @@ The [Data Foundation Operations Service](../services/data-foundation-operations-
 
 | Flow | Required Outcome |
 | --- | --- |
-| Source to product | Source contract, ingestion validation, lineage, quality, product go-live. |
+| Source to product | Source System Ingestion Contract, ingestion validation, lineage, quality, product go-live. |
 | Product to consumer | Portal discovery, access approval, policy enforcement, subscription, usage telemetry. |
 | Access decision | Authenticate actor and subject, authorize service operation, authorize product data and purpose, enforce obligations, record evidence. |
 | Logical product access | Resolve product port, contract, context, policy and health; select adapter; execute near data; validate result; emit evidence. |

@@ -3,7 +3,7 @@
 | Term | Definition |
 | --- | --- |
 | AI-ready data | Data that has clear meaning, lineage, quality, access policy, freshness, and metadata so it can safely support AI models, agents, retrieval, training, evaluation, or grounding. |
-| Data contract | An explicit agreement describing schema, semantics, quality expectations, change rules, ownership, and compatibility expectations for a data interface or product. |
+| Data contract | An executable promise for source ingestion, data product creation, or data product consumption, with versioned content, controls, tests, ownership, and lifecycle. |
 | Data domain | A stable business-aligned accountability and product-portfolio boundary within the enterprise data foundation; it owns meaning, stewardship and product outcomes while adopting shared foundation services and controls. |
 | Data catalog | The control-plane registry for discoverable products, assets, ports, owners, classifications, lifecycle state, and links to contracts, semantics, lineage, quality, and policy. |
 | Data foundation | The enterprise capability that makes company data trusted, reusable, secure, observable, and ready for analytics, applications, platforms, and AI. |

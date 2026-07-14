@@ -21,9 +21,9 @@ The foundation uses one explicit accountability handoff. The **Data Foundation P
 
 | Boundary | Accountable team | Supporting roles | Management rule |
 | --- | --- | --- | --- |
-| Source contract and delivery | Source system team | Foundation ingestion owner, source steward | Source owner remains accountable for availability, source semantics, breaking changes, and delivery obligations. |
+| Source System Ingestion Contract and delivery | Source system team | Foundation ingestion owner, source steward | Source owner remains accountable for availability, source semantics, breaking changes, and delivery obligations. |
 | Ingestion and raw source-aligned state | Data Foundation Platform Team | Source system team, security and privacy | Centrally operated through approved ingestion patterns, identities, retention, quarantine, replay, lineage, and telemetry. |
-| Validated source-aligned state | Data Foundation Platform Team | Source owner and relevant domain stewards | Centrally published with a stable source contract; preserves source meaning and excludes domain business transformation. |
+| Validated source-aligned state | Data Foundation Platform Team | Source owner and relevant domain stewards | Centrally published with a stable Source System Ingestion Contract; preserves source meaning and excludes domain business transformation. |
 | Aggregate product | Owning domain data team | Steward, contributing product owners, metric owner where applicable | Federated composition or derivation with explicit domain semantics, grain, lineage, and governed metrics where applicable. |
 | Consumer-aligned product or view | Serving or consuming domain data team | Consumer owner and upstream product owners | Federated, purpose-specific delivery with expiry and consolidation into a shared aggregate product when common reuse grows. |
 
@@ -46,7 +46,7 @@ The source-aligned contract is the ownership handoff: the platform team remains 
 
 | Cross-cutting control | Applies across the model |
 | --- | --- |
-| Contracts | The [Data Contract Design](data-contract-design.md) chains source delivery to one product contract per published layer, then narrows governed use through consumption, sharing, and AI-use bindings. |
+| Contracts | The [Data Contract Design](data-contract-design.md) uses a Source System Ingestion Contract, a Data Product Creation Contract, and a Data Product Consumption Contract across the journey. |
 | Catalog, metadata and lineage | Preserve stable identities, ownership, source-to-product provenance, dependencies, and impact. |
 | Semantic context | Explain domain and product meaning without changing the source-preserving promise of source-aligned data. |
 | Identity, policy and unified access | Enforce named-user and workload access, purpose, obligations, expiry, and revocation. |
@@ -71,7 +71,7 @@ Source-aligned data represents one source domain while preserving its concepts a
 | Meaning | Preserve source concepts, keys, events, lifecycle, and limitations without claiming an enterprise-wide definition. |
 | Grain | Normally unchanged from the authoritative source entity or event. |
 | Ownership | The Data Foundation Platform Team owns and operates both states through the Data Ingestion Service. The source system owner owns source availability, source semantics, and change obligations; relevant stewards approve classification and interpretation. |
-| Contract | The source contract governs delivery and raw receipt. A source-aligned product contract governs the validated handoff, including schema, source semantics, keys, change behavior, quality thresholds, freshness, and known limitations. |
+| Contract | One Source System Ingestion Contract governs delivery, raw receipt, and the validated handoff, including schema, source semantics, keys, change behavior, quality thresholds, freshness, and known limitations. |
 | Reuse | Stable input for multiple downstream products; direct business consumption remains controlled. |
 | Retention | Raw and validated states may have different retention based on replay, audit, privacy, and cost needs. |
 
@@ -105,15 +105,15 @@ Consumer-aligned data presents live products in the shape required by a defined 
 | Contract | Consumer purpose, interface, semantic projection, policy, SLO, compatibility, expiry, and upstream product versions. |
 | Lifecycle | Review when the consumer need ends, upstream products change, usage falls, or a shared aggregate product can replace repeated consumer logic. |
 
-**Avoid:** copying logic into every consumer pipeline, bypassing product contracts, creating permanent one-off extracts, or allowing consumer labels to overwrite canonical product meaning.
+**Avoid:** copying logic into every consumer pipeline, bypassing Data Product Creation Contracts, creating permanent one-off extracts, or allowing consumer labels to overwrite canonical product meaning.
 
 ## Trust Progression
 
 | Stage | Primary Promise | Typical Contract | Suitable for Direct Consumption? |
 | --- | --- | --- | --- |
-| Source-aligned | Faithful landing followed by a reliable representation of one source. | Source delivery and source-aligned product contract. | Raw state: no. Validated state: limited, mainly as an input to other products. |
-| Aggregate | Governed harmonized, combined, or derived data at an explicit grain. | Product contract with upstream versions, domain semantics, composition rules, and metric definitions where applicable. | Yes, when live and fit for the consumer purpose. |
-| Consumer-aligned | Fit-for-purpose interface or projection. | Product contract narrowed by a consumption, sharing, or AI-use contract or agreement. | Yes, for the approved consumer and purpose. |
+| Source-aligned | Faithful landing followed by a reliable representation of one source. | Source System Ingestion Contract. | Raw state: no. Validated state: limited, mainly as an input to other products. |
+| Aggregate | Governed harmonized, combined, or derived data at an explicit grain. | Data Product Creation Contract with upstream versions, domain semantics, composition rules, and metric definitions where applicable. | Yes, when live and fit for the consumer purpose. |
+| Consumer-aligned | Fit-for-purpose interface or projection. | Data Product Creation Contract narrowed by a Data Product Consumption Contract. | Yes, for the approved consumer and purpose. |
 
 ## Choosing the Right Pattern
 
@@ -130,7 +130,7 @@ Consumer-aligned data presents live products in the shape required by a defined 
 | --- | --- |
 | Source | System or channel that provides data to the foundation. |
 | Source-aligned data | Centrally managed, source-preserving data with a restricted raw landing state and a quality-controlled validated state. |
-| Contract | Executable agreement for schema, semantics, quality, access, and change. |
+| Contract | Executable promise for ingestion, product creation, or product consumption. |
 | Data product | Governed, reusable data asset with ownership, contract, quality, lifecycle, and trust signals. |
 | Aggregate product | Governed harmonized, combined, calculated, or derived data at an explicit grain. |
 | Consumer-aligned product or view | Purpose-specific projection of live products for a defined consumer and contract. |

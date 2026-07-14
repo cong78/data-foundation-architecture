@@ -13,7 +13,7 @@ flowchart TB
     F["Enterprise Data Foundation<br/>shared services · standards · controls · evidence"]
     D["Registered Data Domains<br/>business boundaries · accountability · portfolios"]
     P["Governed Data Products<br/>contracts · semantics · quality · lifecycle"]
-    C["Product Ports and Agreements<br/>BI · applications · platforms · partners · AI"]
+    C["Product Ports and Data Product Consumption Contracts<br/>BI · applications · platforms · partners · AI"]
 
     F --> D --> P --> C
 ```
@@ -114,7 +114,7 @@ The Data Service Portal should provide:
 1. The foundation owns ingestion, source-aligned products, reusable service capabilities, and common control contracts; domains own downstream business meaning and outcomes.
 2. Domain identity is stable and portable across organization and technology changes.
 3. Every aggregate or consumer-aligned product has one accountable owning domain, even when several domains contribute; source-aligned products have an accountable foundation platform owner.
-4. Cross-domain use occurs through product ports, contracts, agreements and unified access, not informal storage access.
+4. Cross-domain use occurs through product ports, Data Product Consumption Contracts, and unified access, not informal storage access.
 5. Domain autonomy does not weaken enterprise identity, security, privacy, interoperability, telemetry or evidence requirements.
 6. Compare domains by maturity dimension and evidence quality, not through an unqualified league table.
 

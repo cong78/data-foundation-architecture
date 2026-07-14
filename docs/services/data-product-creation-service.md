@@ -8,7 +8,7 @@ The data product creation service turns source-aligned data and existing product
 
 Use the [Data Product Management Standard](../standards/data-product-management-standard.md), [Data Product Workload Standard](../standards/data-product-workload-standard.md), and [Data Contract Standard](../standards/data-contract-standard.md) as mandatory controls for product go-live.
 
-For a selected implementation profile, see [Data Product Creation Design](../architecture/data-product-creation-design.md), which maps this service to Databricks workspaces and Unity Catalog while preserving the technology-neutral product contract.
+For a selected implementation profile, see [Data Product Creation Design](../architecture/data-product-creation-design.md), which maps this service to Databricks workspaces and Unity Catalog while preserving the technology-neutral Data Product Creation Contract.
 
 ## Scope
 
@@ -17,7 +17,7 @@ For a selected implementation profile, see [Data Product Creation Design](../arc
 | Product design, transformation, validation, documentation, go-live approval, and publication. | Source system ownership or source application change management. |
 | Declarative developer workspace, isolated environments, deployment promotion, and rollback. | Provider-specific infrastructure exposed as the product interface. |
 | Data contracts, semantic definitions, lineage, quality rules, ownership, and lifecycle state. | Consumer dashboard, application, or model implementation. |
-| Product workspaces, reusable templates, and product readiness evidence. | External sharing agreements, except product packaging needed for sharing. |
+| Product workspaces, reusable templates, and product readiness evidence. | Recipient-specific consumption approval, except product packaging needed for sharing. |
 
 ## Federated Product Ownership
 
@@ -47,7 +47,7 @@ Each federated aggregate or consumer-aligned data product must be:
 | --- | --- | --- |
 | Product definition | Product proposal and registry | Stable product identity, purpose, domain, owner, steward, pattern, intended consumers, value, support, and lifecycle are recorded. |
 | Developer experience | Governed product workspace | Templates, repository, API, CLI, isolated environments, preview, test data, and policy-aware tooling provide a repeatable build path. |
-| Contracts | Product contract engineering | Input and output promises, schema, semantics, quality, SLOs, compatibility, policy intent, and ports are versioned and tested. |
+| Contracts | Data Product Creation Contract engineering | Input and output promises, schema, semantics, quality, SLOs, compatibility, policy intent, and ports are versioned and tested. |
 | Context | Semantic context package | Grain, concepts, metrics, relationships, usage guidance, limitations, and authoritative references are bound to product and contract versions. |
 | Engineering | Transformation and enrichment | Versioned batch, stream, SQL, API, feature, or retrieval workloads produce deterministic product outputs from approved inputs. |
 | Workloads | Declarative runtime orchestration | Portable workload intent resolves into governed resources, dependencies, deployment plans, execution receipts, drift detection, and rollback. |

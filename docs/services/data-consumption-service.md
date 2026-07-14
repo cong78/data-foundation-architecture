@@ -44,11 +44,11 @@ For a selected implementation profile, see [Data Consumption Design](../architec
 
 | Category | Capability | Owned Outcome |
 | --- | --- | --- |
-| Engagement | Discovery and consume agreement | Consumer identity, use case, purpose, product, port, duration, and requested scope enter one governed access journey. |
+| Engagement | Data Product Consumption Contract initiation | Consumer identity, use case, purpose, product, port, duration, and requested scope enter one governed contract flow. |
 | Resolution | Logical product and port resolution | Stable product identifiers resolve to the approved contract, semantic context, health, policy, entitlement, and runtime binding. |
 | Interfaces | Fit-for-purpose delivery channels | SQL, API, event, file, semantic, feature, retrieval, and context ports implement declared open interface profiles. |
 | Authorization | Service-operation decision | The actor may invoke the requested consumption operation for the target service and environment. |
-| Authorization | Product-data decision | Product, action, purpose, classification, agreement, and entitlement produce enforceable allow, deny, and obligation results. |
+| Authorization | Product-data decision | Product, action, purpose, classification, Data Product Consumption Contract, and entitlement produce enforceable allow, deny, and obligation results. |
 | Protection | Fine-grained data controls | Row, column, masking, tokenization, aggregation, minimization, and output rules are enforced consistently. |
 | Execution | Runtime routing and policy pushdown | The service selects a conformant adapter, executes near approved data, and fails closed when obligations cannot be enforced. |
 | Validation | Contract-bound response | Requests and results satisfy schema, contract, freshness, quality, minimization, and response rules before release. |

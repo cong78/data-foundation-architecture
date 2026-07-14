@@ -1,8 +1,8 @@
 # Data Ingestion Design
 
-<div class="decision-brief"><div><small>Use when</small><strong>Assessing Databricks for a governed ingestion profile.</strong></div><div><small>Decision</small><strong>Which Lakeflow pattern satisfies the source contract?</strong></div><div><small>Owner</small><strong>Ingestion architect and platform owner.</strong></div><div><small>Output</small><strong>Selected pattern, controls, proof, and exit plan.</strong></div></div>
+<div class="decision-brief"><div><small>Use when</small><strong>Assessing Databricks for a governed ingestion profile.</strong></div><div><small>Decision</small><strong>Which Lakeflow pattern satisfies the Source System Ingestion Contract?</strong></div><div><small>Owner</small><strong>Ingestion architect and platform owner.</strong></div><div><small>Output</small><strong>Selected pattern, controls, proof, and exit plan.</strong></div></div>
 
-This reference solution applies the technology-neutral [Data Ingestion Service](../services/data-ingestion-service.md) and the mandatory [Data Catalog and Storage Standard](../standards/catalog-storage-standard.md) to Databricks. Lakeflow Connect, Auto Loader, Lakeflow Spark Declarative Pipelines, Lakeflow Jobs, Unity Catalog, and Delta Lake implement repeatable file, connector, CDC, API, and event ingestion while preserving source contracts and source-aligned data.
+This reference solution applies the technology-neutral [Data Ingestion Service](../services/data-ingestion-service.md) and the mandatory [Data Catalog and Storage Standard](../standards/catalog-storage-standard.md) to Databricks. Lakeflow Connect, Auto Loader, Lakeflow Spark Declarative Pipelines, Lakeflow Jobs, Unity Catalog, and Delta Lake implement repeatable file, connector, CDC, API, and event ingestion while preserving Source System Ingestion Contracts and source-aligned data.
 
 !!! info "Reference solution status"
     Unity Catalog and Delta Lake are mandatory defaults under the [Data Catalog and Storage Standard](../standards/catalog-storage-standard.md). Lakeflow connectors, pipelines, jobs, and ingestion runtime choices remain selected implementation profiles that require connector proof, security and cost review, replay tests, operational evidence, and an exit plan. Source identity, contract, schema, checkpoint semantics, and lineage remain canonical and portable.
@@ -12,9 +12,9 @@ This reference solution applies the technology-neutral [Data Ingestion Service](
 
 ## Executive Recommendation
 
-Select the most managed connector that meets the source contract, control, latency, and recovery requirements. Use Lakeflow Connect managed connectors for supported SaaS and database sources, Auto Loader for immutable file inboxes, and Lakeflow declarative or Structured Streaming patterns for event sources and custom integrations.
+Select the most managed connector that meets the Source System Ingestion Contract, control, latency, and recovery requirements. Use Lakeflow Connect managed connectors for supported SaaS and database sources, Auto Loader for immutable file inboxes, and Lakeflow declarative or Structured Streaming patterns for event sources and custom integrations.
 
-Land durable tabular data in **source-aligned raw and validated Delta states** registered and governed by Unity Catalog. Keep business transformation and product go-live in the Data Product Creation Service. A connector may automate transport, CDC, retries, and schema handling; it does not own the source contract or decide that a breaking source change is acceptable.
+Land durable tabular data in **source-aligned raw and validated Delta states** registered and governed by Unity Catalog. Keep business transformation and product go-live in the Data Product Creation Service. A connector may automate transport, CDC, retries, and schema handling; it does not own the Source System Ingestion Contract or decide that a breaking source change is acceptable.
 
 ## Solution at a Glance
 
@@ -61,7 +61,7 @@ Databricks recommends beginning with the most managed connector layer that satis
 | --- | --- | --- |
 | Data Service Portal | Source onboarding, approvals, contract workflow, status, evidence, and support journey. | Connector execution or source credentials. |
 | Source and contract registry | Stable source id, owner, schema, delivery semantics, quality baseline, classification, and change policy. | Runtime checkpoint or pipeline state. |
-| Unity Catalog connection | Databricks-native source connection object and access grants. | Enterprise credential ownership, business approval, or the portable source contract. |
+| Unity Catalog connection | Databricks-native source connection object and access grants. | Enterprise credential ownership, business approval, or the portable Source System Ingestion Contract. |
 | Lakeflow Connect | Supported source extraction, incremental behavior, connector retries, and destination writes. | Acceptance of breaking changes or downstream product semantics. |
 | Auto Loader | Incremental file discovery, checkpoint state, schema inference options, and file processing. | File-provider obligations, manifest reconciliation, or retention approval. |
 | Declarative pipeline or stream | Event read, transformation limited to ingestion normalization, checkpointing, and source-aligned write. | Business enrichment or consumer-facing product logic. |
@@ -81,7 +81,7 @@ sequenceDiagram
     participant Observe as Observability
 
     Provider->>Portal: Register source and delivery intent
-    Portal->>Contract: Create source contract and schema
+    Portal->>Contract: Create Source System Ingestion Contract and schema
     Portal->>Portal: Approve classification, purpose, owner and SLO
     Portal->>Deploy: Issue approved source and adapter specification
     Deploy->>DBX: Deploy connection, pipeline, identity and schedule
@@ -101,7 +101,7 @@ Use Unity Catalog to govern named connections, source-aligned tables, volumes, e
 | State | Purpose | Required characteristics |
 | --- | --- | --- |
 | Raw | Preserve a faithful source representation for traceability, replay, audit, and forensics. | Restricted access, source payload or faithful fields, source metadata, ingestion time, schema version, batch or event id, and retention. |
-| Validated | Expose records that conform to the source contract and baseline technical checks. | Stable schema, classification, validation status, source key, event or effective time, lineage, and known limitations. |
+| Validated | Expose records that conform to the Source System Ingestion Contract and baseline technical checks. | Stable schema, classification, validation status, source key, event or effective time, lineage, and known limitations. |
 | Quarantine | Isolate records or files that cannot proceed safely. | Original reference, reason code, rule version, observation time, remediation owner, retry status, and expiry. |
 | Checkpoint and schema state | Resume incremental processing deterministically. | Runtime-managed location, protected access, backup or recovery design, and no manual mutation. |
 
@@ -113,7 +113,7 @@ Auto Loader can infer and evolve file schemas and preserve unexpected fields in 
 
 | Observation | Runtime action | Governance action |
 | --- | --- | --- |
-| Additive optional field | Capture or pause according to the source contract; retain evidence. | Compatibility check, classification, contract update, and downstream impact review. |
+| Additive optional field | Capture or pause according to the Source System Ingestion Contract; retain evidence. | Compatibility check, classification, contract update, and downstream impact review. |
 | Type widening explicitly allowed | Apply only through an approved compatibility rule and tested runtime profile. | Version the schema and notify affected product teams. |
 | Rename, removal, incompatible type, or semantic change | Stop validated publication; raw capture may continue if safe. | Breaking-change workflow, migration plan, and provider approval. |
 | Unknown or malformed field | Rescue or quarantine without silent loss. | Assign reason, owner, expiry, and remediation decision. |

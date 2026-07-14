@@ -4,7 +4,7 @@
 
 This standard defines how architects evaluate and select vendors, managed services, open-source products, and internally built technologies for the data foundation.
 
-Technology is selected against an architecture capability and evidence-based use case. Vendor features do not redefine product contracts, canonical metadata, policy intent, semantic context, telemetry, or service boundaries.
+Technology is selected against an architecture capability and evidence-based use case. Vendor features do not redefine Data Product Creation Contracts, canonical metadata, policy intent, semantic context, telemetry, or service boundaries.
 
 ## Approved Data Platform Defaults
 
@@ -29,11 +29,11 @@ Start with the architecture capability, then evaluate technologies in the applic
 | Architecture Capability | Technology Categories | Required Architecture Interfaces |
 | --- | --- | --- |
 | Data Service Portal | Portal framework, catalog experience, workflow, search, notification. | Stable service APIs, identity, catalog, contract, policy, workflow, health. |
-| Ingestion | File transfer, connector framework, CDC, API ingestion, event streaming, schema registry. | Source contracts, open schemas, replay, quarantine, lineage, OTLP. |
+| Ingestion | File transfer, connector framework, CDC, API ingestion, event streaming, schema registry. | Source System Ingestion Contracts, open schemas, replay, quarantine, lineage, OTLP. |
 | Product Creation | Developer workspace, orchestration, transformation, quality, semantic tooling, CI/CD. | Product, contract and workload artifacts; open lineage; environment and release APIs. |
 | Physical product storage | Object storage, open table format, lakehouse, warehouse, operational store, event log. | Portable data formats, catalog APIs, workload identity, retention, encryption, export. |
 | Unified Data Access | SQL gateway, federation, semantic layer, API gateway, event access, feature service, retrieval gateway. | Stable product ports, policy decision and enforcement, OpenAPI, AsyncAPI, query and context contracts. |
-| Data Sharing | Data exchange, sharing protocol, clean room, managed file or API delivery. | Recipient identity, sharing contract, minimization, expiry, revocation, audit. |
+| Data Sharing | Data exchange, sharing protocol, clean room, managed file or API delivery. | Recipient identity, Data Product Consumption Contract, minimization, expiry, revocation, and audit. |
 | Data Observability | OpenTelemetry collector and backend, data quality, lineage, incident and product-health tooling. | OTLP, OpenTelemetry conventions, OpenLineage, stable product and decision identifiers. |
 | Governance and Control | Catalog, glossary, contract registry, policy engine, entitlement, lineage, quality and workflow. | ODCS, ODPS, DCAT, policy APIs, identity federation, import and export. |
 | Agentic and AI | Model gateway, agent runtime, skill registry, retrieval, vector index, evaluation and safety tooling. | Typed skills, model profiles, context APIs, delegated identity, approval, evaluation, telemetry. |

@@ -24,7 +24,7 @@ flowchart LR
 | Journey | Developer Outcome | Platform Responsibility |
 | --- | --- | --- |
 | Start | Create a product workspace from an approved template. | Generate repository, identifiers, owners, contract skeleton, workload skeleton, and CI pipeline. |
-| Connect | Declare sources and dependencies without hand-building integration plumbing. | Resolve approved connectors, identities, secrets, network policy, and source contracts. |
+| Connect | Declare sources and dependencies without hand-building integration plumbing. | Resolve approved connectors, identities, secrets, network policy, and Source System Ingestion Contracts. |
 | Build | Develop batch, streaming, API, semantic, feature, or retrieval outputs. | Provision an isolated environment and reusable runtime patterns. |
 | Preview | See resource, policy, contract, and downstream impact before deployment. | Produce a deterministic plan with cost, risk, compatibility, and approval requirements. |
 | Test | Run contract, quality, security, lineage, interoperability, and operational tests. | Execute standard suites and attach results to the product version. |
@@ -74,7 +74,7 @@ The developer declares outcomes using a small portable resource model:
 - `policy`: access, data handling, network, purpose, and approval bindings.
 - `endpoint`: SQL, API, event, file, feature, retrieval, or sharing interface.
 
-Provider adapters translate these resources into runtime-native objects. Provider details must not become part of the product contract.
+Provider adapters translate these resources into runtime-native objects. Provider details must not become part of the Data Product Creation Contract.
 
 ## Done Criteria
 

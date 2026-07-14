@@ -44,7 +44,7 @@ An AI-facing product extends the same product disciplines used for analytics and
 
 | Decision | Use when | Architecture action |
 | --- | --- | --- |
-| Reuse the analytics product | Grain, semantics, fields, freshness, quality, policy, and interface already satisfy the AI purpose. | Add an AI usage contract, workload identity, purpose decision, AI evaluation, and telemetry without copying the product. |
+| Reuse the analytics product | Grain, semantics, fields, freshness, quality, policy, and interface already satisfy the AI purpose. | Add an AI-use profile to the Data Product Consumption Contract, plus workload identity, purpose decision, AI evaluation, and telemetry without copying the product. |
 | Add an AI projection | The canonical product is suitable but AI needs chunks, embeddings, features, labels, a bounded snapshot, or an evaluation set. | Create a versioned derivative projection linked to the source product and contract; give it independent freshness, rebuild, evaluation, retention, and retirement evidence. |
 | Create or change a data product | The AI need requires materially different semantics, ownership, quality, SLO, lifecycle, or reusable output. | Use the normal product proposal and go-live process. Do not call a private model-preparation table a product by default. |
 | Reject or redesign the use | Purpose, rights, representativeness, quality, safety, identity, or control obligations cannot be satisfied. | Minimize or anonymize data, constrain the AI behavior, select another product or interface, or stop the use case. |
@@ -66,7 +66,7 @@ Use this checklist as a gate. Record **Pass, Conditional, Fail, or Not applicabl
 | Gate | Required action | Passing evidence | Primary owner | Blocking |
 | --- | --- | --- | --- | :---: |
 | Purpose | Declare one AI pattern, outcome, user, decision or action, value measure, prohibited uses, and risk tier. | Approved AI use-case and purpose record linked to the product. | AI use-case owner | Yes |
-| Product and contract | Resolve exact product, port, contract, semantic-context, and lifecycle versions; declare whether the use reuses, projects, or changes the product. | Versioned dependency record and approved AI usage contract or clause. | Product owner | Yes |
+| Product and contract | Resolve exact product, port, contract, semantic-context, and lifecycle versions; declare whether the use reuses, projects, or changes the product. | Versioned dependency record and approved Data Product Consumption Contract with AI-use terms. | Product owner | Yes |
 | Rights and classification | Confirm collection basis, classification, privacy, intellectual property, residency, retention, onward use, and training or retrieval permission. | Governance and legal decision with conditions and expiry. | Data steward and control owner | Yes |
 | Minimization | Select only required records, fields, time ranges, context, features, or documents; justify each sensitive element. | Approved scope and enforced row, column, field, retrieval, and output rules. | Product owner and AI engineer | Yes |
 | Meaning and context | Publish grain, time meaning, concepts, relationships, labels, metrics, examples, limitations, ambiguity, and valid or invalid uses. | Versioned semantic context package tested with representative AI tasks. | Data steward | Yes |

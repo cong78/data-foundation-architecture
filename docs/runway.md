@@ -42,7 +42,7 @@ Use the phases as **outcome gates**. Teams may prepare later capabilities early,
   <section class="standards-map-lane lane-access">
     <div class="standards-map-cell"><small>Phase 4</small><strong>Extend the boundary</strong><p>Internal reuse is mature and external exchange must remain governable.</p></div>
     <span class="standards-map-arrow" aria-hidden="true"></span>
-    <div class="standards-map-cell standards-map-focus"><strong>Ecosystem Sharing</strong><p>Recipients, agreements, open exchange, collaboration, expiry, and revocation.</p></div>
+    <div class="standards-map-cell standards-map-focus"><strong>Ecosystem Sharing</strong><p>Recipients, Data Product Consumption Contracts, open exchange, collaboration, expiry, and revocation.</p></div>
     <span class="standards-map-arrow" aria-hidden="true"></span>
     <div class="standards-map-cell"><strong>Controlled ecosystem</strong><p>Customer, supplier, and partner sharing is portable, auditable, and revocable.</p></div>
   </section>
@@ -52,8 +52,8 @@ Use the phases as **outcome gates**. Teams may prepare later capabilities early,
 
 | Workstream | Phase 1: Baseline | Phase 2: Trusted Reuse | Phase 3: AI Ready | Phase 4: Ecosystem |
 | --- | --- | --- | --- | --- |
-| Experience | Core portal journeys | Rich product, domain, support, and workspace journeys | AI and assistant journeys | Recipient and agreement journeys |
-| Products and contracts | Templates and go-live gates | Lifecycle, portfolio, compatibility, and subscriptions | AI-ready products and usage contracts | Sharing contracts and recipient packages |
+| Experience | Core portal journeys | Rich product, domain, support, and workspace journeys | AI and assistant journeys | Recipient and sharing journeys |
+| Products and contracts | Three contract templates and go-live gates | Lifecycle, portfolio, compatibility, and subscriptions | AI-ready products and AI consumption profiles | External-sharing consumption profiles and recipient packages |
 | Platform services | First ingestion-to-consumption path | Self-service creation, unified access, semantics, and adapters | Agent, model, context, skill, and evaluation gateways | Sharing and controlled-collaboration patterns |
 | Governance and security | Identity, classification, policy, lineage, ownership | Purpose-bound access and reusable domain controls | AI identity, data use, autonomy, and approval | Legal basis, minimization, expiry, and revocation |
 | Observability and operations | Telemetry conventions, service records, support and incident model | Product health, cost, problem, change, release, continuity, and improvement | Model, agent, evaluation, and AI-use telemetry | Recipient activity, delivery health, audit, and revocation evidence |
@@ -85,7 +85,7 @@ Proceed when a real source-to-consumer product demonstrates ownership, contract,
 | Product management | Contract registry, compatibility checks, subscriptions, lifecycle, portfolio review, quality gates, deprecation, and retirement. | Breaking changes identify consumers; duplicate, unhealthy, unused, and ownerless products are governed. |
 | Developer experience | Portal, API, and CLI parity; isolated environments; deployment preview; policy checks; promotion; release evidence; rollback. | A domain team delivers a product without a platform-specific delivery ticket. |
 | Consumption and semantics | Standard semantic, SQL, API, event, retrieval, and feature patterns through unified access. | Representative BI, application, platform, and AI consumers use governed product ports. |
-| Portal experience | Product discovery, access, domain, use-case, workspace, saved-product, agreement, portfolio, support, status, change, and knowledge views. | Users can discover, request, track, support, and understand products in one experience. |
+| Portal experience | Product discovery, access, domain, use-case, workspace, saved-product, consumption-contract, portfolio, support, status, change, and knowledge views. | Users can discover, request, track, support, and understand products in one experience. |
 | Trust and operations | Product health, freshness, quality, usage, cost, incident communication, problem, release, error budget, recovery exercise, and improvement workflows. | System and product recovery is proven; service reviews use measured health and operational evidence. |
 | Interoperability | DCAT, OpenLineage, OpenAPI, AsyncAPI, CloudEvents, and OTLP adapters plus clean-room import/export. | An independent client consumes a product and canonical artifacts survive export and import. |
 
@@ -117,7 +117,7 @@ Proceed when AI use cannot bypass product, identity, purpose, access, evaluation
 | Workstream | Deliverables | Exit evidence |
 | --- | --- | --- |
 | Sharing patterns | Standard internal, customer, supplier, partner, and controlled-collaboration patterns. | Each pattern has owner, contract, identity, delivery, support, monitoring, expiry, and revocation. |
-| Agreements and entitlement | Automated sharing agreements, recipient identity, minimized scope, approval, entitlement, renewal, and offboarding. | Technical package and entitlement reconcile with the approved agreement and product contract. |
+| Data Product Consumption Contracts and entitlement | Automated external-sharing consumption profiles, recipient identity, minimized scope, approval, entitlement, renewal, and offboarding. | Technical package and entitlement reconcile with the approved Data Product Consumption and Creation Contracts. |
 | Open exchange | Open sharing interface, federated identity, independent recipient test, and portable recipient package. | At least one partner completes exchange without relying on provider-only consumer tooling. |
 | Operations and assurance | Delivery health, recipient activity, incident communication, audit export, retention, expiry, suspension, and revocation testing. | Access is revoked within the target; exported evidence shows who received what, why, when, and under which version. |
 
@@ -145,7 +145,7 @@ The phase is established when at least one real external exchange is contract-ba
 | Operations and reliability | Service SLO attainment, acknowledge and recovery time, recurrence, change success, emergency-change rate, support experience, recovery exercise success, and toil removed. |
 | Interoperability | Products passing required conformance, artifact round-trip success, independent-client consumption, and unresolved vendor-specific exceptions. |
 | AI outcomes | Governed AI systems, trace-complete agent runs, task success, unsupported-claim rate, approval accuracy, safety and reliability pass rate, and cost per task. |
-| Ecosystem control | Active sharing agreements, delivery SLOs, recipient incidents, expired access removed, revocation test success, and complete audit evidence. |
+| Ecosystem control | Active external-sharing Data Product Consumption Contracts, delivery SLOs, recipient incidents, expired access removed, revocation test success, and complete audit evidence. |
 
 <div class="read-next">
   <strong>Next:</strong> use the Data Foundation Maturity Assessment to score each workstream, then convert the weakest progression gate into funded delivery increments.

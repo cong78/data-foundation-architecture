@@ -15,10 +15,10 @@
 | Step | Action and owner | Evidence |
 | ---: | --- | --- |
 | 1 | **Requester:** submit source, purpose, consumers, volume, cadence, and criticality through the portal. | Source onboarding record. |
-| 2 | **Source and ingestion owners:** agree source contract, change obligations, replay, support, and SLOs. | Approved source contract. |
+| 2 | **Source and ingestion owners:** agree the Source System Ingestion Contract, change obligations, replay, support, and SLOs. | Approved Source System Ingestion Contract. |
 | 3 | **Security and platform:** select identity, network, secret, connector, runtime, storage, and retention profile. | Approved technical plan. |
 | 4 | **Ingestion team:** implement receipt, provenance, schema validation, quarantine, replay, lineage, and telemetry. | Tested ingestion release. |
-| 5 | **Platform and steward:** validate the source-aligned output, classification, quality, freshness, limitations, and access. | Source-aligned product contract. |
+| 5 | **Platform and steward:** validate the source-aligned output, classification, quality, freshness, limitations, and access against the same contract. | Published Source System Ingestion Contract. |
 | 6 | **Operations:** activate dashboards, alerts, runbook, incident route, continuity, and recovery test. | Operational readiness evidence. |
 | 7 | **Platform owner:** publish the validated product and handoff to domain teams. | Catalog entry, port, owner, support, and release record. |
 

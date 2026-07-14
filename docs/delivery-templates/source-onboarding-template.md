@@ -27,7 +27,7 @@ Use this template to request and assess a new data source.
 
 | Control | Status | Evidence |
 | --- | --- | --- |
-| Source contract approved |  |  |
+| Source System Ingestion Contract approved |  |  |
 | Classification completed |  |  |
 | Schema registered |  |  |
 | Validation rules defined |  |  |

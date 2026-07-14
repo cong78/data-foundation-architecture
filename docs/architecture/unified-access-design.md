@@ -85,7 +85,7 @@ flowchart LR
 | Workload or system | Short-lived credential for a registered application, job, service, or model. | Pipelines, APIs, scheduled jobs, applications, platform integrations. | Unique identity, owner, environment, allowed services, product purposes, rotation. |
 | Delegated workload | Workload identity plus verified named-user delegation. | Application or CLI acting for a user. | Preserve both actor and subject; never replace the user with a generic account. |
 | Agent | Registered agent identity plus delegated user or task authority. | Data Service AI Assistant and automated workflows. | Bind agent, skill, user, purpose, autonomy, approval, product scope, and task id. |
-| External recipient | Federated user or workload from an approved trust domain. | Supplier, customer, partner, or cross-company access. | Trust agreement, minimized scope, expiry, revocation, and enhanced audit. |
+| External recipient | Federated user or workload from an approved trust domain. | Supplier, customer, partner, or cross-company access. | Data Product Consumption Contract, minimized scope, expiry, revocation, and enhanced audit. |
 
 ## Authorization Layers
 
@@ -109,7 +109,7 @@ Data authorization answers: **May this identity use this product data for this p
 | --- | --- |
 | Resource | Product, contract version, table, API, event topic, file package, feature view, retrieval index. |
 | Action | Discover metadata, read, query, subscribe, export, share, train, retrieve, update, delete. |
-| Decision inputs | Product classification, consumer identity, team, purpose, agreement, geography, time, environment, row and field attributes. |
+| Decision inputs | Product classification, consumer identity, team, purpose, Data Product Consumption Contract, geography, time, environment, row and field attributes. |
 | Enforcement points | Query gateway, database, semantic layer, API, event broker, object gateway, feature service, retrieval gateway. |
 | Obligations | Row filter, column mask, tokenization, aggregation, watermarking, output limit, logging, retention, or expiry. |
 
@@ -132,7 +132,7 @@ The layer provides consistent identity, product addressing, contracts, policy, s
 | Product resolution | Resolve stable product and port ids to the current approved contract, interface, runtime, and health state. |
 | Identity | Authenticate named users and workloads; preserve actor and subject for delegated applications and agents. |
 | Service authorization | Control which access operation, API, query, subscription, export, or administration function may be invoked. |
-| Data authorization | Evaluate product, port, action, purpose, classification, agreement, row, field, and output policy. |
+| Data authorization | Evaluate product, port, action, purpose, classification, Data Product Consumption Contract, row, field, and output policy. |
 | Obligations | Apply masking, row filters, tokenization, aggregation, limits, watermarking, expiry, and logging requirements. |
 | Semantic context | Provide governed metrics, dimensions, grain, relationships, limitations, and context version. |
 | Routing and federation | Select the approved runtime adapter and push down query, filter, and policy operations where supported. |
@@ -151,7 +151,7 @@ Every exposed product port declares:
 | Physical binding | Runtime adapter and provider-native location held outside consumer contracts. |
 | Supported actions | Discover, query, read, subscribe, export, retrieve, train, or administer. |
 | Identity types | Named user, workload, delegated workload, agent, model, or external recipient. |
-| Policy | Required purpose, classification, agreement, entitlement, and obligations. |
+| Policy | Required purpose, classification, Data Product Consumption Contract, entitlement, and obligations. |
 | Service levels | Availability, latency, freshness, throughput, and recovery targets. |
 | Evidence | Required telemetry, usage, lineage, decision, and cost attributes. |
 
@@ -160,7 +160,7 @@ Every exposed product port declares:
 1. Consumer authenticates with a named-user, workload, delegated, agent, or external identity.
 2. Access layer authorizes the requested service operation.
 3. Product resolver loads the approved port, contract, semantic context, health, and physical binding.
-4. Policy decision evaluates data action, purpose, classification, agreement, environment, and entitlement.
+4. Policy decision evaluates data action, purpose, classification, Data Product Consumption Contract, environment, and entitlement.
 5. The layer applies obligations and selects an approved runtime adapter.
 6. Execution is pushed to the physical runtime or federated only where required.
 7. Results are validated, minimized, and returned through the declared interface.
@@ -174,7 +174,7 @@ Every exposed product port declares:
 | Application | Product API, query API, event subscription. | Unique workload identity and approved application purpose determine port, actions, fields, rate, and expiry. |
 | Pipeline | Table, file, event, or query interface. | Workload, environment, input-port contract, and product dependency constrain access. |
 | Delegated application | API, CLI, notebook, or portal backend acting for a user. | Both application actor and user subject must be allowed; effective access is their intersection. |
-| Agent or model | Context, retrieval, feature, API, or approved query interface. | Agent or model actor, delegated user, skill, purpose, product contract, and AI-use policy are all evaluated. |
+| Agent or model | Context, retrieval, feature, API, or approved query interface. | Agent or model actor, delegated user, skill, purpose, Data Product Creation Contract, and AI-use policy are all evaluated. |
 
 ## Entitlement Lifecycle
 
@@ -246,7 +246,7 @@ Avoid a single central data proxy for all traffic. Use:
 - Query and policy execution are pushed down when safe; unsupported obligations fail closed.
 - One product can move between two physical runtimes without changing its consumer-facing logical contract.
 - OpenTelemetry correlates access request, decision, adapter, physical execution, product, consumer, cost, and outcome.
-- Deny is the default when identity, purpose, agreement, policy context, or enforcement capability is missing.
+- Deny is the default when identity, purpose, Data Product Consumption Contract, policy context, or enforcement capability is missing.
 
 <div class="read-next">
   <strong>Next:</strong> implement the layer through the Data Consumption Service and validate every adapter against the Access Control and Open Interoperability standards.

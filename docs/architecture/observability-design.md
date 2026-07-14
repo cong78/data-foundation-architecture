@@ -235,7 +235,7 @@ One product-centric view that answers:
 
 ### Out of Scope
 
-- Making Grafana the data catalog or product contract registry.
+- Making Grafana the data catalog or Data Product Creation Contract registry.
 - Treating Unity Catalog as the enterprise replacement for system monitoring.
 - Putting raw business values, personal data, or sensitive payloads into telemetry.
 - Replacing domain ownership decisions about acceptable quality thresholds.
@@ -256,7 +256,7 @@ Every signal should carry the identifiers that allow the two observability domai
 | --- | --- |
 | `data.product.id` | Stable product identity. |
 | `data.product.version` | Exact product release or snapshot. |
-| `data.contract.id` and `data.contract.version` | Behavioral agreement in force. |
+| `data.contract.id` and `data.contract.version` | Contract in force. |
 | `data.pipeline.id` and `data.pipeline.run_id` | Producing workload and execution. |
 | `trace_id` and `span_id` | Distributed runtime investigation. |
 | `data.source.system` | Upstream source context. |

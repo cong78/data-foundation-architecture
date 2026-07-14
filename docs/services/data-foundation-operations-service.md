@@ -101,7 +101,7 @@ An incident is not closed merely because a job is running. Recovery must be vali
 
 Change control must be proportional. It should automate low-risk repeatable change and concentrate human review on risk, dependencies, consumer impact, irreversibility, and uncertainty.
 
-Product contract approval, product go-live, and operational change approval remain separate decisions. A release may require all three, but none substitutes for another.
+Data Product Creation Contract approval, product go-live, and operational change approval remain separate decisions. A release may require all three, but none substitutes for another.
 
 ## Integration Model
 

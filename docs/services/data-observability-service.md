@@ -22,7 +22,7 @@ The goal is to make data trust measurable. A consumer should be able to understa
 | Dimension | Telemetry Type | What It Observes | Example Signals |
 | --- | --- | --- | --- |
 | System health | **System** | Runtime and platform behavior. | Pipeline latency, job failures, API errors, queue lag, storage errors, retries. |
-| Data quality | **Data product** | Fitness of data against product contract and expectations. | Completeness, validity, uniqueness, consistency, anomaly scores, failed records. |
+| Data quality | **Data product** | Fitness of data against Data Product Creation Contract and expectations. | Completeness, validity, uniqueness, consistency, anomaly scores, failed records. |
 | Freshness | **Both** | Runtime delivery delay and whether the product meets its freshness SLO. | Source lag and job completion (**system**); last product update and freshness breach (**product**). |
 | Lineage and impact | **Both** | Runtime movement plus product and consumer dependencies. | Job, run, and dataset events (**system**); product version and affected consumers (**product**). |
 | Usage and adoption | **Data product** | Whether and how consumers use the product. | Active consumers, query and API use by product, AI usage, unused interfaces, reuse rate. |
@@ -70,7 +70,7 @@ Use the [OpenTelemetry Telemetry Standard](../standards/otel-telemetry-standard.
 
 | Lifecycle Point | System Telemetry | Data Product Telemetry |
 | --- | --- | --- |
-| Source extraction | Source connection, extraction duration, retry, failure, source lag. | Expected source version, record-volume expectation, source contract status. |
+| Source extraction | Source connection, extraction duration, retry, failure, source lag. | Expected source version, record-volume expectation, Source System Ingestion Contract status. |
 | Source-aligned landing | Landing success, storage operation, batch or event id, quarantine operation. | Received volume, rejected-record rate, schema conformance, source-product freshness. |
 | Transformation | Job duration, runtime status, dependency status, compute and memory use. | Product version produced, transformation lineage, expected output volume, cost-to-produce. |
 | Validation | Rule-engine execution, test duration, test-system errors. | Quality result, threshold breach, anomaly score, failed fields, go-live readiness. |

@@ -58,11 +58,11 @@ Agents call foundation service APIs through the gateway. They do not receive bro
 | Agent | Primary Goal | Example Skills | Default Autonomy |
 | --- | --- | --- | --- |
 | Discovery assistant | Find and compare fit-for-purpose products. | Search catalog, explain contract, compare health, identify owner. | Read only. |
-| Source onboarding agent | Prepare a complete source onboarding plan. | Profile source, draft source contract, classify, select ingestion pattern. | Draft with approval. |
+| Source onboarding agent | Prepare a complete source onboarding plan. | Profile source, draft Source System Ingestion Contract, classify, select ingestion pattern. | Draft with approval. |
 | Contract agent | Author and evolve executable contracts. | Generate ODCS draft, compare versions, detect breaking changes, notify consumers. | Draft with approval. |
 | Product steward agent | Improve product readiness and lifecycle evidence. | Check go-live gates, explain gaps, prepare go-live or retirement plan. | Draft with approval. |
 | Access agent | Prepare purpose-bound consumption requests. | Resolve identity, policy, permitted use, entitlement path. | Execute low-risk requests with confirmation. |
-| Sharing agent | Prepare controlled external sharing. | Minimize fields, verify recipient, draft agreement, test revocation. | Mandatory approval. |
+| Sharing agent | Prepare controlled external sharing. | Minimize fields, verify recipient, draft the Data Product Consumption Contract, and test revocation. | Mandatory approval. |
 | Reliability agent | Triage data product incidents. | Correlate telemetry, lineage and consumers; propose remediation. | Read and recommend. |
 | AI product evaluator | Evaluate model, agent, MCP product, or retrieval use. | Resolve data lineage, run evaluations, inspect tool policy, create evidence pack. | Draft decision; human approves. |
 
@@ -136,7 +136,7 @@ Do not store secrets, unrestricted retrieved data, hidden policy decisions, or u
 - Use OpenAPI or AsyncAPI as the canonical foundation service contract.
 - MCP may expose approved resources, prompts, and tools to compatible assistants.
 - A2A may be used for remote agent discovery and long-running task exchange when multi-agent boundaries are justified.
-- Protocol adapters do not replace product contracts, policy enforcement, agent identity, or audit.
+- Protocol adapters do not replace Data Product Creation Contracts, policy enforcement, agent identity, or audit.
 - Use OpenTelemetry GenAI conventions and foundation identifiers to correlate model calls, retrieval, agent runs, tools, products, contracts, users, and purpose.
 
 ## Maturity Test

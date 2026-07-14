@@ -60,7 +60,7 @@ Stop and escalate when identity, authority, target, impact, evidence, or rollbac
 | 1 | Confirm service, product, environment, release, and correlation ids. |  |  |
 | 2 | Inspect system health, dependencies, capacity, and recent changes. |  |  |
 | 3 | Inspect product quality, freshness, lineage, backlog, and access. |  |  |
-| 4 | Identify affected consumers, agreements, and downstream products. |  |  |
+| 4 | Identify affected consumers, Data Product Consumption Contracts, and downstream products. |  |  |
 | 5 | Establish likely condition, confidence, and next safe action. |  |  |
 
 ## 6. Contain and Recover

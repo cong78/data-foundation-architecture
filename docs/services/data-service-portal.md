@@ -14,7 +14,7 @@ The [Data Service Portal Design](../architecture/data-service-portal-model.md) d
 
 | In Scope | Out of Scope |
 | --- | --- |
-| Data Product Marketplace discovery and comparison, service journey entry, data product and domain views, and data contract management. | Operating the marketplace, agreement flow, or generic workflow as a separate portal capability. |
+| Data Product Marketplace discovery and comparison, service journey entry, data product and domain views, and management of the three data contract types. | Operating the marketplace or generic workflow as a separate portal capability. |
 | User-facing views for product health, ownership, classification, lineage, quality, freshness, usage, and lifecycle status. | Owning the actual data pipelines, transformations, or consumption endpoints. |
 | Request intake, support engagement, operational status, approvals, notifications, task tracking, and evidence presentation. | Bypassing governance, security, stewardship, or operational authority. |
 
@@ -143,7 +143,7 @@ The portal should act as an orchestration and experience layer. It should integr
 The user experience should use seven stable areas:
 
 1. **Explore:** Data Product Marketplace, product comparison, collections, and innovation.
-2. **Ingest:** source onboarding, source contracts, source-aligned products, and ingestion health.
+2. **Ingest:** source onboarding, Source System Ingestion Contracts, source-aligned products, and ingestion health.
 3. **Produce:** product creation and change, workspaces, contracts, semantics, analytics, AI, and product go-live.
 4. **Consume:** purpose-bound requests, subscriptions, entitlements, and product ports.
 5. **Share:** recipient contract terms, packages, activation, expiry, and revocation.

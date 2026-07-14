@@ -49,7 +49,7 @@ flowchart TB
 
 | Building Block | Purpose | Minimum Capability |
 | --- | --- | --- |
-| Data Service Portal | User entry point. | Intent-led journeys, discovery, product detail, agreements, portfolio, approvals, contract workflow, product health views. |
+| Data Service Portal | User entry point. | Intent-led journeys, discovery, product detail, three contract types, portfolio, approvals, contract lifecycle, and product health views. |
 | Catalog and Metadata | Product and asset inventory. | Search, ownership, schema, classification, lineage links, documentation, lifecycle state. |
 | Semantic Context and Graph Projection | Make products understandable and connected without duplicating authority. | Versioned context packages, glossary and metric references, rebuildable relationship graph, permission-filtered discovery and AI grounding. |
 | Data Contract Registry | Contract source of truth. | Contract templates, versioning, compatibility checks, approval evidence, consumer notifications. |
