@@ -87,6 +87,65 @@
   color: var(--md-default-fg-color--light);
 }
 
+.journey-path {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+  gap: 1.4rem 1.1rem;
+  margin: 1.5rem 0 2.5rem;
+}
+
+.journey-stage {
+  position: relative;
+  border-top: 0.18rem solid #0f238c;
+  padding: 1rem 0.15rem 0;
+}
+
+.journey-stage > span {
+  display: grid;
+  place-items: center;
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 50%;
+  background: #0f238c;
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.journey-stage h3 {
+  margin: 0.75rem 0 0.35rem;
+  font-size: 0.95rem;
+}
+
+.journey-stage p {
+  min-height: 4.4rem;
+  margin: 0;
+  color: var(--md-default-fg-color--light);
+  font-size: 0.76rem;
+  line-height: 1.5;
+}
+
+.journey-stage > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 0.7rem;
+  margin: 0.8rem 0;
+}
+
+.journey-stage a {
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.journey-stage small {
+  display: block;
+  border-top: 1px solid var(--md-default-fg-color--lightest);
+  padding-top: 0.65rem;
+  color: var(--md-default-fg-color);
+  font-size: 0.68rem;
+  line-height: 1.45;
+}
+
 
 .foundation-card {
   display: block;
@@ -365,6 +424,15 @@
 }
 
 @media screen and (max-width: 44.984375em) {
+  .journey-path {
+    grid-template-columns: 1fr;
+    gap: 1.6rem;
+  }
+
+  .journey-stage p {
+    min-height: 0;
+  }
+
   .architecture-rules {
     grid-template-columns: 1fr;
     gap: 1.4rem;

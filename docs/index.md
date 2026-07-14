@@ -6,6 +6,18 @@
   </div>
 </div>
 
+## Foundation Journey
+
+Move from foundation intent to reliable operation through one five-stage path.
+
+<div class="journey-path">
+  <section class="journey-stage"><span>1</span><h3>Frame</h3><p>Set boundaries, ownership, principles, and domain responsibilities.</p><div><a href="foundation/definition-and-scope/">Scope</a><a href="foundation/principles/">Principles</a><a href="architecture/data-domain-design/">Domain design</a></div><small>Outcome: an agreed foundation mandate.</small></section>
+  <section class="journey-stage"><span>2</span><h3>Establish</h3><p>Define shared architecture, services, standards, and controls.</p><div><a href="architecture/target-architecture/">Architecture</a><a href="services/">Services</a><a href="standards/">Standards</a></div><small>Outcome: an enforceable foundation baseline.</small></section>
+  <section class="journey-stage"><span>3</span><h3>Deliver</h3><p>Onboard sources and create contracted, tested data products.</p><div><a href="playbooks/onboard-source/">Onboard</a><a href="playbooks/create-change-data-product/">Create</a><a href="playbooks/approve-product-go-live/">Go live</a></div><small>Outcome: supported live data products.</small></section>
+  <section class="journey-stage"><span>4</span><h3>Use</h3><p>Enable governed consumption, sharing, and agentic use.</p><div><a href="playbooks/consume-data-product/">Consume</a><a href="playbooks/share-data-product/">Share</a><a href="architecture/agentic-data-foundation/">Use with AI</a></div><small>Outcome: purpose-bound value from data.</small></section>
+  <section class="journey-stage"><span>5</span><h3>Operate</h3><p>Measure health, respond, change safely, and improve.</p><div><a href="playbooks/operate-service-product/">Operate</a><a href="architecture/observability-design/">Observe</a><a href="runway/">Evolve</a></div><small>Outcome: reliable and improving services.</small></section>
+</div>
+
 ## Architecture at a Glance
 
 The Data Service Portal is the front door. Eight foundation services turn source data into governed products and operate them reliably for people, applications, partners, agents, and models.
@@ -20,13 +32,3 @@ The Data Service Portal is the front door. Eight foundation services turn source
   <a class="foundation-card" href="services/data-observability-service/"><strong>Observability</strong>OpenTelemetry-based system and product insights.</a>
   <a class="foundation-card" href="services/data-foundation-operations-service/"><strong>Operations</strong>Support, incidents, problems, changes, releases, reliability, and improvement.</a>
 </div>
-
-## Foundation Journey
-
-| Stage | Start here | Outcome |
-| --- | --- | --- |
-| **1 · Frame** | [Scope](foundation/definition-and-scope.md) · [Principles](foundation/principles.md) · [Domain Design](architecture/data-domain-design.md) | Agreed boundary, ownership, decision rules, and non-goals. |
-| **2 · Establish** | [Target Architecture](architecture/target-architecture.md) · [Services](services/index.md) · [Standards](standards/index.md) | Shared capabilities with enforceable controls and accountable owners. |
-| **3 · Deliver** | [Onboard a Source](playbooks/onboard-source.md) · [Create a Product](playbooks/create-change-data-product.md) · [Go-Live](playbooks/approve-product-go-live.md) | Contracted, tested, observable, supported live products. |
-| **4 · Use** | [Consume](playbooks/consume-data-product.md) · [Share](playbooks/share-data-product.md) · [Agentic Foundation](architecture/agentic-data-foundation.md) | Purpose-bound use by people, systems, partners, agents, and models. |
-| **5 · Operate** | [Operate a Service or Product](playbooks/operate-service-product.md) · [Observability](architecture/observability-design.md) · [Runway](runway.md) | Measured health, accountable response, safer change, and continuous improvement. |
