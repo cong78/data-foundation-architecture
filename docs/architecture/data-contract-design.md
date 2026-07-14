@@ -2,11 +2,11 @@
 
 <div class="decision-brief"><div><small>Use when</small><strong>Placing and enforcing a contract in the data journey.</strong></div><div><small>Decision</small><strong>Which of the three contracts owns this handoff?</strong></div><div><small>Owner</small><strong>Contract owner for the active boundary.</strong></div><div><small>Output</small><strong>One versioned promise, enforcement route, and evidence set.</strong></div></div>
 
-The contract architecture follows the data journey with only three contracts:
+A data contract is the versioned, machine-readable, and enforceable promise at a data boundary. The contract architecture places that promise along the data journey with only three contracts:
 
 **Source System Ingestion Contract → Data Product Creation Contract → Data Product Consumption Contract**
 
-Use the [Data Contract Standard](../standards/data-contract-standard.md) for mandatory content, lifecycle, approval, testing, and versioning.
+Use the [Data Contract Standard](../standards/data-contract-standard.md) for the full [definition](../standards/data-contract-standard.md#definition), [core elements](../standards/data-contract-standard.md#core-elements), [business value](../standards/data-contract-standard.md#business-value), mandatory content, lifecycle, approval, testing, and versioning.
 
 ## Core Architecture
 

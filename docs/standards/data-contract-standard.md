@@ -2,6 +2,48 @@
 
 <div class="decision-brief"><div><small>Use when</small><strong>Onboarding a source, creating a product, or approving product use.</strong></div><div><small>Decision</small><strong>Which of the three contracts governs this boundary?</strong></div><div><small>Owner</small><strong>Contract owner for the active boundary.</strong></div><div><small>Output</small><strong>Approved, testable, published contract version.</strong></div></div>
 
+## Definition
+
+A **data contract is a versioned, machine-readable, and enforceable promise between accountable parties at a data boundary**. It defines what data or interface is provided, what it means, how well it must perform, how it may be used, how change is managed, and what evidence proves the promise is being met.
+
+A data contract connects business expectations to technical enforcement. It is:
+
+- **Business-readable:** owners and consumers can understand the purpose, meaning, obligations, and service promise.
+- **Machine-readable:** platforms can generate schemas, tests, policy inputs, interfaces, alerts, and lifecycle automation.
+- **Mutually accountable:** the provider accepts delivery or product obligations; the consumer accepts purpose, usage, and change obligations.
+- **Operational:** actual quality, freshness, availability, access, and change behavior are measured against the published version.
+
+A schema alone is not a data contract. A policy decision, catalog entry, technical share, pipeline configuration, or legal document may support a contract, but none replaces the complete promise.
+
+## Core Elements
+
+| Element | Business question | Required content | Evidence that makes it real |
+| --- | --- | --- | --- |
+| Parties and accountability | Who promises, who relies on it, and who responds when it fails? | Provider, owner, steward, consumer or recipient, technical owner, support and escalation route. | Active identities, ownership acceptance, support registration, and review record. |
+| Purpose and value | Why does this boundary exist and which outcomes should it enable? | Intended outcome, use cases, value measure, valid uses, prohibited uses, and non-goals. | Approved purpose, linked use case, consumer adoption, and outcome measure. |
+| Boundary and binding | Exactly which source, product, version, port, and consumer are connected? | Stable identifiers, contract type, source or product reference, runtime binding, interface, environment, and effective period. | Registry record reconciled with catalog and runtime objects. |
+| Structure and meaning | What data is provided and how should it be interpreted? | Schema, keys, grain, time meaning, business definitions, semantic context, examples, and limitations. | Schema and semantic tests plus resolvable context references. |
+| Trust and service promise | How good, fresh, available, and supportable must it be? | Quality rules, freshness, availability, volume, latency, lineage, recovery, support, and incident expectations. | Current SLO results, quality evidence, lineage, recovery test, and health view. |
+| Access and use controls | Who may do what, for which purpose, under which obligations? | Identity, classification, purpose, policy, minimization, masking, retention, residency, expiry, revocation, and output controls. | Executed allow, deny, masking, expiry, revocation, and audit tests. |
+| Change and lifecycle | How can the promise evolve without surprising dependent teams? | Version, compatibility, notice, impact, migration, deprecation, retirement, exceptions, and review date. | Compatibility report, affected consumers, notices, migration progress, and approved release. |
+| Enforcement and evidence | How is the promise tested and observed continuously? | Enforcement points, test rules, severity, failure outcome, telemetry, conformance status, and evidence references. | CI results, runtime decisions, telemetry, incidents, exceptions, and immutable history. |
+
+## Business Value
+
+| Business value | How the contract creates it | Useful measure |
+| --- | --- | --- |
+| Fewer breaking changes | Versioning, compatibility tests, impact analysis, notice, and migration protect dependent products and consumers. | Change-failure rate, breaking incidents, emergency fixes, and consumers migrated on time. |
+| Faster source and consumer onboarding | Standard, discoverable terms reduce repeated clarification, custom extraction, and manual approval. | Onboarding lead time, time to first successful use, and manual handoffs per request. |
+| Clear accountability | Named providers, owners, consumers, support routes, and obligations remove ambiguity during delivery and incidents. | Unowned failures, routing time, response time, and overdue remediation. |
+| Trusted decisions | Meaning, quality, freshness, lineage, and limitations are explicit and observable at the point of use. | SLO attainment, quality-related incidents, reconciliations, and consumer trust feedback. |
+| Governed self-service | Machine-readable purpose, classification, scope, and policy terms allow safe automation without bypassing control owners. | Automated decision rate, approval lead time, exceptions, and revocation success. |
+| Reuse without hidden coupling | Stable product identifiers and ports let consumers depend on a promise rather than a pipeline, table path, or implementation detail. | Reuse rate, duplicate products, direct-storage dependencies, and migration effort. |
+| Safer sharing and AI adoption | External-recipient and AI-use clauses narrow the same Data Product Consumption Contract to the approved purpose and risk. | Approval lead time, prohibited-use violations, trace coverage, and expired access removed. |
+| Better operations and investment | Contract health, usage, incidents, cost, and consumer impact make service improvement and portfolio decisions evidence-based. | Incident impact, product adoption, cost per consumer, SLO trends, and retirement completion. |
+| Portability and negotiating power | Open canonical artifacts separate the durable promise from Unity Catalog, Delta, APIs, sharing tools, or other runtime bindings. | Export conformance, independent-client success, migration time, and unresolved vendor dependencies. |
+
+Contracts create value only when the same published version drives design, tests, platform controls, runtime decisions, change communication, and observability. A document that is not enforced or measured is guidance, not an operational data contract.
+
 The foundation uses only three data contract types:
 
 1. **Source System Ingestion Contract**
