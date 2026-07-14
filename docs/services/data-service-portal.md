@@ -68,11 +68,11 @@ Marketplace listings are read projections. Product identity and lifecycle come f
 
 ## Data Contract Management
 
-The portal should provide the governed interface for managing data contracts across source interfaces, data products, consumption APIs, and sharing packages. Consumption and sharing are represented as purpose-bound terms in the data contract lifecycle, not as separate portal capabilities.
+The portal provides the governed user experience for managing data contracts across source interfaces, data products, consumption APIs, and sharing packages. The [Platform Enablement Service](platform-enablement-service.md) provides the shared contract-system capability; lifecycle services enforce the applicable contract in their runtime. Consumption and sharing are represented as purpose-bound terms in the data contract lifecycle, not as separate portal capabilities.
 
 | Contract Capability | Purpose |
 | --- | --- |
-| Contract registry | Maintain approved contracts with owner, version, status, schema, semantics, quality expectations, and lifecycle state. |
+| Contract workspace | Present authoritative contract versions, owners, status, schema, semantics, quality expectations, decisions, and lifecycle state. |
 | Contract authoring | Allow product teams and source teams to propose new contracts using standard templates. |
 | Review and approval | Route contract changes to owners, stewards, security, privacy, and impacted consumers where needed. |
 | Consumption and sharing terms | Capture consumer or recipient identity, purpose, scope, obligations, duration, approval status, expiry, and revocation. |
@@ -135,10 +135,11 @@ The portal should act as an orchestration and experience layer. It should integr
 - Catalog for product metadata and discovery.
 - Policy and identity services for access decisions.
 - Data contract management for contract review, approvals, decisions, and lifecycle status.
+- Platform Enablement for the contract system, storage lifecycle, identity and security bindings, integration, provisioning, and control evidence.
 - Foundation services for onboarding, product lifecycle, access activation, sharing delivery, and operational actions.
 - Lineage system for upstream and downstream impact.
 - Observability service for product health and trust signals.
-- Contract registry for schema, semantic, quality, and compatibility rules.
+- Contract registry, provided through Platform Enablement, for schema, semantic, quality, compatibility, and lifecycle rules.
 
 The user experience should use seven stable areas:
 

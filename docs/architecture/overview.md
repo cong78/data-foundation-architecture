@@ -55,7 +55,7 @@ The five layers and six target planes are supporting views. **Layers** show wher
   <div class="layer-connector">Policy and orchestration</div>
   <section class="architecture-layer layer-services">
     <span class="layer-number">3</span>
-    <div><strong>Data Foundation Services</strong><p>Ingestion · Product Creation · Unified Data Access · Sharing · Observability · Operations</p></div>
+    <div><strong>Data Foundation Services</strong><p>Ingestion · Product Creation · Unified Data Access · Sharing · Platform Enablement · Observability · Operations</p></div>
   </section>
   <div class="layer-connector">Create and serve</div>
   <section class="architecture-layer layer-products">
@@ -78,7 +78,7 @@ The five layers and six target planes are supporting views. **Layers** show wher
 | --- | --- | --- |
 | Experience and access | Portal journeys, developer workspace, discovery, requests, assistant interaction, service APIs, and CLI. | A duplicate catalog, policy engine, or product system of record. |
 | Governance and control | Product metadata, contracts, policy decisions, workflow, lineage, go-live evidence. | A documentation-only approval process. |
-| Foundation services | Standard ingestion, creation, consumption, sharing, observability, and operations capabilities. | A collection of product-specific pipelines or disconnected support processes. |
+| Foundation services | Standard ingestion, creation, consumption, sharing, platform enablement, observability, and operations capabilities. | A collection of product-specific pipelines, duplicated controls, or disconnected support processes. |
 | Governed data products | Reusable data with an owner, contract, semantics, quality, SLO, policy, and lifecycle. | Unowned tables published directly to consumers. |
 | Platform runtime | Portable storage, processing, event, API, telemetry, and lineage infrastructure. | A vendor-specific architecture contract. |
 
@@ -130,6 +130,7 @@ flowchart LR
     <ul>
       <li>The <strong>Data Service Portal</strong> is the front door, not the system of record for all metadata.</li>
       <li><strong>Foundation services</strong> provide reusable capabilities through stable APIs, events, and workflow interfaces.</li>
+      <li><strong>Platform Enablement</strong> provides shared storage, contract, identity, security, integration, and automation controls without taking ownership from lifecycle services.</li>
     </ul>
   </section>
   <section>

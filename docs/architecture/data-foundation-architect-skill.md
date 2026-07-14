@@ -27,7 +27,7 @@ skills/data-foundation-architect/
 └── assets/
 ```
 
-`SKILL.md` contains the runtime-neutral operating workflow. `manifest.json` defines capabilities, side effects, authorization, data policy, reliability, approvals, telemetry, and tests. JSON schemas define assessment and task contracts. The guidance map points to authoritative pages under `docs/`, including the five-stage journey, eight services, portal marketplace, and architecture-to-operations traceability.
+`SKILL.md` contains the runtime-neutral operating workflow. `manifest.json` defines capabilities, side effects, authorization, data policy, reliability, approvals, telemetry, and tests. JSON schemas define assessment and task contracts. The guidance map points to authoritative pages under `docs/`, including the five-stage journey, nine services, portal marketplace, and architecture-to-operations traceability.
 
 ## Integrate with an Agent Runtime
 

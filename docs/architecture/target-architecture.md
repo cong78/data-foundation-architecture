@@ -42,7 +42,7 @@ flowchart TB
 | Observability | OpenTelemetry, SLOs, product health, incidents, usage, cost. | Trust is measured end to end. |
 | Security | Named-user and workload identity, delegated authority, service authorization, data authorization, ABAC, purpose, masking, entitlement, audit, retention, sharing controls. | Every request passes separate service and data decisions; security follows data and identities. |
 
-The [Data Foundation Operations Service](../services/data-foundation-operations-service.md) spans the Experience, Control, Observability, and Security planes. It uses portal engagement, authoritative workflow records, health evidence, and governed responder authority to coordinate support, incidents, problems, changes, releases, reliability, and improvement without creating a seventh target plane.
+The [Platform Enablement Service](../services/platform-enablement-service.md) spans the Control, Data, Observability, and Security planes. It provides shared storage lifecycle, contract, identity and security integration, catalog synchronization, integration, and automation capabilities. The [Data Foundation Operations Service](../services/data-foundation-operations-service.md) spans the Experience, Control, Observability, and Security planes to coordinate support, incidents, problems, changes, releases, reliability, and improvement. Neither horizontal service creates another target plane.
 
 ## Core Design Moves
 
@@ -61,6 +61,7 @@ The [Data Foundation Operations Service](../services/data-foundation-operations-
 13. Place a unified logical access layer above physical product storage while keeping execution distributed and close to approved runtimes.
 14. Coordinate support, incident, problem, change, release, and reliability through a cross-cutting **Data Foundation Operations Service** while keeping telemetry and engineering ownership separate.
 15. Use **Unity Catalog as the data catalog standard** and **Delta Lake as the default durable tabular storage format**, while keeping logical ports and canonical control artifacts portable.
+16. Provide storage lifecycle, contracts, identity and security integration, catalog synchronization, integration patterns, and automation through a horizontal **Platform Enablement Service**; lifecycle services remain accountable for runtime enforcement and outcomes.
 
 ## Critical Flows
 

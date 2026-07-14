@@ -54,7 +54,7 @@ Use the phases as **outcome gates**. Teams may prepare later capabilities early,
 | --- | --- | --- | --- | --- |
 | Experience | Core portal journeys | Rich product, domain, support, and workspace journeys | AI and assistant journeys | Recipient and sharing journeys |
 | Products and contracts | Three contract templates and go-live gates | Lifecycle, portfolio, compatibility, and subscriptions | AI-ready products and AI consumption profiles | External-sharing consumption profiles and recipient packages |
-| Platform services | First ingestion-to-consumption path | Self-service creation, unified access, semantics, and adapters | Agent, model, context, skill, and evaluation gateways | Sharing and controlled-collaboration patterns |
+| Platform services | First ingestion-to-consumption path plus baseline storage, contract, identity, security, integration, and automation enablement | Self-service creation, unified access, semantics, adapters, and reconciled platform resources | Agent, model, context, skill, and evaluation gateways with governed machine identities | Sharing and controlled-collaboration patterns with external identity and revocation |
 | Governance and security | Identity, classification, policy, lineage, ownership | Purpose-bound access and reusable domain controls | AI identity, data use, autonomy, and approval | Legal basis, minimization, expiry, and revocation |
 | Observability and operations | Telemetry conventions, service records, support and incident model | Product health, cost, problem, change, release, continuity, and improvement | Model, agent, evaluation, and AI-use telemetry | Recipient activity, delivery health, audit, and revocation evidence |
 | Interoperability | Stable ids plus ODCS and ODPS artifacts | Open metadata, lineage, API, event, telemetry, and independent-client proof | Portable AI context and action evidence | Open sharing interface and federated identity proof |
@@ -69,6 +69,7 @@ Use the phases as **outcome gates**. Teams may prepare later capabilities early,
 | Portal and journeys | Data Service Portal with source onboarding, product creation, consumption, product health, and task-status journeys. | Real users complete the first journey through authoritative service APIs. |
 | Source and product delivery | Standard ingestion patterns, product template, contract template, workload profile, and mandatory product go-live gates. | At least one source-aligned input and one governed product pass go-live. |
 | Control foundation | Catalog, classification, lineage, identity, access workflow, contract approval, and stable enterprise identifiers. | Product, contract, lineage, policy, owner, and access evidence resolve consistently. |
+| Platform enablement | Supported storage lifecycle, contract system, identity and security bindings, catalog synchronization, integration interfaces, provisioning, and deprovisioning patterns. | One real product is provisioned and retired through governed APIs with correlated policy, contract, catalog, runtime, and lifecycle evidence. |
 | Observability and operations | OpenTelemetry conventions, production service records, SLOs, support, incident roles, escalation, change classes, continuity targets, and readiness criteria. | Service and product health are visible; one support and incident path is exercised. |
 | Portability | Canonical ODCS and ODPS artifacts stored independently of runtime-native metadata. | Artifacts validate against pinned schemas and retain stable identifiers. |
 
@@ -87,6 +88,7 @@ Proceed when a real source-to-consumer product demonstrates ownership, contract,
 | Consumption and semantics | Standard semantic, SQL, API, event, retrieval, and feature patterns through unified access. | Representative BI, application, platform, and AI consumers use governed product ports. |
 | Portal experience | Product discovery, access, domain, use-case, workspace, saved-product, consumption-contract, portfolio, support, status, change, and knowledge views. | Users can discover, request, track, support, and understand products in one experience. |
 | Trust and operations | Product health, freshness, quality, usage, cost, incident communication, problem, release, error budget, recovery exercise, and improvement workflows. | System and product recovery is proven; service reviews use measured health and operational evidence. |
+| Platform enablement | Self-service resource plans, policy previews, environment promotion, drift reconciliation, exception expiry, retention automation, and deprovisioning. | Multiple domain teams reuse supported capabilities without duplicating identity, storage, contract, security, or integration controls. |
 | Interoperability | DCAT, OpenLineage, OpenAPI, AsyncAPI, CloudEvents, and OTLP adapters plus clean-room import/export. | An independent client consumes a product and canonical artifacts survive export and import. |
 
 ### Phase 2 Gate

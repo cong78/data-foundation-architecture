@@ -6,11 +6,11 @@ The reference architecture shows the minimum building blocks needed to implement
 
 ## Architecture View
 
-Read each lane from left to right. **Build** and **Access** carry the runtime data flow; **Engage**, **Govern**, and **Operate** control every journey without becoming duplicate systems of record.
+Read each lane from left to right. **Build** and **Access** carry the runtime data flow; **Engage**, **Govern**, **Enable**, and **Operate** support every journey without becoming duplicate systems of record.
 
 These lanes organize the delivery journey; they are not additional target architecture planes. Use the [Target Architecture](target-architecture.md) for cross-cutting plane responsibilities and this view for capability interaction.
 
-<div class="standards-map reference-map" role="img" aria-label="Reference architecture organized into engage, govern, build, access, and operate lanes">
+<div class="standards-map reference-map" role="img" aria-label="Reference architecture organized into engage, govern, enable, build, access, and operate lanes">
   <div class="standards-map-head" aria-hidden="true">
     <span>Inputs</span><i></i><span>Foundation capabilities</span><i></i><span>Outcomes</span>
   </div>
@@ -29,6 +29,14 @@ These lanes organize the delivery journey; they are not additional target archit
     <div class="standards-map-cell standards-map-focus"><strong>Catalog · Contract · Semantics</strong><strong>Policy · Workflow · Entitlement</strong><strong>Lineage · Quality · Go-Live</strong></div>
     <span class="standards-map-arrow" aria-hidden="true"></span>
     <div class="standards-map-cell"><strong>Decisions and controls</strong><p>Versioned metadata, policy decisions, obligations, lifecycle state, and audit evidence.</p></div>
+  </section>
+
+  <section class="standards-map-lane lane-access">
+    <div class="standards-map-cell"><small>Enable</small><strong>Intent · Policy · Resource</strong><p>Foundation services declare the shared capability and control profile they require.</p></div>
+    <span class="standards-map-arrow" aria-hidden="true"></span>
+    <div class="standards-map-cell standards-map-focus"><a href="/services/platform-enablement-service/"><strong>Platform Enablement</strong></a><strong>Storage · Contract · Identity</strong><strong>Security · Integration · Automation</strong></div>
+    <span class="standards-map-arrow" aria-hidden="true"></span>
+    <div class="standards-map-cell"><strong>Governed paved paths</strong><p>Provisioned resources, bindings, interfaces, receipts, reconciliation, and lifecycle evidence.</p></div>
   </section>
 
   <section class="standards-map-lane lane-intelligence">
@@ -68,6 +76,7 @@ The Build lane contains an explicit ownership handoff. The foundation platform t
 | Products | Registry, contracts, semantics, ownership, lifecycle, go-live approval. |
 | Consumption | Unified product and port resolution, SQL, semantic layer, APIs, events, files, features, retrieval, context, federation, and runtime adapters. |
 | Sharing | Internal exchange, external packages, APIs, clean rooms, revocation. |
+| Platform enablement | Storage lifecycle, contract system, identity and security bindings, catalog synchronization, integration interfaces, provisioning, reconciliation, and deprovisioning. |
 | Observability | OpenTelemetry, SLOs, health, incidents, usage, lineage correlation. |
 | Operations and reliability | Service portfolio, support, incident, problem, change, release, continuity, communication, error budgets, and improvement. |
 | Agentic AI | Data Service AI Assistant, agent gateway, agent and skill registry, LLM gateway, context, memory, approval, evaluation. |

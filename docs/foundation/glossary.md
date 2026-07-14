@@ -12,6 +12,7 @@
 | Data product health | A product-level view of trust based on freshness, quality, reliability, usage, incidents, contract compatibility, and cost. |
 | Data service portal | The user entry point for discovering data products, requesting access, managing workflows, viewing trust signals, and managing data contracts. |
 | Foundation service | A reusable platform capability that implements a standard part of the data foundation, such as ingestion, product creation, consumption, sharing, or observability. |
+| Platform Enablement Service | The horizontal foundation service that provides reusable storage lifecycle, contract, identity, security, integration, catalog, automation, and control-evidence capabilities to lifecycle services. |
 | Knowledge graph | A rebuildable relationship projection across catalog assets, concepts, products, contracts, lineage, policies, consumers, and use cases for discovery, impact analysis, and governed AI grounding. |
 | OpenTelemetry | The standard telemetry model used by the foundation for traces, metrics, logs, and events across data services and data products. |
 | Raw landing state | The restricted, faithful receipt state inside source-aligned data, used for replay, audit, recovery, and investigation. It is not a separate product layer. |

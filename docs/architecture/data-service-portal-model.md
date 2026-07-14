@@ -57,7 +57,7 @@ flowchart TB
     F[Find and compare]
     D[Understand product and trust]
     A[Continue with a governed action]
-    S[Ingestion · Product creation · Consumption · Sharing · Operations]
+    S[Ingestion · Product creation · Consumption · Sharing · Platform enablement · Operations]
     AUTH[Catalog · Product and contract registry · Policy · Foundation services · Observability]
 
     USERS --> M
@@ -224,6 +224,6 @@ The portal must not be the sole owner of:
 - Ingestors can move from source-aligned marketplace context to onboarding, impact, remediation, or incident response.
 - Producers can discover and compare reusable input products before creating or changing a product.
 - Marketplace actions preserve product, contract, purpose, identity, and correlation context when entering authoritative services or contract flows.
-- Source onboarding, product creation, consumption, sharing, observability, operations, semantics, policy, and AI journeys call real foundation services.
+- Source onboarding, product creation, consumption, sharing, platform enablement, observability, operations, semantics, policy, and AI journeys call real foundation services.
 - Product health, usage, quality, incidents, and lineage are measured rather than simulated.
 - Portal records can be rebuilt from canonical product, contract, catalog, policy, lineage, and observability sources.

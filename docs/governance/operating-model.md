@@ -6,7 +6,7 @@ The foundation operating model defines how platform teams, domain teams, and con
 
 | Team | Owns |
 | --- | --- |
-| Foundation platform team | Shared services, source onboarding, ingestion operation, raw and validated source-aligned products, reference patterns, platform reliability, and automation |
+| Foundation platform team | Shared services, Platform Enablement, source onboarding, ingestion operation, raw and validated source-aligned products, reference patterns, platform reliability, and automation |
 | Domain data teams | Aggregate and consumer-aligned products; domain definitions, business quality rules, reuse, value, lifecycle, support, and consumer relationships |
 | Source system teams | Source System Ingestion Contracts, source availability, change communication |
 | Consumer teams | Responsible consumption, access requests, feedback, use-case controls |
@@ -22,6 +22,7 @@ The foundation operating model defines how platform teams, domain teams, and con
 | Source onboarding and ingestion service | Foundation platform team | Approved Source System Ingestion Contract and delivery obligations from the source system team. |
 | Raw and validated source-aligned product | Foundation platform team | Stable validated-state contract, source limitations, lineage, quality, freshness, and support route for domain teams. |
 | Product creation service and paved road | Foundation platform team | Governed workspace, templates, controls, release automation, policy integration, and service SLOs. |
+| Platform enablement service | Foundation platform team with enterprise identity, security, privacy, and infrastructure authorities | Governed storage lifecycle, contract system, identity and security bindings, catalog synchronization, integration patterns, automation, and control evidence. |
 | Aggregate product | Owning domain data team | Governed domain semantics, composition or calculation rules, explicit grain, lineage, product SLO, and metric ownership where applicable. |
 | Consumer-aligned product or view | Serving or consuming domain data team | Purpose, Data Product Consumption Contract, upstream versions, expiry, and support ownership. |
 

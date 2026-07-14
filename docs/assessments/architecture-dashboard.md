@@ -5,9 +5,9 @@
 Use this page to discuss maturity with evidence. Values are illustrative; replace them with real portal, catalog, and observability data.
 
 <div class="metric-strip">
-  <div class="metric-card"><strong>8</strong>Foundation services</div>
+  <div class="metric-card"><strong>9</strong>Foundation services</div>
   <div class="metric-card"><strong>9</strong>Go-live gates</div>
-  <div class="metric-card"><strong>24</strong>Foundation maturity checks</div>
+  <div class="metric-card"><strong>27</strong>Foundation maturity checks</div>
   <div class="metric-card"><strong>OTel</strong>Telemetry standard</div>
 </div>
 
@@ -29,6 +29,7 @@ Use this page to discuss maturity with evidence. Values are illustrative; replac
       {"service": "Product Creation", "maturity": 60},
       {"service": "Consumption", "maturity": 58},
       {"service": "Sharing", "maturity": 45},
+      {"service": "Platform Enablement", "maturity": 54},
       {"service": "Observability", "maturity": 55},
       {"service": "Operations", "maturity": 52}
     ]

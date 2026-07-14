@@ -7,7 +7,7 @@ These principles guide architecture decisions across the data foundation. They a
 | Principle | Decision Rule |
 | --- | --- |
 | Data is managed as a product | Trusted datasets must have owners, consumers, quality expectations, documentation, access rules, and lifecycle states. |
-| Governance is built in | Security, privacy, classification, lineage, retention, and quality controls are embedded in foundation services. |
+| Governance is built in | Platform Enablement makes security, privacy, classification, lineage, retention, identity, and quality controls reusable; lifecycle services enforce them in context. |
 | Standard patterns come first | Teams use approved ingestion, product, consumption, sharing, and observability patterns unless an exception is approved. |
 | Metadata is a first-class asset | Business, technical, operational, and governance metadata is captured throughout the lifecycle. |
 | Consumption is fit for purpose | BI, applications, platforms, AI agents, and models receive access through patterns designed for their needs. |

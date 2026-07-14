@@ -127,6 +127,7 @@ nav:
       - Data Product Creation Service: services/data-product-creation-service.md
       - Data Consumption Service: services/data-consumption-service.md
       - Data Sharing Service: services/data-sharing-service.md
+      - Platform Enablement Service: services/platform-enablement-service.md
       - Data Observability Service: services/data-observability-service.md
       - Data Foundation Operations Service: services/data-foundation-operations-service.md
   - Playbooks:

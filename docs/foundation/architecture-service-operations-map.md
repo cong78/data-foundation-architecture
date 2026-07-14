@@ -58,6 +58,15 @@ This page is the correlation point between architecture, foundation services, ac
     - **Playbook:** [Create or Change a Product](../playbooks/create-change-data-product.md) and [Approve Product Go-Live](../playbooks/approve-product-go-live.md)
     - **Runbook focus:** build or deployment failure, quality breach, contract incompatibility, rollback, drift, failed release, and product-health validation.
 
+=== "Enable"
+
+    **Platform enablement**
+
+    - **Architecture:** [Target Architecture](../architecture/target-architecture.md), [Reference Architecture](../architecture/reference-architecture.md), and [Unified Access Design](../architecture/unified-access-design.md)
+    - **Service:** [Platform Enablement Service](../services/platform-enablement-service.md)
+    - **Playbook:** the selected foundation playbook invokes enablement; shared provisioning does not create a parallel user journey.
+    - **Runbook focus:** provisioning failure, identity or policy binding error, contract service degradation, storage lifecycle failure, catalog drift, secret rotation, retention or deletion failure, integration outage, rollback, and deprovisioning proof.
+
 === "Use"
 
     **Data consumption**

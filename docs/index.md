@@ -20,7 +20,7 @@ Move from foundation intent to reliable operation through one five-stage path.
 
 ## Architecture at a Glance
 
-The Data Service Portal is the front door. Eight foundation services turn source data into governed products and operate them reliably for people, applications, partners, agents, and models.
+The Data Service Portal is the front door. Nine foundation services turn source data into governed products, provide shared platform controls, and operate them reliably for people, applications, partners, agents, and models.
 
 <div class="foundation-grid">
   <a class="foundation-card" href="services/data-service-portal/"><strong>Portal</strong>Discovery, requests, contracts, workflows, access, and evidence.</a>
@@ -29,6 +29,7 @@ The Data Service Portal is the front door. Eight foundation services turn source
   <a class="foundation-card" href="services/data-product-creation-service/"><strong>Product creation</strong>Owned, contracted, quality-managed, live data products.</a>
   <a class="foundation-card" href="services/data-consumption-service/"><strong>Consumption</strong>Unified governed access for people, systems, agents, and models.</a>
   <a class="foundation-card" href="services/data-sharing-service/"><strong>Sharing</strong>Controlled internal and external exchange with revocation.</a>
+  <a class="foundation-card" href="services/platform-enablement-service/"><strong>Platform enablement</strong>Shared storage, contracts, identity, security, integration, and automation.</a>
   <a class="foundation-card" href="services/data-observability-service/"><strong>Observability</strong>OpenTelemetry-based system and product insights.</a>
   <a class="foundation-card" href="services/data-foundation-operations-service/"><strong>Operations</strong>Support, incidents, problems, changes, releases, reliability, and improvement.</a>
 </div>

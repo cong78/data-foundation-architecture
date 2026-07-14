@@ -2,7 +2,7 @@
 
 <div class="decision-brief"><div><small>Use when</small><strong>Locating a reusable foundation capability.</strong></div><div><small>Decision</small><strong>Which service owns the requested outcome?</strong></div><div><small>Owner</small><strong>Foundation service owner.</strong></div><div><small>Output</small><strong>Service contract, interface, controls, and support.</strong></div></div>
 
-Foundation services are reusable architecture capabilities. They reduce custom delivery work by giving teams standard ways to ingest, create, consume, share, observe, and reliably operate trusted data products.
+Foundation services are reusable architecture capabilities. They reduce custom delivery work by giving teams standard ways to ingest, create, consume, share, enable, observe, and reliably operate trusted data products.
 
 !!! note "Capabilities across the journey"
     Services perform reusable work across **Frame → Establish → Deliver → Use → Operate**; they are not additional journey stages. Select a service by the outcome it owns, then use the matching [action playbook](../playbooks/index.md) to execute the work.
@@ -26,6 +26,13 @@ Foundation services are reusable architecture capabilities. They reduce custom d
     <div class="standards-map-cell standards-map-focus"><a href="data-ingestion-service/"><strong>Ingestion</strong></a><a href="data-product-creation-service/"><strong>Product Creation</strong></a><a href="data-consumption-service/"><strong>Consumption</strong></a><a href="data-sharing-service/"><strong>Sharing</strong></a></div>
     <span class="standards-map-arrow" aria-hidden="true"></span>
     <div class="standards-map-cell"><strong>Live data products</strong><p>Contracted, policy-controlled interfaces for internal and external use.</p></div>
+  </section>
+  <section class="standards-map-lane lane-access">
+    <div class="standards-map-cell"><small>Enable consistently</small><strong>Provision · Control · Integrate</strong><p>Provide common capabilities once and reuse them across every lifecycle service.</p></div>
+    <span class="standards-map-arrow" aria-hidden="true"></span>
+    <div class="standards-map-cell standards-map-focus"><a href="platform-enablement-service/"><strong>Platform Enablement</strong></a><strong>Storage · Contracts · Identity</strong><strong>Security · Integration · Automation</strong></div>
+    <span class="standards-map-arrow" aria-hidden="true"></span>
+    <div class="standards-map-cell"><strong>Governed paved paths</strong><p>Reusable resources, controls, interfaces, policy evidence, and lifecycle automation.</p></div>
   </section>
   <section class="standards-map-lane lane-intelligence">
     <div class="standards-map-cell"><small>Operate and improve</small><strong>Observe · Respond · Learn</strong><p>Measure health, coordinate response, and improve services end to end.</p></div>
@@ -58,6 +65,7 @@ Capabilities define service responsibility, not product features or vendor compo
 | Data product creation service | Shared product engineering capability, templates, controls, quality validation, go-live workflow, and publication automation. | Ownership of the aggregate or consumer-aligned products created by federated domain teams. |
 | Data consumption service | Governed access for BI, applications, platforms, AI agents, and models. | Business misuse of data outside approved purpose. |
 | Data sharing service | Governed internal and external exchange, recipient entitlement, sharing evidence. | Legal contract negotiation outside data usage controls. |
+| Platform enablement service | Shared storage lifecycle, contract system, identity and security integration, catalog synchronization, integration patterns, and platform automation. | Product semantics, enterprise IAM or security authority, lifecycle-service execution, or operational command. |
 | Data observability service | Product telemetry, quality and freshness SLOs, usage insights, incident correlation, OpenTelemetry standards. | Domain ownership of product quality decisions. |
 | Data foundation operations service | Service management, support, incident, problem, change, release, reliability, continuity, communication, and improvement coordination. | Telemetry authority, engineering remediation, product decisions, deployment execution, or governance policy. |
 
@@ -106,6 +114,7 @@ flowchart LR
 - Every data product has an owner, steward, contract, classification, quality rules, and lifecycle state.
 - Every user-facing workflow is exposed through the Data Service Portal.
 - Every foundation service publishes operational and product-level telemetry.
+- Every shared resource is provisioned through Platform Enablement with an owner, identity, policy, lifecycle, telemetry, and deprovisioning evidence.
 - Every production service has an operational owner, support model, SLO, escalation route, runbook, continuity target, and change controls.
 - Every consumption and sharing path enforces access policy.
 - Every live product is discoverable through the catalog.

@@ -10,7 +10,7 @@ It turns observable conditions and user-reported needs into accountable action. 
 
 ## Position in the Foundation
 
-This is a **cross-cutting service**, not another stage in the source-to-product flow. It supports the portal, ingestion, product creation, consumption, sharing, observability, AI assistant, and their shared platform dependencies.
+This is a **cross-cutting service**, not another stage in the source-to-product flow. It supports the portal, ingestion, product creation, consumption, sharing, Platform Enablement, observability, AI assistant, and their shared platform dependencies.
 
 <div class="standards-map reference-map" role="img" aria-label="Data Foundation Operations Service connecting engagement and observability to coordinated response">
   <div class="standards-map-head" aria-hidden="true">
@@ -114,6 +114,7 @@ Data Product Creation Contract approval, product go-live, and operational change
 | Identity and policy | Responder authority, emergency access, separation of duties, approval and audit evidence. |
 | Enterprise service management | Incident, problem, change, request, knowledge, communication, service record, and enterprise escalation. |
 | Security and continuity | Security-event handoff, crisis escalation, continuity invocation, recovery objectives, and retained assurance evidence. |
+| Platform Enablement | Resource health, provisioning and change receipts, contract or policy drift, retention and expiry actions, recovery bindings, and deprovisioning evidence. |
 
 ## Measures
 

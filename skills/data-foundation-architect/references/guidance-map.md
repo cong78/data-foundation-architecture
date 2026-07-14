@@ -27,6 +27,7 @@ Resolve every path from the repository root. Load the smallest useful set.
 | --- | --- |
 | Target and building blocks | `docs/architecture/target-architecture.md` and `docs/architecture/reference-architecture.md` |
 | Service boundaries and core capabilities | `docs/services/index.md` and the task-relevant service page under `docs/services/` |
+| Shared platform controls and automation | `docs/services/platform-enablement-service.md` |
 | Data layers and product types | `docs/architecture/data-foundation-model.md` |
 | Domain boundaries | `docs/architecture/data-domain-design.md` |
 | Product lifecycle | `docs/architecture/data-product-lifecycle-design.md` |

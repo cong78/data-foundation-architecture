@@ -62,6 +62,7 @@ flowchart TB
 | Consumption Layer | Serve trusted data. | SQL, semantic, API, event, feature, retrieval, and bulk access patterns. |
 | Sharing Layer | Exchange data beyond the product boundary. | Entitlements, packaging, secure delivery, expiry, revocation, audit. |
 | Observability Platform | Monitor trust and operations. | OpenTelemetry ingestion, product health, alerts, incidents, freshness, quality, usage. |
+| Platform Enablement | Provide common controls and resources once. | Storage lifecycle, contract system, identity and security bindings, catalog synchronization, integration APIs, provisioning, reconciliation, and deprovisioning. |
 | Operations Workflow Platform | Coordinate service operation and improvement. | Service registry, support, incident, problem, change, release, communication, continuity, reliability, knowledge, and improvement records. |
 | Interoperability Gateway | Keep platform boundaries portable. | Artifact import/export, open API and event adapters, identifier mapping, conformance tests. |
 | Agent Gateway | Govern agent execution. | Identity, delegated authority, skill discovery, policy, approval, budgets, audit and suspension. |

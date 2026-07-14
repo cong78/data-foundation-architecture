@@ -10,7 +10,7 @@ The architecture is strong in scope, product governance, contract lifecycle, AI 
 
 | Area | Current Position | Industry-Aligned Improvement |
 | --- | --- | --- |
-| Service model | Strong | Keep the eight reusable services and six architecture planes. They form a clear capability and completeness model. |
+| Service model | Strong | Keep the nine reusable services and six architecture planes. They form a clear capability and completeness model. |
 | Data contracts | Strong intent | Use ODCS as the canonical artifact; generate platform schemas from it; test round-trip portability. |
 | Data products | Strong lifecycle | Add an ODPS-compatible machine-readable descriptor and explicit input/output ports. |
 | Catalog | Partial | Publish a DCAT 3 exchange profile so products remain discoverable across catalogs. |

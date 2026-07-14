@@ -49,7 +49,7 @@ The foundation has one primary story: **Frame → Establish → Deliver → Use 
 | Five journey stages | What outcome and action comes next? | **Primary navigation model.** |
 | Five architecture layers | Where does a responsibility sit in the solution stack? | Use for placement, not sequence. |
 | Six target planes | Which cross-cutting concern governs the design? | Use for architecture completeness. |
-| Eight foundation services | Which reusable capability performs the work? | Use for service ownership and interfaces. |
+| Nine foundation services | Which reusable capability performs the work? | Use for service ownership and interfaces. |
 | Three product patterns | What promise does the product make? | Source-aligned, aggregate, or consumer-aligned. |
 | Four runway phases | How does the enterprise mature the capability? | Use for adoption planning, not an individual product lifecycle. |
 
