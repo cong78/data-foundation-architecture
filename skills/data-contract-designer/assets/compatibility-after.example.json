@@ -1,0 +1,21 @@
+{
+  "contract_id": "customer-360-creation",
+  "contract_type": "data_product_creation",
+  "version": "2.0.0",
+  "purpose": {
+    "valid_uses": ["customer analytics"],
+    "prohibited_uses": ["automated credit decisions"]
+  },
+  "data": {
+    "classification": "confidential",
+    "schema": {
+      "fields": [
+        {"name": "customer_id", "type": "integer", "required": true},
+        {"name": "country_code", "type": "string", "required": true},
+        {"name": "segment", "type": "string", "required": false}
+      ]
+    }
+  },
+  "trust": {"freshness": "PT24H"},
+  "control": {"retention": "P2Y"}
+}

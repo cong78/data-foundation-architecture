@@ -9,13 +9,13 @@ The guidance defines:
 - Foundation definition and scope.
 - Architecture principles and decision rules.
 - Reference architecture and data product lifecycle.
-- Eight foundation services.
+- Nine foundation services.
 - Architecture blueprint and service implementation patterns.
 - Data contract, data product management, OpenTelemetry, and AI-ready data standards.
 - Templates and examples for real delivery.
 - Governance, security, compliance, operating model, and implementation runway.
 
-The eight foundation services are:
+The nine foundation services are:
 
 - Data service portal
 - Data Service AI Assistant
@@ -23,14 +23,17 @@ The eight foundation services are:
 - Data product creation service
 - Data consumption service
 - Data sharing service
+- Platform enablement service
 - Data observability service
 - Data foundation operations service
 
-## Data Foundation Architect Skill
+## AI Skills
 
 The repository includes a platform-neutral AI skill at `skills/data-foundation-architect/`. It supports evidence-based assessment, architecture design, review, and governed artifact generation while treating the MkDocs pages as the authoritative guidance.
 
-See [Data Foundation Architect Skill](docs/architecture/data-foundation-architect-skill.md) for activation, examples, scoring, and validation.
+See [Data Foundation Architect Skill](docs/architecture/data-foundation-architect-skill.md) for OpenAI Codex, Claude Code, and GitHub Copilot CLI installation, activation, examples, scoring, and validation.
+
+The focused `skills/data-contract-designer/` package designs, reviews, compares, and plans changes to the three approved data contract types. See [Data Contract Designer Skill](docs/architecture/data-contract-designer-skill.md) for installation, examples, authority boundaries, and compatibility checking.
 
 ## Run Locally
 

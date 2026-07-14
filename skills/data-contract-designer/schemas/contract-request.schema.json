@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/data-contract-designer/contract-request.schema.json",
+  "title": "Data Contract Designer Request",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["task_id", "operation", "scope"],
+  "properties": {
+    "task_id": {"type": "string", "minLength": 1},
+    "operation": {
+      "type": "string",
+      "enum": ["design", "review", "change-impact"]
+    },
+    "contract_type": {
+      "type": ["string", "null"],
+      "enum": ["source_system_ingestion", "data_product_creation", "data_product_consumption", null]
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["boundary", "environment"],
+      "properties": {
+        "boundary": {"type": "string", "minLength": 1},
+        "environment": {"type": "string", "minLength": 1},
+        "source_ids": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+        "product_ids": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+        "port_ids": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+        "consumer_ids": {"type": "array", "items": {"type": "string"}, "uniqueItems": true}
+      }
+    },
+    "facts": {"type": "object"},
+    "contract_artifact": {"type": ["object", "null"]},
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "authority", "observed_at"],
+        "properties": {
+          "id": {"type": "string", "minLength": 1},
+          "authority": {"type": "string", "minLength": 1},
+          "observed_at": {"type": "string", "format": "date-time"},
+          "reference": {"type": "string"}
+        }
+      }
+    },
+    "requested_format": {
+      "type": "string",
+      "enum": ["markdown", "json", "yaml"]
+    }
+  }
+}

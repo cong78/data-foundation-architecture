@@ -2,7 +2,9 @@
 
 The repository includes a project-native AI skill that turns this guidance into repeatable architecture work without making the skill a second source of truth.
 
-Current package version: **1.3.0**.
+For focused contract authoring, review, compatibility, and migration work, use the companion [Data Contract Designer Skill](data-contract-designer-skill.md).
+
+Current package version: **1.3.1**.
 
 ## What It Does
 
@@ -28,6 +30,83 @@ skills/data-foundation-architect/
 ```
 
 `SKILL.md` contains the runtime-neutral operating workflow. `manifest.json` defines capabilities, side effects, authorization, data policy, reliability, approvals, telemetry, and tests. JSON schemas define assessment and task contracts. The guidance map points to authoritative pages under `docs/`, including the five-stage journey, nine services, portal marketplace, and architecture-to-operations traceability.
+
+## Install the Skill
+
+Install the complete `skills/data-foundation-architect/` directory, not only `SKILL.md`; its manifest, references, schemas, scripts, and assets are part of the package.
+
+Repository-scoped installation is recommended because the skill resolves its authoritative guidance from this MkDocs repository. Run the commands below from the repository root. A symbolic link keeps one canonical package, so updates under `skills/` are immediately available to the agent tool.
+
+=== "OpenAI Codex"
+
+    Codex discovers repository skills under `.agents/skills/`.
+
+    ```bash
+    mkdir -p .agents/skills
+    ln -sfn ../../skills/data-foundation-architect \
+      .agents/skills/data-foundation-architect
+    ```
+
+    Start Codex from this repository, run `/skills` to verify discovery, then invoke the skill explicitly:
+
+    ```text
+    $data-foundation-architect Review this architecture against the foundation guidance.
+    ```
+
+    Codex may also select the skill automatically when the request matches its description. If a newly installed skill does not appear, restart Codex. See the [Codex skills documentation](https://developers.openai.com/codex/skills).
+
+=== "Claude Code"
+
+    Claude Code discovers project skills under `.claude/skills/`.
+
+    ```bash
+    mkdir -p .claude/skills
+    ln -sfn ../../skills/data-foundation-architect \
+      .claude/skills/data-foundation-architect
+    ```
+
+    Start `claude` from this repository and invoke:
+
+    ```text
+    /data-foundation-architect Review this architecture against the foundation guidance.
+    ```
+
+    Claude Code can also load the skill automatically from its description. Skill changes are detected live when the skills directory was present at session start; otherwise restart the session. See the [Claude Code skills documentation](https://code.claude.com/docs/en/slash-commands).
+
+=== "GitHub Copilot CLI"
+
+    GitHub Copilot CLI discovers project skills under `.github/skills/`, `.agents/skills/`, or `.claude/skills/`. Use its native project location when installing it independently:
+
+    ```bash
+    mkdir -p .github/skills
+    ln -sfn ../../skills/data-foundation-architect \
+      .github/skills/data-foundation-architect
+    ```
+
+    Start `copilot`. In an existing session, reload and inspect the skill:
+
+    ```text
+    /skills reload
+    /skills info data-foundation-architect
+    /data-foundation-architect Review this architecture against the foundation guidance.
+    ```
+
+    The non-interactive CLI also supports `copilot skill list`. See the [GitHub Copilot CLI skills documentation](https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/add-skills).
+
+!!! tip "One shared project location"
+    OpenAI Codex and GitHub Copilot CLI both discover `.agents/skills/`. If only those two tools are used, the Codex installation is sufficient for both. Claude Code should use the additional `.claude/skills/` link.
+
+### Install Without Symbolic Links
+
+When symbolic links are unavailable, copy the package into the tool-specific directory. Repeat the copy after every skill update.
+
+```bash
+# Choose one destination: .agents/skills, .claude/skills, or .github/skills
+mkdir -p .agents/skills
+cp -R skills/data-foundation-architect .agents/skills/
+```
+
+Before trusting or invoking the skill, review `SKILL.md`, `manifest.json`, and bundled scripts. Installation makes the workflow discoverable; the host tool still controls filesystem, shell, network, approval, and identity permissions.
 
 ## Integrate with an Agent Runtime
 

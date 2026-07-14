@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/data-contract-designer/contract-result.schema.json",
+  "title": "Data Contract Designer Result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["task_id", "operation", "readiness", "contract_type", "summary", "findings", "evidence_gaps", "approvals_required", "next_actions", "guidance_used"],
+  "properties": {
+    "task_id": {"type": "string", "minLength": 1},
+    "operation": {
+      "type": "string",
+      "enum": ["design", "review", "compatibility", "change-impact"]
+    },
+    "readiness": {
+      "type": "string",
+      "enum": ["draft-ready-for-review", "not-ready", "conditionally-compatible", "breaking-change"]
+    },
+    "contract_type": {
+      "type": "string",
+      "enum": ["source_system_ingestion", "data_product_creation", "data_product_consumption"]
+    },
+    "summary": {"type": "string", "minLength": 1},
+    "draft_contract": {"type": ["object", "null"]},
+    "compatibility": {
+      "type": ["object", "null"],
+      "properties": {
+        "status": {"type": "string", "enum": ["compatible", "conditional", "breaking"]},
+        "recommended_version": {"type": "string", "enum": ["patch", "minor", "major"]},
+        "changes": {"type": "array", "items": {"type": "string"}}
+      },
+      "required": ["status", "recommended_version", "changes"],
+      "additionalProperties": false
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["severity", "area", "finding", "correction"],
+        "properties": {
+          "severity": {"type": "string", "enum": ["blocker", "major", "minor"]},
+          "area": {"type": "string", "minLength": 1},
+          "finding": {"type": "string", "minLength": 1},
+          "evidence": {"type": ["string", "null"]},
+          "correction": {"type": "string", "minLength": 1},
+          "owner": {"type": ["string", "null"]}
+        }
+      }
+    },
+    "enforcement_tests": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["promise", "enforcement_point", "test", "failure_outcome", "evidence_authority"],
+        "properties": {
+          "promise": {"type": "string"},
+          "enforcement_point": {"type": "string"},
+          "test": {"type": "string"},
+          "failure_outcome": {"type": "string"},
+          "evidence_authority": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "evidence_gaps": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "approvals_required": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "next_actions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["priority", "action"],
+        "properties": {
+          "priority": {"type": "integer", "minimum": 1},
+          "action": {"type": "string", "minLength": 1},
+          "owner": {"type": ["string", "null"]}
+        },
+        "additionalProperties": false
+      }
+    },
+    "guidance_used": {"type": "array", "items": {"type": "string"}, "uniqueItems": true}
+  }
+}

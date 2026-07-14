@@ -1,0 +1,4 @@
+interface:
+  display_name: "Data Contract Designer"
+  short_description: "Design and review enforceable data contracts"
+  default_prompt: "Use $data-contract-designer to design or review a data contract and identify required evidence."

@@ -33,7 +33,7 @@ When intent spans workflows, run them in this order: **Assess → Design → Gen
 
 - Separate enterprise foundation responsibilities, domain accountability, data product ownership, and runtime implementation.
 - Use **Frame → Establish → Deliver → Use → Operate** as the primary journey; treat layers, planes, services, product patterns, and runway phases as supporting views.
-- Use the eight foundation services as reusable capability boundaries. Keep the Data Product Marketplace inside the Data Service Portal rather than creating a separate catalog or platform.
+- Use the nine foundation services as reusable capability boundaries. Keep the Data Product Marketplace inside the Data Service Portal rather than creating a separate catalog or platform.
 - Keep source onboarding, ingestion, and raw and validated source-aligned products under central foundation platform accountability; keep domain, aggregate, and consumer-aligned product ownership federated to domain data teams.
 - Treat a data product as the unit of trust and reuse; do not equate a table or pipeline with a product.
 - Require explicit contracts, semantic context, policy, lineage, telemetry, lifecycle, and accountable ownership.

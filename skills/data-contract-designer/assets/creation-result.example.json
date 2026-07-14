@@ -1,0 +1,39 @@
+{
+  "task_id": "contract-task-001",
+  "operation": "design",
+  "readiness": "not-ready",
+  "contract_type": "data_product_creation",
+  "summary": "The creation boundary is identified, but semantics, quality thresholds, stable ports, lineage, policy, rollback, and approval evidence remain incomplete.",
+  "draft_contract": {
+    "contract_id": "customer-360-creation",
+    "version": "0.1.0",
+    "status": "draft"
+  },
+  "compatibility": null,
+  "findings": [
+    {
+      "severity": "blocker",
+      "area": "Product port",
+      "finding": "No stable output port or interface version was supplied.",
+      "evidence": null,
+      "correction": "Define the governed product port, interface, version, and runtime binding before review.",
+      "owner": "customer-domain-product-owner"
+    }
+  ],
+  "enforcement_tests": [
+    {
+      "promise": "Freshness does not exceed PT24H.",
+      "enforcement_point": "Product build and runtime observability",
+      "test": "Measure output observation time against the latest accepted input and published target.",
+      "failure_outcome": "Block product go-live for pre-release failure; raise a product SLO breach after publication.",
+      "evidence_authority": "Product CI and data observability service"
+    }
+  ],
+  "evidence_gaps": ["Approved semantic definitions", "Quality thresholds", "Lineage test", "Rollback evidence"],
+  "approvals_required": ["Data product owner", "Steward", "Technical owner", "Applicable security or privacy owner"],
+  "next_actions": [
+    {"priority": 1, "action": "Define the stable output port and versioned interface.", "owner": "customer-domain-product-owner"},
+    {"priority": 2, "action": "Complete semantic, quality, lineage, policy, and rollback terms.", "owner": null}
+  ],
+  "guidance_used": ["docs/standards/data-contract-standard.md", "docs/architecture/data-contract-design.md"]
+}

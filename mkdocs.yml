@@ -104,6 +104,7 @@ nav:
           - Data Product Developer Experience: architecture/data-product-developer-experience.md
           - Agentic Data Foundation: architecture/agentic-data-foundation.md
           - Data Foundation Architect Skill: architecture/data-foundation-architect-skill.md
+          - Data Contract Designer Skill: architecture/data-contract-designer-skill.md
       - Reference Solutions:
           - Data Ingestion Design: architecture/data-ingestion-design.md
           - Data Product Creation Design: architecture/data-product-creation-design.md

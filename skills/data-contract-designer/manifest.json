@@ -1,0 +1,88 @@
+{
+  "id": "data-contract-designer",
+  "version": "1.0.0",
+  "name": "Data Contract Designer",
+  "description": "Design, review, compare, and plan changes to enforceable data contracts using the three-contract model.",
+  "capabilities": [
+    {
+      "id": "design",
+      "description": "Draft one of the three data contract types with controls, tests, approvals, and evidence gaps.",
+      "input_schema": "schemas/contract-request.schema.json",
+      "output_schema": "schemas/contract-result.schema.json",
+      "output_contract": "references/output-contracts.md#contract-design"
+    },
+    {
+      "id": "review",
+      "description": "Review contract type, completeness, enforceability, lifecycle, and evidence.",
+      "input_schema": "schemas/contract-request.schema.json",
+      "output_schema": "schemas/contract-result.schema.json",
+      "output_contract": "references/output-contracts.md#contract-review"
+    },
+    {
+      "id": "compatibility",
+      "description": "Compare contract versions and recommend patch, minor, or major change handling.",
+      "input_schema": "schemas/compatibility-request.schema.json",
+      "output_schema": "schemas/contract-result.schema.json",
+      "output_contract": "references/output-contracts.md#compatibility-result"
+    },
+    {
+      "id": "change-impact",
+      "description": "Plan contract migration, coexistence, notice, rollback, deprecation, and retirement.",
+      "input_schema": "schemas/contract-request.schema.json",
+      "output_schema": "schemas/contract-result.schema.json",
+      "output_contract": "references/output-contracts.md#compatibility-result"
+    }
+  ],
+  "side_effects": {
+    "default": "draft",
+    "allowed": ["read", "draft", "reversible-write"],
+    "prohibited_without_external_approval": ["approve", "publish", "activate-source", "approve-go-live", "grant-access", "share-externally", "revoke-access", "retire"]
+  },
+  "authorization": {
+    "default_access": "read-only",
+    "required_context": ["user-identity", "purpose", "contract-boundary"],
+    "enforcement": "host-runtime-and-contract-system"
+  },
+  "data_policy": {
+    "default_classification": "internal",
+    "sample_data": "synthetic-or-minimized",
+    "evidence_content": "references-only-unless-explicitly-authorized",
+    "secrets": "prohibited"
+  },
+  "idempotency": {
+    "design_key": "contract.id+proposed.version+task.id",
+    "duplicate_behavior": "return-or-update-draft-without-approval-or-publication"
+  },
+  "reliability": {
+    "timeout": "host-runtime-defined",
+    "retry": "read-validation-and-draft-only",
+    "failure_behavior": "return-partial-result-with-explicit-gaps"
+  },
+  "approval": {
+    "draft_outputs": "user-review",
+    "contract_decisions": "accountable-party-approval",
+    "high_impact_terms": "named-security-privacy-legal-or-policy-approval"
+  },
+  "observability": {
+    "required_attributes": [
+      "skill.id",
+      "skill.version",
+      "capability.id",
+      "task.id",
+      "user.id",
+      "purpose",
+      "contract.id",
+      "contract.type",
+      "contract.version",
+      "evidence.coverage",
+      "outcome"
+    ],
+    "standard": "OpenTelemetry"
+  },
+  "tests": [
+    "scripts/validate_package.py",
+    "scripts/validate_examples.py",
+    "scripts/verify_guidance_map.py",
+    "scripts/assess_compatibility.py assets/compatibility-before.example.json assets/compatibility-after.example.json --format json"
+  ]
+}

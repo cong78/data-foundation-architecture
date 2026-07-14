@@ -12,31 +12,26 @@ It centralizes reusable controls and paved paths while leaving lifecycle service
 
 Platform Enablement is a **horizontal service**, not another stage in the source-to-product flow. The Data Service Portal exposes its request and status journeys; ingestion, product creation, consumption, sharing, observability, and operations consume its APIs, events, policies, and evidence.
 
-<div class="standards-map reference-map" role="img" aria-label="Platform Enablement Service providing shared capabilities to foundation services">
-  <div class="standards-map-head" aria-hidden="true">
-    <span>Service need</span><i></i><span>Shared enablement</span><i></i><span>Reusable outcome</span>
+<div class="architecture-native platform-native-map" role="img" aria-label="Platform Enablement Service design">
+  <div class="platform-authority"><small>Authoritative inputs</small><strong>Enterprise authorities and providers</strong><span>Identity · security policy · cloud and data platforms · service management · risk</span></div>
+  <span class="architecture-down" aria-hidden="true"></span>
+  <div class="platform-flow">
+    <div class="platform-end platform-intent"><small>Declare</small><strong>Lifecycle Service Intent</strong><span>Product · purpose · environment · policy · resource · lifecycle</span></div>
+    <i aria-hidden="true"></i>
+    <div class="platform-core">
+      <header><strong>Enablement API and Reconciler</strong><span>Authenticate intent · resolve policy · plan change · orchestrate provider · reconcile state</span></header>
+      <div class="platform-capabilities">
+        <span><strong>Contract system</strong>Register · validate · version · distribute</span>
+        <span><strong>Unity Catalog integration</strong>Objects · privileges · classification · lineage</span>
+        <span><strong>Storage lifecycle</strong>Delta · retention · recovery · deletion · cost</span>
+        <span><strong>Identity and security</strong>Users · workloads · agents · policy · audit</span>
+        <span><strong>Integration profiles</strong>APIs · events · connectors · conformance</span>
+        <span><strong>Provisioning and assurance</strong>Preview · receipts · drift · rollback</span>
+      </div>
+    </div>
+    <i aria-hidden="true"></i>
+    <div class="platform-end platform-outcome"><small>Prove</small><strong>Governed Resource and Evidence</strong><span>Resource · bindings · validation · telemetry · expiry · action receipt</span></div>
   </div>
-  <section class="standards-map-lane lane-govern">
-    <div class="standards-map-cell"><small>Declare</small><strong>Product · Purpose · Environment</strong><p>A service requests a governed resource or control using stable identifiers and versioned intent.</p></div>
-    <span class="standards-map-arrow" aria-hidden="true"></span>
-    <div class="standards-map-cell standards-map-focus"><strong>Contracts and metadata</strong><strong>Identity and security</strong><strong>Policy validation</strong></div>
-    <span class="standards-map-arrow" aria-hidden="true"></span>
-    <div class="standards-map-cell"><strong>Approved plan</strong><p>Resolved policy, ownership, obligations, dependencies, and evidence requirements.</p></div>
-  </section>
-  <section class="standards-map-lane lane-build">
-    <div class="standards-map-cell"><small>Provision</small><strong>Storage · Access · Integration</strong><p>Approved runtime intent is applied through reusable platform APIs and automation.</p></div>
-    <span class="standards-map-arrow" aria-hidden="true"></span>
-    <div class="standards-map-cell standards-map-focus"><strong>Delta storage lifecycle</strong><strong>Identity and policy bindings</strong><strong>APIs, events and connectors</strong></div>
-    <span class="standards-map-arrow" aria-hidden="true"></span>
-    <div class="standards-map-cell"><strong>Governed resource</strong><p>Provisioned, discoverable, secured, observable, recoverable, and lifecycle-managed capability.</p></div>
-  </section>
-  <section class="standards-map-lane lane-intelligence">
-    <div class="standards-map-cell"><small>Assure</small><strong>State · Drift · Evidence</strong><p>Runtime state is reconciled with contracts, policy, catalog metadata, and approved configuration.</p></div>
-    <span class="standards-map-arrow" aria-hidden="true"></span>
-    <div class="standards-map-cell standards-map-focus"><strong>Conformance checks</strong><strong>Drift detection</strong><strong>Audit and lifecycle evidence</strong></div>
-    <span class="standards-map-arrow" aria-hidden="true"></span>
-    <div class="standards-map-cell"><strong>Continuous control</strong><p>Exceptions, expiry, retention, revocation, and remediation remain visible and actionable.</p></div>
-  </section>
 </div>
 
 ## Scope

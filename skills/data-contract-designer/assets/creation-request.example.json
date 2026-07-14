@@ -1,0 +1,19 @@
+{
+  "task_id": "contract-task-001",
+  "operation": "design",
+  "contract_type": "data_product_creation",
+  "scope": {
+    "boundary": "Validated customer source-aligned product to Customer 360 aggregate product",
+    "environment": "production",
+    "product_ids": ["customer-source-v1", "customer-360"]
+  },
+  "facts": {
+    "owner": "customer-domain-product-owner",
+    "input_contract_versions": ["customer-source-ingestion@1.2.0"],
+    "output_grain": "one row per customer",
+    "freshness_target": "PT24H",
+    "classification": "confidential"
+  },
+  "evidence": [],
+  "requested_format": "markdown"
+}

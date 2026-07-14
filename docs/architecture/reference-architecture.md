@@ -6,65 +6,30 @@ The reference architecture shows the minimum building blocks needed to implement
 
 ## Architecture View
 
-Read each lane from left to right. **Build** and **Access** carry the runtime data flow; **Engage**, **Govern**, **Enable**, and **Operate** support every journey without becoming duplicate systems of record.
+Read the primary data flow from sources through ingestion, creation, physical product storage, unified access or sharing, and consumption. Portal, product control, enablement, observability, and operations are horizontal services around that flow.
 
-These lanes organize the delivery journey; they are not additional target architecture planes. Use the [Target Architecture](target-architecture.md) for cross-cutting plane responsibilities and this view for capability interaction.
+These services implement the target architecture; they are not additional target architecture planes. Use the [Target Architecture](target-architecture.md) for cross-cutting plane responsibilities and this view for capability interaction.
 
-<div class="standards-map reference-map" role="img" aria-label="Reference architecture organized into engage, govern, enable, build, access, and operate lanes">
-  <div class="standards-map-head" aria-hidden="true">
-    <span>Inputs</span><i></i><span>Foundation capabilities</span><i></i><span>Outcomes</span>
+<div class="architecture-native reference-native-map" role="img" aria-label="Data foundation reference architecture">
+  <a class="reference-rail rail-portal" href="../data-service-portal-model/"><strong>Data Service Portal</strong><span>Marketplace · journeys · workspaces · requests · status · evidence · AI assistant</span></a>
+  <a class="reference-rail rail-control" href="../data-contract-design/"><strong>Product Control Backbone</strong><span>Unity Catalog · product registry · contracts · semantics · policy · lineage · quality · workflow</span></a>
+  <div class="reference-flow" aria-label="Primary data product flow">
+    <div class="reference-node node-external"><strong>Source systems</strong><span>Files · APIs · databases · events</span></div><i aria-hidden="true"></i>
+    <a class="reference-node node-build" href="../../services/data-ingestion-service/"><strong>Data Ingestion</strong><span>Centrally managed source-aligned states</span></a><i aria-hidden="true"></i>
+    <a class="reference-node node-build" href="../../services/data-product-creation-service/"><strong>Product Creation</strong><span>Federated aggregate and consumer-aligned products</span></a><i aria-hidden="true"></i>
+    <a class="reference-node node-store" href="../data-product-creation-design/"><strong>Product Storage</strong><span>Delta Lake · distributed runtimes</span></a><i aria-hidden="true"></i>
+    <a class="reference-node node-access" href="../unified-access-design/"><strong>Unified Access</strong><span>Product · port · policy · context · adapter</span></a><i aria-hidden="true"></i>
+    <div class="reference-node node-external"><strong>BI · Apps · Platforms · AI</strong><span>SQL · APIs · events · features · retrieval</span></div>
   </div>
-
-  <section class="standards-map-lane lane-govern">
-    <div class="standards-map-cell"><small>Engage</small><strong>People · Teams · Systems</strong><p>Named users, workloads, product teams, consumers, and platform operators.</p></div>
-    <span class="standards-map-arrow" aria-hidden="true"></span>
-    <div class="standards-map-cell standards-map-focus"><a href="/services/data-service-portal/"><strong>Data Service Portal</strong></a><a href="/architecture/data-product-developer-experience/"><strong>Developer Workspace</strong></a><a href="/services/data-service-ai-assistant/"><strong>Data Service AI Assistant</strong></a></div>
-    <span class="standards-map-arrow" aria-hidden="true"></span>
-    <div class="standards-map-cell"><strong>Intent and task context</strong><p>Discovery, requests, workspaces, approvals, status, evidence, and action receipts.</p></div>
-  </section>
-
-  <section class="standards-map-lane lane-build">
-    <div class="standards-map-cell"><small>Govern</small><strong>Identity · Purpose · Product</strong><p>Authenticated actor and subject, product identity, use case, classification, and environment.</p></div>
-    <span class="standards-map-arrow" aria-hidden="true"></span>
-    <div class="standards-map-cell standards-map-focus"><strong>Catalog · Contract · Semantics</strong><strong>Policy · Workflow · Entitlement</strong><strong>Lineage · Quality · Go-Live</strong></div>
-    <span class="standards-map-arrow" aria-hidden="true"></span>
-    <div class="standards-map-cell"><strong>Decisions and controls</strong><p>Versioned metadata, policy decisions, obligations, lifecycle state, and audit evidence.</p></div>
-  </section>
-
-  <section class="standards-map-lane lane-access">
-    <div class="standards-map-cell"><small>Enable</small><strong>Intent · Policy · Resource</strong><p>Foundation services declare the shared capability and control profile they require.</p></div>
-    <span class="standards-map-arrow" aria-hidden="true"></span>
-    <div class="standards-map-cell standards-map-focus"><a href="/services/platform-enablement-service/"><strong>Platform Enablement</strong></a><strong>Storage · Contract · Identity</strong><strong>Security · Integration · Automation</strong></div>
-    <span class="standards-map-arrow" aria-hidden="true"></span>
-    <div class="standards-map-cell"><strong>Governed paved paths</strong><p>Provisioned resources, bindings, interfaces, receipts, reconciliation, and lifecycle evidence.</p></div>
-  </section>
-
-  <section class="standards-map-lane lane-intelligence">
-    <div class="standards-map-cell"><small>Build</small><strong>Files · Databases · APIs · Events</strong><p>Enterprise sources and approved external inputs.</p></div>
-    <span class="standards-map-arrow" aria-hidden="true"></span>
-    <div class="standards-map-cell standards-map-focus"><a href="/services/data-ingestion-service/"><strong>Data Ingestion</strong></a><a href="/services/data-product-creation-service/"><strong>Product Creation</strong></a><strong>Physical Product Storage</strong></div>
-    <span class="standards-map-arrow" aria-hidden="true"></span>
-    <div class="standards-map-cell"><strong>Live data products</strong><p>Source-aligned, aggregate, and consumer-aligned outputs with contracts, context, SLOs, and lineage.</p></div>
-  </section>
-
-  <section class="standards-map-lane lane-access">
-    <div class="standards-map-cell"><small>Access</small><strong>Product · Port · Consumer Purpose</strong><p>Stable product interfaces above distributed physical storage.</p></div>
-    <span class="standards-map-arrow" aria-hidden="true"></span>
-    <div class="standards-map-cell standards-map-focus"><a href="/architecture/unified-access-design/"><strong>Unified Access Design</strong></a><a href="/services/data-sharing-service/"><strong>Data Sharing</strong></a></div>
-    <span class="standards-map-arrow" aria-hidden="true"></span>
-    <div class="standards-map-cell"><strong>Governed outcomes</strong><p>BI, applications, platforms, APIs, events, partners, agents, models, features, and retrieval.</p></div>
-  </section>
-
-  <section class="standards-map-lane lane-intelligence">
-    <div class="standards-map-cell"><small>Operate</small><strong>Signals · Support · Change</strong><p>Health conditions, user needs, planned releases, dependencies, and service risk.</p></div>
-    <span class="standards-map-arrow" aria-hidden="true"></span>
-    <div class="standards-map-cell standards-map-focus"><a href="/services/data-observability-service/"><strong>Data Observability</strong></a><a href="/services/data-foundation-operations-service/"><strong>Foundation Operations</strong></a></div>
-    <span class="standards-map-arrow" aria-hidden="true"></span>
-    <div class="standards-map-cell"><strong>Reliable services</strong><p>Detection, response, recovery, communication, safer change, learning, and improvement.</p></div>
-  </section>
+  <div class="reference-share"><span>Approved exchange path</span><a href="../../services/data-sharing-service/"><strong>Data Sharing</strong>Internal and external · expiry · audit · revocation</a></div>
+  <a class="reference-rail rail-enable" href="../../services/platform-enablement-service/"><strong>Platform Enablement</strong><span>Contracts · Delta lifecycle · identity · security · integration · catalog synchronization · automation</span></a>
+  <div class="reference-support">
+    <a href="../../services/data-observability-service/"><strong>Data Observability</strong><span>OpenTelemetry · product health · SLOs · lineage · usage · impact</span></a>
+    <a href="../../services/data-foundation-operations-service/"><strong>Foundation Operations</strong><span>Support · incident · problem · change · release · recovery · improvement</span></a>
+  </div>
 </div>
 
-The Build lane contains an explicit ownership handoff. The foundation platform team centrally manages Data Ingestion and source-aligned raw and validated states. Domain data teams use Product Creation as a shared service and remain accountable for the aggregate and consumer-aligned products they publish.
+The primary flow contains an explicit ownership handoff. The foundation platform team centrally manages Data Ingestion and source-aligned raw and validated states. Domain data teams use Product Creation as a shared service and remain accountable for the aggregate and consumer-aligned products they publish.
 
 ## Capability Map
 
