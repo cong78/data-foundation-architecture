@@ -82,6 +82,18 @@ Each contract is stored as a portable YAML artifact in version control and the c
 - Use OpenAPI for API ports and AsyncAPI plus CloudEvents for event ports.
 - Prove semantic equivalence after round-trip export and import.
 
+### Embedded Product Descriptor
+
+The data product descriptor is part of the contract that publishes the product, not a separate canonical artifact. Its product-definition section must remain compatible with the [Open Data Product Standard 1.0](https://bitol.io/announcing-odps-v1-0-0-building-the-language-of-data-products/).
+
+| Product layer | Publishing contract | Descriptor behavior |
+| --- | --- | --- |
+| Source-aligned | Source System Ingestion Contract | Describes the validated source-aligned output, its stable identity, owners, lifecycle, ports, service promise, and support. |
+| Aggregate or consumer-aligned | Data Product Creation Contract | Describes the created product, its stable identity, purpose, domain, owners, lifecycle, ports, SLOs, support, and authoritative links. |
+| Consumption | Data Product Consumption Contract | References the exact product and publishing-contract version; it does not redefine the descriptor. |
+
+The descriptor and its publishing promise share one contract id, version, approval, lifecycle, compatibility decision, and immutable history. Catalog, portal, Unity Catalog, and registry records are projections of this contract. They may enrich search and runtime metadata, but they must not become an independently editable definition of the product.
+
 ## Common Fields
 
 All three contracts require:
@@ -101,8 +113,8 @@ All three contracts require:
 
 | Contract | Required additional content |
 | --- | --- |
-| Source System Ingestion Contract | Delivery pattern, endpoint or inbox, cadence, source schema and keys, source change notice, watermark or cursor, ordering, deduplication, replay, reconciliation, quarantine, raw retention, validated-state rules, and source support obligations. |
-| Data Product Creation Contract | Accepted input product and contract versions, transformation and composition rules, output grain and semantics, quality thresholds, SLOs, stable ports, lineage, product go-live gates, compatibility, rollback, and support. |
+| Source System Ingestion Contract | Delivery pattern, endpoint or inbox, cadence, source schema and keys, source change notice, watermark or cursor, ordering, deduplication, replay, reconciliation, quarantine, raw retention, validated-state rules, source support obligations, and the embedded descriptor for its published source-aligned output. |
+| Data Product Creation Contract | Accepted input product and contract versions, transformation and composition rules, output grain and semantics, quality thresholds, SLOs, stable ports, lineage, product go-live gates, compatibility, rollback, support, and the embedded descriptor for its aggregate or consumer-aligned output. |
 | Data Product Consumption Contract | Consumer identity, use case, purpose, selected product and creation-contract version, port and channel, row and field scope, obligations, service level, duration, expiry, revocation, usage telemetry, and downstream dependency. |
 
 ### Consumption Profiles
@@ -171,6 +183,7 @@ Adding a required field, removing or renaming a field, changing meaning or type,
 
 - The contract is one of the three approved types.
 - Required common and type-specific fields are complete.
+- Any publishing contract contains a valid ODPS-compatible product descriptor section; consumption contracts reference it without duplication.
 - Canonical artifact validates against the pinned open schema and portability profile.
 - Owners, approvals, effective time, expiry, and exceptions are recorded.
 - Contract-specific tests pass against the real runtime boundary.

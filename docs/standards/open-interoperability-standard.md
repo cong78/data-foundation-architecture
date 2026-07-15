@@ -26,7 +26,7 @@ flowchart LR
 | Concern | Required Open Baseline | Foundation Use |
 | --- | --- | --- |
 | Data contracts | [Open Data Contract Standard 3.1](https://bitol-io.github.io/open-data-contract-standard/latest/) | Canonical contract artifact, validation, and exchange. |
-| Data products | [Open Data Product Standard 1.0](https://bitol.io/announcing-odps-v1-0-0-building-the-language-of-data-products/) | Portable product descriptor and product-port inventory. |
+| Data products | [Open Data Product Standard 1.0](https://bitol.io/announcing-odps-v1-0-0-building-the-language-of-data-products/) | Portable product descriptor embedded in the publishing contract, including the product-port inventory. |
 | Catalog exchange | [W3C DCAT 3](https://www.w3.org/TR/vocab-dcat-3/) | Federated discovery of datasets, distributions, and data services. |
 | Batch lineage | [OpenLineage](https://openlineage.io/docs/next/) | Run, job, and dataset lineage events. |
 | Provenance exchange | [W3C PROV-O](https://www.w3.org/TR/prov-o/) | Cross-organization provenance where RDF exchange is needed. |
@@ -71,7 +71,7 @@ Identifiers are opaque, globally unique within the enterprise, immutable after p
 
 | Level | Required Evidence |
 | --- | --- |
-| 1. Artifact portable | Contract and product descriptors validate against pinned schemas; metadata exports as DCAT; canonical identifiers survive round-trip export and import. |
+| 1. Artifact portable | Publishing contracts and their embedded product descriptors validate against pinned schemas; metadata exports as DCAT; canonical identifiers survive round-trip export and import. |
 | 2. Service interoperable | APIs or events validate against OpenAPI or AsyncAPI; CloudEvents is used for event envelopes; lineage and telemetry can be consumed by independent receivers. |
 | 3. Ecosystem portable | Sharing works with an independent client; federated identity and revocation are tested; AI usage is traceable to product, contract, snapshot, identity, and purpose. |
 
@@ -81,7 +81,7 @@ Live products must meet Level 1. Shared platform services must meet Level 2. Pro
 
 - Validate canonical artifacts against pinned public schemas.
 - Export from one implementation and import into a clean reference implementation.
-- Confirm semantic equivalence after contract and product round trips.
+- Confirm semantic equivalence after publishing-contract round trips, including the embedded product descriptor.
 - Send lineage events to an independent OpenLineage-compatible endpoint.
 - Send telemetry through OTLP to an independent collector.
 - Validate API and event examples against their interface definitions.

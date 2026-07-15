@@ -5,7 +5,7 @@
 This reference solution applies the technology-neutral [Data Product Creation Service](../services/data-product-creation-service.md) and the mandatory [Data Catalog and Storage Standard](../standards/catalog-storage-standard.md) to Databricks. Databricks workspaces provide governed product engineering environments; Unity Catalog is the standard technical catalog and native governance layer, and Delta Lake is the default physical format for durable product tables.
 
 !!! info "Reference solution status"
-    Unity Catalog and Delta Lake are mandatory defaults under the [Data Catalog and Storage Standard](../standards/catalog-storage-standard.md). The Databricks workspace, compute, orchestration, and delivery profile remains a selected implementation that requires proof-of-capability evidence, security and cost review, portability tests, and an exit plan. Product, contract, workload, semantic-context, and release artifacts remain canonical and provider-independent.
+    Unity Catalog and Delta Lake are mandatory defaults under the [Data Catalog and Storage Standard](../standards/catalog-storage-standard.md). The Databricks workspace, compute, orchestration, and delivery profile remains a selected implementation that requires proof-of-capability evidence, security and cost review, portability tests, and an exit plan. Publishing-contract, workload, semantic-context, and release artifacts remain canonical and provider-independent; the product descriptor is embedded in the publishing contract.
 
 !!! tip "Fast path"
     **Decide:** [Executive Recommendation](#executive-recommendation) · **Design:** [Solution at a Glance](#solution-at-a-glance) and [Workspace Topology](#workspace-topology) · **Implement:** [Implementation Runway](#implementation-runway) · **Assure:** [Go-Live Gate](#go-live-gate) and [Done Criteria](#done-criteria)
@@ -23,7 +23,7 @@ Read the design from product intent at the top to governed consumption at the bo
 ```mermaid
 flowchart TB
     INTENT["Data Service Portal<br/>product intent · owner · contract · policy · go-live"]
-    REPO["Product repository<br/>descriptor · contract · context · code · tests · bundle"]
+    REPO["Product repository<br/>creation contract with descriptor · context · code · tests · bundle"]
     CICD["Enterprise CI/CD<br/>validate · test · plan · approve · promote"]
 
     subgraph WORKSPACES["Databricks product engineering"]
@@ -119,7 +119,7 @@ sequenceDiagram
     participant UC as Unity Catalog
 
     Owner->>Portal: Submit product intent and contract
-    Portal->>Repo: Scaffold descriptors, tests, code and bundle
+    Portal->>Repo: Scaffold creation contract with descriptor, tests, code and bundle
     Repo->>CI: Pull request
     CI->>CI: Validate contract, compatibility, policy and bundle
     CI->>Dev: Deploy isolated preview
@@ -136,7 +136,7 @@ sequenceDiagram
 ### Delivery Rules
 
 1. The portal creates a stable product id before any workspace object is created.
-2. The repository carries product, contract, workload, semantic-context, code, test, and bundle artifacts together while preserving their separate versions.
+2. The repository carries the publishing contract with its embedded product descriptor, workload, semantic-context, code, test, and bundle artifacts together. The descriptor shares the contract version; the other artifacts retain their own versions.
 3. CI validates artifacts before provisioning and produces a deterministic environment plan.
 4. Developers iterate in personal or team-isolated development schemas with synthetic, masked, or approved data.
 5. The same immutable code and configuration version moves to test and production; environment values are injected, not rebuilt.
@@ -210,7 +210,7 @@ Do not make every Unity Catalog object a data product. Use a predictable mapping
 | Product output port | Stable table, view, materialized view, streaming table, volume, function, model, or share registered under the product schema. |
 | Product version | Product and release metadata linked through governed tags, properties, and the release registry; do not encode every patch version in consumer names. |
 | Breaking interface version | Parallel stable port or schema namespace with an explicit migration and deprecation period. |
-| Contract | Canonical contract-registry record linked from the product and projected into tests, comments, tags, schema, and constraints where supported. |
+| Publishing contract | Canonical contract-registry record, including its embedded product descriptor, linked from the product and projected into catalog metadata, tests, comments, tags, schema, and constraints where supported. |
 | Semantic context | Versioned context package linked from the product; selected terms, metrics, and classifications may be projected into catalog metadata. |
 | Source dependency | Fully qualified input object and contract reference; path-based reads are prohibited for governed product logic unless explicitly approved. |
 | Access policy | Enterprise policy reference plus generated Unity Catalog grants, governed tags, ABAC, filters, masks, and workspace bindings. |
@@ -224,7 +224,7 @@ Use four enforcement points rather than expecting one Databricks feature to repr
 
 | Enforcement point | Required checks |
 | --- | --- |
-| Pull request | Descriptor schema, contract syntax, compatibility, SQL and code quality, policy-as-code, bundle validation, and unit tests. |
+| Pull request | Publishing-contract and embedded-descriptor schemas, compatibility, SQL and code quality, policy-as-code, bundle validation, and unit tests. |
 | Preview environment | Input compatibility, transformation behavior, representative data tests, quality rules, lineage capture, and resource plan. |
 | Test promotion | Integration, security, privacy, performance, resilience, rollback, access-policy, and consumer contract tests. |
 | Production runtime | Schema and quality checks, freshness and volume SLOs, pipeline expectations, anomaly signals, and product-health events. |

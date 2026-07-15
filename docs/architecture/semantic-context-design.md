@@ -140,7 +140,7 @@ spec:
 | Content | Accountable Owner | Authority |
 | --- | --- | --- |
 | Business concepts and definitions | Domain steward | Glossary or semantic registry |
-| Product grain, scope, and limitations | Data product owner | Product descriptor and context package |
+| Product grain, scope, and limitations | Data product owner | Publishing-contract descriptor and context package |
 | Schema and field semantics | Product owner and steward | Data contract |
 | Metrics and calculation rules | Metric owner | Governed metric registry or semantic model |
 | Usage and prohibited purposes | Product owner and risk owner | Contract and policy service |

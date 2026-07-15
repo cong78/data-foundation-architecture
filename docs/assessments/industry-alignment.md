@@ -12,7 +12,7 @@ The architecture is strong in scope, product governance, contract lifecycle, AI 
 | --- | --- | --- |
 | Service model | Strong | Keep the nine reusable services and six architecture planes. They form a clear capability and completeness model. |
 | Data contracts | Strong intent | Use ODCS as the canonical artifact; generate platform schemas from it; test round-trip portability. |
-| Data products | Strong lifecycle | Add an ODPS-compatible machine-readable descriptor and explicit input/output ports. |
+| Data products | Strong lifecycle | Embed an ODPS-compatible machine-readable descriptor and explicit input/output ports in the publishing contract. |
 | Catalog | Partial | Publish a DCAT 3 exchange profile so products remain discoverable across catalogs. |
 | APIs and events | Partial | Require OpenAPI for synchronous APIs and AsyncAPI plus CloudEvents for event interfaces. |
 | Lineage | Partial | Standardize runtime lineage on OpenLineage and map cross-company provenance to PROV-O when needed. |
@@ -34,7 +34,7 @@ This architecture is broader than the DDP specification because it also defines 
 | Unified self-service platform | Strong | Portal journeys compose shared services and authoritative systems. | Ensure APIs and CLI offer the same capabilities as the portal. |
 | Control and execution separation | Strong | Control and data planes are explicitly separated. | Define deployment contracts between control services and runtimes. |
 | Developer plane | Partial | Product factory and workspace patterns exist, but are distributed across guidance. | Establish a named Data Product Developer Workspace capability. |
-| Declarative workload specification | Gap | Contracts and product descriptors are declarative, but runtime intent is not unified. | Add one versioned workload specification linking product, contract, code, resources, policy, SLOs, and environments. |
+| Declarative workload specification | Gap | Publishing contracts, including embedded product descriptors, are declarative, but runtime intent is not unified. | Add one versioned workload specification linking product, contract, code, resources, policy, SLOs, and environments. |
 | Configuration and environment management | Partial | Platform runtime is defined; environment lifecycle is not explicit. | Standardize ephemeral development, test, and production promotion with configuration inheritance. |
 | Deployment and rollback | Partial | Go-live gates and release controls exist. | Define automated deployment, progressive delivery, rollback, and evidence capture. |
 | API-first and CLI-first development | Partial | Stable service APIs are required; CLI parity is not explicit. | Require portal, API, CLI, and agent skills to invoke the same service contracts. |
@@ -68,7 +68,7 @@ The target architecture therefore separates four concerns:
 | Priority | Change | Acceptance Test |
 | --- | --- | --- |
 | Now | Adopt the Open Core Profile and canonical identifiers. | One product exports and imports without losing required meaning. |
-| Now | Make ODCS and ODPS artifacts part of product go-live. | CI validates both artifacts and blocks incompatible changes. |
+| Now | Make the ODCS publishing contract and embedded ODPS-compatible descriptor part of product go-live. | CI validates the single contract artifact against both profiles and blocks incompatible changes. |
 | Now | Define a declarative data-product workload specification. | One file links product, contract, code, resources, policies, SLOs, environments, and deployment target. |
 | Now | Establish portal, API, CLI, and agent-skill parity. | The same product workflow can be executed through each channel using one service contract and policy path. |
 | Next | Add developer workspaces and environment promotion. | A team creates an isolated workspace, previews changes, promotes a release, and destroys the environment without a platform ticket. |

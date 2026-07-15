@@ -45,3 +45,18 @@ jobs:
           python skills/data-foundation-architect/scripts/assess_maturity.py \
             skills/data-foundation-architect/assets/domain-assessment.example.json \
             --format json > /tmp/domain-assessment-result.json
+
+      - name: Validate Data Contract Designer skill
+        run: |
+          python skills/data-contract-designer/scripts/validate_package.py
+          python skills/data-contract-designer/scripts/validate_examples.py
+          python skills/data-contract-designer/scripts/verify_guidance_map.py
+          python -m py_compile \
+            skills/data-contract-designer/scripts/assess_compatibility.py \
+            skills/data-contract-designer/scripts/validate_examples.py \
+            skills/data-contract-designer/scripts/validate_package.py \
+            skills/data-contract-designer/scripts/verify_guidance_map.py
+          python skills/data-contract-designer/scripts/assess_compatibility.py \
+            skills/data-contract-designer/assets/compatibility-before.example.json \
+            skills/data-contract-designer/assets/compatibility-after.example.json \
+            --format json > /tmp/contract-compatibility-result.json

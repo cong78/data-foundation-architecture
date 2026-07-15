@@ -2,6 +2,22 @@
 
 Use this template to request and assess a new data source.
 
+## Source System Ingestion Contract
+
+The contract owns both the source-delivery promise and the ODPS-compatible descriptor for the validated source-aligned product it publishes. The descriptor is not a separate lifecycle artifact.
+
+| Contract Field | Value |
+| --- | --- |
+| Contract id and version |  |
+| Contract status | Draft / Review / Approved / Published / Deprecated / Retired / Exception |
+| Source-aligned product id and name |  |
+| Product domain and purpose |  |
+| Product owner, steward, and support |  |
+| Lifecycle state |  |
+| Published output ports |  |
+| Service levels |  |
+| Authoritative metadata links |  |
+
 ## Source Summary
 
 | Field | Value |
@@ -11,7 +27,7 @@ Use this template to request and assess a new data source.
 | Business domain |  |
 | Data description |  |
 | Requested by |  |
-| Target data product |  |
+| Target source-aligned product |  |
 
 ## Ingestion Pattern
 

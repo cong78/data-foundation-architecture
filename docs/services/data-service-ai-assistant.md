@@ -48,7 +48,7 @@ The assistant should be available as a persistent panel and as contextual action
 | Product discovery | Find products by purpose, compare contracts, explain health and access. |
 | Product detail | Explain fields, summarize limitations, identify impacted consumers, start a consume request. |
 | Source journey | Recommend ingestion pattern, draft Source System Ingestion Contract, identify missing onboarding evidence. |
-| Product journey | Draft descriptor and contract, map semantics, check go-live readiness. |
+| Product journey | Draft the publishing contract with its embedded descriptor, map semantics, and check go-live readiness. |
 | Contract editor | Explain clauses, compare versions, detect breaking changes, prepare notifications. |
 | Product health | Correlate quality, freshness, lineage and incidents; propose remediation. |
 | Operations journey | Explain service health and impact, summarize incident status, find support guidance, draft a support request, and identify change or recovery evidence. |

@@ -32,7 +32,7 @@ The [Data Service Portal Design](../architecture/data-service-portal-model.md) d
 | Engagement | Notifications and subscriptions | Consumers and owners receive relevant contract, release, incident, deprecation, approval, and task updates. |
 | Operations | Support and service engagement | Users open support, inspect status and planned change, follow recovery, use knowledge, and provide feedback. |
 | Intelligence | Data Service AI Assistant | Ask, Plan, and Act modes explain evidence, prepare artifacts, and execute approved typed skills in context. |
-| Interoperability | Canonical artifact and channel parity | Product and contract artifacts can be imported or exported, and portal journeys remain available through governed APIs and automation. |
+| Interoperability | Canonical artifact and channel parity | Contract artifacts, including embedded product descriptors, can be imported or exported, and portal journeys remain available through governed APIs and automation. |
 
 ## Portal Experience Model
 
@@ -175,6 +175,6 @@ The user experience should use seven stable areas:
 - Users can see separate service-operation and data-entitlement decisions, including purpose, scope, obligations, expiry, and revocation status.
 - Product health, quality, freshness, and incidents are visible from the portal.
 - Portal records link back to authoritative catalog, contract, policy, lineage, observability, and foundation service systems.
-- Users can export canonical product and contract artifacts without requiring a platform-native format.
+- Users can export canonical contract artifacts, including embedded product descriptors, without requiring a platform-native format.
 - Journey and product views clearly identify the authority and observation time for every trust signal.
 - Assistant answers are grounded, actions are typed and approved, and every execution returns an auditable receipt.

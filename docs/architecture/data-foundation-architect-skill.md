@@ -4,7 +4,7 @@ The repository includes a project-native AI skill that turns this guidance into 
 
 For focused contract authoring, review, compatibility, and migration work, use the companion [Data Contract Designer Skill](data-contract-designer-skill.md).
 
-Current package version: **1.3.1**.
+Current package version: **1.4.0**.
 
 ## What It Does
 
@@ -23,13 +23,14 @@ The skill is stored at:
 skills/data-foundation-architect/
 ├── SKILL.md
 ├── manifest.json
+├── agents/
 ├── schemas/
 ├── references/
 ├── scripts/
 └── assets/
 ```
 
-`SKILL.md` contains the runtime-neutral operating workflow. `manifest.json` defines capabilities, side effects, authorization, data policy, reliability, approvals, telemetry, and tests. JSON schemas define assessment and task contracts. The guidance map points to authoritative pages under `docs/`, including the five-stage journey, nine services, portal marketplace, and architecture-to-operations traceability.
+`SKILL.md` contains the runtime-neutral operating workflow. `agents/openai.yaml` provides Skill Creator-compatible UI metadata. `manifest.json` defines capabilities, side effects, authorization, data policy, reliability, approvals, telemetry, and tests. JSON schemas define assessment and task contracts. The guidance map points to authoritative pages under `docs/`, including the five-stage journey, nine services, portal marketplace, and architecture-to-operations traceability.
 
 ## Install the Skill
 

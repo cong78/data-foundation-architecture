@@ -189,7 +189,7 @@ The portal may own:
 
 The portal must not be the sole owner of:
 
-- Canonical product descriptors or data contracts.
+- Canonical data contracts and their embedded product descriptors.
 - Policy decisions, entitlements, approvals, or recipient identity.
 - Quality results, product health, usage, incidents, or lineage.
 - Platform assets, pipeline execution, workspace provisioning, or sharing delivery.

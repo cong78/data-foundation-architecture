@@ -27,6 +27,9 @@ def main() -> int:
         errors.append("Creation request must exercise data_product_creation design")
     if result.get("task_id") != request.get("task_id"):
         errors.append("Creation result task_id must match request")
+    draft_contract = result.get("draft_contract")
+    if not isinstance(draft_contract, dict) or not isinstance(draft_contract.get("product_descriptor"), dict):
+        errors.append("Creation result must embed product_descriptor inside draft_contract")
     for key in ("readiness", "contract_type", "summary", "findings", "evidence_gaps", "approvals_required", "next_actions", "guidance_used"):
         if key not in result:
             errors.append(f"Creation result is missing {key}")

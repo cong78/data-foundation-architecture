@@ -22,8 +22,8 @@ Use exactly one contract type for the active boundary:
 
 | Boundary | Contract type | Core promise |
 | --- | --- | --- |
-| Source system to ingestion | `source_system_ingestion` | Delivery, receipt, validation, source-aligned output, replay, reconciliation, and source change. |
-| Accepted inputs to one product | `data_product_creation` | Transformation, meaning, quality, SLOs, policy, lineage, ports, go-live, and change. |
+| Source system to ingestion | `source_system_ingestion` | Delivery, receipt, validation, source-aligned output with embedded product descriptor, replay, reconciliation, and source change. |
+| Accepted inputs to one product | `data_product_creation` | Embedded product descriptor, transformation, meaning, quality, SLOs, policy, lineage, ports, go-live, and change. |
 | One live product to one consumer purpose | `data_product_consumption` | Identity, purpose, product version, port, scope, obligations, expiry, revocation, and usage. |
 
 Treat BI, application, platform, external sharing, and AI use as consumption profiles. Do not create sharing, AI, schema, catalog, quality, or service-level contract types.
@@ -46,6 +46,7 @@ When intent spans workflows, run **Review → Compatibility → Change impact �
 Capture supplied facts and mark missing facts explicitly:
 
 - Contract boundary, stable ids, environment, effective period, and exact upstream or product versions.
+- For a publishing contract, product descriptor facts: product id, name, domain, purpose, owners, lifecycle, ports, SLOs, support, and authoritative links.
 - Accountable provider, owner, steward, technical owner, consumer or recipient, support, and escalation.
 - Outcome, valid use, prohibited use, non-goals, and measurable value.
 - Schema, keys, grain, time meaning, semantics, classification, limitations, and examples.
@@ -60,12 +61,13 @@ Do not turn unknown values into plausible defaults. Use `TBD` with an accountabl
 
 1. Confirm the boundary and contract type.
 2. Load the common and type-specific requirements from the Data Contract Standard.
-3. Separate the durable promise from vendor runtime bindings.
-4. Draft business-readable terms and machine-testable rules from the same facts.
-5. Define enforcement before publication, at runtime, and during operation.
-6. Map each promise to a test, telemetry signal, failure outcome, and evidence authority.
-7. Identify mandatory approvers without claiming their approval.
-8. Return the contract draft using `references/output-contracts.md`.
+3. For ingestion or creation, embed the ODPS-compatible product descriptor in the contract; never create a separately versioned descriptor.
+4. Separate the durable promise from vendor runtime bindings.
+5. Draft business-readable terms and machine-testable rules from the same facts.
+6. Define enforcement before publication, at runtime, and during operation.
+7. Map each promise to a test, telemetry signal, failure outcome, and evidence authority.
+8. Identify mandatory approvers without claiming their approval.
+9. Return the contract draft using `references/output-contracts.md`.
 
 When a canonical ODCS artifact is requested, validate against the pinned schema before claiming conformance. Preserve enterprise extensions under an explicit namespace. Do not invent ODCS fields from memory.
 
@@ -74,12 +76,14 @@ When a canonical ODCS artifact is requested, validate against the pinned schema 
 Review in this order:
 
 1. **Correct type and boundary:** one of the three types; exact source, products, ports, parties, purpose, and versions.
-2. **Completeness:** all common and type-specific terms are present or explicitly unresolved.
+2. **Completeness:** all common and type-specific terms are present or explicitly unresolved, including an embedded descriptor for publishing contracts.
 3. **Accountability:** owners, approvers, support, escalation, obligations, and decision rights are named.
 4. **Enforceability:** terms can generate or drive tests, policy inputs, interfaces, telemetry, and failure outcomes.
 5. **Operational truth:** declared targets are separate from measured health and time-stamped evidence.
 6. **Lifecycle:** compatibility, notice, migration, expiry, revocation, deprecation, and retirement are executable.
 7. **Portability:** the canonical promise is not trapped in Unity Catalog, Delta, an API gateway, or another runtime.
+
+Treat a separately versioned product descriptor as a major design finding. The catalog or product registry may project descriptor fields for discovery, but it must not own a competing product definition.
 
 Order findings by severity:
 

@@ -52,7 +52,7 @@ The primary flow contains an explicit ownership handoff. The foundation platform
 | Boundary | Portable Contract |
 | --- | --- |
 | Portal to control plane | Stable APIs; portal stores workflow state, not duplicate product truth. |
-| Product to catalog | ODPS-compatible descriptor and DCAT-compatible catalog exchange. |
+| Product to catalog | ODPS-compatible descriptor projected from the publishing contract, plus DCAT-compatible catalog exchange. |
 | Producer to consumer | Stable logical product port with ODCS contract plus OpenAPI, AsyncAPI, table, query, file, feature, retrieval, semantic, or context interface definition. |
 | Runtime to lineage | OpenLineage-compatible run, job, and dataset events. |
 | Runtime to observability | OpenTelemetry semantic conventions and OTLP export. |
@@ -88,7 +88,7 @@ sequenceDiagram
     Ingest->>Catalog: Register source, schema, classification
     Ingest->>Store: Land source-aligned raw state with provenance
     Product->>Store: Transform and validate trusted dataset
-    Product->>Catalog: Publish product descriptor and ports
+    Product->>Catalog: Project contract-embedded descriptor and ports
     Product->>Contract: Publish approved contract version
     Portal->>Policy: Submit purpose-bound access request
     Policy->>Consume: Return entitlement, decision, and obligations

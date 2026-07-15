@@ -8,6 +8,8 @@ import re
 import sys
 from pathlib import Path
 
+import yaml
+
 
 REQUIRED_MANIFEST_FIELDS = {
     "id",
@@ -34,6 +36,7 @@ def main() -> int:
     required_files = [
         skill_file,
         manifest_file,
+        skill_dir / "agents/openai.yaml",
         skill_dir / "references/guidance-map.md",
         skill_dir / "references/evidence-rules.md",
         skill_dir / "references/output-contracts.md",
@@ -60,6 +63,24 @@ def main() -> int:
                 errors.append("SKILL.md name must be data-foundation-architect")
             if not re.search(r"^description:\s*\S", metadata, re.MULTILINE):
                 errors.append("SKILL.md description is required")
+
+    agent_file = skill_dir / "agents/openai.yaml"
+    if agent_file.is_file():
+        try:
+            agent = yaml.safe_load(agent_file.read_text(encoding="utf-8"))
+        except yaml.YAMLError as error:
+            errors.append(f"Invalid agents/openai.yaml: {error}")
+            agent = {}
+        interface = agent.get("interface", {}) if isinstance(agent, dict) else {}
+        for field in ("display_name", "short_description", "default_prompt"):
+            if not isinstance(interface.get(field), str) or not interface[field].strip():
+                errors.append(f"agents/openai.yaml interface.{field} is required")
+        short_description = interface.get("short_description", "")
+        if isinstance(short_description, str) and not 25 <= len(short_description) <= 64:
+            errors.append("agents/openai.yaml short_description must be 25-64 characters")
+        default_prompt = interface.get("default_prompt", "")
+        if isinstance(default_prompt, str) and "$data-foundation-architect" not in default_prompt:
+            errors.append("agents/openai.yaml default_prompt must mention $data-foundation-architect")
 
     try:
         manifest = json.loads(manifest_file.read_text(encoding="utf-8"))

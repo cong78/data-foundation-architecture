@@ -1,8 +1,12 @@
 # Data Product Template
 
-Use this template when proposing, designing, approving go-live, or publishing a data product.
+Use this template when proposing, designing, approving go-live, or publishing an aggregate or consumer-aligned data product. The product definition and delivery promise form one Data Product Creation Contract.
 
-## Product Summary
+## Data Product Creation Contract
+
+### Embedded Product Descriptor
+
+This section is the ODPS-compatible product descriptor inside the contract. It shares the contract id, version, approval, lifecycle, and change history; do not publish it as a separately governed artifact.
 
 | Field | Value |
 | --- | --- |
@@ -18,6 +22,17 @@ Use this template when proposing, designing, approving go-live, or publishing a 
 | Intended consumers |  |
 | Primary use cases |  |
 | Prohibited use cases |  |
+
+### Contract Identity
+
+| Field | Value |
+| --- | --- |
+| Contract id |  |
+| Contract version |  |
+| Contract status | Draft / Review / Approved / Published / Deprecated / Retired / Exception |
+| Compatibility rules |  |
+| Breaking change process |  |
+| Consumer notification period |  |
 
 ## Business Definition
 
@@ -67,17 +82,6 @@ Describe the business concept represented by the product. Include what the produ
 | Source | Owner | Ingestion Pattern | Contract | Classification |
 | --- | --- | --- | --- | --- |
 |  |  |  |  |  |
-
-## Contract
-
-| Field | Value |
-| --- | --- |
-| Contract id |  |
-| Contract version |  |
-| Contract status | Draft / Review / Approved / Published / Deprecated / Retired / Exception |
-| Compatibility rules |  |
-| Breaking change process |  |
-| Consumer notification period |  |
 
 ## Product Go-Live Gates
 
@@ -189,6 +193,6 @@ Use the [AI-Ready Data Product Checklist](../standards/ai-ready-data-standard.md
 - Product health dashboard available.
 - Consumer documentation published.
 - Active consumers registered.
-- Product and contract descriptors validate against pinned open schemas.
+- The publishing contract and its embedded product descriptor validate against pinned open schemas.
 - Required interoperability conformance record is approved.
 - Exception status reviewed.

@@ -32,6 +32,8 @@ The foundation platform team supplies the product-creation service and enforces 
 
 ## Minimum Product Metadata
 
+This metadata is the ODPS-compatible product descriptor section of the publishing contract. It is not maintained as a separate artifact: source-aligned products carry it in the Source System Ingestion Contract, while aggregate and consumer-aligned products carry it in the Data Product Creation Contract.
+
 - Product name and domain.
 - Product owner and technical owner.
 - Business description and intended use.

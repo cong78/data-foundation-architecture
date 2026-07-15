@@ -16,7 +16,7 @@ Build portal capability as thin vertical journeys:
 | Journey Slice | Minimum Integration |
 | --- | --- |
 | Discover | Catalog search, semantic concepts, current trust summary, saved products. |
-| Produce | Team, use case, workspace, product descriptor, contract, go-live workflow. |
+| Produce | Team, use case, workspace, publishing contract with embedded descriptor, go-live workflow. |
 | Consume | Authenticated identity, purpose, policy decision, entitlement, subscription, audit. |
 | Connect source | Source owner, ingestion pattern, Source System Ingestion Contract, onboarding workflow, status. |
 | Share | Recipient identity, Data Product Consumption Contract, minimization, delivery, expiry, and revocation. |
@@ -52,7 +52,7 @@ Build portal capability as thin vertical journeys:
 | Delivery | Generate a plan, run contract and policy checks, preview changes, deploy progressively, capture evidence, and support deterministic rollback. |
 | Operations | Detect configuration drift, correlate release and runtime telemetry, expose debugging context, and retain deployment receipts. |
 
-The developer workspace is a channel over foundation services, not a parallel platform. Product metadata remains in the product registry, contracts in the contract registry, policies in the policy service, and runtime state in the responsible execution platform.
+The developer workspace is a channel over foundation services, not a parallel platform. The contract registry owns the publishing contract and embedded descriptor; the product registry and catalog hold searchable projections, policies remain in the policy service, and runtime state remains in the responsible execution platform.
 
 ## Data Product Management Pattern
 
@@ -64,7 +64,7 @@ The developer workspace is a channel over foundation services, not a parallel pl
 | Change | Link product changes to contract version, compatibility result, release note, consumer notification, and migration plan. |
 | Subscription | Maintain active consumer list for impact analysis, incident notification, and deprecation management. |
 | Evidence | Keep approvals, test results, quality reports, lineage, access decisions, and incident records linked to product version. |
-| Portability | Validate ODPS and ODCS artifacts, preserve canonical ids, and test export/import in CI. |
+| Portability | Validate the publishing contract and embedded descriptor against ODCS and ODPS profiles, preserve canonical ids, and test export/import in CI. |
 
 ## Consumption Pattern
 

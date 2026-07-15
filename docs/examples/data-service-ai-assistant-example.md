@@ -91,7 +91,7 @@ output_schema:
 authorization:
   roles: [product_owner, contract_editor]
 context:
-  - product descriptor
+  - publishing contract with embedded product descriptor
   - Source System Ingestion Contracts
   - classification
   - enterprise contract profile

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Data Foundation Architect"
+  short_description: "Assess and design governed data foundations"
+  default_prompt: "Use $data-foundation-architect to assess or design a governed data foundation with evidence-based recommendations."

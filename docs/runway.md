@@ -57,7 +57,7 @@ Use the phases as **outcome gates**. Teams may prepare later capabilities early,
 | Platform services | First ingestion-to-consumption path plus baseline storage, contract, identity, security, integration, and automation enablement | Self-service creation, unified access, semantics, adapters, and reconciled platform resources | Agent, model, context, skill, and evaluation gateways with governed machine identities | Sharing and controlled-collaboration patterns with external identity and revocation |
 | Governance and security | Identity, classification, policy, lineage, ownership | Purpose-bound access and reusable domain controls | AI identity, data use, autonomy, and approval | Legal basis, minimization, expiry, and revocation |
 | Observability and operations | Telemetry conventions, service records, support and incident model | Product health, cost, problem, change, release, continuity, and improvement | Model, agent, evaluation, and AI-use telemetry | Recipient activity, delivery health, audit, and revocation evidence |
-| Interoperability | Stable ids plus ODCS and ODPS artifacts | Open metadata, lineage, API, event, telemetry, and independent-client proof | Portable AI context and action evidence | Open sharing interface and federated identity proof |
+| Interoperability | Stable ids plus one ODCS contract artifact with an embedded ODPS-compatible descriptor | Open metadata, lineage, API, event, telemetry, and independent-client proof | Portable AI context and action evidence | Open sharing interface and federated identity proof |
 
 ## Phase 1: Foundation Baseline
 
@@ -71,7 +71,7 @@ Use the phases as **outcome gates**. Teams may prepare later capabilities early,
 | Control foundation | Catalog, classification, lineage, identity, access workflow, contract approval, and stable enterprise identifiers. | Product, contract, lineage, policy, owner, and access evidence resolve consistently. |
 | Platform enablement | Supported storage lifecycle, contract system, identity and security bindings, catalog synchronization, integration interfaces, provisioning, and deprovisioning patterns. | One real product is provisioned and retired through governed APIs with correlated policy, contract, catalog, runtime, and lifecycle evidence. |
 | Observability and operations | OpenTelemetry conventions, production service records, SLOs, support, incident roles, escalation, change classes, continuity targets, and readiness criteria. | Service and product health are visible; one support and incident path is exercised. |
-| Portability | Canonical ODCS and ODPS artifacts stored independently of runtime-native metadata. | Artifacts validate against pinned schemas and retain stable identifiers. |
+| Portability | Canonical ODCS publishing contracts with embedded ODPS-compatible descriptors stored independently of runtime-native metadata. | The combined contract artifact validates against both pinned profiles and retains stable identifiers. |
 
 ### Phase 1 Gate
 

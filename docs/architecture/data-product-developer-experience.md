@@ -7,7 +7,7 @@ The Data Product Developer Experience gives engineers one declarative, self-serv
 ```mermaid
 flowchart LR
     DEV["Data Developer"] --> CHANNEL["Portal · CLI · API · Agent Skill"]
-    CHANNEL --> SPEC["Product + Contract + Workload Specs"]
+    CHANNEL --> SPEC["Publishing Contract + Workload Spec"]
     SPEC --> PLAN["Validate · Policy Check · Plan · Preview"]
     PLAN --> ENV["Isolated Environment"]
     ENV --> TEST["Build · Test · Observe"]
@@ -36,12 +36,11 @@ flowchart LR
 
 | Artifact | Owns | Must Reference |
 | --- | --- | --- |
-| Product descriptor | Purpose, owners, lifecycle, ports, SLOs, support. | Contract, workload, policy, and authoritative metadata links. |
-| Data contract | Schema, semantics, quality, compatibility, usage rules. | Product, interface, consumers, and policy intent. |
+| Publishing contract | Product descriptor, schema, semantics, quality, compatibility, policies, ports, lifecycle, SLOs, and support. | Inputs, interfaces, workload, authoritative metadata, and applicable consumers. |
 | Workload specification | Code, inputs, outputs, runtime needs, environments, deployment, rollback. | Product and contract versions, policies, SLOs, telemetry, and resources. |
 | Release record | Immutable deployed version and evidence. | Product, contract, workload, source revision, environment, test results, approvals, and rollback target. |
 
-These artifacts remain separate because they have different ownership and change rates. Stable identifiers bind them into one release.
+The publishing contract embeds the ODPS-compatible product descriptor and owns one version and lifecycle. The workload specification and release record remain separate because runtime intent and deployment evidence change for different reasons. Stable identifiers bind all three into one release.
 
 ## Channel Parity
 

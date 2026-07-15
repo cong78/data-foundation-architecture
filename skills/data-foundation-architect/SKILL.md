@@ -1,6 +1,6 @@
 ---
 name: data-foundation-architect
-description: Assess, design, review, and generate enterprise data foundation architecture using the guidance in this repository. Use for data domain onboarding and maturity, data products and contracts, foundation services, portal marketplace journeys, unified access, observability, operational runbooks, semantic context, AI enablement, technology selection, architecture conformance, or delivery artifacts.
+description: Assess, design, review, and generate governed data foundation architecture using this repository. Use for data domain onboarding or maturity, data products and contracts, foundation services, Data Service Portal marketplace journeys, unified access, observability, operational runbooks, semantic context, AI enablement, technology selection, architecture conformance, and delivery artifacts.
 ---
 
 # Data Foundation Architect

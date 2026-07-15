@@ -99,7 +99,7 @@ The response returns a resolved plan, policy decisions, provisioned resource ide
 
 - All provisioning uses authenticated service interfaces and stable source, product, contract, identity, environment, and resource identifiers.
 - Delta Lake is the default durable tabular storage format; exceptions require documented interoperability, lifecycle, recovery, and exit evidence.
-- Unity Catalog is the catalog and technical access-governance standard; canonical contract and product artifacts remain independently portable.
+- Unity Catalog is the catalog and technical access-governance standard; canonical contracts, including embedded product descriptors, remain independently portable.
 - Retention, deletion, archival, legal hold, recovery, residency, encryption, and cost controls are declared before production provisioning.
 - Enterprise identities are reused; local users, shared credentials, and untracked service accounts are prohibited.
 - Services enforce both service authorization and data authorization and return decisions and obligations as evidence.

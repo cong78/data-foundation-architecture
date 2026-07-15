@@ -2,7 +2,7 @@
 
 <div class="decision-brief"><div><small>Use when</small><strong>Declaring how a product workload is built and operated.</strong></div><div><small>Decision</small><strong>Is runtime intent portable, controlled, testable, and recoverable?</strong></div><div><small>Owner</small><strong>Workload owner and platform owner.</strong></div><div><small>Output</small><strong>Versioned workload plan and execution receipts.</strong></div></div>
 
-This standard defines the portable, declarative runtime intent for building and operating a data product. It complements the product descriptor and data contract; it does not duplicate their business or interface semantics.
+This standard defines the portable, declarative runtime intent for building and operating a data product. It complements the publishing contract, including its embedded product descriptor; it does not duplicate business or interface semantics.
 
 ## Canonical Workload Document
 
@@ -49,7 +49,7 @@ spec:
 | Area | Requirement |
 | --- | --- |
 | Identity | Stable workload id, semantic version, owner, and source revision. |
-| Product binding | Exact product descriptor and contract versions. |
+| Product binding | Exact product id and publishing-contract version containing its descriptor. |
 | Execution | Workload type, entry point, schedule or trigger, timeout, retry, and idempotency. |
 | Ports | Versioned input and output port references. |
 | Resources | Portable compute, storage, connector, secret-reference, and endpoint profiles. |

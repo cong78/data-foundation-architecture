@@ -33,13 +33,13 @@ Each federated aggregate or consumer-aligned data product must be:
 
 - Owned by a business or data domain.
 - Documented with clear business meaning.
-- Governed by a data contract.
+- Governed by a publishing contract that includes its product descriptor.
 - Validated against explicit quality rules.
 - Classified for sensitivity and permitted use.
 - Published through the catalog.
 - Versioned and lifecycle-managed.
 - Observable in production.
-- Described by a portable product descriptor with open input and output port definitions.
+- Described within that contract by an ODPS-compatible product descriptor with open input and output port definitions.
 
 ## Core Capabilities
 
@@ -47,13 +47,13 @@ Each federated aggregate or consumer-aligned data product must be:
 | --- | --- | --- |
 | Product definition | Product proposal and registry | Stable product identity, purpose, domain, owner, steward, pattern, intended consumers, value, support, and lifecycle are recorded. |
 | Developer experience | Governed product workspace | Templates, repository, API, CLI, isolated environments, preview, test data, and policy-aware tooling provide a repeatable build path. |
-| Contracts | Data Product Creation Contract engineering | Input and output promises, schema, semantics, quality, SLOs, compatibility, policy intent, and ports are versioned and tested. |
+| Contracts | Data Product Creation Contract engineering | The product descriptor, input and output promises, schema, semantics, quality, SLOs, compatibility, policy intent, and ports are versioned and tested together. |
 | Context | Semantic context package | Grain, concepts, metrics, relationships, usage guidance, limitations, and authoritative references are bound to product and contract versions. |
 | Engineering | Transformation and enrichment | Versioned batch, stream, SQL, API, feature, or retrieval workloads produce deterministic product outputs from approved inputs. |
 | Workloads | Declarative runtime orchestration | Portable workload intent resolves into governed resources, dependencies, deployment plans, execution receipts, drift detection, and rollback. |
 | Assurance | Quality, security, and lineage validation | Product rules, classification, access intent, lineage, reliability, portability, and affected consumers are tested before release. |
 | Release | Product go-live | The exact immutable candidate passes mandatory gates and receives an explicit approval, rejection, or expiring exception. |
-| Publication | Catalog and portal publication | Live descriptor, contract, context, ports, documentation, health, support, and access actions become discoverable together. |
+| Publication | Catalog and portal publication | The live contract and its descriptor are projected with context, ports, documentation, health, support, and access actions for discovery. |
 | Lifecycle | Change, version, and retirement management | Compatibility, impact, migration, coexistence, deprecation, consumer notification, retirement, and evidence retention are controlled. |
 | Portfolio | Product value and reuse review | Duplicate, low-value, low-use, unhealthy, ownerless, high-cost, and consolidation candidates receive accountable decisions. |
 | Evidence | Product telemetry and release traceability | Freshness, quality, availability, usage, cost, incidents, release, workload, contract, and product versions remain correlated. |
@@ -89,7 +89,7 @@ Each product should publish a [semantic context package](../architecture/semanti
 - Consumer-facing documentation is published.
 - Product health telemetry is available in the observability service.
 - Active consumers are registered for impact analysis and notifications.
-- Product and contract artifacts pass schema validation and round-trip portability tests.
+- The publishing contract and its embedded product descriptor pass schema validation and round-trip portability tests.
 - Semantic context is versioned, validated, policy-aware, and linked to authoritative terms, metrics, lineage, and health.
 - Workload specification validates, produces a deterministic plan, and binds the deployed release to product and contract versions.
 - Environment promotion, drift detection, and rollback have passing evidence.

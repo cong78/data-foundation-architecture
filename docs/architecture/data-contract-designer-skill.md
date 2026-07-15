@@ -4,7 +4,7 @@
 
 The repository includes a portable Data Contract Designer skill that turns the three-contract model into a focused workflow without giving an AI authority to approve, publish, or enforce a contract.
 
-Current package version: **1.0.0**.
+Current package version: **1.1.0**.
 
 ## What It Does
 
@@ -22,6 +22,8 @@ The skill uses only:
 - **Data Product Consumption Contract**
 
 BI, applications, platforms, sharing, and AI remain consumption profiles rather than additional contract types.
+
+For ingestion and creation contracts, version 1.1 embeds the ODPS-compatible product descriptor in the contract draft. Consumption contracts reference the exact product and publishing-contract version instead of duplicating the descriptor.
 
 ## Package
 
@@ -101,6 +103,7 @@ The checker detects field removal, field-type changes, optional-to-required chan
 
 - The skill produces drafts and reviews; it does not approve or publish contracts.
 - The Data Contract System remains authoritative for registered versions and lifecycle state.
+- The publishing contract owns the product descriptor version and lifecycle; catalog and portal records are projections.
 - Lifecycle services enforce contracts at ingestion, creation, consumption, and operation boundaries.
 - The skill does not grant access, activate sources, approve product go-live, accept risk, or invent evidence.
 - ODCS conformance is claimed only after validation against the pinned canonical schema and portability profile.
