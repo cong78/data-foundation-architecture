@@ -153,7 +153,7 @@ flowchart LR
 | --- | --- |
 | This overview | What are the major layers and boundaries? |
 | [Target Architecture](target-architecture.md) | Which logical planes govern the target state? |
-| [Architecture Design Map](design-map.md) | Which service-specific, platform foundation, and integration designs apply to each service? |
+| [Architecture Design Map](design-map.md) | Which service-specific, shared-capability, and integration designs apply to each service? |
 | [Data Foundation Model](data-foundation-model.md) | What are the core architecture objects and relationships? |
 | [Data Contract Design](data-contract-design.md) | Which contract governs each product layer, lifecycle gate, and enforcement point? |
 | [Reference Architecture](reference-architecture.md) | Which technology-neutral capabilities are required? |

@@ -74,7 +74,7 @@ Use `assets/domain-assessment.example.json` as the input shape. Do not interpret
 ## Design
 
 1. State the problem, scope, actors, consumers, constraints, assumptions, and non-goals.
-2. Classify the work as one primary **service-specific**, **platform foundation**, or **integration** design using `docs/architecture/design-map.md`.
+2. Classify the work as one primary **service-specific**, **shared capability**, or **integration** design using `docs/architecture/design-map.md`.
 3. Identify the owning service, supporting designs, and affected target planes before adding a component.
 4. Define logical responsibilities before mapping technologies; label vendor mappings as reference profiles.
 5. Show the main value flow and keep cross-cutting identity, policy, contract, lineage, semantic, and telemetry controls explicit.

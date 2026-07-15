@@ -1,6 +1,6 @@
 {
   "id": "data-foundation-architect",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "name": "Data Foundation Architect",
   "description": "Assess, design, review, and generate evidence-based governed data foundation architecture.",
   "capabilities": [

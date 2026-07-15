@@ -109,6 +109,14 @@ def require_reference(target: Path, registries: list[Path], errors: list[str]) -
             )
 
 
+def normalize_markdown(text: str) -> str:
+    """Expose prose terms while ignoring link destinations and inline code paths."""
+    text = re.sub(r"`[^`]*`", " ", text)
+    text = re.sub(r"\[([^\]]+)\]\([^)]*\)", r"\1", text)
+    text = re.sub(r"[*_~]+", "", text)
+    return re.sub(r"\s+", " ", text).strip().lower()
+
+
 def main() -> int:
     errors: list[str] = []
     version = (ROOT / "VERSION").read_text(encoding="utf-8").strip()
@@ -192,14 +200,20 @@ def main() -> int:
     if missing_terms:
         errors.append("Glossary is missing canonical terms: " + ", ".join(missing_terms))
 
-    searchable = "\n".join(
-        path.read_text(encoding="utf-8")
-        for root in (DOCS, ROOT / "skills")
-        for path in root.rglob("*.md")
+    stale_terms = (
+        "foundation capability groups",
+        "platform foundations",
+        "platform foundation design",
+        "platform foundation and integration",
     )
-    for stale in ("Foundation Capability Groups", "Platform foundations", "platform foundation design"):
-        if stale.lower() in searchable.lower():
-            errors.append(f"Outdated architecture term remains: {stale}")
+    for content_root in (DOCS, ROOT / "skills"):
+        for path in content_root.rglob("*.md"):
+            searchable = normalize_markdown(path.read_text(encoding="utf-8"))
+            for stale in stale_terms:
+                if stale in searchable:
+                    errors.append(
+                        f"{path.relative_to(ROOT)}: outdated architecture term remains: {stale}"
+                    )
 
     if errors:
         print("Release-readiness validation failed:")

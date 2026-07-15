@@ -4,7 +4,10 @@ All notable changes to the Data Foundation Architecture guidance are recorded he
 
 ## Unreleased
 
-No changes yet.
+### Changed
+
+- Data Foundation Architect skill `1.5.1` uses the canonical shared-capability design terminology.
+- Release-readiness validation normalizes Markdown before checking deprecated architecture terms.
 
 ## 0.1.0 - 2026-07-15
 

@@ -4,7 +4,7 @@ The repository includes a project-native AI skill that turns this guidance into 
 
 For focused contract authoring, review, compatibility, and migration work, use the companion [Data Contract Designer Skill](data-contract-designer-skill.md).
 
-Current package version: **1.5.0**.
+Current package version: **1.5.1**.
 
 ## What It Does
 
