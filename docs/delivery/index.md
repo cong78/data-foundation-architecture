@@ -36,7 +36,9 @@ Delivery turns architecture guidance into small, testable increments with reusab
 ## Delivery Rules
 
 1. Deliver one real source-to-consumer slice before expanding platform breadth.
-2. Automate standards and controls in templates, CI, workflows, and runtime services.
+2. Express enforceable rules with the [Architecture Policy Language](../standards/architecture-policy-language.md) and automate them in templates, CI, workflows, and runtime services.
 3. Treat conformance reports, telemetry, approvals, and release receipts as architecture evidence.
 4. Reuse patterns when they fit; record an expiring exception when they do not.
 5. Measure lead time, reuse, reliability, consumer value, and operating cost.
+
+Start policy-as-code work from the [Architecture Policy Template](../delivery-templates/architecture-policy-template.md).

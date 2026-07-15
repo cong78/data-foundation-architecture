@@ -111,12 +111,18 @@ nav:
       - Implementation:
           - Architecture Blueprint: implementation/implementation-blueprint.md
           - Architecture Patterns: implementation/service-implementation-patterns.md
-          - Architecture Decisions: implementation/architecture-decisions.md
       - Governance and Operations:
           - Governance Overview: governance/index.md
           - Governance Model: governance/governance-model.md
           - Security and Compliance: governance/security-compliance.md
           - Operating Model: governance/operating-model.md
+  - Decisions:
+      - Decision Register: implementation/architecture-decisions.md
+      - ADR-001 Central and Federated Ownership: decisions/adr-001-central-federated-ownership.md
+      - ADR-002 Unity Catalog: decisions/adr-002-unity-catalog.md
+      - ADR-003 Delta Storage: decisions/adr-003-delta-storage.md
+      - ADR-004 Unified Data Access: decisions/adr-004-unified-data-access.md
+      - ADR-005 Observability Platforms: decisions/adr-005-observability-platforms.md
   - Services:
       - Services Overview: services/index.md
       - Data Service Portal: services/data-service-portal.md
@@ -139,6 +145,7 @@ nav:
       - Operate a Service or Product: playbooks/operate-service-product.md
   - Standards:
       - Standards Overview: standards/index.md
+      - Architecture Policy Language: standards/architecture-policy-language.md
       - Data Contract Standard: standards/data-contract-standard.md
       - Access Control Standard: standards/access-control-standard.md
       - Data Catalog and Storage Standard: standards/catalog-storage-standard.md
@@ -157,6 +164,7 @@ nav:
           - Industry Alignment: assessments/industry-alignment.md
           - Data Foundation Maturity Assessment: assessments/data-foundation-maturity-assessment.md
       - Apply Templates:
+          - Architecture Policy Template: delivery-templates/architecture-policy-template.md
           - Data Product Template: delivery-templates/data-product-template.md
           - Data Domain Onboarding Record: delivery-templates/data-domain-onboarding-template.md
           - Data Product Workload Template: delivery-templates/data-product-workload-template.md

@@ -1,6 +1,8 @@
 # Data Foundation Architecture
 
-MkDocs repository for consolidated enterprise architecture guidance on building an AI-ready data foundation as part of a company Data and AI foundation.
+MkDocs repository for consolidated architecture guidance on building an AI-ready data foundation as part of a company Data and AI foundation.
+
+Version `0.1.0` is an incubating release for controlled pilots. Publication of the guidance does not imply that an implementation is conformant or operationally ready.
 
 ## Scope
 
@@ -13,6 +15,7 @@ The guidance defines:
 - Architecture blueprint and service implementation patterns.
 - Data contract, data product management, OpenTelemetry, and AI-ready data standards.
 - Templates and examples for real delivery.
+- Machine-readable architecture policies.
 - Governance, security, compliance, operating model, and implementation runway.
 
 The nine foundation services are:
@@ -51,3 +54,11 @@ Then open <http://127.0.0.1:8000>.
 ```bash
 mkdocs build
 ```
+
+## Validate Architecture Policies
+
+```bash
+python scripts/validate_architecture_policies.py
+```
+
+See `GOVERNANCE.md`, `COMPATIBILITY.md`, `CONTRIBUTING.md`, `SUPPORT.md`, and `CHANGELOG.md` before adopting or changing a public guidance interface.

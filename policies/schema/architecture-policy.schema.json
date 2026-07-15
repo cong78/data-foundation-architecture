@@ -1,0 +1,190 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://data.foundation.example/schemas/architecture-policy.schema.json",
+  "title": "Architecture Policy",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["apiVersion", "kind", "metadata", "spec", "implementation"],
+  "properties": {
+    "apiVersion": {
+      "const": "architecture.foundation/v1alpha1"
+    },
+    "kind": {
+      "const": "ArchitecturePolicy"
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "title", "version", "status", "owner", "reviewDate"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[A-Z0-9]+(?:-[A-Z0-9]+)*-(?:PRINCIPLE|RULE|CRITERION)-[0-9]{3}$"
+        },
+        "title": {"type": "string", "minLength": 3},
+        "version": {
+          "type": "string",
+          "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+        },
+        "status": {
+          "enum": ["draft", "proposed", "active", "deprecated", "retired"]
+        },
+        "owner": {"type": "string", "minLength": 1},
+        "reviewDate": {"type": "string", "format": "date"},
+        "tags": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1},
+          "uniqueItems": true
+        }
+      }
+    },
+    "spec": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["principle", "rules", "exception"],
+      "properties": {
+        "principle": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["id", "statement", "rationale"],
+          "properties": {
+            "id": {"$ref": "#/$defs/policyId"},
+            "statement": {"type": "string", "minLength": 10},
+            "rationale": {"type": "string", "minLength": 10}
+          }
+        },
+        "rules": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/rule"}
+        },
+        "exception": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["allowed"],
+          "properties": {
+            "allowed": {"type": "boolean"},
+            "approvers": {
+              "type": "array",
+              "items": {"type": "string", "minLength": 1},
+              "uniqueItems": true
+            },
+            "maximumDays": {"type": "integer", "minimum": 1},
+            "requiredFields": {
+              "type": "array",
+              "items": {
+                "enum": ["rationale", "risk", "compensatingControls", "owner", "expiry", "remediation"]
+              },
+              "uniqueItems": true
+            }
+          }
+        }
+      }
+    },
+    "implementation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["engine", "language", "entrypoint", "modules", "tests"],
+      "properties": {
+        "engine": {"const": "open-policy-agent"},
+        "language": {"const": "rego.v1"},
+        "entrypoint": {
+          "type": "string",
+          "pattern": "^data(?:\\.[a-z][a-z0-9_]*)+$"
+        },
+        "modules": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string", "pattern": "^[A-Za-z0-9_./-]+\\.rego$"},
+          "uniqueItems": true
+        },
+        "tests": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string", "pattern": "^[A-Za-z0-9_./-]+_test\\.rego$"},
+          "uniqueItems": true
+        }
+      }
+    }
+  },
+  "$defs": {
+    "policyId": {
+      "type": "string",
+      "pattern": "^[A-Z0-9]+(?:-[A-Z0-9]+)*-(?:PRINCIPLE|RULE|CRITERION)-[0-9]{3}$"
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["appliesTo", "environments"],
+      "properties": {
+        "appliesTo": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string", "minLength": 1},
+          "uniqueItems": true
+        },
+        "environments": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string", "minLength": 1},
+          "uniqueItems": true
+        },
+        "conditions": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1},
+          "uniqueItems": true
+        }
+      }
+    },
+    "criterion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "description", "decisionRef", "expectedResult", "evidenceAuthorities"],
+      "properties": {
+        "id": {"$ref": "#/$defs/policyId"},
+        "description": {"type": "string", "minLength": 10},
+        "decisionRef": {
+          "type": "string",
+          "pattern": "^data(?:\\.[a-z][a-z0-9_]*)+$"
+        },
+        "expectedResult": {"enum": ["allow", "deny"]},
+        "evidenceAuthorities": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string", "minLength": 1},
+          "uniqueItems": true
+        }
+      }
+    },
+    "rule": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "level", "statement", "scope", "enforcement", "criteria"],
+      "properties": {
+        "id": {"$ref": "#/$defs/policyId"},
+        "level": {"enum": ["MUST", "MUST NOT", "SHOULD", "SHOULD NOT", "MAY"]},
+        "statement": {"type": "string", "minLength": 10},
+        "scope": {"$ref": "#/$defs/scope"},
+        "enforcement": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["outcome", "points"],
+          "properties": {
+            "outcome": {"enum": ["block", "warn", "inform"]},
+            "points": {
+              "type": "array",
+              "minItems": 1,
+              "items": {"type": "string", "minLength": 1},
+              "uniqueItems": true
+            }
+          }
+        },
+        "criteria": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/criterion"}
+        }
+      }
+    }
+  }
+}

@@ -1,14 +1,14 @@
 # Principles
 
-These principles guide architecture decisions across the data foundation. They apply to ingestion, product creation, consumption, sharing, observability, governance, and operations.
+These principles guide architecture decisions across the data foundation. They apply to ingestion, product creation, consumption, sharing, observability, governance, and operations. Principles express direction; the [Architecture Policy Language](../standards/architecture-policy-language.md) translates that direction into enforceable rules and testable criteria.
 
 ## Principle Summary
 
-| Principle | Decision Rule |
+| Principle | Decision Direction |
 | --- | --- |
-| Data is managed as a product | Trusted datasets must have owners, consumers, quality expectations, documentation, access rules, and lifecycle states. |
+| Data is managed as a product | Trusted datasets are managed with accountable owners, intended consumers, quality expectations, documentation, access rules, and lifecycle states. |
 | Governance is built in | Platform Enablement makes security, privacy, classification, lineage, retention, identity, and quality controls reusable; lifecycle services enforce them in context. |
-| Standard patterns come first | Teams use approved ingestion, product, consumption, sharing, and observability patterns unless an exception is approved. |
+| Standard patterns come first | Approved ingestion, product, consumption, sharing, and observability patterns are the default; deviations are explicit exceptions. |
 | Metadata is a first-class asset | Business, technical, operational, and governance metadata is captured throughout the lifecycle. |
 | Consumption is fit for purpose | BI, applications, platforms, AI agents, and models receive access through patterns designed for their needs. |
 | Data contracts protect consumers | Interfaces are explicit, versioned, tested, and communicated before change. |
@@ -20,7 +20,7 @@ These principles guide architecture decisions across the data foundation. They a
 
 ## Applying Principles
 
-Principles should be used in architecture reviews, product go-live decisions, platform design, and exception handling. When a design conflicts with a principle, the exception should be documented with:
+Use principles in architecture reviews, product go-live decisions, platform design, and exception handling. For an enforceable decision, link the principle to an architecture policy containing atomic rules, executable criteria, named decisions, and evidence. When a design conflicts with an active rule, record the policy id and version with:
 
 - Reason for the exception.
 - Risk and compensating controls.

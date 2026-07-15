@@ -1,113 +1,39 @@
 # Architecture Dashboard
 
-<div class="decision-brief"><div><small>Use when</small><strong>Reviewing foundation capability and control evidence.</strong></div><div><small>Decision</small><strong>Which measured gap should be addressed next?</strong></div><div><small>Owner</small><strong>Foundation sponsor and capability owners.</strong></div><div><small>Output</small><strong>Prioritized improvement backed by current evidence.</strong></div></div>
+<div class="decision-brief"><div><small>Use when</small><strong>Reviewing current architecture and implementation evidence.</strong></div><div><small>Decision</small><strong>Which verified gap requires action next?</strong></div><div><small>Owner</small><strong>Foundation sponsor and capability owners.</strong></div><div><small>Output</small><strong>Prioritized improvement with owner, evidence, and review date.</strong></div></div>
 
-Use this page to discuss maturity with evidence. Values are illustrative; replace them with real portal, catalog, and observability data.
+This repository defines the dashboard structure but does not bundle organization-specific implementation results. A missing observation remains **Not assessed**; it is not converted into an illustrative score.
 
-<div class="metric-strip">
-  <div class="metric-card"><strong>9</strong>Foundation services</div>
-  <div class="metric-card"><strong>9</strong>Go-live gates</div>
-  <div class="metric-card"><strong>27</strong>Foundation maturity checks</div>
-  <div class="metric-card"><strong>OTel</strong>Telemetry standard</div>
-</div>
+## Evidence View
 
-<div class="blue-callout">
-  Review what exists, which gates are enforced, and where implementation is still thin.
-</div>
+| Area | Decision question | Minimum evidence | Status source |
+| --- | --- | --- | --- |
+| Direction and ownership | Are scope, service ownership, domain accountability, and decision rights current? | Approved scope, owners, ADRs, risks, exceptions, and review records. | Governance and architecture records. |
+| Foundation services | Are service boundaries implemented, supported, measurable, and reusable? | Service records, interfaces, SLOs, support, dependencies, incidents, changes, and usage. | Service catalog and operations platform. |
+| Products and contracts | Are live products owned, contracted, tested, observable, supported, and used? | Product records, three contract types, go-live results, health, consumers, changes, and lifecycle decisions. | Portal, contract registry, catalog, and product telemetry. |
+| Access and security | Are named users, workloads, delegated actors, and recipients governed at service and data boundaries? | Identity bindings, policy decisions, entitlements, obligations, expiry, deny tests, and revocation. | Identity, policy, Unity Catalog, and audit authorities. |
+| Observability and operations | Can owners detect, diagnose, recover, validate, and improve service and product behavior? | OTel signals, product telemetry, SLOs, alerts, incidents, runbooks, recovery exercises, and improvements. | Grafana Cloud, Databricks, Unity Catalog, and operations records. |
+| Interoperability and AI | Are interfaces portable and AI uses purpose-bound, reproducible, evaluated, and traceable? | Conformance tests, export and import results, AI-use terms, context versions, evaluations, and traces. | CI, interoperability records, AI gateway, and telemetry authorities. |
 
-## Capability Maturity
+## Review Record
 
-```vegalite
-{
-  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "Illustrative maturity by foundation service.",
-  "data": {
-    "values": [
-      {"service": "Portal", "maturity": 70},
-      {"service": "AI Assistant", "maturity": 50},
-      {"service": "Ingestion", "maturity": 65},
-      {"service": "Product Creation", "maturity": 60},
-      {"service": "Consumption", "maturity": 58},
-      {"service": "Sharing", "maturity": 45},
-      {"service": "Platform Enablement", "maturity": 54},
-      {"service": "Observability", "maturity": 55},
-      {"service": "Operations", "maturity": 52}
-    ]
-  },
-  "mark": {"type": "bar", "cornerRadiusEnd": 3},
-  "encoding": {
-    "x": {"field": "maturity", "type": "quantitative", "title": "Maturity score", "scale": {"domain": [0, 100]}},
-    "y": {"field": "service", "type": "nominal", "title": null, "sort": "-x"},
-    "color": {"value": "#0F238C"},
-    "tooltip": [
-      {"field": "service", "type": "nominal"},
-      {"field": "maturity", "type": "quantitative", "title": "Score"}
-    ]
-  }
-}
-```
+Use one row per measured scope and evidence window:
 
-## Go-Live Gate Coverage
+| Scope | Area | Result | Evidence time | Confidence | Gap or decision | Owner | Review date |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+|  |  | Pass / Fail / Not assessed |  | Automated / Sampled / Attested / Missing |  |  |  |
 
-```vegalite
-{
-  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "Illustrative product go-live gate coverage.",
-  "data": {
-    "values": [
-      {"gate": "Ownership", "status": "Implemented", "count": 1},
-      {"gate": "Purpose", "status": "Implemented", "count": 1},
-      {"gate": "Contract", "status": "In progress", "count": 1},
-      {"gate": "Quality", "status": "In progress", "count": 1},
-      {"gate": "Security", "status": "Implemented", "count": 1},
-      {"gate": "Lineage", "status": "In progress", "count": 1},
-      {"gate": "Observability", "status": "In progress", "count": 1},
-      {"gate": "Documentation", "status": "Implemented", "count": 1},
-      {"gate": "Portability", "status": "In progress", "count": 1}
-    ]
-  },
-  "mark": {"type": "arc", "innerRadius": 55},
-  "encoding": {
-    "theta": {"field": "count", "type": "quantitative"},
-    "color": {
-      "field": "status",
-      "type": "nominal",
-      "scale": {"range": ["#0F238C", "#7C87C0"]}
-    },
-    "tooltip": [
-      {"field": "gate", "type": "nominal"},
-      {"field": "status", "type": "nominal"}
-    ]
-  },
-  "view": {"stroke": null}
-}
-```
+## Interpretation Rules
 
-## AI-Ready Control Coverage
+- A pass requires authoritative evidence for the stated scope and observation time.
+- A failed mandatory gate remains visible and cannot be averaged into a percentage.
+- Stale, inaccessible, sampled without scope, or unsupported claims are marked `Not assessed`.
+- Design evidence does not prove implementation or operational behavior.
+- Drill-through retains the source record, accountable owner, exception, and remediation.
+- Use trends to guide improvement; do not rank domains without comparable scope and evidence confidence.
 
-```vegalite
-{
-  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "Illustrative AI-ready control coverage.",
-  "data": {
-    "values": [
-      {"control": "Lineage", "coverage": 80},
-      {"control": "Quality", "coverage": 72},
-      {"control": "Access Policy", "coverage": 76},
-      {"control": "AI Usage Approval", "coverage": 48},
-      {"control": "Retrieval Governance", "coverage": 42},
-      {"control": "Model-to-Data Trace", "coverage": 35}
-    ]
-  },
-  "mark": {"type": "line", "point": true, "strokeWidth": 3},
-  "encoding": {
-    "x": {"field": "control", "type": "nominal", "title": null},
-    "y": {"field": "coverage", "type": "quantitative", "title": "Coverage", "scale": {"domain": [0, 100]}},
-    "color": {"value": "#0F238C"},
-    "tooltip": [
-      {"field": "control", "type": "nominal"},
-      {"field": "coverage", "type": "quantitative"}
-    ]
-  }
-}
-```
+## Apply the Assessment
+
+Use the [Data Foundation Maturity Assessment](data-foundation-maturity-assessment.md) for the common dimensions and scoring interpretation. Use the [Architecture to Operations Map](../foundation/architecture-service-operations-map.md) to connect a gap to its owning service, standard, playbook, runbook, evidence source, and runway phase.
+
+<div class="read-next"><strong>Next:</strong> define one bounded review scope, collect authoritative evidence, and record only verified results.</div>

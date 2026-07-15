@@ -1,0 +1,43 @@
+apiVersion: architecture.foundation/v1alpha1
+kind: ArchitecturePolicy
+metadata:
+  id: DF-DATA-RULE-001
+  title: Publishing contract required for live data products
+  version: 1.0.0
+  status: active
+  owner: Data Product Governance
+  reviewDate: "2027-07-15"
+  tags: [data-product, contract, go-live]
+spec:
+  principle:
+    id: DF-DATA-PRINCIPLE-001
+    statement: Data is managed as a product with an explicit and observable promise.
+    rationale: A stable publishing contract makes product meaning, trust, ownership, and change independently verifiable.
+  rules:
+    - id: DF-DATA-RULE-001
+      level: MUST
+      statement: A go-live-approved or active data product MUST reference one approved or published contract containing its product descriptor.
+      scope:
+        appliesTo: [source-aligned-product, aggregate-product, consumer-aligned-product]
+        environments: [production]
+        conditions: [lifecycle is go-live-approved or active]
+      enforcement:
+        outcome: block
+        points: [pull-request, product-go-live, runtime-reconciliation]
+      criteria:
+        - id: DF-DATA-CRITERION-001
+          description: Pass when the product references a contract id with approved or published status and an embedded descriptor.
+          decisionRef: data.architecture.data_product_contract.decision
+          expectedResult: allow
+          evidenceAuthorities: [contract-registry, product-go-live-record]
+  exception:
+    allowed: true
+    approvers: [data-product-governance-owner, architecture-owner]
+    maximumDays: 90
+    requiredFields: [rationale, risk, compensatingControls, owner, expiry, remediation]
+implementation:
+  engine: open-policy-agent
+  language: rego.v1
+  entrypoint: data.architecture.data_product_contract.decision
+  modules: [policies/rego/data_product_contract.rego]
+  tests: [policies/rego/data_product_contract_test.rego]

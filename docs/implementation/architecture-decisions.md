@@ -2,10 +2,23 @@
 
 This page defines the key architecture decisions that should be made explicitly. Each decision should be captured as an architecture decision record when it affects platform direction, governance, security, or reuse.
 
+## Decision Register
+
+| ADR | Decision | Status | Owner | Review date | Affected areas |
+| --- | --- | --- | --- | --- | --- |
+| [ADR-001](../decisions/adr-001-central-federated-ownership.md) | Centralize ingestion and source-aligned products; federate aggregate and consumer-aligned products. | Accepted | Data Foundation Architecture | 2027-07-15 | Ownership, ingestion, domains, product creation |
+| [ADR-002](../decisions/adr-002-unity-catalog.md) | Use Unity Catalog as the technical catalog and unified authorization standard. | Accepted | Data Platform Architecture | 2027-07-15 | Catalog, access, lineage, products, AI assets |
+| [ADR-003](../decisions/adr-003-delta-storage.md) | Use Delta as the default durable tabular storage format. | Accepted | Data Platform Architecture | 2027-07-15 | Storage, product workloads, recovery, interoperability |
+| [ADR-004](../decisions/adr-004-unified-data-access.md) | Place governed product ports and a unified access layer above physical storage. | Accepted | Data Access Architecture | 2027-07-15 | Consumption, identity, policy, product ports |
+| [ADR-005](../decisions/adr-005-observability-platforms.md) | Use Grafana Cloud for system observability and Databricks plus Unity Catalog for product observability, connected by OpenTelemetry. | Accepted | Observability Architecture | 2027-07-15 | Telemetry, operations, product trust, incidents |
+
+An ADR records one consequential decision. The broader map below remains a decision backlog: create another ADR when a listed direction becomes adopted, changes a public interface, or requires migration and evidence.
+
 ## Decision Map
 
 | Decision | Recommended Direction | Rationale |
 | --- | --- | --- |
+| Architecture policy | Express principles, rules, and criteria through the Architecture Policy Language; keep the YAML or JSON envelope canonical and use OPA and Rego as the default execution profile. | Makes architecture guidance readable, testable, portable, and enforceable without coupling its meaning to one evaluator. |
 | User entry point | Use the Data Service Portal for discovery, requests, contracts, and workflow status. | Prevents fragmented access paths and creates consistent evidence. |
 | Portal interaction model | Organize journeys by user intent and bind them to domain team, use case, workspace, product, purpose, and evidence. | Makes complex foundation services understandable and reusable. |
 | Portal state | Limit portal-owned state to experience, drafts, preferences, tasks, and rebuildable read projections. | Prevents the experience layer from becoming a competing control plane. |
@@ -54,6 +67,10 @@ What improves? What trade-offs or risks remain?
 ## Evidence
 
 Which policies, product requirements, prototypes, or reviews support the decision?
+
+## Applicable Policy Decisions
+
+Which policy ids and versions apply, what decision did each return, and where is the evidence record?
 
 ## Review Date
 

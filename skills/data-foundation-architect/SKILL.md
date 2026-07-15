@@ -32,6 +32,7 @@ When intent spans workflows, run them in this order: **Assess → Design → Gen
 ## Apply Core Integrity Rules
 
 - Separate enterprise foundation responsibilities, domain accountability, data product ownership, and runtime implementation.
+- Separate principles, rules, and criteria. Use the Architecture Policy Language for new or changed normative guidance, with a canonical policy document, named decision, tests, enforcement points, and evidence.
 - Use **Frame → Establish → Deliver → Use → Operate** as the primary journey; treat layers, planes, services, product patterns, and runway phases as supporting views.
 - Use the nine foundation services as reusable capability boundaries. Keep the Data Product Marketplace inside the Data Service Portal rather than creating a separate catalog or platform.
 - Keep source onboarding, ingestion, and raw and validated source-aligned products under central foundation platform accountability; keep domain, aggregate, and consumer-aligned product ownership federated to domain data teams.
@@ -99,6 +100,7 @@ Start from the repository template that owns the requested artifact:
 
 | Artifact | Template |
 | --- | --- |
+| Architecture policy | `docs/delivery-templates/architecture-policy-template.md` |
 | Data domain onboarding | `docs/delivery-templates/data-domain-onboarding-template.md` |
 | Data product | `docs/delivery-templates/data-product-template.md` |
 | Data product workload | `docs/delivery-templates/data-product-workload-template.md` |

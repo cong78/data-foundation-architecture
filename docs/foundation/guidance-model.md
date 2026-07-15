@@ -10,7 +10,7 @@
 | Complete a task | [Action Playbooks](../playbooks/index.md) | Assembling steps from several standards. |
 | Make an architecture decision | [Architecture Overview](../architecture/overview.md) and [Principles](principles.md) | Selecting technology before defining the boundary. |
 | Understand a platform capability | [Services Overview](../services/index.md) | Treating a reference solution as the service contract. |
-| Verify a mandatory rule | [Standards Overview](../standards/index.md) | Relying on a diagram or summary sentence. |
+| Verify a mandatory rule | [Architecture Policy Language](../standards/architecture-policy-language.md) and [Standards Overview](../standards/index.md) | Relying on a diagram or summary sentence. |
 | Apply Databricks or Grafana | Reference Solutions under Architecture | Copying a vendor pattern without the technology-neutral contract. |
 | Trace design into operation | [Architecture to Operations Map](architecture-service-operations-map.md) | Treating architecture, service ownership, and recovery as separate documents. |
 | Plan adoption | [Runway](../runway.md) and [Maturity Assessment](../assessments/data-foundation-maturity-assessment.md) | Launching all components at once. |
@@ -24,7 +24,7 @@
 | Architecture | What exists, where it sits, and how it interacts. | Make or review a design decision. |
 | Service | What reusable capability the foundation provides and owns. | Design or consume a service contract. |
 | Playbook | Who does what, in which order, with which evidence. | Complete a task. |
-| Standard | What is mandatory and enforceable. | Implement or test a control. |
+| Standard | What is mandatory, how it is expressed, executed, and evidenced. | Implement or test a control. |
 | Reference solution | How a selected technology can implement the architecture. | Assess and adapt a technology profile. |
 | Template | Which decision and evidence fields must be recorded. | Create a governed artifact. |
 | Runbook | How an authorized operator diagnoses, contains, recovers, validates, and escalates a known condition. | Operate and exercise a live capability. |

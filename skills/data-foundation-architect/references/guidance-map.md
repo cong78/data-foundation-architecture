@@ -47,6 +47,7 @@ Resolve every path from the repository root. Load the smallest useful set.
 
 | Review concern | Standard |
 | --- | --- |
+| Architecture principles, rules, and criteria | `docs/standards/architecture-policy-language.md` |
 | Data contracts | `docs/standards/data-contract-standard.md` |
 | Product management and go-live | `docs/standards/data-product-management-standard.md` |
 | Product runtime | `docs/standards/data-product-workload-standard.md` |

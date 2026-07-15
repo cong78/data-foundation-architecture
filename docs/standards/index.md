@@ -2,7 +2,7 @@
 
 <div class="decision-brief"><div><small>Use when</small><strong>Determining what is mandatory at a boundary.</strong></div><div><small>Decision</small><strong>Which standards and enforcement points apply?</strong></div><div><small>Owner</small><strong>Control owner and implementation owner.</strong></div><div><small>Output</small><strong>Applicable rules, tests, and evidence.</strong></div></div>
 
-The standards turn the target architecture into enforceable design and delivery rules. They apply across planes and services; they are not isolated documents or technology-specific checklists.
+The standards turn the target architecture into enforceable design and delivery rules. They apply across planes and services; they are not isolated documents or technology-specific checklists. Use the [Architecture Policy Language](architecture-policy-language.md) to express each normative rule, executable criterion, decision, and evidence contract consistently.
 
 ## How the Standards Fit
 
@@ -19,6 +19,7 @@ The standards turn the target architecture into enforceable design and delivery 
     </div>
     <span class="standards-map-arrow" aria-hidden="true"></span>
     <div class="standards-map-cell standards-map-focus">
+      <a href="architecture-policy-language/"><strong>Architecture Policy Language</strong></a>
       <a href="data-contract-standard/"><strong>Data Contract</strong></a>
       <a href="access-control-standard/"><strong>Access Control</strong></a>
       <a href="data-product-management-standard/"><strong>Data Product Management</strong></a>
@@ -78,6 +79,7 @@ The lanes show the primary design outcomes. The matrices below capture supportin
 
 | Standard | Experience | Control | Data | AI | Observability | Security |
 | --- | :---: | :---: | :---: | :---: | :---: | :---: |
+| [Architecture Policy Language](architecture-policy-language.md) | S | P | S | S | S | S |
 | [Data Contract](data-contract-standard.md) | S | P | P | S | S | P |
 | [Access Control](access-control-standard.md) | S | P | P | P | P | P |
 | [Data Catalog and Storage](catalog-storage-standard.md) | S | P | P | S | S | P |
@@ -118,6 +120,7 @@ The lanes show the primary design outcomes. The matrices below capture supportin
 
 | Standard | Key Enforcement Points | Minimum Evidence |
 | --- | --- | --- |
+| Architecture Policy Language | Policy authoring, architecture review, CI/CD, provisioning, product go-live, and runtime reconciliation. | Versioned policy, schema result, named decision output, tests, exception, and correlated evidence record. |
 | Data Contract | Source onboarding, CI, product go-live, consumption, sharing, change release. | Versioned contract, validation results, compatibility decision, approvals, subscriber impact. |
 | Access Control | Every portal, API, CLI, workflow, service, query, event, file, feature, retrieval, agent, and sharing boundary. | Identity, actor and subject, service decision, data decision, purpose, entitlement, obligations, policy version, outcome, revocation test. |
 | Data Catalog and Storage | Source onboarding, product design, CI/CD, product go-live, runtime drift detection, and exception review. | Unity Catalog object or projection, Delta binding or exception, policy tests, lineage, retention, recovery, portability, and reconciliation evidence. |
@@ -131,16 +134,17 @@ The lanes show the primary design outcomes. The matrices below capture supportin
 
 ## Apply the Standards in Order
 
-1. Define the product and source interfaces with the **Data Contract Standard**.
-2. Define named-user and workload identity, service and data decisions, entitlements, and enforcement with the **Access Control Standard**.
-3. Register assets in Unity Catalog and bind durable tabular storage to Delta with the **Data Catalog and Storage Standard**.
-4. Define ownership, lifecycle, go-live, health, and retirement with the **Data Product Management Standard**.
-5. Define runtime intent, environments, deployment, and rollback with the **Data Product Workload Standard**.
-6. Select portable artifacts and open interfaces with the **Open Interoperability Standard**.
-7. Instrument services and products with the **OpenTelemetry Standard**.
-8. Add AI permissions, semantics, lineage, and evaluation data with the **AI-Ready Data Standard**.
-9. Add agents, skills, models, context, approvals, and evaluations with the **Agent, Skill and LLM Standard**.
-10. Evaluate actual products and vendors against all applicable requirements with the **Technology Selection Standard**.
+1. Express applicable principles, rules, criteria, enforcement points, and evidence with the **Architecture Policy Language**.
+2. Define the product and source interfaces with the **Data Contract Standard**.
+3. Define named-user and workload identity, service and data decisions, entitlements, and enforcement with the **Access Control Standard**.
+4. Register assets in Unity Catalog and bind durable tabular storage to Delta with the **Data Catalog and Storage Standard**.
+5. Define ownership, lifecycle, go-live, health, and retirement with the **Data Product Management Standard**.
+6. Define runtime intent, environments, deployment, and rollback with the **Data Product Workload Standard**.
+7. Select portable artifacts and open interfaces with the **Open Interoperability Standard**.
+8. Instrument services and products with the **OpenTelemetry Standard**.
+9. Add AI permissions, semantics, lineage, and evaluation data with the **AI-Ready Data Standard**.
+10. Add agents, skills, models, context, approvals, and evaluations with the **Agent, Skill and LLM Standard**.
+11. Evaluate actual products and vendors against all applicable requirements with the **Technology Selection Standard**.
 
 !!! tip "Design review rule"
     Review standards by architecture boundary, not by document. For each service interface, identify the applicable contract, policy, product state, telemetry, interoperability profile, and AI or agent controls before implementation.

@@ -1,0 +1,9 @@
+{
+  "productId": "customer-profile",
+  "lifecycle": "active",
+  "contract": {
+    "id": "customer-profile-creation",
+    "status": "published",
+    "productDescriptorEmbedded": true
+  }
+}

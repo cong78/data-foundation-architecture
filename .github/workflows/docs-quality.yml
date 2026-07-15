@@ -32,6 +32,26 @@ jobs:
       - name: Validate internal links and assets
         run: python scripts/check_internal_links.py site
 
+      - name: Install Open Policy Agent
+        uses: open-policy-agent/setup-opa@v2
+        with:
+          version: 1.18.2
+
+      - name: Validate architecture policies
+        run: |
+          python scripts/validate_architecture_policies.py
+          opa fmt --fail policies/rego
+          opa check --strict policies/rego
+          opa test policies/rego -v
+          opa eval --fail \
+            --data policies/rego/data_product_contract.rego \
+            --input policies/inputs/compliant-product.json \
+            'data.architecture.data_product_contract.decision.allow'
+
+      - name: Compile repository validators
+        run: |
+          python -m py_compile scripts/validate_architecture_policies.py
+
       - name: Validate Data Foundation Architect skill
         run: |
           python skills/data-foundation-architect/scripts/validate_package.py
