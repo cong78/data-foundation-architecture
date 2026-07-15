@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "data-foundation-architecture-agent/result.schema.json",
+  "title": "Architecture Agent Result",
+  "type": "object",
+  "required": [
+    "task_id",
+    "operation",
+    "status",
+    "summary",
+    "classification",
+    "citations",
+    "evidence_gaps",
+    "proposed_actions",
+    "approval",
+    "telemetry"
+  ],
+  "properties": {
+    "task_id": {"type": "string"},
+    "operation": {"type": "string"},
+    "status": {"enum": ["complete", "partial", "unresolved", "rejected"]},
+    "summary": {"type": "string"},
+    "classification": {
+      "type": "object",
+      "required": ["kind", "confidence", "basis"],
+      "properties": {
+        "kind": {"enum": ["repository-fact", "service-specific", "shared-capability", "integration", "needs-review"]},
+        "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+        "basis": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "citations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["path", "heading", "excerpt", "authority", "score"],
+        "properties": {
+          "path": {"type": "string"},
+          "heading": {"type": "string"},
+          "excerpt": {"type": "string"},
+          "authority": {"enum": ["definition", "architecture", "service", "standard", "decision", "playbook", "template", "assessment", "other"]},
+          "score": {"type": "number", "minimum": 0}
+        },
+        "additionalProperties": false
+      }
+    },
+    "evidence_gaps": {"type": "array", "items": {"type": "string"}},
+    "proposed_actions": {"type": "array", "items": {"type": "string"}},
+    "approval": {
+      "type": "object",
+      "required": ["required", "side_effect_class", "reason"],
+      "properties": {
+        "required": {"const": false},
+        "side_effect_class": {"const": "read"},
+        "reason": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "telemetry": {
+      "type": "object",
+      "required": ["agent_id", "agent_version", "guidance_revision", "task_id", "operation", "actor_id", "purpose", "source_count", "outcome"],
+      "properties": {
+        "agent_id": {"type": "string"},
+        "agent_version": {"type": "string"},
+        "guidance_revision": {"type": "string", "minLength": 1},
+        "task_id": {"type": "string"},
+        "operation": {"type": "string"},
+        "actor_id": {"type": "string"},
+        "purpose": {"type": "string"},
+        "source_count": {"type": "integer", "minimum": 0},
+        "outcome": {"type": "string"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

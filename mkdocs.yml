@@ -107,6 +107,7 @@ nav:
           - Data Sharing - Databricks: architecture/data-sharing-design.md
           - Observability - Databricks and Grafana: architecture/observability-design.md
       - AI Skills:
+          - Data Foundation Architecture Agent: architecture/data-foundation-architecture-agent.md
           - Data Foundation Architect Skill: architecture/data-foundation-architect-skill.md
           - Data Contract Designer Skill: architecture/data-contract-designer-skill.md
       - Implementation:

@@ -1,0 +1,37 @@
+{
+  "id": "data-foundation-architecture-agent",
+  "version": "0.1.0",
+  "name": "Data Foundation Architecture Agent",
+  "description": "Read-only governed architecture tools for a company AI assistant.",
+  "autonomy": "A0-A1",
+  "operations": [
+    "search_guidance",
+    "resolve_definition",
+    "classify_design",
+    "trace_architecture",
+    "prepare_context_pack"
+  ],
+  "side_effects": {
+    "class": "read",
+    "writes": false,
+    "external_actions": false
+  },
+  "authorization": {
+    "required_context": ["actor.id", "actor.type", "purpose", "task_id"],
+    "enforcement": "company-assistant-and-agent-adapter"
+  },
+  "authority": {
+    "source": "repository-markdown",
+    "generated_site_allowed": false,
+    "generated_results_are": "advisory"
+  },
+  "schemas": {
+    "request": "schemas/request.schema.json",
+    "result": "schemas/result.schema.json"
+  },
+  "integration": {
+    "openapi": "openapi.yaml",
+    "mcp": "future-adapter",
+    "a2a": "not-required-for-mvp"
+  }
+}

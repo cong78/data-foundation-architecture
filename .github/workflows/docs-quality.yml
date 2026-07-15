@@ -89,3 +89,17 @@ jobs:
             skills/data-contract-designer/assets/compatibility-before.example.json \
             skills/data-contract-designer/assets/compatibility-after.example.json \
             --format json > /tmp/contract-compatibility-result.json
+
+      - name: Validate Data Foundation Architecture Agent
+        run: |
+          PYTHONPATH=agent python agent/scripts/validate_agent.py
+          PYTHONPATH=agent python agent/scripts/evaluate_agent.py
+          PYTHONPATH=agent python -m unittest discover -s agent/tests -v
+          python -m py_compile \
+            agent/data_foundation_architecture_agent/__init__.py \
+            agent/data_foundation_architecture_agent/cli.py \
+            agent/data_foundation_architecture_agent/guidance.py \
+            agent/data_foundation_architecture_agent/runtime.py \
+            agent/scripts/evaluate_agent.py \
+            agent/scripts/validate_agent.py \
+            agent/tests/test_agent.py

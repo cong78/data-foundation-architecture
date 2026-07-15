@@ -1,0 +1,42 @@
+[
+  {
+    "id": "canonical-data-contract-definition",
+    "operation": "resolve_definition",
+    "query": "Data contract",
+    "expected_status": "complete",
+    "expected_kind": "repository-fact",
+    "required_authorities": ["definition"]
+  },
+  {
+    "id": "integration-design-classification",
+    "operation": "classify_design",
+    "query": "Cross-service handoff between ingestion and product creation",
+    "expected_status": "complete",
+    "expected_kind": "integration",
+    "required_authorities": ["architecture"]
+  },
+  {
+    "id": "shared-capability-classification",
+    "operation": "classify_design",
+    "query": "Shared identity and policy capability for all services",
+    "expected_status": "complete",
+    "expected_kind": "shared-capability",
+    "required_authorities": ["architecture"]
+  },
+  {
+    "id": "consumption-traceability",
+    "operation": "trace_architecture",
+    "query": "Governed consumption through unified access",
+    "expected_status": "complete",
+    "expected_kind": "repository-fact",
+    "required_authorities": ["architecture", "service", "standard", "playbook"]
+  },
+  {
+    "id": "observable-product-context",
+    "operation": "prepare_context_pack",
+    "query": "Design an observable data product consumption capability",
+    "expected_status": "complete",
+    "expected_kind": "repository-fact",
+    "minimum_citations": 3
+  }
+]

@@ -38,6 +38,10 @@ See [Data Foundation Architect Skill](docs/architecture/data-foundation-architec
 
 The focused `skills/data-contract-designer/` package designs, reviews, compares, and plans changes to the three approved data contract types. See [Data Contract Designer Skill](docs/architecture/data-contract-designer-skill.md) for installation, examples, authority boundaries, and compatibility checking.
 
+## Architecture Agent
+
+The read-only `agent/` package begins a model-neutral Data Foundation Architecture Agent that can integrate behind a company AI assistant. It provides typed requests and results, repository-grounded citations, deterministic architecture tools, and an OpenAPI adapter contract. See [Data Foundation Architecture Agent](docs/architecture/data-foundation-architecture-agent.md).
+
 ## Run Locally
 
 ```bash

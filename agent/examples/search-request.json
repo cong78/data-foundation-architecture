@@ -1,0 +1,19 @@
+{
+  "task_id": "architecture-agent-example-001",
+  "operation": "trace_architecture",
+  "query": "How should governed data consumption use unified access and purpose-bound policy?",
+  "actor": {
+    "id": "example.architect",
+    "type": "named-user"
+  },
+  "purpose": "Prepare an architecture review",
+  "scope": {
+    "type": "foundation-capability",
+    "id": "unified-access"
+  },
+  "context_references": [
+    "docs/architecture/unified-access-design.md",
+    "docs/services/data-consumption-service.md"
+  ],
+  "top_k": 6
+}

@@ -4,6 +4,10 @@ All notable changes to the Data Foundation Architecture guidance are recorded he
 
 ## Unreleased
 
+### Added
+
+- Read-only Data Foundation Architecture Agent foundation with portable contracts and a company-assistant OpenAPI adapter.
+
 ### Changed
 
 - Data Foundation Architect skill `1.5.1` uses the canonical shared-capability design terminology.
