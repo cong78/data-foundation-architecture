@@ -10,6 +10,7 @@ Resolve every path from the repository root. Load the smallest useful set.
 | Definition and boundary | `docs/foundation/definition-and-scope.md` |
 | Decision principles | `docs/foundation/principles.md` |
 | Architecture orientation | `docs/architecture/overview.md` |
+| Design classification and service mapping | `docs/architecture/design-map.md` |
 
 ## Assess
 
@@ -25,13 +26,14 @@ Resolve every path from the repository root. Load the smallest useful set.
 
 | Design concern | Guidance |
 | --- | --- |
-| Target and building blocks | `docs/architecture/target-architecture.md` and `docs/architecture/reference-architecture.md` |
-| Service boundaries and core capabilities | `docs/services/index.md` and the task-relevant service page under `docs/services/` |
-| Shared platform controls and automation | `docs/services/platform-enablement-service.md` |
+| Target composition and planes | `docs/architecture/target-architecture.md` and `docs/architecture/design-map.md` |
+| Service-specific design | `docs/services/index.md`, `docs/architecture/design-map.md`, and the task-relevant service page under `docs/services/` |
+| Shared capability design | `docs/architecture/platform-foundation-design.md` and the task-relevant shared design under `docs/architecture/` |
+| Integration and capability composition | `docs/architecture/integration-design.md` and `docs/architecture/reference-architecture.md` |
 | Data layers and product types | `docs/architecture/data-foundation-model.md` |
 | Domain boundaries | `docs/architecture/data-domain-design.md` |
 | Product lifecycle | `docs/architecture/data-product-lifecycle-design.md` |
-| Portal and marketplace experience | `docs/architecture/data-service-portal-model.md` and `docs/services/data-service-portal.md` |
+| Portal and marketplace experience | `docs/services/data-service-portal.md` |
 | Semantic context and catalog | `docs/architecture/semantic-context-design.md` |
 | Unified access | `docs/architecture/unified-access-design.md` |
 | Agentic design | `docs/architecture/agentic-data-foundation.md` |
@@ -41,7 +43,7 @@ Resolve every path from the repository root. Load the smallest useful set.
 | Sharing reference | `docs/architecture/data-sharing-design.md` |
 | Observability reference | `docs/architecture/observability-design.md` |
 | Architecture-to-service operational traceability | `docs/foundation/architecture-service-operations-map.md` |
-| Service operations and runbooks | `docs/services/data-foundation-operations-service.md` and `docs/delivery-templates/service-runbook-template.md` |
+| Foundation operations design and runbooks | `docs/services/data-foundation-operations-service.md` and `docs/delivery-templates/service-runbook-template.md` |
 
 ## Review Standards
 

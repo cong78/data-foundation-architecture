@@ -2,7 +2,7 @@
 
 ## Project Status
 
-Version `0.1.0` is an incubating architecture-guidance release for controlled pilots. It is not a supported runtime platform and does not certify an adopter's implementation.
+Version `0.1.0` is the first published, incubating architecture-guidance release for controlled pilots. It is not a supported runtime platform and does not certify an adopter's implementation.
 
 ## Request Types
 

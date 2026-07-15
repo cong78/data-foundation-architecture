@@ -16,15 +16,16 @@ Return:
 
 Return:
 
-1. Problem, outcomes, scope, actors, assumptions, constraints, and non-goals.
-2. Logical architecture with readable diagram.
-3. Component responsibilities and authoritative systems.
-4. Main value flow and failure behavior.
-5. Identity, policy, contract, semantic, lineage, telemetry, and lifecycle controls.
-6. Product ports and interoperability profile.
-7. Decisions, alternatives, risks, and open questions.
-8. Owning service, action playbook, runbook coverage, telemetry, recovery evidence, and runway phase for production scope.
-9. Delivery increments and done criteria.
+1. Problem, outcomes, scope, actors, assumptions, constraints, non-goals, and primary design class.
+2. Owning service, supporting shared capability designs, integration scope, and affected target planes.
+3. Logical architecture with readable diagram.
+4. Component responsibilities and authoritative systems.
+5. Main value flow, service handoffs, and failure behavior.
+6. Identity, policy, contract, semantic, lineage, telemetry, and lifecycle controls.
+7. Product ports and interoperability profile.
+8. Decisions, alternatives, risks, and open questions.
+9. Action playbook, runbook coverage, telemetry, recovery evidence, and runway phase for production scope.
+10. Delivery increments and done criteria.
 
 ## Architecture Review
 

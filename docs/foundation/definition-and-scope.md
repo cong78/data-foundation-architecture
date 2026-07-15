@@ -2,7 +2,7 @@
 
 ## Definition
 
-The **data foundation** is the enterprise capability that makes company data trusted, reusable, secure, observable, and ready for analytics, applications, platforms, and AI.
+The **data foundation** is the shared capability that makes organizational data trusted, reusable, secure, observable, and ready for analytics, applications, platforms, and AI.
 
 It combines:
 
@@ -20,22 +20,22 @@ The architecture guidance covers nine foundation services:
 
 | Service | Primary Responsibility |
 | --- | --- |
-| Data service portal | Provide the user entry point for data discovery, access requests, data product onboarding, workflow tracking, and data contract management. |
-| Data Service AI Assistant | Provide permission-filtered explanation, planning, and approved actions through governed agents, models, and typed skills. |
-| Data ingestion service | Bring data from source systems into the foundation using governed push, pull, and streaming patterns. |
-| Data product creation service | Create trusted, reusable datasets using data product principles. |
-| Data consumption service | Make trusted data available through fit-for-purpose access patterns. |
-| Data sharing service | Share governed data with internal platforms, customers, suppliers, and partners. |
-| Platform enablement service | Provide shared storage lifecycle, contract, identity, security, integration, catalog, and automation capabilities across foundation services. |
-| Data observability service | Observe data products end to end using system telemetry and data product telemetry, with OpenTelemetry as the standard. |
-| Data foundation operations service | Coordinate support, service management, incidents, problems, changes, releases, reliability, communication, continuity, and operational improvement across foundation services. |
+| [Data Service Portal](../services/data-service-portal.md) | Provide the user entry point for data discovery, access requests, data product onboarding, workflow tracking, and data contract management. |
+| [Data Service AI Assistant](../services/data-service-ai-assistant.md) | Provide permission-filtered explanation, planning, and approved actions through governed agents, models, and typed skills. |
+| [Data Ingestion Service](../services/data-ingestion-service.md) | Bring data from source systems into the foundation using governed push, pull, and streaming patterns. |
+| [Data Product Creation Service](../services/data-product-creation-service.md) | Create trusted, reusable datasets using data product principles. |
+| [Data Consumption Service](../services/data-consumption-service.md) | Make trusted data available through fit-for-purpose access patterns. |
+| [Data Sharing Service](../services/data-sharing-service.md) | Share governed data with internal platforms, customers, suppliers, and partners. |
+| [Platform Enablement Service](../services/platform-enablement-service.md) | Provide shared storage lifecycle, contract, identity, security, integration, catalog, and automation capabilities across foundation services. |
+| [Data Observability Service](../services/data-observability-service.md) | Observe data products end to end using system telemetry and data product telemetry, with OpenTelemetry as the standard. |
+| [Data Foundation Operations Service](../services/data-foundation-operations-service.md) | Coordinate support, service management, incidents, problems, changes, releases, reliability, communication, continuity, and operational improvement across foundation services. |
 
 ## In Scope
 
 - Source onboarding and ingestion patterns.
 - Source-aligned raw and validated states, aggregate products, and consumer-aligned products or views. Every live product is reusable by design.
 - Data product design, ownership, go-live, and lifecycle management.
-- Data service portal experience for discovery, onboarding, access, workflow tracking, and data contract management.
+- Data Service Portal experience for discovery, onboarding, access, workflow tracking, and data contract management.
 - Metadata, catalog, lineage, classification, quality, and policy controls.
 - Consumption patterns for BI, applications, platforms, AI agents, and AI models.
 - Secure data sharing across internal and external boundaries.
@@ -60,7 +60,7 @@ The Data Foundation Platform Team centrally owns source onboarding, ingestion, a
 
 ### How Data Domains Fit
 
-A data domain is a business-aligned accountability and product-portfolio boundary **inside** the enterprise data foundation. The foundation supplies shared services, centrally managed source-aligned inputs, standards, controls and evidence; each domain adopts them and owns its downstream product meaning, stewardship, priorities, consumer outcomes and quality decisions.
+A data domain is a business-aligned accountability and product-portfolio boundary **inside** the shared data foundation. The foundation supplies shared services, centrally managed source-aligned inputs, standards, controls and evidence; each domain adopts them and owns its downstream product meaning, stewardship, priorities, consumer outcomes and quality decisions.
 
 A domain is not defined by one workspace, catalog, schema, team or vendor platform. Its identity remains stable across implementation and organization changes. Every product has one accountable owning domain, and cross-domain use occurs through governed product ports and contracts. See [Data Domain Design](../architecture/data-domain-design.md).
 

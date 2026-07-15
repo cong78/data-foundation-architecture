@@ -1,78 +1,102 @@
 # Data Ingestion Service
 
-<div class="decision-brief"><div><small>Use when</small><strong>Onboarding or operating a source channel.</strong></div><div><small>Decision</small><strong>Which governed ingestion pattern and contract apply?</strong></div><div><small>Owner</small><strong>Foundation ingestion owner.</strong></div><div><small>Output</small><strong>Validated source-aligned product and handoff.</strong></div></div>
+<div class="decision-brief"><div><small>Use when</small><strong>Onboarding or operating a source channel.</strong></div><div><small>Decision</small><strong>Which governed ingestion pattern and contract apply?</strong></div><div><small>Owner</small><strong>Foundation ingestion owner with source owner.</strong></div><div><small>Output</small><strong>Validated source-aligned product and handoff.</strong></div></div>
 
 ## Definition
 
-The data ingestion service brings data from source systems into the foundation through standardized, governed patterns. It makes onboarding repeatable while preserving provenance, enforcing baseline controls, and preparing data for product creation.
+The Data Ingestion Service centrally manages source onboarding and reliable receipt through file inbox push, connector pull, API extraction, CDC, and event streaming. It publishes raw and validated source-aligned states while preserving source meaning, provenance, replay, and source-owner obligations.
 
-For a selected implementation profile, see [Data Ingestion Design](../architecture/data-ingestion-design.md), which maps this service to Lakeflow Connect, Auto Loader, Databricks streaming runtimes, and Unity Catalog while preserving the Source System Ingestion Contract and source-aligned boundary.
+## Scope and Boundaries
 
-## Scope
-
-| In Scope | Out of Scope |
+| Owns | Does Not Own |
 | --- | --- |
-| File inbox push, connector-based pull, API extraction, CDC, and event-based streaming. | Business transformation into live data products. |
-| Source onboarding, schema registration, landing, validation, quarantine, and ingestion telemetry. | Source system ownership or upstream business process quality. |
-| Source-aligned storage with raw and validated states, metadata, lineage, classification, and retention controls. | Consumer-facing semantic models or product go-live approval. |
+| Source onboarding, connectivity, transport, raw receipt, validation, quarantine, replay, reconciliation, and source-aligned publication. | Aggregate or consumer-aligned business transformation. |
+| Operational reliability and evidence for centrally managed source-aligned states. | Accepting breaking source changes without accountable contract review. |
+| Standard push, pull, API, CDC, and streaming patterns. | Replicating data when direct or federated access better satisfies the use case. |
 
-## Central Ownership Model
+## Architecture Alignment
 
-The Data Foundation Platform Team is accountable for this service and for the complete source-aligned lifecycle. It centrally manages source onboarding, connector and pipeline operation, raw and validated states, quarantine, replay, source-aligned contracts, access, retention, lineage, telemetry, incidents, and retirement.
+| Concern | Alignment |
+| --- | --- |
+| Primary plane | Data |
+| Supporting planes | Control, Security, and Observability |
+| Shared capabilities | Source System Ingestion Contract, catalog, Delta storage, identity, secrets, lineage, retention, and telemetry. |
+| Integration flows | Source onboarding, source change, delivery, quarantine and replay, validated handoff, and incident recovery. |
 
-The source system team remains accountable for source availability, source meaning, delivery obligations, and change communication. Domain data teams may define downstream acceptance needs and stewardship input, but they consume the validated source-aligned contract rather than creating separate extraction pipelines or owning source-aligned storage.
+## Service Architecture
 
-Regional runtimes or delegated operators are implementation choices. They must use the central service contract, controls, identities, evidence model, and operating ownership.
+```mermaid
+flowchart LR
+    SOURCE["Source system"]
+    RECEIVE["Receive and checkpoint"]
+    RAW["Raw source-aligned state"]
+    VALIDATE["Validate and reconcile"]
+    VALID["Source-aligned data product"]
+    DOWN["Data Product Creation Service"]
 
-## Supported Patterns
+    SOURCE --> RECEIVE --> RAW --> VALIDATE --> VALID --> DOWN
+    VALIDATE -->|invalid| QUAR["Managed quarantine"]
+```
 
-| Pattern | Use When | Required Controls |
-| --- | --- | --- |
-| File inbox push | Source teams can produce files on a schedule or event trigger. | File contract, checksum, schema validation, retention, quarantine. |
-| Connector-based pull | The foundation connects to APIs, databases, SaaS platforms, or enterprise applications. | Credential management, incremental extraction, throttling, schema drift detection. |
-| Event-based streaming ingestion | Business events or operational changes must be captured near real time. | Schema registry, replay strategy, ordering expectations, dead-letter handling. |
-
-Use OpenAPI for source APIs and AsyncAPI plus CloudEvents for event sources. Connector-specific configuration stays in an adapter; source identity, contract, schema, checkpoint, and lineage metadata remain canonical.
+Transport, validation, and storage remain separable so a delivery mechanism can change without redefining downstream products.
 
 ## Core Capabilities
 
 | Category | Capability | Owned Outcome |
 | --- | --- | --- |
-| Onboarding | Source registration and pattern selection | Source owner, identity, classification, contract, delivery pattern, SLO, recovery need, and support route are approved before activation. |
-| Contracts | Source System Ingestion Contract and schema management | Canonical schema, semantics, delivery expectations, compatibility rules, and change ownership are versioned and testable. |
-| Connectivity | Managed source adapters | File inbox, connector pull, API, CDC, and event-stream adapters authenticate securely and preserve source identity. |
-| Transport | Reliable incremental movement | Checkpoints, idempotency, ordering, deduplication, backpressure, retries, and replay meet the Source System Ingestion Contract. |
-| Landing | Source-aligned raw state | Faithful, timestamped, provenance-rich source data is retained under restricted access for replay and audit. |
-| Validation | Validated source-aligned state | Contract-conformant records are separated from invalid or suspect records before downstream handoff. |
-| Exceptions | Quarantine and remediation | Rejected records have reason, owner, evidence, correction path, and controlled replay. |
-| Security | Credentials and source protection | Secrets, network paths, workload identity, encryption, classification, and least privilege are centrally enforced. |
-| Evidence | Lineage and telemetry | Source, adapter, run, schema, record outcome, landing state, and incident context are correlated through lineage and OpenTelemetry. |
-| Lifecycle | Change, recovery, and portability | Schema change, connector replacement, backfill, recovery, retention, and retirement preserve the canonical source identity and contract. |
+| Onboarding | Source registration and pattern selection | Owner, interface, classification, contract, access mode, support, and activation evidence are explicit. |
+| Transport | Reliable incremental movement | Checkpointing, idempotency, ordering, deduplication, backpressure, retry, and replay meet the contract. |
+| Validation | Schema and delivery validation | Invalid or unexpected data is blocked, quarantined, explained, and recoverable. |
+| Reconciliation | Completeness and continuity | Expected and received counts, watermarks, gaps, duplicates, and late data are measured and resolved. |
+| Publication | Source-aligned handoff | Raw and validated states have stable identities, lineage, ownership, ports, SLOs, retention, and support. |
+| Operations | Source-channel reliability | Lag, backlog, failure, quarantine, replay, cost, and source impact are observable. |
 
-## Architecture Guidance
+## Contracts and Interfaces
 
-The ingestion service should separate **transport**, **validation**, and **storage** concerns. This allows a source to change its delivery mechanism without forcing downstream data products to be redesigned.
+| Interface | Purpose | Required Contract |
+| --- | --- | --- |
+| Source onboarding API | Register or change a source channel. | Source owner, interface, pattern, classification, schema, keys, cadence, volume, change notice, support, and access decision. |
+| Delivery interface | Receive file, connector extract, API result, CDC, or event stream. | Source System Ingestion Contract with identity, ordering, checkpoint, retry, replay, and compatibility behavior. |
+| Quarantine and replay API | Inspect, correct, release, or replay failed delivery. | Failure reason, affected range, authority, correction, idempotency, and reconciliation target. |
+| Source-aligned product port | Publish validated source meaning to product teams. | Product descriptor embedded in the ingestion contract, SLO, quality, lineage, classification, retention, and support. |
+| Lifecycle event | Announce activation, schema change, lag, breach, replay, deprecation, or recovery. | Source, contract, dataset, run, event, trace, state, time, and evidence links. |
 
-The raw state of source-aligned data should retain enough context for traceability, replay, audit, and forensic analysis. Standard metadata should include source system, ingestion timestamp, batch or event identifier, schema version, data classification, and processing status.
+## Integrations and Dependencies
 
-Replication is not the default outcome of source onboarding. Apply the [Direct, Federated, or Replicated Access Decision](data-consumption-service.md#direct-federated-or-replicated-access-decision) first. Use direct source APIs or MCP tools for bounded current-state operations, federated access where data can remain authoritative at source, selective projections for narrow decoupled needs, and ingestion when history, transformation, scale, reuse, isolation, or reproducibility justifies a source-aligned copy.
+| Dependency | Ingestion Uses | Ingestion Provides |
+| --- | --- | --- |
+| Source system team | Availability, semantics, schema, keys, delivery behavior, and change notice. | Activation status, receipt, reconciliation, rejection, lag, and impact evidence. |
+| Platform Enablement Service | Connections, secrets, storage, checkpoints, catalog bindings, identity, retention, and automation. | Typed resource requests, owner, purpose, policy context, lifecycle, and deprovisioning intent. |
+| Contract, catalog, policy, and lineage | Contract decisions, classification, authorization, identifiers, and metadata authorities. | Source and dataset versions, technical metadata, lineage, validation, and current state. |
+| Product Creation Service | Accepted source-aligned input and change communication. | Stable validated port, contract version, SLO, quality, lineage, and support route. |
+| Observability and Operations | Telemetry, alerting, incident, change, and recovery workflow. | Lag, backlog, run, failure, quarantine, replay, cost, product impact, and recovery signals. |
 
-## Controls
+## Controls and Evidence
 
-- Source System Ingestion Contract exists and is approved.
-- Data classification is known or assigned during onboarding.
-- Schema validation is active.
-- Invalid records are routed to a managed exception path.
-- Access to raw data is restricted to approved roles.
-- Ingestion telemetry is emitted using the foundation OpenTelemetry conventions.
+| Control | Required Evidence |
+| --- | --- |
+| No activation without an approved Source System Ingestion Contract and source owner. | Contract version, approvals, source identity, support route, and activation receipt. |
+| Raw access is restricted and retention-controlled. | Classification, policy decision, entitlement, access audit, retention, and deletion result. |
+| Delivery is replayable and reconciled. | Checkpoint, watermark, expected and actual counts, duplicates, gaps, replay, and final reconciliation. |
+| Breaking change is blocked or versioned. | Compatibility result, affected products and consumers, decision, migration window, and rollback. |
+| Validated handoff is observable. | Freshness, quality, lineage, volume, contract status, SLO, and current health. |
+
+## Action Checklist
+
+| Engineer | Product Owner |
+| --- | --- |
+| Implement the approved pattern, identity, checkpoint, raw and validated states, schema validation, quarantine, replay, reconciliation, lineage, telemetry, retention, and recovery tests. | Confirm source purpose, accountable owner, downstream need, service level, known limitations, change obligations, access mode, retention, support, and activation acceptance. |
+| Test duplicate, missing, late, corrupt, reordered, schema-change, credential-rotation, source-outage, backlog, replay, and deprovisioning scenarios. | Decide whether replication is justified; accept the validated source-aligned promise and consumer communication obligations. |
+
+## Reference Solutions
+
+[Data Ingestion Design](../architecture/data-ingestion-design.md) maps this service to Databricks Lakeflow, Auto Loader, Unity Catalog, and Delta Lake. It is a selected reference profile and cannot redefine the Source System Ingestion Contract or service boundary.
 
 ## Done Criteria
 
-- Source is registered in the catalog.
-- Ingestion pattern and owner are documented.
-- The foundation platform owner and source-system owner are explicit; no domain team is the default ingestion or source-aligned owner.
-- Landing, validation, quarantine, and retention behavior are tested.
-- Lineage from source to landing is available.
-- Operational dashboard and alerting are active.
-- Downstream data product teams can use the landed data without custom source extraction.
-- The source can move to another supported connector or runtime without changing its canonical contract or source identifier.
+- The source owner and ingestion owner approve the contract, pattern, support model, and activation evidence.
+- Raw receipt is traceable, restricted, retained, and replayable.
+- Validated source-aligned output is cataloged, contracted, versioned, observable, and usable by product teams.
+- Schema change, duplicate, gap, late data, quarantine, replay, source outage, and recovery paths are tested.
+- Source-to-product lineage and product-impact correlation work end to end.
+- Direct or federated access was considered before creating a durable copy.

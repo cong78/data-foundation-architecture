@@ -1,97 +1,105 @@
 # Data Observability Service
 
-<div class="decision-brief"><div><small>Use when</small><strong>Defining measurable service and product trust.</strong></div><div><small>Decision</small><strong>Which signals, SLOs, context, and correlations are required?</strong></div><div><small>Owner</small><strong>Observability owner with service and product owners.</strong></div><div><small>Output</small><strong>Current health and actionable evidence.</strong></div></div>
+<div class="decision-brief"><div><small>Use when</small><strong>Defining measurable service and data-product trust.</strong></div><div><small>Decision</small><strong>Which signals, SLOs, context, and correlations prove current health?</strong></div><div><small>Owner</small><strong>Observability owner with service and product owners.</strong></div><div><small>Output</small><strong>Current health, impact, alert, and recovery evidence.</strong></div></div>
 
 ## Definition
 
-The data observability service observes data products end to end through both **system telemetry** and **data product telemetry**. It uses OpenTelemetry as the standard model for collecting, correlating, and exporting telemetry across ingestion, transformation, product publication, consumption, and sharing.
+The Data Observability Service correlates system telemetry and data-product telemetry from source through consumption and sharing. It uses OpenTelemetry as the system-signal standard, OpenLineage for runtime data lineage, and canonical product identifiers to make health, trust, impact, usage, cost, incidents, and recovery evidence understandable end to end.
 
-The goal is to make data trust measurable. A consumer should be able to understand whether a data product is fresh, complete, reliable, used, compliant, and fit for purpose.
+## Scope and Boundaries
 
-## Scope
-
-| In Scope | Out of Scope |
+| Owns | Does Not Own |
 | --- | --- |
-| OpenTelemetry conventions, collectors, exporters, dashboards, alerts, and product telemetry standards. | Replacing the enterprise observability platform. |
-| Product health across freshness, quality, reliability, usage, cost, incidents, and lineage correlation. | Owning business decisions about acceptable product quality. |
-| Data product signals such as volume, distribution, anomaly, usage, cost, and business-rule changes. | Storing sensitive business data inside traces, logs, labels, or metrics. |
-| Health signals, alert context, incident correlation, and recovery evidence. | Coordinating support, incident command, problem, change, release, communication, or improvement workflows; these belong to the [Data Foundation Operations Service](data-foundation-operations-service.md). |
+| Telemetry conventions, collection, normalization, correlation, SLO calculation, health records, alert enrichment, impact views, and evidence publication. | Product metadata, contract, catalog, policy, entitlement, workflow, incident-command, or product-quality decision authority. |
+| System and data-product signal coverage across every foundation service. | Storing sensitive business payloads in logs, traces, metrics, or events. |
+| Detection and current health evidence. | Coordinating response, communication, change, or improvement, which belongs to Foundation Operations. |
 
-## Observability Dimensions
+## Architecture Alignment
 
-| Dimension | Telemetry Type | What It Observes | Example Signals |
-| --- | --- | --- | --- |
-| System health | **System** | Runtime and platform behavior. | Pipeline latency, job failures, API errors, queue lag, storage errors, retries. |
-| Data quality | **Data product** | Fitness of data against Data Product Creation Contract and expectations. | Completeness, validity, uniqueness, consistency, anomaly scores, failed records. |
-| Freshness | **Both** | Runtime delivery delay and whether the product meets its freshness SLO. | Source lag and job completion (**system**); last product update and freshness breach (**product**). |
-| Lineage and impact | **Both** | Runtime movement plus product and consumer dependencies. | Job, run, and dataset events (**system**); product version and affected consumers (**product**). |
-| Usage and adoption | **Data product** | Whether and how consumers use the product. | Active consumers, query and API use by product, AI usage, unused interfaces, reuse rate. |
-| Cost and efficiency | **Both** | Runtime resource cost and product-level cost-to-serve. | Compute and storage consumption (**system**); unit cost, duplicate processing, and cost by product or consumer (**product**). |
-| Business data insights | **Data product** | Domain-level behavior visible in product data. | Volume anomalies, distribution shifts, threshold breaches, process exceptions. |
+| Concern | Alignment |
+| --- | --- |
+| Primary plane | Observability |
+| Supporting planes | Every plane through common identity, telemetry, and evidence. |
+| Shared capabilities | OpenTelemetry conventions, product and contract ids, lineage, SLOs, catalog context, identity, policy, and evidence retention. |
+| Integration flows | Emit, collect, normalize, correlate, calculate health, detect, assess impact, alert, recover, and publish current evidence. |
 
-### Telemetry Boundary
+## Service Architecture
 
-| Type | Core Question | Primary Ownership | Typical Scope |
-| --- | --- | --- | --- |
-| System telemetry | Is the platform or service operating correctly? | Platform and service owners. | Runtime, infrastructure, API, pipeline, queue, storage, network, and deployment. |
-| Data product telemetry | Is the product trustworthy, used, compliant, and meeting its contract? | Data product owner, steward, and reliability owner. | Quality, freshness, availability, usage, consumer impact, business behavior, and cost-to-serve. |
-| Correlated telemetry | How did a system event affect a product and its consumers? | Shared operational responsibility. | Source-to-runtime-to-product-to-consumer trace, incident, and impact evidence. |
+```mermaid
+flowchart LR
+    SYSTEM["System telemetry"]
+    PRODUCT["Data product telemetry"]
+    COLLECT["Telemetry pipeline"]
+    CORRELATE["Correlation and health"]
+    VIEWS["Trust and operations views"]
+    OPS["Data Foundation Operations Service"]
+    PORTAL["Portal and product detail"]
 
-System signals become product telemetry only when they are evaluated in product context. For example, a successful job is system telemetry; whether that job produced the expected product version within its freshness SLO is data product telemetry.
+    SYSTEM --> COLLECT
+    PRODUCT --> COLLECT --> CORRELATE --> VIEWS
+    VIEWS --> OPS
+    VIEWS --> PORTAL
+```
+
+Product metadata is referenced from canonical authorities rather than copied as a new truth. Every health claim includes authority, observation time, coverage, and limitations.
 
 ## Core Capabilities
 
 | Category | Capability | Owned Outcome |
 | --- | --- | --- |
-| Collection | OpenTelemetry collection and routing | Traces, metrics, logs, and events from foundation services use governed collectors, processors, exporters, and OTLP routes. |
-| Collection | Data-product telemetry ingestion | Quality, freshness, volume, distribution, schema, availability, usage, cost, and incident signals enter a common product-health model. |
-| Semantics | Telemetry conventions and identifiers | Service, product, contract, run, release, domain, environment, consumer, and correlation attributes are consistent and versioned. |
-| Correlation | End-to-end service and product view | Runtime traces, jobs, lineage, product health, access, and affected consumers can be traversed from source to outcome. |
-| Objectives | SLO and error-budget management | Declared freshness, quality, availability, latency, and reliability objectives are evaluated against measured evidence. |
-| Insight | Health, trend, and anomaly analysis | Product and system dashboards expose current state, history, drift, volume, distribution, business-rule, usage, and cost anomalies. |
-| Detection | Actionable alerting | SLO breaches and significant anomalies are deduplicated, enriched with product impact, and routed to accountable owners. |
-| Operations | Incident and recovery evidence | Signals create or enrich operational workflows and prove recovery at both system and data-product levels. |
-| Publication | Catalog and portal health projection | Current trust indicators, authority, observation time, limitations, and links to evidence are available at decision time. |
-| Interoperability | Portable telemetry and lineage export | OTLP and OpenLineage-compatible outputs can be received independently without making one observability vendor authoritative for all signals. |
+| Standards | Telemetry conventions | Services emit consistent resource, service, product, contract, run, consumer, release, and trace context. |
+| Collection | Signal ingestion and routing | Telemetry is validated, minimized, classified, sampled, retained, and routed to approved backends. |
+| Product insight | Quality, freshness, volume, schema, lineage, usage, and cost | Current product trust is measurable against contracts and SLOs. |
+| Correlation | End-to-end impact model | Source, pipeline, product, consumer, contract, release, policy, and incident are connected. |
+| Alerting | Actionable detection | SLO breaches and anomalies are deduplicated, enriched with product impact, and routed to accountable owners. |
+| Publication | Health and evidence views | Portal, catalog, service owners, and operations receive permission-filtered current health and evidence links. |
 
-## Architecture Guidance
+## Contracts and Interfaces
 
-OpenTelemetry should not only observe infrastructure. It should carry data product context through traces, metrics, logs, and events. For example, a failed transformation trace should be linkable to the product version, source batch, quality rule, affected consumers, and incident record.
-
-The observability service should avoid creating a separate truth from the catalog. Product metadata, ownership, classification, lineage, and lifecycle status should be synchronized with the catalog and governance services.
-
-Observability owns detection and health evidence. The [Data Foundation Operations Service](data-foundation-operations-service.md) owns coordinated response, operational records, communication, recovery validation, and improvement. Both share stable service, product, release, incident, and correlation identifiers.
-
-OpenTelemetry describes operational telemetry; OpenLineage describes runtime data lineage. Correlate both using canonical product, dataset, job, run, and trace identifiers instead of forcing either standard to replace the other.
-
-Use the [OpenTelemetry Telemetry Standard](../standards/otel-telemetry-standard.md) for required attributes, metrics, trace expectations, and telemetry hygiene.
-
-## Telemetry Model
-
-| Lifecycle Point | System Telemetry | Data Product Telemetry |
+| Interface | Purpose | Required Contract |
 | --- | --- | --- |
-| Source extraction | Source connection, extraction duration, retry, failure, source lag. | Expected source version, record-volume expectation, Source System Ingestion Contract status. |
-| Source-aligned landing | Landing success, storage operation, batch or event id, quarantine operation. | Received volume, rejected-record rate, schema conformance, source-product freshness. |
-| Transformation | Job duration, runtime status, dependency status, compute and memory use. | Product version produced, transformation lineage, expected output volume, cost-to-produce. |
-| Validation | Rule-engine execution, test duration, test-system errors. | Quality result, threshold breach, anomaly score, failed fields, go-live readiness. |
-| Publication | Catalog and interface publication status, API deployment status. | Product, contract and semantic-context versions, freshness timestamp, product availability. |
-| Consumption | Query or API latency, error, throughput, rate limit, adapter status. | Consumer, purpose, product usage, SLO experience, access decision, cost-to-serve. |
-| Sharing | Delivery job status, transfer latency, endpoint failure. | Recipient entitlement, minimized package, export volume, purpose, expiry, revocation. |
+| OTLP endpoint | Receive traces, metrics, and logs. | Required resource attributes, semantic conventions, classification, sampling, retention, errors, and source identity. |
+| Product telemetry event | Publish quality, freshness, volume, schema, usage, cost, lifecycle, or SLO evidence. | Product, contract, dataset, run, rule, consumer, observation time, result, threshold, and lineage ids. |
+| OpenLineage event | Exchange runtime lineage. | Job, run, input and output datasets, facets, event time, namespace, and correlation ids. |
+| Health API | Return current service or product health. | Subject id, SLO state, signal coverage, observation time, authority, incidents, impact, and limitations. |
+| Alert and recovery event | Create or enrich operational workflow. | Alert id, severity, service, product, consumers, evidence, deduplication, owner, incident, and recovery state. |
 
-## Controls
+## Integrations and Dependencies
 
-- Every live data product has freshness and quality SLOs.
-- Every foundation service emits OpenTelemetry-compatible telemetry.
-- Telemetry includes product, domain, environment, owner, and classification attributes.
-- Data incidents are linked to affected products and consumers.
-- Sensitive values are not exposed in logs, traces, labels, metric attributes, or events.
-- Observability dashboards are available to product owners, engineers, and support teams.
+| Dependency | Observability Uses | Observability Provides |
+| --- | --- | --- |
+| Foundation services and runtimes | Telemetry, lifecycle events, SLO targets, releases, errors, usage, cost, and recovery checks. | Validated conventions, collectors, health, alerts, impact, dashboards, and evidence. |
+| Product, contract, catalog, semantic, policy, and lineage authorities | Stable ids, owners, lifecycle, classifications, SLOs, relationships, and decisions. | Current measured state, coverage, observation time, anomaly, usage, cost, and incident links. |
+| Platform Enablement Service | Collectors, exporters, storage, dashboard, alert, identity, policy, and retention resources. | Typed telemetry-resource requirements, health, drift, cost, and evidence lifecycle. |
+| Data Foundation Operations Service | Incident, change, release, support, recovery, and communication context. | Detection, impact, affected consumers, timeline signals, and system-plus-product recovery evidence. |
+| Data Service Portal | Identity and requested view. | Permission-filtered health, authority, observation time, limitations, and action links. |
+
+## Controls and Evidence
+
+| Control | Required Evidence |
+| --- | --- |
+| Every production service and live product has defined signal and SLO coverage. | Coverage inventory, SLO, owner, dashboard, alert route, runbook, and last test. |
+| Telemetry contains canonical correlation ids and no prohibited payload. | Schema validation, attribute coverage, classification scan, redaction, sampling, and retention result. |
+| Health is not inferred beyond available evidence. | Observation time, source authority, coverage, limitations, stale threshold, and unknown state behavior. |
+| Alerts are actionable and deduplicated. | Alert rule, threshold, owner, affected products and consumers, deduplication key, incident link, and outcome. |
+| Recovery validates system and product trust. | Runtime, quality, freshness, lineage, access, backlog, consumer, and stability checks. |
+
+## Action Checklist
+
+| Engineer | Product Owner |
+| --- | --- |
+| Instrument services and workloads; validate conventions; propagate canonical ids; build SLOs, correlation, alerts, health APIs, retention, access, and recovery checks; test telemetry failure. | Define product SLOs, quality and freshness thresholds, acceptable unknown states, owner and escalation, consumer impact, health communication, value and cost measures, and review cadence. |
+| Test missing, stale, malformed, sensitive, high-cardinality, duplicate, out-of-order, backend-outage, exporter-failure, alert-storm, correlation-gap, and evidence-restoration scenarios. | Review health, incidents, usage, cost, signal coverage, false alerts, consumer impact, and improvement priorities; do not claim trust without current evidence. |
+
+## Reference Solutions
+
+[Observability Design](../architecture/observability-design.md) maps product observability to Databricks and Unity Catalog and system observability to Grafana Cloud, connected through OpenTelemetry and OpenLineage. It is a selected reference profile; canonical telemetry semantics remain portable.
 
 ## Done Criteria
 
-- OpenTelemetry conventions are documented and used by foundation services.
-- Product health dashboard shows freshness, quality, reliability, usage, incidents, and cost.
-- Alerts are routed to accountable owners.
-- Incidents can be traced from affected consumer back to product, pipeline, and source.
-- Observability evidence is available for go-live approval, audit, and operational review.
-- OTLP telemetry and OpenLineage events are accepted by independent reference receivers.
+- Every production service and live product emits validated system and product signals with canonical identifiers.
+- Health views show SLO, quality, freshness, usage, cost, incidents, authority, observation time, coverage, and limitations.
+- Alerts identify accountable owners and affected products and consumers.
+- A trace resolves from consumer impact through product, workload, source, release, and incident.
+- Telemetry loss, sensitive-data leakage, alert storm, stale health, correlation failure, and backend recovery are tested.
+- OTLP and OpenLineage outputs are accepted by independent reference receivers.

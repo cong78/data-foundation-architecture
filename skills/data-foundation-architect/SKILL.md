@@ -74,12 +74,14 @@ Use `assets/domain-assessment.example.json` as the input shape. Do not interpret
 ## Design
 
 1. State the problem, scope, actors, consumers, constraints, assumptions, and non-goals.
-2. Reuse the target layers and service boundaries before adding a new component.
-3. Define logical responsibilities before mapping technologies.
-4. Show the main value flow and keep cross-cutting identity, policy, contract, lineage, semantic, and telemetry controls explicit.
-5. Define product ports, contracts, control authorities, enforcement points, evidence, failure behavior, and lifecycle.
-6. Record consequential alternatives and decisions.
-7. Map the design to standards, owning services, action playbooks, operational runbooks, evidence, runway phase, and done criteria.
+2. Classify the work as one primary **service-specific**, **platform foundation**, or **integration** design using `docs/architecture/design-map.md`.
+3. Identify the owning service, supporting designs, and affected target planes before adding a component.
+4. Define logical responsibilities before mapping technologies; label vendor mappings as reference profiles.
+5. Show the main value flow and keep cross-cutting identity, policy, contract, lineage, semantic, and telemetry controls explicit.
+6. Define product ports, interaction contracts, control authorities, enforcement points, evidence, failure behavior, and lifecycle.
+7. For cross-service scope, name the outcome owner, handoff owners, correlation identifiers, compensation, reconciliation, and end-to-end test.
+8. Record consequential alternatives and decisions.
+9. Map the design to standards, owning services, action playbooks, operational runbooks, evidence, runway phase, and done criteria.
 
 Prefer one readable layered diagram plus focused flows. Avoid one diagram containing every control and interaction.
 

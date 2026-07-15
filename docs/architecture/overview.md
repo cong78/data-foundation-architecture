@@ -1,6 +1,6 @@
 # Architecture Overview
 
-<div class="decision-brief"><div><small>Use when</small><strong>Orienting or reviewing an end-to-end design.</strong></div><div><small>Decision</small><strong>Which architecture view answers the current question?</strong></div><div><small>Owner</small><strong>Enterprise or solution architect.</strong></div><div><small>Output</small><strong>Selected view, boundaries, and review path.</strong></div></div>
+<div class="decision-brief"><div><small>Use when</small><strong>Orienting or reviewing an end-to-end design.</strong></div><div><small>Decision</small><strong>Which service, shared-capability, or integration design is required?</strong></div><div><small>Owner</small><strong>Architecture owner with service owners.</strong></div><div><small>Output</small><strong>Selected design class, target planes, boundaries, and review path.</strong></div></div>
 
 The data foundation is a layered set of reusable services. It converts source data into governed data products and makes them safe to discover, use, share, and access with AI.
 
@@ -9,32 +9,34 @@ The data foundation is a layered set of reusable services. It converts source da
 
 ## How the Architecture Fits
 
-<div class="standards-map" role="img" aria-label="Architecture guidance mapped from intent through design to implementation">
+<div class="standards-map" role="img" aria-label="Three architecture design classes composing the target architecture">
   <div class="standards-map-head" aria-hidden="true">
-    <span>Start with</span><i></i><span>Architecture views</span><i></i><span>Outcome</span>
+    <span>Design class</span><i></i><span>Architecture responsibility</span><i></i><span>Target result</span>
   </div>
   <section class="standards-map-lane lane-govern">
-    <div class="standards-map-cell"><small>Set direction</small><strong>Scope · Principles · Decisions</strong><p>Agree boundaries, rules, and the reasons behind major choices.</p></div>
+    <div class="standards-map-cell"><small>One owned capability</small><strong>Service-specific design</strong><p>Defines a service boundary, behavior, interfaces, controls, SLOs, and evidence.</p></div>
     <span class="standards-map-arrow" aria-hidden="true"></span>
-    <div class="standards-map-cell standards-map-focus"><a href="/architecture/target-architecture/"><strong>Target Architecture</strong></a><a href="/architecture/data-foundation-model/"><strong>Data Foundation Model</strong></a><a href="/architecture/data-domain-design/"><strong>Data Domain Design</strong></a></div>
+    <div class="standards-map-cell standards-map-focus"><a href="../design-map/"><strong>Nine Service Designs</strong></a><strong>Owned outcomes · APIs · events · controls</strong></div>
     <span class="standards-map-arrow" aria-hidden="true"></span>
-    <div class="standards-map-cell"><strong>Shared target</strong><p>Clear planes, layers, objects, responsibilities, and trust boundaries.</p></div>
+    <div class="standards-map-cell"><strong>Capabilities in target planes</strong><p>Every service has explicit placement, ownership, and operational proof.</p></div>
   </section>
   <section class="standards-map-lane lane-build">
-    <div class="standards-map-cell"><small>Design experience</small><strong>People · Developers · AI</strong><p>Turn platform capabilities into coherent human and machine journeys.</p></div>
+    <div class="standards-map-cell"><small>Shared across services</small><strong>Shared capability design</strong><p>Defines contracts, products, catalog, storage, identity, semantics, access, and telemetry once.</p></div>
     <span class="standards-map-arrow" aria-hidden="true"></span>
-    <div class="standards-map-cell standards-map-focus"><a href="/architecture/data-service-portal-model/"><strong>Portal Design</strong></a><a href="/architecture/data-product-developer-experience/"><strong>Developer Experience</strong></a><a href="/architecture/agentic-data-foundation/"><strong>Agentic Foundation</strong></a></div>
+    <div class="standards-map-cell standards-map-focus"><a href="../platform-foundation-design/"><strong>Shared Platform Capabilities</strong></a><a href="../data-foundation-model/"><strong>Product and Contract Models</strong></a><a href="../unified-access-design/"><strong>Unified Access</strong></a></div>
     <span class="standards-map-arrow" aria-hidden="true"></span>
-    <div class="standards-map-cell"><strong>One governed experience</strong><p>Portal, API, CLI, and agent channels use the same contracts and controls.</p></div>
+    <div class="standards-map-cell"><strong>Reusable foundation</strong><p>Services share authorities and runtime patterns without losing accountability.</p></div>
   </section>
   <section class="standards-map-lane lane-intelligence">
-    <div class="standards-map-cell"><small>Make it real</small><strong>Capabilities · Patterns · Evidence</strong><p>Translate the target state into buildable platform increments.</p></div>
+    <div class="standards-map-cell"><small>Across service boundaries</small><strong>Integration design</strong><p>Defines handoffs, workflows, identifiers, failure behavior, and end-to-end evidence.</p></div>
     <span class="standards-map-arrow" aria-hidden="true"></span>
-    <div class="standards-map-cell standards-map-focus"><a href="/architecture/reference-architecture/"><strong>Reference Architecture</strong></a><a href="/implementation/implementation-blueprint/"><strong>Architecture Blueprint</strong></a><a href="/implementation/service-implementation-patterns/"><strong>Implementation Patterns</strong></a></div>
+    <div class="standards-map-cell standards-map-focus"><a href="../integration-design/"><strong>Integration Design</strong></a><a href="../reference-architecture/"><strong>Reference Architecture</strong></a><a href="../../foundation/architecture-service-operations-map/"><strong>Operations Trace</strong></a></div>
     <span class="standards-map-arrow" aria-hidden="true"></span>
-    <div class="standards-map-cell"><strong>Delivery-ready design</strong><p>Technology-neutral building blocks, sequence, controls, and done criteria.</p></div>
+    <div class="standards-map-cell"><strong>Coherent target architecture</strong><p>Critical flows cross all required planes and remain traceable into operation.</p></div>
   </section>
 </div>
+
+The [Architecture Design Map](design-map.md) is the authoritative service-to-design matrix. Use it before selecting a detailed architecture page or technology reference solution.
 
 ## Layered Architecture
 
@@ -151,14 +153,18 @@ flowchart LR
 | --- | --- |
 | This overview | What are the major layers and boundaries? |
 | [Target Architecture](target-architecture.md) | Which logical planes govern the target state? |
+| [Architecture Design Map](design-map.md) | Which service-specific, platform foundation, and integration designs apply to each service? |
 | [Data Foundation Model](data-foundation-model.md) | What are the core architecture objects and relationships? |
 | [Data Contract Design](data-contract-design.md) | Which contract governs each product layer, lifecycle gate, and enforcement point? |
 | [Reference Architecture](reference-architecture.md) | Which technology-neutral capabilities are required? |
+| [Integration Design](integration-design.md) | How do services hand off work, propagate controls, handle failure, and prove an end-to-end outcome? |
+| [Shared Platform Capabilities](platform-foundation-design.md) | Which shared control and runtime capabilities are provided once for all services? |
+| [Foundation Service Designs](../services/index.md) | What does each service own, how is it structured, and what must engineers and product owners do? |
 | [Architecture to Operations Map](../foundation/architecture-service-operations-map.md) | How do architecture decisions map to service ownership, playbooks, runbooks, evidence, and runway phases? |
 | [Data Product Lifecycle Design](data-product-lifecycle-design.md) | How does a product move from idea through go-live, operation, change, and retirement? |
 | [Semantic and Context Design](semantic-context-design.md) | How do catalog, semantics, context packages, and graph projections fit together? |
 | [Unified Access Design](unified-access-design.md) | How are identity, policy, logical product ports, and physical runtimes connected? |
-| [Data Service Portal Design](data-service-portal-model.md) | How do users and agents interact with the foundation without duplicating authority? |
+| [Data Service Portal](../services/data-service-portal.md) | How do users and agents interact with the foundation without duplicating authority? |
 | [Data Product Developer Experience](data-product-developer-experience.md) | How do developers declare, test, deploy, and roll back product workloads? |
 | [Agentic Data Foundation](agentic-data-foundation.md) | How are agents, skills, models, context, approval, and evidence governed? |
 | [Data Ingestion Design](data-ingestion-design.md) | How can Databricks implement governed file, connector, CDC, API, and event ingestion? |

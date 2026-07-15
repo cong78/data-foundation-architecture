@@ -16,7 +16,8 @@ REQUIRED_GUIDANCE = {
     "docs/services/index.md",
     "docs/services/data-service-portal.md",
     "docs/services/data-foundation-operations-service.md",
-    "docs/architecture/data-service-portal-model.md",
+    "docs/architecture/design-map.md",
+    "docs/architecture/integration-design.md",
     "docs/delivery-templates/service-runbook-template.md",
 }
 

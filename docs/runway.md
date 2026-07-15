@@ -2,12 +2,12 @@
 
 <div class="decision-brief"><div><small>Use when</small><strong>Sequencing foundation adoption and investment.</strong></div><div><small>Decision</small><strong>Which workstream blocks the next outcome gate?</strong></div><div><small>Owner</small><strong>Foundation sponsor and capability owners.</strong></div><div><small>Output</small><strong>Funded increment with exit evidence.</strong></div></div>
 
-The runway is a sequenced path for maturing the data foundation. Each phase produces a usable enterprise capability, not merely a collection of components.
+The runway is a sequenced path for maturing the data foundation. Each phase produces a usable shared capability, not merely a collection of components.
 
 Use the phases as **outcome gates**. Teams may prepare later capabilities early, but should not claim a phase until its exit evidence is operating with real services, products, and consumers.
 
 !!! note "Adoption maturity, not a product lifecycle"
-    The four runway phases sequence enterprise capability and investment. Individual domains, sources, and products still move through **Frame → Establish → Deliver → Use → Operate** in [Foundation in One View](foundation/foundation-in-one-view.md).
+    The four runway phases sequence foundation capability and investment. Individual domains, sources, and products still move through **Frame → Establish → Deliver → Use → Operate** in [Foundation in One View](foundation/foundation-in-one-view.md).
 
 !!! info "Runway is not a runbook"
     The **runway** sequences enterprise adoption. A **runbook** is an executable operating procedure for a service, product, or known condition. Use the [Architecture to Operations Map](foundation/architecture-service-operations-map.md) to connect both.

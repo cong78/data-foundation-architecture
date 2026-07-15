@@ -1,7 +1,5 @@
 site_name: Data Foundation Architecture
-site_description: Enterprise architecture guidance for an AI-ready data foundation.
-site_author: Data and AI Foundation
-
+site_description: Architecture guidance for an AI-ready data foundation.
 theme:
   name: material
   custom_dir: overrides
@@ -87,27 +85,30 @@ nav:
       - Glossary: foundation/glossary.md
   - Architecture:
       - Overview: architecture/overview.md
-      - Core Design:
-          - Target Architecture: architecture/target-architecture.md
-          - Reference Architecture: architecture/reference-architecture.md
+      - Target Architecture: architecture/target-architecture.md
+      - Architecture Design Map: architecture/design-map.md
+      - Shared Capability Designs:
+          - Shared Platform Capabilities: architecture/platform-foundation-design.md
           - Data Foundation Model: architecture/data-foundation-model.md
           - Data Contract Design: architecture/data-contract-design.md
           - Data Domain Design: architecture/data-domain-design.md
           - Data Product Lifecycle Design: architecture/data-product-lifecycle-design.md
           - Semantic and Context Design: architecture/semantic-context-design.md
           - Unified Access Design: architecture/unified-access-design.md
-      - Experience and AI:
-          - Data Service Portal Design: architecture/data-service-portal-model.md
           - Data Product Developer Experience: architecture/data-product-developer-experience.md
           - Agentic Data Foundation: architecture/agentic-data-foundation.md
+      - Integration Designs:
+          - Reference Architecture: architecture/reference-architecture.md
+          - Integration Design: architecture/integration-design.md
+      - Reference Solutions:
+          - Data Ingestion - Databricks: architecture/data-ingestion-design.md
+          - Data Product Creation - Databricks: architecture/data-product-creation-design.md
+          - Data Consumption - Databricks: architecture/data-consumption-design.md
+          - Data Sharing - Databricks: architecture/data-sharing-design.md
+          - Observability - Databricks and Grafana: architecture/observability-design.md
+      - AI Skills:
           - Data Foundation Architect Skill: architecture/data-foundation-architect-skill.md
           - Data Contract Designer Skill: architecture/data-contract-designer-skill.md
-      - Reference Solutions:
-          - Data Ingestion Design: architecture/data-ingestion-design.md
-          - Data Product Creation Design: architecture/data-product-creation-design.md
-          - Data Consumption Design: architecture/data-consumption-design.md
-          - Data Sharing Design: architecture/data-sharing-design.md
-          - Observability Design: architecture/observability-design.md
       - Implementation:
           - Architecture Blueprint: implementation/implementation-blueprint.md
           - Architecture Patterns: implementation/service-implementation-patterns.md
@@ -116,13 +117,6 @@ nav:
           - Governance Model: governance/governance-model.md
           - Security and Compliance: governance/security-compliance.md
           - Operating Model: governance/operating-model.md
-  - Decisions:
-      - Decision Register: implementation/architecture-decisions.md
-      - ADR-001 Central and Federated Ownership: decisions/adr-001-central-federated-ownership.md
-      - ADR-002 Unity Catalog: decisions/adr-002-unity-catalog.md
-      - ADR-003 Delta Storage: decisions/adr-003-delta-storage.md
-      - ADR-004 Unified Data Access: decisions/adr-004-unified-data-access.md
-      - ADR-005 Observability Platforms: decisions/adr-005-observability-platforms.md
   - Services:
       - Services Overview: services/index.md
       - Data Service Portal: services/data-service-portal.md
@@ -156,6 +150,13 @@ nav:
       - AI-Ready Data Standard: standards/ai-ready-data-standard.md
       - Agent, Skill and LLM Standard: standards/agent-skill-llm-standard.md
       - Technology Selection Standard: standards/technology-selection-standard.md
+  - Decisions:
+      - Decision Register: implementation/architecture-decisions.md
+      - ADR-001 Central and Federated Ownership: decisions/adr-001-central-federated-ownership.md
+      - ADR-002 Unity Catalog: decisions/adr-002-unity-catalog.md
+      - ADR-003 Delta Storage: decisions/adr-003-delta-storage.md
+      - ADR-004 Unified Data Access: decisions/adr-004-unified-data-access.md
+      - ADR-005 Observability Platforms: decisions/adr-005-observability-platforms.md
   - Delivery:
       - Delivery Overview: delivery/index.md
       - Runway: runway.md

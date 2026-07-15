@@ -113,3 +113,12 @@ MCP and A2A adapters require the same authenticated identity, purpose policy, le
 ## Exception Rule
 
 A proprietary interface is allowed only when it provides material value unavailable through the open profile. The decision record must include an open export path, adapter ownership, exit cost, review date, and tested migration route.
+
+## Minimum Done Criteria
+
+- Canonical contracts, embedded product descriptors, identifiers, interface definitions, lineage, and telemetry use pinned open profiles with namespaced extensions.
+- Every live product passes Level 1; shared services pass Level 2; externally consumed interfaces pass the applicable Level 3 tests.
+- Round-trip export and import preserves required meaning, identifiers, versions, relationships, and unknown extensions.
+- At least one independent client or receiver validates every material API, event, sharing, lineage, telemetry, or agent adapter used in production.
+- Identity, purpose, policy, expiry, revocation, and evidence remain effective when the implementation or adapter changes.
+- Every proprietary exception has an owner, measurable value, open export path, tested migration route, exit cost, and review date.

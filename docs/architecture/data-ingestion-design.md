@@ -66,7 +66,7 @@ Databricks recommends beginning with the most managed connector layer that satis
 | Auto Loader | Incremental file discovery, checkpoint state, schema inference options, and file processing. | File-provider obligations, manifest reconciliation, or retention approval. |
 | Declarative pipeline or stream | Event read, transformation limited to ingestion normalization, checkpointing, and source-aligned write. | Business enrichment or consumer-facing product logic. |
 | Unity Catalog tables and volumes | Governed registration, native access policy, storage binding, lineage, and audit context. | Product lifecycle or contract authority. |
-| Observability service | Cross-platform health, freshness, lag, incidents, lineage correlation, and retained evidence. | Connector configuration or detailed business payload storage. |
+| Data Observability Service | Cross-platform health, freshness, lag, incidents, lineage correlation, and retained evidence. | Connector configuration or detailed business payload storage. |
 
 ## Source Onboarding Flow
 
@@ -154,7 +154,7 @@ Emit and correlate:
 - Source-to-platform lag, freshness, schema-change state, retry count, and checkpoint age.
 - Runtime availability, cost, error category, incident id, and recovery evidence.
 
-Lakeflow pipeline event logs and system tables provide Databricks-native runtime evidence; the Observability Service exports normalized product and system signals using the [OpenTelemetry Standard](../standards/otel-telemetry-standard.md).
+Lakeflow pipeline event logs and system tables provide Databricks-native runtime evidence; the Data Observability Service exports normalized product and system signals using the [OpenTelemetry Standard](../standards/otel-telemetry-standard.md).
 
 ## Source Activation Gate
 

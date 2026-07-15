@@ -6,11 +6,11 @@ The data foundation requires governance that is practical, embedded, and account
 
 | Role | Responsibility |
 | --- | --- |
-| Data product owner | Owns product purpose, value, consumer fit, and roadmap. |
+| Data product owner | Owns product purpose, value, consumer fit, and lifecycle direction. |
 | Data domain owner | Owns the domain boundary, portfolio direction, foundation adoption, funding, risks and maturity improvement. |
 | Data steward | Owns definitions, quality rules, classification, and usage guidance. |
 | Data engineer | Builds and operates ingestion, transformation, and publication pipelines. |
-| Platform owner | Owns foundation service reliability, patterns, and platform roadmap. |
+| Platform owner | Owns foundation service reliability, patterns, and platform runway. |
 | Security and privacy officer | Defines and validates controls for sensitive or regulated data. |
 | Consumer owner | Owns correct use of data within BI, applications, platforms, or AI systems. |
 | Contract owner | Owns data contract accuracy, versioning, compatibility decisions, and change communication. |
@@ -37,7 +37,7 @@ The data foundation requires governance that is practical, embedded, and account
 
 | Forum | Decisions |
 | --- | --- |
-| Data foundation architecture board | Architecture patterns, service roadmap, exceptions |
+| Data foundation architecture board | Architecture patterns, service direction, exceptions |
 | Data governance council | Policy, ownership, classification, quality standards |
 | Domain data forum | Domain boundary, product priorities, stewardship, consumer feedback, maturity gaps and improvement plan |
 | Security and privacy review | Sensitive data access, external sharing, AI usage risks |

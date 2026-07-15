@@ -2,7 +2,7 @@
 
 <div class="decision-brief"><div><small>Use when</small><strong>Establishing a business accountability boundary.</strong></div><div><small>Decision</small><strong>Register, enable, condition, or reject the domain.</strong></div><div><small>Owner</small><strong>Domain owner with governance.</strong></div><div><small>Output</small><strong>Stable domain record and adoption obligations.</strong></div></div>
 
-A **data domain** is a stable business-aligned accountability boundary within the enterprise data foundation. It groups related business meaning, product ownership, stewardship, source relationships, consumers, policies, and portfolio decisions. It does not create a separate data foundation or permit a domain-specific bypass around shared controls.
+A **data domain** is a stable business-aligned accountability boundary within the shared data foundation. It groups related business meaning, product ownership, stewardship, source relationships, consumers, policies, and portfolio decisions. It does not create a separate data foundation or permit a domain-specific bypass around shared controls.
 
 The enterprise foundation provides common services, centrally managed source-aligned products, standards, identity, policy, telemetry, and evidence. A domain adopts those capabilities and owns aggregate and consumer-aligned products and business decisions inside its declared boundary. The domain is an accountability and portfolio boundary, not a separate product type; every live product is reusable by design.
 
@@ -10,7 +10,7 @@ The enterprise foundation provides common services, centrally managed source-ali
 
 ```mermaid
 flowchart TB
-    F["Enterprise Data Foundation<br/>shared services · standards · controls · evidence"]
+    F["Shared Data Foundation<br/>services · standards · controls · evidence"]
     D["Registered Data Domains<br/>business boundaries · accountability · portfolios"]
     P["Governed Data Products<br/>contracts · semantics · quality · lifecycle"]
     C["Product Ports and Data Product Consumption Contracts<br/>BI · applications · platforms · partners · AI"]
@@ -20,7 +20,7 @@ flowchart TB
 
 | Concept | Primary purpose | Owns | Does not mean |
 | --- | --- | --- | --- |
-| Enterprise data foundation | Shared path for trusted data. | Ingestion, source-aligned products, services, standards, control APIs, common evidence and platform patterns. | One central team owns downstream business products. |
+| Shared data foundation | Common path for trusted data. | Ingestion, source-aligned products, services, standards, control APIs, common evidence and platform patterns. | One central team owns downstream business products. |
 | Data domain | Business-aligned accountability and portfolio boundary. | Meaning, stewardship, product priorities, quality decisions and consumer outcomes. | A platform tenancy, schema, workspace, legal entity, or organization chart node by itself. |
 | Data product | Unit of trusted delivery and reuse. | Contract, semantics, ports, quality, policy, SLO, support and lifecycle. | Every table or pipeline in a domain. |
 | Workspace or runtime | Technical execution boundary. | Compute, storage, networking, deployment and operational isolation. | The authoritative definition of a domain. |

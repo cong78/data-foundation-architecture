@@ -26,7 +26,7 @@ Unity Catalog provides a three-level namespace and governance for securable data
 | Schema, semantics, quality, SLO, compatibility, usage and sharing terms | Data contract registry. |
 | Business terms, metric meaning, relationships and usage context | Semantic context package and linked glossary or knowledge authorities. |
 | Enterprise policy intent, purpose decision and entitlement | Policy and entitlement authorities, projected into Unity Catalog controls where supported. |
-| Cross-platform system and product telemetry | Observability service using OpenTelemetry conventions. |
+| Cross-platform system and product telemetry | Data Observability Service using OpenTelemetry conventions. |
 
 Unity Catalog may present synchronized projections of these authorities. A projection must retain the canonical identifier, version, source authority, synchronization time, and reconciliation status.
 

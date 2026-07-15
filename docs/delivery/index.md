@@ -41,4 +41,18 @@ Delivery turns architecture guidance into small, testable increments with reusab
 4. Reuse patterns when they fit; record an expiring exception when they do not.
 5. Measure lead time, reuse, reliability, consumer value, and operating cost.
 
-Start policy-as-code work from the [Architecture Policy Template](../delivery-templates/architecture-policy-template.md).
+## Delivery Templates
+
+| Start when | Use this artifact | Completion focus |
+| --- | --- | --- |
+| Onboarding a business accountability boundary | [Data Domain Onboarding Record](../delivery-templates/data-domain-onboarding-template.md) | Boundary, ownership, capability profile, maturity baseline, and first-product proof. |
+| Onboarding a source | [Source Onboarding Template](../delivery-templates/source-onboarding-template.md) | Ingestion contract, delivery pattern, controls, support, and validated handoff. |
+| Creating or changing a product | [Data Product Template](../delivery-templates/data-product-template.md) | Publishing contract, embedded descriptor, semantics, quality, ports, controls, and go-live evidence. |
+| Defining executable product work | [Data Product Workload Template](../delivery-templates/data-product-workload-template.md) | Workload, resources, environments, deployment, rollback, telemetry, and release decision. |
+| Selecting a vendor or technology | [Technology Selection Record](../delivery-templates/technology-selection-template.md) | Knockout gates, weighted evidence, proof of capability, cost, risk, and exit. |
+| Proving portability | [Interoperability Conformance Record](../delivery-templates/interoperability-conformance-template.md) | Profile, independent tests, exceptions, and decision. |
+| Defining an executable architecture rule | [Architecture Policy Template](../delivery-templates/architecture-policy-template.md) | Stable policy id, decision, enforcement, tests, evidence, and lifecycle. |
+| Designing an agentic capability | [Agent and Skill Template](../delivery-templates/agent-skill-template.md) | Agent, skills, context, controls, evaluation, telemetry, and release status. |
+| Operating or recovering a service or product | [Service Runbook Template](../delivery-templates/service-runbook-template.md) | Trigger, authority, diagnosis, recovery, validation, escalation, evidence, and exercise. |
+
+Choose the artifact from the work outcome, complete it through the applicable playbook, and retain its evidence at the named gate.

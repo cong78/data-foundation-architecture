@@ -150,4 +150,13 @@ The Data Service Portal must show:
 - Change history, deprecation notices, and migration guidance.
 - Open interface types, conformance level, embedded descriptor status, and latest contract portability test status.
 
-Portal views should follow the [Data Service Portal product detail standard](../architecture/data-service-portal-model.md#product-detail-standard). Declared contract targets must be visually and semantically distinct from current measured product health.
+Portal views should follow the [Data Service Portal product detail standard](../services/data-service-portal.md#product-detail-standard). Declared contract targets must be visually and semantically distinct from current measured product health.
+
+## Minimum Done Criteria
+
+- The publishing contract contains the complete product descriptor and validates against the approved open profile.
+- Accountable product, stewardship, technical, support, and escalation ownership is active.
+- All mandatory product go-live gates pass for the exact product and contract version, or an approved exception has an owner and expiry.
+- Product ports, catalog projections, access controls, lineage, telemetry, support, rollback, and runtime bindings reconcile to the same stable identifiers.
+- The portal shows current lifecycle, contract, meaning, access, health, limitations, support, and change information without presenting targets as measured results.
+- Product health and portfolio reviews have an owner, cadence, retained decisions, and tracked improvement or retirement actions.

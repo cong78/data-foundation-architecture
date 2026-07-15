@@ -185,7 +185,7 @@ Unity Catalog access control combines privileges, governed tags and ABAC, row an
 | Service authorization | Workspace entitlements and ACLs for workspace, job, pipeline, warehouse, and API operations. | API gateway, portal, workflow, and skill authorization remain separate. |
 | Data authorization | Catalog privileges, ownership, governed tags, ABAC, filters, masks, and bindings. | Policy service owns enterprise policy intent and approval evidence. |
 | Physical routing | Unity Catalog object, managed storage, external location, or supported federation. | Logical port shields consumers from provider-native paths. |
-| Evidence | Audit, lineage, query history, job and pipeline system data. | Observability service correlates product, contract, release, actor, run, cost, and outcome. |
+| Evidence | Audit, lineage, query history, job and pipeline system data. | Data Observability Service correlates product, contract, release, actor, run, cost, and outcome. |
 
 Passing a Databricks workspace or API permission never implies permission to product data. Likewise, a Unity Catalog grant does not authorize a portal approval, deployment, job edit, or agent skill.
 

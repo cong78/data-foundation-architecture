@@ -4,149 +4,97 @@
 
 ## Definition
 
-The Data Service AI Assistant is the conversational entry point to the agentic data foundation. Available through the Data Service Portal, it helps users find evidence, understand decisions, prepare work, and execute approved actions through governed skills.
+The Data Service AI Assistant is the conversational interface to foundation knowledge and typed service actions. It helps users discover evidence, understand decisions, prepare work, and execute explicitly approved actions without replacing deterministic services, policies, workflows, or human accountability.
 
-## Scope
+## Scope and Boundaries
 
-| In Scope | Out of Scope |
+| Owns | Does Not Own |
 | --- | --- |
-| Permission-filtered search, explanation, planning, drafting, and approved actions across foundation services. | Replacing the catalog, contract registry, policy engine, workflow service, or foundation service APIs. |
-| Ask, Plan, and Act interactions with sources, previews, approvals, progress, and receipts. | Granting itself permissions, approving its own actions, or bypassing deterministic controls. |
-| Registered agents, typed skills, governed model routing, context retrieval, evaluation, and telemetry. | Acting as an unrestricted general-purpose automation runtime. |
+| Ask, Plan, and approved Act experiences; task context; grounded responses; action previews; progress; and receipts. | Catalog, contract, policy, entitlement, workflow, product, or service authority. |
+| Permission-filtered retrieval, skill selection, model routing, evaluation, and assistant telemetry. | Granting permission, approving itself, changing control rules, or bypassing a service API. |
+| Bounded conversational memory and user-visible task state. | Unrestricted memory, broad credentials, direct platform administration, or autonomous high-impact action. |
 
-## Assistant Modes
+## Architecture Alignment
 
-| Mode | User Expectation | Allowed Behavior |
-| --- | --- | --- |
-| Ask | Explain, search, summarize, compare. | Read-only retrieval with source links and freshness. |
-| Plan | Prepare a sequence, draft, checklist, or impact analysis. | Read tools plus editable structured output. |
-| Act | Execute selected steps. | Typed tools, policy checks, explicit approval, progress and receipts. |
+| Concern | Alignment |
+| --- | --- |
+| Primary planes | Experience and AI |
+| Supporting planes | Control, Security, and Observability |
+| Shared capabilities | Semantic context, unified access, identity, policy, skill registry, model profiles, workflow, and telemetry. |
+| Integration flows | Ask and explain, plan, draft, preview action, approve, execute typed skill, and return evidence. |
 
-The current mode must always be visible. The assistant never moves from Ask or Plan to Act without user confirmation.
+## Service Architecture
+
+```mermaid
+flowchart LR
+    UI["Ask, plan, or act"] --> GATE["Agent Gateway"]
+    GATE --> CONTEXT["Context Gateway"]
+    GATE --> MODEL["LLM Gateway"]
+    GATE --> SKILLS["Skill Registry"]
+    GATE --> APPROVAL["Approval Service"]
+    SKILLS --> SERVICES["Foundation Service APIs"]
+    GATE --> EVAL["Evaluation and telemetry"]
+```
+
+The model may propose; deterministic services authorize, validate, execute, and record side effects.
 
 ## Core Capabilities
 
 | Category | Capability | Owned Outcome |
 | --- | --- | --- |
-| Interaction | Contextual conversation | Users ask, plan, and act from portal, product, contract, health, journey, and portfolio context without losing identity or task state. |
-| Grounding | Permission-filtered retrieval | Answers use authorized product, contract, semantic, policy, lineage, observability, workflow, and knowledge evidence with source and freshness. |
-| Explanation | Evidence-based answer and comparison | The assistant separates answer, evidence, assumptions, limitations, and unresolved questions instead of presenting inference as fact. |
-| Planning | Structured artifact preparation | Plans, drafts, checklists, contracts, impact analyses, and requests are editable, schema-valid, and side-effect free. |
-| Skills | Typed capability invocation | Registered, versioned skills map user intent to approved foundation-service APIs with validated input and output. |
-| Action | Preview, approval, and execution | Exact target, effect, permissions, risk, cost, reversibility, and evidence are shown before any governed write action. |
-| Policy | Independent authorization and guardrails | Identity, purpose, data policy, tool policy, limits, approval, segregation, and step-up authorization remain outside model discretion. |
-| Continuity | Durable task and receipt management | Long-running work exposes progress, retry, cancellation, escalation, identifiers, outcomes, and auditable receipts beyond the conversation. |
-| Evaluation | Quality and safety assurance | Grounding, correctness, refusal, prompt injection, tool misuse, excessive agency, privacy, latency, and cost are tested by version. |
-| Observability | Agent and model telemetry | Conversation, agent, model, prompt, skill, tool, user, product, contract, purpose, approval, token, cost, latency, and outcome are correlated. |
+| Conversation | Ask | Permission-filtered explanation with sources, authority, freshness, uncertainty, and next actions. |
+| Planning | Plan | Editable structured plan, impact analysis, checklist, or draft grounded in current state. |
+| Action | Act | Typed service call with preview, scope, policy, approval, progress, receipt, and recovery path. |
+| Grounding | Context retrieval | Product, contract, semantic, lineage, policy, workflow, and health evidence is retrieved under the user's authority. |
+| Orchestration | Skill and model routing | Approved skills and model profiles are selected by task, risk, data class, latency, quality, and cost. |
+| Assurance | Evaluation and safety | Grounding, authorization, tool choice, result correctness, refusal, and recovery are continuously tested. |
 
-## Portal Placement
+## Contracts and Interfaces
 
-The assistant should be available as a persistent panel and as contextual actions on product, contract, journey, health, and portfolio pages.
-
-| Portal Context | Useful Assistant Actions |
-| --- | --- |
-| Product discovery | Find products by purpose, compare contracts, explain health and access. |
-| Product detail | Explain fields, summarize limitations, identify impacted consumers, start a consume request. |
-| Source journey | Recommend ingestion pattern, draft Source System Ingestion Contract, identify missing onboarding evidence. |
-| Product journey | Draft the publishing contract with its embedded descriptor, map semantics, and check go-live readiness. |
-| Contract editor | Explain clauses, compare versions, detect breaking changes, prepare notifications. |
-| Product health | Correlate quality, freshness, lineage and incidents; propose remediation. |
-| Operations journey | Explain service health and impact, summarize incident status, find support guidance, draft a support request, and identify change or recovery evidence. |
-| Sharing journey | Check permitted use, minimize scope, prepare the Data Product Consumption Contract and revocation test. |
-| AI journey | Check data permissions, select context products, prepare evaluations and evidence. |
-
-## Response Design
-
-Every response should separate:
-
-1. **Answer:** concise result for the user.
-2. **Evidence:** authoritative products, contracts, policies, telemetry and observation times.
-3. **Assumptions:** unresolved or inferred information.
-4. **Proposed actions:** exact skills and effects before execution.
-5. **Approval:** risk, scope, target, duration, cost and reversibility.
-6. **Receipt:** completed actions, identifiers, outcomes and next step.
-
-## Action Preview
-
-Before a write action, show a trusted preview generated from the typed tool request, not from free-form retrieved content.
-
-| Field | Example |
-| --- | --- |
-| Action | Submit contract version for review. |
-| Target | `customer-profile` / contract `2.0.0`. |
-| Effect | Creates a review workflow and notifies subscribed consumers. |
-| Permissions | Product owner plus contract editor. |
-| Risk | Breaking change affects three consumers. |
-| Reversible | Review can be withdrawn before approval. |
-| Evidence | Compatibility result and consumer impact report. |
-
-## Architecture Guidance
-
-```mermaid
-flowchart LR
-    UI[Data Service AI Assistant UI] --> API[Assistant API]
-    API --> SESSION[Conversation and Task State]
-    API --> AGENT[Data Service Assistant Agent]
-    AGENT --> CONTEXT[Context Gateway]
-    AGENT --> SKILLS[Skill Registry]
-    AGENT --> MODEL[LLM Gateway]
-    AGENT --> APPROVAL[Approval Service]
-    SKILLS --> SERVICES[Foundation Service APIs]
-    AGENT --> AUDIT[Agent Audit and OpenTelemetry]
-```
-
-## Minimum Skills
-
-| Skill | Type | Approval |
+| Interface | Purpose | Required Contract |
 | --- | --- | --- |
-| `product.search` | Read | None. |
-| `product.explain` | Read | None. |
-| `product.context` | Read | None; results remain identity, purpose, and policy filtered. |
-| `contract.compare` | Read | None. |
-| `lineage.impact` | Read | None. |
-| `health.explain` | Read | None. |
-| `operations.status` | Read | None; results remain identity and incident-sensitivity filtered. |
-| `contract.draft` | Draft | User reviews output. |
-| `source.onboarding_plan` | Draft | User reviews output. |
-| `access.request_draft` | Draft | User confirms purpose and scope. |
-| `support.request_draft` | Draft | User reviews service, product, impact, urgency, and included evidence. |
-| `product.submit_review` | Write | Explicit confirmation. |
-| `access.request_submit` | Write | Explicit confirmation and policy check. |
-| `support.request_submit` | Write | Explicit confirmation; operations service owns triage and priority. |
-| `sharing.submit` | High impact | Step-up authorization and approver. |
-| `entitlement.revoke` | High impact | Step-up authorization and impact preview. |
+| Assistant API | Start or resume a task and stream grounded output. | Task id, mode, user, purpose, scope, context references, budget, and response provenance. |
+| Context API | Retrieve permission-filtered evidence. | Resource ids, requested fields, identity, purpose, policy result, source authority, and observation time. |
+| Skill contract | Execute a stable service operation. | Typed input and output, side effects, required scopes, approval class, idempotency, errors, and receipt. |
+| Approval API | Confirm consequential action. | Preview, impact, actor, approver, expiry, segregation, and approved parameters. |
+| Evaluation event | Record quality and safety result. | Agent, skill, model, prompt, product, contract, task, trace, test set, result, and threshold. |
 
-## Assistant API
+## Integrations and Dependencies
 
-| Endpoint | Purpose |
+| Dependency | Assistant Uses | Assistant Provides |
+| --- | --- | --- |
+| Data Service Portal | Identity context, selected object, current journey, confirmation UI, and task presentation. | Grounded response, plan, preview, progress, receipt, and source links. |
+| Context and authority systems | Products, contracts, semantics, policy, lineage, health, workflows, and current state. | Bounded retrieval request and evidence references; never a copied authority. |
+| Foundation services | Registered read and write operations. | Typed request, delegated scope, purpose, approval, idempotency key, and correlation ids. |
+| Model platform | Approved profile, routing, limits, and provider controls. | Prompt and context within policy, token and cost telemetry, and evaluation result. |
+| Observability and operations | Trace storage, alerts, incidents, suspension, and recovery. | Agent, model, skill, task, policy, approval, tool, cost, outcome, and error signals. |
+
+## Controls and Evidence
+
+| Control | Required Evidence |
 | --- | --- |
-| `POST /assistant/conversations` | Start a scoped conversation. |
-| `POST /assistant/conversations/{id}/messages` | Ask, plan, or request an action. |
-| `GET /assistant/tasks/{id}` | Read plan, progress, evidence and artifacts. |
-| `POST /assistant/tasks/{id}/approve` | Approve the exact typed action and scope. |
-| `POST /assistant/tasks/{id}/cancel` | Stop pending or running work. |
-| `GET /assistant/tasks/{id}/receipt` | Retrieve tool calls, decisions and outcomes. |
+| Ask and Plan are read-only; Act uses registered skills only. | Mode, selected skill, declared side effect, and blocked direct access attempts. |
+| Retrieved content and tool output cannot change authorization or approval requirements. | Independent policy decision, instruction-source classification, and executed parameters. |
+| High-impact actions require explicit confirmation, step-up authorization, and named approval. | Preview, approval, identity, expiry, action receipt, and recovery route. |
+| Memory is bounded by user, task, purpose, retention, and classification. | Memory scope, source, retention, deletion, and access audit. |
+| Every answer and action is traceable. | Sources, model profile, prompt version, product and contract versions, skills, decisions, cost, latency, outcome, and evaluation. |
 
-Streaming improves responsiveness, but task state and receipts remain durable outside the model conversation.
+## Action Checklist
 
-## Controls
+| Engineer | Product Owner |
+| --- | --- |
+| Register typed skills over stable service APIs; implement delegated identity, policy checks, idempotency, approvals, receipts, cancellation, evaluation, rate limits, and kill switches. | Define user jobs, allowed modes, autonomy ceiling, unacceptable outcomes, confirmation language, quality thresholds, escalation, support, and measurable value. |
+| Test prompt injection, unauthorized retrieval, excessive agency, tool failure, duplicate action, stale context, model fallback, cancellation, and audit reconstruction. | Approve only evidence-backed capabilities; review failure and refusal experience; increase autonomy only after evaluation and operational evidence. |
 
-- Derive identity, team and permissions from authenticated claims.
-- Apply row, column, purpose and classification policy before retrieval.
-- Treat product descriptions, documents, tool output and retrieved text as untrusted content.
-- Allow only registered skills and exact tool versions for the selected agent.
-- Validate tool input and output against schemas.
-- Require step-up authorization for privileged, destructive, external or costly actions.
-- Use independent policy code to decide whether approval is required.
-- Limit turns, tool calls, tokens, time and cost for every task.
-- Do not expose hidden prompts, secrets, credentials or unrestricted retrieved content.
-- Provide cancel, retry and escalation to a human owner.
+## Reference Solutions
+
+The [Agentic Data Foundation](../architecture/agentic-data-foundation.md) defines the shared agent, skill, model, context, memory, approval, and evaluation foundation. No model provider is mandated. A selected implementation must preserve skill contracts, policy enforcement, evidence, portability, and suspension controls.
 
 ## Done Criteria
 
-- Ask mode provides grounded answers with source, version and freshness.
-- Plan mode creates editable structured artifacts without side effects.
-- Act mode executes only approved typed skills and returns receipts.
-- Product, contract, policy, lineage, observability and workflow context is permission filtered.
-- Prompt injection, tool misuse, memory poisoning and excessive-agency tests pass.
-- Assistant traces show conversation, agent, model, skill, tool, user, product, contract, purpose, approval and outcome.
+- Ask responses cite current permission-filtered evidence and state uncertainty or missing authority.
+- Plans are editable and do not create side effects.
+- Act mode executes only registered skills within delegated scope and approved parameters.
+- Consequential actions show preview, approval, progress, receipt, and recovery path.
+- Evaluation covers grounding, authorization, tool choice, result correctness, refusal, safety, cost, latency, and recovery.
+- The assistant can be suspended independently without blocking deterministic portal and service workflows.

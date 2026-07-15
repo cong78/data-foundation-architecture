@@ -80,6 +80,6 @@ The target architecture therefore separates four concerns:
 
 ## Architecture Verdict
 
-With the open profile applied, this is a credible state-of-the-art **architecture guideline**: comprehensive, AI-aware, product-led, observable, and intentionally vendor-neutral.
+With the open profile applied, the guidance provides a comprehensive, AI-aware, product-led, observable, and intentionally vendor-neutral target. Those qualities are design claims until they are demonstrated by the conformance evidence below.
 
 It becomes a proven reference architecture only after at least one thin vertical slice passes Level 2 conformance and one external or cross-platform slice passes the relevant Level 3 tests.

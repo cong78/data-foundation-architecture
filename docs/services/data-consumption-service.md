@@ -1,138 +1,113 @@
 # Data Consumption Service
 
-<div class="decision-brief"><div><small>Use when</small><strong>Serving a live product to a governed consumer.</strong></div><div><small>Decision</small><strong>Which logical port, policy, and runtime adapter apply?</strong></div><div><small>Owner</small><strong>Consumption service owner with product owner.</strong></div><div><small>Output</small><strong>Purpose-bound, observable, revocable access.</strong></div></div>
+<div class="decision-brief"><div><small>Use when</small><strong>Serving a live product to a governed consumer.</strong></div><div><small>Decision</small><strong>Which logical port, access mode, policy, and runtime adapter apply?</strong></div><div><small>Owner</small><strong>Consumption service owner with product and consumer owners.</strong></div><div><small>Output</small><strong>Purpose-bound, observable, revocable access.</strong></div></div>
 
 ## Definition
 
-The data consumption service makes trusted data available to consumers through fit-for-purpose access patterns. It supports BI, applications, platforms, AI agents, and AI models without requiring every consumer to build custom extraction logic.
+The Data Consumption Service resolves a consumer's approved purpose to a live product version and logical port, authorizes service and data use, selects a conformant runtime adapter, enforces obligations, and returns an observable usage receipt. It supports BI, applications, platforms, AI agents, and models without forcing one physical access technology.
 
-It implements the [Unified Access Design](../architecture/unified-access-design.md): one governed logical access contract above distributed physical data-product storage and runtimes.
+## Scope and Boundaries
 
-For a selected implementation profile, see [Data Consumption Design](../architecture/data-consumption-design.md), which maps this service to Unity Catalog, SQL warehouses, open table and sharing interfaces, and conformant non-SQL adapters.
-
-## Scope
-
-| In Scope | Out of Scope |
+| Owns | Does Not Own |
 | --- | --- |
-| Governed SQL, API, file, event, semantic, feature, and retrieval access patterns. | Building the final BI dashboard, application feature, or AI model. |
-| Access request, policy enforcement, masking, usage telemetry, and consumer experience signals. | Approving business purpose outside the governance workflow. |
-| Named-user, workload, delegated, agent, and model access with separate service and data decisions. | Enterprise identity lifecycle or source-system account administration. |
-| AI-ready data access for retrieval, grounding, training, evaluation, and agent use. | Model architecture, prompt design, or model deployment platforms. |
+| Product and port resolution, channel selection, service authorization, data authorization orchestration, entitlement, adapter execution, obligations, and revocation. | Product storage, business interpretation, identity lifecycle, product quality acceptance, or consumer misuse outside approved purpose. |
+| Direct, federated, selectively projected, and replicated access decisions. | Requiring every source or product to be copied into the foundation. |
+| Query, table, API, event, file, feature, retrieval, and semantic access profiles. | Exposing provider paths or credentials as the product interface. |
 
-## Consumer Channels
+## Architecture Alignment
 
-| Channel | Typical Use | Architecture Needs |
-| --- | --- | --- |
-| BI and reporting | Dashboards, self-service analysis, management reporting. | SQL access, semantic layer, governed metrics, row-level security. |
-| Applications | Operational or customer-facing experiences. | APIs, low-latency access, service-level objectives, change contracts. |
-| Platforms | Reuse by internal company platforms. | Product APIs, bulk access, event subscriptions, tenancy controls. |
-| AI agents and models | Retrieval, grounding, training, evaluation, feature use. | Metadata-rich access, policy enforcement, lineage, freshness, evaluation datasets. |
-
-## Open Interface Profiles
-
-| Channel | Interface Profile |
+| Concern | Alignment |
 | --- | --- |
-| API | OpenAPI definition with standard authentication and error semantics. |
-| Event | AsyncAPI channel definition with CloudEvents envelope. |
-| Table | Open table metadata and catalog interface where supported. |
-| Query | SQL plus an open transport such as Arrow Flight SQL where high-speed portability is required. |
-| File | Documented open format, schema, checksums, partitioning, and manifest. |
-| AI | Governed context, feature, or retrieval API linked to product, contract, snapshot, identity, and purpose. |
-| Semantic context | Context API exposing product meaning, grain, metrics, relationships, limitations, and evidence references with policy filtering. |
+| Primary plane | Data |
+| Supporting planes | Control, Security, AI, and Observability |
+| Shared capabilities | Unified access, semantic context, Data Product Consumption Contract, identity, policy, entitlement, catalog, and telemetry. |
+| Integration flows | Discover and subscribe, request access, authorize, resolve port, execute adapter, enforce obligations, record usage, renew, and revoke. |
+
+## Service Architecture
+
+```mermaid
+flowchart LR
+    CONSUMER["Consumer"]
+    REQUEST["Consumption request"]
+    ACCESS["Data Consumption Service"]
+    POLICY["Identity and policy"]
+    ADAPTER["Runtime adapter"]
+    PRODUCT["Physical product runtime"]
+    RECEIPT["Usage receipt"]
+
+    CONSUMER --> REQUEST --> ACCESS
+    ACCESS --> POLICY --> ACCESS
+    ACCESS --> ADAPTER --> PRODUCT --> RECEIPT
+```
+
+The logical product port remains stable while physical storage, compute, endpoint, or adapter changes.
 
 ## Core Capabilities
 
 | Category | Capability | Owned Outcome |
 | --- | --- | --- |
-| Engagement | Data Product Consumption Contract initiation | Consumer identity, use case, purpose, product, port, duration, and requested scope enter one governed contract flow. |
-| Resolution | Logical product and port resolution | Stable product identifiers resolve to the approved contract, semantic context, health, policy, entitlement, and runtime binding. |
-| Interfaces | Fit-for-purpose delivery channels | SQL, API, event, file, semantic, feature, retrieval, and context ports implement declared open interface profiles. |
-| Authorization | Service-operation decision | The actor may invoke the requested consumption operation for the target service and environment. |
-| Authorization | Product-data decision | Product, action, purpose, classification, Data Product Consumption Contract, and entitlement produce enforceable allow, deny, and obligation results. |
-| Protection | Fine-grained data controls | Row, column, masking, tokenization, aggregation, minimization, and output rules are enforced consistently. |
-| Execution | Runtime routing and policy pushdown | The service selects a conformant adapter, executes near approved data, and fails closed when obligations cannot be enforced. |
-| Validation | Contract-bound response | Requests and results satisfy schema, contract, freshness, quality, minimization, and response rules before release. |
-| Context | Semantic and AI-ready access | Consumers receive versioned meaning, metrics, limitations, citations, features, retrieval context, and approved AI-use evidence. |
-| Evidence | Consumer and decision telemetry | Usage, latency, errors, access decisions, cost, lineage, adapter, and downstream dependency are correlated to product and consumer. |
-| Lifecycle | Subscription and impact management | Consumers receive contract, incident, deprecation, migration, and entitlement-change notifications. |
-| Portability | Runtime-independent product access | A logical port can move to another conformant runtime without changing the consumer contract. |
+| Discovery | Product and port resolution | The approved product, version, port, health, semantics, policy, and support are resolved from canonical ids. |
+| Contracts | Consumption agreement | Consumer, purpose, scope, channel, SLO, obligations, expiry, and revocation are explicit. |
+| Authorization | Separate service and data decisions | The actor may invoke the service and use the selected product for the declared purpose. |
+| Orchestration | Adapter selection and execution | Work executes through a conformant channel near the approved data runtime. |
+| Enforcement | Obligations and entitlement | Masking, filtering, minimization, rate, region, retention, output, and expiry controls are applied. |
+| Operations | Usage, SLO, cost, and revocation | Access remains observable, supportable, renewable, and immediately revocable. |
 
-## Unified Access Responsibilities
+## Contracts and Interfaces
 
-| Logical Capability | Consumption Service Behavior |
-| --- | --- |
-| Entry | Offer consistent SQL, API, event, file, semantic, feature, retrieval, and context interfaces. |
-| Resolve | Map product and port ids to approved contract, semantic context, policy, health, and runtime binding. |
-| Authorize | Enforce service operation first, then data action, purpose, entitlement, and obligations. |
-| Execute | Route to the approved physical runtime and push down safe query and policy operations. |
-| Validate | Enforce request, response, schema, contract, output, and minimization rules. |
-| Observe | Emit decision, adapter, physical execution, usage, cost, lineage, and consumer outcome evidence. |
+| Interface | Purpose | Required Contract |
+| --- | --- | --- |
+| Consumption request API | Request a product port for a named purpose. | Consumer and subject identity, product and port, purpose, scope, duration, channel, environment, and use-case owner. |
+| Resolution API | Resolve logical port to approved version and runtime binding. | Product, contract, semantic-context, health, policy, adapter, and compatibility versions. |
+| Authorization API | Obtain service and data decisions with obligations. | Actor, subject, action, product, purpose, classification, environment, policy context, and entitlement. |
+| Runtime adapter | Execute query, API, event, file, feature, retrieval, or semantic access. | Typed input and output, identity propagation, obligations, SLO, errors, telemetry, and fail-closed behavior. |
+| Usage receipt | Record access outcome and current binding. | Consumer, purpose, product and contract versions, decisions, obligations, adapter, cost, latency, outcome, and trace. |
 
-## Architecture Guidance
+## Integrations and Dependencies
 
-Consumption should be based on live data products where possible. Direct access to raw or source-aligned data should be controlled and treated as an exception unless the consumer is building or operating a data product.
-
-For AI workloads, consumption must be secure, traceable, and meaningful to models and agents. Access policies must apply to service accounts and agent identities, not only human users.
-
-Use the [AI-Ready Data Standard](../standards/ai-ready-data-standard.md) when designing retrieval, training, evaluation, feature, or grounded answer patterns.
-
-Use the [Semantic and Context Design](../architecture/semantic-context-design.md) to keep BI, application, platform, and AI interpretations consistent without introducing a duplicate metadata authority.
-
-Use the [Unified Access Design](../architecture/unified-access-design.md) for named-user, workload, delegated, agent, and external access. A service permit never overrides a data deny.
+| Dependency | Consumption Uses | Consumption Provides |
+| --- | --- | --- |
+| Data Service Portal and Assistant | Consumer intent, selected product, purpose, requested action, confirmation, and task context. | Available ports, requirements, decisions, status, endpoint or binding, obligations, and receipt. |
+| Product, contract, semantic, catalog, and health authorities | Product versions, ports, meaning, policy intent, lifecycle, SLO, support, and current health. | Subscription, selected port, consumer dependency, usage, and feedback. |
+| Identity, policy, and entitlement | Authentication, delegated scope, service decision, data decision, and obligations. | Actor, subject, purpose, target, action, environment, and enforcement result. |
+| Platform Enablement Service | Endpoint, warehouse, compute, identity binding, policy, adapter, secret, and revocation resources. | Typed resource request, lifecycle, owner, policy context, and deprovisioning intent. |
+| Observability and Operations | Access telemetry, SLOs, incidents, product impact, support, and recovery. | Decision, adapter, latency, errors, usage, cost, consumer impact, revocation, and recovery evidence. |
 
 ## Direct, Federated, or Replicated Access Decision
 
-The foundation does not need to copy every source. Select the lightest access mode that satisfies the consumer outcome and required controls. A direct source API or MCP interface can still be a governed product port: it remains registered, contracted, authorized, observable, and discoverable through the foundation while the source system stays the runtime authority.
-
-```mermaid
-flowchart LR
-    NEED[Consumer need] --> DECIDE{Access decision}
-    DECIDE -->|Current operation or narrow lookup| DIRECT[Direct source API or MCP]
-    DECIDE -->|Live query without ownership transfer| FEDERATED[Federated or virtual access]
-    DECIDE -->|Low-latency subset or change feed| PROJECTION[Selective projection or event]
-    DECIDE -->|History, scale, reuse or transformation| REPLICATED[Replicated data product]
-
-    GOVERN[Product id · contract · semantics · policy · telemetry] --- DIRECT
-    GOVERN --- FEDERATED
-    GOVERN --- PROJECTION
-    GOVERN --- REPLICATED
-```
-
-| Access mode | Prefer when | Avoid when |
+| Access Mode | Use When | Avoid When |
 | --- | --- | --- |
-| **Direct source API or MCP** | The consumer needs current operational state, a transaction, command, narrow lookup, or approved tool action; the source exposes a stable interface with identity, policy, rate limits, SLOs, and audit evidence. | The workload needs bulk extraction, repeated scans, cross-source joins, historical analysis, model training, source isolation, or behavior the source interface does not contract. |
-| **Federated or virtual access** | Data should remain at the source for residency, duplication, freshness, or ownership reasons, and bounded queries can meet policy, performance, availability, and telemetry requirements. | Source availability or query capacity cannot support consumer demand, policy cannot be pushed down, or results must be reproducible after source change. |
-| **Selective projection or event** | Consumers need a small purpose-specific subset, low-latency read model, cache, search index, event reaction, or resilience from the source without copying the full source. | The projection becomes an undocumented duplicate, loses change ordering or lineage, or cannot be rebuilt and reconciled. |
-| **Replicated data product** | Consumers need history, snapshots, quality remediation, semantic alignment, high-volume reuse, cross-source composition, BI, training or evaluation data, sharing, or workload isolation from the source. | The need is a single current lookup or source-owned operation and replication would add stale copies, cost, retention risk, or conflicting truth. |
+| Direct source API or MCP | Current operational state, bounded commands, and source remains the correct runtime authority. | History, reproducibility, broad analytics, source isolation, or cross-source composition is required. |
+| Federated query | Data can stay at source and the engine can enforce identity, policy, performance, and telemetry. | Source load, availability, semantics, or cross-platform controls are insufficient. |
+| Selective projection | A narrow decoupled cache, index, feature, or search view is justified. | It becomes an unmanaged second product or loses source lineage and expiry. |
+| Replicated product | History, transformation, scale, reuse, isolation, reproducibility, or contractual SLO requires a governed copy. | Replication is merely the default integration habit. |
 
-### Decision Rules
+## Controls and Evidence
 
-1. **Keep commands at the source.** Create, update, approve, and other transactional actions should normally use the source API or an approved MCP tool rather than a replicated dataset.
-2. **Move data for analytical reasons.** Replicate when history, transformation, scale, reuse, reproducibility, isolation, or cross-source composition creates a clear product need.
-3. **Govern the interface, not only the copy.** Direct, federated, projected, and replicated ports all require an owner, contract, semantic context, classification, policy, SLO, lineage or dependency evidence, telemetry, and lifecycle state.
-4. **Do not use MCP as bulk transport.** MCP is appropriate for bounded resources and tool actions for agents; bulk analytical or training access should use a contracted table, file, query, event, feature, or retrieval port.
-5. **Fail closed on missing controls.** If the source interface cannot enforce required purpose, minimization, audit, residency, or revocation obligations, add a governed adapter or select another mode.
-6. **Record and revisit the choice.** Capture expected volume, freshness, source load, history, availability, recovery, cost, retention, consumers, and exit path. Reassess when usage or risk crosses an agreed threshold.
+| Control | Required Evidence |
+| --- | --- |
+| Service authorization and data authorization are separate and fail closed. | Two decision ids, policy versions, evaluated attributes, result, obligations, and enforcement point. |
+| Every access is purpose-bound, minimized, time-limited where appropriate, and revocable. | Consumption contract, entitlement, scope, purpose, expiry, renewal, revocation, and access audit. |
+| Adapters preserve logical product identity and enforce obligations. | Conformance tests, identity propagation, masking or filtering result, SLO, errors, and telemetry. |
+| Physical runtime details are hidden behind stable ports. | Product and port ids, adapter binding, provider mapping, compatibility, and tested migration. |
+| AI access uses the same contract and policy boundary. | Agent or model identity, delegated scope, approved purpose, product and context versions, and evaluation trace. |
 
-Use direct access only when the source owner accepts the workload and dependency. The consumer must not rely on an undocumented endpoint, source credential, database schema, or MCP server. Register the dependency so source changes, incidents, deprecations, and access revocation reach affected consumers.
+## Action Checklist
 
-## Controls
+| Engineer | Product Owner |
+| --- | --- |
+| Implement resolver, policy integration, entitlements, adapters, obligations, receipts, revocation, SLO telemetry, and failure handling; test every supported channel. | Define consumer purpose, approved audience, product and port, scope, service level, obligations, expiry, prohibited uses, support, and success measure. |
+| Test allow, deny, masking, minimization, stale product, unhealthy port, adapter failure, latency, duplicate request, expiry, revocation, source outage, and provider migration. | Choose the lightest access mode that satisfies the outcome and controls; review usage, value, cost, incidents, and continued need. |
 
-- Consumer has an approved access purpose.
-- Data product classification permits the requested usage.
-- Access is enforced through approved platform patterns.
-- Sensitive fields are masked, tokenized, aggregated, or blocked as required.
-- Usage telemetry is collected and linked to the product and consumer.
-- AI use cases are checked for approved training, retrieval, grounding, or evaluation usage.
+## Reference Solutions
+
+[Data Consumption Design](../architecture/data-consumption-design.md) maps this service to Unity Catalog, Databricks SQL, open table interfaces, sharing, and conformant adapters. It is a selected reference profile; logical product ports and policy intent remain portable.
 
 ## Done Criteria
 
-- Consumer can access data through an approved pattern.
-- Access decision and policy enforcement are auditable.
-- Named-user and system access preserve actor, subject, purpose, product, interface, policy version, obligations, and outcome.
-- Freshness, quality, and product status are visible to the consumer.
-- Usage is observable by product owner and platform team.
-- Downstream dependency is recorded for impact analysis.
-- An independent client can consume the declared open interface without a provider-specific SDK.
-- The same logical product port can be rebound to another conformant physical runtime without changing the consumer contract.
-- Every runtime adapter proves identity propagation, authorization obligations, contract enforcement, telemetry, and fail-closed behavior.
+- A consumer requests a stable logical port without needing provider paths or credentials.
+- Service and data decisions, obligations, entitlement, execution, and receipt are correlated end to end.
+- Direct, federated, projected, and replicated access are selected by evidence rather than default.
+- Every adapter passes identity, authorization, obligation, SLO, telemetry, error, and fail-closed tests.
+- Access can be renewed, suspended, revoked, and deprovisioned with proof.
+- BI, application, platform, agent, and model consumers receive consistent product meaning and current health.

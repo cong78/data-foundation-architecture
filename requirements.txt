@@ -1,8 +1,9 @@
-mkdocs-material>=9.5
-mkdocs-glightbox>=0.4
-mkdocs-minify-plugin>=0.8
-mkdocs-charts-plugin>=0.0.13
-mkdocs-awesome-pages-plugin>=2.10
+mkdocs-material>=9.5,<10
+mkdocs-glightbox>=0.4,<1
+mkdocs-minify-plugin>=0.8,<1
+mkdocs-charts-plugin>=0.0.13,<1
+mkdocs-awesome-pages-plugin>=2.10,<3
 mkdocs-git-revision-date-localized-plugin>=1.4,<2
-PyYAML>=6.0
-jsonschema>=4.21
+PyYAML>=6.0,<7
+jsonschema>=4.21,<5
+codespell>=2.4,<3

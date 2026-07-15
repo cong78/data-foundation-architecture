@@ -57,34 +57,43 @@ Capabilities define service responsibility, not product features or vendor compo
 
 ## Service Portfolio
 
+The [Architecture Design Map](../architecture/design-map.md) maps every service to its primary service-specific design, supporting shared capabilities, integration flows, and target planes.
+
 | Service | Owns | Does Not Own |
 | --- | --- | --- |
-| Data service portal | User entry point, Data Product Marketplace, requests, workflow tracking, product onboarding, and data contract management. | Replacing underlying catalog, product registry, policy, lineage, observability, or workflow systems. |
+| Data Service Portal | User entry point, Data Product Marketplace, requests, workflow tracking, product onboarding, and data contract management. | Replacing underlying catalog, product registry, policy, lineage, observability, or workflow systems. |
 | Data Service AI Assistant | Permission-filtered explanation, planning, and approved actions through registered agents, models, and typed skills. | Granting permissions, approving its own actions, or replacing deterministic foundation controls. |
-| Data ingestion service | Centrally managed source onboarding, transport, raw and validated source-aligned states, validation, source metadata, and operating evidence. | Domain business transformation into aggregate or consumer-aligned products. |
-| Data product creation service | Shared product engineering capability, templates, controls, quality validation, go-live workflow, and publication automation. | Ownership of the aggregate or consumer-aligned products created by federated domain teams. |
-| Data consumption service | Governed access for BI, applications, platforms, AI agents, and models. | Business misuse of data outside approved purpose. |
-| Data sharing service | Governed internal and external exchange, recipient entitlement, sharing evidence. | Legal contract negotiation outside data usage controls. |
-| Platform enablement service | Shared storage lifecycle, contract system, identity and security integration, catalog synchronization, integration patterns, and platform automation. | Product semantics, enterprise IAM or security authority, lifecycle-service execution, or operational command. |
-| Data observability service | Product telemetry, quality and freshness SLOs, usage insights, incident correlation, OpenTelemetry standards. | Domain ownership of product quality decisions. |
-| Data foundation operations service | Service management, support, incident, problem, change, release, reliability, continuity, communication, and improvement coordination. | Telemetry authority, engineering remediation, product decisions, deployment execution, or governance policy. |
+| Data Ingestion Service | Centrally managed source onboarding, transport, raw and validated source-aligned states, validation, source metadata, and operating evidence. | Domain business transformation into aggregate or consumer-aligned products. |
+| Data Product Creation Service | Shared product engineering capability, templates, controls, quality validation, go-live workflow, and publication automation. | Ownership of the aggregate or consumer-aligned products created by federated domain teams. |
+| Data Consumption Service | Governed access for BI, applications, platforms, AI agents, and models. | Business misuse of data outside approved purpose. |
+| Data Sharing Service | Governed internal and external exchange, recipient entitlement, sharing evidence. | Legal contract negotiation outside data usage controls. |
+| Platform Enablement Service | Shared storage lifecycle, contract system, identity and security integration, catalog synchronization, integration patterns, and platform automation. | Product semantics, enterprise IAM or security authority, lifecycle-service execution, or operational command. |
+| Data Observability Service | Product telemetry, quality and freshness SLOs, usage insights, incident correlation, OpenTelemetry standards. | Domain ownership of product quality decisions. |
+| Data Foundation Operations Service | Service management, support, incident, problem, change, release, reliability, continuity, communication, and improvement coordination. | Telemetry authority, engineering remediation, product decisions, deployment execution, or governance policy. |
 
 ## Agentic Access
 
 The [Data Service AI Assistant](data-service-ai-assistant.md) and [Agentic Data Foundation](../architecture/agentic-data-foundation.md) make these services accessible through governed agents and typed skills. Agentic access is cross-cutting; it does not create a parallel set of foundation services.
 
-## Service Contract
+## Canonical Service Page
 
-Each foundation service must define:
+Each service page is the single technology-neutral authority for that service. Use this section order consistently:
 
-- Service owner and support model.
-- Standard onboarding process.
-- Supported patterns and exceptions.
-- Required metadata and evidence.
-- Policy and security controls.
-- Operational SLOs and observability.
-- Integration points with catalog, lineage, identity, and governance.
-- Portal experience and workflow entry points where users interact with the service.
+| Section | Required Decision or Output |
+| --- | --- |
+| Definition | What the service is and the outcome it owns. |
+| Scope and Boundaries | What it owns and explicitly does not own. |
+| Architecture Alignment | Primary and supporting target planes, shared foundations, and integration flows. |
+| Service Architecture | Readable logical design and its key authority boundary. |
+| Core Capabilities | Category, stable capability, and owned outcome. |
+| Contracts and Interfaces | APIs, events, workflows, ports, and their required contracts. |
+| Integrations and Dependencies | What the service consumes and provides at each dependency. |
+| Controls and Evidence | Mandatory control paired with proof, not policy prose alone. |
+| Action Checklist | Separate actions for engineers and product owners. |
+| Reference Solutions | Optional vendor profiles that cannot redefine the service. |
+| Done Criteria | Observable conditions required for readiness and operation. |
+
+Specialized decisions may add one focused section, but they must not replace or duplicate the common sections. Shared platform and integration designs remain under Architecture; vendor mappings remain Reference Solutions.
 
 For architecture delivery guidance, use:
 
@@ -123,6 +132,4 @@ flowchart LR
 
 ## Related Standards
 
-- [Data Contract Standard](../standards/data-contract-standard.md)
-- [OpenTelemetry Telemetry Standard](../standards/otel-telemetry-standard.md)
-- [AI-Ready Data Standard](../standards/ai-ready-data-standard.md)
+Use the [Standards Overview](../standards/index.md) to map every service to its applicable architecture policy, contract, access, catalog and storage, product management, workload, interoperability, telemetry, AI, agent, and technology-selection controls.

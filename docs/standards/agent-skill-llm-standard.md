@@ -95,3 +95,12 @@ An agent or skill cannot be certified without evidence for:
 ## Lifecycle
 
 Agents, skills, prompts, retrieval configurations, model profiles and evaluation suites are versioned independently. A release records the exact dependency set. Breaking skill changes require a new major version and consumer impact analysis. A failing safety or policy evaluation blocks promotion and may trigger automatic suspension of the affected version.
+
+## Minimum Done Criteria
+
+- The agent, every enabled skill, and every LLM profile have stable ids, immutable versions, accountable owners, support routes, and approved manifests.
+- Skill inputs, outputs, side effects, authorization, data policy, reliability, approval, and telemetry are machine-readable and tested.
+- Read, draft, reversible-write, and high-impact actions enforce the correct policy, confirmation, step-up, and named-approval behavior.
+- Evaluation evidence covers task quality, grounding, injection resistance, excessive agency, privilege, data handling, memory, failure, recovery, and cost thresholds.
+- A release records exact agent, skill, prompt, retrieval, model-profile, policy, and evaluation versions and supports rollback or suspension.
+- Traces and audit records connect actor, delegated user, agent, skill, model profile, product, contract, purpose, policy decision, approval, action, outcome, and cost without leaking sensitive payloads.

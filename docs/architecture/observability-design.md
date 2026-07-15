@@ -2,7 +2,7 @@
 
 <div class="decision-brief"><div><small>Use when</small><strong>Applying Databricks, Unity Catalog, and Grafana Cloud to observability.</strong></div><div><small>Decision</small><strong>Where do system and product signals live and correlate?</strong></div><div><small>Owner</small><strong>Observability architect and service owners.</strong></div><div><small>Output</small><strong>Telemetry routes, authority, dashboards, and evidence.</strong></div></div>
 
-This proposal extends the Data Foundation Architecture observability service with a pragmatic two-platform design:
+This proposal applies the Data Observability Service through a pragmatic two-platform design:
 
 - **Databricks and Unity Catalog** provide data product observability, quality, profiling, lineage, and governed data context.
 - **Grafana Cloud** provides platform and system observability for services, pipelines, runtimes, infrastructure, logs, metrics, traces, and alerts.
@@ -200,7 +200,7 @@ This gives Grafana enough context to alert and investigate while preserving Unit
 
 ### Product
 
-**Data and System Observability Service**
+**Data Observability Service**
 
 ### Problem
 
@@ -291,11 +291,11 @@ Show products by owner, domain, criticality, quality posture, freshness posture,
 | Alert | Primary owner | Escalation |
 | --- | --- | --- |
 | Product freshness SLO breach | Data product owner | Data engineering and platform on-call |
-| Quality rule or anomaly breach | Data product owner and steward | Product creation service owner |
+| Quality rule or anomaly breach | Data product owner and steward | Data Product Creation Service owner |
 | Pipeline or job failure | Data engineering or service owner | Platform on-call when runtime-related |
 | API, service, or infrastructure failure | Platform or service owner | Product owners for affected products |
 | Cost or usage anomaly | Platform FinOps owner | Product owner for product-level cost |
-| Lineage or telemetry coverage gap | Observability service owner | Catalog, platform, or product owner |
+| Lineage or telemetry coverage gap | Data Observability Service owner | Catalog, platform, or product owner |
 
 ## Implementation Runway
 
@@ -345,6 +345,15 @@ Show products by owner, domain, criticality, quality posture, freshness posture,
 | Product quality becomes an engineering-only concern | Make product owner and steward accountable for SLOs and acceptable thresholds. |
 | Grafana becomes a second catalog | Link to catalog and product records; do not duplicate lifecycle authority. |
 | Alert volume becomes unmanageable | Use criticality tiers, SLO-based alerting, deduplication, ownership, and runbooks. |
+
+## Done Criteria
+
+- Unity Catalog supplies governed Databricks object, lineage, quality, usage, and audit context without becoming the only product or contract authority.
+- Foundation services export traces, metrics, logs, and events through OTLP-compatible collectors to Grafana Cloud with stable product, contract, run, consumer, purpose, and trace identifiers.
+- Product owners can see current quality, freshness, lineage, usage, incidents, consumers, and cost; platform operators can see service health, dependencies, saturation, errors, and recovery evidence.
+- Product and system alerts have distinct ownership, severity, routing, deduplication, escalation, and exercised runbooks.
+- Telemetry hygiene, least-privilege collection, retention, masking, export failure, stale-health detection, and recovery are tested.
+- A product-impact investigation can traverse product, contract, workload run, trace, platform dependency, incident, and validated recovery without manual identifier translation.
 
 ## Reference Sources
 

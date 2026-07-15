@@ -1,6 +1,6 @@
 # Target Architecture
 
-<div class="decision-brief"><div><small>Use when</small><strong>Checking logical completeness and control boundaries.</strong></div><div><small>Decision</small><strong>Which plane owns each concern and authority?</strong></div><div><small>Owner</small><strong>Enterprise architecture with capability owners.</strong></div><div><small>Output</small><strong>Six-plane target and identified gaps.</strong></div></div>
+<div class="decision-brief"><div><small>Use when</small><strong>Checking logical completeness and control boundaries.</strong></div><div><small>Decision</small><strong>How do service, shared-capability, and integration designs compose across the six planes?</strong></div><div><small>Owner</small><strong>Architecture owner with service and capability owners.</strong></div><div><small>Output</small><strong>Six-plane target, design placement, and identified gaps.</strong></div></div>
 
 The target architecture is organized into six planes. Each plane has a clear responsibility, but they operate together through shared metadata, contracts, policies, telemetry, and workflow.
 
@@ -10,7 +10,7 @@ The target architecture is organized into six planes. Each plane has a clear res
 ## Architecture Planes
 
 <div class="architecture-native target-plane-map" role="img" aria-label="Six-plane target architecture">
-  <a class="architecture-band band-experience" href="../data-service-portal-model/"><small>Intent and interaction</small><strong>Experience Plane</strong><span>Portal journeys · marketplace · contracts · lifecycle · evidence</span></a>
+  <a class="architecture-band band-experience" href="../../services/data-service-portal/"><small>Intent and interaction</small><strong>Experience Plane</strong><span>Portal journeys · marketplace · contracts · lifecycle · evidence</span></a>
   <span class="architecture-down" aria-hidden="true"></span>
   <a class="architecture-band band-control" href="../data-contract-design/"><small>Decisions and authority</small><strong>Control Plane</strong><span>Unity Catalog · products · semantics · contracts · policy · lineage · quality · go-live</span></a>
   <span class="architecture-down architecture-down--split" aria-hidden="true"></span>
@@ -22,6 +22,18 @@ The target architecture is organized into six planes. Each plane has a clear res
   <a class="architecture-band band-observe" href="../observability-design/"><small>Trust and impact</small><strong>Observability Plane</strong><span>OpenTelemetry · product telemetry · SLOs · usage · cost · incident correlation</span></a>
   <a class="architecture-band band-security" href="../../governance/security-compliance/"><small>Cross-cutting authority across every plane</small><strong>Security Plane</strong><span>Identity · service and data authorization · purpose · masking · retention · audit · sharing controls</span></a>
 </div>
+
+## How Designs Compose the Target
+
+The target architecture is not a fourth design type. It is the composition and completeness view for the three design classes in the [Architecture Design Map](design-map.md).
+
+| Design Class | Reflected in the Target As | Primary Plane Relationship | Review Test |
+| --- | --- | --- | --- |
+| **Service-specific design** | Named service capabilities, boundaries, interfaces, controls, SLOs, and owned evidence. | Places one service across every plane needed to deliver its outcome. | Does every service capability have one owner and explicit plane placement? |
+| **Shared capability design** | Shared product, contract, catalog, storage, identity, policy, semantic, access, telemetry, and automation structures. | Establishes common Control, Data, Security, and Observability capabilities reused by services. | Are common controls provided once without taking accountability from services? |
+| **Integration design** | Critical flows, service handoffs, workflow state, identifiers, trust boundaries, failure behavior, and end-to-end evidence. | Connects planes without creating a new integration plane or hidden control authority. | Can one trace prove the outcome across every participating plane and service? |
+
+Each detailed design must state its affected planes. Each plane must be realized through named services, shared foundations, and tested integration flows; a plane containing only conceptual components is incomplete.
 
 ## Plane Responsibilities
 
@@ -35,6 +47,22 @@ The target architecture is organized into six planes. Each plane has a clear res
 | Security | Named-user and workload identity, delegated authority, service authorization, data authorization, ABAC, purpose, masking, entitlement, audit, retention, sharing controls. | Every request passes separate service and data decisions; security follows data and identities. |
 
 The [Platform Enablement Service](../services/platform-enablement-service.md) spans the Control, Data, Observability, and Security planes. It provides shared storage lifecycle, contract, identity and security integration, catalog synchronization, integration, and automation capabilities. The [Data Foundation Operations Service](../services/data-foundation-operations-service.md) spans the Experience, Control, Observability, and Security planes to coordinate support, incidents, problems, changes, releases, reliability, and improvement. Neither horizontal service creates another target plane.
+
+## Service Placement in the Target
+
+| Service | Primary Planes | Supporting Planes | Primary Architecture Design |
+| --- | --- | --- | --- |
+| Data Service Portal | Experience | Control, Security | [Canonical service design](../services/data-service-portal.md) |
+| Data Service AI Assistant | Experience, AI | Control, Security, Observability | [Canonical service design](../services/data-service-ai-assistant.md) |
+| Data Ingestion Service | Data | Control, Security, Observability | [Technology-neutral service design](../services/data-ingestion-service.md) |
+| Data Product Creation Service | Data, Control | Security, Observability | [Technology-neutral service design](../services/data-product-creation-service.md) |
+| Data Consumption Service | Data | Control, Security, AI, Observability | [Technology-neutral service design](../services/data-consumption-service.md) |
+| Data Sharing Service | Data | Control, Security, Observability | [Technology-neutral service design](../services/data-sharing-service.md) |
+| Platform Enablement Service | Control, Data | Security, Observability | [Canonical service design](../services/platform-enablement-service.md) |
+| Data Observability Service | Observability | Every plane through common identity and telemetry | [Technology-neutral service design](../services/data-observability-service.md) |
+| Data Foundation Operations Service | Experience, Control | Observability, Security | [Canonical service design](../services/data-foundation-operations-service.md) |
+
+The primary plane owns the service outcome in the target view. A supporting plane supplies mandatory decisions, context, or evidence; it does not take service ownership.
 
 ## Core Design Moves by Plane
 
@@ -53,7 +81,7 @@ The [Platform Enablement Service](../services/platform-enablement-service.md) su
 
 ## Critical Flows by Plane
 
-No critical flow stays inside one plane. The **primary plane** owns completion; the handoff column makes the required cross-plane collaboration explicit.
+No critical flow stays inside one plane. Each row is an integration-design scope. The **primary plane** owns completion; the handoff column makes the required cross-plane collaboration explicit. Use the [Integration Design](integration-design.md) to specify interaction contracts, failure behavior, correlation, and end-to-end tests.
 
 | Primary Plane | Critical Flow | Required Plane Handoff | Completion Evidence |
 | --- | --- | --- | --- |
@@ -98,5 +126,5 @@ The architecture should not be called mature unless these are true:
 | Can a product move between platforms without losing contract, metadata, lineage, or policy intent? | Yes |
 
 <div class="read-next">
-  <strong>Next:</strong> use the Reference Architecture to map these planes to concrete platform capabilities, then apply the Open Interoperability Standard.
+  <strong>Next:</strong> use the Architecture Design Map to select the owning service design, supporting shared capabilities, and required integration flows.
 </div>

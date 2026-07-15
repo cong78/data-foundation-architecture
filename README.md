@@ -2,7 +2,7 @@
 
 MkDocs repository for consolidated architecture guidance on building an AI-ready data foundation as part of a company Data and AI foundation.
 
-Version `0.1.0` is an incubating release for controlled pilots. Publication of the guidance does not imply that an implementation is conformant or operationally ready.
+Version `0.1.0` is the first published, incubating release for controlled pilots. Publication of the guidance does not imply that an implementation is conformant or operationally ready.
 
 ## Scope
 
@@ -20,15 +20,15 @@ The guidance defines:
 
 The nine foundation services are:
 
-- Data service portal
+- Data Service Portal
 - Data Service AI Assistant
-- Data ingestion service
-- Data product creation service
-- Data consumption service
-- Data sharing service
-- Platform enablement service
-- Data observability service
-- Data foundation operations service
+- Data Ingestion Service
+- Data Product Creation Service
+- Data Consumption Service
+- Data Sharing Service
+- Platform Enablement Service
+- Data Observability Service
+- Data Foundation Operations Service
 
 ## AI Skills
 
@@ -49,10 +49,13 @@ mkdocs serve
 
 Then open <http://127.0.0.1:8000>.
 
-## Build
+## Build and Validate
 
 ```bash
-mkdocs build
+mkdocs build --strict
+python scripts/check_internal_links.py site
+python scripts/check_navigation.py
+python scripts/check_release_readiness.py
 ```
 
 ## Validate Architecture Policies
@@ -62,3 +65,7 @@ python scripts/validate_architecture_policies.py
 ```
 
 See `GOVERNANCE.md`, `COMPATIBILITY.md`, `CONTRIBUTING.md`, `SUPPORT.md`, and `CHANGELOG.md` before adopting or changing a public guidance interface.
+
+## License
+
+Licensed under the [Apache License 2.0](LICENSE).

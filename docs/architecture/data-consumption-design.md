@@ -72,7 +72,7 @@ Databricks recommends serverless SQL warehouses where available for SQL workload
 | SQL warehouse | Governed SQL execution, workload capacity, query history, and analytical result delivery. | Data Product Creation Contract, semantic authority, or operational API behavior. |
 | Open table adapter | Translate a logical table port to a supported Unity or Iceberg REST client profile. | Silent reduction of policy, format, or audit obligations. |
 | Product API, event, feature, or retrieval adapter | Enforce the declared non-SQL interface and SLO. | Reinterpreting product semantics or widening consumer scope. |
-| Observability service | Correlate access decision, runtime, product, consumer, usage, cost, SLO, and outcome. | Authorization or detailed business-result storage. |
+| Data Observability Service | Correlate access decision, runtime, product, consumer, usage, cost, SLO, and outcome. | Authorization or detailed business-result storage. |
 
 ## Governed Access Flow
 
@@ -80,7 +80,7 @@ Databricks recommends serverless SQL warehouses where available for SQL workload
 sequenceDiagram
     actor Consumer
     participant Portal as Data Service Portal
-    participant Access as Consumption Service
+    participant Access as Data Consumption Service
     participant Policy as Policy and Entitlement
     participant UC as Unity Catalog
     participant Runtime as Channel Runtime

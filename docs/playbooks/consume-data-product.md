@@ -10,7 +10,7 @@
 | 2 | **Consumer owner:** declare identity, use case, purpose, fields, interface, environment, duration, and expected volume. | Consume request. |
 | 3 | **Policy service:** decide service access and data access separately; calculate masking, filtering, rate, region, and expiry obligations. | Policy decisions and obligations. |
 | 4 | **Product owner or approver:** review exceptional purpose, sensitive scope, capacity, SLO, or AI-use conditions. | Approval or rejection. |
-| 5 | **Consumption service:** create entitlement and bind the logical port to a conformant runtime adapter. | Provisioning receipt. |
+| 5 | **Data Consumption Service:** create entitlement and bind the logical port to a conformant runtime adapter. | Provisioning receipt. |
 | 6 | **Consumer:** test representative access, semantics, error behavior, and obligations. | Acceptance result. |
 | 7 | **Operations and product owner:** observe usage, cost, experience, incidents, expiry, and contract change impact. | Usage and health evidence. |
 
@@ -27,4 +27,4 @@
 - Identity, purpose, contract version, policy, entitlement, obligations, usage, and outcome are traceable.
 - Expiry and revocation are tested.
 
-Authoritative inputs: [Unified Access Design](../architecture/unified-access-design.md), [Consumption Service](../services/data-consumption-service.md), and [Access Control Standard](../standards/access-control-standard.md).
+Authoritative inputs: [Unified Access Design](../architecture/unified-access-design.md), [Data Consumption Service](../services/data-consumption-service.md), and [Access Control Standard](../standards/access-control-standard.md).

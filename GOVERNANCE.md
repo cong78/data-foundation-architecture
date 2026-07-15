@@ -48,4 +48,4 @@ Normative requirements are identified by stable policy ids and uppercase BCP 14 
 
 ## Release Decision
 
-A release requires a clean strict documentation build, internal-link validation, schema and example validation, policy tests, skill validation, changelog entry, and compatibility classification.
+A release requires an approved distribution license, a clean strict documentation build, internal-link validation, schema and example validation, policy tests, skill validation, changelog entry, and compatibility classification.

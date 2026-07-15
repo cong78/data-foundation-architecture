@@ -89,3 +89,12 @@ sequenceDiagram
 - Retain telemetry according to data classification and audit requirements.
 - Export through OTLP and verify the signals with an independent OpenTelemetry collector.
 - Emit runtime data lineage through OpenLineage; correlate it with traces using canonical run, job, dataset, and trace identifiers.
+
+## Minimum Done Criteria
+
+- Every production service and product port emits the required system and data product signals through OTLP-compatible paths.
+- Required service, product, contract, run, actor, consumer, purpose, policy-decision, and trace identifiers correlate across applicable signals.
+- End-to-end traces connect source receipt, product creation, product publication, consumption, sharing, and AI access where those stages apply.
+- Product health views distinguish contract targets from measured freshness, quality, availability, usage, incidents, and cost.
+- Telemetry loss, stale health, invalid attributes, exporter failure, and sensitive-payload leakage have tests, alerts, owners, and exercised recovery procedures.
+- An independent OpenTelemetry collector accepts the exported signals without provider-specific translation of canonical identifiers.

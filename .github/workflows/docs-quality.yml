@@ -32,6 +32,13 @@ jobs:
       - name: Validate internal links and assets
         run: python scripts/check_internal_links.py site
 
+      - name: Validate navigation and spelling
+        run: |
+          python scripts/check_navigation.py
+          python scripts/check_release_readiness.py
+          codespell docs README.md GOVERNANCE.md COMPATIBILITY.md CONTRIBUTING.md SUPPORT.md CHANGELOG.md policies scripts skills \
+            --skip='*.svg,*.png,*.jpg,*.drawio,*.json'
+
       - name: Install Open Policy Agent
         uses: open-policy-agent/setup-opa@v2
         with:
@@ -51,6 +58,8 @@ jobs:
       - name: Compile repository validators
         run: |
           python -m py_compile scripts/validate_architecture_policies.py
+          python -m py_compile scripts/check_navigation.py
+          python -m py_compile scripts/check_release_readiness.py
 
       - name: Validate Data Foundation Architect skill
         run: |

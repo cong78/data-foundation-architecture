@@ -120,4 +120,4 @@ python skills/data-contract-designer/scripts/assess_compatibility.py \
   --format markdown
 ```
 
-<div class="read-next"><strong>Next:</strong> use the <a href="/standards/data-contract-standard/">Data Contract Standard</a> to understand mandatory terms, then invoke the skill for a real boundary.</div>
+<div class="read-next"><strong>Next:</strong> use the <a href="../../standards/data-contract-standard/">Data Contract Standard</a> to understand mandatory terms, then invoke the skill for a real boundary.</div>

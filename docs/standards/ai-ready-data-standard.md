@@ -105,3 +105,12 @@ Use this checklist as a gate. Record **Pass, Conditional, Fail, or Not applicabl
 ## AI Interoperability Test
 
 An AI access pattern is portable when a request can be traced across two independent components using the same product, contract, dataset snapshot, identity, purpose, and trace identifiers. The test must also prove that access policy, source attribution, and revocation remain effective when the AI adapter changes.
+
+## Minimum Done Criteria
+
+- The AI context names the exact outcome, pattern, product and contract versions, purpose, identity, model or agent, environment, risks, prohibited uses, and accountable owner.
+- Every applicable blocking checklist gate passes, or a conditional decision restricts scope with named evidence, owner, expiry, and review date.
+- Rights, classification, minimization, semantic context, lineage, quality, freshness, identity, policy, evaluation, safeguards, and consumer validation are proven at the real access path.
+- Snapshots, indexes, embeddings, features, labels, and evaluation sets are independently versioned, reproducible, rebuildable, deletable, and traceable when used.
+- Runtime evidence correlates the product, contract, projection, model or agent, identity, purpose, policy decision, evaluation, output or action, and trace.
+- Change, re-evaluation, reapproval, suspension, fallback, recovery, deprecation, and retirement triggers are tested and operationally owned.

@@ -1,67 +1,103 @@
 # Data Sharing Service
 
-<div class="decision-brief"><div><small>Use when</small><strong>Exchanging product data across a recipient boundary.</strong></div><div><small>Decision</small><strong>Which Data Product Consumption Contract, package, entitlement, and exit controls apply?</strong></div><div><small>Owner</small><strong>Sharing service and Data Product Consumption Contract owner.</strong></div><div><small>Output</small><strong>Controlled, monitored, revocable exchange.</strong></div></div>
+<div class="decision-brief"><div><small>Use when</small><strong>Exchanging product data across a recipient boundary.</strong></div><div><small>Decision</small><strong>Which recipient contract, package, entitlement, and exit controls apply?</strong></div><div><small>Owner</small><strong>Sharing service owner with product, recipient, and policy owners.</strong></div><div><small>Output</small><strong>Controlled, monitored, revocable exchange.</strong></div></div>
 
 ## Definition
 
-The data sharing service enables governed exchange of data with internal platforms, customers, suppliers, partners, and company ecosystems. Sharing is explicit, contract-based, monitored, and revocable.
+The Data Sharing Service exchanges live data products with internal platforms, customers, suppliers, partners, and other approved recipients. It creates a minimized recipient package, binds it to a Data Product Consumption Contract and entitlement, monitors delivery and use, and proves expiry, revocation, and offboarding.
 
-For a selected implementation profile, see [Data Sharing Design](../architecture/data-sharing-design.md), which maps this service to Delta Sharing, Unity Catalog shares and recipients, and the external-sharing profile of the Data Product Consumption Contract.
+## Scope and Boundaries
 
-## Scope
-
-| In Scope | Out of Scope |
+| Owns | Does Not Own |
 | --- | --- |
-| Sharing approval, packaging, recipient entitlement, delivery, audit, expiry, and revocation. | Negotiating commercial or legal terms outside data usage controls. |
-| Internal platform sharing and external customer, supplier, or partner sharing. | Owning the recipient system after delivery. |
-| Secure outbound feeds, APIs, event publication, clean room patterns, and portal publication. | Consumer-side analytics, application, or AI implementation. |
+| Recipient onboarding, package creation, technical binding, entitlement, delivery, monitoring, expiry, revocation, and offboarding evidence. | Product semantics, product ownership, legal contracting, identity authority, or the source product lifecycle. |
+| Table, API, event, file, and approved clean-room exchange profiles. | Uncontrolled export, permanent recipient credentials, or unmanaged copies. |
+| Sharing-specific minimization and disclosure controls. | Treating delivery success as proof of continued permitted use. |
 
-## Sharing Scenarios
+## Architecture Alignment
 
-| Scenario | Example | Key Concern |
-| --- | --- | --- |
-| Internal platform sharing | A company platform consumes live supplier data products. | Compatibility, access policy, availability. |
-| Customer sharing | A customer receives operational or reporting data. | Consent, contractual terms, privacy, audit. |
-| Supplier sharing | A supplier receives forecast, quality, or logistics data. | Scope control, timeliness, data minimization. |
-| Partner sharing | A partner ecosystem exchanges joint process data. | Legal basis, interoperability, traceability. |
+| Concern | Alignment |
+| --- | --- |
+| Primary plane | Data |
+| Supporting planes | Control, Security, and Observability |
+| Shared capabilities | Data Product Consumption Contract, identity federation, classification, policy, entitlement, retention, product ports, and telemetry. |
+| Integration flows | Request recipient, approve purpose, minimize package, provision identity and entitlement, deliver, monitor, renew, revoke, delete, and offboard. |
+
+## Service Architecture
+
+```mermaid
+flowchart LR
+    PRODUCT["Live data product"]
+    REQUEST["Recipient request"]
+    SHARE["Data Sharing Service"]
+    CONTROL["Policy and entitlement"]
+    DELIVERY["Delivery adapter"]
+    RECIPIENT["Approved recipient"]
+    EXIT["Renew or revoke"]
+
+    PRODUCT --> SHARE
+    REQUEST --> SHARE --> CONTROL --> SHARE --> DELIVERY --> RECIPIENT --> EXIT
+```
+
+The package and recipient binding are technical implementations; the product and consumption contracts remain the portable authority.
 
 ## Core Capabilities
 
 | Category | Capability | Owned Outcome |
 | --- | --- | --- |
-| Contracts | Recipient-specific Data Product Consumption Contract | Recipient, purpose, legal basis, product version, minimized package, interface, SLO, permitted use, obligations, change, retention, expiry, revocation, and approvers are recorded before delivery. |
-| Identity | Recipient identity and entitlement | Organization, user or workload identity, authentication profile, entitlement, activation, rotation, and expiry are governed. |
-| Packaging | Data selection and minimization | Only approved products, fields, rows, history, semantics, and documentation enter the recipient package. |
-| Protection | Purpose and disclosure controls | Masking, tokenization, aggregation, watermarking, clean-room restrictions, and output controls enforce the Data Product Consumption Contract. |
-| Delivery | Controlled exchange channels | Open sharing, API, file, event, secure transfer, portal delivery, or clean room provides a versioned and testable interface. |
-| Evidence | Sharing telemetry and audit | Provisioning, delivery, usage, errors, policy decisions, recipient activity, and external lineage are linked to the Data Product Consumption Contract. |
-| Lifecycle | Change and consumer communication | Contract or product changes trigger compatibility assessment, approval, notification, migration, and coexistence where required. |
-| Exit | Expiry, revocation, and offboarding | Access, credentials, packages, cached rights, and active delivery stop predictably with retained closure evidence. |
+| Onboarding | Recipient and trust registration | Legal entity, identity domain, owner, purpose, risk, support, and exit responsibilities are explicit. |
+| Contracts | Recipient-specific consumption terms | Product version, purpose, minimized scope, channel, SLO, permitted and prohibited use, retention, expiry, and revocation are approved. |
+| Protection | Package minimization and disclosure control | Only approved fields, rows, aggregates, events, files, or outputs cross the boundary. |
+| Delivery | Governed exchange | Recipient identity, package, interface, entitlement, encryption, SLO, and support are bound and tested. |
+| Operations | Monitoring and incident response | Delivery, usage, failure, policy, recipient activity, and product impact are observable and actionable. |
+| Exit | Renewal, revocation, and offboarding | Entitlements expire or are revoked; delivery stops; copies or credentials are handled as contracted; evidence is retained. |
 
-## Architecture Guidance
+## Contracts and Interfaces
 
-External sharing should start from a live data product whenever possible. The service should create a sharing-specific view or package that contains only what the recipient is allowed to use.
+| Interface | Purpose | Required Contract |
+| --- | --- | --- |
+| Sharing request API | Request exchange with a named recipient and purpose. | Product and port, recipient, legal entity, purpose, scope, channel, duration, geography, retention, and use-case owner. |
+| Package definition | Declare the minimized recipient view. | Exact product version, fields or rows, aliases, transformations, classification, policy, watermarking, and output controls. |
+| Recipient binding | Provision identity, entitlement, delivery endpoint, and credentials. | Approved consumption contract, identity profile, expiry, rotation, revocation, and support. |
+| Delivery adapter | Exchange table, API, event, file, or controlled output. | Protocol profile, schema, authentication, encryption, SLO, errors, telemetry, and compatibility. |
+| Exit API | Suspend, revoke, expire, delete, or offboard. | Authority, affected package and recipient, effective time, obligations, confirmation, and retained proof. |
 
-External recipients use federated named-user or workload identities from approved trust domains. Sharing service authorization and recipient data authorization are evaluated separately; every entitlement is purpose-bound, minimized, time-limited, and revocable.
+## Integrations and Dependencies
 
-The architecture must support revocation. Sharing is not complete when data is delivered; it must remain governable through audit, retention, access expiry, and contractual controls.
+| Dependency | Sharing Uses | Sharing Provides |
+| --- | --- | --- |
+| Product owner and recipient owner | Approved product, purpose, scope, use, support, change, retention, and exit obligations. | Package proposal, activation status, delivery evidence, incidents, usage, and offboarding proof. |
+| Contract, policy, privacy, security, and legal authorities | Classification, legal basis, policy decisions, approvals, geography, prohibited use, and obligations. | Recipient, product, purpose, requested disclosure, technical plan, and enforcement evidence. |
+| Platform Enablement Service | Identity federation, secrets, package resources, endpoints, entitlement, policy, retention, and automation. | Typed provisioning, renewal, revocation, deletion, and deprovisioning intent. |
+| Data Consumption Service | Logical product-port resolution and common authorization model. | External-recipient lifecycle, package, delivery, and exit behavior. |
+| Observability and Operations | Delivery telemetry, product impact, incidents, alerts, communication, and recovery. | Recipient, package, entitlement, delivery, usage, expiry, revocation, failure, and recovery signals. |
 
-Prefer open exchange interfaces such as Delta Sharing for large table delivery, OpenAPI for governed APIs, and AsyncAPI plus CloudEvents for events. Proprietary sharing features require a tested export path and an exit decision record.
+## Controls and Evidence
 
-## Controls
+| Control | Required Evidence |
+| --- | --- |
+| Sharing starts only from a live approved product and recipient-specific contract. | Product and contract versions, recipient owner, purpose, approvals, and activation decision. |
+| Scope is minimized before delivery. | Classification, selected fields or rows, transformation, policy result, disclosure review, and package hash. |
+| Recipient identity and entitlement are federated, bounded, expiring, and revocable. | Identity profile, grant, scopes, expiry, rotation, access audit, and revocation test. |
+| Delivery and downstream use are monitored to the supported boundary. | Delivery events, recipient activity, usage, SLO, errors, policy decisions, and incident links. |
+| Exit is tested before activation. | Suspension, revocation, credential invalidation, delivery stop, deletion or retention obligation, and proof retrieval. |
 
-- Sharing purpose, recipient, dataset, duration, and allowed use are approved.
-- Data minimization is applied before delivery.
-- Recipient identity and entitlement are validated.
-- Sensitive fields are masked or excluded according to policy.
-- Sharing activity is logged and auditable.
-- Expiry and revocation are technically enforceable.
+## Action Checklist
+
+| Engineer | Product Owner |
+| --- | --- |
+| Implement package generation, identity, entitlement, protocol adapter, encryption, telemetry, expiry, revocation, deletion, reconciliation, and incident controls; test provider and recipient clients. | Confirm recipient, purpose, legal basis, minimized scope, permitted and prohibited use, service level, change behavior, retention, geography, support, renewal, and exit obligations. |
+| Test unauthorized recipient, excessive scope, schema change, delivery failure, credential rotation, token expiry, recipient outage, emergency suspension, revocation, offboarding, and evidence retrieval. | Approve the package and recipient terms; communicate changes; review continued need, usage, incidents, expiry, and offboarding completion. |
+
+## Reference Solutions
+
+[Data Sharing Design](../architecture/data-sharing-design.md) maps this service to Delta Sharing, Unity Catalog shares and recipients, and explicit contract workflows. It is a selected reference profile; recipient and package semantics remain portable.
 
 ## Done Criteria
 
-- Sharing package or interface is documented and versioned.
-- Recipient access is active only for approved scope and duration.
-- Delivery and usage telemetry are available.
-- Audit evidence is linked to the Data Product Consumption Contract.
-- Offboarding and revocation process is tested.
-- A recipient using an independent client can consume the open interface and observe expiry or revocation correctly.
+- Every exchange links one live product version, one recipient, one purpose, one minimized package, one contract, and one entitlement.
+- Provider and recipient identity, protocol, compatibility, SLO, monitoring, support, and incident paths are tested.
+- Product changes trigger recipient impact and compatibility review.
+- Expiry, emergency suspension, revocation, credential invalidation, offboarding, and deletion or retention obligations are proven.
+- Recipient activity and product impact can be correlated without exposing sensitive payloads in telemetry.
+- The exchange can migrate or terminate without reconstructing its meaning from provider configuration.

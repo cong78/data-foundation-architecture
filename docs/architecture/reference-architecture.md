@@ -4,6 +4,9 @@
 
 The reference architecture shows the minimum building blocks needed to implement the target architecture. Technology can vary; these capabilities should not.
 
+!!! info "Architecture classification"
+    This is an **integration design** and technology-neutral capability composition. It connects service-specific designs through shared platform capabilities; it does not replace their service contracts or select a provider.
+
 ## Architecture View
 
 Read the primary data flow from sources through ingestion, creation, physical product storage, unified access or sharing, and consumption. Portal, product control, enablement, observability, and operations are horizontal services around that flow.
@@ -11,7 +14,7 @@ Read the primary data flow from sources through ingestion, creation, physical pr
 These services implement the target architecture; they are not additional target architecture planes. Use the [Target Architecture](target-architecture.md) for cross-cutting plane responsibilities and this view for capability interaction.
 
 <div class="architecture-native reference-native-map" role="img" aria-label="Data foundation reference architecture">
-  <a class="reference-rail rail-portal" href="../data-service-portal-model/"><strong>Data Service Portal</strong><span>Marketplace · journeys · workspaces · requests · status · evidence · AI assistant</span></a>
+  <a class="reference-rail rail-portal" href="../../services/data-service-portal/"><strong>Data Service Portal</strong><span>Marketplace · journeys · workspaces · requests · status · evidence · AI assistant</span></a>
   <a class="reference-rail rail-control" href="../data-contract-design/"><strong>Product Control Backbone</strong><span>Unity Catalog · product registry · contracts · semantics · policy · lineage · quality · workflow</span></a>
   <div class="reference-flow" aria-label="Primary data product flow">
     <div class="reference-node node-external"><strong>Source systems</strong><span>Files · APIs · databases · events</span></div><i aria-hidden="true"></i>
@@ -60,7 +63,7 @@ The primary flow contains an explicit ownership handoff. The foundation platform
 
 See the [Open Interoperability Standard](../standards/open-interoperability-standard.md) for profiles and conformance tests.
 
-The [Data Service Portal Design](data-service-portal-model.md) defines how portal journeys compose these boundaries without becoming an additional system of record.
+The [Data Service Portal](../services/data-service-portal.md) defines how portal journeys compose these boundaries without becoming an additional system of record.
 
 ## Reference Flow
 
@@ -68,15 +71,15 @@ The [Data Service Portal Design](data-service-portal-model.md) defines how porta
 sequenceDiagram
     participant Source as Source System
     participant Portal as Data Service Portal
-    participant Ingest as Ingestion Service
+    participant Ingest as Data Ingestion Service
     participant Store as Foundation Storage
-    participant Product as Data Product Service
+    participant Product as Data Product Creation Service
     participant Catalog as Catalog and Product Registry
     participant Contract as Contract Registry
     participant Policy as Policy and Entitlement
-    participant Consume as Consumption Service
-    participant Observe as Observability Service
-    participant Operate as Operations Service
+    participant Consume as Data Consumption Service
+    participant Observe as Data Observability Service
+    participant Operate as Data Foundation Operations Service
     participant User as Consumer
 
     User->>Portal: Discover product, request access, or manage contract

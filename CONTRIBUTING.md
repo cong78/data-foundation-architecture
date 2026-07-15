@@ -29,6 +29,8 @@ opa check --strict policies/rego
 opa test policies/rego -v
 mkdocs build --strict
 python scripts/check_internal_links.py site
+python scripts/check_navigation.py
+python scripts/check_release_readiness.py
 ```
 
 Run the validation commands for both AI skills when guidance paths, templates, schemas, examples, or output contracts change.

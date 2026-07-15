@@ -4,177 +4,120 @@
 
 ## Definition
 
-The data service portal is the user entry point for the data foundation. It provides a single place for users to discover data products through its Data Product Marketplace capability, onboard sources, create or manage data products, manage data contracts and their decisions, and view product trust signals.
+The Data Service Portal is the user entry point for the data foundation. It combines the Data Product Marketplace, source and product journeys, contract management, access requests, operational engagement, and the Data Service AI Assistant without becoming a competing catalog, policy, contract, workflow, or observability authority.
 
-The portal is the experience layer over the foundation services. It should compose service journeys and expose consistent information without becoming a separate source of truth from the catalog, policy, lineage, observability, or contract systems.
+## Scope and Boundaries
 
-The [Data Service Portal Design](../architecture/data-service-portal-model.md) defines the portal's intent-led journeys, object model, product detail standard, state ownership, and experience principles.
-
-## Scope
-
-| In Scope | Out of Scope |
+| Owns | Does Not Own |
 | --- | --- |
-| Data Product Marketplace discovery and comparison, service journey entry, data product and domain views, and management of the three data contract types. | Operating the marketplace or generic workflow as a separate portal capability. |
-| User-facing views for product health, ownership, classification, lineage, quality, freshness, usage, and lifecycle status. | Owning the actual data pipelines, transformations, or consumption endpoints. |
-| Request intake, support engagement, operational status, approvals, notifications, task tracking, and evidence presentation. | Bypassing governance, security, stewardship, or operational authority. |
+| Journey navigation, marketplace experience, product comparison, request intake, task status, notifications, drafts, preferences, and permission-filtered evidence views. | Product, contract, policy, lineage, entitlement, telemetry, incident, or deployment authority. |
+| User interaction for the three data contract types, product lifecycle, access, sharing, support, and domain onboarding. | Executing ingestion, product creation, consumption, sharing, or operational remediation. |
+| Rebuildable search and read projections with visible authority and observation time. | A second master copy of authoritative foundation state. |
+
+## Architecture Alignment
+
+| Concern | Alignment |
+| --- | --- |
+| Primary plane | Experience |
+| Supporting planes | Control and Security; AI and Observability where assistant or health views are used. |
+| Shared capabilities | Product and contract models, semantic context, identity, policy, workflow, catalog, and telemetry. |
+| Integration flows | Discover and request, onboard source, create product, approve go-live, consume, share, support, and operate. |
+
+## Service Architecture
+
+```mermaid
+flowchart LR
+    USER["Foundation users"]
+    PORTAL["Data Service Portal"]
+    ASSIST["Data Service AI Assistant"]
+    PROJ["Permission-filtered views"]
+    WORK["Journey orchestration"]
+    SERVICES["Foundation service APIs"]
+    AUTH["Authoritative systems"]
+
+    USER --> PORTAL
+    PORTAL --> ASSIST
+    PORTAL --> PROJ
+    PORTAL --> WORK --> SERVICES
+    PROJ --> AUTH
+    SERVICES --> AUTH
+```
+
+Portal-owned state is limited to experience state, drafts, preferences, tasks, notifications, and rebuildable projections. Every displayed decision or trust signal identifies its authority and observation time.
 
 ## Core Capabilities
 
 | Category | Capability | Owned Outcome |
 | --- | --- | --- |
-| Experience | Portal navigation and journey entry | Users start from Explore, Ingest, Produce, Consume, Share, Operate, or My Work and retain context across the journey. |
-| Marketplace | Product discovery and comparison | Ingestors, producers, and consumers find and compare products using purpose, semantics, trust, access, and interface evidence. |
-| Marketplace | Product detail and engagement | One product view presents identity, contract, context, lineage, health, support, and role-relevant next actions. |
-| Contracts | Contract lifecycle and decisions | Teams author, review, approve, version, compare, and change contracts; consumption and sharing terms retain purpose, scope, decision, status, expiry, and revocation. |
-| Product lifecycle | Product and portfolio management | Teams propose, bring live, change, deprecate, retire, consolidate, and review products with current evidence. |
-| Access | Contract-bound access activation | Named users, workloads, delegated applications, agents, models, and recipients receive access only from approved contract terms and policy decisions. |
-| Trust | Health and impact views | Quality, freshness, SLOs, lineage, usage, incidents, cost, and affected consumers are visible with authority and observation time. |
-| Engagement | Notifications and subscriptions | Consumers and owners receive relevant contract, release, incident, deprecation, approval, and task updates. |
-| Operations | Support and service engagement | Users open support, inspect status and planned change, follow recovery, use knowledge, and provide feedback. |
-| Intelligence | Data Service AI Assistant | Ask, Plan, and Act modes explain evidence, prepare artifacts, and execute approved typed skills in context. |
-| Interoperability | Canonical artifact and channel parity | Contract artifacts, including embedded product descriptors, can be imported or exported, and portal journeys remain available through governed APIs and automation. |
+| Journey | Intent-led navigation | Users start from Explore, Ingest, Produce, Consume, Share, Operate, or My Work and retain context. |
+| Marketplace | Product discovery and comparison | Users compare purpose, semantics, ownership, quality, freshness, access, interfaces, support, and current health. |
+| Contracts | Contract workspace | Teams author, review, compare, approve, publish, change, and retire the three contract types through authoritative workflows. |
+| Product | Product and portfolio management | Owners manage proposal, go-live, change, health, deprecation, retirement, reuse, duplication, and adoption. |
+| Access | Request and entitlement experience | Users see separate service and data decisions, obligations, scope, expiry, and revocation state. |
+| Operations | Support and status | Users open support, inspect service or product status, follow recovery, and receive relevant communication. |
+| Intelligence | Assistant experience | Ask, Plan, and approved Act modes use the same identity, context, workflows, and service APIs. |
 
-## Portal Experience Model
+## Product Detail Standard
 
-| View | User Decision |
+| Section | Required Content |
 | --- | --- |
-| Journey catalog | What outcome am I trying to achieve? |
-| Data Product Marketplace | Which existing product best fits my purpose, and what can I do with it? |
-| Product detail | Is this product understandable, trustworthy, permitted, and fit for use? |
-| Data contract | What is promised, who may use or receive it, for which purpose, and under which lifecycle terms? |
-| Portfolio | Which products need action, investment, consolidation, or retirement? |
-| Product health | What changed, who is affected, and what should happen next? |
-| AI assistant | What can be explained, drafted, or safely executed from this context? |
+| Identity and purpose | Product id and version, name, purpose, pattern, domain, owner, steward, support, and lifecycle state. |
+| Contract and meaning | Contract type, version and status; schema; grain; business definitions; metrics; context; permitted and prohibited use; known limitations. |
+| Access and interfaces | Available ports, channel, identity, purpose, classification, policy summary, expected decision path, SLO, and request action. |
+| Current trust | Measured quality, freshness, availability, incidents, usage, cost, signal coverage, authority, observation time, and limitations. |
+| Lineage and impact | Sources, upstream products, downstream products and consumers, changes, deprecation, and migration guidance. |
+| Actions | Use as input, request access, request sharing, manage product, subscribe, report issue, or open support, filtered by role and state. |
 
-## Data Product Marketplace
+Declared contract targets must remain visually and semantically distinct from current measured health. Missing or stale evidence is shown as unknown, never inferred as healthy.
 
-The Data Product Marketplace is a capability within the Data Service Portal. It helps ingestors, producers, and consumers find, evaluate, and act on data products without creating another metadata or contract authority.
+## Contracts and Interfaces
 
-| Role | Marketplace Need | Primary Actions |
+| Interface | Purpose | Required Contract |
 | --- | --- | --- |
-| Ingestor | Understand which products and consumers depend on a source and whether its source-aligned product is healthy. | Find source-aligned products, inspect contracts and downstream impact, open source onboarding, and respond to schema or quality issues. |
-| Producer | Reuse existing products before creating another and manage products already owned by the team. | Search and compare input products, use a product as an input, open a product workspace, propose or change a contract, and submit product go-live. |
-| Consumer | Select a product that is fit, permitted, understandable, and reliable for an intended use. | Compare products, inspect trust and semantics, request access, subscribe to change and incident notices, and open an approved product port. |
+| Portal and journey API | Start, resume, inspect, cancel, or complete a journey. | Stable journey, task, actor, purpose, target, state, and evidence links. |
+| Marketplace query | Search and compare permission-filtered product projections. | Product id, version, authority, observation time, health, policy summary, and available actions. |
+| Contract workspace | Manage canonical contract artifacts and decisions. | Source System Ingestion, Data Product Creation, or Data Product Consumption Contract. |
+| Service action | Invoke a typed foundation-service operation. | OpenAPI operation, workflow id, identity, purpose, policy decision, idempotency key, and receipt. |
+| Event subscription | Receive task, contract, product, incident, release, and deprecation updates. | Versioned event schema, subject, audience, ordering, replay, and delivery status. |
 
-The marketplace experience should provide:
+## Integrations and Dependencies
 
-- Search and filters for domain, concept, product pattern, interface, classification, permitted purpose, lifecycle, and current health.
-- Comparable product summaries that show owner, contract, context, quality, freshness, availability, policy, usage, and support.
-- Product detail pages with stable actions: **Use as input**, **Request access**, **Request sharing**, **Manage product**, or **Report an issue**, shown only when relevant.
-- Saved products, curated collections, recent activity, subscriptions, and role-aware recommendations with an explainable ranking basis.
-- Direct continuation into foundation service journeys and data contract flows without re-entering product or purpose context.
+| Dependency | Portal Uses | Portal Provides |
+| --- | --- | --- |
+| Catalog and product registry | Product identity, lifecycle, ownership, technical assets, and discoverability. | Search intent, navigation, and links to authoritative records. |
+| Contract and workflow systems | Contract versions, decisions, approvals, compatibility, and task state. | User input, drafts, review actions, and status presentation. |
+| Identity, policy, and entitlement | Permission filtering, service decisions, data decisions, and obligations. | Actor, subject, purpose, requested operation, and target context. |
+| Lifecycle services | Typed onboarding, creation, access, sharing, and operational actions. | Intent, workflow context, confirmation, and user-visible progress. |
+| Observability and operations | Product health, incidents, status, impact, support, and recovery evidence. | Support intake, subscriptions, feedback, and audience-filtered communication. |
 
-Marketplace listings are read projections. Product identity and lifecycle come from the product registry; searchable metadata from the catalog; contracts from the contract registry; semantics from context authorities; access from policy and entitlement services; and health from observability. The marketplace may rank and present this information, but it must show authority and observation time and must not approve access or product go-live itself.
+## Controls and Evidence
 
-## Data Contract Management
-
-The portal provides the governed user experience for managing data contracts across source interfaces, data products, consumption APIs, and sharing packages. The [Platform Enablement Service](platform-enablement-service.md) provides the shared contract-system capability; lifecycle services enforce the applicable contract in their runtime. Consumption and sharing are represented as purpose-bound terms in the data contract lifecycle, not as separate portal capabilities.
-
-| Contract Capability | Purpose |
+| Control | Required Evidence |
 | --- | --- |
-| Contract workspace | Present authoritative contract versions, owners, status, schema, semantics, quality expectations, decisions, and lifecycle state. |
-| Contract authoring | Allow product teams and source teams to propose new contracts using standard templates. |
-| Review and approval | Route contract changes to owners, stewards, security, privacy, and impacted consumers where needed. |
-| Consumption and sharing terms | Capture consumer or recipient identity, purpose, scope, obligations, duration, approval status, expiry, and revocation. |
-| Compatibility checks | Detect breaking changes in schema, semantics, quality expectations, and access behavior. |
-| Change communication | Notify subscribed consumers about new versions, deprecations, incidents, and migration deadlines. |
-| Evidence capture | Store approval records, test results, exception decisions, and go-live evidence. |
-| Portability | Validate the canonical contract, preserve extensions, and show the last round-trip conformance result. |
+| Portal never approves its own access, contract, product go-live, or operational action. | External decision id, policy version, approver, timestamp, and receipt. |
+| Search, recommendations, and health views are rebuildable projections. | Source authority, projection version, freshness, reconciliation status, and limitations. |
+| Sensitive metadata and operational detail are permission-filtered. | Identity, purpose, filtering decision, disclosed fields, and audit event. |
+| Consequential actions require preview, confirmation, approval where required, and idempotent execution. | Preview, user confirmation, approval, action id, outcome, and rollback or recovery link. |
+| Channel parity preserves the same controls across portal, API, CLI, and assistant. | Conformance tests for identical operation, policy, workflow, and receipt behavior. |
 
-Use the [Data Contract Standard](../standards/data-contract-standard.md) as the minimum contract model.
+## Action Checklist
 
-## Support and Operations
-
-The portal is the front door for operational engagement, while the [Data Foundation Operations Service](data-foundation-operations-service.md) owns routing, incident, problem, change, release, reliability, communication, and improvement workflows.
-
-| Portal Experience | Required behavior |
+| Engineer | Product Owner |
 | --- | --- |
-| Get support | Select or infer service and product, capture impact and urgency, preserve context, and show owner and target. |
-| Service status | Show current service and product health, incidents, affected capabilities, observation time, and next update. |
-| Planned change | Show approved maintenance, expected impact, dependencies, consumer action, validation, and rollback status. |
-| Incident engagement | Provide audience-appropriate updates, subscriptions, workarounds, recovery state, and closure evidence. |
-| Knowledge and feedback | Surface runbooks or consumer guidance appropriate to the user and capture whether support resolved the need. |
+| Implement journey APIs against authoritative service contracts; keep projections rebuildable; propagate identity, purpose, workflow, product, contract, and trace ids; test stale, denied, duplicate, failed, and resumed journeys. | Define user outcomes, journey owner, marketplace ranking basis, product-detail decisions, notification rules, support expectations, accessibility, and success measures. |
+| Prove permission filtering, projection freshness, action idempotency, workflow reconciliation, and degraded-mode behavior. | Accept the authority boundary; prioritize high-frequency journeys; verify that users can understand trust, ownership, current state, and the next action without specialist knowledge. |
 
-The portal must not expose restricted responder notes, sensitive logs, security details, personal data, or emergency credentials. Views are filtered by identity, role, service, product, domain, and incident sensitivity.
+## Reference Solutions
 
-## Data Domain Management
+No portal technology is mandated. A selected implementation must prove channel parity, authority separation, accessible responsive behavior, search freshness, workflow recovery, policy enforcement, telemetry, exportability, and an exit path.
 
-The portal must make domain onboarding and recurring maturity review evidence-driven.
-
-| Domain Capability | Portal Behavior |
-| --- | --- |
-| Domain registry | Show stable id, boundary, owners, lifecycle, governance context and authoritative links. |
-| Onboarding | Capture admission gates, decisions, conditions, service dependencies and provisioning status. |
-| Capability adoption | Show selected foundation service profiles, conformance, support, quotas and cost allocation. |
-| Maturity | Record six dimension scores, evidence, gaps, actions, exceptions and assessment history. |
-| Domain portfolio | Show products, contracts, consumers, health, value, cost, duplication and lifecycle. |
-| Cross-domain view | Show semantic overlap, lineage, contracts, dependencies and shared consumers. |
-
-Use [Data Domain Design](../architecture/data-domain-design.md) and the [Data Domain Onboarding Record](../delivery-templates/data-domain-onboarding-template.md) as the minimum model.
-
-## Data Product Management
-
-The portal must also provide the user-facing control surface for data product management.
-
-| Product Management Capability | Portal Behavior |
-| --- | --- |
-| Product registry | Show product id, owner, steward, lifecycle state, domain, contract, consumers, and support route. |
-| Product creation | Guide teams through product proposal, design, contract, quality, classification, and go-live. |
-| Go-live gates | Show gate status and prevent go-live when mandatory evidence is missing. |
-| Portfolio view | Show products by domain, lifecycle state, health, usage, owner, cost, and exception status. |
-| Consumer subscriptions | Allow consumers to subscribe to products and receive incident, change, and deprecation notifications. |
-| Change management | Route product changes through the contract lifecycle for compatibility checks, approval, and consumer impact assessment. |
-| Retirement | Manage deprecation notices, migration plans, access removal, archive, and evidence retention. |
-
-Use the [Data Product Management Standard](../standards/data-product-management-standard.md) as the minimum management model.
-
-## Architecture Guidance
-
-The portal should act as an orchestration and experience layer. It should integrate with authoritative systems instead of duplicating them:
-
-- Catalog for product metadata and discovery.
-- Policy and identity services for access decisions.
-- Data contract management for contract review, approvals, decisions, and lifecycle status.
-- Platform Enablement for the contract system, storage lifecycle, identity and security bindings, integration, provisioning, and control evidence.
-- Foundation services for onboarding, product lifecycle, access activation, sharing delivery, and operational actions.
-- Lineage system for upstream and downstream impact.
-- Observability service for product health and trust signals.
-- Contract registry, provided through Platform Enablement, for schema, semantic, quality, compatibility, and lifecycle rules.
-
-The user experience should use seven stable areas:
-
-1. **Explore:** Data Product Marketplace, product comparison, collections, and innovation.
-2. **Ingest:** source onboarding, Source System Ingestion Contracts, source-aligned products, and ingestion health.
-3. **Produce:** product creation and change, workspaces, contracts, semantics, analytics, AI, and product go-live.
-4. **Consume:** purpose-bound requests, subscriptions, entitlements, and product ports.
-5. **Share:** recipient contract terms, packages, activation, expiry, and revocation.
-6. **Operate:** health, support, incidents, change, reliability, cost, improvement, and retirement.
-7. **My Work:** owned products, approvals, contracts, subscriptions, notifications, and portfolio actions.
-
-## Controls
-
-- Portal permissions are based on identity, role, domain, and approved purpose.
-- Contract changes require review, approval, versioning, and consumer notification.
-- Product go-live requires all mandatory gates to pass.
-- Product lifecycle changes require evidence and audit trail.
-- Access and sharing decisions are governed through the data contract lifecycle and independently enforced by policy and entitlement services.
-- Product metadata shown in the portal is synchronized from authoritative systems.
-- Marketplace search indexes and recommendations are rebuildable projections, expose freshness, and never override policy or product lifecycle state.
-- Sensitive metadata and telemetry are masked or restricted where required.
-- All portal actions are auditable.
+Related shared designs: [Architecture Design Map](../architecture/design-map.md), [Integration Design](../architecture/integration-design.md), [Data Contract Design](../architecture/data-contract-design.md), and [Agentic Data Foundation](../architecture/agentic-data-foundation.md).
 
 ## Done Criteria
 
-- Users can discover data products and understand ownership, trust, classification, access, and usage guidance.
-- Ingestors, producers, and consumers receive role-relevant marketplace actions without entering separate portals.
-- Producers can compare and reuse existing input products before proposing another product.
-- Users can define purpose-bound access or sharing terms and track the resulting contract decision.
-- Product teams can create and manage data contracts through a governed contract lifecycle.
-- Contract changes trigger compatibility checks and consumer notifications.
-- Product teams can bring products live, operate, deprecate, and retire them through service-owned lifecycle actions.
-- Users can see separate service-operation and data-entitlement decisions, including purpose, scope, obligations, expiry, and revocation status.
-- Product health, quality, freshness, and incidents are visible from the portal.
-- Portal records link back to authoritative catalog, contract, policy, lineage, observability, and foundation service systems.
-- Users can export canonical contract artifacts, including embedded product descriptors, without requiring a platform-native format.
-- Journey and product views clearly identify the authority and observation time for every trust signal.
-- Assistant answers are grounded, actions are typed and approved, and every execution returns an auditable receipt.
+- Ingestors, producers, consumers, owners, and operators complete their primary journeys through one coherent entry point.
+- Product views show purpose, owner, contract, semantics, access, quality, freshness, lifecycle, support, and current health with authority and time.
+- Contract changes, access decisions, product go-live, sharing, and operational actions use authoritative workflows and return receipts.
+- Portal failure or projection rebuild does not lose canonical foundation state.
+- Portal, API, CLI, and assistant channels enforce the same identity, policy, approval, and evidence rules.
+- Journey success, failure, abandonment, recovery, and user outcome are observable.

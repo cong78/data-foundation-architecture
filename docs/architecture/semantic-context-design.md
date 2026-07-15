@@ -22,7 +22,7 @@ flowchart LR
     AUTH["Authoritative Control Services<br/>glossary · catalog · contract · policy · lineage"]
     PRODUCT["Data Product<br/>identity · ports · version"]
     CONTEXT["Semantic Context Package<br/>meaning · relationships · usage · evidence refs"]
-    SERVE["Consumption Service<br/>semantic API · context API · retrieval"]
+    SERVE["Data Consumption Service<br/>semantic API · context API · retrieval"]
     USERS["BI · Apps · Platforms · AI"]
 
     AUTH -->|"stable references"| CONTEXT
@@ -37,8 +37,8 @@ flowchart LR
 | Control plane | Own concept identifiers, glossary terms, metric definitions, relationships, policy references, and package validation. |
 | Data product | Declare the product-specific semantic context version and bind it to product and contract versions. |
 | Data Service Portal | Present meaning, scope, metrics, examples, limitations, and current trust evidence on the product page. |
-| Consumption Service | Serve semantic models and permission-filtered context through stable APIs and retrieval interfaces. |
-| Data Service AI Assistant | Retrieve only the context allowed by identity, purpose, Data Product Creation Contract, and current policy. |
+| Data Consumption Service | Serve semantic models and permission-filtered context through stable APIs and retrieval interfaces. |
+| Data Service AI Assistant | Retrieve only the context allowed by identity, purpose, Data Product Consumption Contract, and current policy. |
 | Observability | Provide current health references and record product, context, and contract versions used by consumers. |
 
 ## Catalog and Knowledge Graph Fit
@@ -81,7 +81,7 @@ flowchart LR
 | Business concepts and metrics | Glossary and metric registry | Connect terms, products, metrics, and use cases. |
 | Access decisions and obligations | Policy decision and entitlement services | Show permitted relationships only after policy filtering. |
 | Runtime lineage | OpenLineage and lineage service | Project upstream/downstream paths and impact edges. |
-| Quality and current health | Data quality and observability services | Link current evidence and observation time; do not copy detailed profiles. |
+| Quality and current health | Data Product Creation Service and Data Observability Service | Link current evidence and observation time; do not copy detailed profiles. |
 | Product meaning for consumers and AI | Versioned semantic context package | Serve permission-filtered context and citations. |
 
 ### Recommended Graph Scope

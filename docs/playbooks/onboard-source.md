@@ -35,4 +35,4 @@
 - Validated source-aligned output has an approved contract, owner, lineage, quality, SLO, access, and support route.
 - Failure, recovery, schema change, and source interruption are tested.
 
-Authoritative inputs: [Ingestion Service](../services/data-ingestion-service.md), [Ingestion Design](../architecture/data-ingestion-design.md), and [Source Onboarding Template](../delivery-templates/source-onboarding-template.md).
+Authoritative inputs: [Data Ingestion Service](../services/data-ingestion-service.md), [Data Ingestion Design](../architecture/data-ingestion-design.md), and [Source Onboarding Template](../delivery-templates/source-onboarding-template.md).

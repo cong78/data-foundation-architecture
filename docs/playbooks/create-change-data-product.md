@@ -29,4 +29,4 @@
 - Critical tests pass and unresolved risks are explicit.
 - Consumers and dependencies are known before release.
 
-Authoritative inputs: [Product Lifecycle](../architecture/data-product-lifecycle-design.md), [Contract Design](../architecture/data-contract-design.md), [Product Creation Service](../services/data-product-creation-service.md), and [Workload Standard](../standards/data-product-workload-standard.md).
+Authoritative inputs: [Data Product Lifecycle Design](../architecture/data-product-lifecycle-design.md), [Data Contract Design](../architecture/data-contract-design.md), [Data Product Creation Service](../services/data-product-creation-service.md), and [Data Product Workload Standard](../standards/data-product-workload-standard.md).

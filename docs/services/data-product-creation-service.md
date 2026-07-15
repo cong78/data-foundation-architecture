@@ -1,95 +1,102 @@
 # Data Product Creation Service
 
-<div class="decision-brief"><div><small>Use when</small><strong>Providing a shared path to build and release products.</strong></div><div><small>Decision</small><strong>Which workspace, workload, tests, and gates are required?</strong></div><div><small>Owner</small><strong>Product creation service owner.</strong></div><div><small>Output</small><strong>Release candidate and go-live evidence.</strong></div></div>
+<div class="decision-brief"><div><small>Use when</small><strong>Building or changing an aggregate or consumer-aligned product.</strong></div><div><small>Decision</small><strong>Which product design, workload, tests, and gates are required?</strong></div><div><small>Owner</small><strong>Product creation service owner with domain product owner.</strong></div><div><small>Output</small><strong>Live product version with stable ports and evidence.</strong></div></div>
 
 ## Definition
 
-The data product creation service turns source-aligned data and existing products into trusted, reusable datasets or data interfaces. It applies data product principles so consumers can understand, access, and rely on the data.
+The Data Product Creation Service provides the shared engineering path used by federated domain teams to create, change, release, and retire aggregate and consumer-aligned data products. The platform team owns the service and paved paths; the domain product owner owns product meaning, fitness, lifecycle, and consumer outcome.
 
-Use the [Data Product Management Standard](../standards/data-product-management-standard.md), [Data Product Workload Standard](../standards/data-product-workload-standard.md), and [Data Contract Standard](../standards/data-contract-standard.md) as mandatory controls for product go-live.
+## Scope and Boundaries
 
-For a selected implementation profile, see [Data Product Creation Design](../architecture/data-product-creation-design.md), which maps this service to Databricks workspaces and Unity Catalog while preserving the technology-neutral Data Product Creation Contract.
-
-## Scope
-
-| In Scope | Out of Scope |
+| Owns | Does Not Own |
 | --- | --- |
-| Product design, transformation, validation, documentation, go-live approval, and publication. | Source system ownership or source application change management. |
-| Declarative developer workspace, isolated environments, deployment promotion, and rollback. | Provider-specific infrastructure exposed as the product interface. |
-| Data contracts, semantic definitions, lineage, quality rules, ownership, and lifecycle state. | Consumer dashboard, application, or model implementation. |
-| Product workspaces, reusable templates, and product readiness evidence. | Recipient-specific consumption approval, except product packaging needed for sharing. |
+| Workspaces, templates, product workloads, build and test automation, policy integration, release orchestration, product ports, and go-live evidence. | Product purpose, domain semantics, quality acceptance, value, or lifecycle decisions. |
+| Repeatable paths for batch, streaming, API, event, feature, retrieval, semantic, and file products. | Central ownership of aggregate or consumer-aligned products. |
+| Compatibility, lineage, quality, rollback, and publication automation. | Treating a successful pipeline or table creation as product go-live. |
 
-## Federated Product Ownership
+## Architecture Alignment
 
-The Data Foundation Platform Team owns the **product creation service**: developer experience, templates, workload profiles, environments, automation, policy integration, go-live workflow, release evidence, and service reliability.
+| Concern | Alignment |
+| --- | --- |
+| Primary planes | Data and Control |
+| Supporting planes | Security and Observability |
+| Shared capabilities | Data Product Creation Contract, domain and lifecycle models, semantic context, developer experience, catalog, Delta storage, policy, lineage, and telemetry. |
+| Integration flows | Propose product, provision workspace, build, validate, compatibility review, go-live, publish ports, change, rollback, and retire. |
 
-Domain data teams own the **products created with the service**. They are accountable for aggregate and consumer-aligned product purpose, semantics, contract, transformations, quality, SLOs, access intent, support, value, cost, lifecycle, reuse, and consumer communication.
+## Service Architecture
 
-This separation provides centralized enablement without centralized business-product delivery. Platform automation enforces common controls; it does not become the product owner or approve domain meaning on behalf of accountable domain roles.
+```mermaid
+flowchart LR
+    INPUT["Accepted product inputs"]
+    WORK["Product workspace"]
+    BUILD["Build and validate"]
+    GATE["Go-live gates"]
+    LIVE["Live data product"]
+    USE["Consumption and Sharing Services"]
 
-## Product Requirements
+    INPUT --> WORK --> BUILD --> GATE --> LIVE --> USE
+    GATE -->|failed| FIX["Correct or approved exception"]
+```
 
-Each federated aggregate or consumer-aligned data product must be:
-
-- Owned by a business or data domain.
-- Documented with clear business meaning.
-- Governed by a publishing contract that includes its product descriptor.
-- Validated against explicit quality rules.
-- Classified for sensitivity and permitted use.
-- Published through the catalog.
-- Versioned and lifecycle-managed.
-- Observable in production.
-- Described within that contract by an ODPS-compatible product descriptor with open input and output port definitions.
+Product code, Data Product Creation Contract, embedded descriptor, semantic context, tests, workload, release, and rollback target are versioned together.
 
 ## Core Capabilities
 
 | Category | Capability | Owned Outcome |
 | --- | --- | --- |
-| Product definition | Product proposal and registry | Stable product identity, purpose, domain, owner, steward, pattern, intended consumers, value, support, and lifecycle are recorded. |
-| Developer experience | Governed product workspace | Templates, repository, API, CLI, isolated environments, preview, test data, and policy-aware tooling provide a repeatable build path. |
-| Contracts | Data Product Creation Contract engineering | The product descriptor, input and output promises, schema, semantics, quality, SLOs, compatibility, policy intent, and ports are versioned and tested together. |
-| Context | Semantic context package | Grain, concepts, metrics, relationships, usage guidance, limitations, and authoritative references are bound to product and contract versions. |
-| Engineering | Transformation and enrichment | Versioned batch, stream, SQL, API, feature, or retrieval workloads produce deterministic product outputs from approved inputs. |
-| Workloads | Declarative runtime orchestration | Portable workload intent resolves into governed resources, dependencies, deployment plans, execution receipts, drift detection, and rollback. |
-| Assurance | Quality, security, and lineage validation | Product rules, classification, access intent, lineage, reliability, portability, and affected consumers are tested before release. |
-| Release | Product go-live | The exact immutable candidate passes mandatory gates and receives an explicit approval, rejection, or expiring exception. |
-| Publication | Catalog and portal publication | The live contract and its descriptor are projected with context, ports, documentation, health, support, and access actions for discovery. |
-| Lifecycle | Change, version, and retirement management | Compatibility, impact, migration, coexistence, deprecation, consumer notification, retirement, and evidence retention are controlled. |
-| Portfolio | Product value and reuse review | Duplicate, low-value, low-use, unhealthy, ownerless, high-cost, and consolidation candidates receive accountable decisions. |
-| Evidence | Product telemetry and release traceability | Freshness, quality, availability, usage, cost, incidents, release, workload, contract, and product versions remain correlated. |
+| Developer experience | Product workspace and templates | Teams start from supported product patterns with source control, environments, local validation, and clear ownership. |
+| Contracts | Product definition and compatibility | Purpose, inputs, outputs, semantics, quality, SLOs, policies, ports, change behavior, and support are versioned and testable. |
+| Engineering | Workload build and execution | Transformations are reproducible, observable, recoverable, and independent from hidden manual state. |
+| Assurance | Automated product tests | Schema, semantics, quality, lineage, policy, performance, resilience, compatibility, and rollback are verified. |
+| Lifecycle | Go-live and release | Only approved product versions publish stable ports and current evidence. |
+| Portfolio | Change, deprecation, and retirement | Consumer impact, migration, access removal, archive, and retained evidence are managed. |
 
-## Architecture Guidance
+## Contracts and Interfaces
 
-A trusted dataset should have clear boundaries. It should represent a reusable business concept such as customer, supplier, asset, product, order, event, transaction, or compliance record.
+| Interface | Purpose | Required Contract |
+| --- | --- | --- |
+| Product workspace API | Create or update a product workspace and environments. | Product id, domain, owners, pattern, inputs, classification, environment, policy, and cost context. |
+| Product workload | Declare code, resources, dependencies, environments, tests, deployment, telemetry, and rollback. | Data Product Workload specification linked to the creation contract. |
+| Product build and test API | Plan, validate, build, test, and produce a release candidate. | Immutable input versions, code and contract versions, test profile, policy results, and artifact identity. |
+| Go-live workflow | Evaluate readiness and publish an approved version. | Contract, descriptor, semantics, quality, lineage, security, SLO, support, runbook, release, and approvals. |
+| Product ports | Expose table, query, API, event, file, feature, retrieval, or semantic interfaces. | Stable logical port, schema, contract version, SLO, policy, compatibility, and telemetry. |
 
-Trusted datasets should avoid hidden assumptions. Transformations, filters, joins, exclusions, and enrichment logic must be documented and testable. Product logic should be versioned and observable so consumers can understand changes and impact.
+## Integrations and Dependencies
 
-Each product should publish a [semantic context package](../architecture/semantic-context-design.md) that binds business meaning, grain, metrics, relationships, usage context, and limitations to exact product and contract versions.
+| Dependency | Creation Uses | Creation Provides |
+| --- | --- | --- |
+| Product owner and domain team | Purpose, semantics, input selection, quality acceptance, lifecycle, support, and value. | Workspace, tests, evidence, release candidate, ports, and current health. |
+| Platform Enablement Service | Workspace, storage, compute, catalog, identity, policy, deployment, secret, and evidence resources. | Typed workload and resource intent, owner, purpose, environment, lifecycle, and deprovisioning plan. |
+| Contract, catalog, semantic, policy, and lineage authorities | Canonical ids, standards, compatibility, classification, policy, definitions, and dependencies. | Product and contract versions, assets, semantic context, lineage, test results, and lifecycle state. |
+| Consumption and Sharing Services | Port requirements, consumer purpose, channel constraints, and usage feedback. | Live stable product ports, compatibility, SLO, policy, support, and deprecation information. |
+| Observability and Operations | SLOs, alerts, release, incident, change, runbook, recovery, and improvement workflows. | Build, test, release, quality, lineage, health, usage, cost, failure, and rollback evidence. |
 
-## Controls
+## Controls and Evidence
 
-- Product owner and steward are assigned.
-- The owning domain data team is registered and accepts product operation and lifecycle accountability.
-- Business purpose and intended consumers are defined.
-- Source lineage is captured.
-- Data contract is approved.
-- Contract tests pass and compatibility status is known.
-- Quality rules are implemented and passing.
-- Sensitive fields are classified.
-- Access policy is defined.
-- Freshness and availability expectations are documented.
-- Product lifecycle state is managed in the portal and catalog.
+| Control | Required Evidence |
+| --- | --- |
+| Every product has an owner, steward, domain, purpose, support route, and lifecycle. | Product registry and accepted ownership record. |
+| Product descriptor is embedded in the approved creation contract. | Valid canonical artifact, compatibility result, approval, and immutable version. |
+| Go-live is blocked on mandatory test or control failure. | Gate results, policy decisions, exception where allowed, approvers, and release receipt. |
+| Inputs and outputs are reproducible and traceable. | Pinned input versions, code, workload, environment, lineage, build, and output identity. |
+| Change and retirement protect consumers. | Impact analysis, subscribers, migration window, deprecation events, access removal, archive, and evidence retention. |
+
+## Action Checklist
+
+| Engineer | Product Owner |
+| --- | --- |
+| Implement contract and workload as code; pin inputs; build repeatable environments; automate schema, quality, lineage, security, compatibility, performance, resilience, telemetry, deployment, and rollback tests. | Define purpose, consumer outcomes, semantic grain, owner and steward, quality and SLO targets, supported ports, change policy, support model, value measures, and lifecycle decision. |
+| Prove failed build, bad input, policy deny, quality breach, incompatible change, failed deployment, rollback, drift, and recovery paths. | Approve fitness and go-live evidence; communicate changes; review adoption, health, cost, duplication, and retirement readiness. |
+
+## Reference Solutions
+
+[Data Product Creation Design](../architecture/data-product-creation-design.md) maps this service to Databricks workspaces, Declarative Automation Bundles, Unity Catalog, and Delta Lake. It is a selected reference profile; canonical product and contract meaning remain provider-independent.
 
 ## Done Criteria
 
-- Product is published in the catalog with owner, steward, contract, schema, classification, and lifecycle state.
-- Quality checks and product SLOs are visible.
-- Lineage is available from source to product output.
-- Access pattern is approved.
-- Consumer-facing documentation is published.
-- Product health telemetry is available in the observability service.
-- Active consumers are registered for impact analysis and notifications.
-- The publishing contract and its embedded product descriptor pass schema validation and round-trip portability tests.
-- Semantic context is versioned, validated, policy-aware, and linked to authoritative terms, metrics, lineage, and health.
-- Workload specification validates, produces a deterministic plan, and binds the deployed release to product and contract versions.
-- Environment promotion, drift detection, and rollback have passing evidence.
+- A domain team creates a product through a supported workspace and workload without bespoke platform setup.
+- Product contract, descriptor, semantics, tests, lineage, policy, release, ports, and support are versioned and linked.
+- Mandatory go-live gates fail closed and approved exceptions expire.
+- Consumers bind to stable logical ports rather than workspace, table path, or provider credentials.
+- Change, rollback, deprecation, retirement, and recovery are exercised with consumer-impact evidence.
+- Product health, usage, cost, value, and support evidence are visible to owners.
