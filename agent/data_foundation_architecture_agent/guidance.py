@@ -56,7 +56,7 @@ def authority_for(path: str) -> str:
         "standards": "standard",
         "decisions": "decision",
         "playbooks": "playbook",
-        "delivery-templates": "template",
+        "reference-solutions": "template",
         "assessments": "assessment",
     }.get(prefix, "other")
 

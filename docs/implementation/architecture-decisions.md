@@ -19,7 +19,7 @@ An ADR records one consequential decision. The broader map below remains a decis
 | Decision | Recommended Direction | Rationale |
 | --- | --- | --- |
 | [Product ownership](../decisions/adr-001-central-federated-ownership.md) | Centralize ingestion and source-aligned products; federate aggregate and consumer-aligned product ownership to domain data teams. | Keeps source capture consistent while placing business meaning and consumer outcomes with accountable domains. |
-| Architecture policy | Express principles, rules, and criteria through the Architecture Policy Language; keep the YAML or JSON envelope canonical and use OPA and Rego as the default execution profile. | Makes architecture guidance readable, testable, portable, and enforceable without coupling its meaning to one evaluator. |
+| [Architecture decision policy](../decisions/architecture-decision-policy.md) | Express principles, rules, and criteria through one canonical YAML or JSON envelope; use OPA and Rego as the default execution profile. | Makes architecture guidance readable, testable, portable, and enforceable without coupling its meaning to one evaluator. |
 | User entry point | Use the Data Service Portal for discovery, requests, contracts, and workflow status. | Prevents fragmented access paths and creates consistent evidence. |
 | Portal interaction model | Organize journeys by user intent and bind them to domain team, use case, workspace, product, purpose, and evidence. | Makes complex foundation services understandable and reusable. |
 | Portal state | Limit portal-owned state to experience, drafts, preferences, tasks, and rebuildable read projections. | Prevents the experience layer from becoming a competing control plane. |

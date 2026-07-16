@@ -2,9 +2,11 @@
 
 <div class="decision-brief"><div><small>Use when</small><strong>Serving a live product to a governed consumer.</strong></div><div><small>Decision</small><strong>Which logical port, access mode, policy, and runtime adapter apply?</strong></div><div><small>Owner</small><strong>Consumption service owner with product and consumer owners.</strong></div><div><small>Output</small><strong>Purpose-bound, observable, revocable access.</strong></div></div>
 
-## Definition
+## Purpose and Definition
 
 The Data Consumption Service resolves a consumer's approved purpose to a live product version and logical port, authorizes service and data use, selects a conformant runtime adapter, enforces obligations, and returns an observable usage receipt. It supports BI, applications, platforms, AI agents, and models without forcing one physical access technology.
+
+It exists to separate the stable consumer promise from physical storage and runtime choices, so access remains consistent, governed, observable, and replaceable across channels.
 
 ## Scope and Boundaries
 
@@ -20,7 +22,7 @@ The Data Consumption Service resolves a consumer's approved purpose to a live pr
 | --- | --- |
 | Primary plane | Data |
 | Supporting planes | Control, Security, AI, and Observability |
-| Shared capabilities | Unified access, semantic context, Data Product Consumption Contract, identity, policy, entitlement, catalog, and telemetry. |
+| Shared capabilities | Unified access, agentic foundation, semantic context, Data Product Consumption Contract, identity, policy, entitlement, catalog, and telemetry. |
 | Integration flows | Discover and subscribe, request access, authorize, resolve port, execute adapter, enforce obligations, record usage, renew, and revoke. |
 
 ## Service Architecture
@@ -41,6 +43,15 @@ flowchart LR
 ```
 
 The logical product port remains stable while physical storage, compute, endpoint, or adapter changes.
+
+## Agentic Interaction
+
+| Concern | Service Agent Contract |
+| --- | --- |
+| Specialist role | Consumption agent that resolves fit-for-purpose products, selects logical ports and adapters, and fulfills governed access. |
+| Declarative boundary | Published Data Product Consumption Contract, consumer identity, purpose, product version, policy, obligations, and expiry. |
+| Autonomous range | Resolve, authorize, select a conformant adapter, enforce scope, issue receipts, renew within limits, and revoke on expiry or policy trigger. |
+| Must defer | Wider purpose, broader data scope, new entitlement, or a non-conformant access path requires contract and policy review. |
 
 ## Core Capabilities
 
@@ -101,7 +112,7 @@ The logical product port remains stable while physical storage, compute, endpoin
 
 ## Reference Solutions
 
-[Data Consumption Design](../architecture/data-consumption-design.md) maps this service to Unity Catalog, Databricks SQL, open table interfaces, sharing, and conformant adapters. It is a selected reference profile; logical product ports and policy intent remain portable.
+[Data Consumption Design](../reference-solutions/data-consumption-design.md) maps this service to Unity Catalog, Databricks SQL, open table interfaces, sharing, and conformant adapters. It is a selected reference profile; logical product ports and policy intent remain portable.
 
 ## Done Criteria
 
@@ -110,4 +121,5 @@ The logical product port remains stable while physical storage, compute, endpoin
 - Direct, federated, projected, and replicated access are selected by evidence rather than default.
 - Every adapter passes identity, authorization, obligation, SLO, telemetry, error, and fail-closed tests.
 - Access can be renewed, suspended, revoked, and deprovisioned with proof.
+- The consumption agent cannot widen purpose, product, port, scope, entitlement, obligations, or expiry beyond the published consumption contract and policy decision.
 - BI, application, platform, agent, and model consumers receive consistent product meaning and current health.

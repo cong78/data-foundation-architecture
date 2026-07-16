@@ -2,9 +2,11 @@
 
 <div class="decision-brief"><div><small>Use when</small><strong>Onboarding or operating a source channel.</strong></div><div><small>Decision</small><strong>Which governed ingestion pattern and contract apply?</strong></div><div><small>Owner</small><strong>Foundation ingestion owner with source owner.</strong></div><div><small>Output</small><strong>Validated source-aligned product and handoff.</strong></div></div>
 
-## Definition
+## Purpose and Definition
 
 The Data Ingestion Service centrally manages source onboarding and reliable receipt through file inbox push, connector pull, API extraction, CDC, and event streaming. It publishes raw and validated source-aligned states while preserving source meaning, provenance, replay, and source-owner obligations.
+
+It exists to solve source connectivity, change, replay, and provenance once, so domain teams can build products from a dependable source-aligned handoff instead of operating duplicated ingestion pipelines.
 
 ## Scope and Boundaries
 
@@ -19,8 +21,8 @@ The Data Ingestion Service centrally manages source onboarding and reliable rece
 | Concern | Alignment |
 | --- | --- |
 | Primary plane | Data |
-| Supporting planes | Control, Security, and Observability |
-| Shared capabilities | Source System Ingestion Contract, catalog, Delta storage, identity, secrets, lineage, retention, and telemetry. |
+| Supporting planes | AI, Control, Security, and Observability |
+| Shared capabilities | Source System Ingestion Contract, agentic foundation, catalog, governed product storage, identity, secrets, lineage, retention, and telemetry. |
 | Integration flows | Source onboarding, source change, delivery, quarantine and replay, validated handoff, and incident recovery. |
 
 ## Service Architecture
@@ -39,6 +41,15 @@ flowchart LR
 ```
 
 Transport, validation, and storage remain separable so a delivery mechanism can change without redefining downstream products.
+
+## Agentic Interaction
+
+| Concern | Service Agent Contract |
+| --- | --- |
+| Specialist role | Ingestion agent that prepares onboarding, operates source delivery, diagnoses exceptions, and maintains source-aligned trust. |
+| Declarative boundary | Published Source System Ingestion Contract, source identity, approved connection, policy, SLOs, and runbooks. |
+| Autonomous range | Profile, validate, reconcile, quarantine, retry, replay, and recover within published limits. |
+| Must defer | New source activation, material contract change, accepted data-quality exception, and destructive retention action require their named gates. |
 
 ## Core Capabilities
 
@@ -90,7 +101,7 @@ Transport, validation, and storage remain separable so a delivery mechanism can 
 
 ## Reference Solutions
 
-[Data Ingestion Design](../architecture/data-ingestion-design.md) maps this service to Databricks Lakeflow, Auto Loader, Unity Catalog, and Delta Lake. It is a selected reference profile and cannot redefine the Source System Ingestion Contract or service boundary.
+[Data Ingestion Design](../reference-solutions/data-ingestion-design.md) maps this service to Databricks Lakeflow, Auto Loader, Unity Catalog, and Delta Lake. It is a selected reference profile and cannot redefine the Source System Ingestion Contract or service boundary.
 
 ## Done Criteria
 
@@ -99,4 +110,5 @@ Transport, validation, and storage remain separable so a delivery mechanism can 
 - Validated source-aligned output is cataloged, contracted, versioned, observable, and usable by product teams.
 - Schema change, duplicate, gap, late data, quarantine, replay, source outage, and recovery paths are tested.
 - Source-to-product lineage and product-impact correlation work end to end.
+- The ingestion agent executes only typed skills within the published ingestion contract, and contract expiry, suspension, fallback, and recovery are tested.
 - Direct or federated access was considered before creating a durable copy.

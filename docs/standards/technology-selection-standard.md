@@ -1,6 +1,6 @@
 # Technology Selection Standard
 
-<div class="decision-brief"><div><small>Use when</small><strong>Selecting or reassessing a vendor or technology.</strong></div><div><small>Decision</small><strong>Which option passes mandatory gates and best meets weighted outcomes?</strong></div><div><small>Owner</small><strong>Architecture decision owner.</strong></div><div><small>Output</small><strong>Evidence-based selection, ADR, risks, cost, and exit plan.</strong></div></div>
+<div class="decision-brief"><div><small>Use when</small><strong>Selecting or reassessing a vendor or technology.</strong></div><div><small>Decision</small><strong>Which option passes mandatory gates and best meets weighted outcomes?</strong></div><div><small>Owner</small><strong>Technology selection owner.</strong></div><div><small>Output</small><strong>Evidence-based selection record, risks, cost, and exit plan.</strong></div></div>
 
 This standard defines how architects evaluate and select vendors, managed services, open-source products, and internally built technologies for the data foundation.
 
@@ -20,7 +20,7 @@ An alternative catalog, table format, operational store, serving store, or feder
 4. Validate critical claims through executable proof, not demonstrations or roadmap promises.
 5. Score open interfaces, exportability, operational ownership, and exit cost explicitly.
 6. Separate product quality from vendor viability and commercial terms.
-7. Record assumptions, evidence, exceptions, dissent, and review date in an architecture decision record.
+7. Record assumptions, evidence, exceptions, dissent, approvers, and review date in the technology selection record.
 
 ## Capability-to-Technology Mapping
 
@@ -143,7 +143,7 @@ Record unit economics relevant to the capability, such as cost per product, pipe
 
 The final record includes capability scope, requirements, candidates, knockout results, weighted scores, confidence, PoC results, TCO, risks, exceptions, architecture mapping, selected option, rejected alternatives, implementation conditions, exit plan and review date.
 
-Use the [Technology Selection Record](../delivery-templates/technology-selection-template.md) and link the result to an [Architecture Decision Record](../implementation/architecture-decisions.md).
+Use the [Technology Selection Record](../reference-solutions/technology-selection-template.md) and link the result to the published architecture, service, and standards it implements.
 
 ## Minimum Done Criteria
 

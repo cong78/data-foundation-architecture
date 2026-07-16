@@ -1,6 +1,6 @@
-# Architecture Blueprint
+# Implementation Blueprint
 
-This blueprint turns the reference architecture into an implementation path. It is intentionally technology-neutral, but concrete enough to guide platform design, backlog creation, and architecture review.
+This implementation blueprint turns the platform architecture into a delivery path. It is intentionally technology-neutral, but concrete enough to guide platform design, backlog creation, and architecture review.
 
 ## Target Delivery Model
 

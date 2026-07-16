@@ -10,7 +10,7 @@ Use the phases as **outcome gates**. Teams may prepare later capabilities early,
     The four runway phases sequence foundation capability and investment. Individual domains, sources, and products still move through **Frame → Establish → Deliver → Use → Operate** in [Foundation in One View](foundation/foundation-in-one-view.md).
 
 !!! info "Runway is not a runbook"
-    The **runway** sequences enterprise adoption. A **runbook** is an executable operating procedure for a service, product, or known condition. Use the [Architecture to Operations Map](foundation/architecture-service-operations-map.md) to connect both.
+    The **runway** sequences foundation adoption. A **runbook** is an executable operating procedure for a service, product, or known condition. Use [Architecture to Delivery](foundation/architecture-to-delivery.md) to connect both through the owning data service.
 
 ## Runway at a Glance
 
@@ -65,7 +65,7 @@ Use the phases as **outcome gates**. Teams may prepare later capabilities early,
 
 | Workstream | Deliverables | Exit evidence |
 | --- | --- | --- |
-| Direction and ownership | Approved reference architecture, service portfolio, accountable owners, support model, and decision rights. | Architecture decision record, service owners, escalation routes, and approved scope. |
+| Direction and ownership | Published architecture, service portfolio, accountable owners, support model, and decision rights. | Published scope, service owners, escalation routes, and approval evidence. |
 | Portal and journeys | Data Service Portal with source onboarding, product creation, consumption, product health, and task-status journeys. | Real users complete the first journey through authoritative service APIs. |
 | Source and product delivery | Standard ingestion patterns, product template, contract template, workload profile, and mandatory product go-live gates. | At least one source-aligned input and one governed product pass go-live. |
 | Control foundation | Catalog, classification, lineage, identity, access workflow, contract approval, and stable enterprise identifiers. | Product, contract, lineage, policy, owner, and access evidence resolve consistently. |

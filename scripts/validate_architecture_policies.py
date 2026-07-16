@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate architecture policy documents and their executable references."""
+"""Validate architecture decision policy documents and executable references."""
 
 from __future__ import annotations
 
@@ -24,7 +24,7 @@ def main() -> int:
     documents = sorted((root / "policies/examples").glob("*.policy.yaml"))
 
     if not documents:
-        errors.append("No architecture policy examples found")
+        errors.append("No architecture decision policy examples found")
 
     for path in documents:
         document = yaml.safe_load(path.read_text(encoding="utf-8"))
@@ -80,12 +80,12 @@ def main() -> int:
                         errors.append(f"{path.relative_to(root)}: missing {field} reference {reference}")
 
     if errors:
-        print("Architecture policy validation failed:")
+        print("Architecture decision policy validation failed:")
         for error in errors:
             print(f"- {error}")
         return 1
 
-    print(f"Validated {len(documents)} architecture policy document(s) against JSON Schema 2020-12.")
+    print(f"Validated {len(documents)} architecture decision policy document(s) against JSON Schema 2020-12.")
     return 0
 
 

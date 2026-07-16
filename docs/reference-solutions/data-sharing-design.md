@@ -8,7 +8,7 @@ This reference solution applies the technology-neutral [Data Sharing Service](..
     This guide uses **Delta Sharing** for the open sharing protocol and its Databricks-managed implementation. Current Databricks product documentation calls that managed capability **OpenSharing**. The architecture remains contract-first and protocol-oriented so terminology or implementation changes do not alter the Data Product Consumption Contract.
 
 !!! info "Reference solution status"
-    This page is a selected implementation profile, not a mandatory platform choice. Adoption requires an approved [Technology Selection Record](../delivery-templates/technology-selection-template.md), recipient and client conformance tests, security and privacy review, legal approval where required, cost evidence, revocation proof, and an exit plan.
+    This page is a selected implementation profile, not a mandatory platform choice. Adoption requires an approved [Technology Selection Record](../reference-solutions/technology-selection-template.md), recipient and client conformance tests, security and privacy review, legal approval where required, cost evidence, revocation proof, and an exit plan.
 
 !!! tip "Fast path"
     **Decide:** [Executive Recommendation](#executive-recommendation) · **Design:** [Solution at a Glance](#solution-at-a-glance) and [Contract Model](#contract-model) · **Implement:** [Implementation Runway](#implementation-runway) · **Assure:** [Sharing Activation Gate](#sharing-activation-gate) and [Done Criteria](#done-criteria)
@@ -272,7 +272,7 @@ A Data Product Consumption Contract may activate for external sharing only when:
 - Add sensitive-data, multiple-recipient, Databricks-to-open, streaming, and breaking-change scenarios.
 - Test concurrency, cost, regional recovery, credential compromise, product retirement, and recipient legal-entity change.
 
-## Open Architecture Decisions
+## Open Design Choices
 
 | Decision | Required outcome |
 | --- | --- |

@@ -72,6 +72,22 @@ flowchart LR
 
 The chain may branch and repeat. A Data Product Creation Contract can accept several published input contracts. A Data Product Consumption Contract always references one exact published product and contract version.
 
+## Declarative Agent Enforcement
+
+Data contracts are the declarative execution envelope shared by users, service owners, products, consumers, and agents. Once approved and published, the same contract version drives human journeys and agent execution.
+
+The contract is necessary but not sufficient authorization. Runtime permission is the intersection of authenticated identity, delegated authority, published contract, current policy, lifecycle state, registered skill, and applicable approval. An LLM must never interpret contract prose as permission or extend the declared scope.
+
+| Contract | Primary Service Agents | What Is Compiled for Enforcement |
+| --- | --- | --- |
+| Source System Ingestion Contract | Portal, ingestion, platform enablement, observability, and operations agents. | Source bindings, delivery and schema validation, quarantine and replay rules, source-aligned publication gates, SLOs, telemetry, and recovery limits. |
+| Data Product Creation Contract | Portal, product creation, platform enablement, observability, operations, and contract specialists. | Accepted inputs, build and quality tests, semantic and compatibility rules, policy inputs, stable ports, go-live gates, rollback, SLOs, and evidence. |
+| Data Product Consumption Contract | Portal, consumption, sharing, AI assistant, observability, and operations agents. | Consumer purpose, selected port, data scope, tool and adapter limits, obligations, expiry, revocation, usage telemetry, and profile-specific AI or sharing controls. |
+
+Agents may autonomously execute pre-approved, reversible operations whose parameters remain inside the compiled envelope. Contract creation or material change, wider purpose or scope, external disclosure, product go-live, accepted exception, privileged platform change, and irreversible action follow their named approval gates.
+
+Every agent action records the initiating user or workload, delegated identity, agent and skill versions, contract version, purpose, policy decision, approval where required, parameters, result, and trace. Contract expiry, suspension, replacement, or revocation must immediately remove or narrow the corresponding agent authority.
+
 ## Canonical Representation
 
 Each contract is stored as a portable YAML artifact in version control and the contract registry. Use the [Open Data Contract Standard 3.1](https://bitol-io.github.io/open-data-contract-standard/latest/) as the canonical baseline and namespace enterprise extensions.

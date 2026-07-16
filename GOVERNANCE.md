@@ -29,7 +29,7 @@ Named people and teams belong in the repository hosting platform, CODEOWNERS con
 ## Proposal and Decision Flow
 
 1. Open a change proposal describing the problem, scope, affected public interfaces, alternatives, adopters, risks, migration, evidence, and target release.
-2. Express new normative behavior through the Architecture Policy Language and update applicable standards and tests.
+2. Express new normative architecture behavior through the Architecture Decision Policy and update applicable standards and tests.
 3. Update architecture, services, playbooks, standards, templates, examples, skills, and generated artifacts together when their contracts are affected.
 4. Run all repository checks and record unresolved findings or exceptions.
 5. Obtain the reviews required by the change class.

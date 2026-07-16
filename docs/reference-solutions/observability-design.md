@@ -11,10 +11,10 @@ This proposal applies the Data Observability Service through a pragmatic two-pla
 The result is one observability experience with two authoritative signal domains.
 
 !!! info "Reference solution status"
-    This page applies the technology-neutral [Data Observability Service](../services/data-observability-service.md) to a selected Databricks, Unity Catalog, and Grafana Cloud profile. It does not make these products mandatory for the foundation. Adoption requires an approved [Technology Selection Record](../delivery-templates/technology-selection-template.md), proof-of-capability evidence, security review, cost analysis, and an exit plan.
+    This page applies the technology-neutral [Data Observability Service](../services/data-observability-service.md) to a selected Databricks, Unity Catalog, and Grafana Cloud profile. It does not make these products mandatory for the foundation. Adoption requires an approved [Technology Selection Record](../reference-solutions/technology-selection-template.md), proof-of-capability evidence, security review, cost analysis, and an exit plan.
 
 !!! tip "Fast path"
-    **Decide:** [Executive Recommendation](#executive-recommendation) · **Design:** [Target Architecture](#target-architecture) and [OTLP Solution Design](#otlp-solution-design) · **Implement:** [Implementation Runway](#implementation-runway) · **Assure:** [Suggested Alert Ownership](#suggested-alert-ownership) and [Key Risks and Guardrails](#key-risks-and-guardrails)
+    **Decide:** [Executive Recommendation](#executive-recommendation) · **Design:** [Solution Architecture](#solution-architecture) and [OTLP Solution Design](#otlp-solution-design) · **Implement:** [Implementation Runway](#implementation-runway) · **Assure:** [Suggested Alert Ownership](#suggested-alert-ownership) and [Key Risks and Guardrails](#key-risks-and-guardrails)
 
 ## Executive Recommendation
 
@@ -22,7 +22,7 @@ Use Unity Catalog as the authoritative context for data products and use Grafana
 
 Do not force all data quality logic into Grafana, and do not force all runtime telemetry into Unity Catalog. Keep the tools focused and connect them through stable identifiers, APIs, events, and links.
 
-## Target Architecture
+## Solution Architecture
 
 ```mermaid
 flowchart TB
@@ -326,7 +326,7 @@ Show products by owner, domain, criticality, quality posture, freshness posture,
 - Add AI and model consumption signals with product, semantic context, purpose, and evaluation identifiers.
 - Measure mean time to detect, diagnose, recover, and prove recovery.
 
-## Open Architecture Decisions
+## Open Design Choices
 
 1. Is Unity Catalog the authoritative product context for Databricks-managed products, while the Data Service Portal remains the user entry point?
 2. Is Grafana Cloud the enterprise system-observability command center for metrics, logs, traces, alerts, and incidents?

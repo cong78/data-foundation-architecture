@@ -5,7 +5,7 @@
 The following are versioned public interfaces of this project:
 
 - Published page paths and named architecture concepts.
-- Architecture policy ids, decision semantics, and evidence meanings.
+- Architecture decision policy ids, decision semantics, and evidence meanings.
 - JSON Schemas and YAML API versions under `policies/` and the AI skill packages.
 - The three data-contract types and their boundary meanings.
 - Product patterns, lifecycle states, service boundaries, target planes, and journey stages.

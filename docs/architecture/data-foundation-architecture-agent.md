@@ -8,7 +8,7 @@ The Data Foundation Architecture Agent is a governed specialist behind the [Data
 
 | Concern | Agent responsibility | Outside the agent |
 | --- | --- | --- |
-| Architecture knowledge | Retrieve authoritative definitions, designs, services, standards, ADRs, playbooks, templates, policies, and evidence rules. | Replacing the repository as source of truth. |
+| Architecture knowledge | Retrieve authoritative definitions, designs, services, standards, playbooks, reference solutions, policies, and evidence rules. | Replacing the repository as source of truth. |
 | Reasoning | Assess, design, review, and prepare governed artifacts while separating facts, evidence, inference, assumptions, and proposals. | Making unreviewed architecture decisions authoritative. |
 | Tools | Invoke typed, least-privilege tools with validated input and output. | Direct database, platform-administrator, or unrestricted network access. |
 | Actions | Read by default; create drafts only when a later phase explicitly enables it. | Publishing, approving go-live, granting access, external sharing, deletion, or retirement without external approval. |

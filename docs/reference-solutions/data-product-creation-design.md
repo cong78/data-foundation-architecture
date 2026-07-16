@@ -293,7 +293,7 @@ Databricks is an implementation, not the external Data Product Creation Contract
 - Validate SQL, Iceberg REST, sharing, and non-tabular adapter boundaries.
 - Recreate the reference product from canonical artifacts in a clean environment and test rollback and revocation.
 
-## Open Architecture Decisions
+## Open Design Choices
 
 | Decision | Required outcome |
 | --- | --- |

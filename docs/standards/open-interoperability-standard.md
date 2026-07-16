@@ -88,8 +88,9 @@ Live products must meet Level 1. Shared platform services must meet Level 2. Pro
 - Read a shared table or query result with an independent client.
 - Prove access expiry and revocation across the external interface.
 - Trace an AI retrieval or feature request to product, contract, data snapshot, identity, purpose, and source lineage.
+- Delegate one task from the Data Service AI Assistant to an independently operated service agent and prove that identity, purpose, contract references, scope, autonomy ceiling, approval state, status, receipts, and trace survive the round trip.
 
-Record results with the [Interoperability Conformance Record](../delivery-templates/interoperability-conformance-template.md).
+Record results with the [Interoperability Conformance Record](../reference-solutions/interoperability-conformance-template.md).
 
 ## Reuse Package
 
@@ -109,6 +110,8 @@ Profiles are versioned independently from platform releases. Breaking profile ch
 AI agents must consume governed products through the same policy and contract boundary as other consumers. Agent-specific adapters, including context or tool protocols, are optional edge adapters. They may expose approved product capabilities, but they must not become the product registry, policy authority, or only access path.
 
 MCP and A2A adapters require the same authenticated identity, purpose policy, least privilege, approval, traceability and conformance testing as direct service APIs.
+
+A2A task exchange does not create a new authority model. The assistant coordinates the task, the service agent owns its bounded execution, and the deterministic target service owns authoritative state and completion evidence.
 
 ## Exception Rule
 

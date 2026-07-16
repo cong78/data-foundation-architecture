@@ -9,13 +9,13 @@ This shared design supports the canonical [Platform Enablement Service](../servi
 | Capability Area | What It Provides | Authoritative Boundary |
 | --- | --- | --- |
 | Contract and product management | Contract registry, product identifiers, lifecycle bindings, schema validation, compatibility results, and product projections. | Canonical contracts and product descriptors remain portable; provider objects are projections. |
-| Catalog and storage | Unity Catalog registration, Delta defaults, storage locations, retention, recovery, deletion, and external-object binding. | Unity Catalog owns technical object governance; product and semantic meaning remain in their canonical authorities. |
+| Catalog and storage | Technical asset registration, governed storage defaults, locations, retention, recovery, deletion, and external-object binding. | The selected catalog governs technical objects; product and semantic meaning remain in their canonical authorities. |
 | Identity and security | Workload identities, named-user federation, secrets, policy bindings, delegated scopes, entitlements, and audit integration. | Enterprise identity and policy authorities issue decisions; lifecycle services enforce them at execution. |
 | Integration | API gateway, event transport, workflow callbacks, schema registry, connector framework, service discovery, and stable identifiers. | Integration infrastructure transports interactions; owning services retain business and lifecycle decisions. |
 | Automation | Workspace and environment provisioning, policy checks, deployment, promotion, rollback, drift detection, and deprovisioning. | Automation executes approved intent and returns receipts; it does not approve its own changes. |
 | Evidence and telemetry | OpenTelemetry routing, audit retention, control receipts, reconciliation results, cost attribution, and evidence retrieval. | Evidence retains source authority, observation time, correlation ids, and access policy. |
 
-## Target Architecture Placement
+## Architecture Blueprint Placement
 
 | Target Plane | Shared Capability Responsibility |
 | --- | --- |

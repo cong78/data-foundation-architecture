@@ -31,16 +31,34 @@ Central accountability does not require one physical runtime. Ingestion executio
 
 ## Conceptual Model
 
-```mermaid
-flowchart TB
-    CENTRAL["1 · Central foundation accountability<br/>source onboarding · ingestion · raw and validated source-aligned states"]
-    HANDOFF["2 · Contracted handoff<br/>stable source id · source-aligned contract · lineage · quality · support"]
-    FEDERATED["3 · Federated domain accountability<br/>aggregate products · consumer-aligned products"]
-    ACCESS["4 · Governed delivery<br/>unified access · consumption · sharing"]
-    OUTCOMES["5 · Outcomes<br/>BI · applications · platforms · partners · agents · models"]
+<div class="foundation-concept" aria-label="Layered data foundation conceptual model">
+  <div class="foundation-concept-ownership">
+    <div class="foundation-owner owner-central"><small>Central accountability</small><strong>Data Foundation Platform Team</strong><span>Source onboarding, ingestion, raw landing, and validated source-aligned products</span></div>
+    <div class="foundation-handoff"><small>Ownership handoff</small><strong>Published source-aligned contract</strong><span>Stable identity · lineage · quality · support</span></div>
+    <div class="foundation-owner owner-federated"><small>Federated accountability</small><strong>Domain Data Teams</strong><span>Aggregate and consumer-aligned products, meaning, value, and lifecycle</span></div>
+  </div>
 
-    CENTRAL --> HANDOFF --> FEDERATED --> ACCESS --> OUTCOMES
-```
+  <div class="foundation-concept-flow">
+    <a class="foundation-concept-node node-source" href="../../services/data-ingestion-service/"><small>Inputs</small><strong>Source systems</strong><span>Systems · files · APIs · events · streams</span></a>
+    <i class="foundation-concept-arrow" aria-hidden="true"></i>
+    <a class="foundation-concept-node node-source-aligned" href="../../services/data-ingestion-service/"><small>Source-aligned product</small><strong>Raw landing → validated</strong><span>Faithful receipt becomes a stable, source-preserving product</span><em>Source System Ingestion Contract</em></a>
+    <i class="foundation-concept-arrow foundation-concept-handoff-arrow" aria-hidden="true"></i>
+    <a class="foundation-concept-node node-aggregate" href="../../services/data-product-creation-service/"><small>Aggregate product</small><strong>Combine · harmonize · derive</strong><span>Reusable domain meaning at an explicit grain; may serve consumers directly</span><em>Data Product Creation Contract</em></a>
+    <i class="foundation-concept-arrow" aria-hidden="true"></i>
+    <a class="foundation-concept-node node-consumer" href="../../services/data-product-creation-service/"><small>Consumer-aligned product</small><strong>Shape for a known purpose</strong><span>Optional projection when interface, latency, policy, or semantics differ</span><em>Data Product Creation Contract</em></a>
+    <i class="foundation-concept-arrow" aria-hidden="true"></i>
+    <a class="foundation-concept-node node-outcome" href="../../services/data-consumption-service/"><small>Governed product ports</small><strong>Use and exchange</strong><span>BI · applications · platforms · sharing · AI agents · models</span><em>Data Product Consumption Contract</em></a>
+  </div>
+
+  <div class="foundation-concept-rails">
+    <a href="../data-contract-design/"><strong>Contracts and lifecycle</strong><span>Promise · compatibility · go-live · change · expiry</span></a>
+    <a href="../semantic-context-design/"><strong>Catalog, lineage and context</strong><span>Identity · ownership · provenance · semantics</span></a>
+    <a href="../unified-access-design/"><strong>Identity, policy and access</strong><span>Purpose · obligations · enforcement · revocation</span></a>
+    <a href="../../services/data-observability-service/"><strong>Observability and operations</strong><span>Quality · freshness · usage · incidents · recovery</span></a>
+  </div>
+</div>
+
+Read the model in three layers: the **top band** shows accountability, the **middle flow** shows how trust and business meaning are added, and the **bottom rails** show controls that apply to every stage. Aggregate products may serve consumers directly; consumer-aligned products are added only when a specific use requires a different shape or interface.
 
 The source-aligned contract is the ownership handoff: the platform team remains accountable for the source-preserving product, while domain teams become accountable for business transformation and downstream product outcomes.
 

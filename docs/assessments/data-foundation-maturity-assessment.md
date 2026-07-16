@@ -6,11 +6,11 @@ Use this assessment to evaluate whether the data foundation is defined, implemen
 
 Assess the foundation at a defined scope, such as one domain, business unit, platform, or enterprise. Record the scope, assessment date, accountable reviewer, evidence links, exceptions, and next review date outside this page.
 
-For implementation guidance, use [Data Domain Design](../architecture/data-domain-design.md), the [Architecture Blueprint](../implementation/implementation-blueprint.md), [Data Product Management Standard](../standards/data-product-management-standard.md), [Open Interoperability Standard](../standards/open-interoperability-standard.md), and [OpenTelemetry Standard](../standards/otel-telemetry-standard.md).
+For implementation guidance, use [Data Domain Design](../architecture/data-domain-design.md), the [Implementation Blueprint](../implementation/implementation-blueprint.md), [Data Product Management Standard](../standards/data-product-management-standard.md), [Open Interoperability Standard](../standards/open-interoperability-standard.md), and [OpenTelemetry Standard](../standards/otel-telemetry-standard.md).
 
 ## Assess a Data Domain
 
-Create one assessment record per domain and assessment date. Use the stable domain id as the scope, complete the [Data Domain Onboarding Record](../delivery-templates/data-domain-onboarding-template.md), and interpret each dimension as domain adoption of the shared foundation:
+Create one assessment record per domain and assessment date. Use the stable domain id as the scope, complete the [Data Domain Onboarding Record](../reference-solutions/data-domain-onboarding-template.md), and interpret each dimension as domain adoption of the shared foundation:
 
 | Dimension | Domain-level question |
 | --- | --- |
@@ -35,7 +35,7 @@ Check a foundation-owned capability only when the domain has adopted it and can 
 
   <div class="assessment-checklist">
     <h2>Direction and Ownership</h2>
-    <label><input type="checkbox"> The foundation has an approved definition, scope, principles, target architecture, and decision ownership.</label>
+    <label><input type="checkbox"> The foundation has an approved definition, scope, principles, architecture blueprint, and decision ownership.</label>
     <label><input type="checkbox"> Each foundation service has an accountable owner, service contract, support model, service levels, and lifecycle.</label>
     <label><input type="checkbox"> Domains have clear product ownership, stewardship, funding, and escalation responsibilities.</label>
     <label><input type="checkbox"> Architecture decisions, exceptions, risks, dependencies, and maturity improvements are reviewed with evidence.</label>

@@ -8,7 +8,7 @@ This repository defines the dashboard structure but does not bundle organization
 
 | Area | Decision question | Minimum evidence | Status source |
 | --- | --- | --- | --- |
-| Direction and ownership | Are scope, service ownership, domain accountability, and decision rights current? | Approved scope, owners, ADRs, risks, exceptions, and review records. | Governance and architecture records. |
+| Direction and ownership | Are scope, service ownership, domain accountability, and decision rights current? | Published scope, owners, risks, exceptions, approvals, and review records. | Governance and architecture records. |
 | Foundation services | Are service boundaries implemented, supported, measurable, and reusable? | Service records, interfaces, SLOs, support, dependencies, incidents, changes, and usage. | Service catalog and operations platform. |
 | Products and contracts | Are live products owned, contracted, tested, observable, supported, and used? | Product records, three contract types, go-live results, health, consumers, changes, and lifecycle decisions. | Portal, contract registry, catalog, and product telemetry. |
 | Access and security | Are named users, workloads, delegated actors, and recipients governed at service and data boundaries? | Identity bindings, policy decisions, entitlements, obligations, expiry, deny tests, and revocation. | Identity, policy, Unity Catalog, and audit authorities. |
@@ -34,6 +34,6 @@ Use one row per measured scope and evidence window:
 
 ## Apply the Assessment
 
-Use the [Data Foundation Maturity Assessment](data-foundation-maturity-assessment.md) for the common dimensions and scoring interpretation. Use the [Architecture to Operations Map](../foundation/architecture-service-operations-map.md) to connect a gap to its owning service, standard, playbook, runbook, evidence source, and runway phase.
+Use the [Data Foundation Maturity Assessment](data-foundation-maturity-assessment.md) for the common dimensions and scoring interpretation. Use [Architecture to Delivery](../foundation/architecture-to-delivery.md) to connect a gap to its owning data service, standard, playbook, runbook, evidence source, and runway phase.
 
 <div class="read-next"><strong>Next:</strong> define one bounded review scope, collect authoritative evidence, and record only verified results.</div>

@@ -31,8 +31,8 @@ When intent spans workflows, run them in this order: **Assess → Design → Gen
 
 ## Apply Core Integrity Rules
 
-- Separate enterprise foundation responsibilities, domain accountability, data product ownership, and runtime implementation.
-- Separate principles, rules, and criteria. Use the Architecture Policy Language for new or changed normative guidance, with a canonical policy document, named decision, tests, enforcement points, and evidence.
+- Separate data foundation platform responsibilities, domain accountability, data product ownership, and runtime implementation.
+- Separate principles, rules, and criteria. Use the Architecture Decision Policy for new or changed normative guidance, with a canonical policy document, named decision, tests, enforcement points, and evidence.
 - Use **Frame → Establish → Deliver → Use → Operate** as the primary journey; treat layers, planes, services, product patterns, and runway phases as supporting views.
 - Use the nine foundation services as reusable capability boundaries. Keep the Data Product Marketplace inside the Data Service Portal rather than creating a separate catalog or platform.
 - Keep source onboarding, ingestion, and raw and validated source-aligned products under central foundation platform accountability; keep domain, aggregate, and consumer-aligned product ownership federated to domain data teams.
@@ -52,12 +52,12 @@ Read `references/evidence-rules.md` before scoring, certifying, or making a go-l
 
 ## Assess
 
-1. Define the assessment object: enterprise foundation, data domain, service, product, or implementation profile.
+1. Define the assessment object: data foundation, data domain, service, product, or implementation profile.
 2. Record stable id, boundary, lifecycle, evidence window, accountable reviewer, and assessment version.
 3. For domain onboarding, read:
    - `docs/architecture/data-domain-design.md`
    - `docs/assessments/data-foundation-maturity-assessment.md`
-   - `docs/delivery-templates/data-domain-onboarding-template.md`
+   - `docs/reference-solutions/data-domain-onboarding-template.md`
 4. Evaluate admission gates independently from the six maturity dimensions.
 5. Capture an evidence link or an explicit gap for every claim.
 6. Use `scripts/assess_maturity.py` for deterministic scoring when a JSON assessment is available.
@@ -102,15 +102,15 @@ Start from the repository template that owns the requested artifact:
 
 | Artifact | Template |
 | --- | --- |
-| Architecture policy | `docs/delivery-templates/architecture-policy-template.md` |
-| Data domain onboarding | `docs/delivery-templates/data-domain-onboarding-template.md` |
-| Data product | `docs/delivery-templates/data-product-template.md` |
-| Data product workload | `docs/delivery-templates/data-product-workload-template.md` |
-| Source onboarding | `docs/delivery-templates/source-onboarding-template.md` |
-| Technology selection | `docs/delivery-templates/technology-selection-template.md` |
-| Interoperability conformance | `docs/delivery-templates/interoperability-conformance-template.md` |
-| Agent or skill | `docs/delivery-templates/agent-skill-template.md` |
-| Service runbook | `docs/delivery-templates/service-runbook-template.md` |
+| Architecture decision policy | `docs/reference-solutions/architecture-policy-template.md` |
+| Data domain onboarding | `docs/reference-solutions/data-domain-onboarding-template.md` |
+| Data product | `docs/reference-solutions/data-product-template.md` |
+| Data product workload | `docs/reference-solutions/data-product-workload-template.md` |
+| Source onboarding | `docs/reference-solutions/source-onboarding-template.md` |
+| Technology selection | `docs/reference-solutions/technology-selection-template.md` |
+| Interoperability conformance | `docs/reference-solutions/interoperability-conformance-template.md` |
+| Agent or skill | `docs/reference-solutions/agent-skill-template.md` |
+| Service runbook | `docs/reference-solutions/service-runbook-template.md` |
 
 Preserve template sections unless they are explicitly out of scope. Replace blank fields with supplied facts, `TBD`, `Not applicable` plus rationale, or an evidence request. Never silently remove a mandatory gate.
 

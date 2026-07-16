@@ -2,9 +2,11 @@
 
 <div class="decision-brief"><div><small>Use when</small><strong>Exchanging product data across a recipient boundary.</strong></div><div><small>Decision</small><strong>Which recipient contract, package, entitlement, and exit controls apply?</strong></div><div><small>Owner</small><strong>Sharing service owner with product, recipient, and policy owners.</strong></div><div><small>Output</small><strong>Controlled, monitored, revocable exchange.</strong></div></div>
 
-## Definition
+## Purpose and Definition
 
 The Data Sharing Service exchanges live data products with internal platforms, customers, suppliers, partners, and other approved recipients. It creates a minimized recipient package, binds it to a Data Product Consumption Contract and entitlement, monitors delivery and use, and proves expiry, revocation, and offboarding.
+
+It exists because crossing an organizational or recipient boundary requires stronger minimization, identity, expiry, revocation, and offboarding controls than ordinary internal consumption.
 
 ## Scope and Boundaries
 
@@ -19,8 +21,8 @@ The Data Sharing Service exchanges live data products with internal platforms, c
 | Concern | Alignment |
 | --- | --- |
 | Primary plane | Data |
-| Supporting planes | Control, Security, and Observability |
-| Shared capabilities | Data Product Consumption Contract, identity federation, classification, policy, entitlement, retention, product ports, and telemetry. |
+| Supporting planes | AI, Control, Security, and Observability |
+| Shared capabilities | Data Product Consumption Contract, agentic foundation, identity federation, classification, policy, entitlement, retention, product ports, and telemetry. |
 | Integration flows | Request recipient, approve purpose, minimize package, provision identity and entitlement, deliver, monitor, renew, revoke, delete, and offboard. |
 
 ## Service Architecture
@@ -40,6 +42,15 @@ flowchart LR
 ```
 
 The package and recipient binding are technical implementations; the product and consumption contracts remain the portable authority.
+
+## Agentic Interaction
+
+| Concern | Service Agent Contract |
+| --- | --- |
+| Specialist role | Sharing agent that prepares recipient packages, verifies controls, monitors exchange, and executes expiry or revocation. |
+| Declarative boundary | Published Data Product Consumption Contract with sharing clauses, recipient identity, policy, package scope, expiry, and obligations. |
+| Autonomous range | Validate recipients, minimize packages, test delivery, monitor use, notify owners, and execute pre-approved protective revocation. |
+| Must defer | First external release, wider disclosure, onward use, exception acceptance, and changed legal or residency terms require named approval. |
 
 ## Core Capabilities
 
@@ -91,7 +102,7 @@ The package and recipient binding are technical implementations; the product and
 
 ## Reference Solutions
 
-[Data Sharing Design](../architecture/data-sharing-design.md) maps this service to Delta Sharing, Unity Catalog shares and recipients, and explicit contract workflows. It is a selected reference profile; recipient and package semantics remain portable.
+[Data Sharing Design](../reference-solutions/data-sharing-design.md) maps this service to Delta Sharing, Unity Catalog shares and recipients, and explicit contract workflows. It is a selected reference profile; recipient and package semantics remain portable.
 
 ## Done Criteria
 
@@ -100,4 +111,5 @@ The package and recipient binding are technical implementations; the product and
 - Product changes trigger recipient impact and compatibility review.
 - Expiry, emergency suspension, revocation, credential invalidation, offboarding, and deletion or retention obligations are proven.
 - Recipient activity and product impact can be correlated without exposing sensitive payloads in telemetry.
+- The sharing agent remains inside the recipient contract and package scope; first release, wider disclosure, exceptions, expiry, and revocation behavior are tested.
 - The exchange can migrate or terminate without reconstructing its meaning from provider configuration.

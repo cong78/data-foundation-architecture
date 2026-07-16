@@ -30,7 +30,7 @@ skills/data-foundation-architect/
 └── assets/
 ```
 
-`SKILL.md` contains the runtime-neutral operating workflow. `agents/openai.yaml` provides Skill Creator-compatible UI metadata. `manifest.json` defines capabilities, side effects, authorization, data policy, reliability, approvals, telemetry, and tests. JSON schemas define assessment and task contracts. The guidance map points to authoritative pages under `docs/`, including the five-stage journey, nine services, portal marketplace, and architecture-to-operations traceability.
+`SKILL.md` contains the runtime-neutral operating workflow. `agents/openai.yaml` provides Skill Creator-compatible UI metadata. `manifest.json` defines capabilities, side effects, authorization, data policy, reliability, approvals, telemetry, and tests. JSON schemas define assessment and task contracts. The guidance map points to authoritative pages under `docs/`, including the five-stage journey, nine services, portal marketplace, and architecture-to-delivery traceability.
 
 ## Install the Skill
 

@@ -7,6 +7,8 @@ Use this template to propose, review and certify an agentic capability.
 | Field | Value |
 | --- | --- |
 | Agent id and version |  |
+| Owning foundation service |  |
+| Multi-agent role | Assistant orchestrator / Service specialist / Contract specialist |
 | Goal |  |
 | Owner and support |  |
 | Intended users |  |
@@ -14,9 +16,25 @@ Use this template to propose, review and certify an agentic capability.
 | Maximum autonomy | A0 / A1 / A2 / A3 / A4 |
 | Workload identity |  |
 | Delegated-user model |  |
+| Applicable data contract types |  |
+| Behavior when contract is missing, expired, suspended or incompatible |  |
+| Deterministic service fallback |  |
 | LLM profile |  |
 | Data classification limit |  |
 | Turn, tool, time and cost budgets |  |
+
+## Delegated Task Contract
+
+| Field | Value |
+| --- | --- |
+| Accepted parent agents |  |
+| Task input and output schemas |  |
+| Required actor, purpose and contract references |  |
+| Scope-narrowing and rejection rules |  |
+| Maximum delegated autonomy |  |
+| Budget and deadline behavior |  |
+| Approval-state propagation |  |
+| Completion owner and status authority |  |
 
 ## Skills
 
@@ -40,6 +58,16 @@ Use this template to propose, review and certify an agentic capability.
 | --- | --- | --- | --- | --- | --- |
 |  |  |  |  |  |  |
 
+## Contract-Driven Execution
+
+| Contract Declaration | Compiled Control | Agent Behavior | Service Enforcement | Evidence |
+| --- | --- | --- | --- | --- |
+| Identity and purpose |  |  |  |  |
+| Product, source, consumer, recipient and port scope |  |  |  |  |
+| Allowed skills and parameter limits |  |  |  |  |
+| Lifecycle, effective time, expiry and revocation |  |  |  |  |
+| SLO, validation, telemetry and recovery obligations |  |  |  |  |
+
 ## Evaluation Evidence
 
 | Gate | Suite | Threshold | Result | Evidence |
@@ -50,6 +78,8 @@ Use this template to propose, review and certify an agentic capability.
 | Policy enforcement |  |  |  |  |
 | Prompt injection |  |  |  |  |
 | Excessive agency |  |  |  |  |
+| Multi-agent delegation and scope preservation |  |  |  |  |
+| Contract expiry, suspension and revocation |  |  |  |  |
 | Memory isolation |  |  |  |  |
 | Reliability and cancellation |  |  |  |  |
 | Latency and cost |  |  |  |  |

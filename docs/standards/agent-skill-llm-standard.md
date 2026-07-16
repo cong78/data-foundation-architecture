@@ -6,6 +6,19 @@ This standard defines the minimum contract for agentic capabilities in the data 
 
 It applies the lifecycle and provenance expectations of the [NIST Generative AI Profile](https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence), the risk controls in the [OWASP AI Agent Security guidance](https://cheatsheetseries.owasp.org/cheatsheets/AI_Agent_Security_Cheat_Sheet.html), and the excessive-agency principle of minimizing tool functionality, permissions and autonomy.
 
+## Multi-Agent Operating Model
+
+Every foundation service exposes typed skills and may operate a service-owned specialist agent. The Data Service AI Assistant is the user-facing coordinator: it decomposes goals, delegates bounded tasks, consolidates evidence, and presents approvals and outcomes. It does not become the owner or policy authority for the participating services.
+
+| Role | Responsibility | Authority Boundary |
+| --- | --- | --- |
+| Data Service AI Assistant | Interpret user intent, coordinate specialist agents, maintain user-visible task state, and synthesize results. | Delegated user authority, task budget, and coordination policy. |
+| Service specialist agent | Plan and execute work for one foundation service through registered skills. | Service ownership, agent manifest, published contracts, and service policy. |
+| Contract specialist | Draft, compare, validate, and compile the three contract types. | Advisory or draft authority; accountable owners approve publication. |
+| Deterministic service | Authorize, validate, change state, enforce obligations, and issue evidence. | Canonical service contract, policy, workflow, and operational controls. |
+
+An agent-to-agent task must carry a stable task id, initiating actor, delegated identity, purpose, contract references, bounded scope, autonomy ceiling, budget, deadline, expected artifact or outcome, approval state, correlation ids, and completion owner. A receiving agent may narrow or reject the task but must not widen it.
+
 ## Agent Manifest
 
 | Field | Requirement |
@@ -13,8 +26,11 @@ It applies the lifecycle and provenance expectations of the [NIST Generative AI 
 | Agent id and version | Stable identifier and immutable released version. |
 | Owner and support | Accountable owner, technical owner and escalation route. |
 | Goal and boundaries | Permitted goals, prohibited goals and target users. |
+| Service binding | Owning foundation service, supported outcomes, and deterministic APIs or workflows. |
 | Autonomy | Maximum autonomy level and actions that always require approval. |
 | Identity | Workload identity, delegated-user model and allowed trust domains. |
+| Contract binding | Applicable contract types and behavior on missing, expired, suspended, or incompatible contracts. |
+| Delegation | Accepted task schema, allowed peer agents, scope-narrowing rules and completion ownership. |
 | Skills | Exact approved skill ids and version constraints. |
 | Context | Allowed products, metadata types, classifications and retrieval policy. |
 | Memory | Allowed memory types, retention, deletion and isolation. |
@@ -75,7 +91,9 @@ MCP and A2A are interoperability adapters. Neither protocol grants authorization
 | Read | Search catalog, inspect health, compare contracts. | Policy check; no confirmation unless sensitive. |
 | Draft | Draft contract, onboarding plan, incident summary. | User reviews before publication. |
 | Reversible write | Create request, submit review, retry validation. | Explicit confirmation or pre-approved bounded automation. |
-| High impact | Publish, share externally, grant or revoke access, delete or retire. | Step-up authorization and named approver. |
+| High impact | Publish, share externally, grant access, delete, accept an exception, or retire. | Step-up authorization and named approver. |
+
+Pre-approved protective actions such as expiry enforcement, quarantine, circuit breaking, rollback, or emergency revocation may run autonomously when a published contract or policy defines the trigger, scope, notification, evidence, and recovery route.
 
 ## Evaluation Gates
 
@@ -99,6 +117,8 @@ Agents, skills, prompts, retrieval configurations, model profiles and evaluation
 ## Minimum Done Criteria
 
 - The agent, every enabled skill, and every LLM profile have stable ids, immutable versions, accountable owners, support routes, and approved manifests.
+- Every foundation service names its specialist-agent boundary, typed skills, applicable contracts, autonomy ceiling, and deterministic fallback.
+- Multi-agent tasks preserve initiating identity, purpose, contract, delegated scope, approval state, budgets, correlation, and completion ownership across every handoff.
 - Skill inputs, outputs, side effects, authorization, data policy, reliability, approval, and telemetry are machine-readable and tested.
 - Read, draft, reversible-write, and high-impact actions enforce the correct policy, confirmation, step-up, and named-approval behavior.
 - Evaluation evidence covers task quality, grounding, injection resistance, excessive agency, privilege, data handling, memory, failure, recovery, and cost thresholds.

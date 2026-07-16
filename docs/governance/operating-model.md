@@ -14,6 +14,8 @@ The foundation operating model defines how platform teams, domain teams, and con
 | Data reliability team | Observability standards, data incident process, SLO reporting, telemetry quality |
 | Foundation operations team | Service portfolio, support, incident command, problem, change, release coordination, continuity, communication, reliability practice, and improvement evidence |
 | Portal owner | User experience, workflow entry points, portal integrations, and service request usability |
+| AI Assistant owner | Multi-agent coordination, task routing, delegation integrity, user interaction, and end-to-end task status |
+| Foundation service owners | Specialist agents, typed skills, deterministic service interfaces, autonomy limits, evaluation, evidence, and fallback for their services |
 
 ## Central and Federated Accountability
 
@@ -42,6 +44,9 @@ Each foundation service should have:
 - Operational dashboards.
 - Cost and usage transparency.
 - OpenTelemetry instrumentation guidance and service health reporting.
+- A specialist-agent boundary, registered skills, contract bindings, autonomy limits, deterministic fallback, and tested escalation path.
+
+The Data Service AI Assistant coordinates work across services, while each service remains accountable for its own decisions and execution. Coordination never transfers ownership or expands the authority delegated by the user, contract, or policy.
 
 ## Delivery Model
 

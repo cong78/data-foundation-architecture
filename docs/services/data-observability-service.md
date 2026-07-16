@@ -2,9 +2,11 @@
 
 <div class="decision-brief"><div><small>Use when</small><strong>Defining measurable service and data-product trust.</strong></div><div><small>Decision</small><strong>Which signals, SLOs, context, and correlations prove current health?</strong></div><div><small>Owner</small><strong>Observability owner with service and product owners.</strong></div><div><small>Output</small><strong>Current health, impact, alert, and recovery evidence.</strong></div></div>
 
-## Definition
+## Purpose and Definition
 
 The Data Observability Service correlates system telemetry and data-product telemetry from source through consumption and sharing. It uses OpenTelemetry as the system-signal standard, OpenLineage for runtime data lineage, and canonical product identifiers to make health, trust, impact, usage, cost, incidents, and recovery evidence understandable end to end.
+
+It exists because technical uptime alone cannot prove that a data product is fresh, accurate, used, trustworthy, or safe for its consumers.
 
 ## Scope and Boundaries
 
@@ -20,7 +22,7 @@ The Data Observability Service correlates system telemetry and data-product tele
 | --- | --- |
 | Primary plane | Observability |
 | Supporting planes | Every plane through common identity, telemetry, and evidence. |
-| Shared capabilities | OpenTelemetry conventions, product and contract ids, lineage, SLOs, catalog context, identity, policy, and evidence retention. |
+| Shared capabilities | Agentic foundation, OpenTelemetry conventions, product and contract ids, lineage, SLOs, catalog context, identity, policy, and evidence retention. |
 | Integration flows | Emit, collect, normalize, correlate, calculate health, detect, assess impact, alert, recover, and publish current evidence. |
 
 ## Service Architecture
@@ -42,6 +44,15 @@ flowchart LR
 ```
 
 Product metadata is referenced from canonical authorities rather than copied as a new truth. Every health claim includes authority, observation time, coverage, and limitations.
+
+## Agentic Interaction
+
+| Concern | Service Agent Contract |
+| --- | --- |
+| Specialist role | Observability agent that correlates system and product signals, explains trust and impact, and prepares operational evidence. |
+| Declarative boundary | Telemetry profiles, product and contract identifiers, SLOs, evidence policy, incident thresholds, and permission-filtered context. |
+| Autonomous range | Detect, correlate, diagnose, alert, explain impact, and assemble evidence or recommended action. |
+| Must defer | It cannot alter source telemetry, suppress required evidence, accept product risk, or close recovery without owner validation. |
 
 ## Core Capabilities
 
@@ -93,7 +104,7 @@ Product metadata is referenced from canonical authorities rather than copied as 
 
 ## Reference Solutions
 
-[Observability Design](../architecture/observability-design.md) maps product observability to Databricks and Unity Catalog and system observability to Grafana Cloud, connected through OpenTelemetry and OpenLineage. It is a selected reference profile; canonical telemetry semantics remain portable.
+[Observability Design](../reference-solutions/observability-design.md) maps product observability to Databricks and Unity Catalog and system observability to Grafana Cloud, connected through OpenTelemetry and OpenLineage. It is a selected reference profile; canonical telemetry semantics remain portable.
 
 ## Done Criteria
 
@@ -102,4 +113,5 @@ Product metadata is referenced from canonical authorities rather than copied as 
 - Alerts identify accountable owners and affected products and consumers.
 - A trace resolves from consumer impact through product, workload, source, release, and incident.
 - Telemetry loss, sensitive-data leakage, alert storm, stale health, correlation failure, and backend recovery are tested.
+- The observability agent can explain and correlate evidence but cannot alter source signals, accept risk, or suppress mandatory telemetry.
 - OTLP and OpenLineage outputs are accepted by independent reference receivers.

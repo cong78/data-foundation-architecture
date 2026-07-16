@@ -8,7 +8,7 @@
   },
   "admission_gates": {
     "identity": {"status": "pass", "evidence": ["domain/customer"]},
-    "boundary": {"status": "pass", "evidence": ["decision/ADR-042"]},
+    "boundary": {"status": "pass", "evidence": ["published-guidance/domain-boundary-v1"]},
     "accountability": {"status": "pass", "evidence": ["portal/domain/customer#owners"]},
     "governance": {"status": "conditional", "evidence": ["risk/R-118"], "note": "Residency control due in Q4"},
     "access": {"status": "pass", "evidence": ["policy/customer-access-v2"]},
@@ -16,7 +16,7 @@
   },
   "dimensions": {
     "direction-and-ownership": [
-      {"id": "boundary-and-decisions", "passed": true, "evidence": ["decision/ADR-042"]},
+      {"id": "boundary-and-decisions", "passed": true, "evidence": ["published-guidance/domain-boundary-v1"]},
       {"id": "service-ownership", "passed": true, "evidence": ["portal/domain/customer#services"]},
       {"id": "portfolio-accountability", "passed": true, "evidence": ["portal/domain/customer#owners"]},
       {"id": "improvement-review", "passed": false, "evidence": []}

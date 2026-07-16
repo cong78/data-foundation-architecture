@@ -27,4 +27,4 @@
 - Product, creation contract, Data Product Consumption Contract, package, entitlement, recipient, usage, expiry, and revocation remain correlated.
 - External copies and retention obligations are explicitly addressed.
 
-Authoritative inputs: [Data Sharing Service](../services/data-sharing-service.md), [Data Sharing Design](../architecture/data-sharing-design.md), and [Data Contract Standard](../standards/data-contract-standard.md).
+Authoritative inputs: [Data Sharing Service](../services/data-sharing-service.md), [Data Sharing Design](../reference-solutions/data-sharing-design.md), and [Data Contract Standard](../standards/data-contract-standard.md).

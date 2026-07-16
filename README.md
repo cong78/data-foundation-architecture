@@ -14,7 +14,7 @@ The guidance defines:
 - Nine foundation services.
 - Architecture blueprint and service implementation patterns.
 - Data contract, data product management, OpenTelemetry, and AI-ready data standards.
-- Templates and examples for real delivery.
+- Runbooks, templates, and examples for repeatable execution.
 - Machine-readable architecture policies.
 - Governance, security, compliance, operating model, and implementation runway.
 
@@ -30,15 +30,15 @@ The nine foundation services are:
 - Data Observability Service
 - Data Foundation Operations Service
 
-## AI Skills
+## Architecture Assistance
+
+Optional skills and the read-only agent help teams apply the guidance consistently. They are execution aids, not part of the logical foundation architecture or a replacement for accountable decisions.
 
 The repository includes a platform-neutral AI skill at `skills/data-foundation-architect/`. It supports evidence-based assessment, architecture design, review, and governed artifact generation while treating the MkDocs pages as the authoritative guidance.
 
 See [Data Foundation Architect Skill](docs/architecture/data-foundation-architect-skill.md) for OpenAI Codex, Claude Code, and GitHub Copilot CLI installation, activation, examples, scoring, and validation.
 
 The focused `skills/data-contract-designer/` package designs, reviews, compares, and plans changes to the three approved data contract types. See [Data Contract Designer Skill](docs/architecture/data-contract-designer-skill.md) for installation, examples, authority boundaries, and compatibility checking.
-
-## Architecture Agent
 
 The read-only `agent/` package begins a model-neutral Data Foundation Architecture Agent that can integrate behind a company AI assistant. It provides typed requests and results, repository-grounded citations, deterministic architecture tools, and an OpenAPI adapter contract. See [Data Foundation Architecture Agent](docs/architecture/data-foundation-architecture-agent.md).
 

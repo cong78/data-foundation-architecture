@@ -2,9 +2,11 @@
 
 <div class="decision-brief"><div><small>Use when</small><strong>Providing a shared control, resource, integration, or automation capability.</strong></div><div><small>Decision</small><strong>What should be provided once and reused by lifecycle services?</strong></div><div><small>Owner</small><strong>Foundation platform team with control authorities.</strong></div><div><small>Output</small><strong>Governed resource, binding, lifecycle, and evidence.</strong></div></div>
 
-## Definition
+## Purpose and Definition
 
 The Platform Enablement Service provides reusable contract, catalog, storage, identity, security, integration, automation, and evidence capabilities to all foundation services. It provisions and governs shared resources but does not take lifecycle accountability from the service requesting them.
+
+It exists to provide common controls and resources once, reducing duplication while preserving clear ownership of ingestion, product, consumption, sharing, and operational outcomes.
 
 ## Scope and Boundaries
 
@@ -19,8 +21,8 @@ The Platform Enablement Service provides reusable contract, catalog, storage, id
 | Concern | Alignment |
 | --- | --- |
 | Primary planes | Control and Data |
-| Supporting planes | Security and Observability |
-| Shared capabilities | Contract and product management, catalog and storage, identity and security, integration, automation, and evidence and telemetry. |
+| Supporting planes | AI, Security, and Observability |
+| Shared capabilities | Agentic foundation, contract and product management, catalog and storage, identity and security, integration, automation, and evidence and telemetry. |
 | Integration flows | Provision, bind controls, reconcile, rotate, retain, recover, delete, rollback, and deprovision. |
 
 ## Service Architecture
@@ -42,12 +44,21 @@ flowchart LR
 
 Every request follows plan, authorize, apply, validate, reconcile, and return-receipt behavior. Provider-specific naming and paths stay behind adapters.
 
+## Agentic Interaction
+
+| Concern | Service Agent Contract |
+| --- | --- |
+| Specialist role | Enablement agent that plans, provisions, binds controls, reconciles drift, recovers, and deprovisions shared resources. |
+| Declarative boundary | Approved service request, product workload, applicable data contract, resource profile, policy, budget, and lifecycle state. |
+| Autonomous range | Provision standard resources, validate bindings, rotate, reconcile, recover, and deprovision expired resources within policy. |
+| Must defer | Privileged exceptions, new provider patterns, destructive action without lifecycle authority, and risk acceptance require named approval. |
+
 ## Core Capabilities
 
 | Category | Capability | Owned Outcome |
 | --- | --- | --- |
 | Contracts | Contract-system capability | Canonical artifacts, versions, validation, compatibility, decisions, lifecycle, and events are consistently available. |
-| Catalog and storage | Governed technical assets | Catalog registration, Delta defaults, storage location, recovery, retention, deletion, and external bindings are controlled. |
+| Catalog and storage | Governed technical assets | Catalog registration, storage defaults, location, recovery, retention, deletion, and external bindings are controlled. |
 | Identity and security | Reusable control bindings | Workload identities, federation, secrets, policy, entitlements, delegated scopes, audit, and rotation are provisioned consistently. |
 | Integration | Common connectivity | Gateways, events, schema registry, connectors, callbacks, service discovery, and stable identifiers support service interactions. |
 | Automation | Environment and resource lifecycle | Plan, provision, promote, roll back, reconcile, and deprovision operations are policy-controlled and repeatable. |
@@ -91,7 +102,7 @@ Every request follows plan, authorize, apply, validate, reconcile, and return-re
 
 ## Reference Solutions
 
-The [Shared Platform Capabilities](../architecture/platform-foundation-design.md) design defines the reusable technology-neutral capabilities. Provider selections require a [Technology Selection Record](../delivery-templates/technology-selection-template.md), capability proof, security and cost review, portability test, and exit plan.
+The [Shared Platform Capabilities](../architecture/platform-foundation-design.md) design defines the reusable technology-neutral capabilities. Provider selections require a [Technology Selection Record](../reference-solutions/technology-selection-template.md), capability proof, security and cost review, portability test, and exit plan.
 
 ## Done Criteria
 
@@ -100,4 +111,5 @@ The [Shared Platform Capabilities](../architecture/platform-foundation-design.md
 - Contract, catalog, identity, policy, provider, and telemetry state reconcile through stable identifiers.
 - Provisioning, change, drift, rollback, recovery, retention, deletion, and deprovisioning paths are tested.
 - Provider replacement does not redefine product, contract, policy, or service outcomes.
+- The enablement agent uses typed resource intent, contract and policy scope, and an autonomy ceiling; privileged exceptions and deterministic fallback are tested.
 - Cost, reliability, adoption, exceptions, toil, and decommissioning evidence guide the platform backlog.

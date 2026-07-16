@@ -39,10 +39,12 @@ Use applicable OpenTelemetry GenAI semantic conventions and add these stable ent
 | Agent id and version | Identify the certified agent release. |
 | Skill id and version | Identify the selected governed capability. |
 | Conversation and task id | Correlate user interaction and durable execution. |
+| Parent task and delegation id | Reconstruct the assistant-to-service-agent task tree and authority chain. |
 | Model profile | Identify enterprise routing policy without coupling to one provider. |
 | Tool operation | Identify the typed foundation API action. |
 | Policy decision and approval id | Prove authorization and human confirmation. |
 | Product, contract and purpose | Connect the action to governed data context. |
+| Autonomy class and service binding | Show which service acted and whether execution was advisory, approval-bound, or pre-approved autonomous work. |
 | Outcome and cost | Measure success, latency, token use, tool use and spend. |
 
 For AI consumption, use applicable OpenTelemetry GenAI attributes such as `gen_ai.data_source.id` and map the data source back to the canonical product and dataset identifiers. Do not duplicate a standard attribute with a differently named enterprise attribute.
@@ -80,6 +82,8 @@ sequenceDiagram
     Consume->>AI: Retrieval, feature, or context access
 ```
 
+Multi-agent traces must use parent and child spans to connect user intent, assistant planning, service-agent delegation, skill invocation, deterministic service execution, policy decisions, approval waits, and final receipts. Retries and handoffs must link to the same durable task without losing the original subject or contract context.
+
 ## Telemetry Hygiene
 
 - Do not put personal data or sensitive business values in trace names, metric labels, log messages, or event attributes.
@@ -95,6 +99,7 @@ sequenceDiagram
 - Every production service and product port emits the required system and data product signals through OTLP-compatible paths.
 - Required service, product, contract, run, actor, consumer, purpose, policy-decision, and trace identifiers correlate across applicable signals.
 - End-to-end traces connect source receipt, product creation, product publication, consumption, sharing, and AI access where those stages apply.
+- Multi-agent traces reconstruct the task tree, delegation chain, contract and policy decisions, skill and service calls, approval points, outcomes, and compensation actions.
 - Product health views distinguish contract targets from measured freshness, quality, availability, usage, incidents, and cost.
 - Telemetry loss, stale health, invalid attributes, exporter failure, and sensitive-payload leakage have tests, alerts, owners, and exercised recovery procedures.
 - An independent OpenTelemetry collector accepts the exported signals without provider-specific translation of canonical identifiers.

@@ -35,4 +35,4 @@
 - Admission gates pass and maturity gaps have owners and dates.
 - At least one real product demonstrates the domain operating model.
 
-Authoritative inputs: [Data Domain Design](../architecture/data-domain-design.md), [Domain Onboarding Record](../delivery-templates/data-domain-onboarding-template.md), and [Maturity Assessment](../assessments/data-foundation-maturity-assessment.md).
+Authoritative inputs: [Data Domain Design](../architecture/data-domain-design.md), [Domain Onboarding Record](../reference-solutions/data-domain-onboarding-template.md), and [Maturity Assessment](../assessments/data-foundation-maturity-assessment.md).

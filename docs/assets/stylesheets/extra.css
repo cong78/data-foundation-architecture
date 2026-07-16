@@ -1262,6 +1262,552 @@
   margin-bottom: 0.25rem;
 }
 
+/* Data Foundation Model: ownership, product progression, and cross-cutting controls. */
+.foundation-concept {
+  margin: 1.2rem 0 1.5rem;
+  padding: 0.9rem;
+  border: 1px solid rgba(16, 35, 63, 0.2);
+  border-radius: 0.35rem;
+  background: #fff;
+  box-shadow: 0 0.3rem 1rem rgba(16, 35, 63, 0.08);
+}
+
+.foundation-concept a {
+  text-decoration: none;
+}
+
+.foundation-concept-ownership {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(9.5rem, 0.75fr) minmax(0, 1.7fr);
+  gap: 0.55rem;
+  margin-bottom: 0.8rem;
+}
+
+.foundation-owner,
+.foundation-handoff {
+  min-width: 0;
+  padding: 0.65rem 0.75rem;
+  border-radius: 0.25rem;
+}
+
+.foundation-owner {
+  border-top: 0.22rem solid #173b7a;
+  background: #eaf0f8;
+}
+
+.owner-federated {
+  border-top-color: #0f7b78;
+  background: #e5f3f1;
+}
+
+.foundation-handoff {
+  border: 1px dashed #44637f;
+  background: #f5f7fa;
+  text-align: center;
+}
+
+.foundation-owner small,
+.foundation-owner strong,
+.foundation-owner span,
+.foundation-handoff small,
+.foundation-handoff strong,
+.foundation-handoff span {
+  display: block;
+}
+
+.foundation-owner small,
+.foundation-handoff small {
+  margin-bottom: 0.15rem;
+  color: #315b7c;
+  font-size: 0.58rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.foundation-owner strong,
+.foundation-handoff strong {
+  color: #111;
+  font-size: 0.76rem;
+}
+
+.foundation-owner span,
+.foundation-handoff span {
+  margin-top: 0.18rem;
+  color: #333;
+  font-size: 0.64rem;
+  line-height: 1.4;
+}
+
+.foundation-concept-flow {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) 1.1rem minmax(0, 1.25fr) 1.1rem minmax(0, 1.25fr) 1.1rem minmax(0, 1.2fr) 1.1rem minmax(0, 1.15fr);
+  align-items: stretch;
+}
+
+.foundation-concept-node {
+  display: flex;
+  min-width: 0;
+  min-height: 10.2rem;
+  flex-direction: column;
+  padding: 0.75rem;
+  border: 1px solid #b8c7d7;
+  border-top: 0.28rem solid #526b82;
+  border-radius: 0.3rem;
+  background: #fff;
+  color: #111;
+  transition: box-shadow 120ms ease, transform 120ms ease;
+}
+
+.foundation-concept-node:hover,
+.foundation-concept-node:focus-visible,
+.foundation-concept-rails a:hover,
+.foundation-concept-rails a:focus-visible {
+  box-shadow: 0 0.2rem 0.65rem rgba(16, 35, 63, 0.15);
+  transform: translateY(-1px);
+}
+
+.foundation-concept-node small,
+.foundation-concept-node strong,
+.foundation-concept-node span,
+.foundation-concept-node em {
+  display: block;
+}
+
+.foundation-concept-node small {
+  margin-bottom: 0.3rem;
+  color: #526b82;
+  font-size: 0.57rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.foundation-concept-node strong {
+  color: #111;
+  font-size: 0.76rem;
+  line-height: 1.3;
+}
+
+.foundation-concept-node span {
+  margin-top: 0.38rem;
+  color: #333;
+  font-size: 0.64rem;
+  line-height: 1.45;
+}
+
+.foundation-concept-node em {
+  margin-top: auto;
+  padding-top: 0.55rem;
+  color: #173b7a;
+  font-size: 0.58rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.node-source {
+  border-top-color: #526b82;
+  background: #f5f7fa;
+}
+
+.node-source-aligned {
+  border-top-color: #1769aa;
+  background: #eef5fb;
+}
+
+.node-aggregate {
+  border-top-color: #0f7b78;
+  background: #edf7f5;
+}
+
+.node-consumer {
+  border-top-color: #5b4aa0;
+  background: #f3f1fa;
+}
+
+.node-outcome {
+  border-top-color: #287a57;
+  background: #eef7f1;
+}
+
+.foundation-concept-arrow {
+  position: relative;
+  align-self: center;
+  height: 2px;
+  background: #63778a;
+}
+
+.foundation-concept-arrow::after {
+  position: absolute;
+  top: -3px;
+  right: 0;
+  width: 7px;
+  height: 7px;
+  border-top: 2px solid #63778a;
+  border-right: 2px solid #63778a;
+  content: "";
+  transform: rotate(45deg);
+}
+
+.foundation-concept-handoff-arrow {
+  height: 0;
+  border-top: 2px dashed #44637f;
+  background: transparent;
+}
+
+.foundation-concept-rails {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.5rem;
+  margin-top: 0.8rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid #d6dee7;
+}
+
+.foundation-concept-rails a {
+  min-width: 0;
+  padding: 0.58rem 0.65rem;
+  border-left: 0.2rem solid #315b7c;
+  background: #f5f7fa;
+  color: #111;
+  transition: box-shadow 120ms ease, transform 120ms ease;
+}
+
+.foundation-concept-rails strong,
+.foundation-concept-rails span {
+  display: block;
+}
+
+.foundation-concept-rails strong {
+  font-size: 0.66rem;
+}
+
+.foundation-concept-rails span {
+  margin-top: 0.18rem;
+  color: #333;
+  font-size: 0.58rem;
+  line-height: 1.4;
+}
+
+@media screen and (max-width: 76em) {
+  .foundation-concept-flow {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .foundation-concept-node {
+    min-height: 0;
+  }
+
+  .foundation-concept-arrow {
+    justify-self: center;
+    width: 2px;
+    height: 1.05rem;
+  }
+
+  .foundation-concept-handoff-arrow {
+    height: 1.05rem;
+    border-top: 0;
+    border-left: 2px dashed #44637f;
+  }
+
+  .foundation-concept-arrow::after {
+    top: auto;
+    right: -3px;
+    bottom: 0;
+    transform: rotate(135deg);
+  }
+}
+
+@media screen and (max-width: 44.984375em) {
+  .foundation-concept-ownership,
+  .foundation-concept-rails {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Data Domain Design: foundation, accountability boundary, products, and consumers. */
+.domain-position {
+  margin: 1.2rem 0 1.5rem;
+  padding: 0.9rem;
+  border: 1px solid rgba(16, 35, 63, 0.2);
+  border-radius: 0.35rem;
+  background: #fff;
+  box-shadow: 0 0.3rem 1rem rgba(16, 35, 63, 0.08);
+}
+
+.domain-position a {
+  text-decoration: none;
+}
+
+.domain-position-foundation,
+.domain-position-consumption {
+  display: block;
+  padding: 0.75rem 0.85rem;
+  border-left: 0.28rem solid #173b7a;
+  background: #eaf0f8;
+  color: #111;
+}
+
+.domain-position-foundation small,
+.domain-position-foundation strong,
+.domain-position-foundation span,
+.domain-position-consumption small,
+.domain-position-consumption strong,
+.domain-position-consumption span {
+  display: block;
+}
+
+.domain-position-foundation small,
+.domain-position-consumption small,
+.domain-position-boundary small,
+.domain-position-products small {
+  margin-bottom: 0.18rem;
+  color: #315b7c;
+  font-size: 0.58rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.domain-position-foundation strong,
+.domain-position-consumption strong {
+  font-size: 0.8rem;
+}
+
+.domain-position-foundation span,
+.domain-position-consumption span {
+  margin-top: 0.2rem;
+  color: #333;
+  font-size: 0.65rem;
+  line-height: 1.4;
+}
+
+.domain-position-capabilities {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-right: 1px solid #d6dee7;
+  border-bottom: 1px solid #d6dee7;
+  border-left: 1px solid #d6dee7;
+}
+
+.domain-position-capabilities a {
+  min-width: 0;
+  padding: 0.65rem 0.75rem;
+  border-right: 1px solid #d6dee7;
+  color: #111;
+}
+
+.domain-position-capabilities a:last-child {
+  border-right: 0;
+}
+
+.domain-position-capabilities strong,
+.domain-position-capabilities span {
+  display: block;
+}
+
+.domain-position-capabilities strong {
+  font-size: 0.67rem;
+}
+
+.domain-position-capabilities span {
+  margin-top: 0.18rem;
+  color: #333;
+  font-size: 0.59rem;
+  line-height: 1.4;
+}
+
+.domain-position-arrow {
+  position: relative;
+  width: 2px;
+  height: 2.25rem;
+  margin: 0 auto;
+  background: #45657f;
+}
+
+.domain-position-arrow::after {
+  position: absolute;
+  right: -3px;
+  bottom: 0;
+  width: 7px;
+  height: 7px;
+  border-right: 2px solid #45657f;
+  border-bottom: 2px solid #45657f;
+  content: "";
+  transform: rotate(45deg);
+}
+
+.domain-position-arrow span {
+  position: absolute;
+  top: 50%;
+  left: 0.7rem;
+  width: 20rem;
+  color: #315b7c;
+  font-size: 0.58rem;
+  font-weight: 700;
+  line-height: 1.3;
+  transform: translateY(-50%);
+}
+
+.domain-position-boundary {
+  border: 2px solid #0f7b78;
+  border-radius: 0.3rem;
+  background: #fff;
+}
+
+.domain-position-boundary > header {
+  padding: 0.72rem 0.8rem;
+  background: #e5f3f1;
+}
+
+.domain-position-boundary header small,
+.domain-position-boundary header strong,
+.domain-position-boundary header span {
+  display: block;
+}
+
+.domain-position-boundary header strong {
+  color: #111;
+  font-size: 0.8rem;
+}
+
+.domain-position-boundary header span {
+  margin-top: 0.18rem;
+  color: #333;
+  font-size: 0.62rem;
+}
+
+.domain-position-responsibilities,
+.domain-position-products {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid #b9d7d4;
+}
+
+.domain-position-responsibilities > div {
+  min-width: 0;
+  padding: 0.62rem 0.7rem;
+  border-right: 1px solid #b9d7d4;
+}
+
+.domain-position-responsibilities > div:last-child {
+  border-right: 0;
+}
+
+.domain-position-responsibilities strong,
+.domain-position-responsibilities span {
+  display: block;
+}
+
+.domain-position-responsibilities strong {
+  color: #111;
+  font-size: 0.65rem;
+}
+
+.domain-position-responsibilities span {
+  margin-top: 0.18rem;
+  color: #333;
+  font-size: 0.58rem;
+  line-height: 1.4;
+}
+
+.domain-position-products {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  background: #f4faf9;
+}
+
+.domain-position-products a {
+  min-width: 0;
+  padding: 0.72rem 0.8rem;
+  border-right: 1px solid #b9d7d4;
+  color: #111;
+}
+
+.domain-position-products a:last-child {
+  border-right: 0;
+}
+
+.domain-position-products strong,
+.domain-position-products span {
+  display: block;
+}
+
+.domain-position-products strong {
+  font-size: 0.72rem;
+}
+
+.domain-position-products span {
+  margin-top: 0.25rem;
+  color: #333;
+  font-size: 0.6rem;
+  line-height: 1.45;
+}
+
+.domain-position-consumption {
+  border-left-color: #287a57;
+  background: #eef7f1;
+  text-align: center;
+}
+
+.domain-position-runtime {
+  display: flex;
+  gap: 0.55rem;
+  margin-top: 0.8rem;
+  padding: 0.58rem 0.7rem;
+  border: 1px dashed #718191;
+  background: #f7f8fa;
+  color: #333;
+  font-size: 0.61rem;
+  line-height: 1.4;
+}
+
+.domain-position-runtime strong {
+  flex: 0 0 auto;
+  color: #111;
+}
+
+.domain-position-capabilities a:hover,
+.domain-position-capabilities a:focus-visible,
+.domain-position-products a:hover,
+.domain-position-products a:focus-visible,
+.domain-position-foundation:hover,
+.domain-position-foundation:focus-visible,
+.domain-position-consumption:hover,
+.domain-position-consumption:focus-visible {
+  box-shadow: inset 0 0 0 2px rgba(23, 59, 122, 0.18);
+}
+
+@media screen and (max-width: 44.984375em) {
+  .domain-position-capabilities,
+  .domain-position-responsibilities,
+  .domain-position-products {
+    grid-template-columns: 1fr;
+  }
+
+  .domain-position-capabilities a,
+  .domain-position-responsibilities > div,
+  .domain-position-products a {
+    border-right: 0;
+    border-bottom: 1px solid #d6dee7;
+  }
+
+  .domain-position-capabilities a:last-child,
+  .domain-position-responsibilities > div:last-child,
+  .domain-position-products a:last-child {
+    border-bottom: 0;
+  }
+
+  .domain-position-arrow span {
+    left: 50%;
+    width: 14rem;
+    text-align: center;
+    transform: translate(-50%, -50%);
+  }
+
+  .domain-position-runtime {
+    flex-direction: column;
+  }
+}
+
 .decision-brief {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));

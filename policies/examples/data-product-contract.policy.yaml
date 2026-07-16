@@ -1,5 +1,5 @@
 apiVersion: architecture.foundation/v1alpha1
-kind: ArchitecturePolicy
+kind: ArchitectureDecisionPolicy
 metadata:
   id: DF-DATA-RULE-001
   title: Publishing contract required for live data products

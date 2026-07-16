@@ -2,7 +2,7 @@
 
 <div class="decision-brief"><div><small>Use when</small><strong>An outcome crosses two or more service boundaries.</strong></div><div><small>Decision</small><strong>Which service owns completion, and how are handoffs controlled and evidenced?</strong></div><div><small>Owner</small><strong>Integration architect with participating service owners.</strong></div><div><small>Output</small><strong>Interaction contracts, sequence, failure behavior, and end-to-end test.</strong></div></div>
 
-Integration design connects independently owned foundation services without merging their responsibilities. It defines stable interactions across the Experience, Control, Data, AI, Observability, and Security planes in the [Target Architecture](target-architecture.md).
+Integration design connects independently owned foundation services without merging their responsibilities. It defines stable interactions across the Experience, Control, Data, AI, Observability, and Security planes in the [Architecture Blueprint](target-architecture.md).
 
 ## Integration Principles
 
@@ -12,6 +12,7 @@ Integration design connects independently owned foundation services without merg
 4. Separate request acceptance from completed outcome; return durable workflow state for long-running work.
 5. Design timeout, retry, idempotency, compensation, reconciliation, and degraded operation before go-live.
 6. Prove the end-to-end outcome with correlated evidence, not only successful local calls.
+7. Treat agent delegation as another controlled service interaction: the receiving agent may narrow or reject a task but cannot widen identity, purpose, contract, scope, budget, or autonomy.
 
 ## Interaction Types
 
@@ -21,6 +22,7 @@ Integration design connects independently owned foundation services without merg
 | Asynchronous event | State change, telemetry, lineage, notification, or fan-out. | AsyncAPI and CloudEvents envelope, schema version, source, subject, event id, time, ordering, and replay behavior. |
 | Durable workflow | Approval, onboarding, provisioning, go-live, sharing, change, or recovery. | Workflow id, owner, state machine, gates, callbacks, expiry, compensation, and evidence links. |
 | Product port | Governed data query, table, API, event, file, feature, retrieval, or semantic interface. | Product and contract versions, consumer purpose, policy, SLO, obligations, and usage evidence. |
+| Agent task | Goal decomposition or delegated work between the assistant and a service specialist agent. | Task and parent ids, actor, delegated identity, purpose, contract references, scope, autonomy ceiling, budget, deadline, expected artifact, approval state, status, and correlation ids. |
 | Telemetry and evidence | Health, audit, lineage, cost, control result, and operational correlation. | OpenTelemetry or open lineage profile, semantic conventions, retention, access, and source authority. |
 
 ## Canonical Integration Flow
@@ -45,6 +47,30 @@ sequenceDiagram
 
 Not every flow calls every participant, but it uses the same authority, identity, correlation, and evidence rules.
 
+## Multi-Agent Coordination Flow
+
+```mermaid
+sequenceDiagram
+    participant User
+    participant Assistant as Data Service AI Assistant
+    participant Contract as Contract and Policy
+    participant Agent as Service Specialist Agent
+    participant Service as Deterministic Service
+    participant Evidence as Observability
+
+    User->>Assistant: Goal, purpose and constraints
+    Assistant->>Contract: Resolve authority and execution envelope
+    Contract-->>Assistant: Allowed scope, autonomy, gates and obligations
+    Assistant->>Agent: Typed delegated task
+    Agent->>Service: Execute registered skill within envelope
+    Service-->>Agent: State, result and receipt
+    Agent-->>Assistant: Artifact, evidence and remaining gaps
+    Assistant-->>User: Consolidated outcome and approvals
+    Service->>Evidence: Emit task, contract, policy and outcome trace
+```
+
+The assistant owns coordination and user-visible task state. The selected service owns completion and authoritative state. The agent owns neither policy nor approval.
+
 ## Critical Integration Flows
 
 | Outcome Owner | Flow | Participating Services | Primary Handoffs | End-to-End Evidence |
@@ -54,6 +80,7 @@ Not every flow calls every participant, but it uses the same authority, identity
 | Data Consumption Service | Governed product use | Portal or Assistant, Consumption, Platform Enablement, Observability. | Consumer purpose → service decision → data decision → port resolution → adapter execution → usage receipt. | Consumption contract, identity, purpose, decisions, obligations, product version, result, and trace. |
 | Data Sharing Service | External exchange | Portal, Sharing, Platform Enablement, Observability, Operations. | Recipient request → approval → minimized package → entitlement → delivery → expiry or revocation. | Recipient, contract, package, entitlement, delivery, usage, expiry, revocation, and deletion proof. |
 | Data Foundation Operations Service | Incident and recovery | Portal, Observability, affected lifecycle services, Platform Enablement, Operations. | Signal or request → impact → command → remediation → system and product recovery → communication. | Alert, incident, affected products and consumers, actions, recovery checks, communication, and improvement. |
+| Data Service AI Assistant | Contract-governed agent task | Portal, Assistant, selected service agents, contract and policy authorities, Observability. | User goal → task decomposition → contract and policy scope → delegated service tasks → deterministic execution → consolidated result. | Delegation chain, agent and skill versions, contract versions, scope, budgets, decisions, service receipts, outcome, and trace. |
 
 ## Failure Ownership
 
@@ -72,6 +99,7 @@ Every material integration records:
 - Initiator, outcome owner, participating services, target planes, and trust boundaries.
 - Interaction type, canonical schema, versioning, compatibility, and deprecation behavior.
 - Identity, purpose, service authorization, data authorization, and obligations.
+- Agent and skill versions, parent and child tasks, contract references, delegated scope, autonomy ceiling, budgets, approval state, and completion ownership.
 - Canonical identifiers and propagation rules.
 - Timeout, retry, idempotency, ordering, replay, compensation, reconciliation, and degraded mode.
 - SLO, telemetry, audit, lineage, evidence retention, and operational owner.
@@ -83,6 +111,7 @@ Every material integration records:
 - Long-running work exposes authoritative workflow state and safe cancellation or compensation.
 - Policy decisions and obligations are enforced at the receiving service.
 - One trace resolves from user intent through service actions, platform bindings, product outcome, and operational evidence.
+- Multi-agent handoffs preserve authority and contract scope, and each authoritative state change resolves to one deterministic service receipt.
 - Failure, retry, duplicate, timeout, partial completion, revocation, and recovery paths are tested.
 
-<div class="read-next"><strong>Next:</strong> map the integration to the Architecture Design Map, then add its end-to-end evidence to the Architecture to Operations traceability record.</div>
+<div class="read-next"><strong>Next:</strong> map the integration to the Architecture Design Map, assign the accountable data service, then add its end-to-end evidence to the Architecture to Delivery record.</div>

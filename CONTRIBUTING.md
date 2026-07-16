@@ -10,7 +10,7 @@
 ## Authoring Rules
 
 - Keep principles directional, rules atomic, and criteria observable.
-- Use the Architecture Policy Language for normative content.
+- Use the Architecture Decision Policy for normative architecture content.
 - Preserve stable ids and avoid renaming concepts without migration guidance.
 - Keep the technology-neutral contract separate from reference-solution bindings.
 - Add evidence rather than unsupported maturity or implementation claims.

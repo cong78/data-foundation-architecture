@@ -26,4 +26,4 @@
 - Observability and operations can detect impact, communicate, recover, and roll back.
 - Consumers can subscribe to change and incident notifications.
 
-Authoritative inputs: [Product Management Standard](../standards/data-product-management-standard.md), [Product Lifecycle](../architecture/data-product-lifecycle-design.md), and [Data Product Template](../delivery-templates/data-product-template.md).
+Authoritative inputs: [Product Management Standard](../standards/data-product-management-standard.md), [Product Lifecycle](../architecture/data-product-lifecycle-design.md), and [Data Product Template](../reference-solutions/data-product-template.md).

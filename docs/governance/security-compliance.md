@@ -27,6 +27,9 @@ Security and compliance controls must be embedded across ingestion, product crea
 - Maintain evidence for compliance reviews and model risk management.
 - Treat retrieved content and tool output as untrusted input that cannot redefine agent goals or permissions.
 - Limit every agent to registered skills, least-privilege scopes, bounded autonomy, time and cost budgets.
+- Require every delegated agent task to preserve the user or workload subject, agent actor, purpose, contract references, approved scope, autonomy class, and correlation id.
+- Re-evaluate authority at each service boundary; a receiving agent may narrow or reject delegated authority but cannot widen it.
+- Suspend affected agent execution when a governing contract, entitlement, identity, skill, or policy is expired, revoked, or quarantined.
 - Require independent approval summaries and step-up authorization for privileged, destructive, external or high-cost actions.
 - Isolate and govern conversation, working, preference and organizational memory.
 - Test prompt injection, tool misuse, excessive agency, privilege escalation, memory poisoning and data exfiltration.

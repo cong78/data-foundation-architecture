@@ -1,10 +1,10 @@
-# Architecture Policy Language
+# Architecture Decision Policy
 
-<div class="decision-brief"><div><small>Use when</small><strong>Writing a principle, architecture rule, or acceptance criterion.</strong></div><div><small>Decision</small><strong>Is this direction, obligation, or proof?</strong></div><div><small>Owner</small><strong>Architecture policy owner.</strong></div><div><small>Output</small><strong>Readable policy bundle with executable decisions and evidence.</strong></div></div>
+<div class="decision-brief"><div><small>Use when</small><strong>Writing a principle, architecture rule, or acceptance criterion.</strong></div><div><small>Decision</small><strong>Is this direction, obligation, or proof?</strong></div><div><small>Owner</small><strong>Architecture decision policy owner.</strong></div><div><small>Output</small><strong>Readable decision policy with executable criteria and evidence.</strong></div></div>
 
 ## Definition
 
-The Architecture Policy Language is the common way to express architecture intent as both readable guidance and policy as code. It separates three things that are often mixed together:
+The Architecture Decision Policy is the common way to express architecture intent as readable guidance and policy as code. It governs how architecture decisions become explicit, versioned, testable, enforceable, and evidenced. It separates three things that are often mixed together:
 
 | Type | Purpose | Required form | Machine behavior |
 | --- | --- | --- | --- |
@@ -12,7 +12,7 @@ The Architecture Policy Language is the common way to express architecture inten
 | **Rule** | State one obligation, prohibition, recommendation, or permitted option. | `[Subject] MUST / MUST NOT / SHOULD / SHOULD NOT / MAY [behavior] [condition].` | Maps to an enforcement outcome at named control points. |
 | **Criterion** | Prove whether one rule is met for one evaluated object. | `PASS when [observable condition], evidenced by [authority].` | Resolves a named policy decision from structured input. |
 
-A complete policy bundle connects **principle → rule → criterion → decision → evidence**. A diagram, paragraph, checklist item, or technology default is not an enforceable architecture policy until that chain is explicit.
+A complete policy bundle connects **principle → rule → criterion → decision → evidence**. A diagram, paragraph, checklist item, or technology default is not an enforceable architecture decision policy until that chain is explicit.
 
 ## Open Profile
 
@@ -137,7 +137,7 @@ opa eval \
   data.architecture.data_product_contract.decision
 ```
 
-Use the [Architecture Policy Template](../delivery-templates/architecture-policy-template.md) to create another bundle.
+Use the [Architecture Decision Policy Template](../reference-solutions/architecture-policy-template.md) to create another bundle.
 
 ## Minimum Done Criteria
 
@@ -151,4 +151,4 @@ Use the [Architecture Policy Template](../delivery-templates/architecture-policy
 - Decisions emit correlated, time-stamped evidence without logging prohibited input data.
 - A policy engine can be replaced without changing the policy identifiers or decision meaning.
 
-<div class="read-next"><strong>Next:</strong> use Principles for direction, this language for enforceable rules, and the policy template for a machine-executable bundle.</div>
+<div class="read-next"><strong>Next:</strong> use Principles for direction, this decision policy for enforceable rules, and the policy template for a machine-executable bundle.</div>

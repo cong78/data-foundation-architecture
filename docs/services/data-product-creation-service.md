@@ -2,9 +2,11 @@
 
 <div class="decision-brief"><div><small>Use when</small><strong>Building or changing an aggregate or consumer-aligned product.</strong></div><div><small>Decision</small><strong>Which product design, workload, tests, and gates are required?</strong></div><div><small>Owner</small><strong>Product creation service owner with domain product owner.</strong></div><div><small>Output</small><strong>Live product version with stable ports and evidence.</strong></div></div>
 
-## Definition
+## Purpose and Definition
 
 The Data Product Creation Service provides the shared engineering path used by federated domain teams to create, change, release, and retire aggregate and consumer-aligned data products. The platform team owns the service and paved paths; the domain product owner owns product meaning, fitness, lifecycle, and consumer outcome.
+
+It exists to give domain teams freedom over business meaning without forcing each team to rebuild environments, controls, testing, release, lineage, and operational foundations.
 
 ## Scope and Boundaries
 
@@ -19,8 +21,8 @@ The Data Product Creation Service provides the shared engineering path used by f
 | Concern | Alignment |
 | --- | --- |
 | Primary planes | Data and Control |
-| Supporting planes | Security and Observability |
-| Shared capabilities | Data Product Creation Contract, domain and lifecycle models, semantic context, developer experience, catalog, Delta storage, policy, lineage, and telemetry. |
+| Supporting planes | AI, Security, and Observability |
+| Shared capabilities | Data Product Creation Contract, agentic foundation, domain and lifecycle models, semantic context, developer experience, catalog, governed product storage, policy, lineage, and telemetry. |
 | Integration flows | Propose product, provision workspace, build, validate, compatibility review, go-live, publish ports, change, rollback, and retire. |
 
 ## Service Architecture
@@ -39,6 +41,15 @@ flowchart LR
 ```
 
 Product code, Data Product Creation Contract, embedded descriptor, semantic context, tests, workload, release, and rollback target are versioned together.
+
+## Agentic Interaction
+
+| Concern | Service Agent Contract |
+| --- | --- |
+| Specialist role | Product creation agent that prepares designs and workloads, builds, tests, evaluates readiness, and operates approved releases. |
+| Declarative boundary | Published Data Product Creation Contract, product workload, accepted inputs, domain ownership, policy, and environment profile. |
+| Autonomous range | Generate or change code drafts, build, test, deploy to pre-approved environments, diagnose, and roll back safely. |
+| Must defer | Product meaning, accepted exceptions, go-live, breaking changes, and retirement remain accountable owner decisions. |
 
 ## Core Capabilities
 
@@ -90,7 +101,7 @@ Product code, Data Product Creation Contract, embedded descriptor, semantic cont
 
 ## Reference Solutions
 
-[Data Product Creation Design](../architecture/data-product-creation-design.md) maps this service to Databricks workspaces, Declarative Automation Bundles, Unity Catalog, and Delta Lake. It is a selected reference profile; canonical product and contract meaning remain provider-independent.
+[Data Product Creation Design](../reference-solutions/data-product-creation-design.md) maps this service to Databricks workspaces, Declarative Automation Bundles, Unity Catalog, and Delta Lake. It is a selected reference profile; canonical product and contract meaning remain provider-independent.
 
 ## Done Criteria
 
@@ -99,4 +110,5 @@ Product code, Data Product Creation Contract, embedded descriptor, semantic cont
 - Mandatory go-live gates fail closed and approved exceptions expire.
 - Consumers bind to stable logical ports rather than workspace, table path, or provider credentials.
 - Change, rollback, deprecation, retirement, and recovery are exercised with consumer-impact evidence.
+- The product creation agent preserves contract, workload, policy, and environment scope, while go-live and accepted exceptions remain independently controlled.
 - Product health, usage, cost, value, and support evidence are visible to owners.

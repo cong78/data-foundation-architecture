@@ -2,9 +2,11 @@
 
 <div class="decision-brief"><div><small>Use when</small><strong>Coordinating support, response, change, recovery, or improvement.</strong></div><div><small>Decision</small><strong>Who owns the response and what proves recovery?</strong></div><div><small>Owner</small><strong>Foundation operations owner with affected service owners.</strong></div><div><small>Output</small><strong>Owned operational record, communication, and recovery evidence.</strong></div></div>
 
-## Definition
+## Purpose and Definition
 
 The Data Foundation Operations Service turns user needs, health signals, planned changes, and operational risks into accountable support, incident, problem, change, release, continuity, recovery, communication, and improvement workflows across all foundation services.
+
+It exists to connect service health, product trust, consumer impact, ownership, communication, and recovery instead of leaving each service to coordinate operational response independently.
 
 ## Scope and Boundaries
 
@@ -19,8 +21,8 @@ The Data Foundation Operations Service turns user needs, health signals, planned
 | Concern | Alignment |
 | --- | --- |
 | Primary planes | Experience and Control |
-| Supporting planes | Observability and Security |
-| Shared capabilities | Service ownership, workflow, telemetry, identity, responder authority, change, continuity, runbooks, and evidence retention. |
+| Supporting planes | AI, Observability, and Security |
+| Shared capabilities | Agentic foundation, service ownership, workflow, telemetry, identity, responder authority, change, continuity, runbooks, and evidence retention. |
 | Integration flows | Support, incident, problem, change, release, recovery, continuity, communication, and improvement. |
 
 ## Service Architecture
@@ -40,6 +42,15 @@ flowchart LR
 ```
 
 Operations owns coordination and authoritative operational records. The affected service or product team owns technical diagnosis and remediation.
+
+## Agentic Interaction
+
+| Concern | Service Agent Contract |
+| --- | --- |
+| Specialist role | Operations agent that triages, coordinates responders, communicates status, invokes runbooks, and verifies recovery evidence. |
+| Declarative boundary | Service ownership, incident or change record, responder authority, approved runbook, policy, impact, and recovery criteria. |
+| Autonomous range | Classify, route, correlate impact, communicate, execute pre-approved recovery, escalate, and track improvement. |
+| Must defer | Risk acceptance, unapproved privileged remediation, major change, and incident closure without system and product recovery evidence. |
 
 ## Core Capabilities
 
@@ -92,7 +103,7 @@ Operations owns coordination and authoritative operational records. The affected
 
 ## Reference Solutions
 
-No service-management vendor is mandated. A selected implementation must preserve stable foundation identifiers, product-impact context, workflow authority, API integration, permission-filtered status, exportability, and an exit path. Use the [Architecture to Operations Map](../foundation/architecture-service-operations-map.md) and [Service Runbook Template](../delivery-templates/service-runbook-template.md).
+No service-management vendor is mandated. A selected implementation must preserve stable foundation identifiers, product-impact context, workflow authority, API integration, permission-filtered status, exportability, and an exit path. Use [Architecture to Delivery](../foundation/architecture-to-delivery.md) and the [Service Runbook Template](../reference-solutions/service-runbook-template.md).
 
 ## Done Criteria
 
@@ -101,4 +112,5 @@ No service-management vendor is mandated. A selected implementation must preserv
 - Alerts create or enrich deduplicated operational records with affected products and consumers.
 - Support, incident, problem, change, release, continuity, recovery, and improvement flows are exercised.
 - Recovery is proven from telemetry through system, product, control, and consumer outcomes.
+- The operations agent uses approved runbooks and responder authority; autonomous recovery, escalation, suspension, and deterministic fallback are exercised.
 - Operational evidence is searchable, permission-filtered, retained, and linked to architecture, service, change, and improvement decisions.

@@ -77,47 +77,28 @@ nav:
   - Start Here:
       - Overview: index.md
       - Foundation in One View: foundation/foundation-in-one-view.md
-      - Architecture to Operations: foundation/architecture-service-operations-map.md
-      - Choose an Action: playbooks/index.md
+      - Architecture to Delivery: foundation/architecture-to-delivery.md
       - How to Use This Guide: foundation/guidance-model.md
       - Definition and Scope: foundation/definition-and-scope.md
-      - Principles: foundation/principles.md
+      - Design Principles: foundation/principles.md
       - Glossary: foundation/glossary.md
   - Architecture:
       - Overview: architecture/overview.md
-      - Target Architecture: architecture/target-architecture.md
+      - Architecture Blueprint: architecture/target-architecture.md
+      - Data Foundation Model: architecture/data-foundation-model.md
       - Architecture Design Map: architecture/design-map.md
-      - Shared Capability Designs:
-          - Shared Platform Capabilities: architecture/platform-foundation-design.md
-          - Data Foundation Model: architecture/data-foundation-model.md
+      - Core Guidance:
+          - Platform Architecture Design:
+              - Platform Architecture: architecture/reference-architecture.md
+              - Integration Design: architecture/integration-design.md
           - Data Contract Design: architecture/data-contract-design.md
           - Data Domain Design: architecture/data-domain-design.md
           - Data Product Lifecycle Design: architecture/data-product-lifecycle-design.md
           - Semantic and Context Design: architecture/semantic-context-design.md
           - Unified Access Design: architecture/unified-access-design.md
+          - Shared Platform Capabilities: architecture/platform-foundation-design.md
           - Data Product Developer Experience: architecture/data-product-developer-experience.md
-          - Agentic Data Foundation: architecture/agentic-data-foundation.md
-      - Integration Designs:
-          - Reference Architecture: architecture/reference-architecture.md
-          - Integration Design: architecture/integration-design.md
-      - Reference Solutions:
-          - Data Ingestion - Databricks: architecture/data-ingestion-design.md
-          - Data Product Creation - Databricks: architecture/data-product-creation-design.md
-          - Data Consumption - Databricks: architecture/data-consumption-design.md
-          - Data Sharing - Databricks: architecture/data-sharing-design.md
-          - Observability - Databricks and Grafana: architecture/observability-design.md
-      - AI Skills:
-          - Data Foundation Architecture Agent: architecture/data-foundation-architecture-agent.md
-          - Data Foundation Architect Skill: architecture/data-foundation-architect-skill.md
-          - Data Contract Designer Skill: architecture/data-contract-designer-skill.md
-      - Implementation:
-          - Architecture Blueprint: implementation/implementation-blueprint.md
-          - Architecture Patterns: implementation/service-implementation-patterns.md
-      - Governance and Operations:
-          - Governance Overview: governance/index.md
-          - Governance Model: governance/governance-model.md
-          - Security and Compliance: governance/security-compliance.md
-          - Operating Model: governance/operating-model.md
+          - Agentic Data Service Design: architecture/agentic-data-foundation.md
   - Services:
       - Services Overview: services/index.md
       - Data Service Portal: services/data-service-portal.md
@@ -129,18 +110,8 @@ nav:
       - Platform Enablement Service: services/platform-enablement-service.md
       - Data Observability Service: services/data-observability-service.md
       - Data Foundation Operations Service: services/data-foundation-operations-service.md
-  - Playbooks:
-      - Choose an Action: playbooks/index.md
-      - Onboard a Data Domain: playbooks/onboard-data-domain.md
-      - Onboard a Source: playbooks/onboard-source.md
-      - Create or Change a Data Product: playbooks/create-change-data-product.md
-      - Approve Product Go-Live: playbooks/approve-product-go-live.md
-      - Consume a Data Product: playbooks/consume-data-product.md
-      - Share a Data Product: playbooks/share-data-product.md
-      - Operate a Service or Product: playbooks/operate-service-product.md
   - Standards:
       - Standards Overview: standards/index.md
-      - Architecture Policy Language: standards/architecture-policy-language.md
       - Data Contract Standard: standards/data-contract-standard.md
       - Access Control Standard: standards/access-control-standard.md
       - Data Catalog and Storage Standard: standards/catalog-storage-standard.md
@@ -152,29 +123,56 @@ nav:
       - Agent, Skill and LLM Standard: standards/agent-skill-llm-standard.md
       - Technology Selection Standard: standards/technology-selection-standard.md
   - Decisions:
+      - Architecture Decision Policy: decisions/architecture-decision-policy.md
       - Decision Register: implementation/architecture-decisions.md
       - ADR-001 Central and Federated Ownership: decisions/adr-001-central-federated-ownership.md
       - ADR-002 Unity Catalog: decisions/adr-002-unity-catalog.md
       - ADR-003 Delta Storage: decisions/adr-003-delta-storage.md
       - ADR-004 Unified Data Access: decisions/adr-004-unified-data-access.md
       - ADR-005 Observability Platforms: decisions/adr-005-observability-platforms.md
-  - Delivery:
-      - Delivery Overview: delivery/index.md
-      - Runway: runway.md
-      - Assess:
+  - Governance:
+      - Governance Overview: governance/index.md
+      - Governance Model: governance/governance-model.md
+      - Security and Compliance: governance/security-compliance.md
+      - Operating Model: governance/operating-model.md
+  - Runbooks:
+      - Runbooks Overview: runbooks/index.md
+      - Action Playbooks:
+          - Choose an Action: playbooks/index.md
+          - Onboard a Data Domain: playbooks/onboard-data-domain.md
+          - Onboard a Source: playbooks/onboard-source.md
+          - Create or Change a Data Product: playbooks/create-change-data-product.md
+          - Approve Product Go-Live: playbooks/approve-product-go-live.md
+          - Consume a Data Product: playbooks/consume-data-product.md
+          - Share a Data Product: playbooks/share-data-product.md
+          - Operate a Service or Product: playbooks/operate-service-product.md
+      - Plan and Assess:
+          - Runway: runway.md
           - Architecture Dashboard: assessments/architecture-dashboard.md
           - Industry Alignment: assessments/industry-alignment.md
           - Data Foundation Maturity Assessment: assessments/data-foundation-maturity-assessment.md
-      - Apply Templates:
-          - Architecture Policy Template: delivery-templates/architecture-policy-template.md
-          - Data Product Template: delivery-templates/data-product-template.md
-          - Data Domain Onboarding Record: delivery-templates/data-domain-onboarding-template.md
-          - Data Product Workload Template: delivery-templates/data-product-workload-template.md
-          - Service Runbook Template: delivery-templates/service-runbook-template.md
-          - Technology Selection Record: delivery-templates/technology-selection-template.md
-          - Source Onboarding Template: delivery-templates/source-onboarding-template.md
-          - Interoperability Conformance: delivery-templates/interoperability-conformance-template.md
-          - Agent and Skill Template: delivery-templates/agent-skill-template.md
-      - Learn from Examples:
-          - Customer Profile Data Product: examples/customer-profile-example.md
-          - Data Service AI Assistant: examples/data-service-ai-assistant-example.md
+      - Implementation Guidance:
+          - Implementation Blueprint: implementation/implementation-blueprint.md
+          - Architecture Patterns: implementation/service-implementation-patterns.md
+      - Agentic Architecture:
+          - Data Foundation Architecture Agent: architecture/data-foundation-architecture-agent.md
+          - Data Foundation Architect Skill: architecture/data-foundation-architect-skill.md
+          - Data Contract Designer Skill: architecture/data-contract-designer-skill.md
+      - Reference Solutions:
+          - Overview: reference-solutions/index.md
+          - Selected Technology Profiles:
+              - Data Ingestion - Databricks: reference-solutions/data-ingestion-design.md
+              - Data Product Creation - Databricks: reference-solutions/data-product-creation-design.md
+              - Data Consumption - Databricks: reference-solutions/data-consumption-design.md
+              - Data Sharing - Databricks: reference-solutions/data-sharing-design.md
+              - Observability - Databricks and Grafana: reference-solutions/observability-design.md
+          - Reusable Reference Records:
+              - Architecture Decision Policy: reference-solutions/architecture-policy-template.md
+              - Data Product: reference-solutions/data-product-template.md
+              - Data Domain Onboarding: reference-solutions/data-domain-onboarding-template.md
+              - Data Product Workload: reference-solutions/data-product-workload-template.md
+              - Service Runbook: reference-solutions/service-runbook-template.md
+              - Technology Selection: reference-solutions/technology-selection-template.md
+              - Source Onboarding: reference-solutions/source-onboarding-template.md
+              - Interoperability Conformance: reference-solutions/interoperability-conformance-template.md
+              - Agent and Skill: reference-solutions/agent-skill-template.md

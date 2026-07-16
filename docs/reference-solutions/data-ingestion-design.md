@@ -214,7 +214,7 @@ Deployment may be regional or physically distributed, but the foundation platfor
 - Test concurrency, throughput, lag, source throttling, cost limits, regional recovery, and connector replacement.
 - Recreate the golden paths from canonical artifacts in a clean workspace and verify evidence export.
 
-## Open Architecture Decisions
+## Open Design Choices
 
 | Decision | Required outcome |
 | --- | --- |

@@ -15,7 +15,8 @@ The data foundation requires governance that is practical, embedded, and account
 | Consumer owner | Owns correct use of data within BI, applications, platforms, or AI systems. |
 | Contract owner | Owns data contract accuracy, versioning, compatibility decisions, and change communication. |
 | Product portfolio owner | Owns portfolio health across a domain, including duplication, adoption, lifecycle, cost, and retirement decisions. |
-| Agent owner | Owns the agent goal, boundaries, autonomy, evaluation, lifecycle and business outcome. |
+| Service agent owner | Owns a service agent's goal, delegated actions, autonomy limits, evaluation, lifecycle, deterministic fallback, and business outcome. This is normally the service owner or an accountable delegate. |
+| AI Assistant owner | Owns multi-agent coordination, task routing, user interaction, delegation integrity, and end-to-end task status; does not assume accountability for specialist service decisions. |
 | Skill owner | Owns the skill contract, authorization, reliability, tests and compatibility. |
 | Model platform owner | Owns approved LLM profiles, routing, provider controls, availability and cost. |
 
@@ -32,6 +33,15 @@ The data foundation requires governance that is practical, embedded, and account
 - Data contract approval, compatibility, versioning, and exception handling.
 - Data product go-live, portfolio health, duplication management, and retirement.
 - Agent, skill, prompt, model profile, context, memory and evaluation governance.
+
+## Multi-Agent Decision Rights
+
+- The user or accountable owner approves the intent, purpose, contract, and autonomy class.
+- The contract owner approves the declarative execution envelope and its lifecycle.
+- The AI Assistant may interpret, plan, route, and coordinate work, but cannot widen authority or approve its own exception.
+- Each service owner remains accountable for its specialist agent, typed skills, deterministic APIs, evidence, and recovery path.
+- A receiving service agent may narrow, reject, or escalate a delegated task; it cannot add purpose, scope, tools, data, budget, or autonomy.
+- Contract suspension, expiry, or revocation removes the associated execution authority at the next policy decision.
 
 ## Decision Forums
 

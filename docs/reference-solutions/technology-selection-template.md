@@ -120,4 +120,4 @@ Score 0-5 and attach evidence plus confidence for every score.
 
 **Approvers:**
 
-**Linked ADR:**
+**Published guidance implemented:**

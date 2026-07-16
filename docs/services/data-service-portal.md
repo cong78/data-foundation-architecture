@@ -2,9 +2,11 @@
 
 <div class="decision-brief"><div><small>Use when</small><strong>Designing a user entry point or foundation journey.</strong></div><div><small>Decision</small><strong>What belongs in the portal versus an authoritative service?</strong></div><div><small>Owner</small><strong>Portal owner with journey and service owners.</strong></div><div><small>Output</small><strong>Coherent journey, state boundary, and evidence view.</strong></div></div>
 
-## Definition
+## Purpose and Definition
 
 The Data Service Portal is the user entry point for the data foundation. It combines the Data Product Marketplace, source and product journeys, contract management, access requests, operational engagement, and the Data Service AI Assistant without becoming a competing catalog, policy, contract, workflow, or observability authority.
+
+It exists to hide organizational and platform complexity behind coherent journeys while keeping every decision traceable to its authoritative service.
 
 ## Scope and Boundaries
 
@@ -19,8 +21,8 @@ The Data Service Portal is the user entry point for the data foundation. It comb
 | Concern | Alignment |
 | --- | --- |
 | Primary plane | Experience |
-| Supporting planes | Control and Security; AI and Observability where assistant or health views are used. |
-| Shared capabilities | Product and contract models, semantic context, identity, policy, workflow, catalog, and telemetry. |
+| Supporting planes | AI, Control, and Security; Observability where health views are used. |
+| Shared capabilities | Product and contract models, agentic foundation, semantic context, identity, policy, workflow, catalog, and telemetry. |
 | Integration flows | Discover and request, onboard source, create product, approve go-live, consume, share, support, and operate. |
 
 ## Service Architecture
@@ -44,6 +46,15 @@ flowchart LR
 ```
 
 Portal-owned state is limited to experience state, drafts, preferences, tasks, notifications, and rebuildable projections. Every displayed decision or trust signal identifies its authority and observation time.
+
+## Agentic Interaction
+
+| Concern | Service Agent Contract |
+| --- | --- |
+| Specialist role | Journey agent that captures intent, composes service tasks, explains status, and presents approvals and evidence through the Data Service AI Assistant. |
+| Declarative boundary | User task, identity, current journey, applicable data contracts, and permission-filtered projections. |
+| Autonomous range | Guide, search, compare, prepare drafts, maintain task state, and route work. |
+| Must defer | Authoritative product, contract, policy, access, deployment, and operational state changes remain with their owning services. |
 
 ## Core Capabilities
 
@@ -111,7 +122,7 @@ Declared contract targets must remain visually and semantically distinct from cu
 
 No portal technology is mandated. A selected implementation must prove channel parity, authority separation, accessible responsive behavior, search freshness, workflow recovery, policy enforcement, telemetry, exportability, and an exit path.
 
-Related shared designs: [Architecture Design Map](../architecture/design-map.md), [Integration Design](../architecture/integration-design.md), [Data Contract Design](../architecture/data-contract-design.md), and [Agentic Data Foundation](../architecture/agentic-data-foundation.md).
+Related shared designs: [Architecture Design Map](../architecture/design-map.md), [Integration Design](../architecture/integration-design.md), [Data Contract Design](../architecture/data-contract-design.md), and [Agentic Data Service Design](../architecture/agentic-data-foundation.md).
 
 ## Done Criteria
 
@@ -120,4 +131,5 @@ Related shared designs: [Architecture Design Map](../architecture/design-map.md)
 - Contract changes, access decisions, product go-live, sharing, and operational actions use authoritative workflows and return receipts.
 - Portal failure or projection rebuild does not lose canonical foundation state.
 - Portal, API, CLI, and assistant channels enforce the same identity, policy, approval, and evidence rules.
+- The journey agent exposes typed tasks, preserves contract and delegation scope, and can be suspended without blocking deterministic portal journeys.
 - Journey success, failure, abandonment, recovery, and user outcome are observable.

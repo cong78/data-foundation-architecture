@@ -208,7 +208,7 @@ class ArchitectureAgent:
     def _trace_architecture(self, request: dict[str, Any]) -> dict[str, Any]:
         query = request["query"]
         trace_queries = (
-            ("architecture", f"{query} target architecture design map"),
+            ("architecture", f"{query} architecture blueprint design map"),
             ("service", f"{query} service architecture capabilities runbook"),
             ("standard", f"{query} standard conformance requirements"),
             ("playbook", f"{query} playbook workflow evidence done criteria"),

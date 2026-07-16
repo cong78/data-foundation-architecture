@@ -73,7 +73,7 @@ The [Architecture Design Map](../architecture/design-map.md) maps every service 
 
 ## Agentic Access
 
-The [Data Service AI Assistant](data-service-ai-assistant.md) and [Agentic Data Foundation](../architecture/agentic-data-foundation.md) make these services accessible through governed agents and typed skills. Agentic access is cross-cutting; it does not create a parallel set of foundation services.
+Every service is agentic by design: it exposes typed skills and defines a service-owned specialist agent, applicable contracts, autonomy ceiling, and deterministic fallback. The [Data Service AI Assistant](data-service-ai-assistant.md) coordinates those agents through one user experience. Agentic access is cross-cutting; it does not create a parallel set of foundation services or move authority away from service owners.
 
 ## Canonical Service Page
 
@@ -81,10 +81,11 @@ Each service page is the single technology-neutral authority for that service. U
 
 | Section | Required Decision or Output |
 | --- | --- |
-| Definition | What the service is and the outcome it owns. |
+| Purpose and Definition | Why the service is needed, what it is, and the outcome it owns. |
 | Scope and Boundaries | What it owns and explicitly does not own. |
 | Architecture Alignment | Primary and supporting target planes, shared foundations, and integration flows. |
 | Service Architecture | Readable logical design and its key authority boundary. |
+| Agentic Interaction | Specialist-agent role, declarative contract boundary, permitted autonomy, and mandatory deferral points. |
 | Core Capabilities | Category, stable capability, and owned outcome. |
 | Contracts and Interfaces | APIs, events, workflows, ports, and their required contracts. |
 | Integrations and Dependencies | What the service consumes and provides at each dependency. |
@@ -97,11 +98,10 @@ Specialized decisions may add one focused section, but they must not replace or 
 
 For architecture delivery guidance, use:
 
-- [Architecture to Operations Map](../foundation/architecture-service-operations-map.md)
-- [Architecture Blueprint](../implementation/implementation-blueprint.md)
+- [Architecture to Delivery](../foundation/architecture-to-delivery.md)
+- [Implementation Blueprint](../implementation/implementation-blueprint.md)
 - [Architecture Patterns](../implementation/service-implementation-patterns.md)
-- [Architecture Decisions](../implementation/architecture-decisions.md)
-- [Service Runbook Template](../delivery-templates/service-runbook-template.md)
+- [Service Runbook Template](../reference-solutions/service-runbook-template.md)
 
 ## End-to-End Product Flow
 
@@ -132,4 +132,4 @@ flowchart LR
 
 ## Related Standards
 
-Use the [Standards Overview](../standards/index.md) to map every service to its applicable architecture policy, contract, access, catalog and storage, product management, workload, interoperability, telemetry, AI, agent, and technology-selection controls.
+Use the [Standards Overview](../standards/index.md) to map every service to its applicable architecture decision policy, contract, access, catalog and storage, product management, workload, interoperability, telemetry, AI, agent, and technology-selection controls.

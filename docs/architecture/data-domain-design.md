@@ -4,19 +4,49 @@
 
 A **data domain** is a stable business-aligned accountability boundary within the shared data foundation. It groups related business meaning, product ownership, stewardship, source relationships, consumers, policies, and portfolio decisions. It does not create a separate data foundation or permit a domain-specific bypass around shared controls.
 
-The enterprise foundation provides common services, centrally managed source-aligned products, standards, identity, policy, telemetry, and evidence. A domain adopts those capabilities and owns aggregate and consumer-aligned products and business decisions inside its declared boundary. The domain is an accountability and portfolio boundary, not a separate product type; every live product is reusable by design.
+The Data Foundation Platform Team provides shared services and centrally manages source-aligned products. Domains adopt the foundation's standards and shared identity, policy, telemetry, and evidence capabilities while owning aggregate and consumer-aligned products and business decisions inside their declared boundaries. A domain is an accountability and portfolio boundary, not a separate product type; every live product is reusable by design.
 
 ## Position in the Foundation
 
-```mermaid
-flowchart TB
-    F["Shared Data Foundation<br/>services · standards · controls · evidence"]
-    D["Registered Data Domains<br/>business boundaries · accountability · portfolios"]
-    P["Governed Data Products<br/>contracts · semantics · quality · lifecycle"]
-    C["Product Ports and Data Product Consumption Contracts<br/>BI · applications · platforms · partners · AI"]
+<div class="domain-position" aria-label="Position of a data domain in the shared data foundation">
+  <a class="domain-position-foundation" href="../reference-architecture/">
+    <small>Shared data foundation</small>
+    <strong>One governed path used by every domain</strong>
+    <span>Platform services · standards · identity · policy · telemetry · evidence</span>
+  </a>
+  <div class="domain-position-capabilities">
+    <a href="../../services/platform-enablement-service/"><strong>Platform Enablement</strong><span>Contracts · storage · identity · integration · automation</span></a>
+    <a href="../../services/data-ingestion-service/"><strong>Central source-aligned ownership</strong><span>Source onboarding · raw landing · validated source-aligned products</span></a>
+    <a href="../target-architecture/"><strong>Common architecture and controls</strong><span>Service boundaries · standards · policy · telemetry · evidence</span></a>
+  </div>
 
-    F --> D --> P --> C
-```
+  <div class="domain-position-arrow" aria-hidden="true"><span>Published source-aligned contract</span></div>
+
+  <section class="domain-position-boundary">
+    <header><small>Registered data domain</small><strong>Business accountability and product portfolio boundary</strong><span>Stable identity independent of workspace, catalog, account, region, or team structure</span></header>
+    <div class="domain-position-responsibilities">
+      <div><strong>Meaning and stewardship</strong><span>Business concepts · definitions · quality decisions</span></div>
+      <div><strong>Portfolio accountability</strong><span>Priorities · ownership · value · cost · lifecycle</span></div>
+      <div><strong>Consumer outcomes</strong><span>Use cases · adoption · support · measurable value</span></div>
+    </div>
+    <div class="domain-position-products">
+      <a href="../../services/data-product-creation-service/"><small>Federated product ownership</small><strong>Aggregate products</strong><span>Harmonized, combined, calculated, or derived data with explicit grain and reusable domain meaning</span></a>
+      <a href="../../services/data-product-creation-service/"><small>Optional purpose alignment</small><strong>Consumer-aligned products</strong><span>Fit-for-purpose projection when interface, policy, latency, or semantics differ for a known use</span></a>
+    </div>
+  </section>
+
+  <div class="domain-position-arrow" aria-hidden="true"><span>Governed product ports · Data Product Consumption Contract</span></div>
+
+  <a class="domain-position-consumption" href="../../services/data-consumption-service/">
+    <small>Consumption and exchange</small>
+    <strong>BI · applications · platforms · sharing · AI agents · models</strong>
+    <span>Purpose-bound access · policy obligations · expiry · revocation · usage evidence</span>
+  </a>
+
+  <div class="domain-position-runtime"><strong>Workspace or runtime</strong><span>Technical execution and isolation placement. It may host one or several domains, but it never defines the domain boundary.</span></div>
+</div>
+
+Read the view from top to bottom. The foundation provides the common path and centrally managed source-aligned products. The published source-aligned contract marks the handoff into a registered domain, where domain teams own business meaning and downstream products. Consumers interact through governed product ports, not through the domain's runtime or storage boundary.
 
 | Concept | Primary purpose | Owns | Does not mean |
 | --- | --- | --- | --- |
@@ -84,7 +114,7 @@ flowchart TB
 | Operating | Portfolio, service adoption, SLOs, risks, value, cost and maturity are reviewed on an agreed cadence. |
 | Offboarding | Consumers and products are migrated or retired, access is revoked, records are retained and ownership is closed. |
 
-The [Data Domain Onboarding Record](../delivery-templates/data-domain-onboarding-template.md) captures these decisions. Use the [Data Foundation Maturity Assessment](../assessments/data-foundation-maturity-assessment.md) for the baseline and recurring review.
+The [Data Domain Onboarding Record](../reference-solutions/data-domain-onboarding-template.md) captures these decisions. Use the [Data Foundation Maturity Assessment](../assessments/data-foundation-maturity-assessment.md) for the baseline and recurring review.
 
 ## Admission Gates and Maturity
 

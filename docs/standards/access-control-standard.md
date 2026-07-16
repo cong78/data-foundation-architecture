@@ -23,6 +23,8 @@ Every request must pass two independent checks:
 
 The effective decision is the most restrictive result. A service permit cannot override a data deny.
 
+For agent execution, a data contract is a declarative authorization input, not an identity or permit by itself. Effective authority is the intersection of authenticated identity, delegated scope, published contract, current policy, lifecycle state, registered skill, and required approval.
+
 ## Mandatory Policy Model
 
 Policies must support:
@@ -40,6 +42,7 @@ Policies must support:
 - Rate, concurrency, budget, environment, and task limits are enforced for system and agent identities.
 - Services validate authorization at execution time, not only when the request or workflow was created.
 - Service-to-service calls authenticate each hop and do not inherit unrestricted upstream privileges.
+- Multi-agent delegation preserves the original subject, actor chain, purpose, contract references, approved scope, autonomy class, and task correlation. Every receiving agent re-authorizes the requested action and may only narrow or reject it.
 
 ## Data Enforcement
 
@@ -83,6 +86,8 @@ Every allow, deny, step-up, or obligation decision records:
 - Named-user allow and deny by role, attribute, purpose, and product.
 - Workload allow and deny by identity, environment, purpose, and port.
 - Delegated actor cannot exceed the named user's authority or its own registered scope.
+- A service agent cannot exceed the task scope, contract envelope, registered skill, approval class, budget, or expiry delegated by the AI Assistant.
+- Contract suspension, expiry, or revocation denies new actions and stops or safely compensates affected durable work.
 - Service permit plus data deny results in no data release.
 - Mask, row filter, aggregation, output limit, and expiry obligations are enforced.
 - Policy change, role loss, product change, incident, and expiry trigger review or revocation.

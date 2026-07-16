@@ -54,7 +54,7 @@ Adopting the developer-workspace improvements below would make the architecture 
 
 State of the art is not the number of platform components. It is the ability to change an engine, catalog, observability backend, sharing provider, or AI adapter without redefining the product or losing governance evidence.
 
-The target architecture therefore separates four concerns:
+The architecture blueprint therefore separates four concerns:
 
 | Layer | Stable Responsibility |
 | --- | --- |
@@ -82,4 +82,4 @@ The target architecture therefore separates four concerns:
 
 With the open profile applied, the guidance provides a comprehensive, AI-aware, product-led, observable, and intentionally vendor-neutral target. Those qualities are design claims until they are demonstrated by the conformance evidence below.
 
-It becomes a proven reference architecture only after at least one thin vertical slice passes Level 2 conformance and one external or cross-platform slice passes the relevant Level 3 tests.
+It becomes a proven platform architecture only after at least one thin vertical slice passes Level 2 conformance and one external or cross-platform slice passes the relevant Level 3 tests.

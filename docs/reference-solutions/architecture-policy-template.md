@@ -1,4 +1,4 @@
-# Architecture Policy Template
+# Architecture Decision Policy Template
 
 Use this template for every new or materially changed architecture principle, rule, or criterion. Keep the YAML readable and store executable Rego modules and tests under `policies/`.
 
@@ -6,7 +6,7 @@ Use this template for every new or materially changed architecture principle, ru
 
 ```yaml
 apiVersion: architecture.foundation/v1alpha1
-kind: ArchitecturePolicy
+kind: ArchitectureDecisionPolicy
 metadata:
   id: DF-SCOPE-RULE-000
   title: TBD
@@ -112,4 +112,4 @@ decision := {
 | Compatibility and affected-object impact reviewed | Pass / Fail |
 | Exception and lifecycle behavior approved | Pass / Fail |
 
-Use the [Architecture Policy Language](../standards/architecture-policy-language.md) for grammar, lifecycle, decision shape, and enforcement rules.
+Use the [Architecture Decision Policy](../decisions/architecture-decision-policy.md) for grammar, lifecycle, decision shape, and enforcement rules.

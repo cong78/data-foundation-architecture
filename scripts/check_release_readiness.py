@@ -26,10 +26,11 @@ SERVICES = [
 ]
 
 SERVICE_SECTIONS = [
-    "Definition",
+    "Purpose and Definition",
     "Scope and Boundaries",
     "Architecture Alignment",
     "Service Architecture",
+    "Agentic Interaction",
     "Core Capabilities",
     "Contracts and Interfaces",
     "Integrations and Dependencies",
@@ -157,11 +158,10 @@ def main() -> int:
         require_reference(
             path,
             [
-                DOCS / "foundation" / "definition-and-scope.md",
                 DOCS / "architecture" / "target-architecture.md",
                 DOCS / "architecture" / "design-map.md",
                 DOCS / "standards" / "index.md",
-                DOCS / "foundation" / "architecture-service-operations-map.md",
+                DOCS / "foundation" / "architecture-to-delivery.md",
             ],
             errors,
         )
@@ -182,7 +182,7 @@ def main() -> int:
             require_reference(path, [DOCS / "playbooks" / "index.md"], errors)
 
     for name in REFERENCE_SOLUTIONS:
-        path = DOCS / "architecture" / name
+        path = DOCS / "reference-solutions" / name
         require_order(path, ["Executive Recommendation", "Done Criteria"], errors)
 
     for path in sorted((DOCS / "decisions").glob("adr-*.md")):
@@ -191,8 +191,24 @@ def main() -> int:
             errors.append(f"{path.relative_to(ROOT)}: status is not a dated Accepted decision")
         require_reference(path, [DOCS / "implementation" / "architecture-decisions.md"], errors)
 
-    for path in sorted((DOCS / "delivery-templates").glob("*.md")):
-        require_reference(path, [DOCS / "delivery" / "index.md"], errors)
+    decision_register = DOCS / "implementation" / "architecture-decisions.md"
+    decision_reference = re.compile(
+        r"\badr(?:s|-?\d+)?\b|architecture decision records?|"
+        r"implementation/architecture-decisions|decisions/adr-",
+        re.IGNORECASE,
+    )
+    for path in sorted(DOCS.rglob("*.md")):
+        if path == decision_register or path.parent == DOCS / "decisions":
+            continue
+        if decision_reference.search(path.read_text(encoding="utf-8")):
+            errors.append(
+                f"{path.relative_to(ROOT)}: published guidance must not depend on decision records"
+            )
+
+    reference_index = DOCS / "reference-solutions" / "index.md"
+    for path in sorted((DOCS / "reference-solutions").glob("*.md")):
+        if path != reference_index:
+            require_reference(path, [reference_index], errors)
 
     glossary = (DOCS / "foundation" / "glossary.md").read_text(encoding="utf-8")
     present_terms = set(re.findall(r"^\| ([^|]+?) \|", glossary, re.MULTILINE))

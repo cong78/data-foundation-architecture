@@ -84,13 +84,15 @@ A producer may strengthen, reshape, aggregate, or narrow an upstream promise, bu
 ```mermaid
 flowchart LR
     AUTHOR[Portal · API · CLI · repository] --> REGISTRY[Canonical contract registry]
-    REGISTRY --> COMPILE[Compile schemas · tests · policy inputs · interfaces]
+    REGISTRY --> COMPILE[Compile schemas · tests · policy inputs · tool scopes · workflow gates · interfaces]
     COMPILE --> INGEST[Ingestion enforcement]
     COMPILE --> CREATE[Creation and go-live enforcement]
     COMPILE --> CONSUME[Consumption and sharing enforcement]
+    COMPILE --> AGENT[Assistant and service-agent task enforcement]
     INGEST --> EVIDENCE[Contract evidence and telemetry]
     CREATE --> EVIDENCE
     CONSUME --> EVIDENCE
+    AGENT --> EVIDENCE
     EVIDENCE --> REGISTRY
 ```
 
@@ -98,13 +100,21 @@ flowchart LR
 | --- | --- |
 | Portal, API and CLI | Create, compare, review, approve, and show the state of the three contracts. |
 | Canonical repository and registry | Own immutable contract versions, embedded product descriptors, state, owners, bindings, conditions, subscriptions, and history. |
-| Contract compiler | Generate catalog projections, validation, compatibility, policy, interface, and telemetry configuration from the canonical artifact. |
+| Contract compiler | Generate catalog projections, validation, compatibility, policy inputs, agent tool scopes, workflow gates, interface definitions, and telemetry obligations from the canonical artifact. |
 | CI/CD and go-live gates | Prove ingestion or creation behavior before activation and publication. |
 | Runtime enforcement | Apply the Data Product Consumption Contract at SQL, API, event, file, semantic, feature, retrieval, sharing, and AI boundaries. |
 | Catalog and lineage | Relate sources, products, ports, consumers, contract versions, physical bindings, and impact. |
 | Observability | Compare actual delivery, product, and consumption behavior with the published contract and route breaches. |
 
-The contract registry owns contract state. Unity Catalog discovers technical assets and enforces native controls, but does not create a fourth catalog-specific contract.
+The contract registry owns contract state. The selected technical catalog discovers assets and enforces platform controls, but does not create a fourth catalog-specific contract.
+
+## Contract-Driven Agent Execution
+
+Users and accountable owners agree the declarative promise through the applicable contract. The contract compiler turns that promise into constraints that the Data Service AI Assistant and service specialist agents can use without asking an LLM to interpret permission.
+
+An agent task resolves the exact contract version, authenticated actor, delegated authority, purpose, product or source, allowed skills, parameter limits, autonomy ceiling, workflow gates, obligations, expiry, and required evidence before execution. The target service repeats the policy and contract checks before changing authoritative state.
+
+The contract does not authorize itself. Effective agent authority is always narrower than or equal to the intersection of contract, identity, delegation, current policy, lifecycle state, registered skill, and approval. Contract suspension, expiry, replacement, or revocation immediately narrows or removes the related autonomous execution scope.
 
 ## Lifecycle Enforcement
 
@@ -123,6 +133,7 @@ The contract registry owns contract state. Unity Catalog discovers technical ass
 | Invalid source delivery or incompatible source change | Reject or quarantine; keep validated publication closed. |
 | Critical product schema, semantic, quality, policy, lineage, or SLO test failure | Block build promotion or product go-live. |
 | Unauthorized consumer, purpose, field, recipient, sharing action, or AI use | Deny release and record decision evidence. |
+| Agent task is outside contract, delegation, skill, autonomy, budget, or lifecycle scope | Reject before execution and return the failed constraint without side effects. |
 | Breaking change without approved impact and migration | Block the new version and preserve the last compatible version when safe. |
 | Runtime drift from any published contract | Mark non-conformant, route owner action, and deny immediately where policy or security is at risk. |
 
@@ -137,6 +148,7 @@ The contract registry owns contract state. Unity Catalog discovers technical ass
 7. Product go-live and data release are impossible without matching runtime bindings, passing critical tests, approvals, and observable evidence.
 8. Contract changes are assessed across connected contracts of all three types before release.
 9. The same canonical contracts drive catalog projections, documentation, tests, policy inputs, interface definitions, and telemetry correlation.
+10. Every agent action resolves an exact published contract version and executes only through a registered skill and deterministic service boundary.
 
 <div class="read-next">
   <strong>Next:</strong> use Data Product Lifecycle Design to align contract versions with product states and go-live gates.

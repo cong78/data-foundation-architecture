@@ -2,7 +2,7 @@
 
 <div class="decision-brief"><div><small>Use when</small><strong>Assessing Databricks channels for governed product access.</strong></div><div><small>Decision</small><strong>Which port and adapter meet consumer needs and controls?</strong></div><div><small>Owner</small><strong>Consumption and access architect.</strong></div><div><small>Output</small><strong>Channel mapping, policy proof, SLO, and exit plan.</strong></div></div>
 
-This reference solution applies the technology-neutral [Data Consumption Service](../services/data-consumption-service.md), [Unified Access Design](unified-access-design.md), and mandatory [Data Catalog and Storage Standard](../standards/catalog-storage-standard.md) to Databricks. Unity Catalog is the standard technical catalog and governed namespace; Delta Lake is the default durable table format; SQL warehouses, open table interfaces, sharing, and conformant adapters provide fit-for-purpose product access.
+This reference solution applies the technology-neutral [Data Consumption Service](../services/data-consumption-service.md), [Unified Access Design](../architecture/unified-access-design.md), and mandatory [Data Catalog and Storage Standard](../standards/catalog-storage-standard.md) to Databricks. Unity Catalog is the standard technical catalog and governed namespace; Delta Lake is the default durable table format; SQL warehouses, open table interfaces, sharing, and conformant adapters provide fit-for-purpose product access.
 
 !!! info "Reference solution status"
     Unity Catalog and Delta Lake are mandatory defaults under the [Data Catalog and Storage Standard](../standards/catalog-storage-standard.md). SQL warehouses, open table clients, sharing, and adapter choices remain selected implementation profiles that require channel-specific access tests, performance and cost evidence, security review, interoperability proof, and an exit plan. Logical product ports, contracts, semantic context, policy intent, and purpose-bound consumption terms remain provider-independent.
@@ -27,7 +27,7 @@ Apply the technology-neutral [Direct, Federated, or Replicated Access Decision](
 | Selective projection or event | Materialize only the contracted fields, events, cache, search, feature, or retrieval projection required by the use case. Retain source linkage, reconciliation, retention, rebuild, and expiry behavior. |
 | Replicated data product | Ingest to a Unity Catalog-governed source-aligned product when history, quality remediation, high-volume reuse, cross-source transformation, BI, AI training or evaluation, sharing, or workload isolation requires durable data. |
 
-The access mode is part of the product-port binding and architecture decision record. Changing from direct to federated or replicated access should not change the logical product id or consumer contract unless externally visible behavior changes.
+The access mode is part of the documented product-port binding. Changing from direct to federated or replicated access should not change the logical product id or consumer contract unless externally visible behavior changes.
 
 ## Solution at a Glance
 
@@ -145,7 +145,7 @@ Provider-native locations stay in the physical binding. The logical product port
 
 ## Semantic and AI Consumption
 
-Unity Catalog metric views can project governed measures and dimensions for SQL, BI, dashboards, and supported agents. They implement part of the [Semantic and Context Design](semantic-context-design.md), but the versioned semantic context package remains the portable product-facing authority for grain, meaning, relationships, valid uses, limitations, and evidence references. [Unity Catalog metric views](https://docs.databricks.com/aws/en/business-semantics/metric-views/)
+Unity Catalog metric views can project governed measures and dimensions for SQL, BI, dashboards, and supported agents. They implement part of the [Semantic and Context Design](../architecture/semantic-context-design.md), but the versioned semantic context package remains the portable product-facing authority for grain, meaning, relationships, valid uses, limitations, and evidence references. [Unity Catalog metric views](https://docs.databricks.com/aws/en/business-semantics/metric-views/)
 
 AI consumption must additionally bind:
 
@@ -232,7 +232,7 @@ A consumption port may go live only when:
 - Test concurrency, workload isolation, latency, cost, policy performance, regional recovery, revocation, and consumer impact.
 - Rebind one product port to another conformant runtime and prove that the consumer contract does not change.
 
-## Open Architecture Decisions
+## Open Design Choices
 
 | Decision | Required outcome |
 | --- | --- |

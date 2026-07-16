@@ -27,7 +27,7 @@ Correlate system and product evidence with stable service, product, contract, ru
 
 ## Evidence
 
-- [Observability Design](../architecture/observability-design.md)
+- [Observability Design](../reference-solutions/observability-design.md)
 - [OpenTelemetry Standard](../standards/otel-telemetry-standard.md)
 - [Data Observability Service](../services/data-observability-service.md)
 - [Data Foundation Operations Service](../services/data-foundation-operations-service.md)
