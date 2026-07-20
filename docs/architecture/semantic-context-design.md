@@ -4,6 +4,10 @@
 
 Semantic and context capabilities make a data product understandable to people, applications, and AI. They fit into the existing **control plane** and travel with the product; they do not create a new foundation layer or system of record.
 
+## Design Reasoning
+
+<div class="design-reasoning"><div><small>Context</small><p>Physical schemas and technical metadata do not explain business meaning, valid use, or current trust.</p></div><div><small>Forces</small><p>Rich context for people and AI must not duplicate authoritative glossary, contract, policy, lineage, or telemetry records.</p></div><div><small>Decision</small><p>Publish a versioned semantic context package that references authoritative records and may project selected relationships into a knowledge graph.</p></div><div><small>Consequences</small><p>Products become easier to discover and reason over, but context versions and references require lifecycle synchronization.</p></div><div><small>Verification</small><p>Resolve every term, metric, relationship, policy, lineage, quality, and health reference for the published product version.</p></div></div>
+
 ## Simple Design Rule
 
 Every live data product publishes a versioned **semantic context package** that answers four questions:
@@ -47,7 +51,7 @@ The **data catalog** belongs in the control plane and remains the authoritative 
 
 The **semantic and context layer** is the product-facing explanation of a product. It packages meaning, grain, metrics, relationships, valid and prohibited uses, limitations, and trust references for a specific product and contract version. It references catalog and governance authorities; it does not duplicate them.
 
-A **knowledge graph** is an optional derived projection that connects catalog assets, concepts, products, contracts, lineage, policies, consumers, incidents, and use cases. It is valuable for impact analysis, discovery, recommendation, semantic search, and AI grounding, but it must not become the canonical owner of product metadata, access decisions, contracts, or quality results.
+A **knowledge graph** is an optional derived projection that connects catalog assets, concepts, products, contracts, lineage, policies, consumers, incidents, and use cases. It is valuable for impact analysis, discovery, recommendation, semantic search, and AI grounding, but it must not become the authoritative owner of product metadata, access decisions, contracts, or quality results.
 
 ```mermaid
 flowchart LR
@@ -80,7 +84,7 @@ flowchart LR
 | Schema and compatibility | Data contract registry | Link contract versions and impact paths. |
 | Business concepts and metrics | Glossary and metric registry | Connect terms, products, metrics, and use cases. |
 | Access decisions and obligations | Policy decision and entitlement services | Show permitted relationships only after policy filtering. |
-| Runtime lineage | OpenLineage and lineage service | Project upstream/downstream paths and impact edges. |
+| Runtime lineage | Catalog and lineage services | Project upstream/downstream paths and impact edges through exportable lineage records. |
 | Quality and current health | Data Product Creation Service and Data Observability Service | Link current evidence and observation time; do not copy detailed profiles. |
 | Product meaning for consumers and AI | Versioned semantic context package | Serve permission-filtered context and citations. |
 
@@ -160,7 +164,7 @@ spec:
 - Start with context packages for high-value products, not an enterprise-wide ontology program.
 - Reuse stable glossary, metric, product, contract, and policy identifiers.
 - Model only relationships needed for discovery, consumption, policy, lineage, or AI grounding.
-- Generate indexes and graph projections; do not make them the canonical source.
+- Generate indexes and graph projections; do not make them the authoritative source.
 - Keep current health dynamic and referenced, not copied into the package.
 - Version semantic changes and run consumer-impact checks with contract changes.
 

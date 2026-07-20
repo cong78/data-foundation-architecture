@@ -1,15 +1,19 @@
-# Shared Platform Capabilities
+# Platform Enablement Design
 
 <div class="decision-brief"><div><small>Use when</small><strong>Designing shared capabilities used by several foundation services.</strong></div><div><small>Decision</small><strong>What is provided once, reused consistently, and kept replaceable?</strong></div><div><small>Owner</small><strong>Platform Enablement Service owner with security and architecture authorities.</strong></div><div><small>Output</small><strong>Shared capability boundaries, provider interfaces, controls, and lifecycle evidence.</strong></div></div>
 
-This shared design supports the canonical [Platform Enablement Service](../services/platform-enablement-service.md) architecture. It defines common control and runtime capabilities reused across services without taking lifecycle accountability from ingestion, creation, consumption, sharing, observability, or operations owners.
+This shared design supports the authoritative [Platform Enablement Service](../services/platform-enablement-service.md) architecture. It defines common control and runtime capabilities reused across services without taking lifecycle accountability from ingestion, creation, consumption, sharing, observability, or operations owners.
+
+## Design Reasoning
+
+<div class="design-reasoning"><div><small>Context</small><p>Every foundation service needs recurring contract, catalog, storage, identity, integration, automation, and evidence capabilities.</p></div><div><small>Forces</small><p>Reuse and consistency must coexist with service ownership, provider choice, and independent lifecycle decisions.</p></div><div><small>Decision</small><p>Provide cross-service capabilities once through stable provider interfaces while services retain outcome authority.</p></div><div><small>Consequences</small><p>Duplication falls, but enablement becomes a critical dependency requiring SLOs, compatibility, reconciliation, and exit plans.</p></div><div><small>Verification</small><p>Test provider interfaces, policy bindings, drift reconciliation, lifecycle cleanup, evidence routing, and portability.</p></div></div>
 
 ## Shared Capabilities
 
 | Capability Area | What It Provides | Authoritative Boundary |
 | --- | --- | --- |
-| Contract and product management | Contract registry, product identifiers, lifecycle bindings, schema validation, compatibility results, and product projections. | Canonical contracts and product descriptors remain portable; provider objects are projections. |
-| Catalog and storage | Technical asset registration, governed storage defaults, locations, retention, recovery, deletion, and external-object binding. | The selected catalog governs technical objects; product and semantic meaning remain in their canonical authorities. |
+| Contract and product management | Contract registry, product identifiers, lifecycle bindings, schema validation, compatibility results, and product projections. | Authoritative contracts and product descriptors remain portable; provider objects are projections. |
+| Catalog and storage | Technical asset registration, governed storage defaults, locations, retention, recovery, deletion, and external-object binding. | The selected catalog governs technical objects; product and semantic meaning remain in their authoritative sources. |
 | Identity and security | Workload identities, named-user federation, secrets, policy bindings, delegated scopes, entitlements, and audit integration. | Enterprise identity and policy authorities issue decisions; lifecycle services enforce them at execution. |
 | Integration | API gateway, event transport, workflow callbacks, schema registry, connector framework, service discovery, and stable identifiers. | Integration infrastructure transports interactions; owning services retain business and lifecycle decisions. |
 | Automation | Workspace and environment provisioning, policy checks, deployment, promotion, rollback, drift detection, and deprovisioning. | Automation executes approved intent and returns receipts; it does not approve its own changes. |
@@ -54,7 +58,7 @@ Every provider adapter must support:
 - Stable mappings between foundation identifiers and provider identifiers.
 - Idempotency, retry safety, timeout behavior, and partial-failure reporting.
 - Policy obligations, telemetry, cost attribution, and immutable receipts.
-- Export or migration of canonical metadata and an approved exit path.
+- Export or migration of authoritative metadata and an approved exit path.
 
 ## Integration Responsibilities
 

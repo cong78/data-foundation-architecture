@@ -71,7 +71,7 @@ Use the phases as **outcome gates**. Teams may prepare later capabilities early,
 | Control foundation | Catalog, classification, lineage, identity, access workflow, contract approval, and stable enterprise identifiers. | Product, contract, lineage, policy, owner, and access evidence resolve consistently. |
 | Platform enablement | Supported storage lifecycle, contract system, identity and security bindings, catalog synchronization, integration interfaces, provisioning, and deprovisioning patterns. | One real product is provisioned and retired through governed APIs with correlated policy, contract, catalog, runtime, and lifecycle evidence. |
 | Observability and operations | OpenTelemetry conventions, production service records, SLOs, support, incident roles, escalation, change classes, continuity targets, and readiness criteria. | Service and product health are visible; one support and incident path is exercised. |
-| Portability | Canonical ODCS publishing contracts with embedded ODPS-compatible descriptors stored independently of runtime-native metadata. | The combined contract artifact validates against both pinned profiles and retains stable identifiers. |
+| Portability | Authoritative ODCS publishing data contracts with embedded ODPS-compatible descriptors stored independently of runtime-native metadata. | The combined data-contract artifact validates against both pinned profiles and retains stable identifiers. |
 
 ### Phase 1 Gate
 
@@ -89,7 +89,7 @@ Proceed when a real source-to-consumer product demonstrates ownership, contract,
 | Portal experience | Product discovery, access, domain, use-case, workspace, saved-product, consumption-contract, portfolio, support, status, change, and knowledge views. | Users can discover, request, track, support, and understand products in one experience. |
 | Trust and operations | Product health, freshness, quality, usage, cost, incident communication, problem, release, error budget, recovery exercise, and improvement workflows. | System and product recovery is proven; service reviews use measured health and operational evidence. |
 | Platform enablement | Self-service resource plans, policy previews, environment promotion, drift reconciliation, exception expiry, retention automation, and deprovisioning. | Multiple domain teams reuse supported capabilities without duplicating identity, storage, contract, security, or integration controls. |
-| Interoperability | DCAT, OpenLineage, OpenAPI, AsyncAPI, CloudEvents, and OTLP adapters plus clean-room import/export. | An independent client consumes a product and canonical artifacts survive export and import. |
+| Interoperability | DCAT, OpenAPI, AsyncAPI, CloudEvents, OTLP, and portable lineage adapters plus clean-room import/export. | An independent client consumes a product and portable source artifacts survive export and import. |
 
 ### Phase 2 Gate
 
@@ -135,7 +135,7 @@ The phase is established when at least one real external exchange is contract-ba
 | Keep earlier controls active | Later phases add capability but do not replace ownership, contracts, access, product go-live, observability, or operations. |
 | Advance by workstream | A workstream may be ahead or behind the overall phase; record its evidence and gaps separately. |
 | Fund the constraint | Prioritize the weakest workstream blocking the next outcome instead of launching every component at once. |
-| Preserve portability | Every phase retains canonical artifacts, stable identifiers, open interfaces, export paths, and tested exit options. |
+| Preserve portability | Every phase retains portable source artifacts, stable identifiers, open interfaces, export paths, and tested exit options. |
 | Measure adoption | A deployed capability without active users, products, and operating ownership is not mature. |
 
 ## Success Measures

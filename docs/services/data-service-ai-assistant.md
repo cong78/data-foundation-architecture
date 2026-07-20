@@ -22,7 +22,7 @@ It exists to make complex guidance and service journeys easier to use without tu
 | --- | --- |
 | Primary planes | Experience and AI |
 | Supporting planes | Control, Security, and Observability |
-| Shared capabilities | Data contracts and compiler, semantic context, unified access, identity, policy, agent and skill registry, model profiles, workflow, and telemetry. |
+| Supporting designs and capabilities | [Agentic Data Service Design](../architecture/agentic-data-foundation.md), [Data Contract Design](../architecture/data-contract-design.md), [Semantic and Context Design](../architecture/semantic-context-design.md), [Unified Access Design](../architecture/unified-access-design.md), [Platform Governance Design](../architecture/platform-governance-design.md), and [Platform Enablement Design](../architecture/platform-enablement-design.md) supply contract compilation, identity, policy, skills, model profiles, workflow, access, and telemetry. |
 | Integration flows | Ask and explain, decompose goal, delegate typed tasks, resolve contracts and policy, coordinate execution, and return consolidated evidence. |
 
 ## Service Architecture
@@ -47,7 +47,7 @@ The assistant coordinates; specialist agents plan and act within their manifests
 
 ## Agentic Interaction
 
-| Concern | Service Agent Contract |
+| Concern | Agent Operating Specification |
 | --- | --- |
 | Specialist role | User-facing orchestrator that decomposes goals, delegates bounded tasks to service agents, and consolidates evidence and approvals. |
 | Declarative boundary | Delegated user authority, published contracts, agent and skill manifests, task budget, purpose, and approval policy. |
@@ -66,14 +66,14 @@ The assistant coordinates; specialist agents plan and act within their manifests
 | Multi-agent coordination | Goal decomposition and task delegation | Each task is delegated to the service agent that owns the outcome, with bounded context, authority, budget, status, and expected evidence. |
 | Assurance | Evaluation and safety | Grounding, authorization, tool choice, result correctness, refusal, and recovery are continuously tested. |
 
-## Contracts and Interfaces
+## Data Contracts and Interfaces
 
-| Interface | Purpose | Required Contract |
+| Interface | Purpose | Required Definition |
 | --- | --- | --- |
 | Assistant API | Start or resume a task and stream grounded output. | Task id, mode, user, purpose, scope, context references, budget, and response provenance. |
 | Context API | Retrieve permission-filtered evidence. | Resource ids, requested fields, identity, purpose, policy result, source authority, and observation time. |
-| Skill contract | Execute a stable service operation. | Typed input and output, side effects, required scopes, approval class, idempotency, errors, and receipt. |
-| Agent task contract | Delegate work to a service specialist agent. | Task, goal, actor, purpose, contract references, scope, autonomy ceiling, budget, deadline, expected artifact, status, and correlation ids. |
+| Skill specification | Execute a stable service operation. | Typed input and output, side effects, required scopes, approval class, idempotency, errors, and receipt. |
+| Agent task envelope | Delegate work to a service specialist agent. | Task, goal, actor, purpose, data-contract references, scope, autonomy ceiling, budget, deadline, expected artifact, status, and correlation ids. |
 | Approval API | Confirm consequential action. | Preview, impact, actor, approver, expiry, segregation, and approved parameters. |
 | Evaluation event | Record quality and safety result. | Agent, skill, model, prompt, product, contract, task, trace, test set, result, and threshold. |
 
@@ -108,15 +108,16 @@ The assistant coordinates; specialist agents plan and act within their manifests
 
 ## Reference Solutions
 
-The [Agentic Data Service Design](../architecture/agentic-data-foundation.md) defines the shared agent, skill, model, context, memory, approval, and evaluation capabilities. No model provider is mandated. A selected implementation must preserve skill contracts, policy enforcement, evidence, portability, and suspension controls.
+The [Agentic Data Service Design](../architecture/agentic-data-foundation.md) defines the shared agent, skill, model, context, memory, approval, and evaluation capabilities. No model provider is mandated. A selected implementation must preserve skill specifications, policy enforcement, evidence, portability, and suspension controls.
 
-## Done Criteria
+## Target User Experience
 
-- Ask responses cite current permission-filtered evidence and state uncertainty or missing authority.
-- Plans are editable and do not create side effects.
-- Act mode executes only registered skills within delegated scope and approved parameters.
-- Every delegated task names one service specialist agent, applicable contract versions, autonomy ceiling, budget, expected evidence, and completion owner.
-- Multi-agent results preserve the delegation chain and cannot be promoted to authoritative service state without deterministic validation.
-- Consequential actions show preview, approval, progress, receipt, and recovery path.
-- Evaluation covers grounding, authorization, tool choice, result correctness, refusal, safety, cost, latency, and recovery.
-- The assistant can be suspended independently without blocking deterministic portal and service workflows.
+Use each row as an end-to-end acceptance scenario for product design and engineering validation.
+
+| User and Intent | User Action | Required Service Behavior | Observable Result |
+| --- | --- | --- | --- |
+| User needs an explanation. | Ask a foundation, product, contract, or service question. | Retrieve permission-filtered evidence, distinguish fact from inference, and return sources, freshness, uncertainty, and gaps. | The user receives a concise answer that can be verified and knows what remains unknown. |
+| User needs a plan or draft. | Request an assessment, design, contract, checklist, or change plan. | Select approved skills, produce an editable structured artifact, and create no side effects. | Facts, assumptions, decisions, impacts, evidence gaps, and next actions are explicit and editable. |
+| User requests an action. | Review and confirm a proposed service operation. | Show exact scope, contract, policy, side effects, approval, and recovery; then invoke only the registered skill. | The user sees preview, progress, final service receipt, changed state, and recovery path. |
+| User delegates a multi-service goal. | Start, inspect, pause, cancel, or resume the task. | Decompose work, assign each task to the owning service agent, preserve delegated scope and budget, and consolidate status and evidence. | One coordinated task shows responsible agents, dependencies, approvals, completion owner, and combined result. |
+| Request is unsafe, unsupported, or the assistant fails. | Ask why, revise scope, or use a deterministic path. | Refuse with reason and remediation, preserve service state, and expose portal or service fallback. | The user can recover or continue without hidden action, lost work, or reduced control. |

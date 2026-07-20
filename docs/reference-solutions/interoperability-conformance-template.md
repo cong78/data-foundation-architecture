@@ -22,7 +22,7 @@ Use this record for product go-live, platform service review, and cross-company 
 | Catalog exchange | DCAT |  | Pass / Fail / N/A |
 | API | OpenAPI |  | Pass / Fail / N/A |
 | Event | AsyncAPI and CloudEvents |  | Pass / Fail / N/A |
-| Lineage | OpenLineage |  | Pass / Fail / N/A |
+| Lineage | Portable lineage export |  | Pass / Fail / N/A |
 | Telemetry | OpenTelemetry and OTLP |  | Pass / Fail / N/A |
 | Table, query, or sharing | Selected open profile |  | Pass / Fail / N/A |
 | Identity | Selected federation profile |  | Pass / Fail / N/A |

@@ -36,7 +36,7 @@ Check a foundation-owned capability only when the domain has adopted it and can 
   <div class="assessment-checklist">
     <h2>Direction and Ownership</h2>
     <label><input type="checkbox"> The foundation has an approved definition, scope, principles, architecture blueprint, and decision ownership.</label>
-    <label><input type="checkbox"> Each foundation service has an accountable owner, service contract, support model, service levels, and lifecycle.</label>
+    <label><input type="checkbox"> Each foundation service has an accountable owner, service definition, support model, service levels, and lifecycle.</label>
     <label><input type="checkbox"> Domains have clear product ownership, stewardship, funding, and escalation responsibilities.</label>
     <label><input type="checkbox"> Architecture decisions, exceptions, risks, dependencies, and maturity improvements are reviewed with evidence.</label>
 

@@ -10,7 +10,7 @@ The guidance defines:
 
 - Foundation definition and scope.
 - Architecture principles and decision rules.
-- Reference architecture and data product lifecycle.
+- Reference architecture and data product definition, design, and lifecycle.
 - Nine foundation services.
 - Architecture blueprint and service implementation patterns.
 - Data contract, data product management, OpenTelemetry, and AI-ready data standards.

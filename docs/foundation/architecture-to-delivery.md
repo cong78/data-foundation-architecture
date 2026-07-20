@@ -6,25 +6,27 @@ Architecture is realized through data services. Each service is a delivery entit
 
 ## The Delivery Chain
 
-<div class="model-strip">
-  <div class="model-step"><strong>1 · Architecture</strong>Defines the required outcomes, structure, boundaries, flows, and qualities.</div>
-  <div class="model-step"><strong>2 · Decisions and standards</strong>Make important choices explicit and define enforceable rules.</div>
-  <div class="model-step"><strong>3 · Data service</strong>Owns and delivers the reusable capability, interfaces, controls, SLO, and support.</div>
-  <div class="model-step"><strong>4 · Implementation and playbook</strong>Build the service increment and coordinate actions and gates.</div>
-  <div class="model-step"><strong>5 · Runbook and operation</strong>Keep the delivered capability reliable, recoverable, and supported.</div>
-  <div class="model-step"><strong>6 · Evidence</strong>Proves conformance, release, use, health, recovery, and improvement.</div>
+<div class="model-strip delivery-stage-strip">
+  <div class="model-step"><strong>1 · Architecture direction</strong>Defines the outcome, boundaries, structure, interactions, qualities, and current approved direction.</div>
+  <div class="model-step"><strong>2 · Service ownership</strong>Assigns the reusable capability, accountable owner, consumers, interfaces, SLOs, and support.</div>
+  <div class="model-step"><strong>3 · Delivery design</strong>Defines the increment, dependencies, integration, acceptance criteria, and optional technology profile.</div>
+  <div class="model-step"><strong>4 · Build and validate</strong>Implements the increment and proves standards, policy, security, interoperability, and recovery behavior.</div>
+  <div class="model-step"><strong>5 · Release / go-live</strong>Confirms readiness, approval, deployment, rollback, communication, and exact released versions.</div>
+  <div class="model-step"><strong>6 · Operate and improve</strong>Measures outcomes, meets SLOs, supports users, recovers safely, and feeds learning into the next change.</div>
 </div>
 
-| Link | Question | Authoritative Artifact |
-| --- | --- | --- |
-| Architecture | What outcome, structure, boundary, interaction, and quality are required? | Published architecture and approved design. |
-| Published guidance | Which choices and rules constrain implementation? | Current architecture, service contracts, standards, and policies. |
-| Data service | Which reusable capability is funded, built, released, consumed, and operated? | Versioned service contract, accountable owner, roadmap, and service registry record. |
-| Implementation and playbook | Which increment realizes the capability, who acts, and what advances each gate? | Implementation backlog and action playbook backed by authoritative workflow state. |
-| Runbook and operation | How is the service supported and a known condition safely recovered? | Operating model, SLOs, telemetry, and versioned, exercised procedures. |
-| Evidence | What proves conformance, release, use, health, action, and recovery now? | Authoritative control, deployment, workflow, telemetry, and operations records. |
+<div class="delivery-feedback"><strong>Feedback loop</strong><span>Usage, incidents, cost, product health, consumer outcomes, and recovery exercises can trigger a new decision or delivery increment.</span></div>
 
-The [Runway](../runway.md) schedules when capabilities in this chain are introduced and scaled. It is a planning overlay, not another traceability link and not evidence of operational readiness.
+| Stage | Decision Question | Authoritative Output |
+| --- | --- | --- |
+| Architecture direction | What outcome, boundary, interaction, and quality apply now? | Current architecture and service guidance incorporating approved decisions. |
+| Service ownership | Which reusable capability owns delivery and operation? | Versioned service definition, accountable owner, service registry record, support model, and lifecycle state. |
+| Delivery design | What is the smallest useful increment and how will it fit? | Delivery backlog, integration design, acceptance scenarios, dependency plan, runway alignment, and optional reference solution. |
+| Build and validate | Does the implementation satisfy the required behavior and controls? | Versioned implementation, data-contract and policy results, tests, conformance evidence, operational readiness, and rollback proof. |
+| Release / go-live | May this exact service or product version enter use? | Readiness decision, approvals, release record, deployment receipt, communication, rollback target, and current catalog or registry state. |
+| Operate and improve | Is the capability reliable, useful, recoverable, and still conformant? | SLO and health state, support and incident records, exercised runbooks, usage and cost outcomes, recovery evidence, and improvement backlog. |
+
+This is a traceability chain, not a waterfall plan. Teams may iterate across stages, but they cannot skip ownership, controls, readiness, operation, or evidence. The [Runway](../runway.md) schedules when capabilities are introduced and scaled; it is planning context, not a delivery stage or proof of operational readiness. [Reference Solutions](../reference-solutions/index.md) may accelerate delivery design and implementation, but they never redefine the architecture direction or service boundary.
 
 ## Data Services as Delivery Entities
 
@@ -34,7 +36,7 @@ A data service is the manageable unit through which the data foundation is built
 | --- | --- |
 | Outcome | The foundation capability and user or system need the service fulfills. |
 | Accountability | One service owner responsible for value, lifecycle, risk, reliability, cost, and improvement. |
-| Contract | Scope, consumers, interfaces, inputs, outputs, controls, SLOs, support, and evidence. |
+| Service definition | Scope, consumers, interfaces, inputs, outputs, controls, SLOs, support, and evidence. |
 | Build boundary | The implementation increments, platform capabilities, team responsibilities, and release unit needed to realize the service. |
 | Integration | Upstream and downstream service interactions, data contracts, failure behavior, and end-to-end correlation. |
 | Operation | Telemetry, support model, incidents, changes, continuity, runbooks, and recovery objectives. |
@@ -60,7 +62,7 @@ Each service follows the same path from architecture to an executable user or op
 
 Use the [Standards Overview](../standards/index.md) to identify the standards that constrain each service. Record implementation choices and evidence with the delivered capability without creating a reverse dependency from published design guidance.
 
-When a row involves more than one service, add an [Integration Design](../architecture/integration-design.md) that names the outcome owner, interaction contracts, failure behavior, correlation identifiers, and end-to-end evidence.
+When a row involves more than one service, add an [Integration Design](../architecture/integration-design.md) that names the outcome owner, interface specifications, failure behavior, correlation identifiers, and end-to-end evidence.
 
 ## Agentic Delivery Overlay
 
@@ -93,30 +95,22 @@ Each service must map its material failure modes to an exercised runbook and aut
 
 ## Required Service Delivery Record
 
-Every production service maintains one record linking architecture intent to current delivery and operational evidence:
+Every adopting organization maintains one record per production service linking architecture direction to current delivery and operational evidence. This repository defines the required structure; the authoritative record is created and maintained in the adopter's service-management or engineering system.
 
 | Field | Required Link or Evidence |
 | --- | --- |
-| Design | Approved architecture view, boundaries, dependencies, data flows, and trust assumptions. |
-| Published constraints | Applicable architecture, service, standard and policy versions, exceptions, and approval evidence. |
-| Service | Service id, owner, support tier, capabilities, interfaces, consumers, SLOs, and lifecycle state. |
-| Playbooks | User and operator journeys that invoke the service, including gate criteria and workflow authority. |
-| Runbooks | Versioned procedures mapped to alerts, failure modes, changes, recovery objectives, and escalation routes. |
-| Evidence | Current conformance, workflow, telemetry, health, recovery exercise, exception, and improvement records. |
+| Architecture direction | Current architecture and service guidance, boundaries, dependencies, interactions, and trust assumptions. |
+| Service ownership | Service id, accountable owner, support tier, capabilities, interfaces, consumers, SLOs, and lifecycle state. |
+| Delivery design | Increment, acceptance scenarios, dependencies, integration behavior, implementation owner, target release, and rollback design. |
+| Constraints | Applicable standard, policy, data-contract, security, interoperability, and exception versions with enforcement points. |
+| Playbooks and workflows | User and operator journeys, actors, actions, gates, approvals, workflow authority, and completion conditions. |
+| Build and validation | Implementation and configuration versions, test results, conformance decisions, unresolved risks, and remediation owners. |
+| Release and readiness | Approval, exact release, deployment receipt, go-live state where applicable, rollback target, communication, and catalog or registry state. |
+| Operation and runbooks | Telemetry, SLOs, support, alerts, failure modes, versioned procedures, recovery objectives, escalation, and latest exercise. |
+| Current evidence | Control, workflow, release, usage, cost, health, incident, recovery, exception, and improvement records with observation times. |
+| Planning context | Current runway phase, next exit outcome, funded backlog, dependencies, and target evidence; never treated as readiness proof. |
 
-Record the current runway phase and next phase exit separately as planning context. A runway phase never substitutes for any required field above.
-
-## Runbook Contract
-
-A runbook is an operational control, not a narrative troubleshooting page. Use the [Service Runbook Template](../reference-solutions/service-runbook-template.md). At minimum it must identify:
-
-- Service, product, environment, owner, support tier, architecture decision, and affected dependencies.
-- Trigger, observable symptoms, severity criteria, product and consumer impact, and safe diagnostic evidence.
-- Preconditions, required authority, segregation of duties, step-up access, and prohibited actions.
-- Containment, recovery, rollback, continuity, communication, and escalation steps.
-- Separate **system recovery** and **data-product recovery** checks for quality, freshness, lineage, access, backlog, and consumers.
-- Telemetry, incident, change, release, contract, and correlation identifiers retained as evidence.
-- Test cadence, last exercise, known limitations, review owner, version, and expiry.
+Each link must resolve in both directions: from architecture direction to current evidence and from a release, incident, policy result, or operational outcome back to its owning service and applicable guidance.
 
 ## Runbook and Runway
 
@@ -129,6 +123,6 @@ The runway may fund creation and testing of runbooks. A runbook does not replace
 
 ## Review Rule
 
-A design or production-readiness review is incomplete when architecture intent has no accountable data service or when any required delivery link is absent or stale. The trace must resolve in both directions: from an architecture requirement to current evidence, and from a release, incident, or control result back to the responsible service, rule, and design decision.
+A design or production-readiness review is incomplete when architecture direction has no accountable data service or when any required delivery link is absent or stale. Release evidence must prove the exact candidate; operational evidence must include observation time and current state; improvement work must trace back to the affected outcome, service, and guidance.
 
 <div class="read-next"><strong>Next:</strong> choose one architecture outcome, assign its accountable data service, complete the service delivery record, and identify the next implementation increment and required evidence.</div>

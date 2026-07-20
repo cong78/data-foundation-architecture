@@ -40,7 +40,7 @@ A schema alone is not a data contract. A policy decision, catalog entry, technic
 | Reuse without hidden coupling | Stable product identifiers and ports let consumers depend on a promise rather than a pipeline, table path, or implementation detail. | Reuse rate, duplicate products, direct-storage dependencies, and migration effort. |
 | Safer sharing and AI adoption | External-recipient and AI-use clauses narrow the same Data Product Consumption Contract to the approved purpose and risk. | Approval lead time, prohibited-use violations, trace coverage, and expired access removed. |
 | Better operations and investment | Contract health, usage, incidents, cost, and consumer impact make service improvement and portfolio decisions evidence-based. | Incident impact, product adoption, cost per consumer, SLO trends, and retirement completion. |
-| Portability and negotiating power | Open canonical artifacts separate the durable promise from Unity Catalog, Delta, APIs, sharing tools, or other runtime bindings. | Export conformance, independent-client success, migration time, and unresolved vendor dependencies. |
+| Portability and negotiating power | Open portable source artifacts separate the durable promise from Unity Catalog, Delta, APIs, sharing tools, or other runtime bindings. | Export conformance, independent-client success, migration time, and unresolved vendor dependencies. |
 
 Contracts create value only when the same published version drives design, tests, platform controls, runtime decisions, change communication, and observability. A document that is not enforced or measured is guidance, not an operational data contract.
 
@@ -52,7 +52,7 @@ The foundation uses only three data contract types:
 
 Sharing, AI use, APIs, events, semantic access, features, and retrieval are consumption profiles inside the Data Product Consumption Contract. They are not additional contract types. Contract decisions and lifecycle state also remain part of these three contracts rather than separate approval objects.
 
-## Three-Contract Model
+## Three Data Contract Types
 
 | Contract | Boundary | Core promise | Accountable owner |
 | --- | --- | --- | --- |
@@ -88,21 +88,21 @@ Agents may autonomously execute pre-approved, reversible operations whose parame
 
 Every agent action records the initiating user or workload, delegated identity, agent and skill versions, contract version, purpose, policy decision, approval where required, parameters, result, and trace. Contract expiry, suspension, replacement, or revocation must immediately remove or narrow the corresponding agent authority.
 
-## Canonical Representation
+## Portable Data Contract Format
 
-Each contract is stored as a portable YAML artifact in version control and the contract registry. Use the [Open Data Contract Standard 3.1](https://bitol-io.github.io/open-data-contract-standard/latest/) as the canonical baseline and namespace enterprise extensions.
+Each contract is stored as a portable YAML artifact in version control and the contract registry. Use the [Open Data Contract Standard 3.1](https://bitol-io.github.io/open-data-contract-standard/latest/) as the standard baseline and namespace enterprise extensions.
 
 - Record the contract type as `source_system_ingestion`, `data_product_creation`, or `data_product_consumption`.
 - Pin the ODCS schema version and preserve unknown extensions during import and export.
-- Generate platform schemas, tests, policy inputs, and interface definitions from the canonical artifact.
+- Generate platform schemas, tests, policy inputs, and interface definitions from the source artifact.
 - Use OpenAPI for API ports and AsyncAPI plus CloudEvents for event ports.
 - Prove semantic equivalence after round-trip export and import.
 
 ### Embedded Product Descriptor
 
-The data product descriptor is part of the contract that publishes the product, not a separate canonical artifact. Its product-definition section must remain compatible with the [Open Data Product Standard 1.0](https://bitol.io/announcing-odps-v1-0-0-building-the-language-of-data-products/).
+The data product descriptor is part of the contract that publishes the product, not a separate source artifact. Its product-definition section must remain compatible with the [Open Data Product Standard 1.0](https://bitol.io/announcing-odps-v1-0-0-building-the-language-of-data-products/).
 
-| Product layer | Publishing contract | Descriptor behavior |
+| Product layer | Publishing data contract | Descriptor behavior |
 | --- | --- | --- |
 | Source-aligned | Source System Ingestion Contract | Describes the validated source-aligned output, its stable identity, owners, lifecycle, ports, service promise, and support. |
 | Aggregate or consumer-aligned | Data Product Creation Contract | Describes the created product, its stable identity, purpose, domain, owners, lifecycle, ports, SLOs, support, and authoritative links. |
@@ -125,7 +125,7 @@ All three contracts require:
 | Change | Compatibility rules, notice period, migration, deprecation, retirement, and exception behavior. |
 | Evidence | Tests, approvals, runtime binding, conformance result, observation time, and current health reference. |
 
-## Contract-Specific Content
+## Data-Contract-Specific Content
 
 | Contract | Required additional content |
 | --- | --- |
@@ -199,8 +199,8 @@ Adding a required field, removing or renaming a field, changing meaning or type,
 
 - The contract is one of the three approved types.
 - Required common and type-specific fields are complete.
-- Any publishing contract contains a valid ODPS-compatible product descriptor section; consumption contracts reference it without duplication.
-- Canonical artifact validates against the pinned open schema and portability profile.
+- Any publishing data contract contains a valid ODPS-compatible product descriptor section; Data Product Consumption Contracts reference it without duplication.
+- source artifact validates against the pinned open schema and portability profile.
 - Owners, approvals, effective time, expiry, and exceptions are recorded.
 - Contract-specific tests pass against the real runtime boundary.
 - Runtime objects, policies, telemetry, catalog entries, lineage, and product ports reference the exact contract version.

@@ -193,6 +193,6 @@ Use the [AI-Ready Data Product Checklist](../standards/ai-ready-data-standard.md
 - Product health dashboard available.
 - Consumer documentation published.
 - Active consumers registered.
-- The publishing contract and its embedded product descriptor validate against pinned open schemas.
+- The publishing data contract and its embedded product descriptor validate against pinned open schemas.
 - Required interoperability conformance record is approved.
 - Exception status reviewed.

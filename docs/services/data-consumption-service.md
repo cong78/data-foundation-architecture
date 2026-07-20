@@ -22,7 +22,7 @@ It exists to separate the stable consumer promise from physical storage and runt
 | --- | --- |
 | Primary plane | Data |
 | Supporting planes | Control, Security, AI, and Observability |
-| Shared capabilities | Unified access, agentic foundation, semantic context, Data Product Consumption Contract, identity, policy, entitlement, catalog, and telemetry. |
+| Supporting designs and capabilities | [Unified Access Design](../architecture/unified-access-design.md), [Semantic and Context Design](../architecture/semantic-context-design.md), [Data Contract Design](../architecture/data-contract-design.md), [Platform Governance Design](../architecture/platform-governance-design.md), [Platform Enablement Design](../architecture/platform-enablement-design.md), and [Agentic Data Service Design](../architecture/agentic-data-foundation.md) supply consumption contracts, identity, policy, entitlement, catalog, and telemetry. |
 | Integration flows | Discover and subscribe, request access, authorize, resolve port, execute adapter, enforce obligations, record usage, renew, and revoke. |
 
 ## Service Architecture
@@ -46,7 +46,7 @@ The logical product port remains stable while physical storage, compute, endpoin
 
 ## Agentic Interaction
 
-| Concern | Service Agent Contract |
+| Concern | Agent Operating Specification |
 | --- | --- |
 | Specialist role | Consumption agent that resolves fit-for-purpose products, selects logical ports and adapters, and fulfills governed access. |
 | Declarative boundary | Published Data Product Consumption Contract, consumer identity, purpose, product version, policy, obligations, and expiry. |
@@ -57,16 +57,16 @@ The logical product port remains stable while physical storage, compute, endpoin
 
 | Category | Capability | Owned Outcome |
 | --- | --- | --- |
-| Discovery | Product and port resolution | The approved product, version, port, health, semantics, policy, and support are resolved from canonical ids. |
+| Discovery | Product and port resolution | The approved product, version, port, health, semantics, policy, and support are resolved from stable ids. |
 | Contracts | Consumption agreement | Consumer, purpose, scope, channel, SLO, obligations, expiry, and revocation are explicit. |
 | Authorization | Separate service and data decisions | The actor may invoke the service and use the selected product for the declared purpose. |
 | Orchestration | Adapter selection and execution | Work executes through a conformant channel near the approved data runtime. |
 | Enforcement | Obligations and entitlement | Masking, filtering, minimization, rate, region, retention, output, and expiry controls are applied. |
 | Operations | Usage, SLO, cost, and revocation | Access remains observable, supportable, renewable, and immediately revocable. |
 
-## Contracts and Interfaces
+## Data Contracts and Interfaces
 
-| Interface | Purpose | Required Contract |
+| Interface | Purpose | Required Definition |
 | --- | --- | --- |
 | Consumption request API | Request a product port for a named purpose. | Consumer and subject identity, product and port, purpose, scope, duration, channel, environment, and use-case owner. |
 | Resolution API | Resolve logical port to approved version and runtime binding. | Product, contract, semantic-context, health, policy, adapter, and compatibility versions. |
@@ -114,12 +114,14 @@ The logical product port remains stable while physical storage, compute, endpoin
 
 [Data Consumption Design](../reference-solutions/data-consumption-design.md) maps this service to Unity Catalog, Databricks SQL, open table interfaces, sharing, and conformant adapters. It is a selected reference profile; logical product ports and policy intent remain portable.
 
-## Done Criteria
+## Target User Experience
 
-- A consumer requests a stable logical port without needing provider paths or credentials.
-- Service and data decisions, obligations, entitlement, execution, and receipt are correlated end to end.
-- Direct, federated, projected, and replicated access are selected by evidence rather than default.
-- Every adapter passes identity, authorization, obligation, SLO, telemetry, error, and fail-closed tests.
-- Access can be renewed, suspended, revoked, and deprovisioned with proof.
-- The consumption agent cannot widen purpose, product, port, scope, entitlement, obligations, or expiry beyond the published consumption contract and policy decision.
-- BI, application, platform, agent, and model consumers receive consistent product meaning and current health.
+Use each row as an end-to-end acceptance scenario for product design and engineering validation.
+
+| User and Intent | User Action | Required Service Behavior | Observable Result |
+| --- | --- | --- | --- |
+| Consumer selects a product and interface. | Compare products, health, semantics, and available ports for a declared purpose. | Resolve permission-filtered product context and recommend a fit-for-purpose logical port and access mode. | The consumer can choose an interface without needing storage paths, provider credentials, or implementation knowledge. |
+| Consumer requests access. | Submit purpose, scope, identity, duration, and required interface. | Evaluate service access and data access separately, resolve the consumption contract, obligations, approval, and entitlement. | The decision explains approved scope, reason, obligations, expiry, missing requirements, and next action. |
+| Consumer connects and uses data. | Resolve the logical port and execute an approved query, API, event, file, feature, retrieval, or semantic operation. | Select and operate the direct, federated, projected, or replicated adapter while enforcing policy, SLO, telemetry, and fail-closed behavior. | BI, application, platform, agent, and model consumers receive consistent meaning, current health, and an execution receipt. |
+| Consumer manages access lifecycle. | Inspect, renew, reduce, suspend, revoke, or deprovision access. | Re-evaluate purpose and policy, update entitlement, stop affected access, and retain proof across adapters. | Access state is current, explainable, time-bound, and revocable without provider-specific cleanup. |
+| Consumer uses agent assistance. | Ask the agent to discover, request, connect, or diagnose. | Keep every delegated task inside the product, port, purpose, scope, obligations, and expiry of the consumption contract. | Assistance accelerates the journey without widening authority or hiding the deterministic service decision. |

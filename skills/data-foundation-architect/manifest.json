@@ -15,21 +15,21 @@
       "description": "Produce a layered architecture with controls, decisions, risks, and done criteria.",
       "input_schema": "schemas/task-request.schema.json",
       "output_schema": "schemas/task-result.schema.json",
-      "output_contract": "references/output-contracts.md#architecture-design"
+      "output_specification": "references/output-specifications.md#architecture-design"
     },
     {
       "id": "review",
       "description": "Review architecture evidence and return severity-ordered findings with remediation.",
       "input_schema": "schemas/task-request.schema.json",
       "output_schema": "schemas/task-result.schema.json",
-      "output_contract": "references/output-contracts.md#architecture-review"
+      "output_specification": "references/output-specifications.md#architecture-review"
     },
     {
       "id": "generate",
       "description": "Generate a governed artifact from an authoritative repository template.",
       "input_schema": "schemas/task-request.schema.json",
       "output_schema": "schemas/task-result.schema.json",
-      "output_contract": "references/output-contracts.md#generated-artifact"
+      "output_specification": "references/output-specifications.md#generated-artifact"
     }
   ],
   "side_effects": {

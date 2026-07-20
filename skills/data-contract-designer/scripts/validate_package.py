@@ -21,7 +21,7 @@ REQUIRED_FILES = (
     "manifest.json",
     "references/guidance-map.md",
     "references/evidence-rules.md",
-    "references/output-contracts.md",
+    "references/output-specifications.md",
     "schemas/contract-request.schema.json",
     "schemas/compatibility-request.schema.json",
     "schemas/contract-result.schema.json",

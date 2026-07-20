@@ -13,7 +13,7 @@ The defaults create one governed technical inventory and one reliable tabular st
 | Data catalog | Register every foundation-managed data and AI asset in Unity Catalog directly, through a governed external or foreign binding, or through a synchronized metadata projection. | Unity Catalog is authoritative for technical object identity, namespace, native privileges, governed tags, platform lineage, and audit evidence. |
 | Tabular storage | Use Delta Lake for new durable source-aligned and data-product tables. Prefer Unity Catalog managed Delta tables unless external lifecycle ownership is required. | Delta is the physical table binding, not the consumer contract or product identity. |
 | Product access | Resolve stable logical product ports to Unity Catalog objects and approved adapters. | Consumers use product ports, SQL, APIs, events, sharing, semantic, feature, or retrieval interfaces rather than storage paths. |
-| Portable control state | Keep canonical data contracts with embedded product descriptors, semantic context, policy intent, workload intent, and telemetry conventions in open machine-readable artifacts. | Unity Catalog projects and enforces selected state but is not the only recoverable copy of foundation meaning or approval. |
+| Portable control state | Keep authoritative data contracts with embedded product descriptors, semantic context, policy intent, workload intent, and telemetry conventions in open machine-readable artifacts. | Unity Catalog projects and enforces selected state but is not the only recoverable copy of foundation meaning or approval. |
 
 Unity Catalog provides a three-level namespace and governance for securable data and AI objects, including tables, views, volumes, functions, models, services, connections, external locations, and shares. Delta Lake combines Parquet data files with an open transaction log and is the Databricks default for table operations. [Unity Catalog](https://docs.databricks.com/aws/en/data-governance/unity-catalog/) · [Delta Lake](https://docs.databricks.com/aws/en/delta) · [Delta Lake OSS](https://docs.delta.io/)
 
@@ -28,7 +28,7 @@ Unity Catalog provides a three-level namespace and governance for securable data
 | Enterprise policy intent, purpose decision and entitlement | Policy and entitlement authorities, projected into Unity Catalog controls where supported. |
 | Cross-platform system and product telemetry | Data Observability Service using OpenTelemetry conventions. |
 
-Unity Catalog may present synchronized projections of these authorities. A projection must retain the canonical identifier, version, source authority, synchronization time, and reconciliation status.
+Unity Catalog may present synchronized projections of these authorities. A projection must retain the authoritative identifier, version, source authority, synchronization time, and reconciliation status.
 
 ## Unity Catalog Profile
 
@@ -38,7 +38,7 @@ Unity Catalog may present synchronized projections of these authorities. A proje
 4. Apply workspace bindings, least-privilege grants, governed tags and ABAC, row filters, column masks, and storage controls according to the access policy.
 5. Register source connections, tables, views, volumes, functions, models, shares, and approved external or federated assets with stable foundation identifiers.
 6. Prohibit consumer and product-pipeline access by unmanaged cloud-storage path when a governed Unity Catalog object is available.
-7. Export catalog metadata, grants, tags, lineage, audit, and physical bindings on the defined retention schedule and reconcile them with canonical foundation records.
+7. Export catalog metadata, grants, tags, lineage, audit, and physical bindings on the defined retention schedule and reconcile them with authoritative foundation records.
 
 ## Delta Storage Profile
 

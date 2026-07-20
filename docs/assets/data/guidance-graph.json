@@ -1,0 +1,5139 @@
+{
+  "links": [
+    {
+      "relationshipType": "constrained_by",
+      "source": "architecture/agentic-data-foundation.md",
+      "sourceEntity": "agentic-data-service-design",
+      "target": "standards/access-control-standard.md",
+      "targetEntity": "access-control-standard",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "constrained_by",
+      "source": "architecture/agentic-data-foundation.md",
+      "sourceEntity": "agentic-data-service-design",
+      "target": "standards/agent-skill-llm-standard.md",
+      "targetEntity": "agent-skill-llm-standard",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "constrained_by",
+      "source": "architecture/data-contract-design.md",
+      "sourceEntity": "data-contract-design",
+      "target": "standards/data-contract-standard.md",
+      "targetEntity": "data-contract-standard",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "constrained_by",
+      "source": "architecture/data-contract-design.md",
+      "sourceEntity": "data-contract-design",
+      "target": "standards/open-interoperability-standard.md",
+      "targetEntity": "open-interoperability-standard",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "constrained_by",
+      "source": "architecture/data-product-design.md",
+      "sourceEntity": "data-product-design",
+      "target": "standards/ai-ready-data-standard.md",
+      "targetEntity": "ai-ready-data-standard",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "constrained_by",
+      "source": "architecture/data-product-design.md",
+      "sourceEntity": "data-product-design",
+      "target": "standards/data-product-management-standard.md",
+      "targetEntity": "data-product-management-standard",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "constrained_by",
+      "source": "architecture/developer-experience-design.md",
+      "sourceEntity": "developer-experience-design",
+      "target": "standards/data-product-workload-standard.md",
+      "targetEntity": "data-product-workload-standard",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "constrained_by",
+      "source": "architecture/integration-design.md",
+      "sourceEntity": "integration-design",
+      "target": "standards/open-interoperability-standard.md",
+      "targetEntity": "open-interoperability-standard",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "constrained_by",
+      "source": "architecture/integration-design.md",
+      "sourceEntity": "integration-design",
+      "target": "standards/otel-telemetry-standard.md",
+      "targetEntity": "otel-standard",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "constrained_by",
+      "source": "architecture/platform-enablement-design.md",
+      "sourceEntity": "platform-enablement-design",
+      "target": "standards/catalog-storage-standard.md",
+      "targetEntity": "catalog-storage-standard",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "constrained_by",
+      "source": "architecture/platform-enablement-design.md",
+      "sourceEntity": "platform-enablement-design",
+      "target": "standards/open-interoperability-standard.md",
+      "targetEntity": "open-interoperability-standard",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "constrained_by",
+      "source": "architecture/platform-governance-design.md",
+      "sourceEntity": "platform-governance-design",
+      "target": "standards/access-control-standard.md",
+      "targetEntity": "access-control-standard",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "constrained_by",
+      "source": "architecture/reference-architecture.md",
+      "sourceEntity": "platform-architecture",
+      "target": "standards/open-interoperability-standard.md",
+      "targetEntity": "open-interoperability-standard",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "constrained_by",
+      "source": "architecture/semantic-context-design.md",
+      "sourceEntity": "semantic-context-design",
+      "target": "standards/ai-ready-data-standard.md",
+      "targetEntity": "ai-ready-data-standard",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "constrained_by",
+      "source": "architecture/semantic-context-design.md",
+      "sourceEntity": "semantic-context-design",
+      "target": "standards/catalog-storage-standard.md",
+      "targetEntity": "catalog-storage-standard",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "constrained_by",
+      "source": "architecture/unified-access-design.md",
+      "sourceEntity": "unified-access-design",
+      "target": "standards/access-control-standard.md",
+      "targetEntity": "access-control-standard",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "constrained_by",
+      "source": "architecture/unified-access-design.md",
+      "sourceEntity": "unified-access-design",
+      "target": "standards/open-interoperability-standard.md",
+      "targetEntity": "open-interoperability-standard",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "depends_on",
+      "source": "services/data-consumption-service.md",
+      "sourceEntity": "data-consumption-service",
+      "target": "architecture/data-contract-design.md",
+      "targetEntity": "data-contract-design",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "depends_on",
+      "source": "services/data-consumption-service.md",
+      "sourceEntity": "data-consumption-service",
+      "target": "architecture/integration-design.md",
+      "targetEntity": "integration-design",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "depends_on",
+      "source": "services/data-consumption-service.md",
+      "sourceEntity": "data-consumption-service",
+      "target": "architecture/semantic-context-design.md",
+      "targetEntity": "semantic-context-design",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "implements",
+      "source": "services/data-consumption-service.md",
+      "sourceEntity": "data-consumption-service",
+      "target": "architecture/unified-access-design.md",
+      "targetEntity": "unified-access-design",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "participates_in",
+      "source": "services/data-consumption-service.md",
+      "sourceEntity": "data-consumption-service",
+      "target": "services/end-to-end-service-scenarios.md",
+      "targetEntity": "governed-consumption-scenario",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "constrained_by",
+      "source": "services/data-consumption-service.md",
+      "sourceEntity": "data-consumption-service",
+      "target": "standards/access-control-standard.md",
+      "targetEntity": "access-control-standard",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "constrained_by",
+      "source": "services/data-consumption-service.md",
+      "sourceEntity": "data-consumption-service",
+      "target": "standards/ai-ready-data-standard.md",
+      "targetEntity": "ai-ready-data-standard",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "constrained_by",
+      "source": "services/data-consumption-service.md",
+      "sourceEntity": "data-consumption-service",
+      "target": "standards/open-interoperability-standard.md",
+      "targetEntity": "open-interoperability-standard",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "depends_on",
+      "source": "services/data-foundation-operations-service.md",
+      "sourceEntity": "data-foundation-operations-service",
+      "target": "architecture/data-product-design.md",
+      "targetEntity": "data-product-design",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "depends_on",
+      "source": "services/data-foundation-operations-service.md",
+      "sourceEntity": "data-foundation-operations-service",
+      "target": "architecture/integration-design.md",
+      "targetEntity": "integration-design",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "depends_on",
+      "source": "services/data-foundation-operations-service.md",
+      "sourceEntity": "data-foundation-operations-service",
+      "target": "architecture/platform-governance-design.md",
+      "targetEntity": "platform-governance-design",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "participates_in",
+      "source": "services/data-foundation-operations-service.md",
+      "sourceEntity": "data-foundation-operations-service",
+      "target": "services/end-to-end-service-scenarios.md",
+      "targetEntity": "source-onboarding-scenario",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "constrained_by",
+      "source": "services/data-foundation-operations-service.md",
+      "sourceEntity": "data-foundation-operations-service",
+      "target": "standards/otel-telemetry-standard.md",
+      "targetEntity": "otel-standard",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "depends_on",
+      "source": "services/data-ingestion-service.md",
+      "sourceEntity": "data-ingestion-service",
+      "target": "architecture/data-contract-design.md",
+      "targetEntity": "data-contract-design",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "depends_on",
+      "source": "services/data-ingestion-service.md",
+      "sourceEntity": "data-ingestion-service",
+      "target": "architecture/data-foundation-model.md",
+      "targetEntity": "data-foundation-model",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "depends_on",
+      "source": "services/data-ingestion-service.md",
+      "sourceEntity": "data-ingestion-service",
+      "target": "architecture/integration-design.md",
+      "targetEntity": "integration-design",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "depends_on",
+      "source": "services/data-ingestion-service.md",
+      "sourceEntity": "data-ingestion-service",
+      "target": "architecture/platform-enablement-design.md",
+      "targetEntity": "platform-enablement-design",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "participates_in",
+      "source": "services/data-ingestion-service.md",
+      "sourceEntity": "data-ingestion-service",
+      "target": "services/end-to-end-service-scenarios.md",
+      "targetEntity": "source-onboarding-scenario",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "constrained_by",
+      "source": "services/data-ingestion-service.md",
+      "sourceEntity": "data-ingestion-service",
+      "target": "standards/catalog-storage-standard.md",
+      "targetEntity": "catalog-storage-standard",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "constrained_by",
+      "source": "services/data-ingestion-service.md",
+      "sourceEntity": "data-ingestion-service",
+      "target": "standards/data-contract-standard.md",
+      "targetEntity": "data-contract-standard",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "constrained_by",
+      "source": "services/data-ingestion-service.md",
+      "sourceEntity": "data-ingestion-service",
+      "target": "standards/open-interoperability-standard.md",
+      "targetEntity": "open-interoperability-standard",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "constrained_by",
+      "source": "services/data-ingestion-service.md",
+      "sourceEntity": "data-ingestion-service",
+      "target": "standards/otel-telemetry-standard.md",
+      "targetEntity": "otel-standard",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "depends_on",
+      "source": "services/data-observability-service.md",
+      "sourceEntity": "data-observability-service",
+      "target": "architecture/data-contract-design.md",
+      "targetEntity": "data-contract-design",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "depends_on",
+      "source": "services/data-observability-service.md",
+      "sourceEntity": "data-observability-service",
+      "target": "architecture/data-product-design.md",
+      "targetEntity": "data-product-design",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "depends_on",
+      "source": "services/data-observability-service.md",
+      "sourceEntity": "data-observability-service",
+      "target": "architecture/integration-design.md",
+      "targetEntity": "integration-design",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "participates_in",
+      "source": "services/data-observability-service.md",
+      "sourceEntity": "data-observability-service",
+      "target": "services/end-to-end-service-scenarios.md",
+      "targetEntity": "source-onboarding-scenario",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "constrained_by",
+      "source": "services/data-observability-service.md",
+      "sourceEntity": "data-observability-service",
+      "target": "standards/otel-telemetry-standard.md",
+      "targetEntity": "otel-standard",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "depends_on",
+      "source": "services/data-product-creation-service.md",
+      "sourceEntity": "data-product-creation-service",
+      "target": "architecture/data-contract-design.md",
+      "targetEntity": "data-contract-design",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "depends_on",
+      "source": "services/data-product-creation-service.md",
+      "sourceEntity": "data-product-creation-service",
+      "target": "architecture/data-domain-design.md",
+      "targetEntity": "data-domain-design",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "implements",
+      "source": "services/data-product-creation-service.md",
+      "sourceEntity": "data-product-creation-service",
+      "target": "architecture/data-product-design.md",
+      "targetEntity": "data-product-design",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "implements",
+      "source": "services/data-product-creation-service.md",
+      "sourceEntity": "data-product-creation-service",
+      "target": "architecture/developer-experience-design.md",
+      "targetEntity": "developer-experience-design",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "depends_on",
+      "source": "services/data-product-creation-service.md",
+      "sourceEntity": "data-product-creation-service",
+      "target": "architecture/platform-enablement-design.md",
+      "targetEntity": "platform-enablement-design",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "depends_on",
+      "source": "services/data-product-creation-service.md",
+      "sourceEntity": "data-product-creation-service",
+      "target": "architecture/semantic-context-design.md",
+      "targetEntity": "semantic-context-design",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "participates_in",
+      "source": "services/data-product-creation-service.md",
+      "sourceEntity": "data-product-creation-service",
+      "target": "services/end-to-end-service-scenarios.md",
+      "targetEntity": "domain-product-scenario",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "constrained_by",
+      "source": "services/data-product-creation-service.md",
+      "sourceEntity": "data-product-creation-service",
+      "target": "standards/data-contract-standard.md",
+      "targetEntity": "data-contract-standard",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "constrained_by",
+      "source": "services/data-product-creation-service.md",
+      "sourceEntity": "data-product-creation-service",
+      "target": "standards/data-product-management-standard.md",
+      "targetEntity": "data-product-management-standard",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "constrained_by",
+      "source": "services/data-product-creation-service.md",
+      "sourceEntity": "data-product-creation-service",
+      "target": "standards/data-product-workload-standard.md",
+      "targetEntity": "data-product-workload-standard",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "implements",
+      "source": "services/data-service-ai-assistant.md",
+      "sourceEntity": "data-service-ai-assistant",
+      "target": "architecture/agentic-data-foundation.md",
+      "targetEntity": "agentic-data-service-design",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "depends_on",
+      "source": "services/data-service-ai-assistant.md",
+      "sourceEntity": "data-service-ai-assistant",
+      "target": "architecture/data-contract-design.md",
+      "targetEntity": "data-contract-design",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "depends_on",
+      "source": "services/data-service-ai-assistant.md",
+      "sourceEntity": "data-service-ai-assistant",
+      "target": "architecture/semantic-context-design.md",
+      "targetEntity": "semantic-context-design",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "depends_on",
+      "source": "services/data-service-ai-assistant.md",
+      "sourceEntity": "data-service-ai-assistant",
+      "target": "architecture/unified-access-design.md",
+      "targetEntity": "unified-access-design",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "participates_in",
+      "source": "services/data-service-ai-assistant.md",
+      "sourceEntity": "data-service-ai-assistant",
+      "target": "services/end-to-end-service-scenarios.md",
+      "targetEntity": "ai-agent-scenario",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "constrained_by",
+      "source": "services/data-service-ai-assistant.md",
+      "sourceEntity": "data-service-ai-assistant",
+      "target": "standards/access-control-standard.md",
+      "targetEntity": "access-control-standard",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "constrained_by",
+      "source": "services/data-service-ai-assistant.md",
+      "sourceEntity": "data-service-ai-assistant",
+      "target": "standards/agent-skill-llm-standard.md",
+      "targetEntity": "agent-skill-llm-standard",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "depends_on",
+      "source": "services/data-service-portal.md",
+      "sourceEntity": "data-service-portal",
+      "target": "architecture/agentic-data-foundation.md",
+      "targetEntity": "agentic-data-service-design",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "depends_on",
+      "source": "services/data-service-portal.md",
+      "sourceEntity": "data-service-portal",
+      "target": "architecture/data-contract-design.md",
+      "targetEntity": "data-contract-design",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "depends_on",
+      "source": "services/data-service-portal.md",
+      "sourceEntity": "data-service-portal",
+      "target": "architecture/data-product-design.md",
+      "targetEntity": "data-product-design",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "depends_on",
+      "source": "services/data-service-portal.md",
+      "sourceEntity": "data-service-portal",
+      "target": "architecture/platform-governance-design.md",
+      "targetEntity": "platform-governance-design",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "depends_on",
+      "source": "services/data-service-portal.md",
+      "sourceEntity": "data-service-portal",
+      "target": "architecture/semantic-context-design.md",
+      "targetEntity": "semantic-context-design",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "participates_in",
+      "source": "services/data-service-portal.md",
+      "sourceEntity": "data-service-portal",
+      "target": "services/end-to-end-service-scenarios.md",
+      "targetEntity": "source-onboarding-scenario",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "constrained_by",
+      "source": "services/data-service-portal.md",
+      "sourceEntity": "data-service-portal",
+      "target": "standards/access-control-standard.md",
+      "targetEntity": "access-control-standard",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "constrained_by",
+      "source": "services/data-service-portal.md",
+      "sourceEntity": "data-service-portal",
+      "target": "standards/data-product-management-standard.md",
+      "targetEntity": "data-product-management-standard",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "depends_on",
+      "source": "services/data-sharing-service.md",
+      "sourceEntity": "data-sharing-service",
+      "target": "architecture/data-contract-design.md",
+      "targetEntity": "data-contract-design",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "depends_on",
+      "source": "services/data-sharing-service.md",
+      "sourceEntity": "data-sharing-service",
+      "target": "architecture/integration-design.md",
+      "targetEntity": "integration-design",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "depends_on",
+      "source": "services/data-sharing-service.md",
+      "sourceEntity": "data-sharing-service",
+      "target": "architecture/platform-governance-design.md",
+      "targetEntity": "platform-governance-design",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "depends_on",
+      "source": "services/data-sharing-service.md",
+      "sourceEntity": "data-sharing-service",
+      "target": "architecture/unified-access-design.md",
+      "targetEntity": "unified-access-design",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "participates_in",
+      "source": "services/data-sharing-service.md",
+      "sourceEntity": "data-sharing-service",
+      "target": "services/end-to-end-service-scenarios.md",
+      "targetEntity": "governed-consumption-scenario",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "constrained_by",
+      "source": "services/data-sharing-service.md",
+      "sourceEntity": "data-sharing-service",
+      "target": "standards/access-control-standard.md",
+      "targetEntity": "access-control-standard",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "constrained_by",
+      "source": "services/data-sharing-service.md",
+      "sourceEntity": "data-sharing-service",
+      "target": "standards/data-contract-standard.md",
+      "targetEntity": "data-contract-standard",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "constrained_by",
+      "source": "services/data-sharing-service.md",
+      "sourceEntity": "data-sharing-service",
+      "target": "standards/open-interoperability-standard.md",
+      "targetEntity": "open-interoperability-standard",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "implements",
+      "source": "services/platform-enablement-service.md",
+      "sourceEntity": "platform-enablement-service",
+      "target": "architecture/platform-enablement-design.md",
+      "targetEntity": "platform-enablement-design",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "depends_on",
+      "source": "services/platform-enablement-service.md",
+      "sourceEntity": "platform-enablement-service",
+      "target": "architecture/platform-governance-design.md",
+      "targetEntity": "platform-governance-design",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "depends_on",
+      "source": "services/platform-enablement-service.md",
+      "sourceEntity": "platform-enablement-service",
+      "target": "architecture/reference-architecture.md",
+      "targetEntity": "platform-architecture",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "participates_in",
+      "source": "services/platform-enablement-service.md",
+      "sourceEntity": "platform-enablement-service",
+      "target": "services/end-to-end-service-scenarios.md",
+      "targetEntity": "source-onboarding-scenario",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "constrained_by",
+      "source": "services/platform-enablement-service.md",
+      "sourceEntity": "platform-enablement-service",
+      "target": "standards/access-control-standard.md",
+      "targetEntity": "access-control-standard",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "constrained_by",
+      "source": "services/platform-enablement-service.md",
+      "sourceEntity": "platform-enablement-service",
+      "target": "standards/catalog-storage-standard.md",
+      "targetEntity": "catalog-storage-standard",
+      "type": "architecture"
+    },
+    {
+      "relationshipType": "constrained_by",
+      "source": "services/platform-enablement-service.md",
+      "sourceEntity": "platform-enablement-service",
+      "target": "standards/otel-telemetry-standard.md",
+      "targetEntity": "otel-standard",
+      "type": "architecture"
+    },
+    {
+      "source": "nav:architecture",
+      "target": "architecture/data-foundation-model.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:architecture",
+      "target": "architecture/design-map.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:architecture",
+      "target": "architecture/overview.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:architecture",
+      "target": "architecture/target-architecture.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:architecture",
+      "target": "nav:architecture/core-guidance",
+      "type": "contains"
+    },
+    {
+      "source": "nav:architecture/core-guidance",
+      "target": "architecture/agentic-data-foundation.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:architecture/core-guidance",
+      "target": "architecture/data-contract-design.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:architecture/core-guidance",
+      "target": "architecture/data-domain-design.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:architecture/core-guidance",
+      "target": "architecture/data-product-design.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:architecture/core-guidance",
+      "target": "architecture/developer-experience-design.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:architecture/core-guidance",
+      "target": "architecture/platform-enablement-design.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:architecture/core-guidance",
+      "target": "architecture/platform-governance-design.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:architecture/core-guidance",
+      "target": "architecture/semantic-context-design.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:architecture/core-guidance",
+      "target": "architecture/unified-access-design.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:architecture/core-guidance",
+      "target": "nav:architecture/core-guidance/platform-architecture-design",
+      "type": "contains"
+    },
+    {
+      "source": "nav:architecture/core-guidance/platform-architecture-design",
+      "target": "architecture/integration-design.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:architecture/core-guidance/platform-architecture-design",
+      "target": "architecture/reference-architecture.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:data-foundation-architecture-guide",
+      "target": "nav:architecture",
+      "type": "contains"
+    },
+    {
+      "source": "nav:data-foundation-architecture-guide",
+      "target": "nav:decisions",
+      "type": "contains"
+    },
+    {
+      "source": "nav:data-foundation-architecture-guide",
+      "target": "nav:runbooks",
+      "type": "contains"
+    },
+    {
+      "source": "nav:data-foundation-architecture-guide",
+      "target": "nav:services",
+      "type": "contains"
+    },
+    {
+      "source": "nav:data-foundation-architecture-guide",
+      "target": "nav:standards",
+      "type": "contains"
+    },
+    {
+      "source": "nav:data-foundation-architecture-guide",
+      "target": "nav:start-here",
+      "type": "contains"
+    },
+    {
+      "source": "nav:decisions",
+      "target": "decisions/adr-001-central-federated-ownership.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:decisions",
+      "target": "decisions/adr-002-unity-catalog.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:decisions",
+      "target": "decisions/adr-003-delta-storage.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:decisions",
+      "target": "decisions/adr-004-unified-data-access.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:decisions",
+      "target": "decisions/adr-005-observability-platforms.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:decisions",
+      "target": "decisions/architecture-decision-policy.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:decisions",
+      "target": "decisions/architecture-decision-process.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:decisions",
+      "target": "implementation/architecture-decisions.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:runbooks",
+      "target": "nav:runbooks/action-playbooks",
+      "type": "contains"
+    },
+    {
+      "source": "nav:runbooks",
+      "target": "nav:runbooks/agentic-architecture",
+      "type": "contains"
+    },
+    {
+      "source": "nav:runbooks",
+      "target": "nav:runbooks/implementation-guidance",
+      "type": "contains"
+    },
+    {
+      "source": "nav:runbooks",
+      "target": "nav:runbooks/plan-and-assess",
+      "type": "contains"
+    },
+    {
+      "source": "nav:runbooks",
+      "target": "nav:runbooks/reference-solutions",
+      "type": "contains"
+    },
+    {
+      "source": "nav:runbooks",
+      "target": "runbooks/index.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:runbooks/action-playbooks",
+      "target": "playbooks/approve-product-go-live.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:runbooks/action-playbooks",
+      "target": "playbooks/consume-data-product.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:runbooks/action-playbooks",
+      "target": "playbooks/create-change-data-product.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:runbooks/action-playbooks",
+      "target": "playbooks/index.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:runbooks/action-playbooks",
+      "target": "playbooks/onboard-data-domain.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:runbooks/action-playbooks",
+      "target": "playbooks/onboard-source.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:runbooks/action-playbooks",
+      "target": "playbooks/operate-service-product.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:runbooks/action-playbooks",
+      "target": "playbooks/share-data-product.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:runbooks/agentic-architecture",
+      "target": "architecture/data-contract-designer-skill.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:runbooks/agentic-architecture",
+      "target": "architecture/data-foundation-architect-skill.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:runbooks/agentic-architecture",
+      "target": "architecture/data-foundation-architecture-agent.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:runbooks/implementation-guidance",
+      "target": "implementation/implementation-blueprint.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:runbooks/implementation-guidance",
+      "target": "implementation/service-implementation-patterns.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:runbooks/plan-and-assess",
+      "target": "assessments/architecture-dashboard.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:runbooks/plan-and-assess",
+      "target": "assessments/data-foundation-maturity-assessment.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:runbooks/plan-and-assess",
+      "target": "assessments/industry-alignment.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:runbooks/plan-and-assess",
+      "target": "runway.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:runbooks/reference-solutions",
+      "target": "nav:runbooks/reference-solutions/reusable-reference-records",
+      "type": "contains"
+    },
+    {
+      "source": "nav:runbooks/reference-solutions",
+      "target": "nav:runbooks/reference-solutions/selected-technology-profiles",
+      "type": "contains"
+    },
+    {
+      "source": "nav:runbooks/reference-solutions",
+      "target": "reference-solutions/index.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:runbooks/reference-solutions/reusable-reference-records",
+      "target": "reference-solutions/agent-skill-template.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:runbooks/reference-solutions/reusable-reference-records",
+      "target": "reference-solutions/architecture-policy-template.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:runbooks/reference-solutions/reusable-reference-records",
+      "target": "reference-solutions/data-domain-onboarding-template.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:runbooks/reference-solutions/reusable-reference-records",
+      "target": "reference-solutions/data-product-template.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:runbooks/reference-solutions/reusable-reference-records",
+      "target": "reference-solutions/data-product-workload-template.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:runbooks/reference-solutions/reusable-reference-records",
+      "target": "reference-solutions/interoperability-conformance-template.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:runbooks/reference-solutions/reusable-reference-records",
+      "target": "reference-solutions/service-runbook-template.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:runbooks/reference-solutions/reusable-reference-records",
+      "target": "reference-solutions/source-onboarding-template.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:runbooks/reference-solutions/reusable-reference-records",
+      "target": "reference-solutions/technology-selection-template.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:runbooks/reference-solutions/selected-technology-profiles",
+      "target": "reference-solutions/data-consumption-design.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:runbooks/reference-solutions/selected-technology-profiles",
+      "target": "reference-solutions/data-ingestion-design.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:runbooks/reference-solutions/selected-technology-profiles",
+      "target": "reference-solutions/data-product-creation-design.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:runbooks/reference-solutions/selected-technology-profiles",
+      "target": "reference-solutions/data-sharing-design.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:runbooks/reference-solutions/selected-technology-profiles",
+      "target": "reference-solutions/observability-design.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:services",
+      "target": "services/data-consumption-service.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:services",
+      "target": "services/data-foundation-operations-service.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:services",
+      "target": "services/data-ingestion-service.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:services",
+      "target": "services/data-observability-service.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:services",
+      "target": "services/data-product-creation-service.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:services",
+      "target": "services/data-service-ai-assistant.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:services",
+      "target": "services/data-service-portal.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:services",
+      "target": "services/data-sharing-service.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:services",
+      "target": "services/end-to-end-service-scenarios.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:services",
+      "target": "services/index.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:services",
+      "target": "services/platform-enablement-service.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:standards",
+      "target": "standards/access-control-standard.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:standards",
+      "target": "standards/agent-skill-llm-standard.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:standards",
+      "target": "standards/ai-ready-data-standard.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:standards",
+      "target": "standards/catalog-storage-standard.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:standards",
+      "target": "standards/data-contract-standard.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:standards",
+      "target": "standards/data-product-management-standard.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:standards",
+      "target": "standards/data-product-workload-standard.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:standards",
+      "target": "standards/index.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:standards",
+      "target": "standards/open-interoperability-standard.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:standards",
+      "target": "standards/otel-telemetry-standard.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:standards",
+      "target": "standards/technology-selection-standard.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:start-here",
+      "target": "foundation/architecture-to-delivery.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:start-here",
+      "target": "foundation/definition-and-scope.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:start-here",
+      "target": "foundation/foundation-in-one-view.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:start-here",
+      "target": "foundation/guidance-model.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:start-here",
+      "target": "foundation/information-graph.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:start-here",
+      "target": "index.md",
+      "type": "contains"
+    },
+    {
+      "source": "architecture/data-contract-design.md",
+      "target": "architecture/data-product-design.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/data-contract-design.md",
+      "target": "standards/data-contract-standard.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/data-contract-designer-skill.md",
+      "target": "architecture/data-foundation-architect-skill.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/data-contract-designer-skill.md",
+      "target": "standards/data-contract-standard.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/data-domain-design.md",
+      "target": "architecture/reference-architecture.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/data-domain-design.md",
+      "target": "architecture/target-architecture.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/data-domain-design.md",
+      "target": "assessments/data-foundation-maturity-assessment.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/data-domain-design.md",
+      "target": "reference-solutions/data-domain-onboarding-template.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/data-domain-design.md",
+      "target": "services/data-consumption-service.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/data-domain-design.md",
+      "target": "services/data-ingestion-service.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/data-domain-design.md",
+      "target": "services/data-product-creation-service.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/data-domain-design.md",
+      "target": "services/platform-enablement-service.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/data-foundation-architect-skill.md",
+      "target": "architecture/data-contract-designer-skill.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/data-foundation-architecture-agent.md",
+      "target": "services/data-service-ai-assistant.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/data-foundation-model.md",
+      "target": "architecture/data-contract-design.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/data-foundation-model.md",
+      "target": "architecture/semantic-context-design.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/data-foundation-model.md",
+      "target": "architecture/unified-access-design.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/data-foundation-model.md",
+      "target": "services/data-consumption-service.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/data-foundation-model.md",
+      "target": "services/data-ingestion-service.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/data-foundation-model.md",
+      "target": "services/data-observability-service.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/data-foundation-model.md",
+      "target": "services/data-product-creation-service.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/data-product-design.md",
+      "target": "architecture/data-contract-design.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/data-product-design.md",
+      "target": "architecture/data-foundation-model.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/data-product-design.md",
+      "target": "playbooks/create-change-data-product.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/data-product-design.md",
+      "target": "standards/data-product-management-standard.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/design-map.md",
+      "target": "architecture/agentic-data-foundation.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/design-map.md",
+      "target": "architecture/data-contract-design.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/design-map.md",
+      "target": "architecture/data-domain-design.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/design-map.md",
+      "target": "architecture/data-foundation-model.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/design-map.md",
+      "target": "architecture/data-product-design.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/design-map.md",
+      "target": "architecture/developer-experience-design.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/design-map.md",
+      "target": "architecture/integration-design.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/design-map.md",
+      "target": "architecture/platform-enablement-design.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/design-map.md",
+      "target": "architecture/platform-governance-design.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/design-map.md",
+      "target": "architecture/semantic-context-design.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/design-map.md",
+      "target": "architecture/target-architecture.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/design-map.md",
+      "target": "architecture/unified-access-design.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/design-map.md",
+      "target": "foundation/architecture-to-delivery.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/design-map.md",
+      "target": "foundation/information-graph.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/design-map.md",
+      "target": "services/data-consumption-service.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/design-map.md",
+      "target": "services/data-foundation-operations-service.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/design-map.md",
+      "target": "services/data-ingestion-service.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/design-map.md",
+      "target": "services/data-observability-service.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/design-map.md",
+      "target": "services/data-product-creation-service.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/design-map.md",
+      "target": "services/data-service-ai-assistant.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/design-map.md",
+      "target": "services/data-service-portal.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/design-map.md",
+      "target": "services/data-sharing-service.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/design-map.md",
+      "target": "services/platform-enablement-service.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/integration-design.md",
+      "target": "architecture/target-architecture.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/overview.md",
+      "target": "architecture/agentic-data-foundation.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/overview.md",
+      "target": "architecture/data-contract-design.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/overview.md",
+      "target": "architecture/data-domain-design.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/overview.md",
+      "target": "architecture/data-foundation-model.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/overview.md",
+      "target": "architecture/data-product-design.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/overview.md",
+      "target": "architecture/design-map.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/overview.md",
+      "target": "architecture/developer-experience-design.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/overview.md",
+      "target": "architecture/integration-design.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/overview.md",
+      "target": "architecture/platform-enablement-design.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/overview.md",
+      "target": "architecture/platform-governance-design.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/overview.md",
+      "target": "architecture/reference-architecture.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/overview.md",
+      "target": "architecture/semantic-context-design.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/overview.md",
+      "target": "architecture/target-architecture.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/overview.md",
+      "target": "architecture/unified-access-design.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/overview.md",
+      "target": "decisions/architecture-decision-process.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/overview.md",
+      "target": "foundation/information-graph.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/overview.md",
+      "target": "reference-solutions/index.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/overview.md",
+      "target": "services/data-consumption-service.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/overview.md",
+      "target": "services/data-ingestion-service.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/overview.md",
+      "target": "services/data-observability-service.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/overview.md",
+      "target": "services/end-to-end-service-scenarios.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/overview.md",
+      "target": "services/index.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/platform-enablement-design.md",
+      "target": "services/platform-enablement-service.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/platform-governance-design.md",
+      "target": "architecture/agentic-data-foundation.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/platform-governance-design.md",
+      "target": "architecture/data-contract-design.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/platform-governance-design.md",
+      "target": "architecture/data-product-design.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/platform-governance-design.md",
+      "target": "architecture/platform-enablement-design.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/platform-governance-design.md",
+      "target": "architecture/unified-access-design.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/platform-governance-design.md",
+      "target": "services/data-foundation-operations-service.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/platform-governance-design.md",
+      "target": "services/data-observability-service.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/platform-governance-design.md",
+      "target": "services/index.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/platform-governance-design.md",
+      "target": "services/platform-enablement-service.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/platform-governance-design.md",
+      "target": "standards/index.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/reference-architecture.md",
+      "target": "architecture/data-contract-design.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/reference-architecture.md",
+      "target": "architecture/data-foundation-model.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/reference-architecture.md",
+      "target": "architecture/target-architecture.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/reference-architecture.md",
+      "target": "architecture/unified-access-design.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/reference-architecture.md",
+      "target": "services/data-foundation-operations-service.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/reference-architecture.md",
+      "target": "services/data-ingestion-service.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/reference-architecture.md",
+      "target": "services/data-observability-service.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/reference-architecture.md",
+      "target": "services/data-product-creation-service.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/reference-architecture.md",
+      "target": "services/data-service-portal.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/reference-architecture.md",
+      "target": "services/data-sharing-service.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/reference-architecture.md",
+      "target": "services/platform-enablement-service.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/reference-architecture.md",
+      "target": "standards/open-interoperability-standard.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/target-architecture.md",
+      "target": "architecture/agentic-data-foundation.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/target-architecture.md",
+      "target": "architecture/data-contract-design.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/target-architecture.md",
+      "target": "architecture/data-foundation-model.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/target-architecture.md",
+      "target": "architecture/design-map.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/target-architecture.md",
+      "target": "architecture/integration-design.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/target-architecture.md",
+      "target": "architecture/platform-governance-design.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/target-architecture.md",
+      "target": "foundation/foundation-in-one-view.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/target-architecture.md",
+      "target": "services/data-consumption-service.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/target-architecture.md",
+      "target": "services/data-foundation-operations-service.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/target-architecture.md",
+      "target": "services/data-ingestion-service.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/target-architecture.md",
+      "target": "services/data-observability-service.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/target-architecture.md",
+      "target": "services/data-product-creation-service.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/target-architecture.md",
+      "target": "services/data-service-ai-assistant.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/target-architecture.md",
+      "target": "services/data-service-portal.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/target-architecture.md",
+      "target": "services/data-sharing-service.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/target-architecture.md",
+      "target": "services/platform-enablement-service.md",
+      "type": "references"
+    },
+    {
+      "source": "assessments/architecture-dashboard.md",
+      "target": "assessments/data-foundation-maturity-assessment.md",
+      "type": "references"
+    },
+    {
+      "source": "assessments/architecture-dashboard.md",
+      "target": "foundation/architecture-to-delivery.md",
+      "type": "references"
+    },
+    {
+      "source": "assessments/data-foundation-maturity-assessment.md",
+      "target": "architecture/data-domain-design.md",
+      "type": "references"
+    },
+    {
+      "source": "assessments/data-foundation-maturity-assessment.md",
+      "target": "implementation/implementation-blueprint.md",
+      "type": "references"
+    },
+    {
+      "source": "assessments/data-foundation-maturity-assessment.md",
+      "target": "reference-solutions/data-domain-onboarding-template.md",
+      "type": "references"
+    },
+    {
+      "source": "assessments/data-foundation-maturity-assessment.md",
+      "target": "standards/data-product-management-standard.md",
+      "type": "references"
+    },
+    {
+      "source": "assessments/data-foundation-maturity-assessment.md",
+      "target": "standards/open-interoperability-standard.md",
+      "type": "references"
+    },
+    {
+      "source": "assessments/data-foundation-maturity-assessment.md",
+      "target": "standards/otel-telemetry-standard.md",
+      "type": "references"
+    },
+    {
+      "source": "decisions/adr-001-central-federated-ownership.md",
+      "target": "architecture/data-foundation-model.md",
+      "type": "references"
+    },
+    {
+      "source": "decisions/adr-001-central-federated-ownership.md",
+      "target": "foundation/definition-and-scope.md",
+      "type": "references"
+    },
+    {
+      "source": "decisions/adr-001-central-federated-ownership.md",
+      "target": "services/data-ingestion-service.md",
+      "type": "references"
+    },
+    {
+      "source": "decisions/adr-001-central-federated-ownership.md",
+      "target": "services/data-product-creation-service.md",
+      "type": "references"
+    },
+    {
+      "source": "decisions/adr-001-central-federated-ownership.md",
+      "target": "standards/data-contract-standard.md",
+      "type": "references"
+    },
+    {
+      "source": "decisions/adr-001-central-federated-ownership.md",
+      "target": "standards/data-product-management-standard.md",
+      "type": "references"
+    },
+    {
+      "source": "decisions/adr-002-unity-catalog.md",
+      "target": "architecture/semantic-context-design.md",
+      "type": "references"
+    },
+    {
+      "source": "decisions/adr-002-unity-catalog.md",
+      "target": "architecture/unified-access-design.md",
+      "type": "references"
+    },
+    {
+      "source": "decisions/adr-002-unity-catalog.md",
+      "target": "services/platform-enablement-service.md",
+      "type": "references"
+    },
+    {
+      "source": "decisions/adr-002-unity-catalog.md",
+      "target": "standards/catalog-storage-standard.md",
+      "type": "references"
+    },
+    {
+      "source": "decisions/adr-002-unity-catalog.md",
+      "target": "standards/data-contract-standard.md",
+      "type": "references"
+    },
+    {
+      "source": "decisions/adr-003-delta-storage.md",
+      "target": "architecture/data-foundation-model.md",
+      "type": "references"
+    },
+    {
+      "source": "decisions/adr-003-delta-storage.md",
+      "target": "architecture/unified-access-design.md",
+      "type": "references"
+    },
+    {
+      "source": "decisions/adr-003-delta-storage.md",
+      "target": "standards/catalog-storage-standard.md",
+      "type": "references"
+    },
+    {
+      "source": "decisions/adr-003-delta-storage.md",
+      "target": "standards/data-product-workload-standard.md",
+      "type": "references"
+    },
+    {
+      "source": "decisions/adr-004-unified-data-access.md",
+      "target": "architecture/unified-access-design.md",
+      "type": "references"
+    },
+    {
+      "source": "decisions/adr-004-unified-data-access.md",
+      "target": "services/data-consumption-service.md",
+      "type": "references"
+    },
+    {
+      "source": "decisions/adr-004-unified-data-access.md",
+      "target": "standards/access-control-standard.md",
+      "type": "references"
+    },
+    {
+      "source": "decisions/adr-004-unified-data-access.md",
+      "target": "standards/data-contract-standard.md",
+      "type": "references"
+    },
+    {
+      "source": "decisions/adr-005-observability-platforms.md",
+      "target": "reference-solutions/observability-design.md",
+      "type": "references"
+    },
+    {
+      "source": "decisions/adr-005-observability-platforms.md",
+      "target": "services/data-foundation-operations-service.md",
+      "type": "references"
+    },
+    {
+      "source": "decisions/adr-005-observability-platforms.md",
+      "target": "services/data-observability-service.md",
+      "type": "references"
+    },
+    {
+      "source": "decisions/adr-005-observability-platforms.md",
+      "target": "standards/agent-skill-llm-standard.md",
+      "type": "references"
+    },
+    {
+      "source": "decisions/adr-005-observability-platforms.md",
+      "target": "standards/data-product-management-standard.md",
+      "type": "references"
+    },
+    {
+      "source": "decisions/adr-005-observability-platforms.md",
+      "target": "standards/otel-telemetry-standard.md",
+      "type": "references"
+    },
+    {
+      "source": "decisions/architecture-decision-policy.md",
+      "target": "decisions/architecture-decision-process.md",
+      "type": "references"
+    },
+    {
+      "source": "decisions/architecture-decision-policy.md",
+      "target": "reference-solutions/architecture-policy-template.md",
+      "type": "references"
+    },
+    {
+      "source": "decisions/architecture-decision-process.md",
+      "target": "decisions/architecture-decision-policy.md",
+      "type": "references"
+    },
+    {
+      "source": "decisions/architecture-decision-process.md",
+      "target": "implementation/architecture-decisions.md",
+      "type": "references"
+    },
+    {
+      "source": "decisions/architecture-decision-process.md",
+      "target": "services/end-to-end-service-scenarios.md",
+      "type": "references"
+    },
+    {
+      "source": "foundation/architecture-to-delivery.md",
+      "target": "architecture/integration-design.md",
+      "type": "references"
+    },
+    {
+      "source": "foundation/architecture-to-delivery.md",
+      "target": "playbooks/approve-product-go-live.md",
+      "type": "references"
+    },
+    {
+      "source": "foundation/architecture-to-delivery.md",
+      "target": "playbooks/consume-data-product.md",
+      "type": "references"
+    },
+    {
+      "source": "foundation/architecture-to-delivery.md",
+      "target": "playbooks/create-change-data-product.md",
+      "type": "references"
+    },
+    {
+      "source": "foundation/architecture-to-delivery.md",
+      "target": "playbooks/index.md",
+      "type": "references"
+    },
+    {
+      "source": "foundation/architecture-to-delivery.md",
+      "target": "playbooks/onboard-source.md",
+      "type": "references"
+    },
+    {
+      "source": "foundation/architecture-to-delivery.md",
+      "target": "playbooks/operate-service-product.md",
+      "type": "references"
+    },
+    {
+      "source": "foundation/architecture-to-delivery.md",
+      "target": "playbooks/share-data-product.md",
+      "type": "references"
+    },
+    {
+      "source": "foundation/architecture-to-delivery.md",
+      "target": "reference-solutions/index.md",
+      "type": "references"
+    },
+    {
+      "source": "foundation/architecture-to-delivery.md",
+      "target": "runway.md",
+      "type": "references"
+    },
+    {
+      "source": "foundation/architecture-to-delivery.md",
+      "target": "services/data-consumption-service.md",
+      "type": "references"
+    },
+    {
+      "source": "foundation/architecture-to-delivery.md",
+      "target": "services/data-foundation-operations-service.md",
+      "type": "references"
+    },
+    {
+      "source": "foundation/architecture-to-delivery.md",
+      "target": "services/data-ingestion-service.md",
+      "type": "references"
+    },
+    {
+      "source": "foundation/architecture-to-delivery.md",
+      "target": "services/data-observability-service.md",
+      "type": "references"
+    },
+    {
+      "source": "foundation/architecture-to-delivery.md",
+      "target": "services/data-product-creation-service.md",
+      "type": "references"
+    },
+    {
+      "source": "foundation/architecture-to-delivery.md",
+      "target": "services/data-service-ai-assistant.md",
+      "type": "references"
+    },
+    {
+      "source": "foundation/architecture-to-delivery.md",
+      "target": "services/data-service-portal.md",
+      "type": "references"
+    },
+    {
+      "source": "foundation/architecture-to-delivery.md",
+      "target": "services/data-sharing-service.md",
+      "type": "references"
+    },
+    {
+      "source": "foundation/architecture-to-delivery.md",
+      "target": "services/platform-enablement-service.md",
+      "type": "references"
+    },
+    {
+      "source": "foundation/architecture-to-delivery.md",
+      "target": "standards/index.md",
+      "type": "references"
+    },
+    {
+      "source": "foundation/definition-and-scope.md",
+      "target": "architecture/data-domain-design.md",
+      "type": "references"
+    },
+    {
+      "source": "foundation/definition-and-scope.md",
+      "target": "architecture/data-foundation-model.md",
+      "type": "references"
+    },
+    {
+      "source": "foundation/definition-and-scope.md",
+      "target": "decisions/architecture-decision-policy.md",
+      "type": "references"
+    },
+    {
+      "source": "foundation/definition-and-scope.md",
+      "target": "services/data-consumption-service.md",
+      "type": "references"
+    },
+    {
+      "source": "foundation/definition-and-scope.md",
+      "target": "standards/index.md",
+      "type": "references"
+    },
+    {
+      "source": "foundation/foundation-in-one-view.md",
+      "target": "architecture/data-contract-design.md",
+      "type": "references"
+    },
+    {
+      "source": "foundation/foundation-in-one-view.md",
+      "target": "architecture/data-foundation-model.md",
+      "type": "references"
+    },
+    {
+      "source": "foundation/foundation-in-one-view.md",
+      "target": "architecture/data-product-design.md",
+      "type": "references"
+    },
+    {
+      "source": "foundation/foundation-in-one-view.md",
+      "target": "architecture/overview.md",
+      "type": "references"
+    },
+    {
+      "source": "foundation/foundation-in-one-view.md",
+      "target": "architecture/platform-governance-design.md",
+      "type": "references"
+    },
+    {
+      "source": "foundation/foundation-in-one-view.md",
+      "target": "architecture/target-architecture.md",
+      "type": "references"
+    },
+    {
+      "source": "foundation/foundation-in-one-view.md",
+      "target": "foundation/architecture-to-delivery.md",
+      "type": "references"
+    },
+    {
+      "source": "foundation/foundation-in-one-view.md",
+      "target": "foundation/definition-and-scope.md",
+      "type": "references"
+    },
+    {
+      "source": "foundation/foundation-in-one-view.md",
+      "target": "playbooks/consume-data-product.md",
+      "type": "references"
+    },
+    {
+      "source": "foundation/foundation-in-one-view.md",
+      "target": "playbooks/create-change-data-product.md",
+      "type": "references"
+    },
+    {
+      "source": "foundation/foundation-in-one-view.md",
+      "target": "playbooks/index.md",
+      "type": "references"
+    },
+    {
+      "source": "foundation/foundation-in-one-view.md",
+      "target": "playbooks/operate-service-product.md",
+      "type": "references"
+    },
+    {
+      "source": "foundation/foundation-in-one-view.md",
+      "target": "runway.md",
+      "type": "references"
+    },
+    {
+      "source": "foundation/foundation-in-one-view.md",
+      "target": "services/index.md",
+      "type": "references"
+    },
+    {
+      "source": "foundation/foundation-in-one-view.md",
+      "target": "standards/index.md",
+      "type": "references"
+    },
+    {
+      "source": "foundation/guidance-model.md",
+      "target": "architecture/data-product-design.md",
+      "type": "references"
+    },
+    {
+      "source": "foundation/guidance-model.md",
+      "target": "assessments/data-foundation-maturity-assessment.md",
+      "type": "references"
+    },
+    {
+      "source": "foundation/guidance-model.md",
+      "target": "decisions/architecture-decision-policy.md",
+      "type": "references"
+    },
+    {
+      "source": "foundation/guidance-model.md",
+      "target": "decisions/architecture-decision-process.md",
+      "type": "references"
+    },
+    {
+      "source": "foundation/guidance-model.md",
+      "target": "foundation/architecture-to-delivery.md",
+      "type": "references"
+    },
+    {
+      "source": "foundation/guidance-model.md",
+      "target": "foundation/definition-and-scope.md",
+      "type": "references"
+    },
+    {
+      "source": "foundation/guidance-model.md",
+      "target": "foundation/foundation-in-one-view.md",
+      "type": "references"
+    },
+    {
+      "source": "foundation/guidance-model.md",
+      "target": "foundation/information-graph.md",
+      "type": "references"
+    },
+    {
+      "source": "foundation/guidance-model.md",
+      "target": "playbooks/approve-product-go-live.md",
+      "type": "references"
+    },
+    {
+      "source": "foundation/guidance-model.md",
+      "target": "playbooks/consume-data-product.md",
+      "type": "references"
+    },
+    {
+      "source": "foundation/guidance-model.md",
+      "target": "playbooks/create-change-data-product.md",
+      "type": "references"
+    },
+    {
+      "source": "foundation/guidance-model.md",
+      "target": "playbooks/index.md",
+      "type": "references"
+    },
+    {
+      "source": "foundation/guidance-model.md",
+      "target": "playbooks/onboard-data-domain.md",
+      "type": "references"
+    },
+    {
+      "source": "foundation/guidance-model.md",
+      "target": "playbooks/onboard-source.md",
+      "type": "references"
+    },
+    {
+      "source": "foundation/guidance-model.md",
+      "target": "playbooks/operate-service-product.md",
+      "type": "references"
+    },
+    {
+      "source": "foundation/guidance-model.md",
+      "target": "playbooks/share-data-product.md",
+      "type": "references"
+    },
+    {
+      "source": "foundation/guidance-model.md",
+      "target": "reference-solutions/index.md",
+      "type": "references"
+    },
+    {
+      "source": "foundation/guidance-model.md",
+      "target": "runbooks/index.md",
+      "type": "references"
+    },
+    {
+      "source": "foundation/guidance-model.md",
+      "target": "runway.md",
+      "type": "references"
+    },
+    {
+      "source": "foundation/guidance-model.md",
+      "target": "services/index.md",
+      "type": "references"
+    },
+    {
+      "source": "foundation/guidance-model.md",
+      "target": "standards/index.md",
+      "type": "references"
+    },
+    {
+      "source": "foundation/information-graph.md",
+      "target": "foundation/guidance-model.md",
+      "type": "references"
+    },
+    {
+      "source": "implementation/architecture-decisions.md",
+      "target": "decisions/adr-001-central-federated-ownership.md",
+      "type": "references"
+    },
+    {
+      "source": "implementation/architecture-decisions.md",
+      "target": "decisions/adr-002-unity-catalog.md",
+      "type": "references"
+    },
+    {
+      "source": "implementation/architecture-decisions.md",
+      "target": "decisions/adr-003-delta-storage.md",
+      "type": "references"
+    },
+    {
+      "source": "implementation/architecture-decisions.md",
+      "target": "decisions/adr-004-unified-data-access.md",
+      "type": "references"
+    },
+    {
+      "source": "implementation/architecture-decisions.md",
+      "target": "decisions/adr-005-observability-platforms.md",
+      "type": "references"
+    },
+    {
+      "source": "implementation/architecture-decisions.md",
+      "target": "decisions/architecture-decision-policy.md",
+      "type": "references"
+    },
+    {
+      "source": "implementation/architecture-decisions.md",
+      "target": "decisions/architecture-decision-process.md",
+      "type": "references"
+    },
+    {
+      "source": "index.md",
+      "target": "architecture/target-architecture.md",
+      "type": "references"
+    },
+    {
+      "source": "index.md",
+      "target": "foundation/definition-and-scope.md",
+      "type": "references"
+    },
+    {
+      "source": "index.md",
+      "target": "foundation/foundation-in-one-view.md",
+      "type": "references"
+    },
+    {
+      "source": "index.md",
+      "target": "playbooks/consume-data-product.md",
+      "type": "references"
+    },
+    {
+      "source": "index.md",
+      "target": "playbooks/create-change-data-product.md",
+      "type": "references"
+    },
+    {
+      "source": "index.md",
+      "target": "playbooks/operate-service-product.md",
+      "type": "references"
+    },
+    {
+      "source": "index.md",
+      "target": "services/data-consumption-service.md",
+      "type": "references"
+    },
+    {
+      "source": "index.md",
+      "target": "services/data-foundation-operations-service.md",
+      "type": "references"
+    },
+    {
+      "source": "index.md",
+      "target": "services/data-ingestion-service.md",
+      "type": "references"
+    },
+    {
+      "source": "index.md",
+      "target": "services/data-observability-service.md",
+      "type": "references"
+    },
+    {
+      "source": "index.md",
+      "target": "services/data-product-creation-service.md",
+      "type": "references"
+    },
+    {
+      "source": "index.md",
+      "target": "services/data-service-ai-assistant.md",
+      "type": "references"
+    },
+    {
+      "source": "index.md",
+      "target": "services/data-service-portal.md",
+      "type": "references"
+    },
+    {
+      "source": "index.md",
+      "target": "services/data-sharing-service.md",
+      "type": "references"
+    },
+    {
+      "source": "index.md",
+      "target": "services/platform-enablement-service.md",
+      "type": "references"
+    },
+    {
+      "source": "playbooks/approve-product-go-live.md",
+      "target": "architecture/data-product-design.md",
+      "type": "references"
+    },
+    {
+      "source": "playbooks/approve-product-go-live.md",
+      "target": "reference-solutions/data-product-template.md",
+      "type": "references"
+    },
+    {
+      "source": "playbooks/approve-product-go-live.md",
+      "target": "standards/data-product-management-standard.md",
+      "type": "references"
+    },
+    {
+      "source": "playbooks/consume-data-product.md",
+      "target": "architecture/unified-access-design.md",
+      "type": "references"
+    },
+    {
+      "source": "playbooks/consume-data-product.md",
+      "target": "services/data-consumption-service.md",
+      "type": "references"
+    },
+    {
+      "source": "playbooks/consume-data-product.md",
+      "target": "standards/access-control-standard.md",
+      "type": "references"
+    },
+    {
+      "source": "playbooks/create-change-data-product.md",
+      "target": "architecture/data-contract-design.md",
+      "type": "references"
+    },
+    {
+      "source": "playbooks/create-change-data-product.md",
+      "target": "architecture/data-product-design.md",
+      "type": "references"
+    },
+    {
+      "source": "playbooks/create-change-data-product.md",
+      "target": "services/data-product-creation-service.md",
+      "type": "references"
+    },
+    {
+      "source": "playbooks/create-change-data-product.md",
+      "target": "standards/data-product-workload-standard.md",
+      "type": "references"
+    },
+    {
+      "source": "playbooks/index.md",
+      "target": "playbooks/approve-product-go-live.md",
+      "type": "references"
+    },
+    {
+      "source": "playbooks/index.md",
+      "target": "playbooks/consume-data-product.md",
+      "type": "references"
+    },
+    {
+      "source": "playbooks/index.md",
+      "target": "playbooks/create-change-data-product.md",
+      "type": "references"
+    },
+    {
+      "source": "playbooks/index.md",
+      "target": "playbooks/onboard-data-domain.md",
+      "type": "references"
+    },
+    {
+      "source": "playbooks/index.md",
+      "target": "playbooks/onboard-source.md",
+      "type": "references"
+    },
+    {
+      "source": "playbooks/index.md",
+      "target": "playbooks/operate-service-product.md",
+      "type": "references"
+    },
+    {
+      "source": "playbooks/index.md",
+      "target": "playbooks/share-data-product.md",
+      "type": "references"
+    },
+    {
+      "source": "playbooks/onboard-data-domain.md",
+      "target": "architecture/data-domain-design.md",
+      "type": "references"
+    },
+    {
+      "source": "playbooks/onboard-data-domain.md",
+      "target": "assessments/data-foundation-maturity-assessment.md",
+      "type": "references"
+    },
+    {
+      "source": "playbooks/onboard-data-domain.md",
+      "target": "reference-solutions/data-domain-onboarding-template.md",
+      "type": "references"
+    },
+    {
+      "source": "playbooks/onboard-source.md",
+      "target": "reference-solutions/data-ingestion-design.md",
+      "type": "references"
+    },
+    {
+      "source": "playbooks/onboard-source.md",
+      "target": "reference-solutions/source-onboarding-template.md",
+      "type": "references"
+    },
+    {
+      "source": "playbooks/onboard-source.md",
+      "target": "services/data-ingestion-service.md",
+      "type": "references"
+    },
+    {
+      "source": "playbooks/operate-service-product.md",
+      "target": "architecture/platform-governance-design.md",
+      "type": "references"
+    },
+    {
+      "source": "playbooks/operate-service-product.md",
+      "target": "foundation/architecture-to-delivery.md",
+      "type": "references"
+    },
+    {
+      "source": "playbooks/operate-service-product.md",
+      "target": "reference-solutions/service-runbook-template.md",
+      "type": "references"
+    },
+    {
+      "source": "playbooks/operate-service-product.md",
+      "target": "runway.md",
+      "type": "references"
+    },
+    {
+      "source": "playbooks/operate-service-product.md",
+      "target": "services/data-foundation-operations-service.md",
+      "type": "references"
+    },
+    {
+      "source": "playbooks/operate-service-product.md",
+      "target": "services/data-observability-service.md",
+      "type": "references"
+    },
+    {
+      "source": "playbooks/share-data-product.md",
+      "target": "reference-solutions/data-sharing-design.md",
+      "type": "references"
+    },
+    {
+      "source": "playbooks/share-data-product.md",
+      "target": "services/data-sharing-service.md",
+      "type": "references"
+    },
+    {
+      "source": "playbooks/share-data-product.md",
+      "target": "standards/data-contract-standard.md",
+      "type": "references"
+    },
+    {
+      "source": "reference-solutions/architecture-policy-template.md",
+      "target": "decisions/architecture-decision-policy.md",
+      "type": "references"
+    },
+    {
+      "source": "reference-solutions/data-consumption-design.md",
+      "target": "architecture/semantic-context-design.md",
+      "type": "references"
+    },
+    {
+      "source": "reference-solutions/data-consumption-design.md",
+      "target": "architecture/unified-access-design.md",
+      "type": "references"
+    },
+    {
+      "source": "reference-solutions/data-consumption-design.md",
+      "target": "services/data-consumption-service.md",
+      "type": "references"
+    },
+    {
+      "source": "reference-solutions/data-consumption-design.md",
+      "target": "standards/catalog-storage-standard.md",
+      "type": "references"
+    },
+    {
+      "source": "reference-solutions/data-domain-onboarding-template.md",
+      "target": "assessments/data-foundation-maturity-assessment.md",
+      "type": "references"
+    },
+    {
+      "source": "reference-solutions/data-ingestion-design.md",
+      "target": "services/data-ingestion-service.md",
+      "type": "references"
+    },
+    {
+      "source": "reference-solutions/data-ingestion-design.md",
+      "target": "standards/catalog-storage-standard.md",
+      "type": "references"
+    },
+    {
+      "source": "reference-solutions/data-ingestion-design.md",
+      "target": "standards/otel-telemetry-standard.md",
+      "type": "references"
+    },
+    {
+      "source": "reference-solutions/data-product-creation-design.md",
+      "target": "services/data-product-creation-service.md",
+      "type": "references"
+    },
+    {
+      "source": "reference-solutions/data-product-creation-design.md",
+      "target": "standards/catalog-storage-standard.md",
+      "type": "references"
+    },
+    {
+      "source": "reference-solutions/data-product-template.md",
+      "target": "standards/ai-ready-data-standard.md",
+      "type": "references"
+    },
+    {
+      "source": "reference-solutions/data-sharing-design.md",
+      "target": "reference-solutions/technology-selection-template.md",
+      "type": "references"
+    },
+    {
+      "source": "reference-solutions/data-sharing-design.md",
+      "target": "services/data-sharing-service.md",
+      "type": "references"
+    },
+    {
+      "source": "reference-solutions/data-sharing-design.md",
+      "target": "standards/data-contract-standard.md",
+      "type": "references"
+    },
+    {
+      "source": "reference-solutions/index.md",
+      "target": "reference-solutions/agent-skill-template.md",
+      "type": "references"
+    },
+    {
+      "source": "reference-solutions/index.md",
+      "target": "reference-solutions/architecture-policy-template.md",
+      "type": "references"
+    },
+    {
+      "source": "reference-solutions/index.md",
+      "target": "reference-solutions/data-consumption-design.md",
+      "type": "references"
+    },
+    {
+      "source": "reference-solutions/index.md",
+      "target": "reference-solutions/data-domain-onboarding-template.md",
+      "type": "references"
+    },
+    {
+      "source": "reference-solutions/index.md",
+      "target": "reference-solutions/data-ingestion-design.md",
+      "type": "references"
+    },
+    {
+      "source": "reference-solutions/index.md",
+      "target": "reference-solutions/data-product-creation-design.md",
+      "type": "references"
+    },
+    {
+      "source": "reference-solutions/index.md",
+      "target": "reference-solutions/data-product-template.md",
+      "type": "references"
+    },
+    {
+      "source": "reference-solutions/index.md",
+      "target": "reference-solutions/data-product-workload-template.md",
+      "type": "references"
+    },
+    {
+      "source": "reference-solutions/index.md",
+      "target": "reference-solutions/data-sharing-design.md",
+      "type": "references"
+    },
+    {
+      "source": "reference-solutions/index.md",
+      "target": "reference-solutions/interoperability-conformance-template.md",
+      "type": "references"
+    },
+    {
+      "source": "reference-solutions/index.md",
+      "target": "reference-solutions/observability-design.md",
+      "type": "references"
+    },
+    {
+      "source": "reference-solutions/index.md",
+      "target": "reference-solutions/service-runbook-template.md",
+      "type": "references"
+    },
+    {
+      "source": "reference-solutions/index.md",
+      "target": "reference-solutions/source-onboarding-template.md",
+      "type": "references"
+    },
+    {
+      "source": "reference-solutions/index.md",
+      "target": "reference-solutions/technology-selection-template.md",
+      "type": "references"
+    },
+    {
+      "source": "reference-solutions/observability-design.md",
+      "target": "reference-solutions/technology-selection-template.md",
+      "type": "references"
+    },
+    {
+      "source": "reference-solutions/observability-design.md",
+      "target": "services/data-observability-service.md",
+      "type": "references"
+    },
+    {
+      "source": "reference-solutions/observability-design.md",
+      "target": "standards/data-product-management-standard.md",
+      "type": "references"
+    },
+    {
+      "source": "reference-solutions/observability-design.md",
+      "target": "standards/otel-telemetry-standard.md",
+      "type": "references"
+    },
+    {
+      "source": "reference-solutions/service-runbook-template.md",
+      "target": "foundation/architecture-to-delivery.md",
+      "type": "references"
+    },
+    {
+      "source": "runbooks/index.md",
+      "target": "assessments/architecture-dashboard.md",
+      "type": "references"
+    },
+    {
+      "source": "runbooks/index.md",
+      "target": "assessments/data-foundation-maturity-assessment.md",
+      "type": "references"
+    },
+    {
+      "source": "runbooks/index.md",
+      "target": "assessments/industry-alignment.md",
+      "type": "references"
+    },
+    {
+      "source": "runbooks/index.md",
+      "target": "decisions/architecture-decision-policy.md",
+      "type": "references"
+    },
+    {
+      "source": "runbooks/index.md",
+      "target": "implementation/implementation-blueprint.md",
+      "type": "references"
+    },
+    {
+      "source": "runbooks/index.md",
+      "target": "playbooks/index.md",
+      "type": "references"
+    },
+    {
+      "source": "runbooks/index.md",
+      "target": "reference-solutions/index.md",
+      "type": "references"
+    },
+    {
+      "source": "runbooks/index.md",
+      "target": "runway.md",
+      "type": "references"
+    },
+    {
+      "source": "runway.md",
+      "target": "foundation/architecture-to-delivery.md",
+      "type": "references"
+    },
+    {
+      "source": "runway.md",
+      "target": "foundation/foundation-in-one-view.md",
+      "type": "references"
+    },
+    {
+      "source": "services/data-consumption-service.md",
+      "target": "architecture/agentic-data-foundation.md",
+      "type": "references"
+    },
+    {
+      "source": "services/data-consumption-service.md",
+      "target": "architecture/data-contract-design.md",
+      "type": "references"
+    },
+    {
+      "source": "services/data-consumption-service.md",
+      "target": "architecture/platform-enablement-design.md",
+      "type": "references"
+    },
+    {
+      "source": "services/data-consumption-service.md",
+      "target": "architecture/platform-governance-design.md",
+      "type": "references"
+    },
+    {
+      "source": "services/data-consumption-service.md",
+      "target": "architecture/semantic-context-design.md",
+      "type": "references"
+    },
+    {
+      "source": "services/data-consumption-service.md",
+      "target": "architecture/unified-access-design.md",
+      "type": "references"
+    },
+    {
+      "source": "services/data-consumption-service.md",
+      "target": "reference-solutions/data-consumption-design.md",
+      "type": "references"
+    },
+    {
+      "source": "services/data-foundation-operations-service.md",
+      "target": "architecture/agentic-data-foundation.md",
+      "type": "references"
+    },
+    {
+      "source": "services/data-foundation-operations-service.md",
+      "target": "architecture/data-product-design.md",
+      "type": "references"
+    },
+    {
+      "source": "services/data-foundation-operations-service.md",
+      "target": "architecture/platform-enablement-design.md",
+      "type": "references"
+    },
+    {
+      "source": "services/data-foundation-operations-service.md",
+      "target": "architecture/platform-governance-design.md",
+      "type": "references"
+    },
+    {
+      "source": "services/data-foundation-operations-service.md",
+      "target": "foundation/architecture-to-delivery.md",
+      "type": "references"
+    },
+    {
+      "source": "services/data-foundation-operations-service.md",
+      "target": "reference-solutions/service-runbook-template.md",
+      "type": "references"
+    },
+    {
+      "source": "services/data-ingestion-service.md",
+      "target": "architecture/agentic-data-foundation.md",
+      "type": "references"
+    },
+    {
+      "source": "services/data-ingestion-service.md",
+      "target": "architecture/data-contract-design.md",
+      "type": "references"
+    },
+    {
+      "source": "services/data-ingestion-service.md",
+      "target": "architecture/data-foundation-model.md",
+      "type": "references"
+    },
+    {
+      "source": "services/data-ingestion-service.md",
+      "target": "architecture/platform-enablement-design.md",
+      "type": "references"
+    },
+    {
+      "source": "services/data-ingestion-service.md",
+      "target": "architecture/platform-governance-design.md",
+      "type": "references"
+    },
+    {
+      "source": "services/data-ingestion-service.md",
+      "target": "reference-solutions/data-ingestion-design.md",
+      "type": "references"
+    },
+    {
+      "source": "services/data-observability-service.md",
+      "target": "architecture/agentic-data-foundation.md",
+      "type": "references"
+    },
+    {
+      "source": "services/data-observability-service.md",
+      "target": "architecture/data-contract-design.md",
+      "type": "references"
+    },
+    {
+      "source": "services/data-observability-service.md",
+      "target": "architecture/data-product-design.md",
+      "type": "references"
+    },
+    {
+      "source": "services/data-observability-service.md",
+      "target": "architecture/platform-enablement-design.md",
+      "type": "references"
+    },
+    {
+      "source": "services/data-observability-service.md",
+      "target": "architecture/platform-governance-design.md",
+      "type": "references"
+    },
+    {
+      "source": "services/data-observability-service.md",
+      "target": "reference-solutions/observability-design.md",
+      "type": "references"
+    },
+    {
+      "source": "services/data-observability-service.md",
+      "target": "standards/otel-telemetry-standard.md",
+      "type": "references"
+    },
+    {
+      "source": "services/data-product-creation-service.md",
+      "target": "architecture/agentic-data-foundation.md",
+      "type": "references"
+    },
+    {
+      "source": "services/data-product-creation-service.md",
+      "target": "architecture/data-contract-design.md",
+      "type": "references"
+    },
+    {
+      "source": "services/data-product-creation-service.md",
+      "target": "architecture/data-domain-design.md",
+      "type": "references"
+    },
+    {
+      "source": "services/data-product-creation-service.md",
+      "target": "architecture/data-product-design.md",
+      "type": "references"
+    },
+    {
+      "source": "services/data-product-creation-service.md",
+      "target": "architecture/developer-experience-design.md",
+      "type": "references"
+    },
+    {
+      "source": "services/data-product-creation-service.md",
+      "target": "architecture/platform-enablement-design.md",
+      "type": "references"
+    },
+    {
+      "source": "services/data-product-creation-service.md",
+      "target": "architecture/platform-governance-design.md",
+      "type": "references"
+    },
+    {
+      "source": "services/data-product-creation-service.md",
+      "target": "architecture/semantic-context-design.md",
+      "type": "references"
+    },
+    {
+      "source": "services/data-product-creation-service.md",
+      "target": "reference-solutions/data-product-creation-design.md",
+      "type": "references"
+    },
+    {
+      "source": "services/data-service-ai-assistant.md",
+      "target": "architecture/agentic-data-foundation.md",
+      "type": "references"
+    },
+    {
+      "source": "services/data-service-ai-assistant.md",
+      "target": "architecture/data-contract-design.md",
+      "type": "references"
+    },
+    {
+      "source": "services/data-service-ai-assistant.md",
+      "target": "architecture/platform-enablement-design.md",
+      "type": "references"
+    },
+    {
+      "source": "services/data-service-ai-assistant.md",
+      "target": "architecture/platform-governance-design.md",
+      "type": "references"
+    },
+    {
+      "source": "services/data-service-ai-assistant.md",
+      "target": "architecture/semantic-context-design.md",
+      "type": "references"
+    },
+    {
+      "source": "services/data-service-ai-assistant.md",
+      "target": "architecture/unified-access-design.md",
+      "type": "references"
+    },
+    {
+      "source": "services/data-service-portal.md",
+      "target": "architecture/agentic-data-foundation.md",
+      "type": "references"
+    },
+    {
+      "source": "services/data-service-portal.md",
+      "target": "architecture/data-contract-design.md",
+      "type": "references"
+    },
+    {
+      "source": "services/data-service-portal.md",
+      "target": "architecture/data-product-design.md",
+      "type": "references"
+    },
+    {
+      "source": "services/data-service-portal.md",
+      "target": "architecture/design-map.md",
+      "type": "references"
+    },
+    {
+      "source": "services/data-service-portal.md",
+      "target": "architecture/integration-design.md",
+      "type": "references"
+    },
+    {
+      "source": "services/data-service-portal.md",
+      "target": "architecture/platform-enablement-design.md",
+      "type": "references"
+    },
+    {
+      "source": "services/data-service-portal.md",
+      "target": "architecture/platform-governance-design.md",
+      "type": "references"
+    },
+    {
+      "source": "services/data-service-portal.md",
+      "target": "architecture/semantic-context-design.md",
+      "type": "references"
+    },
+    {
+      "source": "services/data-sharing-service.md",
+      "target": "architecture/agentic-data-foundation.md",
+      "type": "references"
+    },
+    {
+      "source": "services/data-sharing-service.md",
+      "target": "architecture/data-contract-design.md",
+      "type": "references"
+    },
+    {
+      "source": "services/data-sharing-service.md",
+      "target": "architecture/platform-enablement-design.md",
+      "type": "references"
+    },
+    {
+      "source": "services/data-sharing-service.md",
+      "target": "architecture/platform-governance-design.md",
+      "type": "references"
+    },
+    {
+      "source": "services/data-sharing-service.md",
+      "target": "architecture/unified-access-design.md",
+      "type": "references"
+    },
+    {
+      "source": "services/data-sharing-service.md",
+      "target": "reference-solutions/data-sharing-design.md",
+      "type": "references"
+    },
+    {
+      "source": "services/end-to-end-service-scenarios.md",
+      "target": "architecture/integration-design.md",
+      "type": "references"
+    },
+    {
+      "source": "services/end-to-end-service-scenarios.md",
+      "target": "decisions/architecture-decision-process.md",
+      "type": "references"
+    },
+    {
+      "source": "services/end-to-end-service-scenarios.md",
+      "target": "services/data-consumption-service.md",
+      "type": "references"
+    },
+    {
+      "source": "services/end-to-end-service-scenarios.md",
+      "target": "services/data-ingestion-service.md",
+      "type": "references"
+    },
+    {
+      "source": "services/end-to-end-service-scenarios.md",
+      "target": "services/data-product-creation-service.md",
+      "type": "references"
+    },
+    {
+      "source": "services/end-to-end-service-scenarios.md",
+      "target": "services/data-service-ai-assistant.md",
+      "type": "references"
+    },
+    {
+      "source": "services/end-to-end-service-scenarios.md",
+      "target": "services/data-service-portal.md",
+      "type": "references"
+    },
+    {
+      "source": "services/end-to-end-service-scenarios.md",
+      "target": "services/platform-enablement-service.md",
+      "type": "references"
+    },
+    {
+      "source": "services/index.md",
+      "target": "architecture/design-map.md",
+      "type": "references"
+    },
+    {
+      "source": "services/index.md",
+      "target": "foundation/architecture-to-delivery.md",
+      "type": "references"
+    },
+    {
+      "source": "services/index.md",
+      "target": "implementation/implementation-blueprint.md",
+      "type": "references"
+    },
+    {
+      "source": "services/index.md",
+      "target": "implementation/service-implementation-patterns.md",
+      "type": "references"
+    },
+    {
+      "source": "services/index.md",
+      "target": "playbooks/index.md",
+      "type": "references"
+    },
+    {
+      "source": "services/index.md",
+      "target": "reference-solutions/service-runbook-template.md",
+      "type": "references"
+    },
+    {
+      "source": "services/index.md",
+      "target": "services/data-consumption-service.md",
+      "type": "references"
+    },
+    {
+      "source": "services/index.md",
+      "target": "services/data-foundation-operations-service.md",
+      "type": "references"
+    },
+    {
+      "source": "services/index.md",
+      "target": "services/data-ingestion-service.md",
+      "type": "references"
+    },
+    {
+      "source": "services/index.md",
+      "target": "services/data-observability-service.md",
+      "type": "references"
+    },
+    {
+      "source": "services/index.md",
+      "target": "services/data-product-creation-service.md",
+      "type": "references"
+    },
+    {
+      "source": "services/index.md",
+      "target": "services/data-service-ai-assistant.md",
+      "type": "references"
+    },
+    {
+      "source": "services/index.md",
+      "target": "services/data-service-portal.md",
+      "type": "references"
+    },
+    {
+      "source": "services/index.md",
+      "target": "services/data-sharing-service.md",
+      "type": "references"
+    },
+    {
+      "source": "services/index.md",
+      "target": "services/platform-enablement-service.md",
+      "type": "references"
+    },
+    {
+      "source": "services/index.md",
+      "target": "standards/index.md",
+      "type": "references"
+    },
+    {
+      "source": "services/platform-enablement-service.md",
+      "target": "architecture/agentic-data-foundation.md",
+      "type": "references"
+    },
+    {
+      "source": "services/platform-enablement-service.md",
+      "target": "architecture/data-contract-design.md",
+      "type": "references"
+    },
+    {
+      "source": "services/platform-enablement-service.md",
+      "target": "architecture/data-product-design.md",
+      "type": "references"
+    },
+    {
+      "source": "services/platform-enablement-service.md",
+      "target": "architecture/platform-enablement-design.md",
+      "type": "references"
+    },
+    {
+      "source": "services/platform-enablement-service.md",
+      "target": "architecture/platform-governance-design.md",
+      "type": "references"
+    },
+    {
+      "source": "services/platform-enablement-service.md",
+      "target": "reference-solutions/technology-selection-template.md",
+      "type": "references"
+    },
+    {
+      "source": "standards/ai-ready-data-standard.md",
+      "target": "standards/agent-skill-llm-standard.md",
+      "type": "references"
+    },
+    {
+      "source": "standards/data-product-management-standard.md",
+      "target": "architecture/unified-access-design.md",
+      "type": "references"
+    },
+    {
+      "source": "standards/data-product-management-standard.md",
+      "target": "services/data-service-portal.md",
+      "type": "references"
+    },
+    {
+      "source": "standards/index.md",
+      "target": "decisions/architecture-decision-policy.md",
+      "type": "references"
+    },
+    {
+      "source": "standards/index.md",
+      "target": "services/data-consumption-service.md",
+      "type": "references"
+    },
+    {
+      "source": "standards/index.md",
+      "target": "services/data-foundation-operations-service.md",
+      "type": "references"
+    },
+    {
+      "source": "standards/index.md",
+      "target": "services/data-ingestion-service.md",
+      "type": "references"
+    },
+    {
+      "source": "standards/index.md",
+      "target": "services/data-observability-service.md",
+      "type": "references"
+    },
+    {
+      "source": "standards/index.md",
+      "target": "services/data-product-creation-service.md",
+      "type": "references"
+    },
+    {
+      "source": "standards/index.md",
+      "target": "services/data-service-ai-assistant.md",
+      "type": "references"
+    },
+    {
+      "source": "standards/index.md",
+      "target": "services/data-service-portal.md",
+      "type": "references"
+    },
+    {
+      "source": "standards/index.md",
+      "target": "services/data-sharing-service.md",
+      "type": "references"
+    },
+    {
+      "source": "standards/index.md",
+      "target": "services/platform-enablement-service.md",
+      "type": "references"
+    },
+    {
+      "source": "standards/index.md",
+      "target": "standards/access-control-standard.md",
+      "type": "references"
+    },
+    {
+      "source": "standards/index.md",
+      "target": "standards/agent-skill-llm-standard.md",
+      "type": "references"
+    },
+    {
+      "source": "standards/index.md",
+      "target": "standards/ai-ready-data-standard.md",
+      "type": "references"
+    },
+    {
+      "source": "standards/index.md",
+      "target": "standards/catalog-storage-standard.md",
+      "type": "references"
+    },
+    {
+      "source": "standards/index.md",
+      "target": "standards/data-contract-standard.md",
+      "type": "references"
+    },
+    {
+      "source": "standards/index.md",
+      "target": "standards/data-product-management-standard.md",
+      "type": "references"
+    },
+    {
+      "source": "standards/index.md",
+      "target": "standards/data-product-workload-standard.md",
+      "type": "references"
+    },
+    {
+      "source": "standards/index.md",
+      "target": "standards/open-interoperability-standard.md",
+      "type": "references"
+    },
+    {
+      "source": "standards/index.md",
+      "target": "standards/otel-telemetry-standard.md",
+      "type": "references"
+    },
+    {
+      "source": "standards/index.md",
+      "target": "standards/technology-selection-standard.md",
+      "type": "references"
+    },
+    {
+      "source": "standards/open-interoperability-standard.md",
+      "target": "reference-solutions/interoperability-conformance-template.md",
+      "type": "references"
+    },
+    {
+      "source": "standards/technology-selection-standard.md",
+      "target": "reference-solutions/technology-selection-template.md",
+      "type": "references"
+    },
+    {
+      "source": "standards/technology-selection-standard.md",
+      "target": "standards/catalog-storage-standard.md",
+      "type": "references"
+    }
+  ],
+  "metrics": {
+    "architectureRelationshipTypes": {
+      "constrained_by": 39,
+      "depends_on": 31,
+      "implements": 5,
+      "participates_in": 9
+    },
+    "architectureRelationships": 84,
+    "groupPageCounts": {
+      "Architecture": 15,
+      "Decisions": 8,
+      "Runbooks": 33,
+      "Services": 11,
+      "Standards": 11,
+      "Start Here": 6
+    },
+    "largestPages": [
+      {
+        "path": "reference-solutions/data-sharing-design.md",
+        "title": "Data Sharing Design",
+        "words": 2808
+      },
+      {
+        "path": "reference-solutions/data-consumption-design.md",
+        "title": "Data Consumption Design",
+        "words": 2660
+      },
+      {
+        "path": "reference-solutions/data-product-creation-design.md",
+        "title": "Data Product Creation Design",
+        "words": 2599
+      },
+      {
+        "path": "standards/data-contract-standard.md",
+        "title": "Data Contract Standard",
+        "words": 2404
+      },
+      {
+        "path": "reference-solutions/observability-design.md",
+        "title": "Observability Design",
+        "words": 2355
+      },
+      {
+        "path": "reference-solutions/data-ingestion-design.md",
+        "title": "Data Ingestion Design",
+        "words": 2174
+      },
+      {
+        "path": "architecture/target-architecture.md",
+        "title": "Architecture Blueprint",
+        "words": 2155
+      },
+      {
+        "path": "architecture/data-product-design.md",
+        "title": "Data Product Design",
+        "words": 2045
+      }
+    ],
+    "maximumNavigationDepth": 4,
+    "mostReferencedPages": [
+      {
+        "incoming": 17,
+        "path": "architecture/data-contract-design.md",
+        "title": "Data Contract Design"
+      },
+      {
+        "incoming": 14,
+        "path": "services/data-consumption-service.md",
+        "title": "Data Consumption Service"
+      },
+      {
+        "incoming": 14,
+        "path": "services/data-ingestion-service.md",
+        "title": "Data Ingestion Service"
+      },
+      {
+        "incoming": 14,
+        "path": "architecture/platform-governance-design.md",
+        "title": "Platform Governance Design"
+      },
+      {
+        "incoming": 14,
+        "path": "architecture/unified-access-design.md",
+        "title": "Unified Access Design"
+      },
+      {
+        "incoming": 13,
+        "path": "architecture/agentic-data-foundation.md",
+        "title": "Agentic Data Service Design"
+      },
+      {
+        "incoming": 13,
+        "path": "services/data-observability-service.md",
+        "title": "Data Observability Service"
+      },
+      {
+        "incoming": 13,
+        "path": "services/data-product-creation-service.md",
+        "title": "Data Product Creation Service"
+      }
+    ],
+    "navigationNodes": 16,
+    "navigationRelationships": 99,
+    "orphanPages": [
+      {
+        "path": "architecture/data-foundation-architecture-agent.md",
+        "title": "Data Foundation Architecture Agent"
+      }
+    ],
+    "pages": 84,
+    "referenceDensity": 5.0,
+    "referenceRelationships": 419,
+    "registryEntities": 36,
+    "topLevelSections": 6
+  },
+  "nodes": [
+    {
+      "architectureIncoming": 2,
+      "architectureOutgoing": 2,
+      "breadcrumbs": [
+        "Architecture",
+        "Core Guidance",
+        "Agentic Data Service Design"
+      ],
+      "group": "Architecture",
+      "id": "architecture/agentic-data-foundation.md",
+      "incoming": 13,
+      "kind": "page",
+      "navLabel": "Agentic Data Service Design",
+      "outgoing": 0,
+      "title": "Agentic Data Service Design",
+      "url": "/architecture/agentic-data-foundation/",
+      "words": 1437
+    },
+    {
+      "architectureIncoming": 7,
+      "architectureOutgoing": 2,
+      "breadcrumbs": [
+        "Architecture",
+        "Core Guidance",
+        "Data Contract Design"
+      ],
+      "group": "Architecture",
+      "id": "architecture/data-contract-design.md",
+      "incoming": 17,
+      "kind": "page",
+      "navLabel": "Data Contract Design",
+      "outgoing": 2,
+      "title": "Data Contract Design",
+      "url": "/architecture/data-contract-design/",
+      "words": 1456
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Runbooks",
+        "Agentic Architecture",
+        "Data Contract Designer Skill"
+      ],
+      "group": "Runbooks",
+      "id": "architecture/data-contract-designer-skill.md",
+      "incoming": 1,
+      "kind": "page",
+      "navLabel": "Data Contract Designer Skill",
+      "outgoing": 2,
+      "title": "Data Contract Designer Skill",
+      "url": "/architecture/data-contract-designer-skill/",
+      "words": 480
+    },
+    {
+      "architectureIncoming": 1,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Architecture",
+        "Core Guidance",
+        "Data Domain Design"
+      ],
+      "group": "Architecture",
+      "id": "architecture/data-domain-design.md",
+      "incoming": 6,
+      "kind": "page",
+      "navLabel": "Data Domain Design",
+      "outgoing": 8,
+      "title": "Data Domain Design",
+      "url": "/architecture/data-domain-design/",
+      "words": 1410
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Runbooks",
+        "Agentic Architecture",
+        "Data Foundation Architect Skill"
+      ],
+      "group": "Runbooks",
+      "id": "architecture/data-foundation-architect-skill.md",
+      "incoming": 1,
+      "kind": "page",
+      "navLabel": "Data Foundation Architect Skill",
+      "outgoing": 1,
+      "title": "Data Foundation Architect Skill",
+      "url": "/architecture/data-foundation-architect-skill/",
+      "words": 792
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Runbooks",
+        "Agentic Architecture",
+        "Data Foundation Architecture Agent"
+      ],
+      "group": "Runbooks",
+      "id": "architecture/data-foundation-architecture-agent.md",
+      "incoming": 0,
+      "kind": "page",
+      "navLabel": "Data Foundation Architecture Agent",
+      "outgoing": 1,
+      "title": "Data Foundation Architecture Agent",
+      "url": "/architecture/data-foundation-architecture-agent/",
+      "words": 838
+    },
+    {
+      "architectureIncoming": 1,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Architecture",
+        "Data Foundation Model"
+      ],
+      "group": "Architecture",
+      "id": "architecture/data-foundation-model.md",
+      "incoming": 10,
+      "kind": "page",
+      "navLabel": "Data Foundation Model",
+      "outgoing": 7,
+      "title": "Data Foundation Model",
+      "url": "/architecture/data-foundation-model/",
+      "words": 1841
+    },
+    {
+      "architectureIncoming": 4,
+      "architectureOutgoing": 2,
+      "breadcrumbs": [
+        "Architecture",
+        "Core Guidance",
+        "Data Product Design"
+      ],
+      "group": "Architecture",
+      "id": "architecture/data-product-design.md",
+      "incoming": 13,
+      "kind": "page",
+      "navLabel": "Data Product Design",
+      "outgoing": 4,
+      "title": "Data Product Design",
+      "url": "/architecture/data-product-design/",
+      "words": 2045
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Architecture",
+        "Architecture Design Map"
+      ],
+      "group": "Architecture",
+      "id": "architecture/design-map.md",
+      "incoming": 4,
+      "kind": "page",
+      "navLabel": "Architecture Design Map",
+      "outgoing": 23,
+      "title": "Architecture Design Map",
+      "url": "/architecture/design-map/",
+      "words": 1095
+    },
+    {
+      "architectureIncoming": 1,
+      "architectureOutgoing": 1,
+      "breadcrumbs": [
+        "Architecture",
+        "Core Guidance",
+        "Developer Experience Design"
+      ],
+      "group": "Architecture",
+      "id": "architecture/developer-experience-design.md",
+      "incoming": 3,
+      "kind": "page",
+      "navLabel": "Developer Experience Design",
+      "outgoing": 0,
+      "title": "Developer Experience Design",
+      "url": "/architecture/developer-experience-design/",
+      "words": 701
+    },
+    {
+      "architectureIncoming": 5,
+      "architectureOutgoing": 2,
+      "breadcrumbs": [
+        "Architecture",
+        "Core Guidance",
+        "Platform Architecture Design",
+        "Integration Design"
+      ],
+      "group": "Architecture",
+      "id": "architecture/integration-design.md",
+      "incoming": 6,
+      "kind": "page",
+      "navLabel": "Integration Design",
+      "outgoing": 1,
+      "title": "Integration Design",
+      "url": "/architecture/integration-design/",
+      "words": 1004
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Architecture",
+        "Overview"
+      ],
+      "group": "Architecture",
+      "id": "architecture/overview.md",
+      "incoming": 1,
+      "kind": "page",
+      "navLabel": "Overview",
+      "outgoing": 22,
+      "title": "Architecture Overview",
+      "url": "/architecture/overview/",
+      "words": 1368
+    },
+    {
+      "architectureIncoming": 3,
+      "architectureOutgoing": 2,
+      "breadcrumbs": [
+        "Architecture",
+        "Core Guidance",
+        "Platform Enablement Design"
+      ],
+      "group": "Architecture",
+      "id": "architecture/platform-enablement-design.md",
+      "incoming": 12,
+      "kind": "page",
+      "navLabel": "Platform Enablement Design",
+      "outgoing": 1,
+      "title": "Platform Enablement Design",
+      "url": "/architecture/platform-enablement-design/",
+      "words": 748
+    },
+    {
+      "architectureIncoming": 4,
+      "architectureOutgoing": 1,
+      "breadcrumbs": [
+        "Architecture",
+        "Core Guidance",
+        "Platform Governance Design"
+      ],
+      "group": "Architecture",
+      "id": "architecture/platform-governance-design.md",
+      "incoming": 14,
+      "kind": "page",
+      "navLabel": "Platform Governance Design",
+      "outgoing": 10,
+      "title": "Platform Governance Design",
+      "url": "/architecture/platform-governance-design/",
+      "words": 1527
+    },
+    {
+      "architectureIncoming": 1,
+      "architectureOutgoing": 1,
+      "breadcrumbs": [
+        "Architecture",
+        "Core Guidance",
+        "Platform Architecture Design",
+        "Platform Architecture"
+      ],
+      "group": "Architecture",
+      "id": "architecture/reference-architecture.md",
+      "incoming": 2,
+      "kind": "page",
+      "navLabel": "Platform Architecture",
+      "outgoing": 12,
+      "title": "Platform Architecture",
+      "url": "/architecture/reference-architecture/",
+      "words": 1302
+    },
+    {
+      "architectureIncoming": 4,
+      "architectureOutgoing": 2,
+      "breadcrumbs": [
+        "Architecture",
+        "Core Guidance",
+        "Semantic and Context Design"
+      ],
+      "group": "Architecture",
+      "id": "architecture/semantic-context-design.md",
+      "incoming": 9,
+      "kind": "page",
+      "navLabel": "Semantic and Context Design",
+      "outgoing": 0,
+      "title": "Semantic and Context Design",
+      "url": "/architecture/semantic-context-design/",
+      "words": 1056
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Architecture",
+        "Architecture Blueprint"
+      ],
+      "group": "Architecture",
+      "id": "architecture/target-architecture.md",
+      "incoming": 7,
+      "kind": "page",
+      "navLabel": "Architecture Blueprint",
+      "outgoing": 16,
+      "title": "Architecture Blueprint",
+      "url": "/architecture/target-architecture/",
+      "words": 2155
+    },
+    {
+      "architectureIncoming": 3,
+      "architectureOutgoing": 2,
+      "breadcrumbs": [
+        "Architecture",
+        "Core Guidance",
+        "Unified Access Design"
+      ],
+      "group": "Architecture",
+      "id": "architecture/unified-access-design.md",
+      "incoming": 14,
+      "kind": "page",
+      "navLabel": "Unified Access Design",
+      "outgoing": 0,
+      "title": "Unified Access Design",
+      "url": "/architecture/unified-access-design/",
+      "words": 1685
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Runbooks",
+        "Plan and Assess",
+        "Architecture Dashboard"
+      ],
+      "group": "Runbooks",
+      "id": "assessments/architecture-dashboard.md",
+      "incoming": 1,
+      "kind": "page",
+      "navLabel": "Architecture Dashboard",
+      "outgoing": 2,
+      "title": "Architecture Dashboard",
+      "url": "/assessments/architecture-dashboard/",
+      "words": 417
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Runbooks",
+        "Plan and Assess",
+        "Data Foundation Maturity Assessment"
+      ],
+      "group": "Runbooks",
+      "id": "assessments/data-foundation-maturity-assessment.md",
+      "incoming": 6,
+      "kind": "page",
+      "navLabel": "Data Foundation Maturity Assessment",
+      "outgoing": 6,
+      "title": "Data Foundation Maturity Assessment",
+      "url": "/assessments/data-foundation-maturity-assessment/",
+      "words": 1148
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Runbooks",
+        "Plan and Assess",
+        "Industry Alignment"
+      ],
+      "group": "Runbooks",
+      "id": "assessments/industry-alignment.md",
+      "incoming": 1,
+      "kind": "page",
+      "navLabel": "Industry Alignment",
+      "outgoing": 0,
+      "title": "Industry Alignment",
+      "url": "/assessments/industry-alignment/",
+      "words": 1151
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Decisions",
+        "ADR-001 Central and Federated Ownership"
+      ],
+      "group": "Decisions",
+      "id": "decisions/adr-001-central-federated-ownership.md",
+      "incoming": 1,
+      "kind": "page",
+      "navLabel": "ADR-001 Central and Federated Ownership",
+      "outgoing": 6,
+      "title": "ADR-001: Central and Federated Product Ownership",
+      "url": "/decisions/adr-001-central-federated-ownership/",
+      "words": 365
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Decisions",
+        "ADR-002 Unity Catalog"
+      ],
+      "group": "Decisions",
+      "id": "decisions/adr-002-unity-catalog.md",
+      "incoming": 1,
+      "kind": "page",
+      "navLabel": "ADR-002 Unity Catalog",
+      "outgoing": 5,
+      "title": "ADR-002: Unity Catalog as Technical Catalog Standard",
+      "url": "/decisions/adr-002-unity-catalog/",
+      "words": 352
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Decisions",
+        "ADR-003 Delta Storage"
+      ],
+      "group": "Decisions",
+      "id": "decisions/adr-003-delta-storage.md",
+      "incoming": 1,
+      "kind": "page",
+      "navLabel": "ADR-003 Delta Storage",
+      "outgoing": 4,
+      "title": "ADR-003: Delta as Default Durable Tabular Storage",
+      "url": "/decisions/adr-003-delta-storage/",
+      "words": 352
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Decisions",
+        "ADR-004 Unified Data Access"
+      ],
+      "group": "Decisions",
+      "id": "decisions/adr-004-unified-data-access.md",
+      "incoming": 1,
+      "kind": "page",
+      "navLabel": "ADR-004 Unified Data Access",
+      "outgoing": 4,
+      "title": "ADR-004: Unified Data Access Above Physical Storage",
+      "url": "/decisions/adr-004-unified-data-access/",
+      "words": 352
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Decisions",
+        "ADR-005 Observability Platforms"
+      ],
+      "group": "Decisions",
+      "id": "decisions/adr-005-observability-platforms.md",
+      "incoming": 1,
+      "kind": "page",
+      "navLabel": "ADR-005 Observability Platforms",
+      "outgoing": 6,
+      "title": "ADR-005: System and Product Observability Platforms",
+      "url": "/decisions/adr-005-observability-platforms/",
+      "words": 387
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Decisions",
+        "Architecture Decision Policy"
+      ],
+      "group": "Decisions",
+      "id": "decisions/architecture-decision-policy.md",
+      "incoming": 7,
+      "kind": "page",
+      "navLabel": "Architecture Decision Policy",
+      "outgoing": 2,
+      "title": "Architecture Decision Policy",
+      "url": "/decisions/architecture-decision-policy/",
+      "words": 1181
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Decisions",
+        "Architecture Decision Process"
+      ],
+      "group": "Decisions",
+      "id": "decisions/architecture-decision-process.md",
+      "incoming": 5,
+      "kind": "page",
+      "navLabel": "Architecture Decision Process",
+      "outgoing": 3,
+      "title": "Architecture Decision Process",
+      "url": "/decisions/architecture-decision-process/",
+      "words": 1343
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Start Here",
+        "Architecture to Delivery"
+      ],
+      "group": "Start Here",
+      "id": "foundation/architecture-to-delivery.md",
+      "incoming": 9,
+      "kind": "page",
+      "navLabel": "Architecture to Delivery",
+      "outgoing": 20,
+      "title": "Architecture to Delivery",
+      "url": "/foundation/architecture-to-delivery/",
+      "words": 1809
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Start Here",
+        "Definition and Principles"
+      ],
+      "group": "Start Here",
+      "id": "foundation/definition-and-scope.md",
+      "incoming": 4,
+      "kind": "page",
+      "navLabel": "Definition and Principles",
+      "outgoing": 5,
+      "title": "Definition and Principles",
+      "url": "/foundation/definition-and-scope/",
+      "words": 950
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Start Here",
+        "Foundation in One View"
+      ],
+      "group": "Start Here",
+      "id": "foundation/foundation-in-one-view.md",
+      "incoming": 4,
+      "kind": "page",
+      "navLabel": "Foundation in One View",
+      "outgoing": 15,
+      "title": "Foundation in One View",
+      "url": "/foundation/foundation-in-one-view/",
+      "words": 960
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Start Here",
+        "How to Use This Guide"
+      ],
+      "group": "Start Here",
+      "id": "foundation/guidance-model.md",
+      "incoming": 1,
+      "kind": "page",
+      "navLabel": "How to Use This Guide",
+      "outgoing": 21,
+      "title": "How to Use This Guide",
+      "url": "/foundation/guidance-model/",
+      "words": 919
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Start Here",
+        "Information Graph"
+      ],
+      "group": "Start Here",
+      "id": "foundation/information-graph.md",
+      "incoming": 3,
+      "kind": "page",
+      "navLabel": "Information Graph",
+      "outgoing": 1,
+      "title": "Information Graph",
+      "url": "/foundation/information-graph/",
+      "words": 1212
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Decisions",
+        "Decision Register"
+      ],
+      "group": "Decisions",
+      "id": "implementation/architecture-decisions.md",
+      "incoming": 1,
+      "kind": "page",
+      "navLabel": "Decision Register",
+      "outgoing": 7,
+      "title": "Architecture Decisions",
+      "url": "/implementation/architecture-decisions/",
+      "words": 1041
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Runbooks",
+        "Implementation Guidance",
+        "Implementation Blueprint"
+      ],
+      "group": "Runbooks",
+      "id": "implementation/implementation-blueprint.md",
+      "incoming": 3,
+      "kind": "page",
+      "navLabel": "Implementation Blueprint",
+      "outgoing": 0,
+      "title": "Implementation Blueprint",
+      "url": "/implementation/implementation-blueprint/",
+      "words": 1220
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Runbooks",
+        "Implementation Guidance",
+        "Architecture Patterns"
+      ],
+      "group": "Runbooks",
+      "id": "implementation/service-implementation-patterns.md",
+      "incoming": 1,
+      "kind": "page",
+      "navLabel": "Architecture Patterns",
+      "outgoing": 0,
+      "title": "Service Implementation Patterns",
+      "url": "/implementation/service-implementation-patterns/",
+      "words": 958
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Start Here",
+        "Overview"
+      ],
+      "group": "Start Here",
+      "id": "index.md",
+      "incoming": 0,
+      "kind": "page",
+      "navLabel": "Overview",
+      "outgoing": 15,
+      "title": "Data Foundation Architecture",
+      "url": "/",
+      "words": 242
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Architecture"
+      ],
+      "group": "Architecture",
+      "id": "nav:architecture",
+      "incoming": 0,
+      "kind": "group",
+      "navLabel": "Architecture",
+      "outgoing": 0,
+      "title": "Architecture",
+      "url": null,
+      "words": 0
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Architecture",
+        "Core Guidance"
+      ],
+      "group": "Architecture",
+      "id": "nav:architecture/core-guidance",
+      "incoming": 0,
+      "kind": "section",
+      "navLabel": "Core Guidance",
+      "outgoing": 0,
+      "title": "Core Guidance",
+      "url": null,
+      "words": 0
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Architecture",
+        "Core Guidance",
+        "Platform Architecture Design"
+      ],
+      "group": "Architecture",
+      "id": "nav:architecture/core-guidance/platform-architecture-design",
+      "incoming": 0,
+      "kind": "section",
+      "navLabel": "Platform Architecture Design",
+      "outgoing": 0,
+      "title": "Platform Architecture Design",
+      "url": null,
+      "words": 0
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Data Foundation Architecture Guide"
+      ],
+      "group": "Documentation",
+      "id": "nav:data-foundation-architecture-guide",
+      "incoming": 0,
+      "kind": "root",
+      "navLabel": "Guide",
+      "outgoing": 0,
+      "title": "Data Foundation Architecture Guide",
+      "url": "/",
+      "words": 0
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Decisions"
+      ],
+      "group": "Decisions",
+      "id": "nav:decisions",
+      "incoming": 0,
+      "kind": "group",
+      "navLabel": "Decisions",
+      "outgoing": 0,
+      "title": "Decisions",
+      "url": null,
+      "words": 0
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Runbooks"
+      ],
+      "group": "Runbooks",
+      "id": "nav:runbooks",
+      "incoming": 0,
+      "kind": "group",
+      "navLabel": "Runbooks",
+      "outgoing": 0,
+      "title": "Runbooks",
+      "url": null,
+      "words": 0
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Runbooks",
+        "Action Playbooks"
+      ],
+      "group": "Runbooks",
+      "id": "nav:runbooks/action-playbooks",
+      "incoming": 0,
+      "kind": "section",
+      "navLabel": "Action Playbooks",
+      "outgoing": 0,
+      "title": "Action Playbooks",
+      "url": null,
+      "words": 0
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Runbooks",
+        "Agentic Architecture"
+      ],
+      "group": "Runbooks",
+      "id": "nav:runbooks/agentic-architecture",
+      "incoming": 0,
+      "kind": "section",
+      "navLabel": "Agentic Architecture",
+      "outgoing": 0,
+      "title": "Agentic Architecture",
+      "url": null,
+      "words": 0
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Runbooks",
+        "Implementation Guidance"
+      ],
+      "group": "Runbooks",
+      "id": "nav:runbooks/implementation-guidance",
+      "incoming": 0,
+      "kind": "section",
+      "navLabel": "Implementation Guidance",
+      "outgoing": 0,
+      "title": "Implementation Guidance",
+      "url": null,
+      "words": 0
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Runbooks",
+        "Plan and Assess"
+      ],
+      "group": "Runbooks",
+      "id": "nav:runbooks/plan-and-assess",
+      "incoming": 0,
+      "kind": "section",
+      "navLabel": "Plan and Assess",
+      "outgoing": 0,
+      "title": "Plan and Assess",
+      "url": null,
+      "words": 0
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Runbooks",
+        "Reference Solutions"
+      ],
+      "group": "Runbooks",
+      "id": "nav:runbooks/reference-solutions",
+      "incoming": 0,
+      "kind": "section",
+      "navLabel": "Reference Solutions",
+      "outgoing": 0,
+      "title": "Reference Solutions",
+      "url": null,
+      "words": 0
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Runbooks",
+        "Reference Solutions",
+        "Reusable Reference Records"
+      ],
+      "group": "Runbooks",
+      "id": "nav:runbooks/reference-solutions/reusable-reference-records",
+      "incoming": 0,
+      "kind": "section",
+      "navLabel": "Reusable Reference Records",
+      "outgoing": 0,
+      "title": "Reusable Reference Records",
+      "url": null,
+      "words": 0
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Runbooks",
+        "Reference Solutions",
+        "Selected Technology Profiles"
+      ],
+      "group": "Runbooks",
+      "id": "nav:runbooks/reference-solutions/selected-technology-profiles",
+      "incoming": 0,
+      "kind": "section",
+      "navLabel": "Selected Technology Profiles",
+      "outgoing": 0,
+      "title": "Selected Technology Profiles",
+      "url": null,
+      "words": 0
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Services"
+      ],
+      "group": "Services",
+      "id": "nav:services",
+      "incoming": 0,
+      "kind": "group",
+      "navLabel": "Services",
+      "outgoing": 0,
+      "title": "Services",
+      "url": null,
+      "words": 0
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Standards"
+      ],
+      "group": "Standards",
+      "id": "nav:standards",
+      "incoming": 0,
+      "kind": "group",
+      "navLabel": "Standards",
+      "outgoing": 0,
+      "title": "Standards",
+      "url": null,
+      "words": 0
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Start Here"
+      ],
+      "group": "Start Here",
+      "id": "nav:start-here",
+      "incoming": 0,
+      "kind": "group",
+      "navLabel": "Start Here",
+      "outgoing": 0,
+      "title": "Start Here",
+      "url": null,
+      "words": 0
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Runbooks",
+        "Action Playbooks",
+        "Approve Product Go-Live"
+      ],
+      "group": "Runbooks",
+      "id": "playbooks/approve-product-go-live.md",
+      "incoming": 3,
+      "kind": "page",
+      "navLabel": "Approve Product Go-Live",
+      "outgoing": 3,
+      "title": "Approve Product Go-Live",
+      "url": "/playbooks/approve-product-go-live/",
+      "words": 261
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Runbooks",
+        "Action Playbooks",
+        "Consume a Data Product"
+      ],
+      "group": "Runbooks",
+      "id": "playbooks/consume-data-product.md",
+      "incoming": 5,
+      "kind": "page",
+      "navLabel": "Consume a Data Product",
+      "outgoing": 3,
+      "title": "Consume a Data Product",
+      "url": "/playbooks/consume-data-product/",
+      "words": 268
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Runbooks",
+        "Action Playbooks",
+        "Create or Change a Data Product"
+      ],
+      "group": "Runbooks",
+      "id": "playbooks/create-change-data-product.md",
+      "incoming": 6,
+      "kind": "page",
+      "navLabel": "Create or Change a Data Product",
+      "outgoing": 4,
+      "title": "Create or Change a Data Product",
+      "url": "/playbooks/create-change-data-product/",
+      "words": 298
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Runbooks",
+        "Action Playbooks",
+        "Choose an Action"
+      ],
+      "group": "Runbooks",
+      "id": "playbooks/index.md",
+      "incoming": 5,
+      "kind": "page",
+      "navLabel": "Choose an Action",
+      "outgoing": 7,
+      "title": "Action Playbooks",
+      "url": "/playbooks/",
+      "words": 271
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Runbooks",
+        "Action Playbooks",
+        "Onboard a Data Domain"
+      ],
+      "group": "Runbooks",
+      "id": "playbooks/onboard-data-domain.md",
+      "incoming": 2,
+      "kind": "page",
+      "navLabel": "Onboard a Data Domain",
+      "outgoing": 3,
+      "title": "Onboard a Data Domain",
+      "url": "/playbooks/onboard-data-domain/",
+      "words": 281
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Runbooks",
+        "Action Playbooks",
+        "Onboard a Source"
+      ],
+      "group": "Runbooks",
+      "id": "playbooks/onboard-source.md",
+      "incoming": 3,
+      "kind": "page",
+      "navLabel": "Onboard a Source",
+      "outgoing": 3,
+      "title": "Onboard a Source",
+      "url": "/playbooks/onboard-source/",
+      "words": 304
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Runbooks",
+        "Action Playbooks",
+        "Operate a Service or Product"
+      ],
+      "group": "Runbooks",
+      "id": "playbooks/operate-service-product.md",
+      "incoming": 5,
+      "kind": "page",
+      "navLabel": "Operate a Service or Product",
+      "outgoing": 6,
+      "title": "Operate a Service or Product",
+      "url": "/playbooks/operate-service-product/",
+      "words": 295
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Runbooks",
+        "Action Playbooks",
+        "Share a Data Product"
+      ],
+      "group": "Runbooks",
+      "id": "playbooks/share-data-product.md",
+      "incoming": 3,
+      "kind": "page",
+      "navLabel": "Share a Data Product",
+      "outgoing": 3,
+      "title": "Share a Data Product",
+      "url": "/playbooks/share-data-product/",
+      "words": 287
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Runbooks",
+        "Reference Solutions",
+        "Reusable Reference Records",
+        "Agent and Skill"
+      ],
+      "group": "Runbooks",
+      "id": "reference-solutions/agent-skill-template.md",
+      "incoming": 1,
+      "kind": "page",
+      "navLabel": "Agent and Skill",
+      "outgoing": 0,
+      "title": "Agent and Skill Template",
+      "url": "/reference-solutions/agent-skill-template/",
+      "words": 283
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Runbooks",
+        "Reference Solutions",
+        "Reusable Reference Records",
+        "Architecture Decision Policy"
+      ],
+      "group": "Runbooks",
+      "id": "reference-solutions/architecture-policy-template.md",
+      "incoming": 2,
+      "kind": "page",
+      "navLabel": "Architecture Decision Policy",
+      "outgoing": 1,
+      "title": "Architecture Decision Policy Template",
+      "url": "/reference-solutions/architecture-policy-template/",
+      "words": 190
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Runbooks",
+        "Reference Solutions",
+        "Selected Technology Profiles",
+        "Data Consumption - Databricks"
+      ],
+      "group": "Runbooks",
+      "id": "reference-solutions/data-consumption-design.md",
+      "incoming": 2,
+      "kind": "page",
+      "navLabel": "Data Consumption - Databricks",
+      "outgoing": 4,
+      "title": "Data Consumption Design",
+      "url": "/reference-solutions/data-consumption-design/",
+      "words": 2660
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Runbooks",
+        "Reference Solutions",
+        "Reusable Reference Records",
+        "Data Domain Onboarding"
+      ],
+      "group": "Runbooks",
+      "id": "reference-solutions/data-domain-onboarding-template.md",
+      "incoming": 4,
+      "kind": "page",
+      "navLabel": "Data Domain Onboarding",
+      "outgoing": 1,
+      "title": "Data Domain Onboarding Record",
+      "url": "/reference-solutions/data-domain-onboarding-template/",
+      "words": 581
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Runbooks",
+        "Reference Solutions",
+        "Selected Technology Profiles",
+        "Data Ingestion - Databricks"
+      ],
+      "group": "Runbooks",
+      "id": "reference-solutions/data-ingestion-design.md",
+      "incoming": 3,
+      "kind": "page",
+      "navLabel": "Data Ingestion - Databricks",
+      "outgoing": 3,
+      "title": "Data Ingestion Design",
+      "url": "/reference-solutions/data-ingestion-design/",
+      "words": 2174
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Runbooks",
+        "Reference Solutions",
+        "Selected Technology Profiles",
+        "Data Product Creation - Databricks"
+      ],
+      "group": "Runbooks",
+      "id": "reference-solutions/data-product-creation-design.md",
+      "incoming": 2,
+      "kind": "page",
+      "navLabel": "Data Product Creation - Databricks",
+      "outgoing": 2,
+      "title": "Data Product Creation Design",
+      "url": "/reference-solutions/data-product-creation-design/",
+      "words": 2599
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Runbooks",
+        "Reference Solutions",
+        "Reusable Reference Records",
+        "Data Product"
+      ],
+      "group": "Runbooks",
+      "id": "reference-solutions/data-product-template.md",
+      "incoming": 2,
+      "kind": "page",
+      "navLabel": "Data Product",
+      "outgoing": 1,
+      "title": "Data Product Template",
+      "url": "/reference-solutions/data-product-template/",
+      "words": 657
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Runbooks",
+        "Reference Solutions",
+        "Reusable Reference Records",
+        "Data Product Workload"
+      ],
+      "group": "Runbooks",
+      "id": "reference-solutions/data-product-workload-template.md",
+      "incoming": 1,
+      "kind": "page",
+      "navLabel": "Data Product Workload",
+      "outgoing": 0,
+      "title": "Data Product Workload Template",
+      "url": "/reference-solutions/data-product-workload-template/",
+      "words": 172
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Runbooks",
+        "Reference Solutions",
+        "Selected Technology Profiles",
+        "Data Sharing - Databricks"
+      ],
+      "group": "Runbooks",
+      "id": "reference-solutions/data-sharing-design.md",
+      "incoming": 3,
+      "kind": "page",
+      "navLabel": "Data Sharing - Databricks",
+      "outgoing": 3,
+      "title": "Data Sharing Design",
+      "url": "/reference-solutions/data-sharing-design/",
+      "words": 2808
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Runbooks",
+        "Reference Solutions",
+        "Overview"
+      ],
+      "group": "Runbooks",
+      "id": "reference-solutions/index.md",
+      "incoming": 4,
+      "kind": "page",
+      "navLabel": "Overview",
+      "outgoing": 14,
+      "title": "Reference Solutions",
+      "url": "/reference-solutions/",
+      "words": 439
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Runbooks",
+        "Reference Solutions",
+        "Reusable Reference Records",
+        "Interoperability Conformance"
+      ],
+      "group": "Runbooks",
+      "id": "reference-solutions/interoperability-conformance-template.md",
+      "incoming": 2,
+      "kind": "page",
+      "navLabel": "Interoperability Conformance",
+      "outgoing": 0,
+      "title": "Interoperability Conformance Record",
+      "url": "/reference-solutions/interoperability-conformance-template/",
+      "words": 179
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Runbooks",
+        "Reference Solutions",
+        "Selected Technology Profiles",
+        "Observability - Databricks and Grafana"
+      ],
+      "group": "Runbooks",
+      "id": "reference-solutions/observability-design.md",
+      "incoming": 3,
+      "kind": "page",
+      "navLabel": "Observability - Databricks and Grafana",
+      "outgoing": 4,
+      "title": "Observability Design",
+      "url": "/reference-solutions/observability-design/",
+      "words": 2355
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Runbooks",
+        "Reference Solutions",
+        "Reusable Reference Records",
+        "Service Runbook"
+      ],
+      "group": "Runbooks",
+      "id": "reference-solutions/service-runbook-template.md",
+      "incoming": 4,
+      "kind": "page",
+      "navLabel": "Service Runbook",
+      "outgoing": 1,
+      "title": "Service Runbook Template",
+      "url": "/reference-solutions/service-runbook-template/",
+      "words": 602
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Runbooks",
+        "Reference Solutions",
+        "Reusable Reference Records",
+        "Source Onboarding"
+      ],
+      "group": "Runbooks",
+      "id": "reference-solutions/source-onboarding-template.md",
+      "incoming": 2,
+      "kind": "page",
+      "navLabel": "Source Onboarding",
+      "outgoing": 0,
+      "title": "Source Onboarding Template",
+      "url": "/reference-solutions/source-onboarding-template/",
+      "words": 159
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Runbooks",
+        "Reference Solutions",
+        "Reusable Reference Records",
+        "Technology Selection"
+      ],
+      "group": "Runbooks",
+      "id": "reference-solutions/technology-selection-template.md",
+      "incoming": 5,
+      "kind": "page",
+      "navLabel": "Technology Selection",
+      "outgoing": 0,
+      "title": "Technology Selection Record",
+      "url": "/reference-solutions/technology-selection-template/",
+      "words": 305
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Runbooks",
+        "Runbooks Overview"
+      ],
+      "group": "Runbooks",
+      "id": "runbooks/index.md",
+      "incoming": 1,
+      "kind": "page",
+      "navLabel": "Runbooks Overview",
+      "outgoing": 8,
+      "title": "Runbooks",
+      "url": "/runbooks/",
+      "words": 270
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Runbooks",
+        "Plan and Assess",
+        "Runway"
+      ],
+      "group": "Runbooks",
+      "id": "runway.md",
+      "incoming": 5,
+      "kind": "page",
+      "navLabel": "Runway",
+      "outgoing": 2,
+      "title": "Runway",
+      "url": "/runway/",
+      "words": 1677
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 8,
+      "breadcrumbs": [
+        "Services",
+        "Data Consumption Service"
+      ],
+      "group": "Services",
+      "id": "services/data-consumption-service.md",
+      "incoming": 14,
+      "kind": "page",
+      "navLabel": "Data Consumption Service",
+      "outgoing": 7,
+      "title": "Data Consumption Service",
+      "url": "/services/data-consumption-service/",
+      "words": 1326
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 5,
+      "breadcrumbs": [
+        "Services",
+        "Data Foundation Operations Service"
+      ],
+      "group": "Services",
+      "id": "services/data-foundation-operations-service.md",
+      "incoming": 10,
+      "kind": "page",
+      "navLabel": "Data Foundation Operations Service",
+      "outgoing": 6,
+      "title": "Data Foundation Operations Service",
+      "url": "/services/data-foundation-operations-service/",
+      "words": 1189
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 9,
+      "breadcrumbs": [
+        "Services",
+        "Data Ingestion Service"
+      ],
+      "group": "Services",
+      "id": "services/data-ingestion-service.md",
+      "incoming": 14,
+      "kind": "page",
+      "navLabel": "Data Ingestion Service",
+      "outgoing": 6,
+      "title": "Data Ingestion Service",
+      "url": "/services/data-ingestion-service/",
+      "words": 1117
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 5,
+      "breadcrumbs": [
+        "Services",
+        "Data Observability Service"
+      ],
+      "group": "Services",
+      "id": "services/data-observability-service.md",
+      "incoming": 13,
+      "kind": "page",
+      "navLabel": "Data Observability Service",
+      "outgoing": 7,
+      "title": "Data Observability Service",
+      "url": "/services/data-observability-service/",
+      "words": 1182
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 10,
+      "breadcrumbs": [
+        "Services",
+        "Data Product Creation Service"
+      ],
+      "group": "Services",
+      "id": "services/data-product-creation-service.md",
+      "incoming": 13,
+      "kind": "page",
+      "navLabel": "Data Product Creation Service",
+      "outgoing": 9,
+      "title": "Data Product Creation Service",
+      "url": "/services/data-product-creation-service/",
+      "words": 1219
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 7,
+      "breadcrumbs": [
+        "Services",
+        "Data Service AI Assistant"
+      ],
+      "group": "Services",
+      "id": "services/data-service-ai-assistant.md",
+      "incoming": 8,
+      "kind": "page",
+      "navLabel": "Data Service AI Assistant",
+      "outgoing": 6,
+      "title": "Data Service AI Assistant",
+      "url": "/services/data-service-ai-assistant/",
+      "words": 1270
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 8,
+      "breadcrumbs": [
+        "Services",
+        "Data Service Portal"
+      ],
+      "group": "Services",
+      "id": "services/data-service-portal.md",
+      "incoming": 9,
+      "kind": "page",
+      "navLabel": "Data Service Portal",
+      "outgoing": 8,
+      "title": "Data Service Portal",
+      "url": "/services/data-service-portal/",
+      "words": 1353
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 8,
+      "breadcrumbs": [
+        "Services",
+        "Data Sharing Service"
+      ],
+      "group": "Services",
+      "id": "services/data-sharing-service.md",
+      "incoming": 9,
+      "kind": "page",
+      "navLabel": "Data Sharing Service",
+      "outgoing": 6,
+      "title": "Data Sharing Service",
+      "url": "/services/data-sharing-service/",
+      "words": 1166
+    },
+    {
+      "architectureIncoming": 9,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Services",
+        "End-to-End Service Scenarios"
+      ],
+      "group": "Services",
+      "id": "services/end-to-end-service-scenarios.md",
+      "incoming": 2,
+      "kind": "page",
+      "navLabel": "End-to-End Service Scenarios",
+      "outgoing": 8,
+      "title": "End-to-End Service Scenarios",
+      "url": "/services/end-to-end-service-scenarios/",
+      "words": 1040
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Services",
+        "Services Overview"
+      ],
+      "group": "Services",
+      "id": "services/index.md",
+      "incoming": 4,
+      "kind": "page",
+      "navLabel": "Services Overview",
+      "outgoing": 16,
+      "title": "Services Overview",
+      "url": "/services/",
+      "words": 1093
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 7,
+      "breadcrumbs": [
+        "Services",
+        "Platform Enablement Service"
+      ],
+      "group": "Services",
+      "id": "services/platform-enablement-service.md",
+      "incoming": 12,
+      "kind": "page",
+      "navLabel": "Platform Enablement Service",
+      "outgoing": 6,
+      "title": "Platform Enablement Service",
+      "url": "/services/platform-enablement-service/",
+      "words": 1155
+    },
+    {
+      "architectureIncoming": 8,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Standards",
+        "Access Control Standard"
+      ],
+      "group": "Standards",
+      "id": "standards/access-control-standard.md",
+      "incoming": 3,
+      "kind": "page",
+      "navLabel": "Access Control Standard",
+      "outgoing": 0,
+      "title": "Access Control Standard",
+      "url": "/standards/access-control-standard/",
+      "words": 854
+    },
+    {
+      "architectureIncoming": 2,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Standards",
+        "Agent, Skill and LLM Standard"
+      ],
+      "group": "Standards",
+      "id": "standards/agent-skill-llm-standard.md",
+      "incoming": 3,
+      "kind": "page",
+      "navLabel": "Agent, Skill and LLM Standard",
+      "outgoing": 0,
+      "title": "Agent, Skill and LLM Standard",
+      "url": "/standards/agent-skill-llm-standard/",
+      "words": 1115
+    },
+    {
+      "architectureIncoming": 3,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Standards",
+        "AI-Ready Data Standard"
+      ],
+      "group": "Standards",
+      "id": "standards/ai-ready-data-standard.md",
+      "incoming": 2,
+      "kind": "page",
+      "navLabel": "AI-Ready Data Standard",
+      "outgoing": 1,
+      "title": "AI-Ready Data Standard",
+      "url": "/standards/ai-ready-data-standard/",
+      "words": 1972
+    },
+    {
+      "architectureIncoming": 4,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Standards",
+        "Data Catalog and Storage Standard"
+      ],
+      "group": "Standards",
+      "id": "standards/catalog-storage-standard.md",
+      "incoming": 7,
+      "kind": "page",
+      "navLabel": "Data Catalog and Storage Standard",
+      "outgoing": 0,
+      "title": "Data Catalog and Storage Standard",
+      "url": "/standards/catalog-storage-standard/",
+      "words": 1229
+    },
+    {
+      "architectureIncoming": 4,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Standards",
+        "Data Contract Standard"
+      ],
+      "group": "Standards",
+      "id": "standards/data-contract-standard.md",
+      "incoming": 8,
+      "kind": "page",
+      "navLabel": "Data Contract Standard",
+      "outgoing": 0,
+      "title": "Data Contract Standard",
+      "url": "/standards/data-contract-standard/",
+      "words": 2404
+    },
+    {
+      "architectureIncoming": 3,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Standards",
+        "Data Product Management Standard"
+      ],
+      "group": "Standards",
+      "id": "standards/data-product-management-standard.md",
+      "incoming": 7,
+      "kind": "page",
+      "navLabel": "Data Product Management Standard",
+      "outgoing": 2,
+      "title": "Data Product Management Standard",
+      "url": "/standards/data-product-management-standard/",
+      "words": 1905
+    },
+    {
+      "architectureIncoming": 2,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Standards",
+        "Data Product Workload Standard"
+      ],
+      "group": "Standards",
+      "id": "standards/data-product-workload-standard.md",
+      "incoming": 3,
+      "kind": "page",
+      "navLabel": "Data Product Workload Standard",
+      "outgoing": 0,
+      "title": "Data Product Workload Standard",
+      "url": "/standards/data-product-workload-standard/",
+      "words": 438
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Standards",
+        "Standards Overview"
+      ],
+      "group": "Standards",
+      "id": "standards/index.md",
+      "incoming": 6,
+      "kind": "page",
+      "navLabel": "Standards Overview",
+      "outgoing": 20,
+      "title": "Standards Overview",
+      "url": "/standards/",
+      "words": 1276
+    },
+    {
+      "architectureIncoming": 8,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Standards",
+        "Open Interoperability Standard"
+      ],
+      "group": "Standards",
+      "id": "standards/open-interoperability-standard.md",
+      "incoming": 3,
+      "kind": "page",
+      "navLabel": "Open Interoperability Standard",
+      "outgoing": 1,
+      "title": "Open Interoperability Standard",
+      "url": "/standards/open-interoperability-standard/",
+      "words": 1191
+    },
+    {
+      "architectureIncoming": 5,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Standards",
+        "OpenTelemetry Standard"
+      ],
+      "group": "Standards",
+      "id": "standards/otel-telemetry-standard.md",
+      "incoming": 6,
+      "kind": "page",
+      "navLabel": "OpenTelemetry Standard",
+      "outgoing": 0,
+      "title": "OpenTelemetry Telemetry Standard",
+      "url": "/standards/otel-telemetry-standard/",
+      "words": 849
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Standards",
+        "Technology Selection Standard"
+      ],
+      "group": "Standards",
+      "id": "standards/technology-selection-standard.md",
+      "incoming": 1,
+      "kind": "page",
+      "navLabel": "Technology Selection Standard",
+      "outgoing": 2,
+      "title": "Technology Selection Standard",
+      "url": "/standards/technology-selection-standard/",
+      "words": 1399
+    }
+  ],
+  "schemaVersion": 2
+}

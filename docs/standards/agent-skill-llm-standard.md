@@ -15,7 +15,7 @@ Every foundation service exposes typed skills and may operate a service-owned sp
 | Data Service AI Assistant | Interpret user intent, coordinate specialist agents, maintain user-visible task state, and synthesize results. | Delegated user authority, task budget, and coordination policy. |
 | Service specialist agent | Plan and execute work for one foundation service through registered skills. | Service ownership, agent manifest, published contracts, and service policy. |
 | Contract specialist | Draft, compare, validate, and compile the three contract types. | Advisory or draft authority; accountable owners approve publication. |
-| Deterministic service | Authorize, validate, change state, enforce obligations, and issue evidence. | Canonical service contract, policy, workflow, and operational controls. |
+| Deterministic service | Authorize, validate, change state, enforce obligations, and issue evidence. | Authoritative service definition, policy, workflow, and operational controls. |
 
 An agent-to-agent task must carry a stable task id, initiating actor, delegated identity, purpose, contract references, bounded scope, autonomy ceiling, budget, deadline, expected artifact or outcome, approval state, correlation ids, and completion owner. A receiving agent may narrow or reject the task but must not widen it.
 
@@ -65,7 +65,7 @@ Skills call stable foundation APIs. Prompt text may guide skill selection, but i
 | Supported tasks | Reasoning, extraction, classification, generation, embeddings, vision or tool use. |
 | Data handling | Permitted classification, region, retention, training use and logging. |
 | Model routing | Approved providers, fallback order and availability requirements. |
-| Output contract | Structured output schema, citation and uncertainty requirements. |
+| Output specification | Structured output schema, citation and uncertainty requirements. |
 | Safety | Content controls, prompt-injection handling and prohibited use. |
 | Performance | Quality threshold, latency target, context limit and cost budget. |
 | Lifecycle | Evaluation evidence, release status, deprecation and rollback. |
@@ -76,11 +76,11 @@ The agent references an LLM profile. It does not hard-code a single vendor model
 
 | Boundary | Standard Direction |
 | --- | --- |
-| Foundation service | OpenAPI or AsyncAPI is canonical. |
+| Foundation service | OpenAPI or AsyncAPI is authoritative. |
 | Assistant to tools | Typed internal tool API; MCP adapter may expose approved resources, prompts and tools. |
 | Agent to remote agent | A2A may expose agent identity, skills, tasks and artifacts. |
 | Telemetry | OpenTelemetry GenAI conventions plus foundation identifiers. |
-| Artifacts | Canonical product, contract and evidence formats remain authoritative. |
+| Artifacts | Authoritative product, contract and evidence formats remain authoritative. |
 
 MCP and A2A are interoperability adapters. Neither protocol grants authorization by itself or replaces policy checks at the target service.
 

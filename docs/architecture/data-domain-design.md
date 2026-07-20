@@ -6,6 +6,10 @@ A **data domain** is a stable business-aligned accountability boundary within th
 
 The Data Foundation Platform Team provides shared services and centrally manages source-aligned products. Domains adopt the foundation's standards and shared identity, policy, telemetry, and evidence capabilities while owning aggregate and consumer-aligned products and business decisions inside their declared boundaries. A domain is an accountability and portfolio boundary, not a separate product type; every live product is reusable by design.
 
+## Design Reasoning
+
+<div class="design-reasoning"><div><small>Context</small><p>Business meaning and product priorities are distributed, while the foundation must remain coherent.</p></div><div><small>Forces</small><p>Central consistency must coexist with domain accountability, expertise, and delivery autonomy.</p></div><div><small>Decision</small><p>Use stable business accountability boundaries; centralize source-aligned products and federate aggregate and consumer-aligned ownership.</p></div><div><small>Consequences</small><p>Domains gain product authority but must adopt shared services, standards, controls, identifiers, and evidence.</p></div><div><small>Verification</small><p>Require a registered domain owner, portfolio boundary, product accountabilities, dependencies, and adoption obligations.</p></div></div>
+
 ## Position in the Foundation
 
 <div class="domain-position" aria-label="Position of a data domain in the shared data foundation">

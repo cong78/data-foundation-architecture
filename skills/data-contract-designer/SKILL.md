@@ -46,7 +46,7 @@ When intent spans workflows, run **Review → Compatibility → Change impact �
 Capture supplied facts and mark missing facts explicitly:
 
 - Contract boundary, stable ids, environment, effective period, and exact upstream or product versions.
-- For a publishing contract, product descriptor facts: product id, name, domain, purpose, owners, lifecycle, ports, SLOs, support, and authoritative links.
+- For a publishing data contract, product descriptor facts: product id, name, domain, purpose, owners, lifecycle, ports, SLOs, support, and authoritative links.
 - Accountable provider, owner, steward, technical owner, consumer or recipient, support, and escalation.
 - Outcome, valid use, prohibited use, non-goals, and measurable value.
 - Schema, keys, grain, time meaning, semantics, classification, limitations, and examples.
@@ -67,21 +67,21 @@ Do not turn unknown values into plausible defaults. Use `TBD` with an accountabl
 6. Define enforcement before publication, at runtime, and during operation.
 7. Map each promise to a test, telemetry signal, failure outcome, and evidence authority.
 8. Identify mandatory approvers without claiming their approval.
-9. Return the contract draft using `references/output-contracts.md`.
+9. Return the data-contract draft using `references/output-specifications.md`.
 
-When a canonical ODCS artifact is requested, validate against the pinned schema before claiming conformance. Preserve enterprise extensions under an explicit namespace. Do not invent ODCS fields from memory.
+When an authoritative ODCS artifact is requested, validate against the pinned schema before claiming conformance. Preserve enterprise extensions under an explicit namespace. Do not invent ODCS fields from memory.
 
 ## Review
 
 Review in this order:
 
 1. **Correct type and boundary:** one of the three types; exact source, products, ports, parties, purpose, and versions.
-2. **Completeness:** all common and type-specific terms are present or explicitly unresolved, including an embedded descriptor for publishing contracts.
+2. **Completeness:** all common and type-specific terms are present or explicitly unresolved, including an embedded descriptor for publishing data contracts.
 3. **Accountability:** owners, approvers, support, escalation, obligations, and decision rights are named.
 4. **Enforceability:** terms can generate or drive tests, policy inputs, interfaces, telemetry, and failure outcomes.
 5. **Operational truth:** declared targets are separate from measured health and time-stamped evidence.
 6. **Lifecycle:** compatibility, notice, migration, expiry, revocation, deprecation, and retirement are executable.
-7. **Portability:** the canonical promise is not trapped in Unity Catalog, Delta, an API gateway, or another runtime.
+7. **Portability:** the authoritative promise is not trapped in Unity Catalog, Delta, an API gateway, or another runtime.
 
 Treat a separately versioned product descriptor as a major design finding. The catalog or product registry may project descriptor fields for discovery, but it must not own a competing product definition.
 
@@ -130,7 +130,7 @@ Never classify a change as compatible only because a parser accepts it.
 
 ## Return the Result
 
-Follow `references/output-contracts.md`. Include:
+Follow `references/output-specifications.md`. Include:
 
 - Boundary and selected contract type.
 - Draft or review result.

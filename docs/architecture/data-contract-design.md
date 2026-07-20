@@ -8,6 +8,10 @@ A data contract is the versioned, machine-readable, and enforceable promise at a
 
 Use the [Data Contract Standard](../standards/data-contract-standard.md) for the full [definition](../standards/data-contract-standard.md#definition), [core elements](../standards/data-contract-standard.md#core-elements), [business value](../standards/data-contract-standard.md#business-value), mandatory content, lifecycle, approval, testing, and versioning.
 
+## Design Reasoning
+
+<div class="design-reasoning"><div><small>Context</small><p>Data crosses ownership boundaries while providers and consumers change independently.</p></div><div><small>Forces</small><p>Independent delivery must coexist with stable meaning, compatibility, quality, permitted use, and support.</p></div><div><small>Decision</small><p>Use only three lifecycle contracts: source ingestion, product creation, and product consumption.</p></div><div><small>Consequences</small><p>Promises become testable and automatable, but owners must govern versions, compatibility, and exceptions.</p></div><div><small>Verification</small><p>Prove each active contract through validation, enforcement, lifecycle gates, consumer notice, and retained evidence.</p></div></div>
+
 ## Core Architecture
 
 <div class="standards-map reference-map" role="img" aria-label="Three data contracts from source system through product creation to consumption">
@@ -40,7 +44,7 @@ Use the [Data Contract Standard](../standards/data-contract-standard.md) for the
   </section>
 </div>
 
-## Contract Placement
+## Data Contract Placement
 
 | Architecture boundary | Contract | What it governs |
 | --- | --- | --- |
@@ -54,9 +58,9 @@ Aggregate and consumer-aligned products use the Data Product Creation Contract. 
 
 ## Product Descriptor Placement
 
-The product descriptor is the product-definition section of the publishing contract. It does not have a separate approval or lifecycle.
+The product descriptor is the product-definition section of the publishing data contract. It does not have a separate approval or lifecycle.
 
-| Descriptor content | Why it belongs in the publishing contract |
+| Descriptor content | Why it belongs in the publishing data contract |
 | --- | --- |
 | Stable product id, name, domain, purpose, owners, and support | Establishes what is being promised and who is accountable. |
 | Lifecycle state, version, input and output ports | Makes the published boundary addressable and discoverable. |
@@ -67,7 +71,7 @@ For a source-aligned product, this section is embedded in the Source System Inge
 
 Internal access, external sharing, and AI use all use the Data Product Consumption Contract. Recipient, legal, retention, AI-purpose, snapshot, model, agent, and evaluation terms are profile-specific clauses, not separate contract or approval objects.
 
-## Contract Chain
+## Data Contract Chain
 
 Every handoff records the exact upstream version it accepts:
 
@@ -83,7 +87,7 @@ A producer may strengthen, reshape, aggregate, or narrow an upstream promise, bu
 
 ```mermaid
 flowchart LR
-    AUTHOR[Portal · API · CLI · repository] --> REGISTRY[Canonical contract registry]
+    AUTHOR[Portal · API · CLI · repository] --> REGISTRY[Authoritative contract registry]
     REGISTRY --> COMPILE[Compile schemas · tests · policy inputs · tool scopes · workflow gates · interfaces]
     COMPILE --> INGEST[Ingestion enforcement]
     COMPILE --> CREATE[Creation and go-live enforcement]
@@ -99,8 +103,8 @@ flowchart LR
 | Component | Responsibility |
 | --- | --- |
 | Portal, API and CLI | Create, compare, review, approve, and show the state of the three contracts. |
-| Canonical repository and registry | Own immutable contract versions, embedded product descriptors, state, owners, bindings, conditions, subscriptions, and history. |
-| Contract compiler | Generate catalog projections, validation, compatibility, policy inputs, agent tool scopes, workflow gates, interface definitions, and telemetry obligations from the canonical artifact. |
+| Authoritative repository and registry | Own immutable contract versions, embedded product descriptors, state, owners, bindings, conditions, subscriptions, and history. |
+| Contract compiler | Generate catalog projections, validation, compatibility, policy inputs, agent tool scopes, workflow gates, interface definitions, and telemetry obligations from the source artifact. |
 | CI/CD and go-live gates | Prove ingestion or creation behavior before activation and publication. |
 | Runtime enforcement | Apply the Data Product Consumption Contract at SQL, API, event, file, semantic, feature, retrieval, sharing, and AI boundaries. |
 | Catalog and lineage | Relate sources, products, ports, consumers, contract versions, physical bindings, and impact. |
@@ -108,7 +112,7 @@ flowchart LR
 
 The contract registry owns contract state. The selected technical catalog discovers assets and enforces platform controls, but does not create a fourth catalog-specific contract.
 
-## Contract-Driven Agent Execution
+## Data-Contract-Driven Agent Execution
 
 Users and accountable owners agree the declarative promise through the applicable contract. The contract compiler turns that promise into constraints that the Data Service AI Assistant and service specialist agents can use without asking an LLM to interpret permission.
 
@@ -142,14 +146,14 @@ The contract does not authorize itself. Effective agent authority is always narr
 1. Use only the three named contract types.
 2. Every activated source has one published Source System Ingestion Contract version.
 3. Every live aggregate or consumer-aligned product has one published Data Product Creation Contract version; source-aligned products are published by the Source System Ingestion Contract.
-4. Every publishing contract embeds the product descriptor; no product descriptor has an independent version, approval, or lifecycle.
+4. Every publishing data contract embeds the product descriptor; no product descriptor has an independent version, approval, or lifecycle.
 5. Every governed consumer purpose has one Data Product Consumption Contract referencing an exact live product and publishing-contract version.
 6. Sharing and AI use are consumption profiles, not contract types.
 7. Product go-live and data release are impossible without matching runtime bindings, passing critical tests, approvals, and observable evidence.
 8. Contract changes are assessed across connected contracts of all three types before release.
-9. The same canonical contracts drive catalog projections, documentation, tests, policy inputs, interface definitions, and telemetry correlation.
+9. The same authoritative contracts drive catalog projections, documentation, tests, policy inputs, interface definitions, and telemetry correlation.
 10. Every agent action resolves an exact published contract version and executes only through a registered skill and deterministic service boundary.
 
 <div class="read-next">
-  <strong>Next:</strong> use Data Product Lifecycle Design to align contract versions with product states and go-live gates.
+  <strong>Next:</strong> use <a href="../data-product-design/">Data Product Design</a> to align the product definition, boundary, contract versions, lifecycle states, and go-live gates.
 </div>

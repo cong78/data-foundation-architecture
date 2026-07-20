@@ -1,6 +1,6 @@
 # Services Overview
 
-<div class="decision-brief"><div><small>Use when</small><strong>Locating a reusable foundation capability.</strong></div><div><small>Decision</small><strong>Which service owns the requested outcome?</strong></div><div><small>Owner</small><strong>Foundation service owner.</strong></div><div><small>Output</small><strong>Service contract, interface, controls, and support.</strong></div></div>
+<div class="decision-brief"><div><small>Use when</small><strong>Locating a reusable foundation capability.</strong></div><div><small>Decision</small><strong>Which service owns the requested outcome?</strong></div><div><small>Owner</small><strong>Foundation service owner.</strong></div><div><small>Output</small><strong>Service definition, interfaces, controls, and support.</strong></div></div>
 
 Foundation services are reusable architecture capabilities. They reduce custom delivery work by giving teams standard ways to ingest, create, consume, share, enable, observe, and reliably operate trusted data products.
 
@@ -75,7 +75,7 @@ The [Architecture Design Map](../architecture/design-map.md) maps every service 
 
 Every service is agentic by design: it exposes typed skills and defines a service-owned specialist agent, applicable contracts, autonomy ceiling, and deterministic fallback. The [Data Service AI Assistant](data-service-ai-assistant.md) coordinates those agents through one user experience. Agentic access is cross-cutting; it does not create a parallel set of foundation services or move authority away from service owners.
 
-## Canonical Service Page
+## Standard Service Page
 
 Each service page is the single technology-neutral authority for that service. Use this section order consistently:
 
@@ -92,9 +92,11 @@ Each service page is the single technology-neutral authority for that service. U
 | Controls and Evidence | Mandatory control paired with proof, not policy prose alone. |
 | Action Checklist | Separate actions for engineers and product owners. |
 | Reference Solutions | Optional vendor profiles that cannot redefine the service. |
-| Done Criteria | Observable conditions required for readiness and operation. |
+| Target User Experience | Persona and intent, user action, required service behavior, and observable result for each key journey. |
 
 Specialized decisions may add one focused section, but they must not replace or duplicate the common sections. Shared platform and integration designs remain under Architecture; vendor mappings remain Reference Solutions.
+
+Treat every Target User Experience row as an end-to-end acceptance scenario. The product owner owns the **user and intent** and the **observable result**. Engineers own the **required service behavior** and its evidence. The action connects both views. An experience without defined service behavior is only an aspiration; service behavior without an observable result is only an implementation detail.
 
 For architecture delivery guidance, use:
 

@@ -49,7 +49,7 @@ The repository package under `agent/` starts steps 2, 3, 4, and 7 with five read
 | Operation | Purpose | Result |
 | --- | --- | --- |
 | `search_guidance` | Find task-relevant authoritative sections. | Ranked citations with excerpts and authority class. |
-| `resolve_definition` | Resolve a canonical glossary term. | Exact definition or an explicit unresolved result. |
+| `resolve_definition` | Resolve a glossary term. | Exact definition or an explicit unresolved result. |
 | `classify_design` | Pre-classify architecture work. | Service-specific, shared-capability, integration, or needs-review with rationale. |
 | `trace_architecture` | Connect the request to designs, services, standards, playbooks, and operations. | Cited traceability context and gaps. |
 | `prepare_context_pack` | Build bounded context for a company-assistant reasoning turn. | Deduplicated citations grouped by architecture concern. |
@@ -85,7 +85,7 @@ The portable API contract is `agent/openapi.yaml`. MCP or native tool adapters m
 | --- | ---: |
 | Citation validity | 100% of returned citations resolve to repository sections. |
 | Unsupported architecture claims | 0 in deterministic tool output. |
-| Definition resolution | Exact canonical result or explicit unresolved status. |
+| Definition resolution | Exact glossary result or explicit unresolved status. |
 | Side effects | 0; all operations are read-only. |
 | Traceability coverage | Design, service, standard, playbook, and operations sources considered. |
 | Invalid request behavior | Fail closed with schema or policy errors. |

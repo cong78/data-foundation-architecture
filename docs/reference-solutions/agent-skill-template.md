@@ -23,7 +23,7 @@ Use this template to propose, review and certify an agentic capability.
 | Data classification limit |  |
 | Turn, tool, time and cost budgets |  |
 
-## Delegated Task Contract
+## Delegated Task Envelope
 
 | Field | Value |
 | --- | --- |
@@ -58,9 +58,9 @@ Use this template to propose, review and certify an agentic capability.
 | --- | --- | --- | --- | --- | --- |
 |  |  |  |  |  |  |
 
-## Contract-Driven Execution
+## Data-Contract-Driven Execution
 
-| Contract Declaration | Compiled Control | Agent Behavior | Service Enforcement | Evidence |
+| Data Contract Declaration | Compiled Control | Agent Behavior | Service Enforcement | Evidence |
 | --- | --- | --- | --- | --- |
 | Identity and purpose |  |  |  |  |
 | Product, source, consumer, recipient and port scope |  |  |  |  |

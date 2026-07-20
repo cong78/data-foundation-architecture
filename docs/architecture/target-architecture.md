@@ -20,8 +20,26 @@ The architecture blueprint is organized into six planes. Each plane has a clear 
   </div>
   <span class="architecture-down" aria-hidden="true"></span>
   <a class="architecture-band band-observe" href="../../services/data-observability-service/"><small>Trust and impact</small><strong>Observability Plane</strong><span>OpenTelemetry · product telemetry · SLOs · usage · cost · incident correlation</span></a>
-  <a class="architecture-band band-security" href="../../governance/security-compliance/"><small>Cross-cutting authority across every plane</small><strong>Security Plane</strong><span>Identity · service and data authorization · purpose · masking · retention · audit · sharing controls</span></a>
+  <a class="architecture-band band-security" href="../platform-governance-design/"><small>Cross-cutting authority across every plane</small><strong>Security Plane</strong><span>Identity · service and data authorization · purpose · masking · retention · audit · sharing controls</span></a>
 </div>
+
+## Typical Request Sequence
+
+The planes are not lifecycle steps. For one user or system request, their responsibilities normally combine in this order:
+
+<div class="journey-sequence journey-sequence--compact" aria-label="Typical architecture request sequence">
+  <div class="journey-sequence-step"><span>1</span><strong>Capture intent</strong><p>Experience records actor, purpose, target, and requested outcome.</p><small>Output · Typed request</small></div>
+  <i class="journey-sequence-arrow" aria-hidden="true"></i>
+  <div class="journey-sequence-step"><span>2</span><strong>Decide</strong><p>Control resolves product, contract, workflow, and policy; Security authorizes.</p><small>Output · Decision and obligations</small></div>
+  <i class="journey-sequence-arrow" aria-hidden="true"></i>
+  <div class="journey-sequence-step"><span>3</span><strong>Execute</strong><p>Data or AI invokes the owning deterministic service within the approved scope.</p><small>Output · Service result</small></div>
+  <i class="journey-sequence-arrow" aria-hidden="true"></i>
+  <div class="journey-sequence-step"><span>4</span><strong>Observe</strong><p>Observability correlates system behavior, product impact, and evidence.</p><small>Output · Health and trace</small></div>
+  <i class="journey-sequence-arrow" aria-hidden="true"></i>
+  <div class="journey-sequence-step"><span>5</span><strong>Respond</strong><p>Experience returns the receipt; Operations coordinates failure or recovery.</p><small>Output · Visible outcome</small></div>
+</div>
+
+Security applies at every step; the sequence shows decision flow, not a bypass around cross-cutting controls.
 
 ## How Designs Compose the Blueprint
 
@@ -52,15 +70,15 @@ The [Platform Enablement Service](../services/platform-enablement-service.md) sp
 
 | Service | Primary Planes | Supporting Planes | Primary Architecture Design |
 | --- | --- | --- | --- |
-| Data Service Portal | Experience | AI, Control, Security | [Canonical service design](../services/data-service-portal.md) |
-| Data Service AI Assistant | Experience, AI | Control, Security, Observability | [Canonical service design](../services/data-service-ai-assistant.md) |
+| Data Service Portal | Experience | AI, Control, Security | [Authoritative service design](../services/data-service-portal.md) |
+| Data Service AI Assistant | Experience, AI | Control, Security, Observability | [Authoritative service design](../services/data-service-ai-assistant.md) |
 | Data Ingestion Service | Data | AI, Control, Security, Observability | [Technology-neutral service design](../services/data-ingestion-service.md) |
 | Data Product Creation Service | Data, Control | AI, Security, Observability | [Technology-neutral service design](../services/data-product-creation-service.md) |
 | Data Consumption Service | Data | Control, Security, AI, Observability | [Technology-neutral service design](../services/data-consumption-service.md) |
 | Data Sharing Service | Data | AI, Control, Security, Observability | [Technology-neutral service design](../services/data-sharing-service.md) |
-| Platform Enablement Service | Control, Data | AI, Security, Observability | [Canonical service design](../services/platform-enablement-service.md) |
+| Platform Enablement Service | Control, Data | AI, Security, Observability | [Authoritative service design](../services/platform-enablement-service.md) |
 | Data Observability Service | Observability | AI and every plane through common identity and telemetry | [Technology-neutral service design](../services/data-observability-service.md) |
-| Data Foundation Operations Service | Experience, Control | AI, Observability, Security | [Canonical service design](../services/data-foundation-operations-service.md) |
+| Data Foundation Operations Service | Experience, Control | AI, Observability, Security | [Authoritative service design](../services/data-foundation-operations-service.md) |
 
 The primary plane owns the service outcome in the target view. A supporting plane supplies mandatory decisions, context, or evidence; it does not take service ownership.
 
@@ -71,7 +89,7 @@ Use this table to turn each plane into a concrete architecture work package. A d
 | Plane | Required Design Moves | Architecture Proof |
 | --- | --- | --- |
 | **Experience** | Make the Data Service Portal the entry point for discovery, onboarding, product creation, access, sharing, health, and support. Provide the same product and workflow capabilities through portal, API, and CLI. Organize journeys around domains, use cases, products, contracts, and decisions. | Journey map; portal/API/CLI capability matrix; product detail and health view; workflow state and action receipt. |
-| **Control** | Make publishing contracts with embedded product descriptors, semantic context, policy, lineage, quality, and go-live state versioned control artifacts. Keep one authority for each decision and automate compatibility, impact, approval, and lifecycle gates. | Authority map; canonical schemas; contract tests; policy decisions; lineage graph; product go-live evidence; export and import conformance result. |
+| **Control** | Make publishing data contracts with embedded product descriptors, semantic context, policy, lineage, quality, and go-live state versioned control artifacts. Keep one authority for each decision and automate compatibility, impact, approval, and lifecycle gates. | Authority map; published schemas; data-contract tests; policy decisions; lineage graph; product go-live evidence; export and import conformance result. |
 | **Data** | Centrally manage ingestion and source-aligned raw and validated states. Federate aggregate and consumer-aligned product creation to domain teams. Place unified logical access above distributed product storage and keep product interfaces independent from physical locations. | Ownership boundary; source-to-product lineage; storage and retention profile; stable product ports; adapter selection; execution and rollback evidence. |
 | **AI** | Make every service agentic through a service-owned specialist agent and typed skills. Use the Data Service AI Assistant to coordinate agents. Compile published contracts into task scope, policy inputs, workflow gates, validation, telemetry obligations, and autonomy limits while keeping state transitions deterministic. | Agent and skill manifests; delegated task; contract version; policy result; autonomy ceiling; context manifest; evaluation; service receipt; end-to-end AI trace. |
 | **Observability** | Emit standard telemetry from every foundation service and lifecycle event. Correlate system telemetry with data product telemetry across source, pipeline, product, consumer, contract, and incident. Make health, SLO, usage, freshness, quality, and impact visible. | Common identifiers; correlated traces, metrics, and logs; product health record; SLO and alert; impact graph; incident correlation and recovery evidence. |
@@ -81,7 +99,7 @@ The [Platform Enablement Service](../services/platform-enablement-service.md) su
 
 ## Critical Flows by Plane
 
-No critical flow stays inside one plane. Each row is an integration-design scope. The **primary plane** owns completion; the handoff column makes the required cross-plane collaboration explicit. Use the [Integration Design](integration-design.md) to specify interaction contracts, failure behavior, correlation, and end-to-end tests.
+No critical flow stays inside one plane. Each row is an integration-design scope. The **primary plane** owns completion; the handoff column makes the required cross-plane collaboration explicit. Use the [Integration Design](integration-design.md) to specify interfaces, failure behavior, correlation, and end-to-end tests.
 
 | Primary Plane | Critical Flow | Required Plane Handoff | Completion Evidence |
 | --- | --- | --- | --- |
@@ -112,8 +130,8 @@ The architecture should not be called mature unless these are true:
 - Observability connects source, pipeline, product, consumer, contract, and incident.
 - Operational response connects support, service ownership, observable impact, change, recovery, communication, and improvement across all foundation services.
 - Security policies are enforced by services, not only written in documentation.
-- Canonical artifacts can be exported, validated, and imported without a platform-specific control plane.
-- Agent actions cannot exceed the user's delegated authority, registered skill contract, approved autonomy or task budget.
+- Portable source artifacts can be exported, validated, and imported without a platform-specific control plane.
+- Agent actions cannot exceed the user's delegated authority, registered skill specification, approved autonomy or task budget.
 
 ## Completeness Questions
 

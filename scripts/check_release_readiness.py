@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate publication metadata and canonical guidance structure."""
+"""Validate publication metadata and required guidance structure."""
 
 from __future__ import annotations
 
@@ -32,12 +32,12 @@ SERVICE_SECTIONS = [
     "Service Architecture",
     "Agentic Interaction",
     "Core Capabilities",
-    "Contracts and Interfaces",
+    "Data Contracts and Interfaces",
     "Integrations and Dependencies",
     "Controls and Evidence",
     "Action Checklist",
     "Reference Solutions",
-    "Done Criteria",
+    "Target User Experience",
 ]
 
 REFERENCE_SOLUTIONS = [
@@ -50,7 +50,9 @@ REFERENCE_SOLUTIONS = [
 
 ADR_SECTIONS = [
     "Status",
+    "Decision Owner",
     "Context",
+    "Alternatives Considered",
     "Decision",
     "Consequences",
     "Evidence",
@@ -99,7 +101,7 @@ def require_order(path: Path, required: list[str], errors: list[str]) -> None:
         else:
             positions.append(actual.index(section))
     if positions != sorted(positions):
-        errors.append(f"{path.relative_to(ROOT)}: canonical sections are out of order")
+        errors.append(f"{path.relative_to(ROOT)}: required sections are out of order")
 
 
 def require_reference(target: Path, registries: list[Path], errors: list[str]) -> None:
@@ -152,7 +154,7 @@ def main() -> int:
     for name in SERVICES:
         path = DOCS / "services" / name
         if not path.exists():
-            errors.append(f"Missing canonical service page: {path.relative_to(ROOT)}")
+            errors.append(f"Missing required service page: {path.relative_to(ROOT)}")
             continue
         require_order(path, SERVICE_SECTIONS, errors)
         require_reference(
@@ -210,17 +212,27 @@ def main() -> int:
         if path != reference_index:
             require_reference(path, [reference_index], errors)
 
-    glossary = (DOCS / "foundation" / "glossary.md").read_text(encoding="utf-8")
+    glossary = (DOCS / "foundation" / "information-graph.md").read_text(encoding="utf-8")
     present_terms = set(re.findall(r"^\| ([^|]+?) \|", glossary, re.MULTILINE))
     missing_terms = sorted(GLOSSARY_TERMS - present_terms)
     if missing_terms:
-        errors.append("Glossary is missing canonical terms: " + ", ".join(missing_terms))
+        errors.append("Glossary is missing required terms: " + ", ".join(missing_terms))
 
     stale_terms = (
         "foundation capability groups",
         "platform foundations",
         "platform foundation design",
         "platform foundation and integration",
+        "content contract",
+        "page contract",
+        "service contract",
+        "interaction contract",
+        "skill contract",
+        "decision contract",
+        "observability contract",
+        "logical access contract",
+        "delegated task contract",
+        "output contract",
     )
     for content_root in (DOCS, ROOT / "skills"):
         for path in content_root.rglob("*.md"):
@@ -238,7 +250,7 @@ def main() -> int:
         return 1
 
     print(
-        f"Release {version} metadata and canonical structure validated: "
+        f"Release {version} metadata and required structure validated: "
         f"{len(SERVICES)} services, {len(standards)} standards, "
         f"{len(REFERENCE_SOLUTIONS)} reference solutions, and "
         f"{len(list((DOCS / 'decisions').glob('adr-*.md')))} ADRs."

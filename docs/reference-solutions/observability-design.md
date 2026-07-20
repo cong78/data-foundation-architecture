@@ -6,7 +6,7 @@ This proposal applies the Data Observability Service through a pragmatic two-pla
 
 - **Databricks and Unity Catalog** provide data product observability, quality, profiling, lineage, and governed data context.
 - **Grafana Cloud** provides platform and system observability for services, pipelines, runtimes, infrastructure, logs, metrics, traces, and alerts.
-- **OpenTelemetry and OpenLineage** connect both views without making either tool the system of record for the other.
+- **stable identifiers, portable lineage records, and OpenTelemetry** connect both views without making either tool the system of record for the other.
 
 The result is one observability experience with two authoritative signal domains.
 
@@ -87,7 +87,7 @@ flowchart LR
 | Metrics | OTLP to Grafana Cloud; product health metrics also exposed to the portal | Keep labels bounded. Use product, version, domain, environment, quality dimension, and outcome; never use raw business values. |
 | Logs | OTLP to Grafana Cloud | Structured logs with `trace_id`, `span_id`, actor type, run id, product id, and redacted error context. |
 | Quality and profiling | Databricks/Unity Catalog | Store detailed distributions, profiling results, failed checks, evidence, and retention-controlled samples in the data platform. |
-| Lineage | OpenLineage and Unity Catalog | Preserve runtime lineage and catalog lineage; correlate with `data.pipeline.run_id`, product version, and trace id. |
+| Lineage | Unity Catalog and portable lineage export | Preserve runtime and catalog lineage; correlate with `data.pipeline.run_id`, product version, and trace id. |
 | Product lifecycle events | Contracted event or OTLP log/event projection | Publish product created, tested, go-live, degraded, recovered, and retired events with evidence references. |
 
 ### Collector Placement
@@ -230,7 +230,7 @@ One product-centric view that answers:
 - Unity Catalog product context, ownership, contracts, policy, and lineage.
 - Databricks data quality monitoring, profiling, freshness, anomaly, lineage, access, job, pipeline, query, and cost signals.
 - Grafana Cloud dashboards, alerting, logs, traces, metrics, incident links, and cross-platform system health.
-- OpenTelemetry telemetry and OpenLineage events correlated to canonical product and run identifiers.
+- OpenTelemetry telemetry and exported lineage records correlated to authoritative product and run identifiers.
 - Data Service Portal views for product health, incidents, evidence, and consumer impact.
 
 ### Out of Scope
@@ -248,7 +248,7 @@ One product-centric view that answers:
 - Lineage-aware impact view for consumers, agents, models, reports, and shared packages.
 - Go-live and recovery evidence linked to the product, contract, quality results, and telemetry observation time.
 
-## Canonical Correlation Model
+## Shared Correlation Model
 
 Every signal should carry the identifiers that allow the two observability domains to join without copying sensitive data:
 
@@ -264,7 +264,7 @@ Every signal should carry the identifiers that allow the two observability domai
 | `data.quality.dimension` | Quality measure such as freshness, completeness, validity, or drift. |
 | `incident_id` | Shared operational and product incident reference. |
 
-The correlation model should be implemented as a versioned extension of the existing [OpenTelemetry Telemetry Standard](../standards/otel-telemetry-standard.md). Runtime lineage remains OpenLineage-compatible; Unity Catalog lineage is treated as an important catalog-side view, not the only lineage protocol.
+The correlation model should be implemented as a versioned extension of the existing [OpenTelemetry Standard](../standards/otel-telemetry-standard.md). Unity Catalog provides the primary catalog-side lineage view for this profile; portable lineage export prevents that view from becoming an interoperability dependency.
 
 ## Recommended Dashboards
 
@@ -330,7 +330,7 @@ Show products by owner, domain, criticality, quality posture, freshness posture,
 
 1. Is Unity Catalog the authoritative product context for Databricks-managed products, while the Data Service Portal remains the user entry point?
 2. Is Grafana Cloud the enterprise system-observability command center for metrics, logs, traces, alerts, and incidents?
-3. Which canonical identifiers must every workload emit before a product can go live?
+3. Which stable identifiers must every workload emit before a product can go live?
 4. Which product tiers require quality profiling, freshness SLOs, lineage coverage, and 24x7 alerting?
 5. Which signals may cross platform boundaries, and what data classification and retention rules apply?
 6. Who owns the shared correlation model and the product health scorecard?
@@ -340,7 +340,7 @@ Show products by owner, domain, criticality, quality posture, freshness posture,
 | Risk | Guardrail |
 | --- | --- |
 | Two dashboards disagree | Define authoritative ownership for each signal and show observation time and source. |
-| Unity Catalog lineage is incomplete for some events | Preserve OpenLineage events and document coverage limitations and fallback paths. |
+| Unity Catalog lineage is incomplete for some events | Preserve exportable runtime lineage records and document coverage limitations and fallback paths. |
 | Telemetry exposes sensitive data | Use identifiers, masking, classification-aware access, retention controls, and payload hygiene. |
 | Product quality becomes an engineering-only concern | Make product owner and steward accountable for SLOs and acceptable thresholds. |
 | Grafana becomes a second catalog | Link to catalog and product records; do not duplicate lifecycle authority. |

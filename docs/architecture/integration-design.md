@@ -1,14 +1,18 @@
 # Integration Design
 
-<div class="decision-brief"><div><small>Use when</small><strong>An outcome crosses two or more service boundaries.</strong></div><div><small>Decision</small><strong>Which service owns completion, and how are handoffs controlled and evidenced?</strong></div><div><small>Owner</small><strong>Integration architect with participating service owners.</strong></div><div><small>Output</small><strong>Interaction contracts, sequence, failure behavior, and end-to-end test.</strong></div></div>
+<div class="decision-brief"><div><small>Use when</small><strong>An outcome crosses two or more service boundaries.</strong></div><div><small>Decision</small><strong>Which service owns completion, and how are handoffs controlled and evidenced?</strong></div><div><small>Owner</small><strong>Integration architect with participating service owners.</strong></div><div><small>Output</small><strong>Interface specifications, sequence, failure behavior, and end-to-end test.</strong></div></div>
 
 Integration design connects independently owned foundation services without merging their responsibilities. It defines stable interactions across the Experience, Control, Data, AI, Observability, and Security planes in the [Architecture Blueprint](target-architecture.md).
+
+## Design Reasoning
+
+<div class="design-reasoning"><div><small>Context</small><p>User outcomes cross independently owned services and cannot be proven by one local success.</p></div><div><small>Forces</small><p>Service autonomy must coexist with reliable completion, policy propagation, recovery, and end-to-end evidence.</p></div><div><small>Decision</small><p>Use stable APIs, events, callbacks, and product ports with one completion owner and shared correlation identifiers.</p></div><div><small>Consequences</small><p>Handoffs, failure ownership, compensation, and reconciliation become explicit design work.</p></div><div><small>Verification</small><p>Test the complete outcome, including timeout, retry, denial, partial failure, recovery, and correlated evidence.</p></div></div>
 
 ## Integration Principles
 
 1. Integrate through stable service APIs, events, workflow callbacks, and product ports rather than provider tables or user-interface automation.
 2. Name one service accountable for the end-to-end outcome and one owner for each handoff.
-3. Carry canonical identifiers and policy context across every boundary.
+3. Carry stable identifiers and policy context across every boundary.
 4. Separate request acceptance from completed outcome; return durable workflow state for long-running work.
 5. Design timeout, retry, idempotency, compensation, reconciliation, and degraded operation before go-live.
 6. Prove the end-to-end outcome with correlated evidence, not only successful local calls.
@@ -16,16 +20,16 @@ Integration design connects independently owned foundation services without merg
 
 ## Interaction Types
 
-| Interaction | Use For | Required Contract |
+| Interaction | Use For | Required Interface Definition |
 | --- | --- | --- |
 | Synchronous API | Bounded query, validation, policy decision, preview, or short command. | OpenAPI operation, identity and purpose, timeout, errors, obligations, and correlation ids. |
 | Asynchronous event | State change, telemetry, lineage, notification, or fan-out. | AsyncAPI and CloudEvents envelope, schema version, source, subject, event id, time, ordering, and replay behavior. |
 | Durable workflow | Approval, onboarding, provisioning, go-live, sharing, change, or recovery. | Workflow id, owner, state machine, gates, callbacks, expiry, compensation, and evidence links. |
 | Product port | Governed data query, table, API, event, file, feature, retrieval, or semantic interface. | Product and contract versions, consumer purpose, policy, SLO, obligations, and usage evidence. |
 | Agent task | Goal decomposition or delegated work between the assistant and a service specialist agent. | Task and parent ids, actor, delegated identity, purpose, contract references, scope, autonomy ceiling, budget, deadline, expected artifact, approval state, status, and correlation ids. |
-| Telemetry and evidence | Health, audit, lineage, cost, control result, and operational correlation. | OpenTelemetry or open lineage profile, semantic conventions, retention, access, and source authority. |
+| Telemetry and evidence | Health, audit, lineage, cost, control result, and operational correlation. | OpenTelemetry conventions, portable lineage records, retention, access, correlation, and source authority. |
 
-## Canonical Integration Flow
+## Core Integration Flow
 
 ```mermaid
 sequenceDiagram
@@ -97,10 +101,10 @@ The assistant owns coordination and user-visible task state. The selected servic
 Every material integration records:
 
 - Initiator, outcome owner, participating services, target planes, and trust boundaries.
-- Interaction type, canonical schema, versioning, compatibility, and deprecation behavior.
+- Interaction type, published schema, versioning, compatibility, and deprecation behavior.
 - Identity, purpose, service authorization, data authorization, and obligations.
 - Agent and skill versions, parent and child tasks, contract references, delegated scope, autonomy ceiling, budgets, approval state, and completion ownership.
-- Canonical identifiers and propagation rules.
+- stable identifiers and propagation rules.
 - Timeout, retry, idempotency, ordering, replay, compensation, reconciliation, and degraded mode.
 - SLO, telemetry, audit, lineage, evidence retention, and operational owner.
 - Contract tests, failure tests, security tests, recovery exercise, and exit path.

@@ -45,7 +45,7 @@ An AI-facing product extends the same product disciplines used for analytics and
 | Decision | Use when | Architecture action |
 | --- | --- | --- |
 | Reuse the analytics product | Grain, semantics, fields, freshness, quality, policy, and interface already satisfy the AI purpose. | Add an AI-use profile to the Data Product Consumption Contract, plus workload identity, purpose decision, AI evaluation, and telemetry without copying the product. |
-| Add an AI projection | The canonical product is suitable but AI needs chunks, embeddings, features, labels, a bounded snapshot, or an evaluation set. | Create a versioned derivative projection linked to the source product and contract; give it independent freshness, rebuild, evaluation, retention, and retirement evidence. |
+| Add an AI projection | The authoritative product is suitable but AI needs chunks, embeddings, features, labels, a bounded snapshot, or an evaluation set. | Create a versioned derivative projection linked to the source product and contract; give it independent freshness, rebuild, evaluation, retention, and retirement evidence. |
 | Create or change a data product | The AI need requires materially different semantics, ownership, quality, SLO, lifecycle, or reusable output. | Use the normal product proposal and go-live process. Do not call a private model-preparation table a product by default. |
 | Reject or redesign the use | Purpose, rights, representativeness, quality, safety, identity, or control obligations cannot be satisfied. | Minimize or anonymize data, constrain the AI behavior, select another product or interface, or stop the use case. |
 

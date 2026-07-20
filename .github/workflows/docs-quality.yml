@@ -36,6 +36,8 @@ jobs:
         run: |
           python scripts/check_navigation.py
           python scripts/check_release_readiness.py
+          python scripts/validate_architecture_registry.py
+          python scripts/build_guidance_graph.py --check
           codespell docs README.md GOVERNANCE.md COMPATIBILITY.md CONTRIBUTING.md SUPPORT.md CHANGELOG.md policies scripts skills \
             --skip='*.svg,*.png,*.jpg,*.drawio,*.json'
 
@@ -58,6 +60,8 @@ jobs:
       - name: Compile repository validators
         run: |
           python -m py_compile scripts/validate_architecture_policies.py
+          python -m py_compile scripts/validate_architecture_registry.py
+          python -m py_compile scripts/build_guidance_graph.py
           python -m py_compile scripts/check_navigation.py
           python -m py_compile scripts/check_release_readiness.py
 

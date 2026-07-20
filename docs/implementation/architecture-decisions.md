@@ -1,6 +1,6 @@
 # Architecture Decisions
 
-This page defines the key architecture decisions that should be made explicitly. Each decision should be captured as an architecture decision record when it affects platform direction, governance, security, or reuse.
+This register lists consequential architecture decisions and their current status. Use the [Architecture Decision Process](../decisions/architecture-decision-process.md) to classify a decision, assign authority, evaluate alternatives, publish current guidance, and connect implementation evidence.
 
 ## Decision Register
 
@@ -12,14 +12,14 @@ This page defines the key architecture decisions that should be made explicitly.
 | [ADR-004](../decisions/adr-004-unified-data-access.md) | Place governed product ports and a unified access layer above physical storage. | Accepted | Data Access Architecture | 2027-07-15 | Consumption, identity, policy, product ports |
 | [ADR-005](../decisions/adr-005-observability-platforms.md) | Use Grafana Cloud for system observability and Databricks plus Unity Catalog for product observability, connected by OpenTelemetry. | Accepted | Observability Architecture | 2027-07-15 | Telemetry, operations, product trust, incidents |
 
-An ADR records one consequential decision. The broader map below remains a decision backlog: create another ADR when a listed direction becomes adopted, changes a public interface, or requires migration and evidence.
+An ADR records one consequential decision. The broader map below remains a decision backlog: create another ADR when a listed direction becomes adopted, changes a stable interface, or requires migration and evidence.
 
 ## Decision Map
 
 | Decision | Recommended Direction | Rationale |
 | --- | --- | --- |
 | [Product ownership](../decisions/adr-001-central-federated-ownership.md) | Centralize ingestion and source-aligned products; federate aggregate and consumer-aligned product ownership to domain data teams. | Keeps source capture consistent while placing business meaning and consumer outcomes with accountable domains. |
-| [Architecture decision policy](../decisions/architecture-decision-policy.md) | Express principles, rules, and criteria through one canonical YAML or JSON envelope; use OPA and Rego as the default execution profile. | Makes architecture guidance readable, testable, portable, and enforceable without coupling its meaning to one evaluator. |
+| [Architecture decision policy](../decisions/architecture-decision-policy.md) | Express principles, rules, and criteria through one authoritative YAML or JSON envelope; use OPA and Rego as the default execution profile. | Makes architecture guidance readable, testable, portable, and enforceable without coupling its meaning to one evaluator. |
 | User entry point | Use the Data Service Portal for discovery, requests, contracts, and workflow status. | Prevents fragmented access paths and creates consistent evidence. |
 | Portal interaction model | Organize journeys by user intent and bind them to domain team, use case, workspace, product, purpose, and evidence. | Makes complex foundation services understandable and reusable. |
 | Portal state | Limit portal-owned state to experience, drafts, preferences, tasks, and rebuildable read projections. | Prevents the experience layer from becoming a competing control plane. |
@@ -29,16 +29,16 @@ An ADR records one consequential decision. The broader map below remains a decis
 | [Unified data access](../decisions/adr-004-unified-data-access.md) | Place governed product ports and a unified access layer above physical storage. | Separates consumer interfaces and policy enforcement from storage implementation details. |
 | Metadata authority | Keep product, contract, semantic, policy, and telemetry authorities portable and project their identifiers and selected state into Unity Catalog. | Prevents the technical catalog from becoming an unexportable duplicate control plane. |
 | Contract authority | Use a data contract registry as the source of truth for schemas, semantics, quality rules, compatibility, and lifecycle. | Enables automated validation and change management. |
-| Canonical artifacts | Store contracts and products in open, machine-readable canonical formats; generate vendor objects from them. | Keeps meaning portable across tools and platforms. |
+| portable source artifacts | Store contracts and products in open, machine-readable portable formats; generate vendor objects from them. | Keeps meaning portable across tools and platforms. |
 | Interface definitions | Use OpenAPI for synchronous APIs and AsyncAPI plus CloudEvents for event interfaces. | Makes interfaces discoverable, testable, and independently consumable. |
-| Metadata and lineage exchange | Support DCAT catalog export and OpenLineage runtime events. | Enables catalog federation and replaceable lineage backends. |
+| Metadata and lineage exchange | Support DCAT catalog export and portable runtime lineage records. | Enables catalog federation and replaceable lineage backends. |
 | Identifier strategy | Use stable product, contract, dataset, source, consumer, purpose, run, and trace identifiers across every plane. | Preserves correlation through migration and sharing. |
 | Extension strategy | Namespace enterprise extensions and preserve unknown fields during import and export. | Allows local controls without forking open semantics. |
 | Ingestion patterns | Standardize file inbox push, connector pull, API extraction, CDC, and streaming. | Covers most integration needs while reducing custom pipelines. |
 | Data product boundary | Publish products around reusable business concepts, not around pipeline outputs. | Improves discoverability, ownership, and reuse. |
 | AI access | Route AI access through governed consumption patterns with service identity and purpose approval. | Keeps AI usage auditable and policy-controlled. |
 | Agent boundary | Route assistant and agent execution through one policy-enforced Agent Gateway. | Centralizes identity, budgets, authorization, approval, audit and suspension. |
-| Skill contract | Expose foundation actions as typed, versioned, least-privilege skills over stable service APIs. | Makes agent behavior testable and reusable. |
+| Skill specification | Expose foundation actions as typed, versioned, least-privilege skills over stable service APIs. | Makes agent behavior testable and reusable. |
 | LLM abstraction | Reference approved enterprise LLM profiles rather than provider model names in business logic. | Supports routing, portability, policy and rollback. |
 | Agent autonomy | Default to read, recommend and draft; require explicit approval for consequential actions. | Limits excessive agency and preserves accountability. |
 | [Observability](../decisions/adr-005-observability-platforms.md) | Use OpenTelemetry-compatible telemetry for foundation services and data products, with separate system and product insight backends. | Creates consistent signals while preserving fit-for-purpose operational and product views. |
@@ -54,9 +54,17 @@ An ADR records one consequential decision. The broader map below remains a decis
 
 Proposed | Accepted | Deprecated | Replaced
 
+## Decision Owner
+
+Who has accountable authority for this decision?
+
 ## Context
 
 What problem are we solving? What constraints matter?
+
+## Alternatives Considered
+
+Which viable options were evaluated, including retaining the current state?
 
 ## Decision
 
@@ -90,10 +98,10 @@ These decisions require architecture and governance review:
 - Sharing data externally without expiry, revocation, and audit.
 - Emitting sensitive data into traces, logs, metrics, or events.
 - Creating a new ingestion or consumption pattern outside standard patterns.
-- Selecting a platform feature without a canonical export or tested exit path.
+- Selecting a platform feature without an tested export or tested exit path.
 - Selecting a vendor or technology without approved requirements, knockout gates, proof-of-capability, TCO, and an exit plan.
 - Creating a durable production table outside Delta or leaving a live asset unregistered in Unity Catalog without an approved exception.
-- Storing canonical product, contract, policy, entitlement, lineage, or observability state only in the portal.
+- Storing authoritative product, contract, policy, entitlement, lineage, or observability state only in the portal.
 - Presenting inferred or simulated health, usage, quality, or lineage as measured evidence.
 - Giving an agent direct database, platform administrator, or unrestricted network access.
 - Allowing retrieved content or tool output to change authorization, autonomy or approval requirements.

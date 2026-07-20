@@ -22,7 +22,7 @@ It exists to connect service health, product trust, consumer impact, ownership, 
 | --- | --- |
 | Primary planes | Experience and Control |
 | Supporting planes | AI, Observability, and Security |
-| Shared capabilities | Agentic foundation, service ownership, workflow, telemetry, identity, responder authority, change, continuity, runbooks, and evidence retention. |
+| Supporting designs and capabilities | [Platform Governance Design](../architecture/platform-governance-design.md), [Platform Enablement Design](../architecture/platform-enablement-design.md), [Data Product Design](../architecture/data-product-design.md), and [Agentic Data Service Design](../architecture/agentic-data-foundation.md) supply service ownership, workflow, telemetry, identity, responder authority, change, continuity, and evidence retention. |
 | Integration flows | Support, incident, problem, change, release, recovery, continuity, communication, and improvement. |
 
 ## Service Architecture
@@ -45,7 +45,7 @@ Operations owns coordination and authoritative operational records. The affected
 
 ## Agentic Interaction
 
-| Concern | Service Agent Contract |
+| Concern | Agent Operating Specification |
 | --- | --- |
 | Specialist role | Operations agent that triages, coordinates responders, communicates status, invokes runbooks, and verifies recovery evidence. |
 | Declarative boundary | Service ownership, incident or change record, responder authority, approved runbook, policy, impact, and recovery criteria. |
@@ -64,9 +64,9 @@ Operations owns coordination and authoritative operational records. The affected
 | Reliability | Continuity and recovery | SLOs, error budgets, capacity, resilience, exercises, recovery objectives, toil, and risk guide investment. |
 | Improvement | Operational excellence | Support, incident, change, reliability, cost, risk, and feedback evidence drives measurable owned improvements. |
 
-## Contracts and Interfaces
+## Data Contracts and Interfaces
 
-| Interface | Purpose | Required Contract |
+| Interface | Purpose | Required Definition |
 | --- | --- | --- |
 | Support API | Create and track a user or service request. | Requester, service, product, purpose, impact, urgency, owner, target, status, communication, and resolution. |
 | Incident API | Coordinate material service or product impact. | Severity, commander, responders, affected services, products and consumers, timeline, decisions, actions, communication, and recovery. |
@@ -105,12 +105,14 @@ Operations owns coordination and authoritative operational records. The affected
 
 No service-management vendor is mandated. A selected implementation must preserve stable foundation identifiers, product-impact context, workflow authority, API integration, permission-filtered status, exportability, and an exit path. Use [Architecture to Delivery](../foundation/architecture-to-delivery.md) and the [Service Runbook Template](../reference-solutions/service-runbook-template.md).
 
-## Done Criteria
+## Target User Experience
 
-- Every production foundation service has a complete operational record and exercised runbooks.
-- Portal support and status use authoritative operational APIs rather than copied state.
-- Alerts create or enrich deduplicated operational records with affected products and consumers.
-- Support, incident, problem, change, release, continuity, recovery, and improvement flows are exercised.
-- Recovery is proven from telemetry through system, product, control, and consumer outcomes.
-- The operations agent uses approved runbooks and responder authority; autonomous recovery, escalation, suspension, and deterministic fallback are exercised.
-- Operational evidence is searchable, permission-filtered, retained, and linked to architecture, service, change, and improvement decisions.
+Use each row as an end-to-end acceptance scenario for product design and engineering validation.
+
+| User and Intent | User Action | Required Service Behavior | Observable Result |
+| --- | --- | --- | --- |
+| User needs support. | Report a question, degradation, request, or failure through the portal or service interface. | Classify, deduplicate, identify affected service and product, assign ownership and priority, and publish update expectations. | The user sees one operational record, current owner, status, impact, next update, and route to escalate. |
+| Responder manages an incident. | Acknowledge, assess impact, coordinate containment, communicate, recover, and close. | Correlate telemetry, products, consumers, changes, releases, dependencies, decisions, and timeline; enforce incident authority. | Responders and stakeholders share one impact view, decision log, communication state, and recovery objective. |
+| Engineer executes change or release. | Submit, approve, implement, validate, roll back, or close. | Check risk, dependencies, segregation, maintenance window, runbook, rollback, service health, product health, and evidence. | Participants can see approval, implementation state, validation, rollback readiness, and resulting outcomes. |
+| Responder validates recovery. | Run system, data-product, control, and consumer checks. | Compare recovery evidence with SLOs and acceptance conditions and retain failed or partial results. | Recovery is declared only when all required outcomes are restored or an explicit residual risk is owned. |
+| Owner improves the service. | Review incidents, problems, changes, toil, continuity exercises, and user feedback. | Link recurring causes and failed controls to prioritized improvement work and accountable owners. | Operational history produces a visible, evidence-based improvement backlog rather than repeated incidents. |

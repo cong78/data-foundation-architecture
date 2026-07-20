@@ -7,7 +7,7 @@ Reference solutions connect technology-neutral guidance to delivery. They are op
 ## How to Use Them
 
 1. Confirm the required outcome in Architecture, Services, and Standards.
-2. Select a technology profile only when it fits the published architecture, service contract, standards, and delivery context.
+2. Select a technology profile only when it fits the published architecture, service definition, standards, and delivery context.
 3. Complete the relevant reference records while adapting the profile.
 4. Prove conformance, security, operability, cost, and portability before go-live.
 5. Retain decisions and evidence with the delivered capability.
@@ -29,7 +29,7 @@ Reference solutions connect technology-neutral guidance to delivery. They are op
 | Define an executable architecture rule | [Architecture Decision Policy](architecture-policy-template.md) | Stable decision, enforcement points, tests, evidence, and lifecycle. |
 | Onboard a data domain | [Data Domain Onboarding](data-domain-onboarding-template.md) | Boundary, ownership, maturity baseline, capabilities, and first-product proof. |
 | Onboard a source | [Source Onboarding](source-onboarding-template.md) | Ingestion contract, delivery pattern, controls, support, and validated handoff. |
-| Create or change a data product | [Data Product](data-product-template.md) | Publishing contract, descriptor, semantics, quality, ports, controls, and go-live evidence. |
+| Create or change a data product | [Data Product](data-product-template.md) | Publishing data contract, descriptor, semantics, quality, ports, controls, and go-live evidence. |
 | Define executable product work | [Data Product Workload](data-product-workload-template.md) | Resources, environments, deployment, rollback, telemetry, and release decision. |
 | Select a vendor or technology | [Technology Selection](technology-selection-template.md) | Knockout gates, weighted evidence, proof of capability, cost, risk, and exit. |
 | Prove portability | [Interoperability Conformance](interoperability-conformance-template.md) | Profile, independent tests, exceptions, and decision. |

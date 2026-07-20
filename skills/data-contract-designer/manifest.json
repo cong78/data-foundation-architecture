@@ -9,28 +9,28 @@
       "description": "Draft one of the three data contract types with controls, tests, approvals, and evidence gaps.",
       "input_schema": "schemas/contract-request.schema.json",
       "output_schema": "schemas/contract-result.schema.json",
-      "output_contract": "references/output-contracts.md#contract-design"
+      "output_specification": "references/output-specifications.md#contract-design"
     },
     {
       "id": "review",
       "description": "Review contract type, completeness, enforceability, lifecycle, and evidence.",
       "input_schema": "schemas/contract-request.schema.json",
       "output_schema": "schemas/contract-result.schema.json",
-      "output_contract": "references/output-contracts.md#contract-review"
+      "output_specification": "references/output-specifications.md#contract-review"
     },
     {
       "id": "compatibility",
       "description": "Compare contract versions and recommend patch, minor, or major change handling.",
       "input_schema": "schemas/compatibility-request.schema.json",
       "output_schema": "schemas/contract-result.schema.json",
-      "output_contract": "references/output-contracts.md#compatibility-result"
+      "output_specification": "references/output-specifications.md#compatibility-result"
     },
     {
       "id": "change-impact",
       "description": "Plan contract migration, coexistence, notice, rollback, deprecation, and retirement.",
       "input_schema": "schemas/contract-request.schema.json",
       "output_schema": "schemas/contract-result.schema.json",
-      "output_contract": "references/output-contracts.md#compatibility-result"
+      "output_specification": "references/output-specifications.md#compatibility-result"
     }
   ],
   "side_effects": {

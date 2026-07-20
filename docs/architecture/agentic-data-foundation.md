@@ -2,6 +2,10 @@
 
 Agentic data service design uses AI to help users understand, plan, and execute governed data work across every foundation service. Agents accelerate service outcomes; they do not bypass contracts, policy, identity, product go-live controls, or audit.
 
+## Design Reasoning
+
+<div class="design-reasoning"><div><small>Context</small><p>Users need assistance across specialized services, policies, contracts, evidence, and long-running workflows.</p></div><div><small>Forces</small><p>Speed and autonomy must coexist with deterministic authority, safety, explainability, revocation, and human accountability.</p></div><div><small>Decision</small><p>Let one assistant coordinate service-owned specialist agents through typed skills bounded by identity, purpose, contracts, policy, and approval gates.</p></div><div><small>Consequences</small><p>Automation becomes composable, but skill governance, evaluation, traceability, fallback, and suspension become mandatory capabilities.</p></div><div><small>Verification</small><p>Test task scope, tool permissions, delegation, approval, refusal, evidence, recovery, and deterministic fallback for each skill.</p></div></div>
+
 ## Design Intent
 
 Every foundation service is **agentic by design**:
@@ -79,11 +83,11 @@ Agents call foundation service APIs through the gateway. They do not receive bro
 | Data Observability | Correlate system and product signals and explain impact. | Telemetry profile, product SLOs, evidence policy, and incident thresholds. | Detect, correlate, diagnose, alert, and prepare evidence without changing source records. |
 | Data Foundation Operations | Coordinate support, incidents, changes, recovery, and improvement. | Approved runbook, change policy, responder authority, and recovery criteria. | Triage, route, communicate, execute pre-approved recovery, and verify outcomes. |
 
-A cross-service contract specialist may help author, compare, and compile contracts, but the accountable contract owners approve them and the target services enforce them.
+A cross-service data-contract specialist may help author, compare, and compile data contracts, but the accountable data-contract owners approve them and the target services enforce them.
 
 Start with the Data Service AI Assistant coordinating in-process specialist agents and skills. Use remote agents only when separate ownership, scaling, security boundaries, or long-running work justify an independent runtime.
 
-## Contract-Driven Autonomy
+## Data-Contract-Driven Autonomy
 
 A published data contract is the declarative execution envelope between accountable users, products, consumers, and services. It is compiled into machine-enforceable controls; it is not interpreted freely by an LLM at runtime.
 
@@ -171,7 +175,7 @@ Do not store secrets, unrestricted retrieved data, hidden policy decisions, or u
 
 ## Open Protocol Profile
 
-- Use OpenAPI or AsyncAPI as the canonical foundation service contract.
+- Publish foundation service interfaces through OpenAPI or AsyncAPI.
 - MCP may expose approved resources, prompts, and tools to compatible assistants.
 - A2A may be used for independently operated service agents that require discovery, delegated tasks, durable status, and artifact exchange.
 - Protocol adapters do not replace Data Product Creation Contracts, policy enforcement, agent identity, or audit.

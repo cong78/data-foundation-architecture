@@ -1,6 +1,6 @@
 [
   {
-    "id": "canonical-data-contract-definition",
+    "id": "authoritative-data-contract-definition",
     "operation": "resolve_definition",
     "query": "Data contract",
     "expected_status": "complete",

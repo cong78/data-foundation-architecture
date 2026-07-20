@@ -5,7 +5,7 @@
 This reference solution applies the technology-neutral [Data Product Creation Service](../services/data-product-creation-service.md) and the mandatory [Data Catalog and Storage Standard](../standards/catalog-storage-standard.md) to Databricks. Databricks workspaces provide governed product engineering environments; Unity Catalog is the standard technical catalog and native governance layer, and Delta Lake is the default physical format for durable product tables.
 
 !!! info "Reference solution status"
-    Unity Catalog and Delta Lake are mandatory defaults under the [Data Catalog and Storage Standard](../standards/catalog-storage-standard.md). The Databricks workspace, compute, orchestration, and delivery profile remains a selected implementation that requires proof-of-capability evidence, security and cost review, portability tests, and an exit plan. Publishing-contract, workload, semantic-context, and release artifacts remain canonical and provider-independent; the product descriptor is embedded in the publishing contract.
+    Unity Catalog and Delta Lake are mandatory defaults under the [Data Catalog and Storage Standard](../standards/catalog-storage-standard.md). The Databricks workspace, compute, orchestration, and delivery profile remains a selected implementation that requires proof-of-capability evidence, security and cost review, portability tests, and an exit plan. Publishing-data-contract, workload, semantic-context, and release artifacts remain authoritative and provider-independent; the product descriptor is embedded in the publishing data contract.
 
 !!! tip "Fast path"
     **Decide:** [Executive Recommendation](#executive-recommendation) · **Design:** [Solution at a Glance](#solution-at-a-glance) and [Workspace Topology](#workspace-topology) · **Implement:** [Implementation Runway](#implementation-runway) · **Assure:** [Go-Live Gate](#go-live-gate) and [Done Criteria](#done-criteria)
@@ -136,7 +136,7 @@ sequenceDiagram
 ### Delivery Rules
 
 1. The portal creates a stable product id before any workspace object is created.
-2. The repository carries the publishing contract with its embedded product descriptor, workload, semantic-context, code, test, and bundle artifacts together. The descriptor shares the contract version; the other artifacts retain their own versions.
+2. The repository carries the publishing data contract with its embedded product descriptor, workload, semantic-context, code, test, and bundle artifacts together. The descriptor shares the data-contract version; the other artifacts retain their own versions.
 3. CI validates artifacts before provisioning and produces a deterministic environment plan.
 4. Developers iterate in personal or team-isolated development schemas with synthetic, masked, or approved data.
 5. The same immutable code and configuration version moves to test and production; environment values are injected, not rebuilt.
@@ -210,7 +210,7 @@ Do not make every Unity Catalog object a data product. Use a predictable mapping
 | Product output port | Stable table, view, materialized view, streaming table, volume, function, model, or share registered under the product schema. |
 | Product version | Product and release metadata linked through governed tags, properties, and the release registry; do not encode every patch version in consumer names. |
 | Breaking interface version | Parallel stable port or schema namespace with an explicit migration and deprecation period. |
-| Publishing contract | Canonical contract-registry record, including its embedded product descriptor, linked from the product and projected into catalog metadata, tests, comments, tags, schema, and constraints where supported. |
+| Publishing data contract | Authoritative data-contract registry record, including its embedded product descriptor, linked from the product and projected into catalog metadata, tests, comments, tags, schema, and constraints where supported. |
 | Semantic context | Versioned context package linked from the product; selected terms, metrics, and classifications may be projected into catalog metadata. |
 | Source dependency | Fully qualified input object and contract reference; path-based reads are prohibited for governed product logic unless explicitly approved. |
 | Access policy | Enterprise policy reference plus generated Unity Catalog grants, governed tags, ABAC, filters, masks, and workspace bindings. |
@@ -218,7 +218,7 @@ Do not make every Unity Catalog object a data product. Use a predictable mapping
 
 Use stable consumer-facing names such as `prod_customer.customer_profile.current_customer`. Underlying physical tables may change, but a port changes only through contract versioning and compatibility rules.
 
-## Contract and Quality Enforcement
+## Data Contract and Quality Enforcement
 
 Use four enforcement points rather than expecting one Databricks feature to represent the complete data contract.
 
@@ -252,9 +252,9 @@ Databricks is an implementation, not the external Data Product Creation Contract
 - Use Delta Lake as the default physical format for durable tabular products and expose stable interfaces rather than storage paths.
 - Test supported Iceberg REST access for approved external engines and validate policy behavior, credential vending, read/write limits, and format compatibility. [Unity Catalog Iceberg REST](https://docs.databricks.com/aws/en/external-access/iceberg)
 - Use Delta Sharing for governed sharing profiles, with recipient, expiry, and revocation clauses in the Data Product Consumption Contract.
-- Publish OpenLineage-compatible events where cross-platform lineage is required and OpenTelemetry signals for system and product operations.
+- Export portable lineage records where cross-platform lineage is required and publish OpenTelemetry signals for system and product operations.
 - Export catalog, policy, lineage, quality, audit, and release evidence on a defined schedule and retention model.
-- Prove that one reference product can be recreated in another environment from canonical artifacts and data, without depending on a developer's workspace.
+- Prove that one reference product can be recreated in another environment from portable source artifacts and data, without depending on a developer's workspace.
 
 ## Operational Model
 
@@ -291,7 +291,7 @@ Databricks is an implementation, not the external Data Product Creation Contract
 
 - Add named-user, BI, application, agent, and external-engine consumption tests.
 - Validate SQL, Iceberg REST, sharing, and non-tabular adapter boundaries.
-- Recreate the reference product from canonical artifacts in a clean environment and test rollback and revocation.
+- Recreate the reference product from portable source artifacts in a clean environment and test rollback and revocation.
 
 ## Open Design Choices
 
@@ -317,7 +317,7 @@ Databricks is an implementation, not the external Data Product Creation Contract
 - Service authorization and data authorization are independently tested.
 - Product go-live is blocked until contract, quality, security, policy, lineage, observability, rollback, and documentation evidence pass.
 - BI, application, platform, agent, model, sharing, and approved external-engine paths use governed product ports.
-- One product can be recreated from canonical artifacts outside its original workspace and physical bindings.
+- One product can be recreated from portable source artifacts outside its original workspace and physical bindings.
 
 <div class="read-next">
   <strong>Next:</strong> use Data Consumption Design to expose live product ports through Unity Catalog, SQL, open interfaces, and governed adapters.

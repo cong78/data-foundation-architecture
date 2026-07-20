@@ -123,6 +123,6 @@ A foundation capability is implementation-ready when:
 - Support, incident, change, recovery, continuity, and improvement responsibilities are defined and exercised according to service criticality.
 - Evidence is available for architecture, security, governance, and audit review.
 - The capability has at least one real product use case proving the pattern end to end.
-- Canonical artifacts and open interfaces pass the required interoperability conformance level.
+- Portable source artifacts and open interfaces pass the required interoperability conformance level.
 - Developer-facing capabilities have equivalent portal, API, CLI, and approved agent-skill paths.
 - Runtime intent, environment, deployment target, dependencies, policy, and rollback are versioned as declarative artifacts.

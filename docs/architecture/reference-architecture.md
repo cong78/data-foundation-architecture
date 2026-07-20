@@ -5,7 +5,11 @@
 The platform architecture shows the minimum building blocks needed to realize the architecture blueprint. Technology can vary; these capabilities should not.
 
 !!! info "Architecture classification"
-    This is an **integration design** and technology-neutral capability composition. It connects service-specific designs through shared platform capabilities; it does not replace their service contracts or select a provider.
+    This is an **integration design** and technology-neutral capability composition. It connects service-specific designs through shared platform capabilities; it does not replace their service definitions or select a provider.
+
+## Design Reasoning
+
+<div class="design-reasoning"><div><small>Context</small><p>Foundation services need a coherent platform while technology and provider choices change.</p></div><div><small>Forces</small><p>Shared consistency and scale must coexist with service ownership, domain autonomy, and replaceability.</p></div><div><small>Decision</small><p>Compose technology-neutral capabilities around the product flow and connect them through stable service interfaces.</p></div><div><small>Consequences</small><p>Shared capabilities reduce duplication, but every provider mapping needs an explicit boundary and exit path.</p></div><div><small>Verification</small><p>Map each capability to an owning service, interface, blueprint plane, critical flow, and portability test.</p></div></div>
 
 ## Architecture View
 
@@ -57,9 +61,9 @@ Every service in this view also exposes a service-owned specialist agent and typ
 | Boundary | Portable Contract |
 | --- | --- |
 | Portal to control plane | Stable APIs; portal stores workflow state, not duplicate product truth. |
-| Product to catalog | ODPS-compatible descriptor projected from the publishing contract, plus DCAT-compatible catalog exchange. |
+| Product to catalog | ODPS-compatible descriptor projected from the publishing data contract, plus DCAT-compatible catalog exchange. |
 | Producer to consumer | Stable logical product port with ODCS contract plus OpenAPI, AsyncAPI, table, query, file, feature, retrieval, semantic, or context interface definition. |
-| Runtime to lineage | OpenLineage-compatible run, job, and dataset events. |
+| Runtime to lineage | Exportable run, job, and dataset lineage records with stable identifiers. |
 | Runtime to observability | OpenTelemetry semantic conventions and OTLP export. |
 | Assistant to service agents | Typed delegated-task envelope; optional A2A adapter for independent runtimes; contract, identity, purpose, scope, budget, approval, and correlation preserved. |
 | Provider to external recipient | Open sharing protocol or documented, tested export adapter with revocation. |

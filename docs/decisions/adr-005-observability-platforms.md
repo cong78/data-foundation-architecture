@@ -4,17 +4,27 @@
 
 Accepted — 2026-07-15
 
+## Decision Owner
+
+Observability Architecture
+
 ## Context
 
-Foundation operators need service, infrastructure, pipeline, API, and workload health for incident response and reliability management. Product owners and consumers need freshness, quality, lineage, volume, usage, contract, and product SLO evidence.
+Foundation operators need service, infrastructure, pipeline, API, and workload health for incident response and reliability management. Product owners and consumers need freshness, quality, lineage, volume, usage, data-contract, and product SLO evidence.
 
 Grafana Cloud is selected for platform-level system observability. Databricks system tables, product quality results, and Unity Catalog lineage are selected as primary product-observability authorities. Without a common telemetry protocol and identifiers, these tools would create disconnected dashboards and competing incident evidence.
+
+## Alternatives Considered
+
+- Use Grafana Cloud as the authority for both system and data-product observability.
+- Keep Databricks and Unity Catalog telemetry isolated from platform observability.
+- Separate system and product authorities while correlating them through OpenTelemetry and stable identifiers.
 
 ## Decision
 
 Use Grafana Cloud as the system-observability platform and Databricks plus Unity Catalog as the data-product-observability platform. Use OpenTelemetry and OTLP as the standard instrumentation and transport profile for foundation services and workloads.
 
-Correlate system and product evidence with stable service, product, contract, run, consumer, environment, release, incident, and trace identifiers. Grafana Cloud owns platform health visualization and alert routing; Databricks and Unity Catalog remain authoritative for platform-native product quality, lineage, usage, and runtime metadata. The Data Service Portal displays governed projections and links rather than becoming another telemetry authority.
+Correlate system and product evidence with stable service, product, data-contract, run, consumer, environment, release, incident, and trace identifiers. Grafana Cloud owns platform health visualization and alert routing; Databricks and Unity Catalog remain authoritative for platform-native product quality, lineage, usage, and runtime metadata. The Data Service Portal displays governed projections and links rather than becoming another telemetry authority.
 
 ## Consequences
 

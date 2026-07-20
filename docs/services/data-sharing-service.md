@@ -22,7 +22,7 @@ It exists because crossing an organizational or recipient boundary requires stro
 | --- | --- |
 | Primary plane | Data |
 | Supporting planes | AI, Control, Security, and Observability |
-| Shared capabilities | Data Product Consumption Contract, agentic foundation, identity federation, classification, policy, entitlement, retention, product ports, and telemetry. |
+| Supporting designs and capabilities | [Data Contract Design](../architecture/data-contract-design.md), [Unified Access Design](../architecture/unified-access-design.md), [Platform Governance Design](../architecture/platform-governance-design.md), [Platform Enablement Design](../architecture/platform-enablement-design.md), and [Agentic Data Service Design](../architecture/agentic-data-foundation.md) supply consumption contracts, identity federation, classification, policy, entitlement, retention, product ports, and telemetry. |
 | Integration flows | Request recipient, approve purpose, minimize package, provision identity and entitlement, deliver, monitor, renew, revoke, delete, and offboard. |
 
 ## Service Architecture
@@ -45,7 +45,7 @@ The package and recipient binding are technical implementations; the product and
 
 ## Agentic Interaction
 
-| Concern | Service Agent Contract |
+| Concern | Agent Operating Specification |
 | --- | --- |
 | Specialist role | Sharing agent that prepares recipient packages, verifies controls, monitors exchange, and executes expiry or revocation. |
 | Declarative boundary | Published Data Product Consumption Contract with sharing clauses, recipient identity, policy, package scope, expiry, and obligations. |
@@ -63,9 +63,9 @@ The package and recipient binding are technical implementations; the product and
 | Operations | Monitoring and incident response | Delivery, usage, failure, policy, recipient activity, and product impact are observable and actionable. |
 | Exit | Renewal, revocation, and offboarding | Entitlements expire or are revoked; delivery stops; copies or credentials are handled as contracted; evidence is retained. |
 
-## Contracts and Interfaces
+## Data Contracts and Interfaces
 
-| Interface | Purpose | Required Contract |
+| Interface | Purpose | Required Definition |
 | --- | --- | --- |
 | Sharing request API | Request exchange with a named recipient and purpose. | Product and port, recipient, legal entity, purpose, scope, channel, duration, geography, retention, and use-case owner. |
 | Package definition | Declare the minimized recipient view. | Exact product version, fields or rows, aliases, transformations, classification, policy, watermarking, and output controls. |
@@ -104,12 +104,14 @@ The package and recipient binding are technical implementations; the product and
 
 [Data Sharing Design](../reference-solutions/data-sharing-design.md) maps this service to Delta Sharing, Unity Catalog shares and recipients, and explicit contract workflows. It is a selected reference profile; recipient and package semantics remain portable.
 
-## Done Criteria
+## Target User Experience
 
-- Every exchange links one live product version, one recipient, one purpose, one minimized package, one contract, and one entitlement.
-- Provider and recipient identity, protocol, compatibility, SLO, monitoring, support, and incident paths are tested.
-- Product changes trigger recipient impact and compatibility review.
-- Expiry, emergency suspension, revocation, credential invalidation, offboarding, and deletion or retention obligations are proven.
-- Recipient activity and product impact can be correlated without exposing sensitive payloads in telemetry.
-- The sharing agent remains inside the recipient contract and package scope; first release, wider disclosure, exceptions, expiry, and revocation behavior are tested.
-- The exchange can migrate or terminate without reconstructing its meaning from provider configuration.
+Use each row as an end-to-end acceptance scenario for product design and engineering validation.
+
+| User and Intent | User Action | Required Service Behavior | Observable Result |
+| --- | --- | --- | --- |
+| Provider proposes an exchange. | Select product, recipient, purpose, scope, delivery method, duration, and support terms. | Validate live product state, recipient identity, minimization, classification, contract, legal or policy approval, and expiry. | Provider and recipient see one proposed package with explicit obligations, decisions, owners, and missing requirements. |
+| Provider activates sharing. | Review preview, complete approval, and start delivery. | Provision recipient identity, entitlement, package, protocol, credentials, telemetry, support, and tested revocation. | The exchange becomes active only for the approved recipient, purpose, package, interface, and duration. |
+| Provider or recipient monitors use. | Inspect delivery health, activity, incidents, changes, and renewal state. | Correlate product, package, recipient, delivery, usage, SLO, and incident evidence without exposing sensitive payloads. | Both parties understand current health, permitted use, upcoming change, and required action. |
+| Provider changes, suspends, or revokes. | Propose product change or trigger emergency stop, expiry, or offboarding. | Assess recipient impact, notify and coordinate compatibility, stop delivery and credentials, and record retained-data obligations. | Disruption is anticipated where possible, and revocation produces timely, auditable proof. |
+| Provider migrates or terminates the exchange. | Select replacement protocol or complete exit. | Recreate or close the exchange from portable product and contract records and verify entitlement and delivery shutdown. | The relationship moves or ends without reconstructing meaning from provider configuration. |

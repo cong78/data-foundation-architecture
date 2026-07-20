@@ -22,7 +22,7 @@ Create one runbook per material operating condition. Keep commands and vendor-sp
 | Trace | Reference |
 | --- | --- |
 | Architecture view and decisions |  |
-| Service contract and capabilities |  |
+| Service definition and capabilities |  |
 | Product and contract versions |  |
 | Applicable standards and controls |  |
 | Dependencies and affected consumers |  |

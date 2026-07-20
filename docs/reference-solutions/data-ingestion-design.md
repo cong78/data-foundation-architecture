@@ -5,7 +5,7 @@
 This reference solution applies the technology-neutral [Data Ingestion Service](../services/data-ingestion-service.md) and the mandatory [Data Catalog and Storage Standard](../standards/catalog-storage-standard.md) to Databricks. Lakeflow Connect, Auto Loader, Lakeflow Spark Declarative Pipelines, Lakeflow Jobs, Unity Catalog, and Delta Lake implement repeatable file, connector, CDC, API, and event ingestion while preserving Source System Ingestion Contracts and source-aligned data.
 
 !!! info "Reference solution status"
-    Unity Catalog and Delta Lake are mandatory defaults under the [Data Catalog and Storage Standard](../standards/catalog-storage-standard.md). Lakeflow connectors, pipelines, jobs, and ingestion runtime choices remain selected implementation profiles that require connector proof, security and cost review, replay tests, operational evidence, and an exit plan. Source identity, contract, schema, checkpoint semantics, and lineage remain canonical and portable.
+    Unity Catalog and Delta Lake are mandatory defaults under the [Data Catalog and Storage Standard](../standards/catalog-storage-standard.md). Lakeflow connectors, pipelines, jobs, and ingestion runtime choices remain selected implementation profiles that require connector proof, security and cost review, replay tests, operational evidence, and an exit plan. Source identity, contract, schema, checkpoint semantics, and lineage remain authoritative and portable.
 
 !!! tip "Fast path"
     **Decide:** [Executive Recommendation](#executive-recommendation) · **Design:** [Solution at a Glance](#solution-at-a-glance) and [Pattern Selection](#pattern-selection) · **Implement:** [Implementation Runway](#implementation-runway) · **Assure:** [Source Activation Gate](#source-activation-gate) and [Done Criteria](#done-criteria)
@@ -107,7 +107,7 @@ Use Unity Catalog to govern named connections, source-aligned tables, volumes, e
 
 Raw and validated are states of the same source-aligned data, not enterprise-wide bronze and silver zones. A live data product is created only when the product lifecycle, contract, quality, access, semantic, and go-live controls pass.
 
-## Contract and Schema Change Policy
+## Data Contract and Schema Change Policy
 
 Auto Loader can infer and evolve file schemas and preserve unexpected fields in a rescued-data column. Configure this behavior deliberately: automated capture is useful, but breaking changes must still stop publication until reviewed. [Auto Loader schema evolution](https://docs.databricks.com/aws/en/ingestion/cloud-object-storage/auto-loader/schema)
 
@@ -143,7 +143,7 @@ Auto Loader can infer and evolve file schemas and preserve unexpected fields in 
 
 Auto Loader uses checkpoint state to resume file ingestion and provides exactly-once processing when writing to Delta Lake under its documented conditions. The foundation must still test source immutability, overwrite behavior, checkpoint isolation, and end-to-end reconciliation. [Auto Loader](https://docs.databricks.com/aws/en/ingestion/cloud-object-storage/auto-loader/)
 
-## Observability Contract
+## Telemetry Requirements
 
 Emit and correlate:
 
@@ -170,12 +170,12 @@ Production ingestion may activate only when:
 
 ## Interoperability and Exit Design
 
-- Keep the canonical source and adapter specification independent of Lakeflow resource ids.
+- Keep the authoritative source and adapter specification independent of Lakeflow resource ids.
 - Keep connector configuration declarative and source controlled; use secret references rather than values.
 - Store source-aligned outputs in an approved open table or file profile and retain exportable schema and checkpoints where feasible.
 - Define adapter conformance tests so a managed connector can be replaced by a standard or custom connector without changing source identity or contract.
 - Export lineage, run history, quality results, schema history, and operational evidence on the foundation retention schedule.
-- Prove one file, connector, and event source can be rebuilt in a clean environment from canonical artifacts.
+- Prove one file, connector, and event source can be rebuilt in a clean environment from portable source artifacts.
 
 ## Operational Ownership
 
@@ -212,7 +212,7 @@ Deployment may be regional or physically distributed, but the foundation platfor
 ### Increment 4: Prove Scale and Portability
 
 - Test concurrency, throughput, lag, source throttling, cost limits, regional recovery, and connector replacement.
-- Recreate the golden paths from canonical artifacts in a clean workspace and verify evidence export.
+- Recreate the golden paths from portable source artifacts in a clean workspace and verify evidence export.
 
 ## Open Design Choices
 
@@ -234,7 +234,7 @@ Deployment may be regional or physically distributed, but the foundation platfor
 - Named users cannot bypass pipeline identities or obtain general access to raw and quarantine data.
 - Breaking schema changes cannot silently reach validated source-aligned outputs.
 - Source, contract, connector, deployment, run, lineage, quality, cost, and incident evidence is correlated.
-- A connector can be replaced without changing the canonical source id or downstream validated-state contract.
+- A connector can be replaced without changing the stable source id or downstream validated-state contract.
 - Product teams can consume validated source-aligned data without implementing custom source extraction.
 - Central platform ownership and source-team obligations are visible for every source-aligned product; no domain-local pipeline creates a competing source of record.
 

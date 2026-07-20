@@ -21,13 +21,13 @@ No single open standard covers general architecture principles, rules, executabl
 | Concern | Open baseline | Use in this repository |
 | --- | --- | --- |
 | Normative wording | [IETF BCP 14: RFC 2119 and RFC 8174](https://www.rfc-editor.org/info/rfc8174/) | Uppercase `MUST`, `MUST NOT`, `SHOULD`, `SHOULD NOT`, and `MAY` communicate requirement level without ambiguity. |
-| Portable document | [JSON Schema 2020-12](https://json-schema.org/draft/2020-12) | Validates the canonical YAML or JSON policy envelope, identifiers, lifecycle, scope, rules, criteria, exceptions, and implementation references. |
+| Portable document | [JSON Schema 2020-12](https://json-schema.org/draft/2020-12) | Validates the authoritative YAML or JSON policy envelope, identifiers, lifecycle, scope, rules, criteria, exceptions, and implementation references. |
 | Executable decision | [Open Policy Agent and Rego](https://www.openpolicyagent.org/docs/policy-language) | Default open-source execution profile for evaluating structured JSON input and returning named decisions. |
 | Policy testing | [OPA policy tests](https://www.openpolicyagent.org/docs/policy-testing) | Positive, negative, boundary, and exception tests run before policy publication. |
 | Runtime integration | [OPA named policy decisions](https://www.openpolicyagent.org/docs/integration) | CI/CD, portals, APIs, provisioning, and go-live gates submit input and consume structured decisions. |
 | Decision evidence | OpenTelemetry conventions and stable policy attributes | Correlates policy id, version, input, decision, violations, enforcement point, actor, and evidence time. |
 
-The YAML or JSON envelope is canonical. Rego is a replaceable implementation profile: another engine may be used only when it preserves the schema, identifiers, decision semantics, tests, and evidence contract.
+The YAML or JSON envelope is authoritative. Rego is a replaceable implementation profile: another engine may be used only when it preserves the schema, identifiers, decision semantics, tests, and evidence requirements.
 
 ## Normative Keywords
 
@@ -67,9 +67,9 @@ Write an observable pass condition and authoritative evidence:
 
 A criterion cannot introduce a new obligation. It only evaluates its parent rule. Human approval may be evidence, but `approved by architecture` is not sufficient without the decision scope and record.
 
-## Canonical Policy Document
+## Policy Source Document
 
-The canonical document is YAML or equivalent JSON validated against `policies/schema/architecture-policy.schema.json`. It contains:
+The policy source document is YAML or equivalent JSON validated against `policies/schema/architecture-policy.schema.json`. It contains:
 
 | Section | Required content |
 | --- | --- |
@@ -82,7 +82,7 @@ The canonical document is YAML or equivalent JSON validated against `policies/sc
 
 Stable identifiers use `<scope>-<type>-<number>`, for example `DF-DATA-RULE-001`. Versions change independently from implementation releases. A breaking semantic or input-contract change requires a major policy version.
 
-## Decision Contract
+## Decision Input and Result
 
 Every executable policy receives a JSON input document and returns a deterministic JSON decision. The minimum result is:
 
@@ -95,7 +95,7 @@ Every executable policy receives a JSON input document and returns a determinist
   "violations": [
     {
       "criterionId": "DF-DATA-CRITERION-001",
-      "message": "Live product does not reference a publishing contract id."
+      "message": "Live product does not reference a publishing data contract id."
     }
   ]
 }
@@ -144,11 +144,11 @@ Use the [Architecture Decision Policy Template](../reference-solutions/architect
 - Principle, rules, and criteria are distinct and linked by stable ids.
 - Every rule contains exactly one matching normative keyword.
 - Every mandatory rule has a blocking enforcement outcome and at least one executable criterion.
-- Canonical YAML or JSON validates against the pinned JSON Schema.
+- Authoritative YAML or JSON validates against the pinned JSON Schema.
 - Named Rego decisions return the standard result shape from explicit JSON input.
 - Positive, negative, boundary, and exception tests pass.
 - Policy owner, version, review date, enforcement points, and exception behavior are explicit.
 - Decisions emit correlated, time-stamped evidence without logging prohibited input data.
 - A policy engine can be replaced without changing the policy identifiers or decision meaning.
 
-<div class="read-next"><strong>Next:</strong> use Principles for direction, this decision policy for enforceable rules, and the policy template for a machine-executable bundle.</div>
+<div class="read-next"><strong>Next:</strong> use the <a href="../architecture-decision-process/">Architecture Decision Process</a> to establish authority and rationale, then use this policy for enforceable rules and the policy template for a machine-executable bundle.</div>

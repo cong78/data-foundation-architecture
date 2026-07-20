@@ -123,7 +123,7 @@ Consumer-aligned data presents live products in the shape required by a defined 
 | Contract | Consumer purpose, interface, semantic projection, policy, SLO, compatibility, expiry, and upstream product versions. |
 | Lifecycle | Review when the consumer need ends, upstream products change, usage falls, or a shared aggregate product can replace repeated consumer logic. |
 
-**Avoid:** copying logic into every consumer pipeline, bypassing Data Product Creation Contracts, creating permanent one-off extracts, or allowing consumer labels to overwrite canonical product meaning.
+**Avoid:** copying logic into every consumer pipeline, bypassing Data Product Creation Contracts, creating permanent one-off extracts, or allowing consumer labels to overwrite authoritative product meaning.
 
 ## Trust Progression
 

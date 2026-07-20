@@ -8,19 +8,25 @@
 
 ## Foundation Journey
 
-Move from foundation intent to reliable operation through one five-stage path.
+Start with [Foundation in One View](foundation/foundation-in-one-view.md) to understand the complete foundation structure and how its parts fit together.
 
-<div class="journey-path">
-  <section class="journey-stage"><span>1</span><h3>Frame</h3><p>Set boundaries, ownership, principles, and domain responsibilities.</p><div><a href="foundation/definition-and-scope/">Scope</a><a href="foundation/principles/">Principles</a><a href="architecture/data-domain-design/">Domain design</a></div><small>Outcome: an agreed foundation mandate.</small></section>
-  <section class="journey-stage"><span>2</span><h3>Establish</h3><p>Define shared architecture, services, standards, and controls.</p><div><a href="architecture/target-architecture/">Architecture</a><a href="services/">Services</a><a href="standards/">Standards</a></div><small>Outcome: an enforceable foundation baseline.</small></section>
-  <section class="journey-stage"><span>3</span><h3>Deliver</h3><p>Onboard sources and create contracted, tested data products.</p><div><a href="playbooks/onboard-source/">Onboard</a><a href="playbooks/create-change-data-product/">Create</a><a href="playbooks/approve-product-go-live/">Go live</a></div><small>Outcome: supported live data products.</small></section>
-  <section class="journey-stage"><span>4</span><h3>Use</h3><p>Enable governed consumption, sharing, and agentic use.</p><div><a href="playbooks/consume-data-product/">Consume</a><a href="playbooks/share-data-product/">Share</a><a href="architecture/agentic-data-foundation/">Use with AI</a></div><small>Outcome: purpose-bound value from data.</small></section>
-  <section class="journey-stage"><span>5</span><h3>Operate</h3><p>Measure health, respond, change safely, and improve.</p><div><a href="playbooks/operate-service-product/">Operate</a><a href="reference-solutions/observability-design/">Observe</a><a href="runway/">Evolve</a></div><small>Outcome: reliable and improving services.</small></section>
+Then follow one sequence. Complete the result of each stage before scaling the next.
+
+<div class="journey-sequence" aria-label="Five-stage foundation journey">
+  <a class="journey-sequence-step" href="foundation/definition-and-scope/"><span>1</span><strong>Frame</strong><p>Agree scope, ownership, principles, and domain boundaries.</p><small>Result · Foundation mandate</small></a>
+  <i class="journey-sequence-arrow" aria-hidden="true"></i>
+  <a class="journey-sequence-step" href="architecture/target-architecture/"><span>2</span><strong>Establish</strong><p>Define the architecture, services, standards, and controls.</p><small>Result · Shared foundation path</small></a>
+  <i class="journey-sequence-arrow" aria-hidden="true"></i>
+  <a class="journey-sequence-step" href="playbooks/create-change-data-product/"><span>3</span><strong>Deliver</strong><p>Onboard sources and bring governed data products live.</p><small>Result · Supported live products</small></a>
+  <i class="journey-sequence-arrow" aria-hidden="true"></i>
+  <a class="journey-sequence-step" href="playbooks/consume-data-product/"><span>4</span><strong>Use</strong><p>Consume, share, and use products with approved AI.</p><small>Result · Purpose-bound value</small></a>
+  <i class="journey-sequence-arrow" aria-hidden="true"></i>
+  <a class="journey-sequence-step" href="playbooks/operate-service-product/"><span>5</span><strong>Operate</strong><p>Observe, support, recover, change, and improve.</p><small>Result · Reliable services and products</small></a>
 </div>
 
 ## Architecture at a Glance
 
-One Data Service Portal is the front door. Nine agentic-by-design foundation services turn source data into governed products, provide shared platform controls, and operate them reliably for people, applications, partners, AI agents, and models. The Data Service AI Assistant coordinates their specialist agents through contract-bounded tasks.
+Nine agentic-by-design foundation services turn source data into governed products, provide shared platform controls, and operate them reliably for people, applications, partners, AI agents, and models. The Data Service AI Assistant coordinates their specialist agents through contract-bounded tasks.
 
 <div class="foundation-grid">
   <a class="foundation-card" href="services/data-service-portal/"><strong>Portal</strong>Discovery, requests, contracts, workflows, access, and evidence.</a>

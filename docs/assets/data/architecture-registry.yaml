@@ -1,0 +1,255 @@
+schema_version: 1
+
+entities:
+  architecture-blueprint:
+    type: design
+    title: Architecture Blueprint
+    page: architecture/target-architecture.md
+  data-foundation-model:
+    type: design
+    title: Data Foundation Model
+    page: architecture/data-foundation-model.md
+  platform-architecture:
+    type: design
+    title: Platform Architecture
+    page: architecture/reference-architecture.md
+  integration-design:
+    type: design
+    title: Integration Design
+    page: architecture/integration-design.md
+  platform-governance-design:
+    type: design
+    title: Platform Governance Design
+    page: architecture/platform-governance-design.md
+  data-contract-design:
+    type: design
+    title: Data Contract Design
+    page: architecture/data-contract-design.md
+  data-domain-design:
+    type: design
+    title: Data Domain Design
+    page: architecture/data-domain-design.md
+  data-product-design:
+    type: design
+    title: Data Product Design
+    page: architecture/data-product-design.md
+  semantic-context-design:
+    type: design
+    title: Semantic and Context Design
+    page: architecture/semantic-context-design.md
+  unified-access-design:
+    type: design
+    title: Unified Access Design
+    page: architecture/unified-access-design.md
+  platform-enablement-design:
+    type: design
+    title: Platform Enablement Design
+    page: architecture/platform-enablement-design.md
+  developer-experience-design:
+    type: design
+    title: Developer Experience Design
+    page: architecture/developer-experience-design.md
+  agentic-data-service-design:
+    type: design
+    title: Agentic Data Service Design
+    page: architecture/agentic-data-foundation.md
+  architecture-decision-process:
+    type: design
+    title: Architecture Decision Process
+    page: decisions/architecture-decision-process.md
+
+  data-service-portal:
+    type: service
+    title: Data Service Portal
+    page: services/data-service-portal.md
+  data-service-ai-assistant:
+    type: service
+    title: Data Service AI Assistant
+    page: services/data-service-ai-assistant.md
+  data-ingestion-service:
+    type: service
+    title: Data Ingestion Service
+    page: services/data-ingestion-service.md
+  data-product-creation-service:
+    type: service
+    title: Data Product Creation Service
+    page: services/data-product-creation-service.md
+  data-consumption-service:
+    type: service
+    title: Data Consumption Service
+    page: services/data-consumption-service.md
+  data-sharing-service:
+    type: service
+    title: Data Sharing Service
+    page: services/data-sharing-service.md
+  platform-enablement-service:
+    type: service
+    title: Platform Enablement Service
+    page: services/platform-enablement-service.md
+  data-observability-service:
+    type: service
+    title: Data Observability Service
+    page: services/data-observability-service.md
+  data-foundation-operations-service:
+    type: service
+    title: Data Foundation Operations Service
+    page: services/data-foundation-operations-service.md
+
+  data-contract-standard:
+    type: standard
+    title: Data Contract Standard
+    page: standards/data-contract-standard.md
+  access-control-standard:
+    type: standard
+    title: Access Control Standard
+    page: standards/access-control-standard.md
+  catalog-storage-standard:
+    type: standard
+    title: Data Catalog and Storage Standard
+    page: standards/catalog-storage-standard.md
+  data-product-management-standard:
+    type: standard
+    title: Data Product Management Standard
+    page: standards/data-product-management-standard.md
+  data-product-workload-standard:
+    type: standard
+    title: Data Product Workload Standard
+    page: standards/data-product-workload-standard.md
+  open-interoperability-standard:
+    type: standard
+    title: Open Interoperability Standard
+    page: standards/open-interoperability-standard.md
+  otel-standard:
+    type: standard
+    title: OpenTelemetry Standard
+    page: standards/otel-telemetry-standard.md
+  ai-ready-data-standard:
+    type: standard
+    title: AI-Ready Data Standard
+    page: standards/ai-ready-data-standard.md
+  agent-skill-llm-standard:
+    type: standard
+    title: Agent, Skill and LLM Standard
+    page: standards/agent-skill-llm-standard.md
+
+  source-onboarding-scenario:
+    type: scenario
+    title: Onboard a Source
+    page: services/end-to-end-service-scenarios.md#1-onboard-a-source
+  domain-product-scenario:
+    type: scenario
+    title: Create a Domain Product
+    page: services/end-to-end-service-scenarios.md#2-create-a-domain-product
+  governed-consumption-scenario:
+    type: scenario
+    title: Consume a Data Product
+    page: services/end-to-end-service-scenarios.md#3-consume-a-data-product
+  ai-agent-scenario:
+    type: scenario
+    title: Use Data Through an AI Agent
+    page: services/end-to-end-service-scenarios.md#4-use-data-through-an-ai-agent
+
+relationships:
+  - {source: data-service-portal, type: depends_on, target: data-product-design}
+  - {source: data-service-portal, type: depends_on, target: data-contract-design}
+  - {source: data-service-portal, type: depends_on, target: semantic-context-design}
+  - {source: data-service-portal, type: depends_on, target: platform-governance-design}
+  - {source: data-service-portal, type: depends_on, target: agentic-data-service-design}
+  - {source: data-service-portal, type: constrained_by, target: data-product-management-standard}
+  - {source: data-service-portal, type: constrained_by, target: access-control-standard}
+  - {source: data-service-portal, type: participates_in, target: source-onboarding-scenario}
+  - {source: data-service-portal, type: participates_in, target: domain-product-scenario}
+  - {source: data-service-portal, type: participates_in, target: governed-consumption-scenario}
+
+  - {source: data-service-ai-assistant, type: implements, target: agentic-data-service-design}
+  - {source: data-service-ai-assistant, type: depends_on, target: data-contract-design}
+  - {source: data-service-ai-assistant, type: depends_on, target: semantic-context-design}
+  - {source: data-service-ai-assistant, type: depends_on, target: unified-access-design}
+  - {source: data-service-ai-assistant, type: constrained_by, target: agent-skill-llm-standard}
+  - {source: data-service-ai-assistant, type: constrained_by, target: access-control-standard}
+  - {source: data-service-ai-assistant, type: participates_in, target: ai-agent-scenario}
+
+  - {source: data-ingestion-service, type: depends_on, target: data-foundation-model}
+  - {source: data-ingestion-service, type: depends_on, target: data-contract-design}
+  - {source: data-ingestion-service, type: depends_on, target: platform-enablement-design}
+  - {source: data-ingestion-service, type: depends_on, target: integration-design}
+  - {source: data-ingestion-service, type: constrained_by, target: data-contract-standard}
+  - {source: data-ingestion-service, type: constrained_by, target: catalog-storage-standard}
+  - {source: data-ingestion-service, type: constrained_by, target: open-interoperability-standard}
+  - {source: data-ingestion-service, type: constrained_by, target: otel-standard}
+  - {source: data-ingestion-service, type: participates_in, target: source-onboarding-scenario}
+
+  - {source: data-product-creation-service, type: implements, target: data-product-design}
+  - {source: data-product-creation-service, type: implements, target: developer-experience-design}
+  - {source: data-product-creation-service, type: depends_on, target: data-domain-design}
+  - {source: data-product-creation-service, type: depends_on, target: data-contract-design}
+  - {source: data-product-creation-service, type: depends_on, target: semantic-context-design}
+  - {source: data-product-creation-service, type: depends_on, target: platform-enablement-design}
+  - {source: data-product-creation-service, type: constrained_by, target: data-product-management-standard}
+  - {source: data-product-creation-service, type: constrained_by, target: data-product-workload-standard}
+  - {source: data-product-creation-service, type: constrained_by, target: data-contract-standard}
+  - {source: data-product-creation-service, type: participates_in, target: domain-product-scenario}
+
+  - {source: data-consumption-service, type: implements, target: unified-access-design}
+  - {source: data-consumption-service, type: depends_on, target: semantic-context-design}
+  - {source: data-consumption-service, type: depends_on, target: data-contract-design}
+  - {source: data-consumption-service, type: depends_on, target: integration-design}
+  - {source: data-consumption-service, type: constrained_by, target: access-control-standard}
+  - {source: data-consumption-service, type: constrained_by, target: ai-ready-data-standard}
+  - {source: data-consumption-service, type: constrained_by, target: open-interoperability-standard}
+  - {source: data-consumption-service, type: participates_in, target: governed-consumption-scenario}
+  - {source: data-consumption-service, type: participates_in, target: ai-agent-scenario}
+
+  - {source: data-sharing-service, type: depends_on, target: unified-access-design}
+  - {source: data-sharing-service, type: depends_on, target: data-contract-design}
+  - {source: data-sharing-service, type: depends_on, target: platform-governance-design}
+  - {source: data-sharing-service, type: depends_on, target: integration-design}
+  - {source: data-sharing-service, type: constrained_by, target: access-control-standard}
+  - {source: data-sharing-service, type: constrained_by, target: data-contract-standard}
+  - {source: data-sharing-service, type: constrained_by, target: open-interoperability-standard}
+  - {source: data-sharing-service, type: participates_in, target: governed-consumption-scenario}
+
+  - {source: platform-enablement-service, type: implements, target: platform-enablement-design}
+  - {source: platform-enablement-service, type: depends_on, target: platform-architecture}
+  - {source: platform-enablement-service, type: depends_on, target: platform-governance-design}
+  - {source: platform-enablement-service, type: constrained_by, target: catalog-storage-standard}
+  - {source: platform-enablement-service, type: constrained_by, target: access-control-standard}
+  - {source: platform-enablement-service, type: constrained_by, target: otel-standard}
+  - {source: platform-enablement-service, type: participates_in, target: source-onboarding-scenario}
+  - {source: platform-enablement-service, type: participates_in, target: domain-product-scenario}
+
+  - {source: data-observability-service, type: depends_on, target: data-product-design}
+  - {source: data-observability-service, type: depends_on, target: data-contract-design}
+  - {source: data-observability-service, type: depends_on, target: integration-design}
+  - {source: data-observability-service, type: constrained_by, target: otel-standard}
+  - {source: data-observability-service, type: participates_in, target: source-onboarding-scenario}
+  - {source: data-observability-service, type: participates_in, target: domain-product-scenario}
+  - {source: data-observability-service, type: participates_in, target: governed-consumption-scenario}
+  - {source: data-observability-service, type: participates_in, target: ai-agent-scenario}
+
+  - {source: data-foundation-operations-service, type: depends_on, target: integration-design}
+  - {source: data-foundation-operations-service, type: depends_on, target: platform-governance-design}
+  - {source: data-foundation-operations-service, type: depends_on, target: data-product-design}
+  - {source: data-foundation-operations-service, type: constrained_by, target: otel-standard}
+  - {source: data-foundation-operations-service, type: participates_in, target: source-onboarding-scenario}
+  - {source: data-foundation-operations-service, type: participates_in, target: domain-product-scenario}
+  - {source: data-foundation-operations-service, type: participates_in, target: governed-consumption-scenario}
+  - {source: data-foundation-operations-service, type: participates_in, target: ai-agent-scenario}
+
+  - {source: platform-architecture, type: constrained_by, target: open-interoperability-standard}
+  - {source: integration-design, type: constrained_by, target: open-interoperability-standard}
+  - {source: integration-design, type: constrained_by, target: otel-standard}
+  - {source: platform-governance-design, type: constrained_by, target: access-control-standard}
+  - {source: data-contract-design, type: constrained_by, target: data-contract-standard}
+  - {source: data-contract-design, type: constrained_by, target: open-interoperability-standard}
+  - {source: data-product-design, type: constrained_by, target: data-product-management-standard}
+  - {source: data-product-design, type: constrained_by, target: ai-ready-data-standard}
+  - {source: semantic-context-design, type: constrained_by, target: catalog-storage-standard}
+  - {source: semantic-context-design, type: constrained_by, target: ai-ready-data-standard}
+  - {source: unified-access-design, type: constrained_by, target: access-control-standard}
+  - {source: unified-access-design, type: constrained_by, target: open-interoperability-standard}
+  - {source: platform-enablement-design, type: constrained_by, target: catalog-storage-standard}
+  - {source: platform-enablement-design, type: constrained_by, target: open-interoperability-standard}
+  - {source: developer-experience-design, type: constrained_by, target: data-product-workload-standard}
+  - {source: agentic-data-service-design, type: constrained_by, target: agent-skill-llm-standard}
+  - {source: agentic-data-service-design, type: constrained_by, target: access-control-standard}

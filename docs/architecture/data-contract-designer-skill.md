@@ -103,10 +103,10 @@ The checker detects field removal, field-type changes, optional-to-required chan
 
 - The skill produces drafts and reviews; it does not approve or publish contracts.
 - The Data Contract System remains authoritative for registered versions and lifecycle state.
-- The publishing contract owns the product descriptor version and lifecycle; catalog and portal records are projections.
+- The publishing data contract owns the product descriptor version and lifecycle; catalog and portal records are projections.
 - Lifecycle services enforce contracts at ingestion, creation, consumption, and operation boundaries.
 - The skill does not grant access, activate sources, approve product go-live, accept risk, or invent evidence.
-- ODCS conformance is claimed only after validation against the pinned canonical schema and portability profile.
+- ODCS conformance is claimed only after validation against the pinned published schema and portability profile.
 
 ## Validate
 

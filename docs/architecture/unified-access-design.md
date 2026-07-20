@@ -6,6 +6,10 @@ Unified Access Design combines the governed logical access surface with the iden
 
 It is implemented by the **Data Consumption Service**. It is not a new system of record, storage layer, or mandatory central query engine.
 
+## Design Reasoning
+
+<div class="design-reasoning"><div><small>Context</small><p>Products live across different runtimes while people, workloads, applications, models, and agents need coherent access.</p></div><div><small>Forces</small><p>Consistent authorization and evidence must coexist with runtime autonomy, performance, and multiple access patterns.</p></div><div><small>Decision</small><p>Expose logical product ports, separate service and data authorization, and execute through governed runtime adapters.</p></div><div><small>Consequences</small><p>Consumers are decoupled from storage, but adapters, policy propagation, entitlements, and revocation require shared discipline.</p></div><div><small>Verification</small><p>Test allow, deny, obligation, expiry, and revocation paths for named users, workloads, applications, models, and agents.</p></div></div>
+
 ## Architecture
 
 Read the main path from top to bottom. Control services provide authoritative decision context; observability records the decision and execution outcome.
@@ -121,7 +125,7 @@ The **subject** receives access and the **actor** makes the call. For delegated 
 
 ## Core Design Principle
 
-**Unify the access contract and controls, not the physical execution.**
+**Unify the access interface and controls, not the physical execution.**
 
 The layer provides consistent identity, product addressing, contracts, policy, semantics, and evidence. Adapters push execution to the product's approved runtime whenever possible. This avoids creating a central bottleneck or copying every product into a new access store.
 
@@ -139,7 +143,7 @@ The layer provides consistent identity, product addressing, contracts, policy, s
 | Contract enforcement | Validate schema, compatibility, request shape, response shape, and product-port behavior. |
 | Evidence | Correlate identity, authorization, product, contract, semantic context, runtime, usage, cost, and outcome. |
 
-## Logical Access Contract
+## Logical Access Interface
 
 Every exposed product port declares:
 
@@ -208,12 +212,12 @@ Access is never permanent by default. Every entitlement has an owner, subject, p
 | Policy decision point | Consistent decisions and obligations from current context. | Authentication or direct data serving. |
 | Service enforcement point | API or operation authorization, rate, step-up, task limits. | Row and field policy unless it serves the data itself. |
 | Data enforcement point | Product, row, column, record, purpose, and output controls. | Identity lifecycle. |
-| Entitlement service | Approved grants, expiry, review, suspension, revocation, reconciliation. | Canonical product or identity metadata. |
+| Entitlement service | Approved grants, expiry, review, suspension, revocation, reconciliation. | Authoritative product or identity metadata. |
 | Data Service Portal | Requests, approvals, status, evidence, and user experience. | Acting as the policy engine or entitlement authority. |
 
 ## Adapter Boundary
 
-Adapters translate the logical access contract into runtime-native operations. Each adapter must declare:
+Adapters translate the logical access interface into runtime-native operations. Each adapter must declare:
 
 - Supported interface types, policy obligations, and pushdown capabilities.
 - Identity propagation or credential-exchange behavior.

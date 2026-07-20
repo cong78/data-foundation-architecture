@@ -7,7 +7,7 @@
 | Step | Action and owner | Evidence |
 | ---: | --- | --- |
 | 1 | **Product owner:** frame purpose, consumers, value, alignment pattern, owner, and non-goals; search for existing products. | Product brief and reuse decision. |
-| 2 | **Product team:** pin input contracts and design output contract, semantic context, ports, policy, SLOs, support, and lifecycle. | Reviewed product design. |
+| 2 | **Product team:** pin input data contracts and design the output Data Product Creation Contract, semantic context, ports, policy, SLOs, support, and lifecycle. | Reviewed product design. |
 | 3 | **Developer:** declare workload, dependencies, environments, resources, tests, telemetry, release, and rollback. | Versioned workload plan. |
 | 4 | **Product team:** implement transformations, quality, lineage, interfaces, documentation, and operational controls. | Immutable candidate artifact. |
 | 5 | **CI and reviewers:** test contract, compatibility, quality, security, policy, lineage, reliability, portability, and affected consumers. | Passing test and review evidence. |
@@ -29,4 +29,4 @@
 - Critical tests pass and unresolved risks are explicit.
 - Consumers and dependencies are known before release.
 
-Authoritative inputs: [Data Product Lifecycle Design](../architecture/data-product-lifecycle-design.md), [Data Contract Design](../architecture/data-contract-design.md), [Data Product Creation Service](../services/data-product-creation-service.md), and [Data Product Workload Standard](../standards/data-product-workload-standard.md).
+Authoritative inputs: [Data Product Design](../architecture/data-product-design.md), [Data Contract Design](../architecture/data-contract-design.md), [Data Product Creation Service](../services/data-product-creation-service.md), and [Data Product Workload Standard](../standards/data-product-workload-standard.md).

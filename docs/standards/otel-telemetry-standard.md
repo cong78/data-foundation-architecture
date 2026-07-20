@@ -47,7 +47,7 @@ Use applicable OpenTelemetry GenAI semantic conventions and add these stable ent
 | Autonomy class and service binding | Show which service acted and whether execution was advisory, approval-bound, or pre-approved autonomous work. |
 | Outcome and cost | Measure success, latency, token use, tool use and spend. |
 
-For AI consumption, use applicable OpenTelemetry GenAI attributes such as `gen_ai.data_source.id` and map the data source back to the canonical product and dataset identifiers. Do not duplicate a standard attribute with a differently named enterprise attribute.
+For AI consumption, use applicable OpenTelemetry GenAI attributes such as `gen_ai.data_source.id` and map the data source back to the authoritative product and dataset identifiers. Do not duplicate a standard attribute with a differently named enterprise attribute.
 
 ## Core Metrics
 
@@ -92,7 +92,7 @@ Multi-agent traces must use parent and child spans to connect user intent, assis
 - Restrict access to telemetry for sensitive products.
 - Retain telemetry according to data classification and audit requirements.
 - Export through OTLP and verify the signals with an independent OpenTelemetry collector.
-- Emit runtime data lineage through OpenLineage; correlate it with traces using canonical run, job, dataset, and trace identifiers.
+- Export runtime data lineage through a documented lineage interface; correlate it with traces using authoritative run, job, dataset, and trace identifiers.
 
 ## Minimum Done Criteria
 
@@ -102,4 +102,4 @@ Multi-agent traces must use parent and child spans to connect user intent, assis
 - Multi-agent traces reconstruct the task tree, delegation chain, contract and policy decisions, skill and service calls, approval points, outcomes, and compensation actions.
 - Product health views distinguish contract targets from measured freshness, quality, availability, usage, incidents, and cost.
 - Telemetry loss, stale health, invalid attributes, exporter failure, and sensitive-payload leakage have tests, alerts, owners, and exercised recovery procedures.
-- An independent OpenTelemetry collector accepts the exported signals without provider-specific translation of canonical identifiers.
+- An independent OpenTelemetry collector accepts the exported signals without provider-specific translation of stable identifiers.

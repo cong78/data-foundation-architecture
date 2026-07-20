@@ -16,11 +16,11 @@ Build portal capability as thin vertical journeys:
 | Journey Slice | Minimum Integration |
 | --- | --- |
 | Discover | Catalog search, semantic concepts, current trust summary, saved products. |
-| Produce | Team, use case, workspace, publishing contract with embedded descriptor, go-live workflow. |
+| Produce | Team, use case, workspace, publishing data contract with embedded descriptor, go-live workflow. |
 | Consume | Authenticated identity, purpose, policy decision, entitlement, subscription, audit. |
 | Connect source | Source owner, ingestion pattern, Source System Ingestion Contract, onboarding workflow, status. |
 | Share | Recipient identity, Data Product Consumption Contract, minimization, delivery, expiry, and revocation. |
-| Observe | OTLP metrics and traces, quality results, OpenLineage, incidents, usage, cost. |
+| Observe | OTLP metrics and traces, quality results, portable lineage records, incidents, usage, and cost. |
 | Build AI | Product and data dependencies, agent or model identity, tool permissions, evaluation evidence. |
 
 ## Ingestion Pattern
@@ -46,13 +46,13 @@ Build portal capability as thin vertical journeys:
 | Layer | Implementation Guidance |
 | --- | --- |
 | Workload specification | Declare product id, contract, code, inputs, outputs, resources, policies, SLOs, environment, deployment target, and dependencies in one versioned artifact. |
-| Developer interfaces | Keep portal, API, CLI, and approved agent skills behaviorally equivalent and backed by the same service contracts. |
+| Developer interfaces | Keep portal, API, CLI, and approved agent skills behaviorally equivalent and backed by the same service interfaces. |
 | Environment | Provide isolated development and test environments, controlled test data, configuration inheritance, expiry, and automatic de-provisioning. |
 | Resource abstraction | Expose portable workload, connector, compute, storage, secret, policy, and service endpoint resources without leaking provider details into the Data Product Creation Contract. |
 | Delivery | Generate a plan, run contract and policy checks, preview changes, deploy progressively, capture evidence, and support deterministic rollback. |
 | Operations | Detect configuration drift, correlate release and runtime telemetry, expose debugging context, and retain deployment receipts. |
 
-The developer workspace is a channel over foundation services, not a parallel platform. The contract registry owns the publishing contract and embedded descriptor; the product registry and catalog hold searchable projections, policies remain in the policy service, and runtime state remains in the responsible execution platform.
+The developer workspace is a channel over foundation services, not a parallel platform. The data-contract registry owns the publishing data contract and embedded descriptor; the product registry and catalog hold searchable projections, policies remain in the policy service, and runtime state remains in the responsible execution platform.
 
 ## Data Product Management Pattern
 
@@ -64,7 +64,7 @@ The developer workspace is a channel over foundation services, not a parallel pl
 | Change | Link product changes to contract version, compatibility result, release note, consumer notification, and migration plan. |
 | Subscription | Maintain active consumer list for impact analysis, incident notification, and deprecation management. |
 | Evidence | Keep approvals, test results, quality reports, lineage, access decisions, and incident records linked to product version. |
-| Portability | Validate the publishing contract and embedded descriptor against ODCS and ODPS profiles, preserve canonical ids, and test export/import in CI. |
+| Portability | Validate the publishing data contract and embedded descriptor against ODCS and ODPS profiles, preserve stable ids, and test export/import in CI. |
 
 ## Consumption Pattern
 
@@ -85,7 +85,7 @@ The developer workspace is a channel over foundation services, not a parallel pl
 | Clean room | Controlled collaboration environment, minimized data, permitted joins, output controls. |
 | Portal publication | Internal sharing package with approved consumer group and product owner support. |
 
-For API ports use OpenAPI. For event ports use AsyncAPI plus CloudEvents. For runtime lineage use OpenLineage, and for telemetry use OpenTelemetry and OTLP. Platform-specific adapters must preserve canonical product, contract, dataset, run, consumer, and purpose identifiers.
+For API ports use OpenAPI. For event ports use AsyncAPI plus CloudEvents. For telemetry use OpenTelemetry and OTLP. Runtime lineage must be exportable through a documented interface that preserves authoritative product, contract, dataset, job, run, consumer, and purpose identifiers.
 
 ## Observability Pattern
 
@@ -103,7 +103,7 @@ For API ports use OpenAPI. For event ports use AsyncAPI plus CloudEvents. For ru
 | Artifact | Public schema validation and semantic round-trip result. |
 | Protocol | Independent client consumes API, event, table, query, or share. |
 | Metadata | DCAT export can be indexed by a second catalog implementation. |
-| Lineage and telemetry | Independent OpenLineage endpoint and OTLP collector accept signals. |
+| Lineage and telemetry | An independent lineage consumer accepts exported records and an independent OTLP collector accepts telemetry. |
 | Security | Federated identity, access expiry, and revocation behave as declared. |
 
 ## Agentic Service Pattern

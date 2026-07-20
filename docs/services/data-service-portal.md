@@ -22,7 +22,7 @@ It exists to hide organizational and platform complexity behind coherent journey
 | --- | --- |
 | Primary plane | Experience |
 | Supporting planes | AI, Control, and Security; Observability where health views are used. |
-| Shared capabilities | Product and contract models, agentic foundation, semantic context, identity, policy, workflow, catalog, and telemetry. |
+| Supporting designs and capabilities | [Data Product Design](../architecture/data-product-design.md), [Data Contract Design](../architecture/data-contract-design.md), [Semantic and Context Design](../architecture/semantic-context-design.md), [Platform Governance Design](../architecture/platform-governance-design.md), [Platform Enablement Design](../architecture/platform-enablement-design.md), and [Agentic Data Service Design](../architecture/agentic-data-foundation.md) supply the product, contract, identity, policy, workflow, catalog, and telemetry capabilities used by the portal. |
 | Integration flows | Discover and request, onboard source, create product, approve go-live, consume, share, support, and operate. |
 
 ## Service Architecture
@@ -49,7 +49,7 @@ Portal-owned state is limited to experience state, drafts, preferences, tasks, n
 
 ## Agentic Interaction
 
-| Concern | Service Agent Contract |
+| Concern | Agent Operating Specification |
 | --- | --- |
 | Specialist role | Journey agent that captures intent, composes service tasks, explains status, and presents approvals and evidence through the Data Service AI Assistant. |
 | Declarative boundary | User task, identity, current journey, applicable data contracts, and permission-filtered projections. |
@@ -81,13 +81,13 @@ Portal-owned state is limited to experience state, drafts, preferences, tasks, n
 
 Declared contract targets must remain visually and semantically distinct from current measured health. Missing or stale evidence is shown as unknown, never inferred as healthy.
 
-## Contracts and Interfaces
+## Data Contracts and Interfaces
 
-| Interface | Purpose | Required Contract |
+| Interface | Purpose | Required Definition |
 | --- | --- | --- |
 | Portal and journey API | Start, resume, inspect, cancel, or complete a journey. | Stable journey, task, actor, purpose, target, state, and evidence links. |
 | Marketplace query | Search and compare permission-filtered product projections. | Product id, version, authority, observation time, health, policy summary, and available actions. |
-| Contract workspace | Manage canonical contract artifacts and decisions. | Source System Ingestion, Data Product Creation, or Data Product Consumption Contract. |
+| Contract workspace | Manage authoritative contract artifacts and decisions. | Source System Ingestion, Data Product Creation, or Data Product Consumption Contract. |
 | Service action | Invoke a typed foundation-service operation. | OpenAPI operation, workflow id, identity, purpose, policy decision, idempotency key, and receipt. |
 | Event subscription | Receive task, contract, product, incident, release, and deprecation updates. | Versioned event schema, subject, audience, ordering, replay, and delivery status. |
 
@@ -115,7 +115,7 @@ Declared contract targets must remain visually and semantically distinct from cu
 
 | Engineer | Product Owner |
 | --- | --- |
-| Implement journey APIs against authoritative service contracts; keep projections rebuildable; propagate identity, purpose, workflow, product, contract, and trace ids; test stale, denied, duplicate, failed, and resumed journeys. | Define user outcomes, journey owner, marketplace ranking basis, product-detail decisions, notification rules, support expectations, accessibility, and success measures. |
+| Implement journey APIs against authoritative service interfaces; keep projections rebuildable; propagate identity, purpose, workflow, product, data-contract, and trace ids; test stale, denied, duplicate, failed, and resumed journeys. | Define user outcomes, journey owner, marketplace ranking basis, product-detail decisions, notification rules, support expectations, accessibility, and success measures. |
 | Prove permission filtering, projection freshness, action idempotency, workflow reconciliation, and degraded-mode behavior. | Accept the authority boundary; prioritize high-frequency journeys; verify that users can understand trust, ownership, current state, and the next action without specialist knowledge. |
 
 ## Reference Solutions
@@ -124,12 +124,14 @@ No portal technology is mandated. A selected implementation must prove channel p
 
 Related shared designs: [Architecture Design Map](../architecture/design-map.md), [Integration Design](../architecture/integration-design.md), [Data Contract Design](../architecture/data-contract-design.md), and [Agentic Data Service Design](../architecture/agentic-data-foundation.md).
 
-## Done Criteria
+## Target User Experience
 
-- Ingestors, producers, consumers, owners, and operators complete their primary journeys through one coherent entry point.
-- Product views show purpose, owner, contract, semantics, access, quality, freshness, lifecycle, support, and current health with authority and time.
-- Contract changes, access decisions, product go-live, sharing, and operational actions use authoritative workflows and return receipts.
-- Portal failure or projection rebuild does not lose canonical foundation state.
-- Portal, API, CLI, and assistant channels enforce the same identity, policy, approval, and evidence rules.
-- The journey agent exposes typed tasks, preserves contract and delegation scope, and can be suspended without blocking deterministic portal journeys.
-- Journey success, failure, abandonment, recovery, and user outcome are observable.
+Use each row as an end-to-end acceptance scenario for product design and engineering validation.
+
+| User and Intent | User Action | Required Service Behavior | Observable Result |
+| --- | --- | --- | --- |
+| Consumer evaluates a product. | Search, filter, compare, and open a product. | Resolve permission-filtered product, contract, semantic, access, quality, health, lifecycle, and support projections with source and observation time. | The consumer can decide whether the product is relevant, trustworthy, and accessible without visiting another tool. |
+| Ingestor or producer starts work. | Choose an onboarding or product action and submit intent. | Create the correct governed workflow, validate required context, assign ownership, and return the first gate and missing information. | The user receives one task id, owner, current state, next action, and expected outcome. |
+| Requester or approver progresses work. | Review, supply evidence, approve, reject, or withdraw. | Apply identity, policy, segregation, contract, and workflow rules and record the decision and reason in the owning service. | Every participant sees the same current status, decision, reason, next action, and receipt. |
+| User changes channel or returns later. | Resume through portal, API, CLI, or assistant. | Resolve the same task and authoritative service state without duplicating completed actions. | The journey resumes from the last valid state with consistent permissions and history. |
+| User encounters portal or assistant failure. | Retry, cancel, or use a deterministic journey. | Preserve owning-service state, expose recovery status, prevent duplicate side effects, and keep non-AI workflows available. | Work is not lost or repeated, and the user has a clear recovery or fallback path. |

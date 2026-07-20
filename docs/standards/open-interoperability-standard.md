@@ -25,10 +25,10 @@ flowchart LR
 
 | Concern | Required Open Baseline | Foundation Use |
 | --- | --- | --- |
-| Data contracts | [Open Data Contract Standard 3.1](https://bitol-io.github.io/open-data-contract-standard/latest/) | Canonical contract artifact, validation, and exchange. |
-| Data products | [Open Data Product Standard 1.0](https://bitol.io/announcing-odps-v1-0-0-building-the-language-of-data-products/) | Portable product descriptor embedded in the publishing contract, including the product-port inventory. |
+| Data contracts | [Open Data Contract Standard 3.1](https://bitol-io.github.io/open-data-contract-standard/latest/) | Authoritative contract artifact, validation, and exchange. |
+| Data products | [Open Data Product Standard 1.0](https://bitol.io/announcing-odps-v1-0-0-building-the-language-of-data-products/) | Portable product descriptor embedded in the publishing data contract, including the product-port inventory. |
 | Catalog exchange | [W3C DCAT 3](https://www.w3.org/TR/vocab-dcat-3/) | Federated discovery of datasets, distributions, and data services. |
-| Batch lineage | [OpenLineage](https://openlineage.io/docs/next/) | Run, job, and dataset lineage events. |
+| Lineage exchange | Portable lineage records and documented export interfaces | Run, job, dataset, input, output, and transformation relationships. |
 | Provenance exchange | [W3C PROV-O](https://www.w3.org/TR/prov-o/) | Cross-organization provenance where RDF exchange is needed. |
 | Service APIs | [OpenAPI](https://spec.openapis.org/oas/) | Machine-readable synchronous API contracts. |
 | Event APIs | [AsyncAPI 3.0](https://www.asyncapi.com/docs/reference/specification/v3.0.0) and [CloudEvents](https://www.cncf.io/projects/cloudevents/) | Channel contracts and portable event envelopes. |
@@ -37,12 +37,12 @@ flowchart LR
 | Bulk sharing | [Delta Sharing](https://docs.delta.io/delta-sharing/) when table sharing is required | Open, recipient-neutral large dataset sharing. |
 | High-speed query | [Arrow Flight SQL](https://arrow.apache.org/docs/format/FlightSql.html) when needed | Portable, columnar SQL result transport. |
 | Workload identity | OIDC/OAuth for users and APIs; [SPIFFE](https://spiffe.io/docs/latest/spiffe-specs/) where cross-platform workload identity is required | Federated authentication without platform-bound service identities. |
-| Agent tools and context | [Model Context Protocol 2025-11-25](https://modelcontextprotocol.io/specification/2025-11-25/basic/index) when an agent interoperability adapter is required | Discover approved resources, prompts and tools without replacing service contracts. |
+| Agent tools and context | [Model Context Protocol 2025-11-25](https://modelcontextprotocol.io/specification/2025-11-25/basic/index) when an agent interoperability adapter is required | Discover approved resources, prompts and tools without replacing service interfaces. |
 | Agent-to-agent | [A2A Protocol](https://a2a-protocol.org/latest/specification/) when independently operated agents must collaborate | Agent discovery, skills, durable tasks and artifacts. |
 
 The baseline is a profile, not a requirement to deploy every listed technology. A selected interface must use its open specification and pass the applicable conformance tests.
 
-## Canonical Identifiers
+## Stable Identifiers
 
 The same identifiers must survive export, import, telemetry, lineage, and platform migration:
 
@@ -65,13 +65,13 @@ Identifiers are opaque, globally unique within the enterprise, immutable after p
 4. Keep mandatory enterprise extensions small.
 5. Preserve unknown extension fields during import and export.
 6. Record the specification version and media type with every artifact.
-7. Provide a migration rule before changing a canonical profile.
+7. Provide a migration rule before changing an published profile.
 
 ## Conformance Levels
 
 | Level | Required Evidence |
 | --- | --- |
-| 1. Artifact portable | Publishing contracts and their embedded product descriptors validate against pinned schemas; metadata exports as DCAT; canonical identifiers survive round-trip export and import. |
+| 1. Artifact portable | Publishing data contracts and their embedded product descriptors validate against pinned schemas; metadata exports as DCAT; stable identifiers survive round-trip export and import. |
 | 2. Service interoperable | APIs or events validate against OpenAPI or AsyncAPI; CloudEvents is used for event envelopes; lineage and telemetry can be consumed by independent receivers. |
 | 3. Ecosystem portable | Sharing works with an independent client; federated identity and revocation are tested; AI usage is traceable to product, contract, snapshot, identity, and purpose. |
 
@@ -79,10 +79,10 @@ Live products must meet Level 1. Shared platform services must meet Level 2. Pro
 
 ## Conformance Tests
 
-- Validate canonical artifacts against pinned public schemas.
+- Validate portable source artifacts against pinned public schemas.
 - Export from one implementation and import into a clean reference implementation.
 - Confirm semantic equivalence after publishing-contract round trips, including the embedded product descriptor.
-- Send lineage events to an independent OpenLineage-compatible endpoint.
+- Export lineage records to an independent reference consumer without losing authoritative dataset, job, run, input, output, and transformation relationships.
 - Send telemetry through OTLP to an independent collector.
 - Validate API and event examples against their interface definitions.
 - Read a shared table or query result with an independent client.
@@ -97,7 +97,7 @@ Record results with the [Interoperability Conformance Record](../reference-solut
 Each released profile must include:
 
 - Pinned specification versions and compatibility policy.
-- Canonical schemas plus enterprise extension schemas.
+- published schemas plus enterprise extension schemas.
 - Minimal valid examples and failure examples.
 - Import, export, and conformance test fixtures.
 - Adapter ownership and supported implementation matrix.
@@ -119,7 +119,7 @@ A proprietary interface is allowed only when it provides material value unavaila
 
 ## Minimum Done Criteria
 
-- Canonical contracts, embedded product descriptors, identifiers, interface definitions, lineage, and telemetry use pinned open profiles with namespaced extensions.
+- Authoritative contracts, embedded product descriptors, identifiers, interface definitions, lineage, and telemetry use pinned open profiles with namespaced extensions.
 - Every live product passes Level 1; shared services pass Level 2; externally consumed interfaces pass the applicable Level 3 tests.
 - Round-trip export and import preserves required meaning, identifiers, versions, relationships, and unknown extensions.
 - At least one independent client or receiver validates every material API, event, sharing, lineage, telemetry, or agent adapter used in production.

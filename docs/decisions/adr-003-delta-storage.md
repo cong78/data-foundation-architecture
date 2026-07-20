@@ -4,11 +4,21 @@
 
 Accepted — 2026-07-15
 
+## Decision Owner
+
+Data Platform Architecture
+
 ## Context
 
 Durable tabular products need consistent transaction behavior, schema evolution, time travel, recovery, change data handling, optimization, access integration, and operational evidence. Supporting many physical table formats as equal defaults would increase platform complexity and weaken repeatable recovery and support.
 
 Not every product is a durable table. Event streams, APIs, operational lookups, files, retrieval indexes, non-tabular assets, federated queries, and legitimate interoperability cases may require another physical form.
+
+## Alternatives Considered
+
+- Support multiple table formats as equal defaults.
+- Require Delta for every data product regardless of workload shape.
+- Use Delta as the default for durable tabular products with governed exceptions for other needs.
 
 ## Decision
 

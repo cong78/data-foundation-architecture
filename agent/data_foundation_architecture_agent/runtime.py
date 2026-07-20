@@ -152,15 +152,15 @@ class ArchitectureAgent:
             return self._base_result(
                 request,
                 "unresolved",
-                f"No exact canonical glossary definition exists for '{clean_markdown(request['query'])}'.",
+                f"No exact glossary definition exists for '{clean_markdown(request['query'])}'.",
                 {"kind": "needs-review", "confidence": 0.0, "basis": "Exact glossary lookup returned no match."},
                 [],
-                ["Canonical definition is absent or the supplied term is not exact."],
+                ["The glossary definition is absent or the supplied term is not exact."],
                 ["Search related guidance or propose a glossary addition for architecture review."],
             )
         term, definition = resolved
         citation = {
-            "path": "docs/foundation/glossary.md",
+            "path": "docs/foundation/information-graph.md",
             "heading": term,
             "excerpt": definition,
             "authority": "definition",
@@ -170,7 +170,7 @@ class ArchitectureAgent:
             request,
             "complete",
             f"{term}: {definition}",
-            {"kind": "repository-fact", "confidence": 1.0, "basis": "Exact canonical glossary match."},
+            {"kind": "repository-fact", "confidence": 1.0, "basis": "Exact glossary match."},
             [citation],
         )
 
@@ -187,7 +187,7 @@ class ArchitectureAgent:
         elif any(term in query for term in shared_terms):
             kind, confidence, basis = "shared-capability", 0.8, "The request names a reusable control or runtime concern shared by services."
         elif any(term in query for term in service_names):
-            kind, confidence, basis = "service-specific", 0.8, "The request names one canonical foundation service outcome."
+            kind, confidence, basis = "service-specific", 0.8, "The request names one defined foundation service outcome."
         else:
             kind, confidence, basis = "needs-review", 0.3, "The request does not identify a stable service, shared capability, or cross-service interaction."
         citations = self._search(
@@ -209,7 +209,7 @@ class ArchitectureAgent:
         query = request["query"]
         trace_queries = (
             ("architecture", f"{query} architecture blueprint design map"),
-            ("service", f"{query} service architecture capabilities runbook"),
+            ("service", f"{query} service architecture capabilities target user experience runbook"),
             ("standard", f"{query} standard conformance requirements"),
             ("playbook", f"{query} playbook workflow evidence done criteria"),
         )
@@ -252,7 +252,7 @@ class ArchitectureAgent:
     def _prepare_context_pack(self, request: dict[str, Any]) -> dict[str, Any]:
         citations = self._search(
             request,
-            query=f"{request['query']} definition principle architecture service standard decision evidence done criteria",
+            query=f"{request['query']} definition principle architecture service standard decision target user experience evidence done criteria",
             preferred_paths=(
                 "docs/foundation/",
                 "docs/architecture/",

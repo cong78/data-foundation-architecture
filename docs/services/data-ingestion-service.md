@@ -22,7 +22,7 @@ It exists to solve source connectivity, change, replay, and provenance once, so 
 | --- | --- |
 | Primary plane | Data |
 | Supporting planes | AI, Control, Security, and Observability |
-| Shared capabilities | Source System Ingestion Contract, agentic foundation, catalog, governed product storage, identity, secrets, lineage, retention, and telemetry. |
+| Supporting designs and capabilities | [Data Foundation Model](../architecture/data-foundation-model.md), [Data Contract Design](../architecture/data-contract-design.md), [Platform Enablement Design](../architecture/platform-enablement-design.md), [Platform Governance Design](../architecture/platform-governance-design.md), and [Agentic Data Service Design](../architecture/agentic-data-foundation.md) supply the ingestion contract, catalog, governed storage, identity, secrets, lineage, retention, and telemetry. |
 | Integration flows | Source onboarding, source change, delivery, quarantine and replay, validated handoff, and incident recovery. |
 
 ## Service Architecture
@@ -44,7 +44,7 @@ Transport, validation, and storage remain separable so a delivery mechanism can 
 
 ## Agentic Interaction
 
-| Concern | Service Agent Contract |
+| Concern | Agent Operating Specification |
 | --- | --- |
 | Specialist role | Ingestion agent that prepares onboarding, operates source delivery, diagnoses exceptions, and maintains source-aligned trust. |
 | Declarative boundary | Published Source System Ingestion Contract, source identity, approved connection, policy, SLOs, and runbooks. |
@@ -62,9 +62,9 @@ Transport, validation, and storage remain separable so a delivery mechanism can 
 | Publication | Source-aligned handoff | Raw and validated states have stable identities, lineage, ownership, ports, SLOs, retention, and support. |
 | Operations | Source-channel reliability | Lag, backlog, failure, quarantine, replay, cost, and source impact are observable. |
 
-## Contracts and Interfaces
+## Data Contracts and Interfaces
 
-| Interface | Purpose | Required Contract |
+| Interface | Purpose | Required Definition |
 | --- | --- | --- |
 | Source onboarding API | Register or change a source channel. | Source owner, interface, pattern, classification, schema, keys, cadence, volume, change notice, support, and access decision. |
 | Delivery interface | Receive file, connector extract, API result, CDC, or event stream. | Source System Ingestion Contract with identity, ordering, checkpoint, retry, replay, and compatibility behavior. |
@@ -103,12 +103,14 @@ Transport, validation, and storage remain separable so a delivery mechanism can 
 
 [Data Ingestion Design](../reference-solutions/data-ingestion-design.md) maps this service to Databricks Lakeflow, Auto Loader, Unity Catalog, and Delta Lake. It is a selected reference profile and cannot redefine the Source System Ingestion Contract or service boundary.
 
-## Done Criteria
+## Target User Experience
 
-- The source owner and ingestion owner approve the contract, pattern, support model, and activation evidence.
-- Raw receipt is traceable, restricted, retained, and replayable.
-- Validated source-aligned output is cataloged, contracted, versioned, observable, and usable by product teams.
-- Schema change, duplicate, gap, late data, quarantine, replay, source outage, and recovery paths are tested.
-- Source-to-product lineage and product-impact correlation work end to end.
-- The ingestion agent executes only typed skills within the published ingestion contract, and contract expiry, suspension, fallback, and recovery are tested.
-- Direct or federated access was considered before creating a durable copy.
+Use each row as an end-to-end acceptance scenario for product design and engineering validation.
+
+| User and Intent | User Action | Required Service Behavior | Observable Result |
+| --- | --- | --- | --- |
+| Source owner selects the right integration boundary. | Describe source, consumers, latency, history, reuse, scale, and control needs. | Compare direct, federated, event, projected, and replicated patterns and record the decision rationale. | The owner understands whether ingestion is justified and which obligations follow. |
+| Source owner onboards a source. | Submit file, connector, API, CDC, or event intent and approve the ingestion contract. | Validate identity, schema, semantics, classification, delivery, replay, retention, support, and source-aligned output before activation. | One approved source record, contract, pattern, owner, support route, and activation decision are visible. |
+| Ingestor monitors delivery. | Inspect receipt, validation, lag, reconciliation, and publication state. | Correlate source delivery through raw receipt and validation to the published source-aligned version. | The user sees what arrived, what passed, what was published, and whether freshness and completeness meet the contract. |
+| Ingestor resolves an exception. | Quarantine, correct, replay, pause, or escalate. | Explain failure and impact, preserve evidence, enforce authority and idempotency, and reconcile after recovery. | Missing, duplicate, late, corrupt, or incompatible data is recovered without silent loss or duplication. |
+| Product team consumes the source-aligned output. | Discover and bind to the published product port. | Expose stable identity, meaning, lineage, quality, freshness, limitations, change notice, and support without internal pipeline details. | The team can build downstream products against a versioned and observable source promise. |

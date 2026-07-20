@@ -43,4 +43,4 @@ Runbooks are the execution layer of this guide. They connect architecture intent
 
 ## Reference Solutions
 
-[Reference Solutions](../reference-solutions/index.md) bring selected technology profiles and reusable records into the runbook path. Start with the technology-neutral architecture and service contract, adapt only the relevant profile, complete its reference record, and retain the resulting decisions, tests, approvals, and operational evidence.
+[Reference Solutions](../reference-solutions/index.md) bring selected technology profiles and reusable records into the runbook path. Start with the technology-neutral architecture and service definition, adapt only the relevant profile, complete its reference record, and retain the resulting decisions, tests, approvals, and operational evidence.

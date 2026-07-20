@@ -22,7 +22,7 @@ It exists to provide common controls and resources once, reducing duplication wh
 | --- | --- |
 | Primary planes | Control and Data |
 | Supporting planes | AI, Security, and Observability |
-| Shared capabilities | Agentic foundation, contract and product management, catalog and storage, identity and security, integration, automation, and evidence and telemetry. |
+| Supporting designs and capabilities | [Platform Enablement Design](../architecture/platform-enablement-design.md), [Platform Governance Design](../architecture/platform-governance-design.md), [Data Contract Design](../architecture/data-contract-design.md), [Data Product Design](../architecture/data-product-design.md), and [Agentic Data Service Design](../architecture/agentic-data-foundation.md) define contract and product management, catalog and storage, identity and security integration, automation, evidence, and telemetry. |
 | Integration flows | Provision, bind controls, reconcile, rotate, retain, recover, delete, rollback, and deprovision. |
 
 ## Service Architecture
@@ -46,7 +46,7 @@ Every request follows plan, authorize, apply, validate, reconcile, and return-re
 
 ## Agentic Interaction
 
-| Concern | Service Agent Contract |
+| Concern | Agent Operating Specification |
 | --- | --- |
 | Specialist role | Enablement agent that plans, provisions, binds controls, reconciles drift, recovers, and deprovisions shared resources. |
 | Declarative boundary | Approved service request, product workload, applicable data contract, resource profile, policy, budget, and lifecycle state. |
@@ -57,16 +57,16 @@ Every request follows plan, authorize, apply, validate, reconcile, and return-re
 
 | Category | Capability | Owned Outcome |
 | --- | --- | --- |
-| Contracts | Contract-system capability | Canonical artifacts, versions, validation, compatibility, decisions, lifecycle, and events are consistently available. |
+| Contracts | Contract-system capability | Published contract artifacts, versions, validation, compatibility, decisions, lifecycle, and events are consistently available. |
 | Catalog and storage | Governed technical assets | Catalog registration, storage defaults, location, recovery, retention, deletion, and external bindings are controlled. |
 | Identity and security | Reusable control bindings | Workload identities, federation, secrets, policy, entitlements, delegated scopes, audit, and rotation are provisioned consistently. |
 | Integration | Common connectivity | Gateways, events, schema registry, connectors, callbacks, service discovery, and stable identifiers support service interactions. |
 | Automation | Environment and resource lifecycle | Plan, provision, promote, roll back, reconcile, and deprovision operations are policy-controlled and repeatable. |
 | Evidence | Resource and control proof | Ownership, state, drift, policy, cost, telemetry, recovery, retention, deletion, and deprovisioning evidence are retrievable. |
 
-## Contracts and Interfaces
+## Data Contracts and Interfaces
 
-| Interface | Purpose | Required Contract |
+| Interface | Purpose | Required Definition |
 | --- | --- | --- |
 | Resource request API | Plan or provision a shared capability. | Requesting service, owner, purpose, resource type, environment, classification, lifecycle, SLO, policy context, and idempotency key. |
 | Resource binding | Return stable foundation and provider mappings. | Foundation resource id, provider id, endpoint, identity, policies, contract and catalog links, lifecycle, and receipt. |
@@ -79,7 +79,7 @@ Every request follows plan, authorize, apply, validate, reconcile, and return-re
 | Dependency | Platform Enablement Uses | Platform Enablement Provides |
 | --- | --- | --- |
 | Lifecycle services | Typed intent, owner, purpose, target environment, contract, policy context, SLO, lifecycle, and deprovisioning condition. | Stable resource binding, control state, lifecycle status, cost, telemetry, and immutable receipt. |
-| Contract, catalog, identity, security, privacy, and risk authorities | Canonical ids, validation, decisions, approvals, classifications, obligations, and audit requirements. | Resource and provider mappings, enforcement state, reconciliation, exceptions, and evidence. |
+| Contract, catalog, identity, security, privacy, and risk authorities | Authoritative ids, validation, decisions, approvals, classifications, obligations, and audit requirements. | Resource and provider mappings, enforcement state, reconciliation, exceptions, and evidence. |
 | Cloud and data providers | Runtime APIs, resource state, health, cost, logs, and export capabilities. | Least-privilege operations, policy bindings, tags, lifecycle actions, and deprovisioning. |
 | Observability and Operations | Health, drift, alert, incident, change, release, continuity, and evidence workflows. | Resource events, failed provisioning, policy drift, expiry, cost, rollback, recovery, and deletion signals. |
 
@@ -102,14 +102,16 @@ Every request follows plan, authorize, apply, validate, reconcile, and return-re
 
 ## Reference Solutions
 
-The [Shared Platform Capabilities](../architecture/platform-foundation-design.md) design defines the reusable technology-neutral capabilities. Provider selections require a [Technology Selection Record](../reference-solutions/technology-selection-template.md), capability proof, security and cost review, portability test, and exit plan.
+The [Platform Enablement Design](../architecture/platform-enablement-design.md) defines the reusable technology-neutral capabilities. Provider selections require a [Technology Selection Record](../reference-solutions/technology-selection-template.md), capability proof, security and cost review, portability test, and exit plan.
 
-## Done Criteria
+## Target User Experience
 
-- Every shared capability has a stable interface, owner, SLO, support route, provider adapter, lifecycle, and runbook.
-- Lifecycle services provision and operate resources without manual control duplication or unrestricted credentials.
-- Contract, catalog, identity, policy, provider, and telemetry state reconcile through stable identifiers.
-- Provisioning, change, drift, rollback, recovery, retention, deletion, and deprovisioning paths are tested.
-- Provider replacement does not redefine product, contract, policy, or service outcomes.
-- The enablement agent uses typed resource intent, contract and policy scope, and an autonomy ceiling; privileged exceptions and deterministic fallback are tested.
-- Cost, reliability, adoption, exceptions, toil, and decommissioning evidence guide the platform backlog.
+Use each row as an end-to-end acceptance scenario for product design and engineering validation.
+
+| User and Intent | User Action | Required Service Behavior | Observable Result |
+| --- | --- | --- | --- |
+| Service team requests a shared capability. | Submit typed storage, contract, identity, security, integration, catalog, or automation intent. | Validate owner, purpose, environment, policy, lifecycle, provider profile, cost boundary, and dependencies before provisioning. | The team sees the planned resource, inherited controls, owner, cost, status, and expected completion or failure reason. |
+| Service team provisions or changes a resource. | Preview and confirm the bounded lifecycle action. | Apply approved provider adapter, identity, policy, contract, telemetry, idempotency, and rollback behavior. | The resource reaches a reconciled state with stable bindings and a complete service receipt. |
+| Service team operates the capability. | Inspect health, drift, usage, cost, exceptions, and lifecycle state. | Compare declared intent with provider state and route actionable differences to reconciliation, rollback, or review. | Drift and failure are visible, owned, and recoverable without hidden manual repair. |
+| Service team retains, recovers, deletes, or deprovisions. | Trigger the approved lifecycle operation. | Enforce retention, recovery, deletion proof, dependency checks, policy, and segregation across providers. | The lifecycle outcome is predictable, complete, and evidenced without unrestricted credentials. |
+| Platform team changes provider implementation. | Introduce or replace an adapter and run conformance tests. | Preserve service interfaces, stable identifiers, declared intent, controls, evidence, and migration behavior. | Service teams do not need to redefine product, contract, policy, or service outcomes. |

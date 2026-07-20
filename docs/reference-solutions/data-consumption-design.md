@@ -138,7 +138,7 @@ Policy support differs by runtime, client, object type, table format, and interf
 | Sharing | Share, recipient, provider, and approved data objects. | Data Product Consumption Contract, product version, update mode, expiry, revocation, and audit. |
 | Application API | Product service or serving adapter reading governed product outputs. | OpenAPI contract, identity, rate, latency, error, caching, and version behavior. |
 | Event | Enterprise event broker binding generated from an approved product event port. | AsyncAPI, CloudEvents envelope, ordering, replay, retention, and compatibility. |
-| Semantic | Unity Catalog metric view or semantic adapter linked to the canonical semantic context package. | Metric, dimension, grain, time, filter, unit, and context versions. |
+| Semantic | Unity Catalog metric view or semantic adapter linked to the authoritative semantic context package. | Metric, dimension, grain, time, filter, unit, and context versions. |
 | AI feature or retrieval | Approved feature, vector, context, or bounded-query adapter linked to governed product assets. | Product snapshot, purpose, fields, retrieval behavior, evaluation, freshness, and citations. |
 
 Provider-native locations stay in the physical binding. The logical product port remains stable when the warehouse, object, serving runtime, or table format changes within its compatibility contract.
@@ -209,9 +209,9 @@ A consumption port may go live only when:
 
 ## Implementation Runway
 
-### Increment 1: Establish the Access Contract
+### Increment 1: Establish the Access Interface
 
-- Define product and port resolution, identity profiles, purpose and consumption-contract fields, Unity Catalog policy projection, and evidence attributes.
+- Define product and port resolution, identity profiles, purpose and Data Product Consumption Contract fields, Unity Catalog policy projection, and evidence attributes.
 - Implement portal discovery, request, approval, subscription, expiry, and revocation journeys.
 - Prove independent service and data authorization.
 
@@ -240,7 +240,7 @@ A consumption port may go live only when:
 | Policy projection | Define how purpose, Data Product Consumption Contract, entitlement, and classification become Unity Catalog controls and how drift is reconciled. |
 | Open table profile | Select supported formats, client versions, credentials, read/write behavior, policy coverage, and conformance suite. |
 | Application serving | Define when Statement Execution is acceptable and when a dedicated API or serving store is required. |
-| Semantic implementation | Define metric-view scope, canonical semantic package mapping, change control, and BI-tool behavior. |
+| Semantic implementation | Define metric-view scope, authoritative semantic package mapping, change control, and BI-tool behavior. |
 | AI access | Define approved feature, retrieval, context, and bounded-query patterns with evaluation and delegated authority. |
 | Sharing boundary | Define when open table access ends and the Data Sharing Service recipient lifecycle begins. |
 | Evidence retention | Define export, correlation, and retention for decisions, queries, lineage, usage, cost, results, and incidents. |

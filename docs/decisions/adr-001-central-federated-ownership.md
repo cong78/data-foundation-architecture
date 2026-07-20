@@ -4,11 +4,21 @@
 
 Accepted — 2026-07-15
 
+## Decision Owner
+
+Data Foundation Architecture
+
 ## Context
 
 Source onboarding and ingestion require reusable connectors, security controls, source reconciliation, quarantine, replay, retention, and operational support. Allowing every domain to recreate these capabilities would duplicate source extraction, weaken source accountability, and produce inconsistent source-aligned data.
 
 Aggregate and consumer-aligned products require business context, semantic ownership, consumer feedback, and domain prioritization. Central ownership of these products would create a delivery bottleneck and separate product decisions from the teams accountable for their meaning and value.
+
+## Alternatives Considered
+
+- Federate ingestion and every product layer to domain teams.
+- Centralize ingestion and every product layer in one platform team.
+- Use the selected central-and-federated split with explicit product ports and data contracts.
 
 ## Decision
 
@@ -23,7 +33,7 @@ Ownership transfers only through a published product port and contract. Domain t
 - Source extraction, reconciliation, replay, retention, and source incidents have one accountable operating path.
 - Domains receive stable source-aligned product promises instead of rebuilding source integrations.
 - Domain teams retain accountability for aggregate and consumer-aligned meaning, quality, lifecycle, and value.
-- The handoff requires explicit publishing contracts, product ports, service levels, lineage, support, and escalation.
+- The handoff requires explicit publishing data contracts, product ports, service levels, lineage, support, and escalation.
 - The central ingestion service must scale as a shared service and avoid becoming a manual onboarding queue.
 - Exceptions for domain-managed ingestion require an explicit risk, operating, interoperability, and migration decision.
 

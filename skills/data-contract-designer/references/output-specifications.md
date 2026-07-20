@@ -1,4 +1,4 @@
-# Output Contracts
+# Output Specifications
 
 ## Contract Design
 
@@ -7,7 +7,7 @@ Return sections in this order:
 1. **Decision summary:** boundary, selected type, status, and unresolved blockers.
 2. **Parties and purpose:** accountable parties, intended outcome, valid use, prohibited use, and non-goals.
 3. **Binding:** stable source, product, port, consumer, environment, version, and effective-period identifiers.
-4. **Data promise:** for publishing contracts, start with the embedded product descriptor (product id, name, domain, purpose, owners, lifecycle, ports, SLOs, support, and authoritative links); then provide schema, keys, grain, time meaning, semantics, classification, limitations, and profile-specific terms. Consumption contracts reference the descriptor and do not reproduce it.
+4. **Data promise:** for publishing data contracts, start with the embedded product descriptor (product id, name, domain, purpose, owners, lifecycle, ports, SLOs, support, and authoritative links); then provide schema, keys, grain, time meaning, semantics, classification, limitations, and profile-specific terms. Data Product Consumption Contracts reference the descriptor and do not reproduce it.
 5. **Trust and controls:** quality, SLOs, lineage, identity, policy, retention, expiry, revocation, support, and incidents.
 6. **Change and lifecycle:** compatibility, notice, migration, exceptions, review, deprecation, and retirement.
 7. **Enforcement and tests:** enforcement point, test, severity, failure outcome, telemetry, and evidence authority.

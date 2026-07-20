@@ -32,7 +32,7 @@ When intent spans workflows, run them in this order: **Assess → Design → Gen
 ## Apply Core Integrity Rules
 
 - Separate data foundation platform responsibilities, domain accountability, data product ownership, and runtime implementation.
-- Separate principles, rules, and criteria. Use the Architecture Decision Policy for new or changed normative guidance, with a canonical policy document, named decision, tests, enforcement points, and evidence.
+- Separate principles, rules, and criteria. Use the Architecture Decision Policy for new or changed normative guidance, with an authoritative policy document, named decision, tests, enforcement points, and evidence.
 - Use **Frame → Establish → Deliver → Use → Operate** as the primary journey; treat layers, planes, services, product patterns, and runway phases as supporting views.
 - Use the nine foundation services as reusable capability boundaries. Keep the Data Product Marketplace inside the Data Service Portal rather than creating a separate catalog or platform.
 - Keep source onboarding, ingestion, and raw and validated source-aligned products under central foundation platform accountability; keep domain, aggregate, and consumer-aligned product ownership federated to domain data teams.
@@ -45,7 +45,7 @@ When intent spans workflows, run them in this order: **Assess → Design → Gen
 - Distinguish declared contract targets from measured health and timestamp evidence.
 - Treat Unity Catalog and Delta Lake as approved platform defaults; treat other vendor products as selected implementation profiles and preserve open interfaces, conformance, and exit paths for every binding.
 - Preserve domain hard gates and product go-live gates. Never average a failed mandatory gate into a maturity score.
-- Trace production designs through architecture decision, service contract, action playbook, operational runbook, evidence, and runway phase.
+- Trace production designs through architecture decision, service definition, action playbook, operational runbook, evidence, and runway phase.
 - Do not invent evidence, approvals, owners, measurements, or conformance results. Mark unknowns explicitly.
 
 Read `references/evidence-rules.md` before scoring, certifying, or making a go-live or onboarding recommendation.
@@ -78,10 +78,10 @@ Use `assets/domain-assessment.example.json` as the input shape. Do not interpret
 3. Identify the owning service, supporting designs, and affected target planes before adding a component.
 4. Define logical responsibilities before mapping technologies; label vendor mappings as reference profiles.
 5. Show the main value flow and keep cross-cutting identity, policy, contract, lineage, semantic, and telemetry controls explicit.
-6. Define product ports, interaction contracts, control authorities, enforcement points, evidence, failure behavior, and lifecycle.
+6. Define product ports, interface specifications, control authorities, enforcement points, evidence, failure behavior, and lifecycle.
 7. For cross-service scope, name the outcome owner, handoff owners, correlation identifiers, compensation, reconciliation, and end-to-end test.
 8. Record consequential alternatives and decisions.
-9. Map the design to standards, owning services, action playbooks, operational runbooks, evidence, runway phase, and done criteria.
+9. Map the design to standards, owning services, target user experiences, action playbooks, operational runbooks, evidence, runway phase, and applicable done criteria.
 
 Prefer one readable layered diagram plus focused flows. Avoid one diagram containing every control and interaction.
 
@@ -94,7 +94,7 @@ Prefer one readable layered diagram plus focused flows. Avoid one diagram contai
 5. For each finding, provide affected area, consequence, supporting guidance, and a concrete correction.
 6. End with assumptions, residual risks, and the smallest useful next actions.
 
-Use the review output contract in `references/output-contracts.md`. Do not give a maturity label when the evidence set is materially incomplete.
+Use the review output specification in `references/output-specifications.md`. Do not give a maturity label when the evidence set is materially incomplete.
 
 ## Generate
 
@@ -116,7 +116,7 @@ Preserve template sections unless they are explicitly out of scope. Replace blan
 
 ## Return Useful Results
 
-Follow `references/output-contracts.md`. Keep outputs concise but decision-ready:
+Follow `references/output-specifications.md`. Keep outputs concise but decision-ready:
 
 - Scope and outcome.
 - Architecture or assessment result.

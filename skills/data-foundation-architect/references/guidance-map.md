@@ -7,8 +7,7 @@ Resolve every path from the repository root. Load the smallest useful set.
 | Need | Guidance |
 | --- | --- |
 | Primary journey and model hierarchy | `docs/foundation/foundation-in-one-view.md` |
-| Definition and boundary | `docs/foundation/definition-and-scope.md` |
-| Decision principles | `docs/foundation/principles.md` |
+| Definition, boundary, and decision principles | `docs/foundation/definition-and-scope.md` |
 | Architecture orientation | `docs/architecture/overview.md` |
 | Design classification and service mapping | `docs/architecture/design-map.md` |
 
@@ -28,11 +27,12 @@ Resolve every path from the repository root. Load the smallest useful set.
 | --- | --- |
 | Architecture blueprint composition and planes | `docs/architecture/target-architecture.md` and `docs/architecture/design-map.md` |
 | Service-specific design | `docs/services/index.md`, `docs/architecture/design-map.md`, and the task-relevant service page under `docs/services/` |
-| Shared capability design | `docs/architecture/platform-foundation-design.md` and the task-relevant shared design under `docs/architecture/` |
+| Platform enablement design | `docs/architecture/platform-enablement-design.md` and the task-relevant shared design under `docs/architecture/` |
+| Platform governance, decision rights, and control placement | `docs/architecture/platform-governance-design.md` |
 | Platform architecture and integration composition | `docs/architecture/reference-architecture.md` and `docs/architecture/integration-design.md` |
 | Data layers and product types | `docs/architecture/data-foundation-model.md` |
 | Domain boundaries | `docs/architecture/data-domain-design.md` |
-| Product lifecycle | `docs/architecture/data-product-lifecycle-design.md` |
+| Product definition, design, and lifecycle | `docs/architecture/data-product-design.md` |
 | Portal and marketplace experience | `docs/services/data-service-portal.md` |
 | Semantic context and catalog | `docs/architecture/semantic-context-design.md` |
 | Unified access | `docs/architecture/unified-access-design.md` |

@@ -11,7 +11,7 @@ This reference solution applies the technology-neutral [Data Sharing Service](..
     This page is a selected implementation profile, not a mandatory platform choice. Adoption requires an approved [Technology Selection Record](../reference-solutions/technology-selection-template.md), recipient and client conformance tests, security and privacy review, legal approval where required, cost evidence, revocation proof, and an exit plan.
 
 !!! tip "Fast path"
-    **Decide:** [Executive Recommendation](#executive-recommendation) · **Design:** [Solution at a Glance](#solution-at-a-glance) and [Contract Model](#contract-model) · **Implement:** [Implementation Runway](#implementation-runway) · **Assure:** [Sharing Activation Gate](#sharing-activation-gate) and [Done Criteria](#done-criteria)
+    **Decide:** [Executive Recommendation](#executive-recommendation) · **Design:** [Solution at a Glance](#solution-at-a-glance) and [Data Contract Model](#data-contract-model) · **Implement:** [Implementation Runway](#implementation-runway) · **Assure:** [Sharing Activation Gate](#sharing-activation-gate) and [Done Criteria](#done-criteria)
 
 ## Executive Recommendation
 
@@ -38,7 +38,7 @@ flowchart TB
 
 Identity, policy, privacy, contract testing, telemetry, audit, and evidence controls apply across every numbered step. The sections below define the authority and enforcement points without adding crossing lines to the overview.
 
-## Contract Model
+## Data Contract Model
 
 | Artifact | Purpose | Authoritative owner | Databricks projection |
 | --- | --- | --- | --- |
@@ -67,7 +67,7 @@ flowchart TB
 | Binding to activation | Recipient owner and sharing owner | Unity Catalog plus conformance evidence | Package, identity, client, access and deny tests pass; recipient accepts. |
 | Activation to operation | Sharing owner | Observability and evidence store | Contract health, access, expiry, incidents and revocation remain observable. |
 
-### Contract State Flow
+### Data Contract State Flow
 
 | State | Entry evidence | Exit rule |
 | --- | --- | --- |
@@ -96,7 +96,7 @@ The Data Product Consumption Contract is a portable artifact in the contract reg
 | Lifecycle | Start, expiry, review frequency, suspension, revocation target, recipient deletion, evidence retention, and offboarding owner. |
 | Binding | Protocol and profile version, Unity Catalog share and recipient references, exposed aliases, client versions, and conformance evidence. |
 
-### Logical Contract Example
+### Logical Data Contract Example
 
 ```yaml
 apiVersion: data.foundation/v1alpha1
@@ -133,7 +133,7 @@ spec:
     recipientDeletionPeriod: P30D
 ```
 
-This is a logical enterprise extension example. The canonical artifact must validate against the pinned contract schema and preserve enterprise extensions during round-trip export and import.
+This is a logical enterprise extension example. The source artifact must validate against the pinned contract schema and preserve enterprise extensions during round-trip export and import.
 
 ## Delta Sharing Component Mapping
 
@@ -245,7 +245,7 @@ A Data Product Consumption Contract may activate for external sharing only when:
 - Export share, recipient, entitlement, package, contract, audit, usage, and lifecycle evidence on the retention schedule.
 - Avoid consumer dependence on provider-native catalog, schema, table, storage, or workspace names.
 - Define a fallback export or API profile for recipients whose required Delta or policy capabilities are unsupported.
-- Prove one sharing package can be recreated from canonical artifacts in a clean environment and revoked without manual repair.
+- Prove one sharing package can be recreated from portable source artifacts in a clean environment and revoked without manual repair.
 
 ## Implementation Runway
 
@@ -261,7 +261,7 @@ A Data Product Consumption Contract may activate for external sharing only when:
 - Build a minimized package, create share and recipient objects, and run independent client tests.
 - Prove audit, contract health, expiry, suspension, and revocation end to end.
 
-### Increment 3: Automate Contract-Driven Provisioning
+### Increment 3: Automate Data-Contract-Driven Provisioning
 
 - Generate deterministic plans and reconcile Unity Catalog share, recipient, object, alias, and entitlement state from approved artifacts.
 - Automate schema, compatibility, policy, freshness, client, expiry, and revocation tests.
@@ -288,7 +288,7 @@ A Data Product Consumption Contract may activate for external sharing only when:
 
 - Every share starts from a live product and references exact Data Product Creation and Data Product Consumption Contract versions.
 - Every active entitlement has an approved recipient, purpose, duration, and revocation target in the Data Product Consumption Contract.
-- Unity Catalog share and recipient objects are generated from and reconciled with canonical contract state.
+- Unity Catalog share and recipient objects are generated from and reconciled with authoritative contract state.
 - Packages use explicit allowlists and do not expose new provider fields automatically.
 - Databricks-to-Databricks, OIDC, or token profiles pass identity, client, policy, expiry, and revoke tests before use.
 - Product and sharing changes trigger compatibility analysis, recipient notice, migration, and evidence.

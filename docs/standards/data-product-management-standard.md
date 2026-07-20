@@ -4,11 +4,11 @@
 
 This standard defines how data products are created, governed, operated, changed, and retired. It makes data product management enforceable instead of informal.
 
-## Contract-Embedded Product Descriptor
+## Data-Contract-Embedded Product Descriptor
 
 Every live product must have an [Open Data Product Standard 1.0](https://bitol.io/announcing-odps-v1-0-0-building-the-language-of-data-products/) compatible descriptor embedded in the contract that publishes it. Source-aligned products use the Source System Ingestion Contract; aggregate and consumer-aligned products use the Data Product Creation Contract.
 
-The descriptor defines the product id, purpose, domain, owners, lifecycle state, input and output ports, SLOs, policies, support route, and authoritative metadata links. It shares the publishing contract's version, approval, lifecycle, compatibility decision, and immutable history. Catalog records and platform-native product objects are generated projections, not separate product definitions.
+The descriptor defines the product id, purpose, domain, owners, lifecycle state, input and output ports, SLOs, policies, support route, and authoritative metadata links. It shares the publishing data contract's version, approval, lifecycle, compatibility decision, and immutable history. Catalog records and platform-native product objects are generated projections, not separate product definitions.
 
 ## Mandatory Product Model
 
@@ -20,7 +20,7 @@ Reusability is part of this mandatory model, not a separate product type. Every 
 | --- | --- |
 | Ownership | Product owner, data steward, technical owner, support contact, and escalation path. |
 | Purpose | Clear business purpose, intended consumers, approved use cases, and out-of-scope use. |
-| Contract | Approved publishing contract with an embedded product descriptor, schema, semantics, quality rules, access policy, compatibility rules, and version. |
+| Data contract | Approved publishing data contract with an embedded product descriptor, schema, semantics, quality rules, access policy, compatibility rules, and version. |
 | Semantic context | Versioned product context with grain, concepts, metrics, relationships, valid uses, prohibited uses, limitations, and authoritative references. |
 | Classification | Sensitivity, privacy, confidentiality, regulatory, residency, and AI usage classification. |
 | Quality | Defined quality dimensions, thresholds, severity, owner, and remediation process. |
@@ -51,7 +51,7 @@ The product must demonstrate eight qualities adapted from the [Data Developer Pl
 | Understandable | Consumers can determine meaning, grain, time behavior, limitations, quality, examples, and correct usage without reverse-engineering implementation. | Contract, semantic context package, schema, metric definitions, sample-safe examples, limitations, consumer guidance. |
 | Natively accessible | Consumers use the product through interfaces suited to their normal tools and workload while remaining behind unified access and policy controls. | Approved SQL, API, event, file, semantic, feature, retrieval, or context port tested by a representative consumer. |
 | Trustworthy | The product proves authenticity, lineage, contract conformance, quality, freshness, availability, ownership, support and current operational health. | Passing tests, lineage, provenance, SLO status, product telemetry, incidents and support route. |
-| Interoperable | The product composes with other products and consumers through open, machine-readable artifacts and interfaces. | ODPS and ODCS validation, open interface definition, canonical ids, independent-client or import/export conformance result. |
+| Interoperable | The product composes with other products and consumers through open, machine-readable artifacts and interfaces. | ODPS and ODCS validation, open interface definition, stable ids, independent-client or import/export conformance result. |
 | Independent | The product has one clear purpose, accountable ownership, explicit dependencies, independently manageable lifecycle and value beyond one pipeline output. | Product brief, owner, ports, dependency inventory, workload, SLOs, support, usage and value measures. |
 | Secure | Human and machine access is authenticated, purpose-bound, least-privilege, enforceable, observable, expiring and revocable. | Classification, service and data policy, entitlement, obligations, allow and deny tests, audit and revocation evidence. |
 
@@ -84,7 +84,7 @@ The delivery path combines product thinking with self-service engineering. Each 
 | 7. Operate | Meet SLOs, support consumers and measure quality, usage, value and cost. | Product health, alerts, incident workflow, usage and cost attribution, consumer-impact analysis. | Review decisions, incidents, improvements, adoption and value evidence. |
 | 8. Evolve or retire | Change compatibly or remove the product without abandoning consumers. | Impact analysis, versioning, migration workflow, deprecation, access removal and evidence archive. | Migration completion, retired interfaces, revoked access and retained records. |
 
-The developer should declare product intent once in the publishing contract. The platform should generate or orchestrate catalog projections, provider-specific manifests, provisioning, tests, and evidence from the canonical contract and workload artifacts.
+The developer should declare product intent once in the publishing data contract. The platform should generate or orchestrate catalog projections, provider-specific manifests, provisioning, tests, and evidence from the authoritative data contract and workload artifacts.
 
 ## Product Go-Live Gates
 
@@ -100,7 +100,7 @@ A product cannot go live unless all mandatory gates pass.
 | Lineage gate | Source lineage and downstream dependency registration. |
 | Observability gate | Freshness, quality, availability, usage, incident, and cost telemetry. |
 | Documentation gate | Catalog entry, portal detail page, consumer guidance, change policy. |
-| Portability gate | Valid embedded product descriptor, canonical identifiers, open interface definitions, and successful contract export/import test. |
+| Portability gate | Valid embedded product descriptor, stable identifiers, open interface definitions, and successful contract export/import test. |
 | Product qualities gate | Evidence that discoverable, addressable, understandable, natively accessible, trustworthy, interoperable, independent and secure outcomes are met. |
 
 ## Portfolio Management
@@ -135,7 +135,7 @@ Data products should be managed as a portfolio, not as isolated datasets.
 - No product remains active without observable freshness and quality status.
 - No product remains live if ownership is missing or expired.
 - No domain team may create a competing ingestion or source-aligned ownership path; no foundation platform team may claim ownership of federated aggregate or consumer-aligned business products.
-- No live product may depend on a separate or vendor-native descriptor as its machine-readable definition; the descriptor must be embedded in the portable publishing contract.
+- No live product may depend on a separate or vendor-native descriptor as its machine-readable definition; the descriptor must be embedded in the portable publishing data contract.
 
 ## Minimum Portal Views
 
@@ -154,7 +154,7 @@ Portal views should follow the [Data Service Portal product detail standard](../
 
 ## Minimum Done Criteria
 
-- The publishing contract contains the complete product descriptor and validates against the approved open profile.
+- The publishing data contract contains the complete product descriptor and validates against the approved open profile.
 - Accountable product, stewardship, technical, support, and escalation ownership is active.
 - All mandatory product go-live gates pass for the exact product and contract version, or an approved exception has an owner and expiry.
 - Product ports, catalog projections, access controls, lineage, telemetry, support, rollback, and runtime bindings reconcile to the same stable identifiers.

@@ -16,14 +16,22 @@ The architecture exists to make five things explicit:
 
 ## Core Logic
 
-```mermaid
-flowchart LR
-    S["Sources"] --> F["Foundation services"] --> P["Trusted data products"] --> U["Analytics · applications · platforms · sharing · AI"]
-    C["Contracts · semantics · policy · identity · lifecycle"] -. "govern" .-> F
-    C -. "govern" .-> P
-    O["Lineage · quality · telemetry · operations"] -. "prove trust" .-> F
-    O -. "prove trust" .-> P
-```
+<div class="architecture-core-map" role="group" aria-label="Core architecture logic from source authority through foundation services and governed data products to purpose-bound use">
+  <div class="architecture-core-flow">
+    <a class="architecture-core-stage stage-source" href="../../services/data-ingestion-service/"><small>1 · Source authority</small><strong>Distributed sources</strong><span>Operational systems · files · events · APIs · external data</span></a>
+    <i aria-hidden="true">→</i>
+    <a class="architecture-core-stage stage-service" href="../../services/"><small>2 · Shared delivery</small><strong>Foundation services</strong><span>Ingest · create · consume · share · enable · observe · operate</span></a>
+    <i aria-hidden="true">→</i>
+    <a class="architecture-core-stage stage-product" href="../data-product-design/"><small>3 · Managed promise</small><strong>Governed data products</strong><span>Source-aligned · aggregate · consumer-aligned · stable product ports</span></a>
+    <i aria-hidden="true">→</i>
+    <a class="architecture-core-stage stage-use" href="../../services/data-consumption-service/"><small>4 · Purpose-bound value</small><strong>Consumers and AI</strong><span>Analytics · applications · platforms · partners · models · AI agents</span></a>
+  </div>
+  <div class="architecture-core-rails">
+    <a href="../platform-governance-design/"><small>Governs every boundary</small><strong>Ownership · contracts · semantic context · identity · policy · lifecycle</strong><span>Declares who decides, what is promised, which use is allowed, and where controls are enforced.</span></a>
+    <a href="../../services/data-observability-service/"><small>Proves trust continuously</small><strong>Lineage · quality · telemetry · SLOs · incidents · operations</strong><span>Compares actual service and product behavior with the published promise.</span></a>
+  </div>
+  <div class="architecture-core-rule"><strong>Core rule</strong><span>Services create and operate the reusable capability; data products carry the managed promise; governance controls every boundary; evidence shows whether the promise is true now.</span></div>
+</div>
 
 This is not a pipeline-only design. Contracts, policy, identity, semantics, lineage, and observability apply across the journey rather than appearing as final review steps.
 
@@ -49,7 +57,7 @@ Read the model from user intent to platform execution. Each layer has one primar
 | Governance and control | Make decisions consistent, enforceable, and explainable. | It defines and records control intent; services enforce it at real boundaries. |
 | Foundation services | Avoid rebuilding ingestion, product creation, access, sharing, and operations for every use case. | Services own reusable capability outcomes, not domain product meaning. |
 | Governed data products | Make data independently understandable, trustworthy, and reusable. | A table, pipeline, dashboard extract, or private model input is not automatically a product. |
-| Platform runtime | Execute the architecture reliably and at scale. | Selected technology implements the architecture; it does not define the canonical architecture contract. |
+| Platform runtime | Execute the architecture reliably and at scale. | Selected technology implements the architecture; it does not define the authoritative architecture contract. |
 
 ## Three Design Classes
 
@@ -79,29 +87,52 @@ See the [Data Foundation Model](data-foundation-model.md) for the ownership boun
 ## Architecture Principles
 
 1. **Product before platform object.** Design around a trusted product outcome, not a table, workspace, pipeline, or tool.
-2. **Contract at every material boundary.** Make promises versioned, testable, and visible to affected parties.
+2. **Contracts define the data promise.** At every material data handoff, make provider and consumer obligations for meaning, structure, quality, freshness, permitted use, change, and support versioned, testable, and visible.
 3. **One authority for each decision.** Catalogs, contracts, policies, lineage, semantics, and telemetry may reference each other but must not silently duplicate ownership.
 4. **Govern access independently from storage.** People, workloads, and agents use logical product interfaces with separate service and data authorization.
 5. **Trust requires current evidence.** Quality, freshness, lineage, usage, reliability, and incidents must be observable throughout product operation.
 6. **Every service is agentic by design.** Service specialist agents expose typed skills and collaborate through the Data Service AI Assistant without replacing deterministic service authority.
-7. **Contracts bound autonomy.** Published data contracts compile into policy inputs, tool scope, workflow gates, validation, and evidence; agents cannot infer wider permission.
+7. **Autonomy is explicitly bounded.** An agent may act only within its verified identity, declared purpose, approved skill and tool scope, risk policy, workflow gates, and revocation controls. Data contracts supply requirements, but policy and service authority decide whether an action is allowed and which evidence it must produce.
 8. **AI follows the same foundation rules.** Agents and models use governed products, declared purposes, bounded interfaces, evaluations, and traceable identities.
-9. **Technology remains replaceable.** Canonical meaning, policy, contracts, and evidence survive implementation changes.
+9. **Technology remains replaceable.** Authoritative meaning, policy, contracts, and evidence survive implementation changes.
+
+Principle 2 governs **what data is promised across a boundary**. Principle 7 governs **who or what may act on that promise, under which controls**.
 
 ## Architecture Views
 
-Use the smallest view that answers the current question.
+Do not read every architecture page in sequence. Start at the level of the decision, then move down only when more detail is required.
 
-| Question | View |
-| --- | --- |
-| What is inside the blueprint and which concerns are cross-cutting? | [Architecture Blueprint](target-architecture.md) |
-| What are the core product states, objects, ownership boundaries, and relationships? | [Data Foundation Model](data-foundation-model.md) |
-| Which service or shared capability owns this concern? | [Architecture Design Map](design-map.md) |
-| Which promise governs this boundary? | [Data Contract Design](data-contract-design.md) |
-| How do domain, lifecycle, semantics, access, and agentic use fit? | The relevant **Core Guidance** page in this section. |
-| How do services hand off state and recover from failure? | [Integration Design](integration-design.md) |
-| What does a foundation service provide and own? | [Services](../services/index.md) |
-| Why does a major direction exist? | The rationale and principles on the applicable architecture or service page. |
-| How can a selected technology implement the guidance? | **Reference Solutions**, after the technology-neutral decision is understood. |
+<div class="journey-sequence journey-sequence--compact" aria-label="Architecture view selection path">
+  <a class="journey-sequence-step" href="../target-architecture/"><span>1</span><strong>Compose</strong><p>See the complete foundation across six cooperating planes.</p><small>Architecture Blueprint → completeness and gaps</small></a>
+  <i class="journey-sequence-arrow" aria-hidden="true"></i>
+  <a class="journey-sequence-step" href="../data-foundation-model/"><span>2</span><strong>Define</strong><p>Understand product types, core objects, relationships, and ownership handoffs.</p><small>Data Foundation Model → shared conceptual language</small></a>
+  <i class="journey-sequence-arrow" aria-hidden="true"></i>
+  <a class="journey-sequence-step" href="../design-map/"><span>3</span><strong>Locate</strong><p>Classify the concern as service-specific, shared capability, or integration design.</p><small>Architecture Design Map → accountable design owner</small></a>
+  <i class="journey-sequence-arrow" aria-hidden="true"></i>
+  <a class="journey-sequence-step" href="../../services/"><span>4</span><strong>Resolve</strong><p>Open the detailed architecture or service page that owns the decision.</p><small>Core Guidance or Services → actionable design</small></a>
+  <i class="journey-sequence-arrow" aria-hidden="true"></i>
+  <a class="journey-sequence-step" href="../../reference-solutions/"><span>5</span><strong>Realize</strong><p>Map an approved technology choice to the technology-neutral design.</p><small>Reference Solutions → implementation profile</small></a>
+</div>
+
+### Route a Detailed Question
+
+| If the decision concerns | Use this authoritative view | Expected result |
+| --- | --- | --- |
+| Whether a complete user outcome works across services | [End-to-End Service Scenarios](../services/end-to-end-service-scenarios.md) | Accepted sequence, failure behavior, and evidence |
+| Which owner or record is authoritative for a decision | [Architecture Decision Process](../decisions/architecture-decision-process.md) | Decision level, authority, recording path, enforcement, and evidence |
+| Platform capabilities and runtime interactions | [Platform Architecture](reference-architecture.md) | Required capability and interface map |
+| Decision rights, controls, enforcement, or assurance | [Platform Governance Design](platform-governance-design.md) | Authority, control placement, and evidence |
+| A promise at a source, creation, or consumption boundary | [Data Contract Design](data-contract-design.md) | Contract type, parties, enforcement, and evidence |
+| Business accountability and product portfolio boundaries | [Data Domain Design](data-domain-design.md) | Domain ownership and adoption obligations |
+| Product definition, type, ports, lifecycle, or go-live | [Data Product Design](data-product-design.md) | Product boundary and lifecycle design |
+| Meaning, business context, catalog metadata, or graph projection | [Semantic and Context Design](semantic-context-design.md) | Authoritative semantic context package |
+| Identity, authorization, entitlement, and logical product access | [Unified Access Design](unified-access-design.md) | Governed access path above physical storage |
+| A capability reused by several foundation services | [Platform Enablement Design](platform-enablement-design.md) | Shared provider boundary and service interfaces |
+| Engineer self-service paths and paved delivery workflows | [Developer Experience Design](developer-experience-design.md) | Declarative developer journey and controls |
+| Agent skills, orchestration, autonomy, and human approval | [Agentic Data Service Design](agentic-data-foundation.md) | Bounded agent behavior and execution evidence |
+| State or failure crossing service boundaries | [Integration Design](integration-design.md) | Handoff, recovery, and end-to-end evidence design |
+| One service's user outcome, capability, interface, SLO, or support | [Services](../services/index.md) | Authoritative service-specific design |
+
+The [Information Graph](../foundation/information-graph.md#architecture-information-graph) page helps explore architecture relationships and terminology. It is a navigation view, not a separate source of architecture authority.
 
 <div class="read-next"><strong>Next:</strong> use the Architecture Blueprint for completeness or the Architecture Design Map to locate an owning design.</div>

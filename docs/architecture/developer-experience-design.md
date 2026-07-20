@@ -1,13 +1,17 @@
-# Data Product Developer Experience
+# Developer Experience Design
 
-The Data Product Developer Experience gives engineers one declarative, self-service path from product intent to a running, observable data product. It complements the Data Service Portal with API, CLI, repository, and approved agent-skill interfaces backed by the same service contracts.
+Developer Experience Design gives engineers one declarative, self-service path from product intent to a running, observable data product. It complements the Data Service Portal with API, CLI, repository, and approved agent-skill interfaces backed by the same service interfaces.
+
+## Design Reasoning
+
+<div class="design-reasoning"><div><small>Context</small><p>Engineers otherwise navigate fragmented tools, manual controls, and channel-specific delivery paths.</p></div><div><small>Forces</small><p>Fast self-service must coexist with governance, repeatability, environment isolation, and channel parity.</p></div><div><small>Decision</small><p>Use declarative artifacts and one service-backed workflow across portal, CLI, API, repository automation, and approved skills.</p></div><div><small>Consequences</small><p>The paved path accelerates compliant delivery, but templates, compatibility, feedback, and exceptions need active product ownership.</p></div><div><small>Verification</small><p>Prove equivalent plan, test, promote, observe, and rollback outcomes through every supported channel.</p></div></div>
 
 ## Experience Model
 
 ```mermaid
 flowchart LR
     DEV["Data Developer"] --> CHANNEL["Portal · CLI · API · Agent Skill"]
-    CHANNEL --> SPEC["Publishing Contract + Workload Spec"]
+    CHANNEL --> SPEC["Publishing Data Contract + Workload Spec"]
     SPEC --> PLAN["Validate · Policy Check · Plan · Preview"]
     PLAN --> ENV["Isolated Environment"]
     ENV --> TEST["Build · Test · Observe"]
@@ -36,17 +40,17 @@ flowchart LR
 
 | Artifact | Owns | Must Reference |
 | --- | --- | --- |
-| Publishing contract | Product descriptor, schema, semantics, quality, compatibility, policies, ports, lifecycle, SLOs, and support. | Inputs, interfaces, workload, authoritative metadata, and applicable consumers. |
+| Publishing data contract | Product descriptor, schema, semantics, quality, compatibility, policies, ports, lifecycle, SLOs, and support. | Inputs, interfaces, workload, authoritative metadata, and applicable consumers. |
 | Workload specification | Code, inputs, outputs, runtime needs, environments, deployment, rollback. | Product and contract versions, policies, SLOs, telemetry, and resources. |
 | Release record | Immutable deployed version and evidence. | Product, contract, workload, source revision, environment, test results, approvals, and rollback target. |
 
-The publishing contract embeds the ODPS-compatible product descriptor and owns one version and lifecycle. The workload specification and release record remain separate because runtime intent and deployment evidence change for different reasons. Stable identifiers bind all three into one release.
+The publishing data contract embeds the ODPS-compatible product descriptor and owns one version and lifecycle. The workload specification and release record remain separate because runtime intent and deployment evidence change for different reasons. Stable identifiers bind all three into one release.
 
 ## Channel Parity
 
 Portal, CLI, API, and agent skills must:
 
-- Invoke the same versioned foundation service contracts.
+- Invoke the same versioned foundation service interfaces.
 - Apply the same authenticated identity, delegated authority, policy, and approval path.
 - Produce the same plan, task state, evidence, telemetry, and receipt.
 - Avoid channel-specific product or runtime state.

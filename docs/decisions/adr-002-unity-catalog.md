@@ -4,17 +4,27 @@
 
 Accepted — 2026-07-15
 
+## Decision Owner
+
+Data Platform Architecture
+
 ## Context
 
 The foundation needs one technical inventory and authorization surface for Databricks-managed data and AI assets. Multiple independently editable catalogs would fragment identifiers, grants, audit, lineage, discovery, and lifecycle reconciliation.
 
-The technical catalog must not become the only authority for product meaning, contracts, semantic context, policy, or telemetry. Those artifacts need portable canonical representations and may span platforms beyond Databricks.
+The technical catalog must not become the only authority for product meaning, data contracts, semantic context, policy, or telemetry. Those artifacts need portable source representations and may span platforms beyond Databricks.
+
+## Alternatives Considered
+
+- Operate several independently authoritative technical catalogs.
+- Make Unity Catalog authoritative for technical assets and all business-control metadata.
+- Use Unity Catalog as the technical catalog and authorization standard while retaining portable authorities for product meaning and controls.
 
 ## Decision
 
 Use Unity Catalog as the standard technical catalog and native data-authorization surface for foundation-managed data and AI assets.
 
-Register or project tables, views, volumes, functions, models, features, and governed external assets into Unity Catalog using stable foundation identifiers. Keep product descriptors inside their publishing contracts and keep contract, semantic, policy, and telemetry authorities portable. Project only the identifiers and selected state needed for discovery, authorization, lineage, and reconciliation.
+Register or project tables, views, volumes, functions, models, features, and governed external assets into Unity Catalog using stable foundation identifiers. Keep product descriptors inside their publishing data contracts and keep data-contract, semantic, policy, and telemetry authorities portable. Project only the identifiers and selected state needed for discovery, authorization, lineage, and reconciliation.
 
 ## Consequences
 
@@ -36,7 +46,7 @@ Register or project tables, views, volumes, functions, models, features, and gov
 
 - The [Data Catalog and Storage Standard](../standards/catalog-storage-standard.md) governs technical registration and storage bindings.
 - The [Data Contract Standard](../standards/data-contract-standard.md) preserves portable product and contract authority.
-- A non-Unity technical catalog requires an approved exception with canonical export, identifier preservation, authorization equivalence, and migration evidence.
+- A non-Unity technical catalog requires an approved exception with tested export, identifier preservation, authorization equivalence, and migration evidence.
 
 ## Review Date
 

@@ -22,7 +22,7 @@ It exists to give domain teams freedom over business meaning without forcing eac
 | --- | --- |
 | Primary planes | Data and Control |
 | Supporting planes | AI, Security, and Observability |
-| Shared capabilities | Data Product Creation Contract, agentic foundation, domain and lifecycle models, semantic context, developer experience, catalog, governed product storage, policy, lineage, and telemetry. |
+| Supporting designs and capabilities | [Data Product Design](../architecture/data-product-design.md), [Data Contract Design](../architecture/data-contract-design.md), [Data Domain Design](../architecture/data-domain-design.md), [Semantic and Context Design](../architecture/semantic-context-design.md), [Developer Experience Design](../architecture/developer-experience-design.md), [Platform Enablement Design](../architecture/platform-enablement-design.md), [Platform Governance Design](../architecture/platform-governance-design.md), and [Agentic Data Service Design](../architecture/agentic-data-foundation.md) supply lifecycle, contract, domain, context, catalog, storage, policy, lineage, and telemetry capabilities. |
 | Integration flows | Propose product, provision workspace, build, validate, compatibility review, go-live, publish ports, change, rollback, and retire. |
 
 ## Service Architecture
@@ -44,7 +44,7 @@ Product code, Data Product Creation Contract, embedded descriptor, semantic cont
 
 ## Agentic Interaction
 
-| Concern | Service Agent Contract |
+| Concern | Agent Operating Specification |
 | --- | --- |
 | Specialist role | Product creation agent that prepares designs and workloads, builds, tests, evaluates readiness, and operates approved releases. |
 | Declarative boundary | Published Data Product Creation Contract, product workload, accepted inputs, domain ownership, policy, and environment profile. |
@@ -62,9 +62,9 @@ Product code, Data Product Creation Contract, embedded descriptor, semantic cont
 | Lifecycle | Go-live and release | Only approved product versions publish stable ports and current evidence. |
 | Portfolio | Change, deprecation, and retirement | Consumer impact, migration, access removal, archive, and retained evidence are managed. |
 
-## Contracts and Interfaces
+## Data Contracts and Interfaces
 
-| Interface | Purpose | Required Contract |
+| Interface | Purpose | Required Definition |
 | --- | --- | --- |
 | Product workspace API | Create or update a product workspace and environments. | Product id, domain, owners, pattern, inputs, classification, environment, policy, and cost context. |
 | Product workload | Declare code, resources, dependencies, environments, tests, deployment, telemetry, and rollback. | Data Product Workload specification linked to the creation contract. |
@@ -78,7 +78,7 @@ Product code, Data Product Creation Contract, embedded descriptor, semantic cont
 | --- | --- | --- |
 | Product owner and domain team | Purpose, semantics, input selection, quality acceptance, lifecycle, support, and value. | Workspace, tests, evidence, release candidate, ports, and current health. |
 | Platform Enablement Service | Workspace, storage, compute, catalog, identity, policy, deployment, secret, and evidence resources. | Typed workload and resource intent, owner, purpose, environment, lifecycle, and deprovisioning plan. |
-| Contract, catalog, semantic, policy, and lineage authorities | Canonical ids, standards, compatibility, classification, policy, definitions, and dependencies. | Product and contract versions, assets, semantic context, lineage, test results, and lifecycle state. |
+| Contract, catalog, semantic, policy, and lineage authorities | Authoritative ids, standards, compatibility, classification, policy, definitions, and dependencies. | Product and contract versions, assets, semantic context, lineage, test results, and lifecycle state. |
 | Consumption and Sharing Services | Port requirements, consumer purpose, channel constraints, and usage feedback. | Live stable product ports, compatibility, SLO, policy, support, and deprecation information. |
 | Observability and Operations | SLOs, alerts, release, incident, change, runbook, recovery, and improvement workflows. | Build, test, release, quality, lineage, health, usage, cost, failure, and rollback evidence. |
 
@@ -87,7 +87,7 @@ Product code, Data Product Creation Contract, embedded descriptor, semantic cont
 | Control | Required Evidence |
 | --- | --- |
 | Every product has an owner, steward, domain, purpose, support route, and lifecycle. | Product registry and accepted ownership record. |
-| Product descriptor is embedded in the approved creation contract. | Valid canonical artifact, compatibility result, approval, and immutable version. |
+| Product descriptor is embedded in the approved creation contract. | Valid source artifact, compatibility result, approval, and immutable version. |
 | Go-live is blocked on mandatory test or control failure. | Gate results, policy decisions, exception where allowed, approvers, and release receipt. |
 | Inputs and outputs are reproducible and traceable. | Pinned input versions, code, workload, environment, lineage, build, and output identity. |
 | Change and retirement protect consumers. | Impact analysis, subscribers, migration window, deprecation events, access removal, archive, and evidence retention. |
@@ -101,14 +101,16 @@ Product code, Data Product Creation Contract, embedded descriptor, semantic cont
 
 ## Reference Solutions
 
-[Data Product Creation Design](../reference-solutions/data-product-creation-design.md) maps this service to Databricks workspaces, Declarative Automation Bundles, Unity Catalog, and Delta Lake. It is a selected reference profile; canonical product and contract meaning remain provider-independent.
+[Data Product Creation Design](../reference-solutions/data-product-creation-design.md) maps this service to Databricks workspaces, Declarative Automation Bundles, Unity Catalog, and Delta Lake. It is a selected reference profile; authoritative product and contract meaning remain provider-independent.
 
-## Done Criteria
+## Target User Experience
 
-- A domain team creates a product through a supported workspace and workload without bespoke platform setup.
-- Product contract, descriptor, semantics, tests, lineage, policy, release, ports, and support are versioned and linked.
-- Mandatory go-live gates fail closed and approved exceptions expire.
-- Consumers bind to stable logical ports rather than workspace, table path, or provider credentials.
-- Change, rollback, deprecation, retirement, and recovery are exercised with consumer-impact evidence.
-- The product creation agent preserves contract, workload, policy, and environment scope, while go-live and accepted exceptions remain independently controlled.
-- Product health, usage, cost, value, and support evidence are visible to owners.
+Use each row as an end-to-end acceptance scenario for product design and engineering validation.
+
+| User and Intent | User Action | Required Service Behavior | Observable Result |
+| --- | --- | --- | --- |
+| Domain team starts a product. | Declare purpose, consumers, owner, inputs, output promise, semantics, and workload intent. | Create a supported workspace and product skeleton, validate required contracts, and bind shared controls without bespoke platform setup. | The team receives a buildable product definition, environment, backlog, missing decisions, and clear ownership. |
+| Producer develops and tests. | Implement transformations and run contract, quality, semantic, lineage, security, workload, and recovery tests. | Execute standard test suites, retain evidence by product version, and explain failures and affected consumers. | The producer sees readiness by gate and can resolve defects before requesting go-live. |
+| Product owner requests go-live. | Review evidence, impact, support, value, and exceptions and submit the release. | Evaluate mandatory gates independently, identify decision owners, fail closed, and time-limit approved exceptions. | The owner sees what passed, what is blocked, who must decide, and the resulting immutable go-live record. |
+| Consumer adopts the product. | Discover and bind to a logical product port. | Publish stable identity, contract, meaning, quality, health, policy, support, and change terms without exposing workspace or storage details. | The consumer can use the product without provider-specific knowledge or credentials. |
+| Producer changes or retires the product. | Propose a version, preview impact, release, roll back, deprecate, or retire. | Classify compatibility, notify consumers, preserve coexistence and recovery, and retain lifecycle evidence. | Change is predictable, reversible where required, and visible to every affected consumer. |

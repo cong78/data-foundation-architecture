@@ -30,13 +30,13 @@ skills/data-foundation-architect/
 └── assets/
 ```
 
-`SKILL.md` contains the runtime-neutral operating workflow. `agents/openai.yaml` provides Skill Creator-compatible UI metadata. `manifest.json` defines capabilities, side effects, authorization, data policy, reliability, approvals, telemetry, and tests. JSON schemas define assessment and task contracts. The guidance map points to authoritative pages under `docs/`, including the five-stage journey, nine services, portal marketplace, and architecture-to-delivery traceability.
+`SKILL.md` contains the runtime-neutral operating workflow. `agents/openai.yaml` provides Skill Creator-compatible UI metadata. `manifest.json` defines capabilities, side effects, authorization, data policy, reliability, approvals, telemetry, and tests. JSON schemas define assessment inputs and delegated task envelopes. The guidance map points to authoritative pages under `docs/`, including the five-stage journey, nine services, portal marketplace, and architecture-to-delivery traceability.
 
 ## Install the Skill
 
 Install the complete `skills/data-foundation-architect/` directory, not only `SKILL.md`; its manifest, references, schemas, scripts, and assets are part of the package.
 
-Repository-scoped installation is recommended because the skill resolves its authoritative guidance from this MkDocs repository. Run the commands below from the repository root. A symbolic link keeps one canonical package, so updates under `skills/` are immediately available to the agent tool.
+Repository-scoped installation is recommended because the skill resolves its authoritative guidance from this MkDocs repository. Run the commands below from the repository root. A symbolic link keeps one shared package, so updates under `skills/` are immediately available to the agent tool.
 
 === "OpenAI Codex"
 
@@ -119,7 +119,7 @@ An agent platform integrates the skill through a small adapter:
 4. Execute bundled scripts in an isolated runtime with explicit input and output schemas.
 5. Apply platform identity, policy, approval, budget, and telemetry controls outside prompt text.
 
-The package does not require a specific model provider, agent framework, tool protocol, or prompt syntax. MCP, A2A, HTTP APIs, function tools, or native runtime adapters may expose it without changing the skill contract.
+The package does not require a specific model provider, agent framework, tool protocol, or prompt syntax. MCP, A2A, HTTP APIs, function tools, or native runtime adapters may expose it without changing the skill specification.
 
 ## Example Invocations
 

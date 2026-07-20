@@ -39,7 +39,7 @@ def main() -> int:
         skill_dir / "agents/openai.yaml",
         skill_dir / "references/guidance-map.md",
         skill_dir / "references/evidence-rules.md",
-        skill_dir / "references/output-contracts.md",
+        skill_dir / "references/output-specifications.md",
         skill_dir / "scripts/validate_examples.py",
         skill_dir / "schemas/domain-assessment-input.schema.json",
         skill_dir / "schemas/domain-assessment-output.schema.json",

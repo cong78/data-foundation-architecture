@@ -156,7 +156,7 @@ class GuidanceIndex:
         return hits[:top_k]
 
     def definition(self, term: str) -> tuple[str, str] | None:
-        glossary = self.repository_root / "docs" / "foundation" / "glossary.md"
+        glossary = self.repository_root / "docs" / "foundation" / "information-graph.md"
         requested = clean_markdown(term).casefold()
         for line in glossary.read_text(encoding="utf-8").splitlines():
             if not line.startswith("|"):

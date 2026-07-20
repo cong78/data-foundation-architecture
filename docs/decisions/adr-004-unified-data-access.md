@@ -4,11 +4,21 @@
 
 Accepted — 2026-07-15
 
+## Decision Owner
+
+Data Access Architecture
+
 ## Context
 
 Consumers include named users, applications, platforms, external recipients, agents, and models. They need SQL, API, event, file, feature, retrieval, and sharing interfaces across distributed physical stores.
 
-Direct physical-storage access exposes implementation details, bypasses product contracts, mixes service authorization with data entitlement, and makes purpose, obligations, usage, change, and revocation difficult to govern consistently.
+Direct physical-storage access exposes implementation details, bypasses data contracts, mixes service authorization with data entitlement, and makes purpose, obligations, usage, change, and revocation difficult to govern consistently.
+
+## Alternatives Considered
+
+- Let consumers connect directly to physical storage and provider-native permissions.
+- Route every workload through one centralized query and copying tier.
+- Use stable logical product ports with governed runtime adapters above distributed storage.
 
 ## Decision
 

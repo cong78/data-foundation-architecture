@@ -20,29 +20,44 @@ Implementation content is deliberately separated:
 | Intent | Start here | Do not start by... |
 | --- | --- | --- |
 | Understand the whole foundation | [Foundation in One View](foundation-in-one-view.md) | Reading every architecture page in menu order. |
+| Find a page, relationship, or definition | [Information Graph](information-graph.md) | Treating the menu order as the only relationship between pages. |
 | Complete a task | [Action Playbooks](../playbooks/index.md) | Assembling steps from several standards. |
-| Make an architecture decision | [Architecture Overview](../architecture/overview.md) and [Design Principles](principles.md) | Selecting technology before defining the boundary. |
-| Understand a platform capability | [Services Overview](../services/index.md) | Treating a reference solution as the service contract. |
+| Make an architecture decision | [Architecture Decision Process](../decisions/architecture-decision-process.md) and [Foundation Principles](definition-and-scope.md#design-principles) | Selecting technology before defining the boundary or authority. |
+| Define or review a data product | [Data Product Design](../architecture/data-product-design.md) | Treating a table, pipeline, catalog entry, or API as a complete product. |
+| Understand a platform capability | [Services Overview](../services/index.md) | Treating a reference solution as the service definition. |
 | Verify a mandatory rule | [Architecture Decision Policy](../decisions/architecture-decision-policy.md) and [Standards Overview](../standards/index.md) | Relying on a diagram or summary sentence. |
-| Apply Databricks or Grafana | [Reference Solutions](../reference-solutions/index.md) under Runbooks | Copying a vendor pattern without the technology-neutral contract. |
+| Apply Databricks or Grafana | [Reference Solutions](../reference-solutions/index.md) under Runbooks | Copying a vendor pattern without the technology-neutral design. |
 | Trace architecture into an owned capability | [Architecture to Delivery](architecture-to-delivery.md) | Treating architecture, service delivery, and operation as separate concerns. |
 | Plan adoption | [Runway](../runway.md) and [Maturity Assessment](../assessments/data-foundation-maturity-assessment.md) | Launching all components at once. |
 | Record delivery evidence | [Reusable reference records](../reference-solutions/index.md#reusable-reference-records) | Keeping approval and evidence only in presentation material. |
+| Understand the delivery library | [Runbooks Overview](../runbooks/index.md) | Assuming every item under Runbooks is an incident procedure. |
 
-## Content Contracts
+## Choose an Action
+
+| I need to... | Use this playbook | Completion outcome |
+| --- | --- | --- |
+| Establish a domain boundary | [Onboard a Data Domain](../playbooks/onboard-data-domain.md) | Registered, accountable, enabled domain. |
+| Bring in a source | [Onboard a Source](../playbooks/onboard-source.md) | Validated source-aligned product and handoff. |
+| Build or change a product | [Create or Change a Data Product](../playbooks/create-change-data-product.md) | Go-live-ready product with complete evidence. |
+| Decide whether a product may launch | [Approve Product Go-Live](../playbooks/approve-product-go-live.md) | Explicit approve, reject, or expiring exception decision. |
+| Use a product | [Consume a Data Product](../playbooks/consume-data-product.md) | Purpose-bound access through a governed port. |
+| Exchange data externally | [Share a Data Product](../playbooks/share-data-product.md) | Minimized, expiring, observable, revocable exchange. |
+| Support or improve a live capability | [Operate a Service or Product](../playbooks/operate-service-product.md) | Restored or improved service with retained evidence. |
+
+## Content Structure
 
 | Content type | It answers | Reader action |
 | --- | --- | --- |
 | Definition and principles | Why, scope, boundary, and decision rules. | Align before design. |
 | Architecture | What exists, where it sits, and how it interacts. | Make or review a design decision. |
-| Service | What reusable capability the foundation provides and owns. | Design or consume a service contract. |
+| Service | What reusable capability the foundation provides and owns. | Design or consume a service definition. |
 | Playbook | Who does what, in which order, with which evidence. | Complete a task. |
 | Standard | What is mandatory, how it is expressed, executed, and evidenced. | Implement or test a control. |
 | Reference solution | How a selected technology can implement the architecture and which decisions and evidence must be retained. | Assess a profile, adapt it, and complete its reference record. |
 | Runbook | How an authorized operator diagnoses, contains, recovers, validates, and escalates a known condition. | Operate and exercise a live capability. |
 | Runway and assessment | What to build next and how maturity is proven. | Prioritize adoption. |
 
-## Rationale-First Page Contract
+## Rationale-First Page Structure
 
 Core architecture and service guidance should make these elements easy to find. A page may combine sections when the answer is short, but it should not omit the reasoning.
 
@@ -58,7 +73,7 @@ Core architecture and service guidance should make these elements easy to find. 
 
 Detailed APIs, schemas, deployment steps, product-specific configuration, and vendor mechanics belong in standards, delivery assets, or reference solutions unless they are essential to explaining a boundary.
 
-Design pages depend only on published architecture, service contracts, and standards. Historical decision records are maintained independently and may explain how guidance evolved, but they are not prerequisites for interpreting or implementing the current design.
+Design pages depend only on published architecture, service definitions, and standards. Historical decision records are maintained independently and may explain how guidance evolved, but they are not prerequisites for interpreting or implementing the current design.
 
 ## Reading Rule
 

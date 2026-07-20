@@ -11,11 +11,11 @@ The architecture is strong in scope, product governance, contract lifecycle, AI 
 | Area | Current Position | Industry-Aligned Improvement |
 | --- | --- | --- |
 | Service model | Strong | Keep the nine reusable services and six architecture planes. They form a clear capability and completeness model. |
-| Data contracts | Strong intent | Use ODCS as the canonical artifact; generate platform schemas from it; test round-trip portability. |
-| Data products | Strong lifecycle | Embed an ODPS-compatible machine-readable descriptor and explicit input/output ports in the publishing contract. |
+| Data contracts | Strong intent | Use ODCS as the source artifact; generate platform schemas from it; test round-trip portability. |
+| Data products | Strong lifecycle | Embed an ODPS-compatible machine-readable descriptor and explicit input/output ports in the publishing data contract. |
 | Catalog | Partial | Publish a DCAT 3 exchange profile so products remain discoverable across catalogs. |
 | APIs and events | Partial | Require OpenAPI for synchronous APIs and AsyncAPI plus CloudEvents for event interfaces. |
-| Lineage | Partial | Standardize runtime lineage on OpenLineage and map cross-company provenance to PROV-O when needed. |
+| Lineage | Partial | Define a portable lineage exchange profile and map cross-company provenance to PROV-O when needed. |
 | Observability | Strong foundation | Align with published OpenTelemetry conventions first; govern custom `data.*` attributes through a versioned registry. |
 | Storage and query | Technology-neutral | Add open interface profiles such as Iceberg REST Catalog, Delta Sharing, and Arrow Flight SQL where applicable. |
 | Identity and policy | Strong control intent | Separate authentication, policy decision, and enforcement; support federated workload identity for cross-platform use. |
@@ -34,10 +34,10 @@ This architecture is broader than the DDP specification because it also defines 
 | Unified self-service platform | Strong | Portal journeys compose shared services and authoritative systems. | Ensure APIs and CLI offer the same capabilities as the portal. |
 | Control and execution separation | Strong | Control and data planes are explicitly separated. | Define deployment contracts between control services and runtimes. |
 | Developer plane | Partial | Product factory and workspace patterns exist, but are distributed across guidance. | Establish a named Data Product Developer Workspace capability. |
-| Declarative workload specification | Gap | Publishing contracts, including embedded product descriptors, are declarative, but runtime intent is not unified. | Add one versioned workload specification linking product, contract, code, resources, policy, SLOs, and environments. |
+| Declarative workload specification | Gap | Publishing data contracts, including embedded product descriptors, are declarative, but runtime intent is not unified. | Add one versioned workload specification linking product, data contract, code, resources, policy, SLOs, and environments. |
 | Configuration and environment management | Partial | Platform runtime is defined; environment lifecycle is not explicit. | Standardize ephemeral development, test, and production promotion with configuration inheritance. |
 | Deployment and rollback | Partial | Go-live gates and release controls exist. | Define automated deployment, progressive delivery, rollback, and evidence capture. |
-| API-first and CLI-first development | Partial | Stable service APIs are required; CLI parity is not explicit. | Require portal, API, CLI, and agent skills to invoke the same service contracts. |
+| API-first and CLI-first development | Partial | Stable service APIs are required; CLI parity is not explicit. | Require portal, API, CLI, and agent skills to invoke the same service interfaces. |
 | Composable resource abstractions | Partial | Reusable services and architecture building blocks exist. | Define a small portable resource model for workload, connector, compute, storage, secret, policy, and service endpoint. |
 | Experimentation and fail-safe operation | Gap | Agent safety and service reliability are covered, but product sandboxes are weak. | Add isolated workspaces, preview environments, test data controls, failure recovery, and rollback drills. |
 | Hybrid and multi-tenant activation | Partial | Portability and federated identity are covered. | Make tenant, region, environment, and execution target explicit in workload contracts. |
@@ -61,19 +61,19 @@ The architecture blueprint therefore separates four concerns:
 | Semantic layer | Product meaning, contract, policy intent, ownership, quality, and SLOs. |
 | Interface layer | Open API, event, table, file, query, lineage, telemetry, and metadata protocols. |
 | Runtime layer | Replaceable storage, compute, catalog, workflow, and observability implementations. |
-| Adapter layer | Vendor integration and optimization without changing canonical semantics. |
+| Adapter layer | Vendor integration and optimization without changing authoritative semantics. |
 
 ## Priority Improvements
 
 | Priority | Change | Acceptance Test |
 | --- | --- | --- |
-| Now | Adopt the Open Core Profile and canonical identifiers. | One product exports and imports without losing required meaning. |
-| Now | Make the ODCS publishing contract and embedded ODPS-compatible descriptor part of product go-live. | CI validates the single contract artifact against both profiles and blocks incompatible changes. |
+| Now | Adopt the Open Core Profile and stable identifiers. | One product exports and imports without losing required meaning. |
+| Now | Make the ODCS publishing data contract and embedded ODPS-compatible descriptor part of product go-live. | CI validates the single data-contract artifact against both profiles and blocks incompatible changes. |
 | Now | Define a declarative data-product workload specification. | One file links product, contract, code, resources, policies, SLOs, environments, and deployment target. |
-| Now | Establish portal, API, CLI, and agent-skill parity. | The same product workflow can be executed through each channel using one service contract and policy path. |
+| Now | Establish portal, API, CLI, and agent-skill parity. | The same product workflow can be executed through each channel using one service interface and policy path. |
 | Next | Add developer workspaces and environment promotion. | A team creates an isolated workspace, previews changes, promotes a release, and destroys the environment without a platform ticket. |
 | Next | Add deployment rollback and recovery evidence. | A failed product release rolls back product code, configuration, and affected runtime resources while preserving audit evidence. |
-| Next | Add DCAT, OpenLineage, OpenAPI, AsyncAPI, CloudEvents, and OTLP adapters. | Independent reference consumers accept each exported interface. |
+| Next | Add DCAT, OpenAPI, AsyncAPI, CloudEvents, OTLP, and portable lineage adapters. | Independent reference consumers accept each exported interface. |
 | Next | Create a versioned semantic-convention registry for `data.*` telemetry. | Two runtimes emit equivalent product health signals. |
 | Next | Prove one platform migration and one partner-sharing scenario. | The consumer does not need a provider-specific SDK for the open path. |
 | Later | Add portable policy bundles and cross-domain identity federation. | Authorization behavior remains equivalent across two enforcement points. |

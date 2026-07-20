@@ -36,8 +36,10 @@ extra_javascript:
   - https://cdn.jsdelivr.net/npm/vega@5
   - https://cdn.jsdelivr.net/npm/vega-lite@5
   - https://cdn.jsdelivr.net/npm/vega-embed@6
+  - https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js
   - https://cdn.jsdelivr.net/npm/mermaid@11.12.0/dist/mermaid.min.js
   - assets/javascripts/interactive.js
+  - assets/javascripts/guidance-graph.js
 
 markdown_extensions:
   - admonition
@@ -77,11 +79,10 @@ nav:
   - Start Here:
       - Overview: index.md
       - Foundation in One View: foundation/foundation-in-one-view.md
+      - Definition and Principles: foundation/definition-and-scope.md
       - Architecture to Delivery: foundation/architecture-to-delivery.md
       - How to Use This Guide: foundation/guidance-model.md
-      - Definition and Scope: foundation/definition-and-scope.md
-      - Design Principles: foundation/principles.md
-      - Glossary: foundation/glossary.md
+      - Information Graph: foundation/information-graph.md
   - Architecture:
       - Overview: architecture/overview.md
       - Architecture Blueprint: architecture/target-architecture.md
@@ -91,16 +92,18 @@ nav:
           - Platform Architecture Design:
               - Platform Architecture: architecture/reference-architecture.md
               - Integration Design: architecture/integration-design.md
+          - Platform Governance Design: architecture/platform-governance-design.md
           - Data Contract Design: architecture/data-contract-design.md
           - Data Domain Design: architecture/data-domain-design.md
-          - Data Product Lifecycle Design: architecture/data-product-lifecycle-design.md
+          - Data Product Design: architecture/data-product-design.md
           - Semantic and Context Design: architecture/semantic-context-design.md
           - Unified Access Design: architecture/unified-access-design.md
-          - Shared Platform Capabilities: architecture/platform-foundation-design.md
-          - Data Product Developer Experience: architecture/data-product-developer-experience.md
+          - Platform Enablement Design: architecture/platform-enablement-design.md
+          - Developer Experience Design: architecture/developer-experience-design.md
           - Agentic Data Service Design: architecture/agentic-data-foundation.md
   - Services:
       - Services Overview: services/index.md
+      - End-to-End Service Scenarios: services/end-to-end-service-scenarios.md
       - Data Service Portal: services/data-service-portal.md
       - Data Service AI Assistant: services/data-service-ai-assistant.md
       - Data Ingestion Service: services/data-ingestion-service.md
@@ -123,6 +126,7 @@ nav:
       - Agent, Skill and LLM Standard: standards/agent-skill-llm-standard.md
       - Technology Selection Standard: standards/technology-selection-standard.md
   - Decisions:
+      - Architecture Decision Process: decisions/architecture-decision-process.md
       - Architecture Decision Policy: decisions/architecture-decision-policy.md
       - Decision Register: implementation/architecture-decisions.md
       - ADR-001 Central and Federated Ownership: decisions/adr-001-central-federated-ownership.md
@@ -130,11 +134,6 @@ nav:
       - ADR-003 Delta Storage: decisions/adr-003-delta-storage.md
       - ADR-004 Unified Data Access: decisions/adr-004-unified-data-access.md
       - ADR-005 Observability Platforms: decisions/adr-005-observability-platforms.md
-  - Governance:
-      - Governance Overview: governance/index.md
-      - Governance Model: governance/governance-model.md
-      - Security and Compliance: governance/security-compliance.md
-      - Operating Model: governance/operating-model.md
   - Runbooks:
       - Runbooks Overview: runbooks/index.md
       - Action Playbooks:
