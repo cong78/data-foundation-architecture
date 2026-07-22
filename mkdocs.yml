@@ -78,15 +78,15 @@ plugins:
 nav:
   - Start Here:
       - Overview: index.md
+      - How to Use This Guide: foundation/guidance-model.md
       - Foundation in One View: foundation/foundation-in-one-view.md
       - Definition and Principles: foundation/definition-and-scope.md
-      - Architecture to Delivery: foundation/architecture-to-delivery.md
-      - How to Use This Guide: foundation/guidance-model.md
       - Information Graph: foundation/information-graph.md
   - Architecture:
       - Overview: architecture/overview.md
       - Architecture Blueprint: architecture/target-architecture.md
       - Data Foundation Model: architecture/data-foundation-model.md
+      - Architecture to Delivery: architecture/architecture-to-delivery.md
       - Architecture Design Map: architecture/design-map.md
       - Core Guidance:
           - Platform Architecture Design:
@@ -129,11 +129,11 @@ nav:
       - Architecture Decision Process: decisions/architecture-decision-process.md
       - Architecture Decision Policy: decisions/architecture-decision-policy.md
       - Decision Register: implementation/architecture-decisions.md
-      - ADR-001 Central and Federated Ownership: decisions/adr-001-central-federated-ownership.md
-      - ADR-002 Unity Catalog: decisions/adr-002-unity-catalog.md
-      - ADR-003 Delta Storage: decisions/adr-003-delta-storage.md
-      - ADR-004 Unified Data Access: decisions/adr-004-unified-data-access.md
-      - ADR-005 Observability Platforms: decisions/adr-005-observability-platforms.md
+      - DS-ADR-001 Central and Federated Ownership: decisions/ds-adr-001-central-federated-ownership.md
+      - DS-ADR-002 Unity Catalog: decisions/ds-adr-002-unity-catalog.md
+      - DS-ADR-003 Delta Storage: decisions/ds-adr-003-delta-storage.md
+      - DS-ADR-004 Unified Data Access: decisions/ds-adr-004-unified-data-access.md
+      - DS-ADR-005 Observability Platforms: decisions/ds-adr-005-observability-platforms.md
   - Runbooks:
       - Runbooks Overview: runbooks/index.md
       - Action Playbooks:

@@ -27,7 +27,7 @@ Implementation content is deliberately separated:
 | Understand a platform capability | [Services Overview](../services/index.md) | Treating a reference solution as the service definition. |
 | Verify a mandatory rule | [Architecture Decision Policy](../decisions/architecture-decision-policy.md) and [Standards Overview](../standards/index.md) | Relying on a diagram or summary sentence. |
 | Apply Databricks or Grafana | [Reference Solutions](../reference-solutions/index.md) under Runbooks | Copying a vendor pattern without the technology-neutral design. |
-| Trace architecture into an owned capability | [Architecture to Delivery](architecture-to-delivery.md) | Treating architecture, service delivery, and operation as separate concerns. |
+| Trace architecture into an owned capability | [Architecture to Delivery](../architecture/architecture-to-delivery.md) | Treating architecture, service delivery, and operation as separate concerns. |
 | Plan adoption | [Runway](../runway.md) and [Maturity Assessment](../assessments/data-foundation-maturity-assessment.md) | Launching all components at once. |
 | Record delivery evidence | [Reusable reference records](../reference-solutions/index.md#reusable-reference-records) | Keeping approval and evidence only in presentation material. |
 | Understand the delivery library | [Runbooks Overview](../runbooks/index.md) | Assuming every item under Runbooks is an incident procedure. |

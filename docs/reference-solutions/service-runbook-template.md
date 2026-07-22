@@ -29,7 +29,7 @@ Create one runbook per material operating condition. Keep commands and vendor-sp
 | Related playbook and workflow |  |
 | SLO, recovery objective, and continuity tier |  |
 
-Use [Architecture to Delivery](../foundation/architecture-to-delivery.md) to complete this section.
+Use [Architecture to Delivery](../architecture/architecture-to-delivery.md) to complete this section.
 
 ## 3. Trigger and Impact
 

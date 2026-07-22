@@ -1,4 +1,4 @@
-# ADR-005: System and Product Observability Platforms
+# DS-ADR-005: System and Product Observability Platforms
 
 ## Status
 

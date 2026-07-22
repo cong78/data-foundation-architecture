@@ -6,11 +6,11 @@ This register lists consequential architecture decisions and their current statu
 
 | ADR | Decision | Status | Owner | Review date | Affected areas |
 | --- | --- | --- | --- | --- | --- |
-| [ADR-001](../decisions/adr-001-central-federated-ownership.md) | Centralize ingestion and source-aligned products; federate aggregate and consumer-aligned products. | Accepted | Data Foundation Architecture | 2027-07-15 | Ownership, ingestion, domains, product creation |
-| [ADR-002](../decisions/adr-002-unity-catalog.md) | Use Unity Catalog as the technical catalog and unified authorization standard. | Accepted | Data Platform Architecture | 2027-07-15 | Catalog, access, lineage, products, AI assets |
-| [ADR-003](../decisions/adr-003-delta-storage.md) | Use Delta as the default durable tabular storage format. | Accepted | Data Platform Architecture | 2027-07-15 | Storage, product workloads, recovery, interoperability |
-| [ADR-004](../decisions/adr-004-unified-data-access.md) | Place governed product ports and a unified access layer above physical storage. | Accepted | Data Access Architecture | 2027-07-15 | Consumption, identity, policy, product ports |
-| [ADR-005](../decisions/adr-005-observability-platforms.md) | Use Grafana Cloud for system observability and Databricks plus Unity Catalog for product observability, connected by OpenTelemetry. | Accepted | Observability Architecture | 2027-07-15 | Telemetry, operations, product trust, incidents |
+| [DS-ADR-001](../decisions/ds-adr-001-central-federated-ownership.md) | Centralize ingestion and source-aligned products; federate aggregate and consumer-aligned products. | Accepted | Data Foundation Architecture | 2027-07-15 | Ownership, ingestion, domains, product creation |
+| [DS-ADR-002](../decisions/ds-adr-002-unity-catalog.md) | Use Unity Catalog as the technical catalog and unified authorization standard. | Accepted | Data Platform Architecture | 2027-07-15 | Catalog, access, lineage, products, AI assets |
+| [DS-ADR-003](../decisions/ds-adr-003-delta-storage.md) | Use Delta as the default durable tabular storage format. | Accepted | Data Platform Architecture | 2027-07-15 | Storage, product workloads, recovery, interoperability |
+| [DS-ADR-004](../decisions/ds-adr-004-unified-data-access.md) | Place governed product ports and a unified access layer above physical storage. | Accepted | Data Access Architecture | 2027-07-15 | Consumption, identity, policy, product ports |
+| [DS-ADR-005](../decisions/ds-adr-005-observability-platforms.md) | Use Grafana Cloud for system observability and Databricks plus Unity Catalog for product observability, connected by OpenTelemetry. | Accepted | Observability Architecture | 2027-07-15 | Telemetry, operations, product trust, incidents |
 
 An ADR records one consequential decision. The broader map below remains a decision backlog: create another ADR when a listed direction becomes adopted, changes a stable interface, or requires migration and evidence.
 
@@ -18,15 +18,15 @@ An ADR records one consequential decision. The broader map below remains a decis
 
 | Decision | Recommended Direction | Rationale |
 | --- | --- | --- |
-| [Product ownership](../decisions/adr-001-central-federated-ownership.md) | Centralize ingestion and source-aligned products; federate aggregate and consumer-aligned product ownership to domain data teams. | Keeps source capture consistent while placing business meaning and consumer outcomes with accountable domains. |
+| [Product ownership](../decisions/ds-adr-001-central-federated-ownership.md) | Centralize ingestion and source-aligned products; federate aggregate and consumer-aligned product ownership to domain data teams. | Keeps source capture consistent while placing business meaning and consumer outcomes with accountable domains. |
 | [Architecture decision policy](../decisions/architecture-decision-policy.md) | Express principles, rules, and criteria through one authoritative YAML or JSON envelope; use OPA and Rego as the default execution profile. | Makes architecture guidance readable, testable, portable, and enforceable without coupling its meaning to one evaluator. |
 | User entry point | Use the Data Service Portal for discovery, requests, contracts, and workflow status. | Prevents fragmented access paths and creates consistent evidence. |
 | Portal interaction model | Organize journeys by user intent and bind them to domain team, use case, workspace, product, purpose, and evidence. | Makes complex foundation services understandable and reusable. |
 | Portal state | Limit portal-owned state to experience, drafts, preferences, tasks, and rebuildable read projections. | Prevents the experience layer from becoming a competing control plane. |
 | Product detail | Present declared contract terms separately from measured quality, health, lineage, incidents, usage, and cost. | Prevents synthetic or stale trust claims. |
-| [Data catalog](../decisions/adr-002-unity-catalog.md) | Use Unity Catalog as the standard technical catalog for foundation-managed data and AI assets, including governed external or synchronized projections. | Creates one technical inventory, namespace, native policy surface, lineage context, and audit boundary. |
-| [Physical table storage](../decisions/adr-003-delta-storage.md) | Use Unity Catalog managed Delta tables by default for new durable tabular data; approve exceptions for justified external, federated, operational, non-tabular, event, or Iceberg needs. | Standardizes reliability and operations while preserving fit-for-purpose interfaces and controlled interoperability. |
-| [Unified data access](../decisions/adr-004-unified-data-access.md) | Place governed product ports and a unified access layer above physical storage. | Separates consumer interfaces and policy enforcement from storage implementation details. |
+| [Data catalog](../decisions/ds-adr-002-unity-catalog.md) | Use Unity Catalog as the standard technical catalog for foundation-managed data and AI assets, including governed external or synchronized projections. | Creates one technical inventory, namespace, native policy surface, lineage context, and audit boundary. |
+| [Physical table storage](../decisions/ds-adr-003-delta-storage.md) | Use Unity Catalog managed Delta tables by default for new durable tabular data; approve exceptions for justified external, federated, operational, non-tabular, event, or Iceberg needs. | Standardizes reliability and operations while preserving fit-for-purpose interfaces and controlled interoperability. |
+| [Unified data access](../decisions/ds-adr-004-unified-data-access.md) | Place governed product ports and a unified access layer above physical storage. | Separates consumer interfaces and policy enforcement from storage implementation details. |
 | Metadata authority | Keep product, contract, semantic, policy, and telemetry authorities portable and project their identifiers and selected state into Unity Catalog. | Prevents the technical catalog from becoming an unexportable duplicate control plane. |
 | Contract authority | Use a data contract registry as the source of truth for schemas, semantics, quality rules, compatibility, and lifecycle. | Enables automated validation and change management. |
 | portable source artifacts | Store contracts and products in open, machine-readable portable formats; generate vendor objects from them. | Keeps meaning portable across tools and platforms. |
@@ -41,14 +41,14 @@ An ADR records one consequential decision. The broader map below remains a decis
 | Skill specification | Expose foundation actions as typed, versioned, least-privilege skills over stable service APIs. | Makes agent behavior testable and reusable. |
 | LLM abstraction | Reference approved enterprise LLM profiles rather than provider model names in business logic. | Supports routing, portability, policy and rollback. |
 | Agent autonomy | Default to read, recommend and draft; require explicit approval for consequential actions. | Limits excessive agency and preserves accountability. |
-| [Observability](../decisions/adr-005-observability-platforms.md) | Use OpenTelemetry-compatible telemetry for foundation services and data products, with separate system and product insight backends. | Creates consistent signals while preserving fit-for-purpose operational and product views. |
+| [Observability](../decisions/ds-adr-005-observability-platforms.md) | Use OpenTelemetry-compatible telemetry for foundation services and data products, with separate system and product insight backends. | Creates consistent signals while preserving fit-for-purpose operational and product views. |
 | Sharing | Share from live products using recipient-specific packaging and revocable entitlements. | Reduces risk and improves auditability. |
 | Technology selection | Select named products only after capability mapping, mandatory gates, weighted assessment, representative proof, TCO and exit review. | Prevents feature-led selection and makes vendor trade-offs evidence-based. |
 
 ## ADR Template
 
 ```md
-# ADR-000: Decision Title
+# DS-ADR-000: Decision Title
 
 ## Status
 

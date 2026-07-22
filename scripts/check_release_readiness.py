@@ -163,7 +163,7 @@ def main() -> int:
                 DOCS / "architecture" / "target-architecture.md",
                 DOCS / "architecture" / "design-map.md",
                 DOCS / "standards" / "index.md",
-                DOCS / "foundation" / "architecture-to-delivery.md",
+                DOCS / "architecture" / "architecture-to-delivery.md",
             ],
             errors,
         )
@@ -187,16 +187,22 @@ def main() -> int:
         path = DOCS / "reference-solutions" / name
         require_order(path, ["Executive Recommendation", "Done Criteria"], errors)
 
-    for path in sorted((DOCS / "decisions").glob("adr-*.md")):
+    for path in sorted((DOCS / "decisions").glob("ds-adr-*.md")):
+        identifier = re.match(r"ds-adr-(\d{3})-[a-z0-9-]+\.md$", path.name)
+        content = path.read_text(encoding="utf-8")
+        if not identifier or not content.startswith(f"# DS-ADR-{identifier.group(1)}:"):
+            errors.append(
+                f"{path.relative_to(ROOT)}: filename and title must use DS-ADR-NNN"
+            )
         require_order(path, ADR_SECTIONS, errors)
-        if not re.search(r"^Accepted -?[^\n]*\d{4}-\d{2}-\d{2}$", path.read_text(encoding="utf-8"), re.MULTILINE):
+        if not re.search(r"^Accepted -?[^\n]*\d{4}-\d{2}-\d{2}$", content, re.MULTILINE):
             errors.append(f"{path.relative_to(ROOT)}: status is not a dated Accepted decision")
         require_reference(path, [DOCS / "implementation" / "architecture-decisions.md"], errors)
 
     decision_register = DOCS / "implementation" / "architecture-decisions.md"
     decision_reference = re.compile(
         r"\badr(?:s|-?\d+)?\b|architecture decision records?|"
-        r"implementation/architecture-decisions|decisions/adr-",
+        r"implementation/architecture-decisions|decisions/(?:ds-)?adr-",
         re.IGNORECASE,
     )
     for path in sorted(DOCS.rglob("*.md")):
@@ -253,7 +259,7 @@ def main() -> int:
         f"Release {version} metadata and required structure validated: "
         f"{len(SERVICES)} services, {len(standards)} standards, "
         f"{len(REFERENCE_SOLUTIONS)} reference solutions, and "
-        f"{len(list((DOCS / 'decisions').glob('adr-*.md')))} ADRs."
+        f"{len(list((DOCS / 'decisions').glob('ds-adr-*.md')))} ADRs."
     )
     return 0
 

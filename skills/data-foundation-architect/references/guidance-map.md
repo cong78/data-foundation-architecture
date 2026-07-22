@@ -42,7 +42,7 @@ Resolve every path from the repository root. Load the smallest useful set.
 | Consumption reference | `docs/reference-solutions/data-consumption-design.md` |
 | Sharing reference | `docs/reference-solutions/data-sharing-design.md` |
 | Observability reference | `docs/reference-solutions/observability-design.md` |
-| Architecture-to-service delivery traceability | `docs/foundation/architecture-to-delivery.md` |
+| Architecture-to-service delivery traceability | `docs/architecture/architecture-to-delivery.md` |
 | Foundation operations design and runbooks | `docs/services/data-foundation-operations-service.md` and `docs/reference-solutions/service-runbook-template.md` |
 
 ## Review Standards
@@ -63,4 +63,4 @@ Resolve every path from the repository root. Load the smallest useful set.
 
 ## Generate
 
-Use the exact template paths listed in `SKILL.md`. For an implementation plan, also read `docs/implementation/implementation-blueprint.md` and `docs/runway.md`. For a production design or runbook, read `docs/foundation/architecture-to-delivery.md`.
+Use the exact template paths listed in `SKILL.md`. For an implementation plan, also read `docs/implementation/implementation-blueprint.md` and `docs/runway.md`. For a production design or runbook, read `docs/architecture/architecture-to-delivery.md`.

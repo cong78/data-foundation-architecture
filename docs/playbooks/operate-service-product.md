@@ -25,4 +25,4 @@ An incident is not resolved because infrastructure is running. Closure requires 
 - Recovery, rollback, continuity, expiry, revocation, deprecation, and retirement are exercised according to criticality.
 - Reviews lead to funded actions with owners, dates, and measurable outcomes.
 
-Authoritative inputs: [Architecture to Delivery](../foundation/architecture-to-delivery.md), [Platform Governance Design](../architecture/platform-governance-design.md), [Data Foundation Operations Service](../services/data-foundation-operations-service.md), [Data Observability Service](../services/data-observability-service.md), [Service Runbook Template](../reference-solutions/service-runbook-template.md), and [Runway](../runway.md).
+Authoritative inputs: [Architecture to Delivery](../architecture/architecture-to-delivery.md), [Platform Governance Design](../architecture/platform-governance-design.md), [Data Foundation Operations Service](../services/data-foundation-operations-service.md), [Data Observability Service](../services/data-observability-service.md), [Service Runbook Template](../reference-solutions/service-runbook-template.md), and [Runway](../runway.md).

@@ -12,7 +12,7 @@ DOC_PATH = re.compile(r"`(docs/[A-Za-z0-9_./-]+\.md)`")
 
 REQUIRED_GUIDANCE = {
     "docs/foundation/foundation-in-one-view.md",
-    "docs/foundation/architecture-to-delivery.md",
+    "docs/architecture/architecture-to-delivery.md",
     "docs/services/index.md",
     "docs/services/data-service-portal.md",
     "docs/services/data-foundation-operations-service.md",

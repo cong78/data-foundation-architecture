@@ -1,4 +1,4 @@
-# ADR-003: Delta as Default Durable Tabular Storage
+# DS-ADR-003: Delta as Default Durable Tabular Storage
 
 ## Status
 

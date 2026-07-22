@@ -100,7 +100,7 @@ Treat every Target User Experience row as an end-to-end acceptance scenario. The
 
 For architecture delivery guidance, use:
 
-- [Architecture to Delivery](../foundation/architecture-to-delivery.md)
+- [Architecture to Delivery](../architecture/architecture-to-delivery.md)
 - [Implementation Blueprint](../implementation/implementation-blueprint.md)
 - [Architecture Patterns](../implementation/service-implementation-patterns.md)
 - [Service Runbook Template](../reference-solutions/service-runbook-template.md)

@@ -75,7 +75,7 @@ Every architecture change records:
 4. Required playbook, runbook, and evidence updates.
 5. An end-to-end acceptance test when more than one service is involved.
 
-Use [Architecture to Delivery](../foundation/architecture-to-delivery.md) to assign this design trace to an owning data service and carry it into implementation and operation.
+Use [Architecture to Delivery](architecture-to-delivery.md) to assign this design trace to an owning data service and carry it into implementation and operation.
 
 ## Machine-Readable Traceability
 

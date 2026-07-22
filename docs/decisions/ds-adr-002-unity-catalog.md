@@ -1,4 +1,4 @@
-# ADR-002: Unity Catalog as Technical Catalog Standard
+# DS-ADR-002: Unity Catalog as Technical Catalog Standard
 
 ## Status
 

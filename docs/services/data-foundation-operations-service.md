@@ -103,7 +103,7 @@ Operations owns coordination and authoritative operational records. The affected
 
 ## Reference Solutions
 
-No service-management vendor is mandated. A selected implementation must preserve stable foundation identifiers, product-impact context, workflow authority, API integration, permission-filtered status, exportability, and an exit path. Use [Architecture to Delivery](../foundation/architecture-to-delivery.md) and the [Service Runbook Template](../reference-solutions/service-runbook-template.md).
+No service-management vendor is mandated. A selected implementation must preserve stable foundation identifiers, product-impact context, workflow authority, API integration, permission-filtered status, exportability, and an exit path. Use [Architecture to Delivery](../architecture/architecture-to-delivery.md) and the [Service Runbook Template](../reference-solutions/service-runbook-template.md).
 
 ## Target User Experience
 

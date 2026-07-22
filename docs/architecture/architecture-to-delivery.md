@@ -62,7 +62,7 @@ Each service follows the same path from architecture to an executable user or op
 
 Use the [Standards Overview](../standards/index.md) to identify the standards that constrain each service. Record implementation choices and evidence with the delivered capability without creating a reverse dependency from published design guidance.
 
-When a row involves more than one service, add an [Integration Design](../architecture/integration-design.md) that names the outcome owner, interface specifications, failure behavior, correlation identifiers, and end-to-end evidence.
+When a row involves more than one service, add an [Integration Design](integration-design.md) that names the outcome owner, interface specifications, failure behavior, correlation identifiers, and end-to-end evidence.
 
 ## Agentic Delivery Overlay
 

@@ -34,6 +34,6 @@ Use one row per measured scope and evidence window:
 
 ## Apply the Assessment
 
-Use the [Data Foundation Maturity Assessment](data-foundation-maturity-assessment.md) for the common dimensions and scoring interpretation. Use [Architecture to Delivery](../foundation/architecture-to-delivery.md) to connect a gap to its owning data service, standard, playbook, runbook, evidence source, and runway phase.
+Use the [Data Foundation Maturity Assessment](data-foundation-maturity-assessment.md) for the common dimensions and scoring interpretation. Use [Architecture to Delivery](../architecture/architecture-to-delivery.md) to connect a gap to its owning data service, standard, playbook, runbook, evidence source, and runway phase.
 
 <div class="read-next"><strong>Next:</strong> define one bounded review scope, collect authoritative evidence, and record only verified results.</div>

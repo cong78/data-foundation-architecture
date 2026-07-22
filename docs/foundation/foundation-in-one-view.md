@@ -107,7 +107,7 @@ Every service is agentic by design. The Data Service AI Assistant coordinates se
 | What is mandatory? | [Standards](../standards/index.md) |
 | What capability does the platform provide? | [Services](../services/index.md) |
 | What must a team do now? | [Playbooks](../playbooks/index.md) |
-| How does architecture become owned service delivery, runbooks, evidence, and adoption? | [Architecture to Delivery](architecture-to-delivery.md) |
+| How does architecture become owned service delivery, runbooks, evidence, and adoption? | [Architecture to Delivery](../architecture/architecture-to-delivery.md) |
 | How is a selected technology applied? | Use the separate **Reference Solutions** section after the logical outcome is clear. |
 | How should adoption be sequenced? | [Runway](../runway.md) |
 

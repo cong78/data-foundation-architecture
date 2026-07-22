@@ -10,7 +10,7 @@ Use the phases as **outcome gates**. Teams may prepare later capabilities early,
     The four runway phases sequence foundation capability and investment. Individual domains, sources, and products still move through **Frame → Establish → Deliver → Use → Operate** in [Foundation in One View](foundation/foundation-in-one-view.md).
 
 !!! info "Runway is not a runbook"
-    The **runway** sequences foundation adoption. A **runbook** is an executable operating procedure for a service, product, or known condition. Use [Architecture to Delivery](foundation/architecture-to-delivery.md) to connect both through the owning data service.
+    The **runway** sequences foundation adoption. A **runbook** is an executable operating procedure for a service, product, or known condition. Use [Architecture to Delivery](architecture/architecture-to-delivery.md) to connect both through the owning data service.
 
 ## Runway at a Glance
 
