@@ -48,7 +48,7 @@ Read each stage from left to right: challenge, primary action, value, and proof.
       <div><small>Proof</small><p>Owned services, interfaces, policies, SLOs, support, and conformance results.</p></div>
     </div>
   </a>
-  <a class="journey-value-stage" href="../../playbooks/create-change-data-product/">
+  <a class="journey-value-stage" href="../../runbooks/#deliver-trusted-data">
     <header><span>3</span><strong>Deliver</strong></header>
     <div class="journey-value-flow">
       <div><small>Challenge</small><p>Data copies exist, but consumers cannot consistently trust or reuse them.</p></div>
@@ -57,7 +57,7 @@ Read each stage from left to right: challenge, primary action, value, and proof.
       <div><small>Proof</small><p>Contracts, lineage, tests, workload, live ports, go-live receipt, and support route.</p></div>
     </div>
   </a>
-  <a class="journey-value-stage" href="../../playbooks/consume-data-product/">
+  <a class="journey-value-stage" href="../../runbooks/#use-trusted-data">
     <header><span>4</span><strong>Use</strong></header>
     <div class="journey-value-flow">
       <div><small>Challenge</small><p>Consumers struggle to find and access data, while uncontrolled use creates risk.</p></div>
@@ -66,7 +66,7 @@ Read each stage from left to right: challenge, primary action, value, and proof.
       <div><small>Proof</small><p>Consumption contract, policy decisions, entitlement, interface, obligations, and usage trace.</p></div>
     </div>
   </a>
-  <a class="journey-value-stage" href="../../playbooks/operate-service-product/">
+  <a class="journey-value-stage" href="../../runbooks/#operate-and-improve">
     <header><span>5</span><strong>Operate</strong></header>
     <div class="journey-value-flow">
       <div><small>Challenge</small><p>Trust declines after go-live when health, change, failure, and ownership are unclear.</p></div>
@@ -106,7 +106,7 @@ Every service is agentic by design. The Data Service AI Assistant coordinates se
 | Which contract applies and where is it enforced? | [Data Contract Design](../architecture/data-contract-design.md) |
 | What is mandatory? | [Standards](../standards/index.md) |
 | What capability does the platform provide? | [Services](../services/index.md) |
-| What must a team do now? | [Playbooks](../playbooks/index.md) |
+| What must a team do now? | [Runbooks](../runbooks/index.md) |
 | How does architecture become owned service delivery, runbooks, evidence, and adoption? | [Architecture to Delivery](../architecture/architecture-to-delivery.md) |
 | How is a selected technology applied? | Use the separate **Reference Solutions** section after the logical outcome is clear. |
 | How should adoption be sequenced? | [Runway](../runway.md) |

@@ -17,11 +17,11 @@ Then follow one sequence. Complete the result of each stage before scaling the n
   <i class="journey-sequence-arrow" aria-hidden="true"></i>
   <a class="journey-sequence-step" href="architecture/target-architecture/"><span>2</span><strong>Establish</strong><p>Define the architecture, services, standards, and controls.</p><small>Result · Shared foundation path</small></a>
   <i class="journey-sequence-arrow" aria-hidden="true"></i>
-  <a class="journey-sequence-step" href="playbooks/create-change-data-product/"><span>3</span><strong>Deliver</strong><p>Onboard sources and bring governed data products live.</p><small>Result · Supported live products</small></a>
+  <a class="journey-sequence-step" href="runbooks/#deliver-trusted-data"><span>3</span><strong>Deliver</strong><p>Onboard sources and bring governed data products live.</p><small>Result · Supported live products</small></a>
   <i class="journey-sequence-arrow" aria-hidden="true"></i>
-  <a class="journey-sequence-step" href="playbooks/consume-data-product/"><span>4</span><strong>Use</strong><p>Consume, share, and use products with approved AI.</p><small>Result · Purpose-bound value</small></a>
+  <a class="journey-sequence-step" href="runbooks/#use-trusted-data"><span>4</span><strong>Use</strong><p>Consume, share, and use products with approved AI.</p><small>Result · Purpose-bound value</small></a>
   <i class="journey-sequence-arrow" aria-hidden="true"></i>
-  <a class="journey-sequence-step" href="playbooks/operate-service-product/"><span>5</span><strong>Operate</strong><p>Observe, support, recover, change, and improve.</p><small>Result · Reliable services and products</small></a>
+  <a class="journey-sequence-step" href="runbooks/#operate-and-improve"><span>5</span><strong>Operate</strong><p>Observe, support, recover, change, and improve.</p><small>Result · Reliable services and products</small></a>
 </div>
 
 ## Architecture at a Glance

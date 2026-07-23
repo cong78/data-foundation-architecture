@@ -1,46 +1,54 @@
 # Runbooks
 
-<div class="decision-brief"><div><small>Use when</small><strong>Turning guidance into an owned, testable action.</strong></div><div><small>Decision</small><strong>Which execution path should be followed next?</strong></div><div><small>Owner</small><strong>Accountable work owner with capability and evidence owners.</strong></div><div><small>Output</small><strong>Sequenced actions, reusable artifacts, and acceptance evidence.</strong></div></div>
+<div class="decision-brief"><div><small>Use when</small><strong>You need to establish, deliver, use, or operate part of the foundation.</strong></div><div><small>Start with</small><strong>The outcome you need, not a document type or technology.</strong></div><div><small>Owner</small><strong>The accountable owner named by the selected action.</strong></div><div><small>Result</small><strong>Completed actions, decisions, and evidence for the next gate.</strong></div></div>
 
-Runbooks are the execution layer of this guide. They connect architecture intent to repeatable actions, implementation guidance, assessments, reference solutions, and measurable evidence.
+This section turns the architecture into work. Choose the outcome that matches the current need, complete its actions, and use linked architecture and standards only when the action requires them.
 
-## How Runbooks Fit
+## Establish the Foundation
 
-<div class="standards-map" role="img" aria-label="Runbooks mapped from planning through evidence to repeatable implementation">
-  <div class="standards-map-head" aria-hidden="true">
-    <span>Execution need</span><i></i><span>Runbook path</span><i></i><span>Outcome</span>
-  </div>
-  <section class="standards-map-lane lane-govern">
-    <div class="standards-map-cell"><small>Sequence</small><strong>Priorities · Dependencies · Increments</strong><p>Build thin vertical slices instead of a large platform program.</p></div>
-    <span class="standards-map-arrow" aria-hidden="true"></span>
-    <div class="standards-map-cell standards-map-focus"><a href="../runway/"><strong>Runway</strong></a><a href="../implementation/implementation-blueprint/"><strong>Implementation Blueprint</strong></a></div>
-    <span class="standards-map-arrow" aria-hidden="true"></span>
-    <div class="standards-map-cell"><strong>Adoption path</strong><p>Ordered capabilities, acceptance tests, dependencies, and measurable outcomes.</p></div>
-  </section>
-  <section class="standards-map-lane lane-build">
-    <div class="standards-map-cell"><small>Prove</small><strong>Readiness · Conformance · Risk</strong><p>Make architecture claims testable before scaling adoption.</p></div>
-    <span class="standards-map-arrow" aria-hidden="true"></span>
-    <div class="standards-map-cell standards-map-focus"><a href="../assessments/architecture-dashboard/"><strong>Architecture Dashboard</strong></a><a href="../assessments/industry-alignment/"><strong>Industry Alignment</strong></a><a href="../assessments/data-foundation-maturity-assessment/"><strong>Foundation Maturity</strong></a></div>
-    <span class="standards-map-arrow" aria-hidden="true"></span>
-    <div class="standards-map-cell"><strong>Decision evidence</strong><p>Visible maturity, gaps, conformance results, risks, and remediation priorities.</p></div>
-  </section>
-  <section class="standards-map-lane lane-intelligence">
-    <div class="standards-map-cell"><small>Apply and reuse</small><strong>Solutions · Records · Evidence</strong><p>Adapt a reference profile and retain the decisions and proof needed for adoption.</p></div>
-    <span class="standards-map-arrow" aria-hidden="true"></span>
-    <div class="standards-map-cell standards-map-focus"><a href="../playbooks/"><strong>Action Playbooks</strong></a><a href="../reference-solutions/"><strong>Reference Solutions</strong></a></div>
-    <span class="standards-map-arrow" aria-hidden="true"></span>
-    <div class="standards-map-cell"><strong>Repeatable execution</strong><p>Consistent contracts, workloads, controls, telemetry, and go-live evidence.</p></div>
-  </section>
-</div>
+| I need to... | Start here | Result |
+| --- | --- | --- |
+| Establish a business accountability boundary | [Onboard a Data Domain](../playbooks/onboard-data-domain.md) | Registered, accountable, enabled domain |
+| Decide what to build and scale next | [Plan the Runway](../runway.md) | Prioritized increments with outcomes and dependencies |
+| Evaluate a domain or foundation baseline | [Assess Foundation Maturity](../assessments/data-foundation-maturity-assessment.md) | Evidence-based maturity level and improvement priorities |
 
-## Runbook Rules
+## Deliver Trusted Data
 
-1. Deliver one real source-to-consumer slice before expanding platform breadth.
-2. Express enforceable rules with the [Architecture Decision Policy](../decisions/architecture-decision-policy.md) and automate them in templates, CI, workflows, and runtime services.
-3. Treat conformance reports, telemetry, approvals, and release receipts as architecture evidence.
-4. Reuse patterns when they fit; record an expiring exception when they do not.
-5. Measure lead time, reuse, reliability, consumer value, and operating cost.
+| I need to... | Start here | Result |
+| --- | --- | --- |
+| Bring governed data from a new source | [Onboard a Source](../playbooks/onboard-source.md) | Live, validated source-aligned product and operating handoff |
+| Create or safely change a reusable product | [Create or Change a Data Product](../playbooks/create-change-data-product.md) | Release candidate with complete go-live evidence |
+| Decide whether a product can become live | [Approve Product Go-Live](../playbooks/approve-product-go-live.md) | Recorded approval, rejection, or expiring exception |
 
-## Reference Solutions
+## Use Trusted Data
 
-[Reference Solutions](../reference-solutions/index.md) bring selected technology profiles and reusable records into the runbook path. Start with the technology-neutral architecture and service definition, adapt only the relevant profile, complete its reference record, and retain the resulting decisions, tests, approvals, and operational evidence.
+| I need to... | Start here | Result |
+| --- | --- | --- |
+| Give a person, application, model, or AI agent governed access | [Consume a Data Product](../playbooks/consume-data-product.md) | Working, purpose-bound, observable, revocable access |
+| Exchange data across an internal or external boundary | [Share a Data Product](../playbooks/share-data-product.md) | Minimized, monitored, expiring, revocable exchange |
+
+## Operate and Improve
+
+| I need to... | Start here | Result |
+| --- | --- | --- |
+| Restore, change, review, or improve a live service or product | [Operate a Service or Product](../playbooks/operate-service-product.md) | Restored or improved health with retained evidence |
+
+## Implementation Support
+
+Use supporting material only after the intended outcome and technology-neutral design are clear.
+
+| Need | Guidance |
+| --- | --- |
+| Turn an approved architecture slice into an implementation increment | [Implementation Blueprint](../implementation/implementation-blueprint.md) |
+| Reuse a proven service implementation pattern | [Architecture Patterns](../implementation/service-implementation-patterns.md) |
+| Review completeness, alignment, or maturity | [Architecture Dashboard](../assessments/architecture-dashboard.md), [Industry Alignment](../assessments/industry-alignment.md), or [Foundation Maturity](../assessments/data-foundation-maturity-assessment.md) |
+| Apply an approved technology | [Reference Solutions](../reference-solutions/index.md) |
+| Capture reusable delivery and operational evidence | [Reusable Reference Records](../reference-solutions/index.md#reusable-reference-records) |
+
+## Working Rule
+
+1. Select one outcome from this page.
+2. Complete the linked actions and stop conditions.
+3. Retain the stated result and evidence before moving to the next outcome.
+
+<div class="read-next"><strong>Start:</strong> choose the row that describes what must be true when the work is complete.</div>

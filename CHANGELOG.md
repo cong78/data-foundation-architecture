@@ -49,7 +49,7 @@ All notable changes to the Data Foundation Architecture guidance are recorded he
 - Removed the standalone Learn from Examples section to keep Runbooks focused on actionable guidance and reusable reference solutions.
 - Renamed Architecture Assistance to Agentic Architecture and placed it directly after Implementation Guidance.
 - Reframed the Architecture to Operations Map as Architecture to Delivery, with data services as the owned delivery entities for building and operating the foundation.
-- Removed the duplicate Choose an Action entry from Start Here; it remains under Runbooks.
+- Removed the duplicate Choose an Action entry from Start Here; action routing remains available through Runbooks.
 - Reframed Definition and Scope around enterprise use-case admission, source-versus-foundation boundaries, and evidence-based direct, federated, projected, or replicated access decisions.
 - Clarified the interoperability principle as Open and portable by design, leaving detailed artifact requirements to the Open Interoperability Standard.
 - Clarified the portal principle as One service portal as the front door.

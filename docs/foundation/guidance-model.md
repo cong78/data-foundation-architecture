@@ -12,8 +12,8 @@ Implementation content is deliberately separated:
 - **Services** explain reusable outcomes and responsibility boundaries.
 - **Standards** state mandatory rules and evidence.
 - **Decisions** preserve the rationale for important choices.
-- **Runbooks** provide actions, assessments, implementation guidance, executable assistance, and reference solutions.
-- **Reference Solutions**, inside Runbooks, combine optional technology profiles with reusable records for adopting and evidencing them.
+- **Runbooks** route work from the required outcome to the relevant actions and implementation support.
+- **Reference Solutions**, inside Runbooks, show how selected technology can realize an approved design and which evidence to retain.
 
 ## Start by Intent
 
@@ -21,7 +21,7 @@ Implementation content is deliberately separated:
 | --- | --- | --- |
 | Understand the whole foundation | [Foundation in One View](foundation-in-one-view.md) | Reading every architecture page in menu order. |
 | Find a page, relationship, or definition | [Information Graph](information-graph.md) | Treating the menu order as the only relationship between pages. |
-| Complete a task | [Action Playbooks](../playbooks/index.md) | Assembling steps from several standards. |
+| Complete a task | [Runbooks](../runbooks/index.md) | Assembling steps from several standards. |
 | Make an architecture decision | [Architecture Decision Process](../decisions/architecture-decision-process.md) and [Foundation Principles](definition-and-scope.md#design-principles) | Selecting technology before defining the boundary or authority. |
 | Define or review a data product | [Data Product Design](../architecture/data-product-design.md) | Treating a table, pipeline, catalog entry, or API as a complete product. |
 | Understand a platform capability | [Services Overview](../services/index.md) | Treating a reference solution as the service definition. |
@@ -32,17 +32,9 @@ Implementation content is deliberately separated:
 | Record delivery evidence | [Reusable reference records](../reference-solutions/index.md#reusable-reference-records) | Keeping approval and evidence only in presentation material. |
 | Understand the delivery library | [Runbooks Overview](../runbooks/index.md) | Assuming every item under Runbooks is an incident procedure. |
 
-## Choose an Action
+## Move from Question to Action
 
-| I need to... | Use this playbook | Completion outcome |
-| --- | --- | --- |
-| Establish a domain boundary | [Onboard a Data Domain](../playbooks/onboard-data-domain.md) | Registered, accountable, enabled domain. |
-| Bring in a source | [Onboard a Source](../playbooks/onboard-source.md) | Validated source-aligned product and handoff. |
-| Build or change a product | [Create or Change a Data Product](../playbooks/create-change-data-product.md) | Go-live-ready product with complete evidence. |
-| Decide whether a product may launch | [Approve Product Go-Live](../playbooks/approve-product-go-live.md) | Explicit approve, reject, or expiring exception decision. |
-| Use a product | [Consume a Data Product](../playbooks/consume-data-product.md) | Purpose-bound access through a governed port. |
-| Exchange data externally | [Share a Data Product](../playbooks/share-data-product.md) | Minimized, expiring, observable, revocable exchange. |
-| Support or improve a live capability | [Operate a Service or Product](../playbooks/operate-service-product.md) | Restored or improved service with retained evidence. |
+Use this page to locate the right type of guidance. When the required outcome is clear, open [Runbooks](../runbooks/index.md) and choose the matching action. The selected runbook links back to only the architecture, service definitions, and standards needed to complete it.
 
 ## Content Structure
 
@@ -51,10 +43,10 @@ Implementation content is deliberately separated:
 | Definition and principles | Why, scope, boundary, and decision rules. | Align before design. |
 | Architecture | What exists, where it sits, and how it interacts. | Make or review a design decision. |
 | Service | What reusable capability the foundation provides and owns. | Design or consume a service definition. |
-| Playbook | Who does what, in which order, with which evidence. | Complete a task. |
+| Action guide | Who does what, in which order, with which evidence. | Complete a foundation task. |
 | Standard | What is mandatory, how it is expressed, executed, and evidenced. | Implement or test a control. |
 | Reference solution | How a selected technology can implement the architecture and which decisions and evidence must be retained. | Assess a profile, adapt it, and complete its reference record. |
-| Runbook | How an authorized operator diagnoses, contains, recovers, validates, and escalates a known condition. | Operate and exercise a live capability. |
+| Operational runbook | How an authorized operator diagnoses, contains, recovers, validates, and escalates a known condition. | Operate and exercise a live capability. |
 | Runway and assessment | What to build next and how maturity is proven. | Prioritize adoption. |
 
 ## Rationale-First Page Structure
@@ -77,11 +69,11 @@ Design pages depend only on published architecture, service definitions, and sta
 
 ## Reading Rule
 
-1. Start with the five-stage journey for orientation or a playbook for a known task.
+1. Start with the five-stage journey for orientation or Runbooks for a known outcome.
 2. Use architecture to understand the rationale, logical boundary, and relationships.
 3. Use service pages to locate ownership and standards to verify mandatory rules.
 4. Treat a direction as fixed only when it is explicit in published architecture, service guidance, or a mandatory standard.
 5. Use reference solutions only after the technology-neutral outcome is clear.
 6. Finish delivery work with recorded evidence, the applicable runbook, and the next gate.
 
-<div class="read-next"><strong>Next:</strong> open Foundation in One View for orientation or choose an Action Playbook for execution.</div>
+<div class="read-next"><strong>Next:</strong> open Foundation in One View for orientation or Runbooks for execution.</div>

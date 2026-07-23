@@ -178,10 +178,9 @@ def main() -> int:
         require_reference(path, [DOCS / "standards" / "index.md"], errors)
 
     for path in sorted((DOCS / "playbooks").glob("*.md")):
-        if path.name != "index.md" and "Done Criteria" not in headings(path, 2):
+        if "Done Criteria" not in headings(path, 2):
             errors.append(f"{path.relative_to(ROOT)}: missing Done Criteria")
-        if path.name != "index.md":
-            require_reference(path, [DOCS / "playbooks" / "index.md"], errors)
+        require_reference(path, [DOCS / "runbooks" / "index.md"], errors)
 
     for name in REFERENCE_SOLUTIONS:
         path = DOCS / "reference-solutions" / name

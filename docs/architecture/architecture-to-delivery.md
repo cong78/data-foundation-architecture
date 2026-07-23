@@ -50,7 +50,7 @@ Each service follows the same path from architecture to an executable user or op
 
 | Outcome | Architecture | Owning Service | Primary Playbook |
 | --- | --- | --- | --- |
-| Discover, request, and track work | [Data Service Portal architecture](../services/data-service-portal.md#service-architecture) | [Data Service Portal](../services/data-service-portal.md) | [Choose an Action](../playbooks/index.md) |
+| Discover, request, and track work | [Data Service Portal architecture](../services/data-service-portal.md#service-architecture) | [Data Service Portal](../services/data-service-portal.md) | [Choose an outcome](../runbooks/index.md) |
 | Coordinate governed multi-agent guidance and action | [Data Service AI Assistant architecture](../services/data-service-ai-assistant.md#service-architecture) | [Data Service AI Assistant](../services/data-service-ai-assistant.md) with the selected service owner | The selected foundation playbook; the assistant and specialist agents do not create a parallel process. |
 | Onboard a source | [Data Ingestion Service architecture](../services/data-ingestion-service.md#service-architecture) | [Data Ingestion Service](../services/data-ingestion-service.md) | [Onboard a Source](../playbooks/onboard-source.md) |
 | Create or change a product | [Data Product Creation Service architecture](../services/data-product-creation-service.md#service-architecture) | [Data Product Creation Service](../services/data-product-creation-service.md) | [Create or Change a Data Product](../playbooks/create-change-data-product.md) and [Approve Product Go-Live](../playbooks/approve-product-go-live.md) |

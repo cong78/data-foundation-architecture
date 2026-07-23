@@ -87,20 +87,25 @@ nav:
       - Architecture Blueprint: architecture/target-architecture.md
       - Data Foundation Model: architecture/data-foundation-model.md
       - Architecture to Delivery: architecture/architecture-to-delivery.md
-      - Architecture Design Map: architecture/design-map.md
-      - Core Guidance:
-          - Platform Architecture Design:
-              - Platform Architecture: architecture/reference-architecture.md
-              - Integration Design: architecture/integration-design.md
-          - Platform Governance Design: architecture/platform-governance-design.md
+      - Design Trusted Data Products:
+          - Data Product Design: architecture/data-product-design.md
           - Data Contract Design: architecture/data-contract-design.md
           - Data Domain Design: architecture/data-domain-design.md
-          - Data Product Design: architecture/data-product-design.md
           - Semantic and Context Design: architecture/semantic-context-design.md
+      - Design Platform and Access:
+          - Platform Architecture: architecture/reference-architecture.md
           - Unified Access Design: architecture/unified-access-design.md
           - Platform Enablement Design: architecture/platform-enablement-design.md
           - Developer Experience Design: architecture/developer-experience-design.md
+          - Integration Design: architecture/integration-design.md
+      - Govern and Trace Design:
+          - Platform Governance Design: architecture/platform-governance-design.md
+          - Architecture Design Map: architecture/design-map.md
+      - Design Agentic Data Services:
           - Agentic Data Service Design: architecture/agentic-data-foundation.md
+          - Data Foundation Architecture Agent: architecture/data-foundation-architecture-agent.md
+          - Data Foundation Architect Skill: architecture/data-foundation-architect-skill.md
+          - Data Contract Designer Skill: architecture/data-contract-designer-skill.md
   - Services:
       - Services Overview: services/index.md
       - End-to-End Service Scenarios: services/end-to-end-service-scenarios.md
@@ -136,27 +141,24 @@ nav:
       - DS-ADR-005 Observability Platforms: decisions/ds-adr-005-observability-platforms.md
   - Runbooks:
       - Runbooks Overview: runbooks/index.md
-      - Action Playbooks:
-          - Choose an Action: playbooks/index.md
+      - Establish the Foundation:
           - Onboard a Data Domain: playbooks/onboard-data-domain.md
+          - Plan the Runway: runway.md
+          - Assess Foundation Maturity: assessments/data-foundation-maturity-assessment.md
+      - Deliver Trusted Data:
           - Onboard a Source: playbooks/onboard-source.md
           - Create or Change a Data Product: playbooks/create-change-data-product.md
           - Approve Product Go-Live: playbooks/approve-product-go-live.md
+      - Use Trusted Data:
           - Consume a Data Product: playbooks/consume-data-product.md
           - Share a Data Product: playbooks/share-data-product.md
+      - Operate and Improve:
           - Operate a Service or Product: playbooks/operate-service-product.md
-      - Plan and Assess:
-          - Runway: runway.md
-          - Architecture Dashboard: assessments/architecture-dashboard.md
-          - Industry Alignment: assessments/industry-alignment.md
-          - Data Foundation Maturity Assessment: assessments/data-foundation-maturity-assessment.md
-      - Implementation Guidance:
+      - Implement and Assess:
           - Implementation Blueprint: implementation/implementation-blueprint.md
           - Architecture Patterns: implementation/service-implementation-patterns.md
-      - Agentic Architecture:
-          - Data Foundation Architecture Agent: architecture/data-foundation-architecture-agent.md
-          - Data Foundation Architect Skill: architecture/data-foundation-architect-skill.md
-          - Data Contract Designer Skill: architecture/data-contract-designer-skill.md
+          - Architecture Dashboard: assessments/architecture-dashboard.md
+          - Industry Alignment: assessments/industry-alignment.md
       - Reference Solutions:
           - Overview: reference-solutions/index.md
           - Selected Technology Profiles:

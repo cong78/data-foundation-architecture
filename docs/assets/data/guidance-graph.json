@@ -684,11 +684,6 @@
     },
     {
       "source": "nav:architecture",
-      "target": "architecture/design-map.md",
-      "type": "contains"
-    },
-    {
-      "source": "nav:architecture",
       "target": "architecture/overview.md",
       "type": "contains"
     },
@@ -699,67 +694,97 @@
     },
     {
       "source": "nav:architecture",
-      "target": "nav:architecture/core-guidance",
+      "target": "nav:architecture/design-agentic-data-services",
       "type": "contains"
     },
     {
-      "source": "nav:architecture/core-guidance",
+      "source": "nav:architecture",
+      "target": "nav:architecture/design-platform-and-access",
+      "type": "contains"
+    },
+    {
+      "source": "nav:architecture",
+      "target": "nav:architecture/design-trusted-data-products",
+      "type": "contains"
+    },
+    {
+      "source": "nav:architecture",
+      "target": "nav:architecture/govern-and-trace-design",
+      "type": "contains"
+    },
+    {
+      "source": "nav:architecture/design-agentic-data-services",
       "target": "architecture/agentic-data-foundation.md",
       "type": "contains"
     },
     {
-      "source": "nav:architecture/core-guidance",
-      "target": "architecture/data-contract-design.md",
+      "source": "nav:architecture/design-agentic-data-services",
+      "target": "architecture/data-contract-designer-skill.md",
       "type": "contains"
     },
     {
-      "source": "nav:architecture/core-guidance",
-      "target": "architecture/data-domain-design.md",
+      "source": "nav:architecture/design-agentic-data-services",
+      "target": "architecture/data-foundation-architect-skill.md",
       "type": "contains"
     },
     {
-      "source": "nav:architecture/core-guidance",
-      "target": "architecture/data-product-design.md",
+      "source": "nav:architecture/design-agentic-data-services",
+      "target": "architecture/data-foundation-architecture-agent.md",
       "type": "contains"
     },
     {
-      "source": "nav:architecture/core-guidance",
+      "source": "nav:architecture/design-platform-and-access",
       "target": "architecture/developer-experience-design.md",
       "type": "contains"
     },
     {
-      "source": "nav:architecture/core-guidance",
-      "target": "architecture/platform-enablement-design.md",
-      "type": "contains"
-    },
-    {
-      "source": "nav:architecture/core-guidance",
-      "target": "architecture/platform-governance-design.md",
-      "type": "contains"
-    },
-    {
-      "source": "nav:architecture/core-guidance",
-      "target": "architecture/semantic-context-design.md",
-      "type": "contains"
-    },
-    {
-      "source": "nav:architecture/core-guidance",
-      "target": "architecture/unified-access-design.md",
-      "type": "contains"
-    },
-    {
-      "source": "nav:architecture/core-guidance",
-      "target": "nav:architecture/core-guidance/platform-architecture-design",
-      "type": "contains"
-    },
-    {
-      "source": "nav:architecture/core-guidance/platform-architecture-design",
+      "source": "nav:architecture/design-platform-and-access",
       "target": "architecture/integration-design.md",
       "type": "contains"
     },
     {
-      "source": "nav:architecture/core-guidance/platform-architecture-design",
+      "source": "nav:architecture/design-platform-and-access",
+      "target": "architecture/platform-enablement-design.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:architecture/design-platform-and-access",
       "target": "architecture/reference-architecture.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:architecture/design-platform-and-access",
+      "target": "architecture/unified-access-design.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:architecture/design-trusted-data-products",
+      "target": "architecture/data-contract-design.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:architecture/design-trusted-data-products",
+      "target": "architecture/data-domain-design.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:architecture/design-trusted-data-products",
+      "target": "architecture/data-product-design.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:architecture/design-trusted-data-products",
+      "target": "architecture/semantic-context-design.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:architecture/govern-and-trace-design",
+      "target": "architecture/design-map.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:architecture/govern-and-trace-design",
+      "target": "architecture/platform-governance-design.md",
       "type": "contains"
     },
     {
@@ -834,22 +859,22 @@
     },
     {
       "source": "nav:runbooks",
-      "target": "nav:runbooks/action-playbooks",
+      "target": "nav:runbooks/deliver-trusted-data",
       "type": "contains"
     },
     {
       "source": "nav:runbooks",
-      "target": "nav:runbooks/agentic-architecture",
+      "target": "nav:runbooks/establish-the-foundation",
       "type": "contains"
     },
     {
       "source": "nav:runbooks",
-      "target": "nav:runbooks/implementation-guidance",
+      "target": "nav:runbooks/implement-and-assess",
       "type": "contains"
     },
     {
       "source": "nav:runbooks",
-      "target": "nav:runbooks/plan-and-assess",
+      "target": "nav:runbooks/operate-and-improve",
       "type": "contains"
     },
     {
@@ -859,92 +884,67 @@
     },
     {
       "source": "nav:runbooks",
+      "target": "nav:runbooks/use-trusted-data",
+      "type": "contains"
+    },
+    {
+      "source": "nav:runbooks",
       "target": "runbooks/index.md",
       "type": "contains"
     },
     {
-      "source": "nav:runbooks/action-playbooks",
+      "source": "nav:runbooks/deliver-trusted-data",
       "target": "playbooks/approve-product-go-live.md",
       "type": "contains"
     },
     {
-      "source": "nav:runbooks/action-playbooks",
-      "target": "playbooks/consume-data-product.md",
-      "type": "contains"
-    },
-    {
-      "source": "nav:runbooks/action-playbooks",
+      "source": "nav:runbooks/deliver-trusted-data",
       "target": "playbooks/create-change-data-product.md",
       "type": "contains"
     },
     {
-      "source": "nav:runbooks/action-playbooks",
-      "target": "playbooks/index.md",
-      "type": "contains"
-    },
-    {
-      "source": "nav:runbooks/action-playbooks",
-      "target": "playbooks/onboard-data-domain.md",
-      "type": "contains"
-    },
-    {
-      "source": "nav:runbooks/action-playbooks",
+      "source": "nav:runbooks/deliver-trusted-data",
       "target": "playbooks/onboard-source.md",
       "type": "contains"
     },
     {
-      "source": "nav:runbooks/action-playbooks",
-      "target": "playbooks/operate-service-product.md",
-      "type": "contains"
-    },
-    {
-      "source": "nav:runbooks/action-playbooks",
-      "target": "playbooks/share-data-product.md",
-      "type": "contains"
-    },
-    {
-      "source": "nav:runbooks/agentic-architecture",
-      "target": "architecture/data-contract-designer-skill.md",
-      "type": "contains"
-    },
-    {
-      "source": "nav:runbooks/agentic-architecture",
-      "target": "architecture/data-foundation-architect-skill.md",
-      "type": "contains"
-    },
-    {
-      "source": "nav:runbooks/agentic-architecture",
-      "target": "architecture/data-foundation-architecture-agent.md",
-      "type": "contains"
-    },
-    {
-      "source": "nav:runbooks/implementation-guidance",
-      "target": "implementation/implementation-blueprint.md",
-      "type": "contains"
-    },
-    {
-      "source": "nav:runbooks/implementation-guidance",
-      "target": "implementation/service-implementation-patterns.md",
-      "type": "contains"
-    },
-    {
-      "source": "nav:runbooks/plan-and-assess",
-      "target": "assessments/architecture-dashboard.md",
-      "type": "contains"
-    },
-    {
-      "source": "nav:runbooks/plan-and-assess",
+      "source": "nav:runbooks/establish-the-foundation",
       "target": "assessments/data-foundation-maturity-assessment.md",
       "type": "contains"
     },
     {
-      "source": "nav:runbooks/plan-and-assess",
+      "source": "nav:runbooks/establish-the-foundation",
+      "target": "playbooks/onboard-data-domain.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:runbooks/establish-the-foundation",
+      "target": "runway.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:runbooks/implement-and-assess",
+      "target": "assessments/architecture-dashboard.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:runbooks/implement-and-assess",
       "target": "assessments/industry-alignment.md",
       "type": "contains"
     },
     {
-      "source": "nav:runbooks/plan-and-assess",
-      "target": "runway.md",
+      "source": "nav:runbooks/implement-and-assess",
+      "target": "implementation/implementation-blueprint.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:runbooks/implement-and-assess",
+      "target": "implementation/service-implementation-patterns.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:runbooks/operate-and-improve",
+      "target": "playbooks/operate-service-product.md",
       "type": "contains"
     },
     {
@@ -1030,6 +1030,16 @@
     {
       "source": "nav:runbooks/reference-solutions/selected-technology-profiles",
       "target": "reference-solutions/observability-design.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:runbooks/use-trusted-data",
+      "target": "playbooks/consume-data-product.md",
+      "type": "contains"
+    },
+    {
+      "source": "nav:runbooks/use-trusted-data",
+      "target": "playbooks/share-data-product.md",
       "type": "contains"
     },
     {
@@ -1189,11 +1199,6 @@
     },
     {
       "source": "architecture/architecture-to-delivery.md",
-      "target": "playbooks/index.md",
-      "type": "references"
-    },
-    {
-      "source": "architecture/architecture-to-delivery.md",
       "target": "playbooks/onboard-source.md",
       "type": "references"
     },
@@ -1210,6 +1215,11 @@
     {
       "source": "architecture/architecture-to-delivery.md",
       "target": "reference-solutions/index.md",
+      "type": "references"
+    },
+    {
+      "source": "architecture/architecture-to-delivery.md",
+      "target": "runbooks/index.md",
       "type": "references"
     },
     {
@@ -1519,12 +1529,7 @@
     },
     {
       "source": "architecture/overview.md",
-      "target": "architecture/data-contract-design.md",
-      "type": "references"
-    },
-    {
-      "source": "architecture/overview.md",
-      "target": "architecture/data-domain-design.md",
+      "target": "architecture/architecture-to-delivery.md",
       "type": "references"
     },
     {
@@ -1544,21 +1549,6 @@
     },
     {
       "source": "architecture/overview.md",
-      "target": "architecture/developer-experience-design.md",
-      "type": "references"
-    },
-    {
-      "source": "architecture/overview.md",
-      "target": "architecture/integration-design.md",
-      "type": "references"
-    },
-    {
-      "source": "architecture/overview.md",
-      "target": "architecture/platform-enablement-design.md",
-      "type": "references"
-    },
-    {
-      "source": "architecture/overview.md",
       "target": "architecture/platform-governance-design.md",
       "type": "references"
     },
@@ -1569,32 +1559,17 @@
     },
     {
       "source": "architecture/overview.md",
-      "target": "architecture/semantic-context-design.md",
-      "type": "references"
-    },
-    {
-      "source": "architecture/overview.md",
       "target": "architecture/target-architecture.md",
       "type": "references"
     },
     {
       "source": "architecture/overview.md",
-      "target": "architecture/unified-access-design.md",
-      "type": "references"
-    },
-    {
-      "source": "architecture/overview.md",
-      "target": "decisions/architecture-decision-process.md",
+      "target": "foundation/definition-and-scope.md",
       "type": "references"
     },
     {
       "source": "architecture/overview.md",
       "target": "foundation/information-graph.md",
-      "type": "references"
-    },
-    {
-      "source": "architecture/overview.md",
-      "target": "reference-solutions/index.md",
       "type": "references"
     },
     {
@@ -1614,12 +1589,12 @@
     },
     {
       "source": "architecture/overview.md",
-      "target": "services/end-to-end-service-scenarios.md",
+      "target": "services/index.md",
       "type": "references"
     },
     {
       "source": "architecture/overview.md",
-      "target": "services/index.md",
+      "target": "standards/index.md",
       "type": "references"
     },
     {
@@ -2074,22 +2049,7 @@
     },
     {
       "source": "foundation/foundation-in-one-view.md",
-      "target": "playbooks/consume-data-product.md",
-      "type": "references"
-    },
-    {
-      "source": "foundation/foundation-in-one-view.md",
-      "target": "playbooks/create-change-data-product.md",
-      "type": "references"
-    },
-    {
-      "source": "foundation/foundation-in-one-view.md",
-      "target": "playbooks/index.md",
-      "type": "references"
-    },
-    {
-      "source": "foundation/foundation-in-one-view.md",
-      "target": "playbooks/operate-service-product.md",
+      "target": "runbooks/index.md",
       "type": "references"
     },
     {
@@ -2145,46 +2105,6 @@
     {
       "source": "foundation/guidance-model.md",
       "target": "foundation/information-graph.md",
-      "type": "references"
-    },
-    {
-      "source": "foundation/guidance-model.md",
-      "target": "playbooks/approve-product-go-live.md",
-      "type": "references"
-    },
-    {
-      "source": "foundation/guidance-model.md",
-      "target": "playbooks/consume-data-product.md",
-      "type": "references"
-    },
-    {
-      "source": "foundation/guidance-model.md",
-      "target": "playbooks/create-change-data-product.md",
-      "type": "references"
-    },
-    {
-      "source": "foundation/guidance-model.md",
-      "target": "playbooks/index.md",
-      "type": "references"
-    },
-    {
-      "source": "foundation/guidance-model.md",
-      "target": "playbooks/onboard-data-domain.md",
-      "type": "references"
-    },
-    {
-      "source": "foundation/guidance-model.md",
-      "target": "playbooks/onboard-source.md",
-      "type": "references"
-    },
-    {
-      "source": "foundation/guidance-model.md",
-      "target": "playbooks/operate-service-product.md",
-      "type": "references"
-    },
-    {
-      "source": "foundation/guidance-model.md",
-      "target": "playbooks/share-data-product.md",
       "type": "references"
     },
     {
@@ -2269,17 +2189,7 @@
     },
     {
       "source": "index.md",
-      "target": "playbooks/consume-data-product.md",
-      "type": "references"
-    },
-    {
-      "source": "index.md",
-      "target": "playbooks/create-change-data-product.md",
-      "type": "references"
-    },
-    {
-      "source": "index.md",
-      "target": "playbooks/operate-service-product.md",
+      "target": "runbooks/index.md",
       "type": "references"
     },
     {
@@ -2375,41 +2285,6 @@
     {
       "source": "playbooks/create-change-data-product.md",
       "target": "standards/data-product-workload-standard.md",
-      "type": "references"
-    },
-    {
-      "source": "playbooks/index.md",
-      "target": "playbooks/approve-product-go-live.md",
-      "type": "references"
-    },
-    {
-      "source": "playbooks/index.md",
-      "target": "playbooks/consume-data-product.md",
-      "type": "references"
-    },
-    {
-      "source": "playbooks/index.md",
-      "target": "playbooks/create-change-data-product.md",
-      "type": "references"
-    },
-    {
-      "source": "playbooks/index.md",
-      "target": "playbooks/onboard-data-domain.md",
-      "type": "references"
-    },
-    {
-      "source": "playbooks/index.md",
-      "target": "playbooks/onboard-source.md",
-      "type": "references"
-    },
-    {
-      "source": "playbooks/index.md",
-      "target": "playbooks/operate-service-product.md",
-      "type": "references"
-    },
-    {
-      "source": "playbooks/index.md",
-      "target": "playbooks/share-data-product.md",
       "type": "references"
     },
     {
@@ -2674,17 +2549,47 @@
     },
     {
       "source": "runbooks/index.md",
-      "target": "decisions/architecture-decision-policy.md",
-      "type": "references"
-    },
-    {
-      "source": "runbooks/index.md",
       "target": "implementation/implementation-blueprint.md",
       "type": "references"
     },
     {
       "source": "runbooks/index.md",
-      "target": "playbooks/index.md",
+      "target": "implementation/service-implementation-patterns.md",
+      "type": "references"
+    },
+    {
+      "source": "runbooks/index.md",
+      "target": "playbooks/approve-product-go-live.md",
+      "type": "references"
+    },
+    {
+      "source": "runbooks/index.md",
+      "target": "playbooks/consume-data-product.md",
+      "type": "references"
+    },
+    {
+      "source": "runbooks/index.md",
+      "target": "playbooks/create-change-data-product.md",
+      "type": "references"
+    },
+    {
+      "source": "runbooks/index.md",
+      "target": "playbooks/onboard-data-domain.md",
+      "type": "references"
+    },
+    {
+      "source": "runbooks/index.md",
+      "target": "playbooks/onboard-source.md",
+      "type": "references"
+    },
+    {
+      "source": "runbooks/index.md",
+      "target": "playbooks/operate-service-product.md",
+      "type": "references"
+    },
+    {
+      "source": "runbooks/index.md",
+      "target": "playbooks/share-data-product.md",
       "type": "references"
     },
     {
@@ -3044,12 +2949,12 @@
     },
     {
       "source": "services/index.md",
-      "target": "playbooks/index.md",
+      "target": "reference-solutions/service-runbook-template.md",
       "type": "references"
     },
     {
       "source": "services/index.md",
-      "target": "reference-solutions/service-runbook-template.md",
+      "target": "runbooks/index.md",
       "type": "references"
     },
     {
@@ -3272,9 +3177,9 @@
     },
     "architectureRelationships": 84,
     "groupPageCounts": {
-      "Architecture": 16,
+      "Architecture": 19,
       "Decisions": 8,
-      "Runbooks": 33,
+      "Runbooks": 29,
       "Services": 11,
       "Standards": 11,
       "Start Here": 5
@@ -3324,7 +3229,7 @@
     "maximumNavigationDepth": 4,
     "mostReferencedPages": [
       {
-        "incoming": 17,
+        "incoming": 16,
         "path": "architecture/data-contract-design.md",
         "title": "Data Contract Design"
       },
@@ -3344,11 +3249,6 @@
         "title": "Platform Governance Design"
       },
       {
-        "incoming": 14,
-        "path": "architecture/unified-access-design.md",
-        "title": "Unified Access Design"
-      },
-      {
         "incoming": 13,
         "path": "architecture/agentic-data-foundation.md",
         "title": "Agentic Data Service Design"
@@ -3362,19 +3262,24 @@
         "incoming": 13,
         "path": "services/data-product-creation-service.md",
         "title": "Data Product Creation Service"
+      },
+      {
+        "incoming": 13,
+        "path": "architecture/data-product-design.md",
+        "title": "Data Product Design"
       }
     ],
-    "navigationNodes": 16,
-    "navigationRelationships": 99,
+    "navigationNodes": 19,
+    "navigationRelationships": 101,
     "orphanPages": [
       {
         "path": "architecture/data-foundation-architecture-agent.md",
         "title": "Data Foundation Architecture Agent"
       }
     ],
-    "pages": 84,
-    "referenceDensity": 5.0,
-    "referenceRelationships": 419,
+    "pages": 83,
+    "referenceDensity": 4.8,
+    "referenceRelationships": 398,
     "registryEntities": 36,
     "topLevelSections": 6
   },
@@ -3384,7 +3289,7 @@
       "architectureOutgoing": 2,
       "breadcrumbs": [
         "Architecture",
-        "Core Guidance",
+        "Design Agentic Data Services",
         "Agentic Data Service Design"
       ],
       "group": "Architecture",
@@ -3406,7 +3311,7 @@
       ],
       "group": "Architecture",
       "id": "architecture/architecture-to-delivery.md",
-      "incoming": 9,
+      "incoming": 10,
       "kind": "page",
       "navLabel": "Architecture to Delivery",
       "outgoing": 20,
@@ -3419,12 +3324,12 @@
       "architectureOutgoing": 2,
       "breadcrumbs": [
         "Architecture",
-        "Core Guidance",
+        "Design Trusted Data Products",
         "Data Contract Design"
       ],
       "group": "Architecture",
       "id": "architecture/data-contract-design.md",
-      "incoming": 17,
+      "incoming": 16,
       "kind": "page",
       "navLabel": "Data Contract Design",
       "outgoing": 2,
@@ -3436,11 +3341,11 @@
       "architectureIncoming": 0,
       "architectureOutgoing": 0,
       "breadcrumbs": [
-        "Runbooks",
-        "Agentic Architecture",
+        "Architecture",
+        "Design Agentic Data Services",
         "Data Contract Designer Skill"
       ],
-      "group": "Runbooks",
+      "group": "Architecture",
       "id": "architecture/data-contract-designer-skill.md",
       "incoming": 1,
       "kind": "page",
@@ -3455,12 +3360,12 @@
       "architectureOutgoing": 0,
       "breadcrumbs": [
         "Architecture",
-        "Core Guidance",
+        "Design Trusted Data Products",
         "Data Domain Design"
       ],
       "group": "Architecture",
       "id": "architecture/data-domain-design.md",
-      "incoming": 6,
+      "incoming": 5,
       "kind": "page",
       "navLabel": "Data Domain Design",
       "outgoing": 8,
@@ -3472,11 +3377,11 @@
       "architectureIncoming": 0,
       "architectureOutgoing": 0,
       "breadcrumbs": [
-        "Runbooks",
-        "Agentic Architecture",
+        "Architecture",
+        "Design Agentic Data Services",
         "Data Foundation Architect Skill"
       ],
-      "group": "Runbooks",
+      "group": "Architecture",
       "id": "architecture/data-foundation-architect-skill.md",
       "incoming": 1,
       "kind": "page",
@@ -3490,11 +3395,11 @@
       "architectureIncoming": 0,
       "architectureOutgoing": 0,
       "breadcrumbs": [
-        "Runbooks",
-        "Agentic Architecture",
+        "Architecture",
+        "Design Agentic Data Services",
         "Data Foundation Architecture Agent"
       ],
-      "group": "Runbooks",
+      "group": "Architecture",
       "id": "architecture/data-foundation-architecture-agent.md",
       "incoming": 0,
       "kind": "page",
@@ -3526,7 +3431,7 @@
       "architectureOutgoing": 2,
       "breadcrumbs": [
         "Architecture",
-        "Core Guidance",
+        "Design Trusted Data Products",
         "Data Product Design"
       ],
       "group": "Architecture",
@@ -3544,6 +3449,7 @@
       "architectureOutgoing": 0,
       "breadcrumbs": [
         "Architecture",
+        "Govern and Trace Design",
         "Architecture Design Map"
       ],
       "group": "Architecture",
@@ -3561,12 +3467,12 @@
       "architectureOutgoing": 1,
       "breadcrumbs": [
         "Architecture",
-        "Core Guidance",
+        "Design Platform and Access",
         "Developer Experience Design"
       ],
       "group": "Architecture",
       "id": "architecture/developer-experience-design.md",
-      "incoming": 3,
+      "incoming": 2,
       "kind": "page",
       "navLabel": "Developer Experience Design",
       "outgoing": 0,
@@ -3579,13 +3485,12 @@
       "architectureOutgoing": 2,
       "breadcrumbs": [
         "Architecture",
-        "Core Guidance",
-        "Platform Architecture Design",
+        "Design Platform and Access",
         "Integration Design"
       ],
       "group": "Architecture",
       "id": "architecture/integration-design.md",
-      "incoming": 6,
+      "incoming": 5,
       "kind": "page",
       "navLabel": "Integration Design",
       "outgoing": 1,
@@ -3605,22 +3510,22 @@
       "incoming": 1,
       "kind": "page",
       "navLabel": "Overview",
-      "outgoing": 22,
+      "outgoing": 15,
       "title": "Architecture Overview",
       "url": "/architecture/overview/",
-      "words": 1368
+      "words": 835
     },
     {
       "architectureIncoming": 3,
       "architectureOutgoing": 2,
       "breadcrumbs": [
         "Architecture",
-        "Core Guidance",
+        "Design Platform and Access",
         "Platform Enablement Design"
       ],
       "group": "Architecture",
       "id": "architecture/platform-enablement-design.md",
-      "incoming": 12,
+      "incoming": 11,
       "kind": "page",
       "navLabel": "Platform Enablement Design",
       "outgoing": 1,
@@ -3633,7 +3538,7 @@
       "architectureOutgoing": 1,
       "breadcrumbs": [
         "Architecture",
-        "Core Guidance",
+        "Govern and Trace Design",
         "Platform Governance Design"
       ],
       "group": "Architecture",
@@ -3651,8 +3556,7 @@
       "architectureOutgoing": 1,
       "breadcrumbs": [
         "Architecture",
-        "Core Guidance",
-        "Platform Architecture Design",
+        "Design Platform and Access",
         "Platform Architecture"
       ],
       "group": "Architecture",
@@ -3670,12 +3574,12 @@
       "architectureOutgoing": 2,
       "breadcrumbs": [
         "Architecture",
-        "Core Guidance",
+        "Design Trusted Data Products",
         "Semantic and Context Design"
       ],
       "group": "Architecture",
       "id": "architecture/semantic-context-design.md",
-      "incoming": 9,
+      "incoming": 8,
       "kind": "page",
       "navLabel": "Semantic and Context Design",
       "outgoing": 0,
@@ -3705,12 +3609,12 @@
       "architectureOutgoing": 2,
       "breadcrumbs": [
         "Architecture",
-        "Core Guidance",
+        "Design Platform and Access",
         "Unified Access Design"
       ],
       "group": "Architecture",
       "id": "architecture/unified-access-design.md",
-      "incoming": 14,
+      "incoming": 13,
       "kind": "page",
       "navLabel": "Unified Access Design",
       "outgoing": 0,
@@ -3723,7 +3627,7 @@
       "architectureOutgoing": 0,
       "breadcrumbs": [
         "Runbooks",
-        "Plan and Assess",
+        "Implement and Assess",
         "Architecture Dashboard"
       ],
       "group": "Runbooks",
@@ -3741,14 +3645,14 @@
       "architectureOutgoing": 0,
       "breadcrumbs": [
         "Runbooks",
-        "Plan and Assess",
-        "Data Foundation Maturity Assessment"
+        "Establish the Foundation",
+        "Assess Foundation Maturity"
       ],
       "group": "Runbooks",
       "id": "assessments/data-foundation-maturity-assessment.md",
       "incoming": 6,
       "kind": "page",
-      "navLabel": "Data Foundation Maturity Assessment",
+      "navLabel": "Assess Foundation Maturity",
       "outgoing": 6,
       "title": "Data Foundation Maturity Assessment",
       "url": "/assessments/data-foundation-maturity-assessment/",
@@ -3759,7 +3663,7 @@
       "architectureOutgoing": 0,
       "breadcrumbs": [
         "Runbooks",
-        "Plan and Assess",
+        "Implement and Assess",
         "Industry Alignment"
       ],
       "group": "Runbooks",
@@ -3781,7 +3685,7 @@
       ],
       "group": "Decisions",
       "id": "decisions/architecture-decision-policy.md",
-      "incoming": 7,
+      "incoming": 6,
       "kind": "page",
       "navLabel": "Architecture Decision Policy",
       "outgoing": 2,
@@ -3798,7 +3702,7 @@
       ],
       "group": "Decisions",
       "id": "decisions/architecture-decision-process.md",
-      "incoming": 5,
+      "incoming": 4,
       "kind": "page",
       "navLabel": "Architecture Decision Process",
       "outgoing": 3,
@@ -3900,7 +3804,7 @@
       ],
       "group": "Start Here",
       "id": "foundation/definition-and-scope.md",
-      "incoming": 4,
+      "incoming": 5,
       "kind": "page",
       "navLabel": "Definition and Principles",
       "outgoing": 5,
@@ -3920,7 +3824,7 @@
       "incoming": 4,
       "kind": "page",
       "navLabel": "Foundation in One View",
-      "outgoing": 15,
+      "outgoing": 12,
       "title": "Foundation in One View",
       "url": "/foundation/foundation-in-one-view/",
       "words": 961
@@ -3937,10 +3841,10 @@
       "incoming": 1,
       "kind": "page",
       "navLabel": "How to Use This Guide",
-      "outgoing": 21,
+      "outgoing": 13,
       "title": "How to Use This Guide",
       "url": "/foundation/guidance-model/",
-      "words": 920
+      "words": 840
     },
     {
       "architectureIncoming": 0,
@@ -3981,7 +3885,7 @@
       "architectureOutgoing": 0,
       "breadcrumbs": [
         "Runbooks",
-        "Implementation Guidance",
+        "Implement and Assess",
         "Implementation Blueprint"
       ],
       "group": "Runbooks",
@@ -3999,12 +3903,12 @@
       "architectureOutgoing": 0,
       "breadcrumbs": [
         "Runbooks",
-        "Implementation Guidance",
+        "Implement and Assess",
         "Architecture Patterns"
       ],
       "group": "Runbooks",
       "id": "implementation/service-implementation-patterns.md",
-      "incoming": 1,
+      "incoming": 2,
       "kind": "page",
       "navLabel": "Architecture Patterns",
       "outgoing": 0,
@@ -4024,7 +3928,7 @@
       "incoming": 0,
       "kind": "page",
       "navLabel": "Overview",
-      "outgoing": 15,
+      "outgoing": 13,
       "title": "Data Foundation Architecture",
       "url": "/",
       "words": 242
@@ -4050,15 +3954,15 @@
       "architectureOutgoing": 0,
       "breadcrumbs": [
         "Architecture",
-        "Core Guidance"
+        "Design Agentic Data Services"
       ],
       "group": "Architecture",
-      "id": "nav:architecture/core-guidance",
+      "id": "nav:architecture/design-agentic-data-services",
       "incoming": 0,
       "kind": "section",
-      "navLabel": "Core Guidance",
+      "navLabel": "Design Agentic Data Services",
       "outgoing": 0,
-      "title": "Core Guidance",
+      "title": "Design Agentic Data Services",
       "url": null,
       "words": 0
     },
@@ -4067,16 +3971,49 @@
       "architectureOutgoing": 0,
       "breadcrumbs": [
         "Architecture",
-        "Core Guidance",
-        "Platform Architecture Design"
+        "Design Platform and Access"
       ],
       "group": "Architecture",
-      "id": "nav:architecture/core-guidance/platform-architecture-design",
+      "id": "nav:architecture/design-platform-and-access",
       "incoming": 0,
       "kind": "section",
-      "navLabel": "Platform Architecture Design",
+      "navLabel": "Design Platform and Access",
       "outgoing": 0,
-      "title": "Platform Architecture Design",
+      "title": "Design Platform and Access",
+      "url": null,
+      "words": 0
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Architecture",
+        "Design Trusted Data Products"
+      ],
+      "group": "Architecture",
+      "id": "nav:architecture/design-trusted-data-products",
+      "incoming": 0,
+      "kind": "section",
+      "navLabel": "Design Trusted Data Products",
+      "outgoing": 0,
+      "title": "Design Trusted Data Products",
+      "url": null,
+      "words": 0
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
+        "Architecture",
+        "Govern and Trace Design"
+      ],
+      "group": "Architecture",
+      "id": "nav:architecture/govern-and-trace-design",
+      "incoming": 0,
+      "kind": "section",
+      "navLabel": "Govern and Trace Design",
+      "outgoing": 0,
+      "title": "Govern and Trace Design",
       "url": null,
       "words": 0
     },
@@ -4133,15 +4070,15 @@
       "architectureOutgoing": 0,
       "breadcrumbs": [
         "Runbooks",
-        "Action Playbooks"
+        "Deliver Trusted Data"
       ],
       "group": "Runbooks",
-      "id": "nav:runbooks/action-playbooks",
+      "id": "nav:runbooks/deliver-trusted-data",
       "incoming": 0,
       "kind": "section",
-      "navLabel": "Action Playbooks",
+      "navLabel": "Deliver Trusted Data",
       "outgoing": 0,
-      "title": "Action Playbooks",
+      "title": "Deliver Trusted Data",
       "url": null,
       "words": 0
     },
@@ -4150,15 +4087,15 @@
       "architectureOutgoing": 0,
       "breadcrumbs": [
         "Runbooks",
-        "Agentic Architecture"
+        "Establish the Foundation"
       ],
       "group": "Runbooks",
-      "id": "nav:runbooks/agentic-architecture",
+      "id": "nav:runbooks/establish-the-foundation",
       "incoming": 0,
       "kind": "section",
-      "navLabel": "Agentic Architecture",
+      "navLabel": "Establish the Foundation",
       "outgoing": 0,
-      "title": "Agentic Architecture",
+      "title": "Establish the Foundation",
       "url": null,
       "words": 0
     },
@@ -4167,15 +4104,15 @@
       "architectureOutgoing": 0,
       "breadcrumbs": [
         "Runbooks",
-        "Implementation Guidance"
+        "Implement and Assess"
       ],
       "group": "Runbooks",
-      "id": "nav:runbooks/implementation-guidance",
+      "id": "nav:runbooks/implement-and-assess",
       "incoming": 0,
       "kind": "section",
-      "navLabel": "Implementation Guidance",
+      "navLabel": "Implement and Assess",
       "outgoing": 0,
-      "title": "Implementation Guidance",
+      "title": "Implement and Assess",
       "url": null,
       "words": 0
     },
@@ -4184,15 +4121,15 @@
       "architectureOutgoing": 0,
       "breadcrumbs": [
         "Runbooks",
-        "Plan and Assess"
+        "Operate and Improve"
       ],
       "group": "Runbooks",
-      "id": "nav:runbooks/plan-and-assess",
+      "id": "nav:runbooks/operate-and-improve",
       "incoming": 0,
       "kind": "section",
-      "navLabel": "Plan and Assess",
+      "navLabel": "Operate and Improve",
       "outgoing": 0,
-      "title": "Plan and Assess",
+      "title": "Operate and Improve",
       "url": null,
       "words": 0
     },
@@ -4253,6 +4190,23 @@
       "architectureIncoming": 0,
       "architectureOutgoing": 0,
       "breadcrumbs": [
+        "Runbooks",
+        "Use Trusted Data"
+      ],
+      "group": "Runbooks",
+      "id": "nav:runbooks/use-trusted-data",
+      "incoming": 0,
+      "kind": "section",
+      "navLabel": "Use Trusted Data",
+      "outgoing": 0,
+      "title": "Use Trusted Data",
+      "url": null,
+      "words": 0
+    },
+    {
+      "architectureIncoming": 0,
+      "architectureOutgoing": 0,
+      "breadcrumbs": [
         "Services"
       ],
       "group": "Services",
@@ -4302,12 +4256,12 @@
       "architectureOutgoing": 0,
       "breadcrumbs": [
         "Runbooks",
-        "Action Playbooks",
+        "Deliver Trusted Data",
         "Approve Product Go-Live"
       ],
       "group": "Runbooks",
       "id": "playbooks/approve-product-go-live.md",
-      "incoming": 3,
+      "incoming": 2,
       "kind": "page",
       "navLabel": "Approve Product Go-Live",
       "outgoing": 3,
@@ -4320,12 +4274,12 @@
       "architectureOutgoing": 0,
       "breadcrumbs": [
         "Runbooks",
-        "Action Playbooks",
+        "Use Trusted Data",
         "Consume a Data Product"
       ],
       "group": "Runbooks",
       "id": "playbooks/consume-data-product.md",
-      "incoming": 5,
+      "incoming": 2,
       "kind": "page",
       "navLabel": "Consume a Data Product",
       "outgoing": 3,
@@ -4338,12 +4292,12 @@
       "architectureOutgoing": 0,
       "breadcrumbs": [
         "Runbooks",
-        "Action Playbooks",
+        "Deliver Trusted Data",
         "Create or Change a Data Product"
       ],
       "group": "Runbooks",
       "id": "playbooks/create-change-data-product.md",
-      "incoming": 6,
+      "incoming": 3,
       "kind": "page",
       "navLabel": "Create or Change a Data Product",
       "outgoing": 4,
@@ -4356,30 +4310,12 @@
       "architectureOutgoing": 0,
       "breadcrumbs": [
         "Runbooks",
-        "Action Playbooks",
-        "Choose an Action"
-      ],
-      "group": "Runbooks",
-      "id": "playbooks/index.md",
-      "incoming": 5,
-      "kind": "page",
-      "navLabel": "Choose an Action",
-      "outgoing": 7,
-      "title": "Action Playbooks",
-      "url": "/playbooks/",
-      "words": 271
-    },
-    {
-      "architectureIncoming": 0,
-      "architectureOutgoing": 0,
-      "breadcrumbs": [
-        "Runbooks",
-        "Action Playbooks",
+        "Establish the Foundation",
         "Onboard a Data Domain"
       ],
       "group": "Runbooks",
       "id": "playbooks/onboard-data-domain.md",
-      "incoming": 2,
+      "incoming": 1,
       "kind": "page",
       "navLabel": "Onboard a Data Domain",
       "outgoing": 3,
@@ -4392,12 +4328,12 @@
       "architectureOutgoing": 0,
       "breadcrumbs": [
         "Runbooks",
-        "Action Playbooks",
+        "Deliver Trusted Data",
         "Onboard a Source"
       ],
       "group": "Runbooks",
       "id": "playbooks/onboard-source.md",
-      "incoming": 3,
+      "incoming": 2,
       "kind": "page",
       "navLabel": "Onboard a Source",
       "outgoing": 3,
@@ -4410,12 +4346,12 @@
       "architectureOutgoing": 0,
       "breadcrumbs": [
         "Runbooks",
-        "Action Playbooks",
+        "Operate and Improve",
         "Operate a Service or Product"
       ],
       "group": "Runbooks",
       "id": "playbooks/operate-service-product.md",
-      "incoming": 5,
+      "incoming": 2,
       "kind": "page",
       "navLabel": "Operate a Service or Product",
       "outgoing": 6,
@@ -4428,12 +4364,12 @@
       "architectureOutgoing": 0,
       "breadcrumbs": [
         "Runbooks",
-        "Action Playbooks",
+        "Use Trusted Data",
         "Share a Data Product"
       ],
       "group": "Runbooks",
       "id": "playbooks/share-data-product.md",
-      "incoming": 3,
+      "incoming": 2,
       "kind": "page",
       "navLabel": "Share a Data Product",
       "outgoing": 3,
@@ -4622,7 +4558,7 @@
       ],
       "group": "Runbooks",
       "id": "reference-solutions/index.md",
-      "incoming": 4,
+      "incoming": 3,
       "kind": "page",
       "navLabel": "Overview",
       "outgoing": 14,
@@ -4734,27 +4670,27 @@
       ],
       "group": "Runbooks",
       "id": "runbooks/index.md",
-      "incoming": 1,
+      "incoming": 5,
       "kind": "page",
       "navLabel": "Runbooks Overview",
-      "outgoing": 8,
+      "outgoing": 14,
       "title": "Runbooks",
       "url": "/runbooks/",
-      "words": 270
+      "words": 422
     },
     {
       "architectureIncoming": 0,
       "architectureOutgoing": 0,
       "breadcrumbs": [
         "Runbooks",
-        "Plan and Assess",
-        "Runway"
+        "Establish the Foundation",
+        "Plan the Runway"
       ],
       "group": "Runbooks",
       "id": "runway.md",
       "incoming": 5,
       "kind": "page",
-      "navLabel": "Runway",
+      "navLabel": "Plan the Runway",
       "outgoing": 2,
       "title": "Runway",
       "url": "/runway/",
@@ -4905,7 +4841,7 @@
       ],
       "group": "Services",
       "id": "services/end-to-end-service-scenarios.md",
-      "incoming": 2,
+      "incoming": 1,
       "kind": "page",
       "navLabel": "End-to-End Service Scenarios",
       "outgoing": 8,
@@ -4928,7 +4864,7 @@
       "outgoing": 16,
       "title": "Services Overview",
       "url": "/services/",
-      "words": 1093
+      "words": 1092
     },
     {
       "architectureIncoming": 0,
@@ -5075,7 +5011,7 @@
       ],
       "group": "Standards",
       "id": "standards/index.md",
-      "incoming": 6,
+      "incoming": 7,
       "kind": "page",
       "navLabel": "Standards Overview",
       "outgoing": 20,
